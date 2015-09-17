@@ -1,0 +1,100 @@
+\subsection{Device Communication Protocols}
+
+All the devices installed in a automated home need some form of communication
+method with other devices in order to send/receive data. For example, a light
+bulb might need to know when to turn on itself. Another example could be
+sending data collected from a temperature sensor to another device.
+
+This section explores some protocols frequently used in the domain of home
+automation. Each protocol has some characteristics that is outlined below.
+
+\subsubsection{X10}
+
+\begin{itemize}
+\item Designed in 1975
+\item Supports both powerline and wireless installation
+\item Lacks encryption
+\item Limited reliability
+\end{itemize}
+
+\url{https://en.wikipedia.org/wiki/X10_%28industry_standard%29}
+
+\subsubsection{Universal Powerline Bus}
+
+\begin{itemize}
+\item Released in 1999
+\item Powerline based
+\item Limited bandwidth of 240 bits/s
+\end{itemize}
+
+\url{https://en.wikipedia.org/wiki/Universal_powerline_bus}
+
+\subsubsection{Insteon}
+
+\begin{itemize}
+\item Supports both powerline and wireless installation
+\item Proprietary
+\item Compatible with X10
+\item Uses powerline as backup in case of wireless interference
+\item Theoretical bandwidth of 2880 bits/s
+\end{itemize}
+
+\url{http://www.ecs.umass.edu/~irwin/insteon.pdf}
+
+\subsubsection{Z-wave}
+
+\begin{itemize}
+\item Wireless
+\item Proprietary
+\item Theoretical bandwidth of 100 kilobits/s
+\item Line of sight range is approx. 100 meters
+\item Designed for low power consumption
+\end{itemize}
+
+\url{https://en.wikipedia.org/wiki/Z-Wave}
+
+\subsubsection{ZigBee}
+
+\begin{itemize}
+\item Originally designed in 1998, standardised in 2003 and revised in 2006
+\item Based on IEEE 802.15.4 open specification
+\item Wireless
+\item Line of sight range is 10-100 meters
+\item Theoretical bandwidth of 250 kilobits/s
+\item Designed for low power consumption
+\end{itemize}
+
+\url{https://en.wikipedia.org/wiki/ZigBee}
+
+\subsubsection{WiFi}
+
+\begin{itemize}
+\item Wireless
+\item Designed for high-bandwidth rather than low-power consumption
+\item Open standard
+\end{itemize}
+
+\url{https://en.wikipedia.org/wiki/Wi-Fi}
+
+\subsubsection{Bluetooth}
+
+\begin{itemize}
+\item Wireless
+\item Designed for short-range, low-power consumption
+\item Ranges vary from 1 meter to 10 meters to 100 meters for industrial use
+\end{itemize}
+
+\url{https://en.wikipedia.org/wiki/Bluetooth}
+
+\subsubsection{Ethernet}
+
+\begin{itemize}
+\item Wired connection
+\item High bandwidth - 100 gigabit/s
+\item Low latency
+\end{itemize}
+
+Some observations can be made about the listed protocols. Considering the
+use-site of the devices, homes, wireless protocols seem most fitting. Protocols
+designed for low power consumption are a must when the devices using the
+protocol are battery-based.
