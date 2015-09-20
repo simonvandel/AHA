@@ -2,13 +2,13 @@
 
 All the devices installed in a automated home need some form of communication
 method with other devices in order to send/receive data. For example, a light
-bulb might need to know when to turn on itself. Another example could be
+bulb might need to know when to turn itself on. Another example could be
 sending data collected from a temperature sensor to another device.
 
 This section explores some protocols frequently used in the domain of home
 automation. Each protocol has some characteristics that is outlined below.
 
-\subsubsection{X10}
+\subsubsection{X10 \cite{wiki_x10}}
 
 \begin{itemize}
 \item Designed in 1975
@@ -17,9 +17,8 @@ automation. Each protocol has some characteristics that is outlined below.
 \item Limited reliability
 \end{itemize}
 
-\url{https://en.wikipedia.org/wiki/X10_%28industry_standard%29}
 
-\subsubsection{Universal Powerline Bus}
+\subsubsection{Universal Powerline Bus \cite{wiki_upb}}
 
 \begin{itemize}
 \item Released in 1999
@@ -27,9 +26,8 @@ automation. Each protocol has some characteristics that is outlined below.
 \item Limited bandwidth of 240 bits/s
 \end{itemize}
 
-\url{https://en.wikipedia.org/wiki/Universal_powerline_bus}
 
-\subsubsection{Insteon}
+\subsubsection{Insteon\cite{wiki_insteon}}
 
 \begin{itemize}
 \item Supports both powerline and wireless installation
@@ -39,9 +37,8 @@ automation. Each protocol has some characteristics that is outlined below.
 \item Theoretical bandwidth of 2880 bits/s
 \end{itemize}
 
-\url{http://www.ecs.umass.edu/~irwin/insteon.pdf}
 
-\subsubsection{Z-wave}
+\subsubsection{Z-wave \cite{wiki_zwave}}
 
 \begin{itemize}
 \item Wireless
@@ -51,9 +48,8 @@ automation. Each protocol has some characteristics that is outlined below.
 \item Designed for low power consumption
 \end{itemize}
 
-\url{https://en.wikipedia.org/wiki/Z-Wave}
 
-\subsubsection{ZigBee}
+\subsubsection{ZigBee \cite{wiki_zigbee}}
 
 \begin{itemize}
 \item Originally designed in 1998, standardised in 2003 and revised in 2006
@@ -64,9 +60,7 @@ automation. Each protocol has some characteristics that is outlined below.
 \item Designed for low power consumption
 \end{itemize}
 
-\url{https://en.wikipedia.org/wiki/ZigBee}
-
-\subsubsection{WiFi}
+\subsubsection{WiFi \cite{wiki_wifi}}
 
 \begin{itemize}
 \item Wireless
@@ -74,9 +68,8 @@ automation. Each protocol has some characteristics that is outlined below.
 \item Open standard
 \end{itemize}
 
-\url{https://en.wikipedia.org/wiki/Wi-Fi}
 
-\subsubsection{Bluetooth}
+\subsubsection{Bluetooth \cite{wiki_bluetooth}}
 
 \begin{itemize}
 \item Wireless
@@ -84,9 +77,7 @@ automation. Each protocol has some characteristics that is outlined below.
 \item Ranges vary from 1 meter to 10 meters to 100 meters for industrial use
 \end{itemize}
 
-\url{https://en.wikipedia.org/wiki/Bluetooth}
-
-\subsubsection{Ethernet}
+\subsubsection{Ethernet \cite{wiki_ethernet}}
 
 \begin{itemize}
 \item Wired connection
@@ -97,4 +88,5 @@ automation. Each protocol has some characteristics that is outlined below.
 Some observations can be made about the listed protocols. Considering the
 use-site of the devices, homes, wireless protocols seem most fitting. Protocols
 designed for low power consumption are a must when the devices using the
-protocol are battery-based.
+protocol are battery-based. However they do not allow for high data transfers
+and a high range.
