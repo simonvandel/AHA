@@ -1,0 +1,30 @@
+\section{Hardware}
+
+\subsection{PIR Motion Sensor}
+
+The sensor used to detect movement is a passive infrared sensor (PIR). The model
+number is \enquote{SEN32357P} and is manufactured by SEEED Studio. A data sheet
+can be found on:
+\cite{datasheet_pir1}. The
+sensor is implemented using the \enquote{BISS0001} IC. A datasheet for this can
+be found on \cite{datasheet_pir2}.
+
+According to the technical specifications, the sensor can measure movements from 0.1 m to 6
+m away. The distance can be configured by rotating a potentiometer on the
+sensor. Clockwise means decreasing the distance. This is essentially the
+sensitivity of the sensor. A lesser distance means lower sensitivity. The detecting angle is 120 degree.
+
+The sensor also has a potentiometer for configuring the time delay. The time
+delay is the time the sensor reports movement after a movement is detected. So
+if a movement is detected, the sensor with time delay 10 seconds is guaranteed
+to report motion detected for 10 seconds. The time delay on this specific sensor
+can be adjusted from 1 second to 25 seconds. A switch on the sensor controls
+whether the sensor is retriggerable (H position) or unretriggerable (L
+position). In a retriggerable position the delay time is extended every time
+movement is detected. In the unretriggerable mode, the delay time remaining is
+not reset when motion is detected.
+
+The sensor has 4 pins, GND, VCC, NC and SIG. The sensor signals motion detected
+on its SIG pin. Low on this pin means no motion and HIGH means motion.
+
+\subsubsection{Precision}
