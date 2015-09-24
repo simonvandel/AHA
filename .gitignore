@@ -76,4 +76,5 @@ master.pdf
 Report/auto/*
 *.bak
 *.orig
+*.tex.orig
 _region_.tex
