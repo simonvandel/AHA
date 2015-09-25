@@ -1,4 +1,75 @@
-\subsubsection{Experiments}
+\subsection{Experiments}
+\label{sub:Experiments}
+In order to determine the reliability of the hardware several experiments are conducted with the PIR sensor.
+The tests are all based on data found in the datasheet for the hardware.
+The main purpose of the tests is to determine the correlation between real world performance and the hardware specifications
+found on the datasheet.
+\\\\
+Four tests are carried out with one main setup that are applied to all of them. The four consists of the following:
+
+\begin{enumerate}
+  \item Sensitivity Test
+  \item Angle Test
+  \item Distance Test
+  \item Delay Time Test
+\end{enumerate}
+\subsubsection{The Setup}
+\label{subs:The Setup}
+As aforementioned the setup for all the experiments are identical
+that is to ensure consistency of the results by reducing variables, that affects
+the results, as much as possible.  The PIR sensor is placed in place surrounded wall
+and where other moving objects are limited to a certain degree. In order to ensure that the
+results are as precise as possible, all four tests are carried out at the same exact place but
+the method of the individual test differs.
+The PIR sensor is placed in a certain height and made sure the sensor itself is
+sitting still during the tests.
+\paragraph{Sensitivity}
+\label{par:Sensitivity}
+
+\subparagraph{Hypothesis}
+\label{subp:SenHypothesis}
+According to the datasheet the PIR sensor will be too sensitive if the distance potentiometer is rotated counter-clockwise.
+The sensor should get so sensitivethat the PIR sensor would be triggered by the atmosphere even
+if no moving object is existing\cite{datasheet_pir1}.
+\subparagraph{Test Procedure}
+\label{subp:SenTest Procedure}
+The PIR sensor is configured with the distance potentiometer rotated
+counter-clockwise as far as possible and the first triggered to test that everything works.
+After the sensor is configured every object that can affect the sensor is removed and the sensor is observed.
+The observation is to determine whether the sensor will detect objects are it is not
+supposed to detect and how sensitive the sensor really can is.
+\subparagraph{Results}
+\label{subp:SenResults}
+
+\subparagraph{Partial Conclusion}
+\label{subp:SenPartial Conclusion}
+
+
+\paragraph{Angle}
+\label{par:Angle}
+
+\subparagraph{Hypothesis}
+\label{subp:AngHypothesis}
+According to the datasheet of the PIR sensor,
+the sensor has a detecting angle of 120 degrees.
+The sensor should according to the datasheet not detect any angle above 120 degrees.
+
+\subparagraph{Test Procedure}
+\label{subp:AngTest Procedure}
+The sensor is placed in a certain position and detecting angle is measured equivalent to
+the specified angle found in the datasheet.
+For the sake of explanation let the angle above 120 degree be the grey zone and
+the detecting area that is within the 120 degree white zone.
+A moving object is placed in the grey zone and slowing moving into the white zone.
+The PIR sensor should be triggered when the moving object enters the white zone in order
+to work exactly as specified in the hardware specifications.
+The zone of the moving object and PIR sensor is observed accordingly
+and thereby the actual detecting angle is determined.
+\subparagraph{Results}
+\label{subp:AngResults}
+
+\subparagraph{Partial Conclusion}
+\label{subp:AngPartial Conclusion}
 
 \paragraph{Distance}
 
@@ -22,7 +93,6 @@ and the test conductor measures the distance for the new sensitivity.
 \subparagraph{Results}
 
 \subparagraph{Partial conclusion}
-
 
 
 \paragraph{Delay time}
