@@ -8,6 +8,7 @@ addons:
     - texlive-science # needed for algorithms and maybe more
     - pgf # needed for tikz
     - biblatex
+    - texlive-bibtex-extra
     - chktex
     - latexmk
 
