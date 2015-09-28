@@ -1,13 +1,17 @@
-sudo: required
-
-before_install:
-- sudo add-apt-repository ppa:texlive-backports/ppa -y
-- sudo apt-get update
-
-install:
-- sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-science pgf biblatex chktex latexmk
+addons:
+  apt:
+    packages:
+    - texlive-full
+    - pgf # needed for tikz
+    - biblatex
+    - chktex
+    - latexmk
 
 script:
+# install biblatex-ieee package manually
+- mkdir -p ~/texmf/tex/latex
+- wget http://mirrors.ctan.org/macros/latex/contrib/biblatex-contrib/biblatex-ieee.zip -O biblatex-ieee.zip
+- unzip biblatex-ieee.zip -d ~/texmf/tex/latex
 - cd Report
 - latexmk -pdf master.tex
 # run linter on all tex files
