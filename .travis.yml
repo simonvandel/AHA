@@ -18,6 +18,6 @@ script:
 - unzip biblatex-ieee.zip -d ~/texmf/tex/latex
 - cd Report
 # compile latex. Do not use bibtex as it is not installed in the current travis configuration
-- latexmk -pdf -bibtex-cond master.tex
+- latexmk -pdf -nobibtex master.tex
 # run linter on all tex files
 - chktex $(find . -type f -name "*.tex")
