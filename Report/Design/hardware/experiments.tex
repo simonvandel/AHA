@@ -35,11 +35,16 @@ if no moving object is existing\cite{datasheet_pir1}.
 \label{subp:SenTest Procedure}
 The PIR sensor is configured with the distance potentiometer rotated
 counter-clockwise as far as possible and the first triggered to test that everything works.
-After the sensor is configured every object that can affect the sensor is removed and the sensor is observed.
-The observation is to determine whether the sensor will detect objects are it is not
+After the sensor is configured every object that can affect the sensor is
+removed and the sensor is observed for 30 seconds.
+The observation is to determine whether the sensor will detect objects that it is not
 supposed to detect and how sensitive the sensor really can is.
 \subparagraph{Results}
 \label{subp:SenResults}
+
+At the most sensitive setting, nothing was triggered by athmospheric noise. Just
+to be sure, the sensor was tested at the least sensitive setting: nothing was
+detected as expected.
 
 \subparagraph{Partial Conclusion}
 \label{subp:SenPartial Conclusion}
@@ -65,8 +70,31 @@ The PIR sensor should be triggered when the moving object enters the white zone 
 to work exactly as specified in the hardware specifications.
 The zone of the moving object and PIR sensor is observed accordingly
 and thereby the actual detecting angle is determined.
+
+The test is performed three times on each side at the highest sensitivity of the sensor for consistency.
+
 \subparagraph{Results}
 \label{subp:AngResults}
+
+run1 højre: 
+      97 y aksen
+      79 x aksen
+run1 venstre: 
+      81 y aksen
+      50 x aksen
+run2 højre:  
+      176 y aksen
+      82 x aksen
+run2 venstre:  
+      49 y aksen
+      106 x aksen
+run3 højre:  
+      174 y aksen
+      88 x aksen
+run3 venstre:  
+      65 y aksen
+      108 x aksen
+ 
 
 \subparagraph{Partial Conclusion}
 \label{subp:AngPartial Conclusion}
@@ -92,6 +120,21 @@ and the test conductor measures the distance for the new sensitivity.
 
 \subparagraph{Results}
 
+lowest sensitivity: < 10 centimeters
+above + 1: < 10 centimeters
+above + 1: 43 cm
+above + 1: 123 cm
+above + 1: 204 cm
+above + 1: 245 cm (acted very strange, long beeps)
+above + 1: 275 cm (acted very strange, long beeps)
+above + 1: 413 cm 
+above + 1: 323 cm (acted strange, long beeps)
+above + 1: 410 cm 
+above + 1: 547 cm 
+above + 1: 600 cm 
+above + 1: 515 cm 
+
+
 \subparagraph{Partial conclusion}
 
 
@@ -116,5 +159,16 @@ The next iteration of the experiment, the delay time potentiometer on the sensor
 is rotated one unit, decreasing the value.
 
 \subparagraph{Results}
+
+longest time: 35 s
+above - 1: 32,5 s
+above - 1: 27 s
+above - 1: 23,5 s
+above - 1: 18 s
+above - 1: 14 s
+above - 1: 10 s
+above - 1: 6 s
+above - 1: 1,5 s
+above - 1: < 1 (0.5) s s
 
 \subparagraph{Partial conclusion}
