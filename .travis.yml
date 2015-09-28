@@ -17,6 +17,7 @@ script:
 - wget http://mirrors.ctan.org/macros/latex/contrib/biblatex-contrib/biblatex-ieee.zip -O biblatex-ieee.zip
 - unzip biblatex-ieee.zip -d ~/texmf/tex/latex
 - cd Report
-- latexmk -pdf master.tex
+# compile latex. Do not use bibtex as it is not installed in the current travis configuration
+- latexmk -pdf -bibtex-cond master.tex
 # run linter on all tex files
 - chktex $(find . -type f -name "*.tex")
