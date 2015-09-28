@@ -1,0 +1,14 @@
+addons:
+  apt:
+    packages:
+    - texlive-latex-recommended
+    - texlive-latex-extra
+    - texlive-fonts-recommended
+    - chktex
+    - latexmk
+
+script:
+- cd Report
+- latexmk -pdf master.tex
+# run linter on all tex files
+- chktex $(find . -type f -name "*.tex")
