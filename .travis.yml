@@ -5,7 +5,8 @@ addons:
     - texlive-latex-extra
     - texlive-fonts-recommended
     - texlive-fonts-extra
-    - texlive-science
+    - texlive-science # needed for algorithms and maybe more
+    - pgf # needed for tikz
     - chktex
     - latexmk
 
