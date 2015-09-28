@@ -1,0 +1,51 @@
+\section{PACT}
+To establish a basis for defining the design requirements for this project and
+to better understand the problem space the solution is going to work in, a PACT
+(People, Activities, Context and Technologies) analysis is done.
+
+\subsection{People}
+People in relation to this project is difficult to discuss. In an ideal world the user would never actually interact with the system. In a PACT-analysis when discussing people there a number of things that can be mentioned. In the following section we will go over a few and discuss their relevance.
+
+\paragraph{Physical characteristics} because the system should work without the user's input as much as possible, few physical characteristics matter. Some that might be relevant are certain disabilities. For instance how should the system react and work around people with poor or no sight.
+
+\paragraph{Psychological characteristics} encompasses a wide variety of problems
+when considering design. Assuming that the system isn't flawless, in the
+  sense that the system will perform wrong actions some of the time, how should
+the system respond and inform the user of why the error happened? Another thing
+to consider is how the user is presented with information regarding the status
+of the system. 
+
+This is relevant to the psychological characteristics because the system needs to be designed so that regardless of the users' technical capabilities they are able to use it.
+
+\paragraph{Social differences} can to some extend answer how the users' usage of
+the system is. This is important in realizing how flexible the system should be.
+The two main concerns of the system is day-to-day comfort and conserving energy.
+If a user doesn't care about the former, the user should be able to adjust the system so that it's even more conservative with the energy at the cost of comfort. 
+
+\subsection{Activities and Context}
+The activity the system will focus on is turning on and off lights and
+appliances. While this is not a time consuming task it is done often. First the
+system needs to learn the user's patterns. This won't change how the user does
+this activity, because the system will passively observe when and in what
+context the lights or appliances are turned on. There a number of different
+contexts you could imagine being relevant to turning on appliances in the home.
+For example if the user drinks coffee in the morning, should the system then
+start brewing coffee based on the time or movement in the home? Turning on
+lights could also be context sensitive; For example lower levels of light
+intensity in the morning and when watching television.
+
+The only time the user needs to directly interact with the system is when the
+system is doing something wrong. As part of the machine learning the system
+needs to know when it did something wrong. This makes considering how the system
+should present the actions it takes to the user and allow the user to clearly
+define what actions were wrong, very important. The context aspect isn't very
+important here because the system could log all the actions and the user can
+then when he has time, note the wrong action or the system could simply register
+that a particular action has been reverted by the user.
+
+\subsection{Technologies}
+The system will consist of two parts: an embedded systems part, which will go on
+the appliances or lights the users wants the system to control, and a central
+computer for managing the embedded systems. The embedded systems won't have any
+input interface, and the output will be the turning on and off of the appliances
+as well as collecting information about the user's usage patterns. The central manager needs a way to present the action history of the individual embedded systems in a clear manner to the user. And also allow for the user to easily and quickly distinguish the actions from each other and tell the system if any of them were incorrect. This requires the manager to have a clear and distinguishable interface between the individual embedded systems.
