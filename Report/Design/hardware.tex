@@ -28,4 +28,15 @@ not reset when motion is detected.
 The sensor has 4 pins, GND, VCC, NC and SIG. The sensor signals motion detected
 on its SIG pin. Low on this pin means no motion and HIGH means motion.
 
+An example of a setup can be seen in \cref{fig:arduino_pir_wiring}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{arduino-pir-wiring.png}
+  \caption{The figure depicts wiring for a PIR motion sensor. A LED is shown in
+    the figure, for a lack of a PIR component in the software generating the
+    wiring schematics.}
+  \label{fig:arduino_pir_wiring}
+\end{figure}
+
 \input{Design/hardware/experiments}
