@@ -1,1 +1,31 @@
 \subsection{Functions}
+\begin{table}[hbtp]
+\centering
+\begin{tabular}{lcr}
+\toprule
+\textbf{Name}																& \textbf{Complexity}	& \textbf{Type} \\
+\midrule
+User turn lights off/on  		 					   		& Simple								& Update  \\
+User dim lights 	    	     					  		& Simple								& Update  \\
+User turn off/on appliances 						 		& Simple								& Update  \\
+User mark behavior as wrong							 		& Simple								& Update  \\
+Change in ligth intensity in the room				& Simple								& Update  \\
+System turn off/on lights    								& Simple								& Signal  \\
+System dim lights    		      					 		& Simple								& Signal  \\
+System turn off/on appliances								& Simple								& Signal  \\
+Appliance is on standby										 	& Medium								& Update  \\
+User enters room													 	& Medium								& Update  \\
+User leaves room													 	& Medium								& Update  \\
+Find specific placement of user							& Complex								& Compute \\
+Calculate behavioural rules for the system	& Complex								& Compute \\
+\bottomrule
+\end{tabular}
+\caption{Function table.}
+\label{table:functionlist}
+\end{table}
+
+\subsubsection{Find specific placement of user}
+The system is able to register input from multiple ultra sound and infra red sensors. Using these different sensors distance to the user the system is able to find the specific placement of the user in the room.
+
+\subsubsection{Calculate behavioural rules for the system}
+The system uses it sensor inputs together with its general knowledge of the world (like weekday, date and time) to automatically analyse the behavioural patterns of the user and find out when and how the user uses his light and appliances. Like, the user always turns off his or her ligths when he leaves all rooms at 07:45. This analysis sets up the rules for the actuators in the system so they can eventually perform the tasks for the user.
