@@ -71,6 +71,7 @@
 *.vrb
 *.xdy
 *.tdo
+*~
 master.pdf
 *.synctex
 Report/auto/*
