@@ -1,11 +1,7 @@
 addons:
   apt:
     packages:
-    - texlive-latex-recommended
-    - texlive-latex-extra
-    - texlive-fonts-recommended
-    - texlive-fonts-extra
-    - texlive-science # needed for algorithms and maybe more
+    - texlive-full
     - pgf # needed for tikz
     - biblatex
     - chktex
