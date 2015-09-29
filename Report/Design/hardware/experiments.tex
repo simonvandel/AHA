@@ -81,7 +81,7 @@ The test is performed three times on each side at the highest sensitivity of the
 The data results can be seen in \cref{tab:pir_angle}. A plot of this data can be
 seen in \cref{fig:pir_angle}.
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -119,7 +119,7 @@ seen in \cref{fig:pir_angle}.
 \caption{Plot of angle experiment}\label{fig:pir_angle}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[htbp]
 \centering
 \begin{tabular}{@{}llll@{}}
 \toprule
@@ -205,15 +205,45 @@ is rotated one unit, decreasing the value.
 
 \subparagraph{Results}
 
-longest time: 35 s
-above - 1: 32,5 s
-above - 1: 27 s
-above - 1: 23,5 s
-above - 1: 18 s
-above - 1: 14 s
-above - 1: 10 s
-above - 1: 6 s
-above - 1: 1,5 s
-above - 1: < 1 (0.5) s s
+A plot of the results can be seen in \cref{fig:pir_delay}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    title={Delay experiments},
+    xlabel={Delay setting},
+    ylabel={Delay [$\si{\second}$]},
+    xtick={0,1,...,9},
+    ytick={0,5,...,40},
+    legend pos= north east,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+\addplot[
+    color=red,
+    mark=square,
+    ]
+    coordinates {
+    (0,35)
+    (1,32.5)
+    (2,27)
+    (3,23.5)
+    (4,18)
+    (5,14)
+    (6,10)
+    (7,6)
+    (8,1.5)
+    (9,0.5)
+    };
+\addlegendentry{Delay time}
+\end{axis}
+\end{tikzpicture}
+\caption{Plot of delay experiment}\label{fig:pir_delay}
+\end{figure}
 
 \subparagraph{Partial conclusion}
+
+The hypothesis was partially correct. The maximum delay time was recorded to be
+around 35 seconds, while the minimum delay time was very close to the value
+described in the hypothesis.
