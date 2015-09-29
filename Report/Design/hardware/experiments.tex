@@ -78,28 +78,71 @@ The test is performed three times on each side at the highest sensitivity of the
 \subparagraph{Results}
 \label{subp:AngResults}
 
-run1 højre:
-      97 y aksen
-      79 x aksen
-run1 venstre:
-      81 y aksen
-      50 x aksen
-run2 højre:
-      176 y aksen
-      82 x aksen
-run2 venstre:
-      49 y aksen
-      106 x aksen
-run3 højre:
-      174 y aksen
-      88 x aksen
-run3 venstre:
-      65 y aksen
-      108 x aksen
+The data results can be seen in \cref{tab:pir_angle}. A plot of this data can be
+seen in \cref{fig:pir_angle}.
 
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    title={Angle experiments},
+    xlabel={Run},
+    ylabel={Angle [$\si{\degree}$]},
+    xtick={1,2,3},
+    legend style={at={(1,0.5)},anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+]
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (1,58.3136)
+    (2,65.1905)
+    (3,58.9582)
+    };
+\addlegendentry{Left side}
+% asd
+\addplot[
+    color=red,
+    mark=halfcircle,
+    ]
+    coordinates {
+    (1,39.1605)
+    (2,24.9812)
+    (3,26.8278)
+    };
+\addlegendentry{Right side}
+\end{axis}
+\end{tikzpicture}
+\caption{Plot of angle experiment}\label{fig:pir_angle}
+\end{figure}
+
+\begin{table}[]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+Run & x [cm] & y [cm] & angle [deg] \\ \midrule
+1 (left) & 81 & 50 & 58.3136 \\
+1 (right) & 79 & 97 & 39.1605  \\ \midrule
+2 (left) & 106 & 49 & 65.1905 \\
+2 (right) & 82 & 176 & 24.9812 \\ \midrule
+3 (left) & 108 & 65 & 58.9582 \\
+3 (right) & 88 & 174 & 26.8278 \\ \bottomrule
+\end{tabular}
+\caption{Results of angle experiments. The x and y columns signify the x and y
+  distance from the sensor to the detected person. The angle values are
+  calculated by $\arctan (x,y) * \frac{180}{\pi}$}
+\label{tab:pir_angle}
+\end{table}
 
 \subparagraph{Partial Conclusion}
-\label{subp:AngPartial Conclusion}
+\label{subp:AngPartial_conclusion}
+
+According to the hypothesis, the sensor should detect motion in an angle of 120
+degrees. Our results show that the left side of the sensor is quite correct,
+while the other side of the sensor is not very close to 60 $\si{\degree}$. 
 
 \paragraph{Distance}
 
