@@ -136,9 +136,38 @@ above + 1: 547 cm
 above + 1: 600 cm
 above + 1: 515 cm
 
+\begin{tikzpicture}
+\begin{axis}[
+    title={Distance of Detection Dependence of Sensitivity level},
+    xlabel={Level of sensitivity},
+    ylabel={Distance [cm]},
+    %xmin=0, xmax=12,
+    %ymin=0, ymax=120,
+    xtick={0,1,2,3,4,5,6,7,8,9,10,11,12},
+    %ytick={0,20,40,60,80,100,120},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+
+\addplot[
+    color=red,
+    mark=square,
+    ]
+    coordinates {
+    (0,7)(1,7)(2,43)(3,123)(4,204)(5,245)(6,275)(7,413)(8,323)(9,410)(10,547)(11,600)(12,515)
+    };
+    \legend{Results of the distance test}
+
+\end{axis}
+\end{tikzpicture}
 
 \subparagraph{Partial conclusion}
-
+The results indicates that there is a correlation between the sensitivity and the detecting distance.
+However the sensor behave strange and unpredictable at sensitivity level 7 and 8.
+Furthermore the sensor acted strange at sensitivity level 3, 4 and 5 by detecting something is was not supposed to detect.
+However the maximum distance range seem to be 6meters as stated in the datasheet but at peak sensitivity level
+the distance drops down to 5 meter only. 
 
 \paragraph{Delay time}
 
