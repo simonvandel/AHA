@@ -69,3 +69,11 @@ a1Max = 0
 a1Diff = NaN%
 
 Kopirum, normalt lys;
+a0Avg = 903
+a0Min = 897
+a0Max = 910
+a0Diff = 1,44927536231884%
+a1Avg = 288
+a1Min = 270
+a1Max = 307
+a1Diff = 13,7037037037037%
