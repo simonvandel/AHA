@@ -1,1 +1,39 @@
 \subsubsection{System Interfaces}
+
+This section discusses different architecture designs for the system.
+
+\paragraph{Monolithic System}
+One possibility is for the system to at the sensor subsystem decide which
+actions to perform based on sensor data. The system is then the sensors and
+nothing else. However, in order to analyse the sensor data, extracting usage
+patterns, the computational power needed is greater than what low-power battery
+driven devices can provide. Therefore another design is needed.
+
+\paragraph{Seperated Subsystems}
+A seperation of data collection, analysis of data, and actuation of tasks, is
+needed. This can be done by letting low-power battery driven devices collect the
+sensor data. If these sensor-controlling devices are not fully utilised
+computationally-wise, they can also act as actuators, reacting to particular
+events in the application domain. The analysis of the sensor data has to be
+performed on another computation device that is more able.
+
+Under this seperation the system consists of three subsystems: sensor, actuator
+and analysis. \sinote{Maybe also a user interfacing subsystem to view what is
+  going on in the system}
+
+\paragraph{Communication Schemes}
+To form the complete system, some communication must take place
+between the aforementioned subsystems. There are mulitple designs possible, but
+they all have some commonalities.
+
+In every design, the sensor subsystem must send its data to the analysis
+subsystem to be processed. However there can be variances in what is send from
+the analysis subsystem to the actuator subsystem.
+
+\begin{enumerate}
+\item Send rules that match usage patterns of the user. The actuator subsystem
+  is then responsible for converting the rules into appropriate actions. For example, a rule
+  could be to turn on a light in the bathroom at 7.00 in the morning.
+\item Send actions directly to be performed immediately by the actuator
+  subsystem. For example, turn on the light in the bathroom.
+\end{enumerate}
