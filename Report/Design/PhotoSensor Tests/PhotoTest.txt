@@ -47,3 +47,25 @@ a1Avg = 57
 a1Min = 0
 a1Max = 104
 a1Diff = INF%
+
+Under trappe. Ekstremt lys;
+a0Avg = 947
+a0Min = 946
+a0Max = 948
+a0Diff = 0,211416490486258%
+a1Avg = 430
+a1Min = 430
+a1Max = 432
+a1Diff = 0,465116279069775%
+
+Under trappe. mørk ambient;
+a0Avg = 60
+a0Min = 54
+a0Max = 62
+a0Diff = 14,8148148148148%
+a1Avg = 0
+a1Min = 0
+a1Max = 0
+a1Diff = NaN%
+
+Kopirum, normalt lys;
