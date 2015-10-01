@@ -1,0 +1,49 @@
+Højt lys, mobil;
+a0Avg = 932
+a0Min = 931
+a0Max = 933
+a0Diff = 0,214822771213747%
+a1Avg = 773
+a1Min = 772
+a1Max = 775
+a1Diff = 0,388601036269435%
+
+Stadard kontor-rum lampe, kopirum;
+a0Avg = 883
+a0Min = 875
+a0Max = 889
+a0Diff = 1,59999999999999%
+a1Avg = 656
+a1Min = 634
+a1Max = 675
+a1Diff = 6,46687697160884%
+
+Lavt lys, kun "ambient" lys, under trappe;
+a0Avg = 137
+a0Min = 136
+a0Max = 138
+a0Diff = 1,47058823529412%
+a1Avg = 26
+a1Min = 25
+a1Max = 27
+a1Diff = 8%
+
+Under trappe. Lavt til ekstremt lys, med 10k modstand på a0 og 880 modstand på a1;
+a0Avg = 538
+a0Min = 37
+a0Max = 970
+a0Diff = 2521,62162162162%
+a1Avg = 109
+a1Min = 0
+a1Max = 712
+a1Diff = INF%
+
+Kopirum. Mørke til normalt kontor lys, med 10k a0 og 880 a1;
+a0Avg = 513
+a0Min = 2
+a0Max = 836
+a0Diff = 41700%
+a1Avg = 57
+a1Min = 0
+a1Max = 104
+a1Diff = INF%
