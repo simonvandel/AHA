@@ -1,17 +1,67 @@
 \subsubsection{User Interfaces}
-There are two kinds of user interaction in the system. We will here after be calling them passive and active interaction.
+There are two kinds of user interaction in the system. From here on called passive and active interaction.
 
 \paragraph{Passive User Interaction}
-Passive user interaction is the interaction the user makes with the system that he/she should not notice as interaction. This is interaction designed to be invisible for the user and to mimic how the user already behaves in his or her home. This is for instance when the user turns on or off the light, on a switch on the system, as the user normally would on the wall plug, or turns on the television via the remote.
+Passive user interaction is the interaction the user makes with the system that
+should not be noticed as interaction. This is an interaction designed to be
+invisible for the user and to mimic how the user already behaves in their home.
+
+For instance, the user is used to turning on the light by pressing a switch. The
+system would integrate with the switch so that it could detect the user
+activity. By integrating with existing interfaces, the user will not notice the
+interaction with the system.
 
 \paragraph{Active User Interaction}
-The active user interaction is the interaction happening with the user actively trying to control or affect the system and is what normally happens through a normal user interface.
+The active user interaction is the interaction happening with the user actively
+trying to control or affect the system and is what normally happens through a
+digital user interface such as an application on a smartphone.
 
 \paragraph{Design of User Interface}
-Passive user interaction is preferred since it holds very well against requirement of the system needing to be easy to use stated in \cref{}\jenote{Referer til requirements når vi får lavet dem}, while still being able to gather information about the users patterns. This is because in passive user interaction the user only needs to keep doing what he or she has always been doing and will normally not even notice that he or she is interacting with the system. Through passive user interaction the system can get information about the patterns of the user, but this information is not enough for the system to be operational. Machine learning is a complex matter but it is always relying on some way of evaluating its behaviour in order to improve it. Since the system is relying on machine learning and the only way to implement behavioural evaluation is via the user, since it is the users wishes we are trying to fulfil, the user needs some way to inform the system on its progress.
+Passive user interaction is preferred since it adheres very well with the
+requirements about the system needing to be easy to use, as stated in
+\cref{}\jenote{Referer til requirements når vi får lavet dem}, while still being
+able to gather information about the users patterns.
 
-To best cope with the requirements the user should only inform the system when it has made a mistake. The interface could also be able to inform the system when it has made a correct action but since the system should be conservative in its behaviour, meaning that it is far better to let the user keep doing the tasks than doing something that is against the users wishes, the system will be doing a lot more already known correct tasks and adjustments to them. Furthermore the goal of the system is to only make right choices. Both of these principles would mean that if the user needed to reward correct behaviour the system would need constant or at least a lot more interaction, thereby going against the principle of invisibility. The system will therefore assume no interaction means correct behaviour.
+Through passive user interaction the system can get information about the
+patterns of the user, but this information is not enough for the system to be
+fully operational. Machine learning is relying on some way of evaluating its
+behaviour in order to improve it. Therefore a method of evaluating the behaviour
+of the system, from a users point of view, is needed.
+ 
+To reduce active user interaction, the user should only inform the system when
+it has made a mistake. The interface could also be able to inform the system
+when it has made a correct action but since the system should be conservative in
+its behaviour, meaning that it is far better to let the user keep doing the
+tasks than doing something that is against the users wishes, the system will be
+doing a lot more already known correct tasks and adjustments to them.
 
-The interaction from the user will be active by definition, because the user has to be aware that he/she is informing the system that it does something wrong, but it can draw from the ideas of the passive user interaction. Instead of explicitly informing the system that it does something wrong through a centralised unit or a computer on the network the user could simply reverse the action of the user. For instance if the system turns of the light when the user does not want it the user will naturally turn it on again. This could serve as the active interaction and be an explicit way of informing the system of wrong behaviour. This will be used as much as possible as the solution for active user interaction. 
+Furthermore the goal of the system is to only make right choices. Both of these
+principles would mean that if the user needed to reward correct behaviour the
+system would need constant or at least a lot more interaction, thereby going
+against the principle of invisibility. The system will therefore assume no
+interaction means correct behaviour.
 
-Unfortunately this is not enough. For instance the user could only find out later that the system has made a mistake, for instance if the system turns on the light in a different room and the user only finds out 30 minutes later, the system should not assume that the user only wants the lights on for 30 minutes and the user needs to be able to inform it that the whole action was wrong. Here a normal user interface is needed though which should be done in the central unit in the system, see \cref{System Interfaces}, or a PC connected to the system. The problem with this interaction is that it has the potential of going against the principle of easy user interaction and caution is needed here to make it as easy to use and needed as little as possible.
+The interaction from the user will be active by definition, because the user has
+to be aware that he/she is informing the system that it does something wrong,
+but it can draw from the ideas of the passive user interaction. Instead of
+explicitly informing the system that it does something wrong through a
+centralised unit or a computer on the network the user could simply reverse the
+action of the user. For instance if the system turns of the light when the user
+does not want it the user will naturally turn it on again. This could serve as
+the active interaction and be an explicit way of informing the system of wrong
+behaviour. This will be used as much as possible as the solution for active user
+interaction.
+
+Unfortunately this is not enough. For instance the user could only find out
+later that the system has made a mistake, for instance if the system turns on
+the light in a different room and the user only finds out 30 minutes later, the
+system should not assume that the user only wants the lights on for 30 minutes
+and the user needs to be able to inform it that the whole action was wrong. Here
+a normal user interface is needed though which should be done in the central
+unit in the system, see \cref{System Interfaces}, or a PC connected to the
+system. The problem with this interaction is that it has the potential of going
+against the principle of easy user interaction and caution is needed here to
+make it as easy to use and needed as little as possible.
+
+Skriv også at det er en ide at brugeren ved hvad der foregår i systemet. F.eks.
+at det lært en ny ting.
