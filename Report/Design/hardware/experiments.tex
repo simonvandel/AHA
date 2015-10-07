@@ -1,11 +1,11 @@
 \subsubsection{Experiments}
 \label{sub:Experiments}
-In order to determine the reliability of the hardware several experiments are conducted with the PIR sensor.
-The tests are all based on data found in the datasheet for the hardware.
+In order to determine the reliability of the hardware, several experiments were conducted with the PIR sensor.
+The tests were all based on data found in the datasheet for the hardware.
 The main purpose of the tests is to determine the correlation between real world performance and the hardware specifications
 found on the datasheet.
 \\\\
-Four tests are carried out with one main setup that are applied to all of them. The four consists of the following:
+Four tests are carried out with one main setup that are applied to all of them. The four tests are defined as follows:
 
 \begin{enumerate}
   \item Sensitivity Test
@@ -16,12 +16,12 @@ Four tests are carried out with one main setup that are applied to all of them. 
 
 \subsubsection{The Setup}
 \label{subs:The Setup}
-As aforementioned, the setup for all the experiments are identical as to ensure
+As mentioned, the setup for all the experiments are identical as to ensure
 consistency of the results by reducing variables that affect the results, as
-much as possible. The PIR sensor is placed surrounded by walls with no unwanted
+much as possible. The PIR sensor is placed, surrounded by walls, with no unwanted
 moving objects within its field of view. In order to ensure that the results are
-as precise as possible, all four tests are carried out at the same exact place
-but the method of the individual test differs. The PIR sensor is placed in a
+as precise as possible, all four tests are carried out at the same exact place,
+but the method of the individual tests differs. The PIR sensor is placed in a
 certain height and a fixed position during the tests.
 
 \paragraph{Sensitivity}
@@ -30,16 +30,16 @@ certain height and a fixed position during the tests.
 \subparagraph{Hypothesis}
 \label{subp:SenHypothesis}
 According to the datasheet the PIR sensor will be too sensitive if the distance potentiometer is rotated counter-clockwise.
-The sensor should get so sensitivethat the PIR sensor would be triggered by the atmosphere even
+The sensor should get so sensitive that the PIR sensor would be triggered by the atmosphere even
 if no moving object is existing\cite{datasheet_pir1}.
 \subparagraph{Test Procedure}
 \label{subp:SenTest Procedure}
 The PIR sensor is configured with the distance potentiometer rotated
-counter-clockwise as far as possible and the first triggered to test that everything works.
+counter-clockwise as far as possible.
 After the sensor is configured every object that can affect the sensor is
 removed and the sensor is observed for 30 seconds.
 The observation is to determine whether the sensor will detect objects that it is not
-supposed to detect and how sensitive the sensor really can is.
+supposed to detect and how sensitive the sensor really is.
 \subparagraph{Results}
 \label{subp:SenResults}
 
@@ -67,7 +67,7 @@ The sensor should according to the datasheet not detect any angle above 120 degr
 The sensor is placed in a certain position and detecting angle is measured equivalent to
 the specified angle found in the datasheet.
 For the sake of explanation let the angle above 120 degree be the grey zone and
-the detecting area that is within the 120 degree white zone.
+the detecting area, that is within the 120 degree, the white zone.
 A moving object is placed in the grey zone and slowing moving into the white zone.
 The PIR sensor should be triggered when the moving object enters the white zone in order
 to work exactly as specified in the hardware specifications.
@@ -200,9 +200,9 @@ A plot of the results can be seen in \cref{fig:pir_distance}.
 
 \subparagraph{Partial conclusion}
 The results indicate that there is a correlation between the sensitivity and the detecting distance.
-However the sensor behaved strange and unpredictable at sensitivity levels 7 and 8.
+However the sensor behaved unpredictably at sensitivity levels 7 and 8.
 Furthermore the sensor acted strange at sensitivity levels 3, 4 and 5 by detecting something it was not supposed to detect.
-The maximum distance range seems to be 6 meters as stated in the datasheet.
+The maximum range seems to be 6 meters as stated in the datasheet.
 Strangely enough the sensor only detected motion 5 meters away at the highest
 sensitivity level.
 
@@ -217,7 +217,7 @@ According to the datasheet, the sensor has a delay time of 1 second to 25 second
 In this experiment, the sensor is set in the non-retriggerable setting (L
 position), so the delay time is not extended on additional motion.
 
-First the sensor is adjusted to have the maximum delay time of 25 seconds
+First the sensor is adjusted to have the maximum delay time of 25 seconds,
 according to the above hypothesis. This is then tested by triggering the sensor
 and starting a stopwatch simultaneously. When the sensor stops signalling, the
 stopwatch is stopped and the actual delay time noted. This is done three times
