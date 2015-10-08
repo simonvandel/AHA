@@ -6,6 +6,7 @@ addons:
     - texlive-fonts-recommended
     - texlive-fonts-extra
     - texlive-science # needed for algorithms and maybe more
+    - texlive-pictures
     - pgf # needed for tikz
     - biblatex
     - chktex
