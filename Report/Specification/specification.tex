@@ -11,6 +11,7 @@ This chapter is documentation of the requirement engineering process, as describ
 >>>>>>> More user scenarios
 
 Brainstorm of ideas/requirements:
+<<<<<<< HEAD
 >>>>>>> Specification refactor
 
 \input{Specification/classes}
@@ -27,6 +28,59 @@ Brainstorm of ideas/requirements:
 
 
 Elicited requirements: %Mangler argumentation
+=======
+\begin{itemize}
+\item The light in a users home will be turned off when not in need for it
+\item The light management invisible to the user, light is turned on before a user can observe this behaviour.
+\item Will learn usage patterns of the user, turn on light at specific time of day or at a specific light intensity.
+\end{itemize}
+
+From the system definition and "rich picture" of the problem domain that the system will be operating, we can extract some classes, \quote{A description of a collection of objects with the same structure, behaviour and attributes}, as described in \cref{OOAD}. This classes will be beneficial when figuring out what we need to keep track of in the problem domain, or what is relevant in our model of the problem domain.
+
+Classes:
+\begin{itemize}
+\item Person - The user of the system
+\item Action - An action the system should recognise as feedback
+\item Pattern - The usage patter of a user, what is typical behaviour
+\item Mistake - System did something wrong by the user
+\item Sensor - The observational member of the system
+\item Switch - A feedback source
+\item Lamp - The light source on which system action
+\item Light intensity - Luminance
+\item Room - What room is the user in
+\item Premise - The user home enviroment
+\item Time - At what time, a pattern property
+\end{itemize}
+
+\begin{table}[h!]
+\centering
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{*{15}{|l}|}
+    \hline
+    \textbf{Event} & Person & Action & Pattern & Mistake & Sensor & Switch & Lamp & Light intensity & Room & Premise & Time \\
+    \hline
+    Entered home & \cmark & \cmark & \cmark & & \cmark & & \cmark & \cmark & \cmark & \cmark & \\
+    \hline
+    Left home & \cmark & \cmark & \cmark & & \cmark & & \cmark & & \cmark & \cmark & \\
+    \hline
+    Enter room & \cmark & \cmark & \cmark & & \cmark & & \cmark & \cmark & \cmark & & \\
+    \hline
+    Left room & \cmark & \cmark & \cmark & & \cmark & & \cmark & \cmark & \cmark & &\\
+    \hline
+    Flicked switch & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & & \\
+    \hline
+    Outside/External light intensity down & \cmark & & & & \cmark & \cmark & \cmark & \cmark & \cmark & &\\
+    \hline
+    Outside/External light intensity up & \cmark & & & & \cmark & \cmark & \cmark & \cmark& \cmark & &\\
+    \hline
+    Person sleeping & \cmark & \cmark & \cmark & & \cmark & & \cmark & & \cmark & & \cmark\\
+    \hline
+\end{tabular}
+\end{adjustbox}
+  \caption{Test Table}
+  \label{tab:label_test}
+\end{table}
+>>>>>>> merge
 
 \begin{itemize}
 \item The light in a users home will be turned off only when there is no need for it.
