@@ -11,6 +11,7 @@
 \usepackage[english]{babel} % language support - hyphenations etc.
 \usepackage{graphicx} % insertion of images
 \graphicspath{ {Images/}}
+\usepackage{adjustbox}
 \usepackage{listings} % source code
 \usepackage{color}
 %itemize spacing
@@ -20,6 +21,17 @@
 \usepackage{algorithmicx}
 \usepackage{algorithm}
 \usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+
+\tikzset{
+squarednode/.style={
+  rectangle,
+  draw=black,
+  text width=8em,
+  align=center,
+  }
+}
+
 \usepackage{pgfplots} % for plotting graphs
 \usepackage{textcomp}
 \usepackage{siunitx}
