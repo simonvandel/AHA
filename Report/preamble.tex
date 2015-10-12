@@ -12,6 +12,7 @@
 \usepackage{pifont}
 \usepackage[english]{babel} % language support - hyphenations etc.
 \usepackage{graphicx} % insertion of images
+\graphicspath{ {Images/}}
 \usepackage{listings} % source code
 \usepackage{color}
 %itemize spacing
@@ -21,6 +22,11 @@
 \usepackage{algorithmicx}
 \usepackage{algorithm}
 \usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{pgfplots} % for plotting graphs
+\usepackage{textcomp}
+\usepackage{siunitx}
+\pgfplotsset{width=10cm,compat=1.9}
 \usepackage[inference]{semantic}
 \usepackage{braket}
 \usepackage{array}
@@ -847,7 +853,6 @@ bibencoding=utf8,
 \hyphenation{fa-brik-ken}
 
 %%%%%%%%%% macros
-
 \newcommand*{\blankpage}{
 \vspace*{\fill}
 \begin{center}
