@@ -21,7 +21,7 @@ the results, as much as possible.  The PIR sensor is placed in place surrounded 
 and where other moving objects are limited to a certain degree. In order to ensure that the
 results are as precise as possible, all four tests are carried out at the same exact place but
 the method of the individual test differs.
-The PIR sensor is placed in a certain height and made sure the sensor itself is
+The PIR sensor is placed at a certain height and made sure the sensor itself is
 sitting still during the tests.
 \paragraph{Sensitivity}
 \label{par:Sensitivity}
@@ -131,7 +131,7 @@ Run & x [cm] & y [cm] & angle [deg] \\ \midrule
 3 (left) & 108 & 65 & 58.9582 \\
 3 (right) & 88 & 174 & 26.8278 \\ \bottomrule
 \end{tabular}
-\caption{Results of angle experiments. The x and y columns signify the x and y
+\caption{Results of angle experiments. The x and y columns represent the x and y
   distance from the sensor to the detected person. The angle values are
   calculated by $\arctan (x,y) * \frac{180}{\pi}$}
 \label{tab:pir_angle}
@@ -208,7 +208,7 @@ above + 1: 515 cm
 \subparagraph{Partial conclusion}
 The results indicate that there is a correlation between the sensitivity and the detecting distance.
 However the sensor behave strange and unpredictable at sensitivity level 7 and 8.
-Furthermore the sensor acted strange at sensitivity level 3, 4 and 5 by detecting something is was not supposed to detect.
+Furthermore the sensor behaved in an unexpected manner  at sensitivity level 3, 4 and 5 by detecting something is was not supposed to detect.
 However the maximum distance range seem to be 6meters as stated in the datasheet but at peak sensitivity level
 the distance drops down to 5 meter only.
 
@@ -268,11 +268,12 @@ A plot of the results can be seen in \cref{fig:pir_delay}.
 \addlegendentry{Delay time}
 \end{axis}
 \end{tikzpicture}
-\caption{Plot of delay experiment}\label{fig:pir_delay}
+\caption{Plot of delay experiment. On the x axis number representation of potentiometer, ranging from 0 with highest delay to 9 with lowest. On the y axis the delay time in seconds are shown.}\label{fig:pir_delay}
 \end{figure}
 
 \subparagraph{Partial conclusion}
 
-The hypothesis was partially correct. The maximum delay time was recorded to be
-around 35 seconds, while the minimum delay time was very close to the value
+The hypothesis is incorrect. The maximum delay time was recorded to be
+around 35 seconds that is a deviation by more than 30\%.
+However, the minimum delay time was very close to the value
 described in the hypothesis.
