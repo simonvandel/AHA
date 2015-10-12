@@ -80,3 +80,4 @@ Report/auto/*
 *.tex.orig
 _region_.tex
 _region_.pdf
+*.lox
