@@ -34,6 +34,9 @@
 # Debug files
 *.dSYM/
 
+# Misc
+.DS_Store
+*.el
 
 ### LaTeX ###
 *.acn
@@ -81,3 +84,4 @@ Report/auto/*
 *.tex.orig
 _region_.tex
 _region_.pdf
+*.lox
