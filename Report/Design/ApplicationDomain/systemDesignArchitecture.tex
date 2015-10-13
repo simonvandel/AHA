@@ -205,7 +205,7 @@ Sensor data is sent to the analysis subsystem to be analysed for patterns. Behav
 
 \subsubsection{Choice of Architecture}
 
-Given the above architectural designs, the monolithic design is too restrictive in its extensibility. The distributed design allows for greater extensibility, but at the cost of the need for a complex synchronisation of knowledge between subsystems. The seperated design allows for extensibility of sensors and actuators without complex synchronisation. Therefore the seperated design seems the most sensible choice.
+Given the above architectural designs, the monolithic design is too restrictive in its extensibility. The distributed design allows for greater extensibility, but at the cost of the need for a complex synchronisation of knowledge between subsystems. The separated design allows for extensibility of sensors and actuators without complex synchronisation. Therefore the separated design seems the most sensible choice.
 
 However, as can be seen in the above paragraphs, many communication schemes are possible. This section will evaluate the best scheme by comparing each scheme on the following prioritised list of properties.
 
@@ -232,7 +232,7 @@ Complexity             & Best                                              & 4th
 Memory analysis        & Past sensor data                                  & Past sensor data                         & Past sensor data + rules                         & Past sensor data + rules      & Past sensor data                     \\ \bottomrule
 \end{tabular}
 \end{adjustbox}
-\caption{Evaluation table of communication schemes. S means sensor subsystem. Ac means actuator subsystem. A means analysis subsystem. In the \enquote{memory actuator/sensor row}, it is implicit that every scheme has to store the sensor data intermediatly, before processing it.}\label{tab:scheme_choice}
+\caption{Evaluation table of communication schemes. S means sensor subsystem. Ac means actuator subsystem. A means analysis subsystem. In the \enquote{memory actuator/sensor row}, it is implicit that every scheme has to store the sensor data intermediately, before processing it.}\label{tab:scheme_choice}
 \end{table}
 
 Looking at \cref{tab:scheme_choice}, the following ranking of the schemes can be produced. \sinote{Find out which scheme is best, when we have tested the ZigBee sensors}
