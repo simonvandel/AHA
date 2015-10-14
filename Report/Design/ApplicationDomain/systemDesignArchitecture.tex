@@ -1,0 +1,238 @@
+\subsection{System Design \& Architecture}\label{sub:systemDesignArchitecture}
+
+Overall the system has to perform three tasks.
+
+\begin{itemize}
+\item Data collection of events in the problem domain
+\item Analysis of this data and inference of behavioural patterns
+\item Mimic the inferred behavioural patterns learned during the analysis
+\end{itemize}
+This section discusses different architectural designs for the system. 
+
+\subsubsection{Monolithic System} 
+One possibility is to have one central processing unit that controls and reads data  from all available sensors, sanitises and analyses it, decides which, if any, action to perform, and performs it via its actuators. This is illustrated in \cref{fig:monolithic_system}. The system could be made in two ways.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[squarednode] (mainController) {Sensor/actuator controller + data analyser};
+  \node[squarednode] (sensor1) [above=of mainController] {Sensor 1};
+  \node[squarednode] (sensor2) [below=of mainController] {Sensor 2};
+  \node[squarednode] (actuator1) [right=of mainController] {Actuator 1};
+  \node[squarednode] (actuator2) [left=of mainController] {Actuator 2};
+
+  %Lines
+  \draw (mainController.north) -- (sensor1.south);
+  \draw (mainController.west) -- (actuator2.east);
+  \draw (mainController.east) -- (actuator1.west);
+  \draw (mainController.south) -- (sensor2.north);
+\end{tikzpicture}
+\caption{Illustration of a monolithic system. The middle rectangle monitors the sensors, while also analysing the monitored sensor data.}\label{fig:monolithic_system}
+\end{figure}
+
+\paragraph{Variable number of sensors}
+The first solution is that the user has to add sensors and actuators to the system manually and inform the system about what they are, or alternatively require a technician to setup the system. This goes very much against the principle of easy usability. 
+
+If the setup is managed by the user, it is vulnerable to user mistakes, which would increase the barrier to entry. For example, consider the case where a PIR sensor is connected to the system, but the system believes the connected sensor to be a thermometer. The data received from the PIR sensor will most likely not make any sense, so the system will be based on a wrong model of the world.
+
+Another point is that the system would be limited by the total amount of sensors the processing unit physically can have, given that the number of input pins is finite.
+
+\paragraph{Fixed number of sensors}
+The second solution is that the system is pre made with a fixed number of sensors and actuators and the user can simply not extend the system with more hardware. This solution does not consider the fact that all houses are different and needs a variable number of sensors. Either there will be too many sensors in some houses, thereby consuming too much power compared to what is needed or there will be too few sensors in some houses meaning that the system will not be very effective and/or non existing in some rooms. This conflicts with the idea that the system should adapt to the working environment, and not vice versa.
+
+Neither of these solutions are very modular and both go against the requirements described in, \cref{System Definition}\jenote{Referer til system definitionen når den er her}. Also they are both in general not very practical.
+
+\subsubsection{Distributed System}
+A second solution tries to cope with the problem of modularity and ease of use by distributing the sensors and actuators on several units. The system is comprised of multiple subsystems that each have a processing unit that is aware of what sensors and actuators are connected to it. It is responsible for sanitising the sensor data and activate the actuators. They can communicate and combine their knowledge to get a complete model of the problem domain. See \cref{fig:distributed_system}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[squarednode] (controller1) {Sensor/actuator controller 1 + data analyser};
+  \node[squarednode] (controller2) [right=of controller1, xshift=5em] {Sensor/actuator controller 2 + data analyser};
+  \node[squarednode] (sensor1) [above=of controller1] {Sensor 1};
+  \node[squarednode] (sensor2) [below=of controller1] {Sensor 2};
+  \node[squarednode] (sensor3) [above=of controller2] {Sensor 3};
+  \node[squarednode] (actuator1) [left=of controller1] {Actuator 1};
+  \node[squarednode] (actuator2) [below=of controller2] {Actuator 2};
+
+  %Lines
+  \draw (controller1.north) -- (sensor1.south);
+  \draw (controller1.west) -- (actuator1.east);
+  \draw (controller1.south) -- (sensor2.north);
+  \draw (controller2.north) -- (sensor3.south);
+  \draw (controller2.south) -- (actuator2.north);
+  \draw[triangle 90-triangle 90] (controller1.east) -- node[anchor=south, align=center] {Knowledge} (controller2.west);
+\end{tikzpicture}
+\caption{Illustration of a distributed system. In this example, two controllers each monitor their sensors and analyse the monitored data. The knowledge from the analysis is shared with other controllers in the system.}\label{fig:distributed_system}
+\end{figure}
+
+The user can choose exactly the number of subsystems needed for the home. If the subsystems are connected wirelessly, only power is needed to add additional subsystems to the system.
+
+This solution requires complex communication protocols among each individual subsystem, in order to reliably combine their knowledge. Furthermore the analysis of sensor data is a complex task, see \cref{subsec:Functions}, that needs more powerful hardware than the sensors and actuators.
+
+\subsubsection{Separated Subsystems}
+A separation of data collection and actuation of tasks, and analysis of data, is needed. In this architecture, a distributed system of small low-power processing units collect the sensor data and complete the actuation of tasks while the analysis of the sensor data is performed on a more powerful computation device.
+
+Under this separation the system consists of three subsystems: sensor, actuator and analysis. \sinote{Maybe also a user interfacing subsystem to view what is going on in the system} The general architecture can be seen in \cref{fig:separated_subsystems}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[squarednode] (sensorController) {Sensor controller};
+  \node[squarednode] (analysisController) [below right=of sensorController] {Analysis controller};
+  \node[squarednode] (actuatorController) [above right=of analysisController] {Actuator controller};
+  \node[squarednode] (sensor1) [above=of sensorController] {Sensor 1};
+  \node[squarednode] (actuator1) [above=of actuatorController] {Actuator 1};
+
+  %Lines
+  \draw (sensorController.north) -- (sensor1.south);
+  \draw (sensorController.south) -- (analysisController.north);
+  \draw (sensorController.east) -- (actuatorController.west);
+  \draw (actuatorController.south) -- (analysisController.north);
+  \draw (actuatorController.north) -- (actuator1.south);
+\end{tikzpicture}
+\caption{Illustration of a separated system. In this example, the sensor and actuator subsystem each consists of one controller, controlling one sensor and actuator respectively.}\label{fig:separated_subsystems}
+\end{figure}
+
+This solution has the following advantages.
+
+\begin{itemize} 
+  \item Allows variance in the number of sensors used
+  \item The knowledge about the problem domain is calculated and stored centrally, so there is no need to synchronise with other subsystems.
+\end{itemize}
+ 
+To form the complete system, some communication must take place between the subsystems. There are different possible communication schemes.
+
+\paragraph{Communication scheme 1}
+
+In this scheme, the sensor subsystem sends its sensor data to the analysis subsystem to be analysed and to match for behavioural patterns. When sensor data matches a certain behavioural pattern, an action is sent to the actuator subsystem, to be immediately performed. The scheme is illustrated in \cref{fig:separated_subsystems_scheme1}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[squarednode] (sensorSubsystem) {Sensor subsystem};
+  \node[squarednode] (analysisSubsystem) [below right=of sensorSubsystem] {Analysis subsystem};
+  \node[squarednode] (actuatorSubsystem) [above right=of analysisSubsystem] {Actuator subsystem};
+
+  %Lines
+  \draw[-triangle 90] (sensorSubsystem.south) -- node[anchor=east] {sensor data} (analysisSubsystem.north);
+  \draw[-triangle 90] (analysisSubsystem.north) -- node[anchor=west] {action} (actuatorSubsystem.south);
+\end{tikzpicture}
+\caption{Illustration of communication scheme 1 for a separated system.}\label{fig:separated_subsystems_scheme1}
+\end{figure}
+
+\paragraph{Communication scheme 2}
+
+This scheme is similar to scheme 1, but instead of the analysis subsystem sending actions to the actuator subsystem, rules are sent. In order for the actuator subsystem to use the rules, sensor data is needed. Therefore the sensor subsystem also sends its sensor data to the actuator subsystem. See \cref{fig:separated_subsystems_scheme2} for a visual representation.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[squarednode] (sensorSubsystem) {Sensor subsystem};
+  \node[squarednode] (analysisSubsystem) [below right=of sensorSubsystem] {Analysis subsystem};
+  \node[squarednode] (actuatorSubsystem) [above right=of analysisSubsystem] {Actuator subsystem};
+
+  %Lines
+  \draw[-triangle 90] (sensorSubsystem.south) -- node[anchor=east] {sensor data} (analysisSubsystem.north);
+  \draw[-triangle 90] (sensorSubsystem.east) -- node[anchor=south] {sensor data} (actuatorSubsystem.west);
+  \draw[-triangle 90] (analysisSubsystem.north) -- node[anchor=west] {rules} (actuatorSubsystem.south);
+\end{tikzpicture}
+\caption{Illustration of communication scheme 2 for a separated system.}\label{fig:separated_subsystems_scheme2}
+\end{figure}
+
+\paragraph{Communication scheme 3}
+
+The difference between scheme 3 and 2 is that the sensor and actuator subsystems have been merged. See \cref{fig:separated_subsystems_scheme3}. This means that sensors and actuators can be connected to the same controller, reducing the latency for communicating sensor data between actuators and sensors.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[squarednode] (sensorActuatorSubsystem) {Sensor/Actuator subsystem};
+  \node[squarednode] (analysisSubsystem) [right=of sensorActuatorSubsystem, xshift=5em] {Analysis subsystem};
+
+  %Lines
+  \draw[-triangle 90, transform canvas={yshift=2mm}] (sensorActuatorSubsystem.east) -- node[anchor=south] {sensor data} (analysisSubsystem.west);
+  \draw[-triangle 90] (sensorActuatorSubsystem) to [out=255,in=295, looseness=8] node[anchor=north] {sensor data} (sensorActuatorSubsystem);
+  \draw[-triangle 90, transform canvas={yshift=-2mm}] (analysisSubsystem.west) -- node[anchor=north] {rules} (sensorActuatorSubsystem.east);
+\end{tikzpicture}
+\caption{Illustration of communication scheme 3 for a separated system.}\label{fig:separated_subsystems_scheme3}
+\end{figure}
+
+\paragraph{Communication scheme 4}
+
+As in scheme 3, the sensor and actuator subsystems have been merged. The analysis subsystem receives sensor data from the sensor subsystem and generates actions based on behavioural patterns. Actions are sent to the actuator subsystem to be performed. See \cref{fig:separated_subsystems_scheme4}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[squarednode] (sensorActuatorSubsystem) {Sensor/Actuator subsystem};
+  \node[squarednode] (analysisSubsystem) [right=of sensorActuatorSubsystem, xshift=5em] {Analysis subsystem};
+
+  %Lines
+  \draw[-triangle 90, transform canvas={yshift=2mm}] (sensorActuatorSubsystem.east) -- node[anchor=south] {sensor data} (analysisSubsystem.west);
+  \draw[-triangle 90, transform canvas={yshift=-2mm}] (analysisSubsystem.west) -- node[anchor=north] {action} (sensorActuatorSubsystem.east);
+\end{tikzpicture}
+\caption{Illustration of communication scheme 4 for a separated system.}\label{fig:separated_subsystems_scheme4}
+\end{figure}
+
+\paragraph{Communication scheme 5}
+
+Sensor data is sent to the analysis subsystem to be analysed for patterns. Behavioural rules are sent to the sensor subsystem. If a rules matches the current sensor data, an action is dispatched to the actuator subsystem to be immediately performed. See \cref{fig:separated_subsystems_scheme5}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[squarednode] (sensorSubsystem) {Sensor subsystem};
+  \node[squarednode] (analysisSubsystem) [below=of sensorSubsystem, yshift=-3em] {Analysis subsystem};
+  \node[squarednode] (actuatorSubsystem) [right=of sensorSubsystem, xshift=5em] {Actuator subsystem};
+
+  %Lines
+  \draw[-triangle 90, transform canvas={xshift=2mm}] (sensorSubsystem.south) -- node[anchor=west] {sensor data} (analysisSubsystem.north);
+  \draw[-triangle 90] (sensorSubsystem) -- node[anchor=north] {action} (actuatorSubsystem);
+  \draw[-triangle 90, transform canvas={xshift=-2mm}] (analysisSubsystem.north) -- node[anchor=east] {rules} (sensorSubsystem.south);
+\end{tikzpicture}
+\caption{Illustration of communication scheme 5 for a separated system.}\label{fig:separated_subsystems_scheme5}
+\end{figure}
+
+\subsubsection{Choice of Architecture}
+
+Given the above architectural designs, the monolithic design is too restrictive in its extensibility. The distributed design allows for greater extensibility, but at the cost of the need for a complex synchronisation of knowledge between subsystems. The separated design allows for extensibility of sensors and actuators without complex synchronisation. Therefore the separated design seems the most sensible choice.
+
+However, as can be seen in the above paragraphs, many communication schemes are possible. This section will evaluate the best scheme by comparing each scheme on the following prioritised list of properties.
+
+\begin{enumerate}
+\item \textbf{Number of critical communication paths.} A path is critical if the data communicated is important or has to arrive quickly. If a scheme has fewer critical communication paths, the system is less likely to fail, and the system will be more responsive
+\item \textbf{Memory consumption on actuator and sensor subsystems.} As the actuator and sensor subsystems should be based on an embedded platform, the amount of memory available is limited
+\item \textbf{Amount of communication.} The less time spent communicating, the more time can be spent on other activities
+\item \textbf{Inter-dependency complexity.} How dependant is each subsystem on each other 
+\item \textbf{Memory consumption on analysis subsystem.} As the analysis subsystem is not required to be energy efficient, the platform can be more computationally powerful, so it is not important to consider
+\end{enumerate}
+
+The properties are evaluated in \cref{tab:scheme_choice}.\sinote{mangler responstid som property} 
+
+\begin{table}[htbp]
+\centering
+\begin{adjustbox}{angle=90}
+\begin{tabular}{m{7em} m{7em} m{7em} m{7em} m{8em} m{8em}}
+\toprule
+                       & Scheme 1                                          & Scheme 2                                 & Scheme 3                                         & Scheme 4                      & Scheme 5                             \\ \midrule
+Critical paths         & 2:all                                             & 1:S to Ac                                & 1:S/Ac to S/Ac                                   & 2:all                         & 1:S to Ac                            \\ \midrule
+Memory actuator/sensor & Nothing                                           & Ac stores rules                          & S/Ac stores rules                                & Nothing                       & S stores rules                       \\ \midrule
+Communication          & S to A: high, A to Ac: low                        & S to A: high, S to Ac:high, A to Ac: low & S/Ac to A:high, A to S/Ac:low, S/Ac to S/Ac:high & S/Ac to A:high, A to S/Ac:low & S to A:high, A to S:low, S to Ac:low \\ \midrule
+Complexity             & Best                                              & 4th best                                 & 3rd best                                         & 2nd best                      & 5th best                             \\ \midrule
+Memory analysis        & Past sensor data                                  & Past sensor data                         & Past sensor data + rules                         & Past sensor data + rules      & Past sensor data                     \\ \bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Evaluation table of communication schemes. S means sensor subsystem. Ac means actuator subsystem. A means analysis subsystem. In the \enquote{memory actuator/sensor row}, it is implicit that every scheme has to store the sensor data intermediately, before processing it.}\label{tab:scheme_choice}
+\end{table}
+
+Looking at \cref{tab:scheme_choice}, the following ranking of the schemes can be produced. \sinote{Find out which scheme is best, when we have tested the ZigBee sensors}

@@ -10,7 +10,9 @@
 \usepackage{pifont}
 \usepackage[english]{babel} % language support - hyphenations etc.
 \usepackage{graphicx} % insertion of images
+\usepackage{adjustbox}
 \graphicspath{ {Images/}}
+\usepackage{adjustbox}
 \usepackage{listings} % source code
 \usepackage{color}
 %itemize spacing
@@ -20,11 +22,20 @@
 \usepackage{algorithmicx}
 \usepackage{algorithm}
 \usepackage{tikz}
-\usepackage{tikz-qtree}
+\usetikzlibrary{arrows,positioning}
+
+\tikzset{
+squarednode/.style={
+  rectangle,
+  draw=black,
+  text width=8em,
+  align=center,
+  }
+}
+
 \usepackage{pgfplots} % for plotting graphs
 \usepackage{textcomp}
 \usepackage{siunitx}
-\pgfplotsset{width=10cm,compat=1.9}
 \usepackage[inference]{semantic}
 \usepackage{braket}
 \usepackage{array}
@@ -36,6 +47,8 @@
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcommand{\cmark}{\ding{51}}%Checkmark
 
 \lstdefinelanguage{scala}{
   morekeywords={abstract,case,catch,class,def,%
