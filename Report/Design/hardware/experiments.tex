@@ -1,9 +1,9 @@
 \subsubsection{Experiments}
 \label{sub:Experiments}
 In order to determine the reliability of the hardware, several experiments were conducted with the PIR sensor.
-The tests were all based on data found in the datasheet for the hardware.
+The tests were all based on data found in the data sheet for the hardware.
 The main purpose of the tests is to determine the correlation between real world performance and the hardware specifications
-found on the datasheet.
+found on the data sheet.
 \\\\
 Four tests are carried out with one main setup that are applied to all of them. The four tests are defined as follows:
 
@@ -29,7 +29,7 @@ certain height and a fixed position during the tests.
 
 \subparagraph{Hypothesis}
 \label{subp:SenHypothesis}
-According to the datasheet the PIR sensor will be too sensitive if the distance potentiometer is rotated counter-clockwise.
+According to the data sheet the PIR sensor will be too sensitive if the distance potentiometer is rotated counter-clockwise.
 The sensor should get so sensitive that the PIR sensor would be triggered by the atmosphere even
 if no moving object is existing\cite{datasheet_pir1}.
 \subparagraph{Test Procedure}
@@ -43,7 +43,7 @@ supposed to detect and how sensitive the sensor really is.
 \subparagraph{Results}
 \label{subp:SenResults}
 
-At the most sensitive setting, nothing was triggered by athmospheric noise. Just
+At the most sensitive setting, nothing was triggered by atmospheric noise. Just
 to be sure, the sensor was tested at the least sensitive setting: nothing was
 detected, as expected.
 
@@ -58,14 +58,14 @@ sensitivity setting.
 
 \subparagraph{Hypothesis}
 \label{subp:AngHypothesis}
-According to the datasheet of the PIR sensor,
+According to the data sheet of the PIR sensor,
 the sensor has a detecting angle of 120 degrees.
-The sensor should according to the datasheet not detect any angle above 120 degrees.
+The sensor should according to the data sheet not detect any angle above 120 degrees.
 
 \subparagraph{Test Procedure}
 \label{subp:AngTest Procedure}
 The sensor is placed in a certain position and detecting angle is measured equivalent to
-the specified angle found in the datasheet.
+the specified angle found in the data sheet.
 For the sake of explanation let the angle above 120 degree be the grey zone and
 the detecting area, that is within the 120 degree, the white zone.
 A moving object is placed in the grey zone and slowing moving into the white zone.
@@ -132,7 +132,7 @@ Run & x [cm] & y [cm] & angle [deg] \\ \midrule
 3 (left) & 108 & 65 & 58.9582 \\
 3 (right) & 88 & 174 & 26.8278 \\ \bottomrule
 \end{tabular}
-\caption{Results of angle experiments. The x and y columns signify the x and y
+\caption{Results of angle experiments. The x and y columns represent the x and y
   distance from the sensor to the detected person. The angle values are
   calculated by $\arctan (x,y) * \frac{180}{\pi}$}
 \label{tab:pir_angle}
@@ -149,14 +149,14 @@ while the other side of the sensor is not very close to 60 $\si{\degree}$.
 
 \subparagraph{Hypothesis}
 
-According to the datasheet, the sensor can measure motion from 10 centimeters to
+According to the data sheet, the sensor can measure motion from 10 centimetres to
 6 meters.
 
 \subparagraph{Test procedure}
 
 The sensitivity setting of the sensor essentially controls the distance. First,
 the sensitivity is set to the lowest sensitivity. At that sensitivity, the
-sensor should detect motion at a range of 10 centimeters, according to the above
+sensor should detect motion at a range of 10 centimetres, according to the above
 hypothesis.
 
 The sensor is measured by the test conductor approaching the sensor while
@@ -202,7 +202,7 @@ A plot of the results can be seen in \cref{fig:pir_distance}.
 The results indicate that there is a correlation between the sensitivity and the detecting distance.
 However the sensor behaved unpredictably at sensitivity levels 7 and 8.
 Furthermore the sensor acted strange at sensitivity levels 3, 4 and 5 by detecting something it was not supposed to detect.
-The maximum range seems to be 6 meters as stated in the datasheet.
+The maximum range seems to be 6 meters as stated in the data sheet.
 Strangely enough the sensor only detected motion 5 meters away at the highest
 sensitivity level.
 
@@ -210,7 +210,7 @@ sensitivity level.
 
 \subparagraph{Hypothesis}
 
-According to the datasheet, the sensor has a delay time of 1 second to 25 seconds.
+According to the data sheet, the sensor has a delay time of 1 second to 25 seconds.
 
 \subparagraph{Test procedure}
 
@@ -262,11 +262,12 @@ A plot of the results can be seen in \cref{fig:pir_delay}.
 \addlegendentry{Delay time}
 \end{axis}
 \end{tikzpicture}
-\caption{Plot of delay experiment}\label{fig:pir_delay}
+\caption{Plot of delay experiment. On the x axis number representation of potentiometer, ranging from 0 with highest delay to 9 with lowest. On the y axis the delay time in seconds are shown.}\label{fig:pir_delay}
 \end{figure}
 
 \subparagraph{Partial conclusion}
 
-The hypothesis was partially correct. The maximum delay time was recorded to be
-around 35 seconds, while the minimum delay time was very close to the value
+The hypothesis is incorrect. The maximum delay time was recorded to be
+around 35 seconds that is a deviation by more than 30\%.
+However, the minimum delay time was very close to the value
 described in the hypothesis.

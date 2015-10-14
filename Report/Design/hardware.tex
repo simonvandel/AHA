@@ -5,10 +5,10 @@ This section discusses hardware that is used in this project.  The hardware is d
 
 The sensor used to detect movement is a passive infrared sensor (PIR). The model
 number is \enquote{SEN32357P} and is manufactured by SEEED Studio. A data sheet
-can be found on:
+can be found in:
 \cite{datasheet_pir1}. The
-sensor is implemented using the \enquote{BISS0001} IC. A datasheet for this can
-be found on \cite{datasheet_pir2}.
+sensor is implemented using the \enquote{BISS0001} integrated circuit. A data sheet for this can
+be found in \cite{datasheet_pir2}.
 
 According to the technical specifications, the sensor can measure movements from 0.1 m to 6 m away. The distance can be configured by rotating a potentiometer on the sensor. Clockwise means decreasing the distance. This is essentially the sensitivity of the sensor. A smaller distance means lower sensitivity. The detecting angle is 120 degree.
 
@@ -33,13 +33,13 @@ An example of a setup can be seen in \cref{fig:arduino_pir_wiring}.
 \subsubsection{Sampling Input Data}
 
 To reduce noise on the signal of the sensor, a simple statistical algorithm is
-employed on the input data. Essentially the data is reduced to two tiers
+performed on the input data. The purpose of the algorithm is to increase reliability of the input data. Since the data can include false detection of objects that are not present, the algorithm is there to reduce  faulty data.  Essentially the data is reduced to two tiers
 of data. First, the input data is accumulated into a tier1 low and a tier1 high
 counter. When $n_{tier1}$ number of samples have been collected, a tier2 sampling round begins. If tier1
 had more high counts than low counts, tier2 high is incremented and the opposite if
 tier1 had the most lows. When the sample count of tier2 has reached a number
 $n_{tier2}$, the calculated signal can be reported. If tier2 had the most highs,
-report high and vice verca for tier2 lows.
+report high and vice versa for tier2 lows.
 
 \sinote{This is a very simple algorithm, so surely a better exists?}
 
