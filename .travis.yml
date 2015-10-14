@@ -1,0 +1,24 @@
+addons:
+  apt:
+    packages:
+    - texlive-latex-recommended
+    - texlive-latex-extra
+    - texlive-fonts-recommended
+    - texlive-fonts-extra
+    - texlive-science # needed for algorithms and maybe more
+    - texlive-pictures
+    - pgf # needed for tikz
+    - biblatex
+    - chktex
+    - latexmk
+
+script:
+# install biblatex-ieee package manually
+- mkdir -p ~/texmf/tex/latex
+- wget http://mirrors.ctan.org/macros/latex/contrib/biblatex-contrib/biblatex-ieee.zip -O biblatex-ieee.zip
+- unzip biblatex-ieee.zip -d ~/texmf/tex/latex
+- cd Report
+# compile latex. Do not use bibtex as it is not installed in the current travis configuration
+- latexmk -pdf -nobibtex master.tex
+# run linter on all tex files
+- chktex $(find . -type f -name "*.tex")

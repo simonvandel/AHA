@@ -11,4 +11,5 @@ In this chapter, the problem domain will be explained and analysed, in order to 
 
 \input{Analysis/system-definition}
 
-\input{Analysis/Specification/specification}
+\input{Analysis/problemFormulation.tex}
+

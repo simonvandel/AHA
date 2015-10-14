@@ -10,7 +10,9 @@
 \usepackage{pifont}
 \usepackage[english]{babel} % language support - hyphenations etc.
 \usepackage{graphicx} % insertion of images
+\usepackage{adjustbox}
 \graphicspath{ {Images/}}
+\usepackage{adjustbox}
 \usepackage{listings} % source code
 \usepackage{color}
 %itemize spacing
@@ -20,21 +22,33 @@
 \usepackage{algorithmicx}
 \usepackage{algorithm}
 \usepackage{tikz}
-\usepackage{tikz-qtree}
+\usetikzlibrary{arrows,positioning}
+
+\tikzset{
+squarednode/.style={
+  rectangle,
+  draw=black,
+  text width=8em,
+  align=center,
+  }
+}
+
 \usepackage{pgfplots} % for plotting graphs
 \usepackage{textcomp}
 \usepackage{siunitx}
-\pgfplotsset{width=10cm,compat=1.9}
 \usepackage[inference]{semantic}
 \usepackage{braket}
 \usepackage{array}
 \usepackage[nounderscore]{syntax}
+\usepackage{gensymb}
 \setlength{\grammarindent}{100pt}
 
 %%%%%%%flotte listings
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcommand{\cmark}{\ding{51}}%Checkmark
 
 \lstdefinelanguage{scala}{
   morekeywords={abstract,case,catch,class,def,%
@@ -767,9 +781,6 @@ rsp, si, sil, sp, spl
 	tabsize=4,
 }
 
-%Use the typeface Source Code Pro for listings
-\usepackage[nottdefault]{sourcecodepro}
-\lstset{basicstyle=\fontfamily{SourceCodePro-TLF}\footnotesize,breaklines=true,commentstyle=}
 \usepackage{color}
 \usepackage{booktabs}
 \usepackage{xcolor}
@@ -784,8 +795,8 @@ rsp, si, sil, sp, spl
 \usepackage[mode=multiuser,draft]{fixme} % fixme config
 \FXRegisterAuthor{si}{asi}{Simon}
 \FXRegisterAuthor{ka}{aka}{Kasper}
-\FXRegisterAuthor{ta}{ata}{Terndrup}
-\FXRegisterAuthor{al}{aal}{Alexander}
+\FXRegisterAuthor{ra}{ara}{Rasmus}
+\FXRegisterAuthor{ah}{aah}{Ahmed}
 \FXRegisterAuthor{ch}{ach}{Christian}
 \FXRegisterAuthor{je}{aje}{Jens}
 
@@ -853,25 +864,6 @@ bibencoding=utf8,
 \hyphenation{fa-brik-ken}
 
 %%%%%%%%%% macros
-\newcommand{\actortable}[2] {
-%\vspace{1cm}
-\begin{center}
-\begin{minipage}{0.9\textwidth}
-    \rule{\textwidth}{1pt}
-    \begin{center}
-      \vspace{-2ex}
-        \textbf{#1}
-      \vspace{-2ex}
-    \end{center}
-    \rule{\textwidth}{1pt}
-    #2
-
-    \rule{\textwidth}{1pt}
-\end{minipage}
-\end{center}
-%\vspace{1cm}
-}
-
 \newcommand*{\blankpage}{
 \vspace*{\fill}
 \begin{center}
@@ -921,50 +913,3 @@ bibencoding=utf8,
 \noindent #2
 \vfill\pagebreak % Fill the end of page and page break
 }
-
-%semantik commands
-\newcommand{\Twedge}{\mathbin{^\wedge{}}}
-\newcommand{\Tfor}{\mathbin{\text{for}}}
-\newcommand{\Tin}{\mathbin{\text{in}}}
-\newcommand{\Twhile}{\mathbin{\text{while}}}
-\newcommand{\Tx}{\mathbin{\; \text{x} \;}}
-\newcommand{\Tlet}{\text{let}}
-\newcommand{\Tvar}{\text{var}}
-\newcommand{\Tspawn}{\mathbin{\text{spawn}}}
-\newcommand{\Tsend}{\mathbin{\text{send}}}
-\newcommand{\Tat}{\; \mathbin{\text{at}} \;}
-\newcommand{\Ta}{\; \mathbin{\text{a}} \;}
-\newcommand{\Taenv}{\; \mathbin{\text{aEnv}} \;}
-\newcommand{\Tm}{\; \mathbin{\text{m}} \;}
-\newcommand{\Twhere}{\mathbin{\text{where}}\;\;}
-\newcommand{\Ten}{\mathbin{\text{env}}}
-\newcommand{\Tactor}{\mathbin{\text{actor}} \;}
-\newcommand{\Tact}{\; \mathbin{\text{act}} \;}
-\newcommand{\Treceive}{\mathbin{\text{receive}} \;}
-\newcommand{\Tr}{\; \mathbin{\text{r}} \;}
-\newcommand{\Tstruct}{\mathbin{\text{struct}} \;}
-\newcommand{\Tand}{\text{\; AND \;}}
-\newcommand{\Tnot}{\text{NOT \;}}
-\newcommand{\Tnand}{\text{\; NAND \;}}
-\newcommand{\Tor}{\text{\; OR \;}} 
-\newcommand{\Tnor}{\text{\; NOR \;}}
-\newcommand{\Txor}{\text{\; XOR \;}}
-\newcommand{\Tif}{\text{if}}
-\newcommand{\Telse}{\text{else}}
-\newcommand{\Treturn}{\text{return}}
-\newcommand{\Te}{\text{\; e}}
-\newcommand{\Ttrue}{\text{true}}
-\newcommand{\Tfalse}{\text{false}}
-
-%typesystem commands
-\newcommand{\Tpot}{^\wedge{}}
-\newcommand{\Tint}{\text{int}}
-\newcommand{\Treal}{\text{real}}
-\newcommand{\Tbool}{\text{bool}}
-\newcommand{\Tchar}{\text{char}}
-\newcommand{\Taop}{\text{AOP}}
-\newcommand{\Tlop}{\text{LOP}}
-\newcommand{\Tbop}{\text{BOP}}
-\newcommand{\Tt}{\text{T}}
-\newcommand{\Tpt}{\text{PT}}
-\newcommand{\Tenv}{E \vdash}
