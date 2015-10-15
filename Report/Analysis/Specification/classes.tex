@@ -1,0 +1,31 @@
+%mainfile: ../../master.tex
+\subsection{Classes}
+
+From the system definition \cref{sec:systemDefinition} and "rich picture" of the problem domain that the system will be operating on/in, we can extract some classes. 
+
+\begin{quote}
+A description of a collection of objects with the same structure, behaviour and attributes
+\end{quote}
+as described in \cite{OOAD}
+
+These classes will be beneficial when figuring out what we need to keep track of in the problem domain, or what is relevant in our model of the problem domain.
+
+This system should be able to keep an always up to date model of the problem domain, \cref{lis:classes} summarises some candidates for classes that the system use to structure this model.
+
+\begin{figure}
+  \label{lis:classes}
+  \begin{itemize}
+    \item Person - The user of the system
+    \item Action - An action the system should recognise as feedback
+    \item Pattern - The usage patter of a user, what is typical behaviour
+    \item Mistake - System did something wrong by the user
+    \item Sensor - The observational member of the system
+    \item Switch - A feedback source
+    \item Lamp - The light source on which system action
+    \item Light intensity - luminance
+    \item Room - What room is the user in and its relations
+    \item Premise - The user home environment
+    \item Time - At what time, a pattern property
+  \end{itemize}
+  \caption{Candidates of classes}
+\end{figure}

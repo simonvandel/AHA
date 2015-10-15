@@ -1,4 +1,4 @@
-\section{System Definition}
+\section{System Definition}\label{sec:systemDefinition}
 
 This section formally describes in which context the system is to be used, its
 expected functions, the philosophy of the system, the conditions in which the
@@ -13,25 +13,23 @@ acronym FACTOR as introduced in \cite{mathiassen2001objektorienteret}.
 
 \subsubsection{Functionality}
 
-The system should be able to learn usage patterns of users, and autonomously
-perform these actions.
+The system should be able to learn usage patterns of users, and repeat them autonomously, still taking into consideration the possibility of temporary exceptions to daily routines.
 
 \subsubsection{Application Domain}
 
-The system should be used in homes where one or more users live. Each user may
+The system is meant to be used in homes where one or more users live. Each user may
 have different usage patterns and sometimes irregular actions not part of their
 daily routine.
 
 \subsubsection{Conditions}
 
-The system should adopt its actions to the wide-ranging usage patterns of a home
-of multiple users replacing the need for user interaction.
+The system aims at reducing user interaction as much as possible.
 
 \subsubsection{Technology}
 
-The system should have small devices with accommodating sensors and actuators scattered strategically around the home.
+The system should have small devices with accommodating sensors and actuators scattered strategically placed inside the home.
 These devices should be energy efficient in their use. Another computational
-device should analyse sensor data collected by the small devices, and based on
+device should analyse sensor data collected by the small devices and, based on
 the analysis, create behavioural rules for the devices to follow and create an autonomously automated system.
 
 \subsubsection{Objects}
@@ -43,16 +41,6 @@ rest of the home.
 
 The system should be as invisible as possible, only creating behaviours that are always aligned with the users wishes. Meaning that the system should never create a rule that is only sometimes true, thereby annoying the user. This is done to minimise friction between the system and the user. This means that the user should not be frustrated about the actions performed by the system. To achieve this the system should be conservative about its actions as to not perform actions the user would otherwise not have made.
 
-\subsection{Definition}
+\subsection{Example}
 
-The system should ease the lives of its users by performing actions autonomously
-on behalf of them. These actions should be learned by sensing the users' usage
-patterns throughout the day. As the user may perform irregular actions, the
-system should be conservative about performing actions. The systems should
-therefore only perform actions when it has a understanding of the action
-pattern. The system should be as invisible to the user as possible. The system
-should be an aid, not an element of frustration. The system should use small
-computational devices, that conserve energy consumption, to sense the usage
-patterns of the users. The data sensed should be communicated with another
-computational device that analyses it, to further improve the knowledge of the
-users' usage patterns, thereby improving the quality of actions the system can perform.
+Many sensors working together to learn users’ usage patterns, e.g. everyday at about 7.30, sensor 1 is activated and then the user turns the light on. This could be learned by a machine so that the next time sensor 1 is activated at about 7.30, the system automatically turns on the light.

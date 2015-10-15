@@ -1,4 +1,4 @@
-\subsection{Experiments}
+\subsubsection{Experiments}
 In order to find out relevant properties of the two photoresistors, some experiments were conducted. The experiments were conducted in order to find out the following properties:
 
 \begin{itemize}
@@ -6,11 +6,11 @@ In order to find out relevant properties of the two photoresistors, some experim
   \item Ideal configuration of resistors
 \end{itemize}
 
-\subsubsection{Precision}\label{subsub:precision}
+\paragraph{Precision}\label{subsub:precision}
 To test the precision of the photoresistors, an experiment was designed.
-\paragraph{Hypothesis}
+\subparagraph{Hypothesis}
 It was expected that the photoresistors would exhibit some imprecision, as they were cheap, amateur-grade resistors.
-\paragraph{Test Procedure}
+\subparagraph{Test Procedure}
 To test the precision of the photoresistors, they were put through three different tests. In each test, the resistors were exposed to constant light. Under these constant light conditions, many readings were taken from the resistors, in order to find the variance which they exhibited.
 The tests varied in the amount of light exposed to the resistors. The light levels for the tests were as follows:
 
@@ -91,7 +91,7 @@ namespace ArduinoPhotoTest {
   }
 }
 \end{lstlisting}
-\paragraph{Results}
+\subparagraph{Results}
 The results of the tests can be seen in \cref{tab:precisionTestResults}. "S1" refers to the first photoresistor. and "S2" refers to the second.
 
   \begin{table}
@@ -107,16 +107,16 @@ The results of the tests can be seen in \cref{tab:precisionTestResults}. "S1" re
     \caption{Precision test results}\label{tab:precisionTestResults}
   \end{table}
 
-\paragraph{Partial Conclusion}
+\subparagraph{Partial Conclusion}
 As expected, the resistors did exhibit some imprecision under constant light. S2, however, was much worse than S1 under the minimum and average light scenarios, having more than 5 times the difference between minimum and maximum values. Both S1 and S2 were very consistent under intense light.
 
-\subsubsection{Configuration}
+\paragraph{Configuration}
 In order fully take advantage of the two photoresistors, an experiment was devised to find a configuration of pull-down resistors, which would offer a large range of meaningful values, i.e. be able to detect subtle differences under low light as well as intense light scenarios.
-\paragraph{Hypothesis}
+\subparagraph{Hypothesis}
 Using different pull-down resistors on the photoresistors would make it possible to extend the range of values, which the sensor pair could register.
-\paragraph{Test Procedure}
+\subparagraph{Test Procedure}
 The scenarios described in \cref{subsub:precision} were used in this experiment as well. Between each set of scenarios, a pull-down resistor value was changed. As the 10K $\Omega$ resistor used in the previous experiments responded well to low light conditions, and was almost impossible to bottom out, another resistor-value was sought which could complement this. To increase the tolerance to light, available resistors with less resistance than 10K $\Omega$ were investigated.
-\paragraph{Results}
+\subparagraph{Results}
 The results from the configuration experiments can be seen in \cref{tab:1KTestResults,tab:2.2KTestResults,tab:4.4KTestResults,tab:10KTestResults,tab:12.2KTestResults}.
 
 \begin{table}[H]
@@ -184,5 +184,5 @@ The results from the configuration experiments can be seen in \cref{tab:1KTestRe
   \caption{12.2K $\Omega$ resistor results}\label{tab:12.2KTestResults}
 \end{table}
 
-\paragraph{Partial Conclusion}
+\subparagraph{Partial Conclusion}
 Using a 12.2K pull-down resistor on one photoresistor and a 4.4K pull-down resistor on the other gives a very impressive range of meaningful values, where one photoresistor is very sensitive to low light conditions and very tolerant of intense light conditions, and the other is the inverse. This pairing seems more than adequate for the usage in this project.
