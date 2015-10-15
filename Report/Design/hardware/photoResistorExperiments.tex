@@ -14,14 +14,14 @@ It was expected that the photoresistors would exhibit some imprecision, as they 
 To test the precision of the photoresistors, they were put through three different tests. In each test, the resistors were exposed to constant light. Under these constant light conditions, many readings were taken from the resistors, in order to find the variance which they exhibited.
 The tests varied in the amount of light exposed to the resistors. The light levels for the tests were as follows:
 
-\begin{itemize}
-  \item Minimal light
+\begin{description}
+  \item[Minimal light]
   This scenario was constructed by placing the resistors under a staircase, in a dimly lit room.
-  \item Average room light
+  \item[Average room light]
   This scenario was constructed by placing the resistors in a small, unoccupied room with no windows, with a single light bulb lit.
-  \item Intense light
+  \item[Intense light]
   This scenario was constructed by aiming a flashlight directly at the resistors at point blank range.
-\end{itemize}
+\end{description}
 
 To record the readings from the resistors, the code in \cref{lst:arduinoPhotoCode} was used for the Arduino. This program simply reads the value from the two sensors and prints it to the serial output, which in this case was a connected computer.
 
@@ -79,7 +79,10 @@ namespace ArduinoPhotoTest {
       a1Avg /= counter;
       double a0Diff = ((double)a0Max / (double)a0Min) * 100d - 100;
       double a1Diff = ((double)a1Max / (double)a1Min) * 100d - 100;
-      string text = string.Format("a0Avg = {0}\na0Min = {1}\na0Max = {2}\na0Diff = {6}%\na1Avg = {3}\na1Min = {4}\na1Max = {5}\na1Diff = {7}%",
+      string text = string.Format("a0Avg = {0}\na0Min = {1}
+                                  \na0Max = {2}\na0Diff = {6}
+                                  %\na1Avg = {3}\na1Min = {4}
+                                  \na1Max = {5}\na1Diff = {7}%",
         a0Avg, a0Min, a0Max, a1Avg, a1Min, a1Max, a0Diff, a1Diff);
       Console.WriteLine(text);
       System.Windows.Forms.Clipboard.SetText(text);
@@ -90,20 +93,19 @@ namespace ArduinoPhotoTest {
 \end{lstlisting}
 \paragraph{Results}
 The results of the tests can be seen in \cref{tab:precisionTestResults}. "S1" refers to the first photoresistor. and "S2" refers to the second.
-\rowcolors{1}{white}{lightgray}
-\begin{center}
+
   \begin{table}
-    \begin{tabular}[H!]{l c c c c c c c c}
+\rowcolors{1}{white}{lightgray}
+    \centering
+    \begin{tabular}[H!]{m{4.5em} c c c c c c c c}
       Scenario & S1 min & S1 max & S1 avg & S1 diff & S2 min & S2 max & S2 avg & S2 diff \\
       \hline
       Minimum light & 136 & 138 & 137 & 1,47 \% & 25 & 27 & 26 & 8.00 \% \\
       Average room light & 875 & 889 & 883 & 1,60 \%  & 634 & 675 & 656 & 6,47 \% \\
       Intense light & 931 & 933 & 932 & 0,21 \%  & 772 & 775 & 773 & 0,39 \% \\
     \end{tabular}
-    \label{tab:precisionTestResults}
-    \caption{Precision test results}
+    \caption{Precision test results}\label{tab:precisionTestResults}
   \end{table}
-\end{center}
 
 \paragraph{Partial Conclusion}
 As expected, the resistors did exhibit some imprecision under constant light. S2, however, was much worse than S1 under the minimum and average light scenarios, having more than 5 times the difference between minimum and maximum values. Both S1 and S2 were very consistent under intense light.
@@ -115,9 +117,11 @@ Using different pull-down resistors on the photoresistors would make it possible
 \paragraph{Test Procedure}
 The scenarios described in \cref{subsub:precision} were used in this experiment as well. Between each set of scenarios, a pull-down resistor value was changed. As the 10K $\Omega$ resistor used in the previous experiments responded well to low light conditions, and was almost impossible to bottom out, another resistor-value was sought which could complement this. To increase the tolerance to light, available resistors with less resistance than 10K $\Omega$ were investigated.
 \paragraph{Results}
-The results from the configuration experiments can be seen in the following tables.
-\rowcolors{1}{white}{lightgray}
+The results from the configuration experiments can be seen in \cref{tab:1KTestResults,tab:2.2KTestResults,tab:4.4KTestResults,tab:10KTestResults,tab:12.2KTestResults}.
+
 \begin{table}[H]
+\rowcolors{1}{white}{lightgray}
+  \centering
   \begin{tabular}{l c c c c}
     Scenario & 1K $\Omega$ min & 1K $\Omega$ max & 1K $\Omega$ avg & 1K $\Omega$ diff \\
     \hline
@@ -125,11 +129,12 @@ The results from the configuration experiments can be seen in the following tabl
     Average room light & 16 & 18 & 17 & 12.50 \% \\
     Intense light & 406 & 408 & 406 & 0.49 \% \\
   \end{tabular}
-  \label{tab:1KTestResults}
-  \caption{1K $\Omega$ resistor results}
+  \caption{1K $\Omega$ resistor results}\label{tab:1KTestResults}
 \end{table}
-\rowcolors{1}{white}{lightgray}
+
 \begin{table}[H]
+\rowcolors{1}{white}{lightgray}
+  \centering
   \begin{tabular}{l c c c c}
     Scenario & 1K $\Omega$ min & 2.2K $\Omega$ max & 2.2K $\Omega$ avg & 2.2K $\Omega$ diff \\
     \hline
@@ -137,11 +142,12 @@ The results from the configuration experiments can be seen in the following tabl
     Average room light & 49 & 58 & 53 & 18.37 \% \\
     Intense light & 609 & 612 & 610 & 0.49 \% \\
   \end{tabular}
-  \label{tab:2,2KTestResults}
-  \caption{2.2K $\Omega$ resistor results}
+  \caption{2.2K $\Omega$ resistor results}\label{tab:2.2KTestResults}
 \end{table}
-\rowcolors{1}{white}{lightgray}
+
 \begin{table}[H]
+\rowcolors{1}{white}{lightgray}
+  \centering
   \begin{tabular}{l c c c c}
     Scenario & 4.4K $\Omega$ min & 4.4K $\Omega$ max & 4.4K $\Omega$ avg & 4.4K $\Omega$ diff \\
     \hline
@@ -149,11 +155,12 @@ The results from the configuration experiments can be seen in the following tabl
     Average room light & 282 & 287 & 284 & 1.77 \% \\
     Intense light & 893 & 895 & 894 & 0.22 \% \\
   \end{tabular}
-  \label{tab:4,4KTestResults}
-  \caption{4.4K $\Omega$ resistor results}
+  \caption{4.4K $\Omega$ resistor results}\label{tab:4.4KTestResults}
 \end{table}
-\rowcolors{1}{white}{lightgray}
+
 \begin{table}[H]
+\rowcolors{1}{white}{lightgray}
+  \centering
   \begin{tabular}{l c c c c}
     Scenario & 10K $\Omega$ min & 10K $\Omega$ max & 10K $\Omega$ avg & 10K $\Omega$ diff \\
     \hline
@@ -161,11 +168,12 @@ The results from the configuration experiments can be seen in the following tabl
     Average room light & 875 & 889 & 883 & 1.60 \% \\
     Intense light & 931 & 933 & 932 & 0.21 \% \\
   \end{tabular}
-  \label{tab:10KTestResults}
-  \caption {10K $\Omega$ resistor results}
+  \caption {10K $\Omega$ resistor results}\label{tab:10KTestResults}
 \end{table}
+
 \begin{table}[H]
   \rowcolors{1}{white}{lightgray}
+  \centering
   \begin{tabular}{l c c c c}
     Scenario & 12.2K $\Omega$ min & 12.2K $\Omega$ max & 12.2K $\Omega$ avg & 12.2K $\Omega$ diff \\
     \hline
@@ -173,8 +181,8 @@ The results from the configuration experiments can be seen in the following tabl
     Average room light & 592 & 622 & 606 & 5.07 \% \\
     Intense light & 979 & 982 & 980 & 0.31 \% \\
   \end{tabular}
-  \label{tab:12,2KTestResults}
-  \caption{12.2K $\Omega$ resistor results}
+  \caption{12.2K $\Omega$ resistor results}\label{tab:12.2KTestResults}
 \end{table}
+
 \paragraph{Partial Conclusion}
 Using a 12.2K pull-down resistor on one photoresistor and a 4.4K pull-down resistor on the other gives a very impressive range of meaningful values, where one photoresistor is very sensitive to low light conditions and very tolerant of intense light conditions, and the other is the inverse. This pairing seems more than adequate for the usage in this project.
