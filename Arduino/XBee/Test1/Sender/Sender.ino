@@ -13,9 +13,8 @@ void loop(){
     Serial.write('1');
     Serial.print('\n');
     digitalWrite(ledpin, HIGH);
+    delay(500);
   }else{
-    Serial.write('0');
-    Serial.print('\n');
     digitalWrite(ledpin, LOW);
   }
 }
