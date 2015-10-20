@@ -1,4 +1,4 @@
-\subsection{System Design \& Architecture}\label{sub:systemDesignArchitecture}
+\section{System Design \& Architecture}\label{sec:systemDesignArchitecture}
 
 Overall the system has to perform three tasks.
 
@@ -41,7 +41,7 @@ Another point is that the system would be limited by the total amount of sensors
 \paragraph{Fixed number of sensors}
 The second solution is that the system is pre made with a fixed number of sensors and actuators and the user can simply not extend the system with more hardware. This solution does not consider the fact that all houses are different and needs a variable number of sensors. Either there will be too many sensors in some houses, thereby consuming too much power compared to what is needed or there will be too few sensors in some houses meaning that the system will not be very effective and/or non existing in some rooms. This conflicts with the idea that the system should adapt to the working environment, and not vice versa.
 
-Neither of these solutions are very modular and both go against the requirements described in, \cref{System Definition}\jenote{Referer til system definitionen når den er her}. Also they are both in general not very practical.
+Neither of these solutions are very modular and both go against the requirements described in, \cref{sec:systemDefinition}\jenote{Referer til system definitionen når den er her}. Also they are both in general not very practical.
 
 \subsubsection{Distributed System}
 A second solution tries to cope with the problem of modularity and ease of use by distributing the sensors and actuators on several units. The system is comprised of multiple subsystems that each have a processing unit that is aware of what sensors and actuators are connected to it. It is responsible for sanitising the sensor data and activate the actuators. They can communicate and combine their knowledge to get a complete model of the problem domain. See \cref{fig:distributed_system}.

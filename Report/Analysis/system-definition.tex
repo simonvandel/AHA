@@ -1,4 +1,4 @@
-\section{System Definition}
+\section{System Definition}\label{sec:systemDefinition}
 
 This section formally describes in which context the system is to be used, its
 expected functions, the philosophy of the system, the conditions in which the
@@ -41,7 +41,7 @@ rest of the home.
 
 The system should be as invisible as possible, only creating behaviours that are always aligned with the users wishes. Meaning that the system should never create a rule that is only sometimes true, thereby annoying the user. This is done to minimise friction between the system and the user. This means that the user should not be frustrated about the actions performed by the system. To achieve this the system should be conservative about its actions as to not perform actions the user would otherwise not have made.
 
-\subsection{Requirements}
+\subsection{The composed definition and an example}
 
 The system should ease the lives of its users by performing actions autonomously
 on their behalf. These actions should be learned by monitoring users' usage
@@ -53,4 +53,6 @@ should be an aid, not an element of frustration. The system should use small
 computational devices, that save energy consumption, to monitor the usage
 patterns of the users. The data acquired in this way should be sent to another
 computational device that analyses it, to further improve the knowledge of the
-users' behavioral patterns, thereby improving the quality of actions the system can perform.
+users' behavioural patterns, thereby improving the quality of actions the system can perform.
+
+Many sensors working together to learn users’ usage patterns, e.g. everyday at about 7.30, sensor 1 is activated and then the user turns the light on. This could be learned by a machine so that the next time sensor 1 is activated at about 7.30, the system automatically turns on the light.
