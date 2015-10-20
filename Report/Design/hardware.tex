@@ -1,5 +1,36 @@
 \section{Hardware}
-This section discusses hardware that is used in this project.  The hardware is described, tested, and reviewed. A brief description of the hardware is included in this section followed by a review of the hardware.
+This section discusses existing hardware in the market and the hardware that is used and the reason for the choices made in this project.  The hardware is
+described, tested, and reviewed. A brief description of the hardware is included
+in this section followed by a review of the hardware.
+\subsection{Hardware on the Market}
+The market has a variety of hardware to offer. These hardware include microcontrollers, that is programmable boards, as well separate modules for the micro controllers. The microcontrollers comes in variety of sizes, shapes, power consumption and computational capabilities.
+\\\\
+Even though the market is has much to offer, few of the microcontrollers are chosen because of their ability to suit this type of project. These micro-controllers are  considered based on the requirements mentioned in section\ref{sec:specification}.
+\\\\The list of the hardware taken into consideration are following:
+\begin{enumerate}
+  \item Raspberry pi
+  \item BeagleBone
+  \item Arduino
+  \item Teensy
+\end{enumerate}
+\subsubsection{Raspberry pi}
+The raspberry pi is more than just a microcontroller. Rapsberry pi is a credit-card sized computer that runs linux operating system and can be plugged into a computer monitor or a TV. The devices uses a mouse and keyboard as I/O. The device is however programmable and thereby a candidate for embedded hardware. It is small but the computational capabilities are beyond what is need and so is the power consumption\cite{power_usage}. 
+
+\subsubsection{BeagleBone}
+BeagleBone is very similar to Raspberry pi. It is a small credit-card sized computer that runs linux operating system. Performance-wise the BeagleBone is identical with the Raspberry pi, however according to the test performed by Tony Dicola\cite{power_usage}, the power consumption of the BeagleBone is slightly higher. The BeagleBone is a more expansive device than the Raspberry Pi.
+
+\subsubsection{Arduino}
+The Arduino board is a microcontroller with low computational capabilities as well as limited memory. The Arduino boards comes with different capabilites and features. However for sake of simplicity Arduino is referring to the entry-level Arduino board also known as the Arduino Uno and all its clones. The Arduino board is programmable with the Arduino integrated development environment. The Arduino board is inexpensive, small and the power consumption seem to be lower than the  BeagleBone and Raspberry pi respectively\cite{power_usage_ard}. 
+
+\subsubsection{Teensy}
+The Teensy board is small sized microcontroller that is performance-wise very similar to the Arduino board. However there is a variety of Teensy that is slightly more powerful than the Arduino board discussed above. The board is small, inexpensive, and the power usage is low.\cite{power_usage_teen}.
+
+\subsection{Hardware of Choice}
+The system that is being design has requirements. The requirements are, as described in section \ref{sec:specification}, that the embedded devices has to be small and energy efficient. The embedded devices' solely purpose is to collect data from its modules, send and receive data from the main computational device that does all the computations. According to the aforementioned criteria it is not necessary for the embedded device to poses any computational power higher than the Teensy board or the Arduino board is capable of, and therefore the BeagleBone and Raspberry Pi can be excluded. 
+\\\\
+As aforementioned the Teensy and Arduino board are very similar in terms of performance, power consumption and size. Even though the size of the Teensy is a little smaller, this difference in this context does not matter.
+\\\\
+The major difference is however the community. The Arduino platform is open-source and has a great community as well as many special modules are design for the Arduino boards. The great community makes solving problems easier thus making the Arduino board the hardware of choice for this project.
 
 \subsection{PIR Motion Sensor}
 
