@@ -7,7 +7,7 @@ to better understand the problem domain, a PACT (People, Activity, Context and T
 In an ideal situation the user should never be required to interact with the system. In a PACT-analysis when discussing people there are number of things that can be mentioned. In the following section we will go over a few and discuss their relevance.
 
 \paragraph{Physical Abilities}
-Since the system aims at working user's input as much as possible, few physical characteristics matters. Some that might be relevant are certain disabilities. For instance how should the system react and work around people with poor or no sight.
+Since the system aims at working users' input as much as possible, few physical characteristics matters. Some that might be relevant are certain disabilities. For instance how should the system react and work around people with poor or no sight.
 
 \paragraph{Cognitive Abilities}
 Various levels of cognitive ability encompass a wide variety of problems
@@ -28,7 +28,7 @@ If a user does not care about the former, the user should be able to adjust the 
 \subsection{Activities and Context}
 The activity the system will focus on is turning on and off lights and
 appliances. While this is not a time consuming task, it is done often. First the
-system needs to learn user's patterns. This will not change how the user does
+system needs to learn users' patterns. This will not change how the user does
 this activity, because the system will passively observe when and in what
 context the lights or appliances are turned on.
 
@@ -68,4 +68,4 @@ In all systems the output are the actuators. The actuators have to be able to mi
 In the case of appliances a general list is not possible to create, since different appliances solve vastly different tasks. Luckily the appliances have well defined tasks that can be expressed formally and actuators have to be able to mimic the usage of the appliance. Also testing the activation and usage of such a device is a well defined task. The actuators and sensors needed to for each specific device will be further expressed in the implementation section when needed.
 
 \subsubsection{Communication}
-As expressed earlier the system will be spread out over the home of the user. Each sensor and actuator therefore need to be able to communicate between one another. The structuring of this can be found in \cref{sec:systemDesignArchitecture}. Since the focus of this project in not on the communication the Technologies for this will follow the standards used within the established field of home automation.
+As expressed earlier the system will be spread out over the home of the user. Each sensor and actuator therefore need to be able to communicate between one another. The structuring of this can be found in \cref{sec:systemDesignArchitecture}. Since the focus of this project in not on the communication the technologies for this will follow the standards used within the established field of home automation.
