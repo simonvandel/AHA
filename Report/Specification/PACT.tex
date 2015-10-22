@@ -1,0 +1,71 @@
+%mainfile: ../master.tex
+\section{People, Activity, Context and Technology Analysis}
+To establish a basis for defining the design requirements for this project and
+to better understand the problem domain PACT analysis is done.
+
+\subsection{People}
+In an ideal situation the user should never be required to interact with the system. In a PACT-analysis when discussing people there are number of things that can be mentioned. In the following section we will go over a few and discuss their relevance.
+
+\paragraph{Physical Abilities}
+Since the system aims at working user's input as much as possible, few physical characteristics matters. Some that might be relevant are certain disabilities. For instance how should the system react and work around people with poor or no sight.
+
+\paragraph{Cognitive Abilities} encompasses a wide variety of problems
+when considering design. Assuming that the system isn't flawless, in the
+  sense that the system will perform wrong actions some of the time, how should
+the system respond and inform the user of why the error happened? Another thing
+to consider is how the user is presented with information regarding the status
+of the system.
+
+This is relevant to the psychological characteristics because the system needs to be designed so that regardless of the users' technical capabilities they are able to use it.
+
+\paragraph{Social differences} can, to some extent, answer how the users' usage of
+the system is. This is important in realising how flexible the system should be.
+The two main concerns of the system is day-to-day comfort and conserving energy.
+If a user doesn't care about the former, the user should be able to adjust the system so that it's even more conservative with the energy the cost of comfort.
+
+\subsection{Activities and Context}
+The activity the system will focus on is turning on and off lights and
+appliances. While this is not a time consuming task it is done often. First the
+system needs to learn user's patterns. This won't change how the user does
+this activity, because the system will passively observe when and in what
+context the lights or appliances are turned on. There a number of different
+contexts you could imagine being relevant to turning on appliances in the home.
+For example if the user drinks coffee in the morning, should the system then
+start brewing coffee based on the time or movement in the home? Turning on
+lights could also be context sensitive; For example lower levels of light
+intensity in the morning and when watching television.
+
+The only time the user needs to directly interact with the system is when the
+system is doing something wrong. as part of the learning process the user is required to inform the system when some action is wrong. This requires one to consider how the system should present the decisions it makes to the user and allow the user to clearly define what actions were wrong. The context aspect isn't very
+important here because the system could log all the actions and the user can
+then when he has time, note the wrong action or the system could simply register
+that a particular action has been reverted by the user.
+
+\subsection{Technologies}
+\label{sub:Technologies}
+Currently the technology used in the systems are plentiful but three different areas define the purpose of technologies in the problem domain, input, output, and communication.
+\subsubsection{Input}
+The input can be split up into two different technology areas; sensors and general purpose interface.
+
+The sensors are used to inform the system about the state of the problem domain. The problem domain of home automation is a diverse one since it depends on what humans can perceive, since it is our habits it tries to automate. The optimal amount of sensors would therefore be enough to emulate the biological senses of humans. This is on the other hand a very hard task to complete. Partly because it is not clear how many senses humans have, the amount varies from 5-21 depending on how we define senses, and partly because each sense requires at least one sensor type and often more. The delimitation of the problem domain helps a lot though. Only senses used for light and appliance usage are needed. The senses concerning the habits of this area are found to be as follows\jenote{Begrund det her bedre}:
+\begin{itemize}
+	\item Time
+	\item Light intensity
+	\item Location and spacial awareness
+	\item Awareness of active devices
+	\item ... More?
+\end{itemize}
+The sensor variety needed to fully encompass the problem domain therefore needs to fulfil these areas, but variety is not everything. The perspective of the system is also different from that of the user. Since the system is stationary and the user moves around in the home, the system also need more sensors of the same type in order to emulate the users senses in all locations. This task is a bit harder to firmly put into numbers since it depends on how well the sensors operate. Generally it can be said that enough sensors are needed to be precise enough in short enough time so the user does not notice a difference in their own patterns.
+
+The general purpose interface is used in the state of the art for the users to inform the systems about their habits. Here the user can actively change the behaviour of the system on the sensor inputs. Since the system of this project relies on machine learning instead of the user programming the behaviour a general user interface performing this task is not needed.
+
+\subsubsection{Output}
+In all systems the output are the actuators. The actuators have to be able to mimic the actions the user are able to perform. Again the delimitation of the problem domain helps here to determinate what the actuators. Since the system has been delimited to light and appliances it is only dealing with already electrical devices and therefore have a formal described behaviour. In light the system needs to be able to:
+\begin{itemize}
+	\item Turn on/off the light
+	\item Dim the light up/down if possible
+\end{itemize}
+In the case of appliances a general list is not possible to create, since different appliances solve vastly different tasks. Luckily the appliances have well defined tasks that can be expressed formally and actuators have to be able to mimic the usage of the appliance. Also testing the activation and usage of such a device is a well defined task. The actuators and sensors needed to for each specific device will be further expressed in the implementation section when needed.
+
+\subsubsection{Communication}
+As expressed earlier the system will be spread out over the home of the user. Each sensor and actuator therefore need to be able to communicate between one another. The structuring of this can be found in \cref{sec:systemDesignArchitecture}. Since the focus of this project in not on the communication the Technologies for this will follow the standards used within the established field of home automation.

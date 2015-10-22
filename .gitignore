@@ -82,6 +82,7 @@ Report/auto/*
 *.bak
 *.orig
 *.tex.orig
+*.tex.ini
 _region_.tex
 _region_.pdf
 *.lox

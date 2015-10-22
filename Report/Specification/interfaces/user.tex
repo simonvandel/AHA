@@ -1,0 +1,25 @@
+\subsection{User Interfaces}
+There are two kinds of user interaction in the system: passive and active interaction.
+
+\subsubsection{Passive User Interaction}
+Passive user interactions are those interactions that the users make with the environment that are silently monitored by the system to infer some emerging behaviour of the user. Examples of passive interactions are: \enquote{the user turns on the spotlight right after turning on the TV}, \enquote{the user turns on the coffee machine at 6:30}.
+
+\subsubsection{Active User Interaction}
+Active interactions are all those interactions that the user consciously has with the system via a digital user interface. Examples of such interactions are: \enquote{the user tells the system that the coffee machine should not be turned on at 6:30 in the weekends}, \enquote{the user informs the system that the home will be vacant the next week}.
+
+\subsubsection{Design of User Interface}
+As stated in \cref{sec:requirements}, the system should be as invisible to the user as possible. This means that passive user interaction is to be preferred whenever possible. 
+
+\paragraph{Informing the system of wrong actions}
+
+The system has to gradually learn which actions suits the user the best. To learn, the system has to have a metric to evaluate how well its performed actions were. The best metric is the user's opinion. However, this metric can not be extracted from passive user interaction. The user has to actively interact with the system, telling the system how well its actions were. Therefore, a mix of active and passive interaction is needed between the user and the system.
+
+To reduce active user interaction, the user should only inform the system when it has made a mistake. The interface could also be able to inform the system when it has made a correct action, but requiring the user to inform the system too often, is distracting for the user. Therefore, if an action is not marked as wrong, it is assumed to be correct. Additionally, it is better that the system is conservative in its actions. In other words, it is better to continue letting the user perform an action, than the system performing an action that it is not certain will please the user.
+
+One way the user could inform the system of a mistake, is by reversing the action the system performed badly. For example, if the system wrongly turned off the light in the bathroom, the user would naturally turn on the light again. This would give the system an indication that its action was wrong. This is a good way for the user to inform the system, as it feels natural for the user. However, there are problems with this approach. For example, if the system wrongly turns on the light in the bedroom, but the user first notices this 30 minutes later, and then turns off the light. Because the user does not immediately notice the wrong action, it is ambiguous for the system whether the whole action of turning the light on was wrong, or that it was correct to turn the light on, but to only leave it on for 30 minutes.
+
+The best user experience is by having the user reverse the wrong action of the user, but in cases where this is not possible, an alternative interface is needed. One alternative is a graphical user interface that displays all actions the system has made. The user can then choose actions and mark them as wrong. This way of informing the system is unambiguous, but also less convenient for the user.
+
+\paragraph{Visualising system knowledge}
+
+As discussed in \cref{sec:interviewReports}, one of the problems of the Nest system was that the user could not reason about the actions of the system. That is, they would not know why a given action was made. To alleviate this problem, the knowledge of the system should be transparent. A solution would be to visually represent the knowledge of the system. The earlier paragraph talked about a graphical user interface for displaying all actions the system has made. This can be extended to also include why a given action was made. For example, the interface could display the action \enquote{light turned on in living room at 21:30}. If the user clicked on this action, the system would display the reasoning behind this action. In this case, it could be: \enquote{The light intensity in the living room was below 10 lux}.

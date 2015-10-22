@@ -1,7 +1,10 @@
-personal_ws-1.1 en 73 
+personal_ws-1.1 en 86 
 modularity
 th
 lux
+STAThreadAttribute
+photoresistors
+namespace
 lcr
 SIG
 sensorActuatorSubsystem
@@ -11,6 +14,7 @@ compilable
 sw
 sensorSubsystem
 Rasmus
+photoresistor
 delimitations
 ZigBee
 Wearables
@@ -20,10 +24,12 @@ center
 mainController
 GND
 HomeKit
+txt
 unretriggerable
 ymajorgrids
 Stærmose
 Bak
+analogRead
 GPLv
 Vandel
 ytick
@@ -46,8 +52,10 @@ actuatorSubsystem
 Qauomi
 IEEE
 Kasper
+ReadLine
 ylabel
 Arduino
+StreamReader
 llll
 Jetson
 analysisController
@@ -55,12 +63,15 @@ nd
 Aalborg
 yshift
 Vej
+ArduinoPhotoTest
 WiFi
 Heider
 Hegner
 versa
 pos
+lightgray
 pre
+nm
 analysisSubsystem
 Lagerlöfs
 Fuglsang
@@ -68,7 +79,9 @@ Insteon
 Sommerville's
 potentiometer
 Powerline
+WriteLine
 titlepage
+args
 luminance
 verca
 xtick
