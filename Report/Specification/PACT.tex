@@ -24,7 +24,7 @@ Since the system is based on the usage patterns of the user, people with persona
 Social differences can, to some extent, answer how the users' usage of
 the system is. This is important in realising how flexible the system should be.
 The two main concerns of the system is day-to-day comfort and conserving energy.
-If a user does not care about the former, the user should be able to adjust the system so that it is even more conservative with the energy the cost of comfort.
+If a user does not care about the former, the user should be able to adjust the system so that it is even more conservative with the energy at the cost of comfort.
 
 \subsection{Activities and Context}
 The activity the system will focus on is turning on and off lights and
@@ -40,11 +40,11 @@ start brewing coffee based on the time or movement in the home? Turning on
 lights could also be context sensitive; For example lower levels of light
 intensity in the morning or when the user is watching television.
 
-The only time the user needs to directly interact with the system is when the system is doing something wrong. as part of the learning process the user is required to inform the system when some action is wrong. This requires one to consider how the system should present the decisions it makes to the user and allow the user to clearly define what actions were wrong. The context aspect is not very important here because the system could log all the actions and the user can then when he has time, note the wrong action or the system could simply register that a particular action has been reverted by the user.
+The only time the user needs to directly interact with the system is when the system is doing something wrong. This requires one to consider how the system should present the decisions it makes to the user and allow the user to clearly define what actions were wrong. The context aspect is not very important here because the system could log all the actions and the user can then when he has time, note the wrong action or the system could simply register that a particular action has been reverted by the user.
 
 \subsection{Technologies}
 \label{sub:Technologies}
-The technologies used for this type of system can be seperated into three different areas, which define the purpose of technologies in the problem domain; input, output, and communication.
+The technologies used for this type of system can be separated into three different areas, which define the purpose of technologies in the problem domain; input, output, and communication.
 \subsubsection{Input}
 The input can be split up into two different technology areas; sensors and general purpose interface.
 
@@ -61,12 +61,12 @@ The sensor variety needed to fully encompass the problem domain therefore needs 
 The general purpose interface is used in the state of the art for the users to inform the systems about their habits. Here the user can actively change the behaviour of the system on the sensor inputs. Since the system of this project relies on machine learning instead of the user programming the behaviour a general user interface performing this task is not needed.
 
 \subsubsection{Output}
-In all systems the output are the actuators. The actuators have to be able to mimic the actions the user are able to perform. Again the delimitation of the problem domain helps here to determinate what the actuators. Since the system has been delimited to light and appliances it is only dealing with already electrical devices and therefore have a formal described behaviour. In light the system needs to be able to:
+In all systems the output are the actuators. The actuators have to be able to mimic the actions the user are able to perform. Again the delimitation of the problem domain helps here to determinate what the actuators. Since the system has been delimited to light and appliances it is only dealing with already electrical devices and therefore has a formal described behaviour. In light the system needs to be able to:
 \begin{itemize}
 	\item Turn on/off the light
 	\item Dim the light up/down if possible
 \end{itemize}
-In the case of appliances a general list is not possible to create, since different appliances solve vastly different tasks. Luckily the appliances have well defined tasks that can be expressed formally and actuators have to be able to mimic the usage of the appliance. Also testing the activation and usage of such a device is a well defined task. The actuators and sensors needed to for each specific device will be further expressed in the implementation section when needed.
+In the case of appliances a general list is not possible to create, since different appliances solve vastly different tasks. Luckily the appliances have well defined tasks that can be expressed formally and actuators have to be able to mimic the usage of the appliance. Also testing the activation and usage of such a device is a well defined task. The actuators and sensors needed to for each specific device will be further expressed in a subsequent section when needed.
 
 \subsubsection{Communication}
-As expressed earlier the system will be spread out over the home of the user. Each sensor and actuator therefore need to be able to communicate between one another. The structuring of this can be found in \cref{sec:systemDesignArchitecture}. Since the focus of this project in not on the communication the technologies for this will follow the standards used within the established field of home automation.
+As expressed earlier the system will be spread out over the home of the user. Each sensor and actuator therefore need to be able to communicate between one another. The structuring of this can be found in \cref{sec:architecture}. Since the focus of this project is not on the communication the technologies for this will follow the standards used within the established field of home automation.
