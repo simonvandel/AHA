@@ -9,21 +9,14 @@ void setup(){
 
 void loop(){
   if(Serial.available()){
-    blink();
-    digitalWrite(ledpin, HIGH);
     myData = Serial.read();
+    digitalWrite(ledpin, HIGH);
+    delay(500);
+    digitalWrite(ledpin, LOW);
     if(myData == '1'){
       digitalWrite(ledpin, HIGH);
-    }
-    if(myData == '0'){
+    } else {
       digitalWrite(ledpin, LOW);
     }
   }
-}
-
-void blink(){
-  digitalWrite(ledpin, HIGH);
-  delay(1000);
-  digitalWrite(ledpin, LOW);
-  delay(1000);
 }
