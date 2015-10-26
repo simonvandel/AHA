@@ -1,10 +1,8 @@
-\section{Functions}
+\section{Functions}\label{sec:functions}
+This section explores functions the system should support to solve the requirements presented in \cref{sec:requirements}, along with creating the basis for designing information management. The method for describing these functions are based on Object Oriented Analysis \& Design\cite{OOAD}.
 
-This section explores functions the system should support to solve the requirements presented in \cref{sec:requirements}
+In \cref{table:functionlist}, each function is described as an action the system can take or information the system has access to. Each function also has two attributes. \enquote{Complexity} is a qualified guess of how complex the development of the function will be. \enquote{Type} describes what the function does in the system\cite{OOAD}.
 
-\sinote{Ikke færdigt. Vi skal skrive hvorfor de funktioner i tabellen er med.}
-
-\label{subsec:Functions}
 \begin{table}[hbtp]
 \centering
 \begin{tabular}{lcr}
@@ -26,12 +24,12 @@ Find user location			& Complex	& Compute \\
 Calculate behavioural rules for the system	& Complex	& Compute \\
 \bottomrule
 \end{tabular}
-\caption{Function table}
+\caption{Function table that describes each function the system should have}
 \label{table:functionlist}
 \end{table}
 
-\subsubsection{Find user location}
-The system is able to register input from multiple ultra sound and infra red sensors. Using these different sensors distance to the user the system is able to find the specific placement of the user in the room.
+The system is able to register input from multiple sensors. Using these different sensors the system is able to find the specific placement of the user in the room. Bundled into one function called \enquote{Find user location}. The function is of the Type \enquote{Compute} because it solves an information need. Because the function requires the analysis of multiple different data points the complexity is approximated to be complex.
 
-\subsubsection{Calculate behavioural rules for the system}
-The system uses it sensor inputs together with its general knowledge of the world (like weekday, date and time) to automatically analyse the behavioural patterns of the user and find out when and how the user uses his light and appliances. Like, the user always turns off his or her lights when he leaves all rooms at 07:45. This analysis sets up the rules for the actuators in the system so they can eventually perform the tasks for the user.
+The \enquote{User enters room} function is of Type \enquote{Update} because it's activated by a change in the problem domain and presents a model change in the system. This function is marked as having medium complexity, because it is estimated that the simplest approach to this problem will not be sufficiently precise to solve the problem. 
+
+The system uses its sensor inputs together with its general knowledge of the world to analyse the behavioural patterns of the user and find out when and how the user uses his lights and appliances. This analysis sets up the rules for the actuators in the system so they can eventually perform the tasks for the user. E.g. the user always turns off his or her lights when he leaves the room at 07:45 when this pattern has been found the system starts automatically turning off the lights.
