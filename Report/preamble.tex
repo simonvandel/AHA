@@ -25,6 +25,7 @@
 \usepackage{algorithmicx}
 \usepackage{algorithm}
 \usepackage{tikz}
+\usepackage[simplified]{pgf-umlcd}
 \usetikzlibrary{arrows,positioning}
 
 \tikzset{
@@ -34,6 +35,32 @@ squarednode/.style={
   text width=8em,
   align=center,
   }
+}
+\renewcommand{\association}[6]{
+\draw [umlcd style] (#1) -- (#4)
+node[very near start, above]{#2}
+node[very near start, above right]{#3}
+node[very near end, above right]{#5}
+node[very near end, below]{#6};
+}
+
+\renewcommand{\aggregation}[4]
+{
+\draw[umlcd style, open diamond->] (#1) -- (#4)
+node[very near end, above]{#2}
+node[very near end, below]{#3};
+}
+\renewcommand{\composition}[4]
+{
+\draw[umlcd style, fill=\umldrawcolor, diamond->] (#1) -- (#4)
+node[very near end, above]{#2}
+node[very near end, below]{#3};
+}
+
+\renewcommand{\unidirectionalAssociation}[4]{
+\draw [umlcd style, ->] (#1) -- (#4)
+node[very near end, above]{#2}
+node[very near end, below]{#3};
 }
 
 \usepackage{pgfplots} % for plotting graphs
