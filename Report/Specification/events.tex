@@ -1,16 +1,20 @@
 %mainfile: ../master.tex
-\section{Events}
+\section{Events}\label{sec:events}
 
-The events in \cref{tab:eventtable}, only showcase some possible events, that can take place in the problem domain. There here are however infinitely many events that can happen, as an event can identified as observable changes of sensor values in the domain of $\mathbb{R}$.
+\citet{OOAD} describes an event the following way: \enquote{An instantanious event that involves one or more objects}. By understanding which events can happen in the problem domain, the behaviour of objects in the problem domain can be understood, further understanding possible usecases of the system.
+
+The events in \cref{tab:eventtable}, only showcases some possible events, that can take place in the problem domain. There are however infinitely many events that can happen, as an event can be identified as observable changes of sensor values. When choosing the events, the focus was on the events being representative of all possible events.
+
+
 
 % \begin{table}[h!]
 %   \centering
 %   \begin{adjustbox}{max width=\textwidth}
-%     \begin{tabular}{*{10}{|l}|}
+%     \begin{tabular}{*{8}{|l}|}
 %         \hline
-%         \textbf{Event}                     & Person & Action & Pattern & Decision & Feedback & Sensor & Actuator & Location & Time   \\
+%         \textbf{Event}                     & Person & Action & State & Pattern & Sensor & Actuator & Location & Time   \\
 %         \hline
-%         User entered location (unexpected) & \cmark & \cmark & \cmark  & \cmark   & \cmark   & \cmark & \cmark   & \cmark   & \cmark \\
+%         User entered lo0cation (unexpected) & \cmark & \cmark & \cmark  & \cmark   & \cmark   & \cmark & \cmark   & \cmark   & \cmark \\
 %         \hline
 %         User entered location (expected)   & \cmark & \cmark & \cmark  & \cmark   & \cmark   & \cmark & \cmark   & \cmark   & \cmark \\
 %         \hline
@@ -34,10 +38,11 @@ The events in \cref{tab:eventtable}, only showcase some possible events, that ca
 %   \label{tab:eventtable}
 % \end{table}
 
-\begin{figure}
-   \centering
-   \begin{adjustbox}{max width=\textwidth}
-    \includegraphics{Behaviour.pdf}
-   \end{adjustbox}
-   \caption{Behaviour diagram}
-\end{figure}
+\sinote{Udkommenteret i Tex dokument, er et behaviour diagram. Hvad skal det bruges til?}
+% \begin{figure}
+%    \centering
+%    \begin{adjustbox}{max width=\textwidth}
+%     \includegraphics{Behaviour.pdf}
+%    \end{adjustbox}
+%    \caption{Behaviour diagram}
+% \end{figure}
