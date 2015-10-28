@@ -1,39 +1,48 @@
-%mainfile: ../../master.tex
-\section{Events}
+%mainfile: ../master.tex
+\section{Events}\label{sec:events}
 
-\begin{table}[h!]
-  \centering
-  \begin{adjustbox}{max width=\textwidth}
-    \begin{tabular}{*{15}{|l}|}
-        \hline
-        \textbf{Event} & Person & Action & Pattern & Mistake & Sensor & Switch & Lamp & Light intensity & Room & Premise & Time \\
-        \hline
-        Entered home & \cmark & \cmark & \cmark & & \cmark & & \cmark & \cmark & \cmark & \cmark & \\
-        \hline
-        Left home & \cmark & \cmark & \cmark & & \cmark & & \cmark & & \cmark & \cmark & \\
-        \hline
-        Enter room & \cmark & \cmark & \cmark & & \cmark & & \cmark & \cmark & \cmark & & \\
-        \hline
-        Left room & \cmark & \cmark & \cmark & & \cmark & & \cmark & \cmark & \cmark & &\\
-        \hline
-        Flicked switch & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & & \\
-        \hline
-        Outside/External light intensity down & \cmark & & & & \cmark & \cmark & \cmark & \cmark & \cmark & &\\
-        \hline
-        Outside/External light intensity up & \cmark & & & & \cmark & \cmark & \cmark & \cmark& \cmark & &\\
-        \hline
-        Person sleeping & \cmark & \cmark & \cmark & & \cmark & & \cmark & & \cmark & & \cmark\\
-        \hline
-    \end{tabular}
-  \end{adjustbox}
-  \caption{Event table}
-  \label{tab:eventtable}
-\end{table}
+\citet{OOAD} describes an event the following way: \enquote{An instantanious event that involves one or more objects}. By understanding which events can happen in the problem domain, the behaviour of objects in the problem domain can be understood, further understanding possible usecases of the system.
 
-\begin{figure}
-   \centering
-   \begin{adjustbox}{max width=\textwidth}
-    \includegraphics{Behaviour.pdf}
-   \end{adjustbox}
-   \caption{Behaviour diagram}
-\end{figure}
+The events in \cref{tab:eventtable}, only showcases some possible events, that can take place in the problem domain. There are however infinitely many events that can happen, as an event can be identified as observable changes of sensor values. When choosing the events, the focus was on the events being representative of all possible events.
+
+
+
+% \begin{table}[h!]
+%   \centering
+%   \begin{adjustbox}{max width=\textwidth}
+%     \begin{tabular}{*{8}{|l}|}
+%         \hline
+%         \textbf{Event}                     & Person & Action & State & Pattern & Sensor & Actuator & Location & Time   \\
+%         \hline
+%         User entered lo0cation (unexpected) & \cmark & \cmark & \cmark  & \cmark   & \cmark   & \cmark & \cmark   & \cmark   & \cmark \\
+%         \hline
+%         User entered location (expected)   & \cmark & \cmark & \cmark  & \cmark   & \cmark   & \cmark & \cmark   & \cmark   & \cmark \\
+%         \hline
+%         Left home & \cmark & \cmark & \cmark & & \cmark & & \cmark & & \cmark & \cmark & \\
+%         \hline
+%         Enter room & \cmark & \cmark & \cmark & & \cmark & & \cmark & \cmark & \cmark & & \\
+%         \hline
+%         Left room & \cmark & \cmark & \cmark & & \cmark & & \cmark & \cmark & \cmark & &\\
+%         \hline
+%         Flicked switch & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & & \\
+%         \hline
+%         Outside/External light intensity down & \cmark & & & & \cmark & \cmark & \cmark & \cmark & \cmark & &\\
+%         \hline
+%         Outside/External light intensity up & \cmark & & & & \cmark & \cmark & \cmark & \cmark& \cmark & &\\
+%         \hline
+%         Person sleeping & \cmark & \cmark & \cmark & & \cmark & & \cmark & & \cmark & & \cmark\\
+%         \hline
+%     \end{tabular}
+%   \end{adjustbox}
+%   \caption{Event table}
+%   \label{tab:eventtable}
+% \end{table}
+
+\sinote{Udkommenteret i Tex dokument, er et behaviour diagram. Hvad skal det bruges til?}
+% \begin{figure}
+%    \centering
+%    \begin{adjustbox}{max width=\textwidth}
+%     \includegraphics{Behaviour.pdf}
+%    \end{adjustbox}
+%    \caption{Behaviour diagram}
+% \end{figure}

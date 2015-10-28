@@ -47,7 +47,7 @@ This program was allowed to run long enough in each test that over 1000 readings
 To find the minimum, maximum and average values, as well as the difference between maximum and minimum in percent, the data was copied into a file, which was then input to the C\#-program seen in \cref{lst:cShPhotoCode}.
 
 \lstset{language=[Sharp]C}
-\begin{lstlisting}[label = lst:cShPhotoCode, caption = C\# data processing code]
+\begin{lstlisting}[label = lst:cShPhotoCode, caption = C\# data processing code, showstringspaces=false]
 using System;
 using System.IO;
 
@@ -94,18 +94,18 @@ namespace ArduinoPhotoTest {
 \subparagraph{Results}
 The results of the tests can be seen in \cref{tab:precisionTestResults}. "S1" refers to the first photoresistor. and "S2" refers to the second.
 
-  \begin{table}
+\begin{table}[H]
 \rowcolors{1}{white}{lightgray}
-    \centering
-    \begin{tabular}[H!]{m{4.5em} c c c c c c c c}
-      Scenario & S1 min & S1 max & S1 avg & S1 diff & S2 min & S2 max & S2 avg & S2 diff \\
-      \hline
-      Minimum light & 136 & 138 & 137 & 1,47 \% & 25 & 27 & 26 & 8.00 \% \\
-      Average room light & 875 & 889 & 883 & 1,60 \%  & 634 & 675 & 656 & 6,47 \% \\
-      Intense light & 931 & 933 & 932 & 0,21 \%  & 772 & 775 & 773 & 0,39 \% \\
-    \end{tabular}
-    \caption{Precision test results}\label{tab:precisionTestResults}
-  \end{table}
+  \centering
+  \begin{tabular}[htbp]{m{4.5em} c c c c c c c c}
+    Scenario & S1 min & S1 max & S1 avg & S1 diff & S2 min & S2 max & S2 avg & S2 diff \\
+    \hline
+    Minimum light & 136 & 138 & 137 & 1,47 \% & 25 & 27 & 26 & 8.00 \% \\
+    Average room light & 875 & 889 & 883 & 1,60 \%  & 634 & 675 & 656 & 6,47 \% \\
+    Intense light & 931 & 933 & 932 & 0,21 \%  & 772 & 775 & 773 & 0,39 \% \\
+  \end{tabular}
+  \caption{Precision test results}\label{tab:precisionTestResults}
+\end{table}
 
 \subparagraph{Partial Conclusion}
 As expected, the resistors did exhibit some imprecision under constant light. S2, however, was much worse than S1 under the minimum and average light scenarios, having more than 5 times the difference between minimum and maximum values. Both S1 and S2 were very consistent under intense light.
