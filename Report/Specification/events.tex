@@ -5,8 +5,26 @@
 
 The events in \cref{tab:eventtable}, only showcases some possible events, that can take place in the problem domain. There are however infinitely many events that can happen, as an event can be identified as observable changes of sensor values. When choosing the events, the focus was on the events being representative of all possible events.
 
-
-
+\begin{table}
+  \centering
+  \begin{tabular}{*{7}{|l}|}
+    \hline
+    Event & Person & Action & State & Pattern & Location & Time \\
+    \hline
+    Enter/leave room & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark\\
+    \hline
+    Turn on/off appliance & \checkmark & \checkmark & \checkmark & \checkmark & & \checkmark\\
+    \hline
+    Changes in external light & & & \checkmark & \checkmark & & \checkmark\\
+    \hline
+    Watching TV & \checkmark & \checkmark & & \checkmark & & \checkmark\\
+    \hline
+    Unexpectedly late & \checkmark & \checkmark & \checkmark & & \checkmark & \checkmark\\
+    \hline
+  \end{tabular}
+  \caption{Event table}
+  \label{tab:eventtable} \kanote{Hændelserne i tabellen skal forklares, så læseren ved hvad fx. "Unexpectedly late" betyder}
+\end{table}
 % \begin{table}[h!]
 %   \centering
 %   \begin{adjustbox}{max width=\textwidth}
