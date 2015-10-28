@@ -44,7 +44,7 @@ void loop() {
 \end{lstlisting}
 
 This program was run until more than 1000 readings were taken in each scenario.
-To find the minimum, maximum and average values, as well as the difference between maximum and minimum in percent.\ranote{Gio asks if we mean the 'relative error'. Dont think that we do, but then what should anything be changed?} The data was copied into a file, which was then input to the C\#-program seen in \cref{lst:cShPhotoCode}.
+To find the minimum, maximum and average values, as well as the difference between maximum and minimum in percent. The data was copied into a file, which was then input to the C\#-program seen in \cref{lst:cShPhotoCode}.
 
 \lstset{language=[Sharp]C}
 \begin{lstlisting}[label = lst:cShPhotoCode, caption = C\# data processing code]
@@ -91,9 +91,8 @@ namespace ArduinoPhotoTest {
   }
 }
 \end{lstlisting}
-\subparagraph{Results}
-The results of the tests can be seen in \cref{tab:precisionTestResults}. \ranote{does this need to be here. Moved the defination of s1 and s2, down to the table 4.2 caption}
-
+\paragraph{Configuration}
+In order to find a baseline for the two photoresistors a test was done where each photoresistor had a 10k$\Omega$ resistor. Results for this test can be seen in \cref{tab:precisionTestResults}.
   \begin{table}
 \rowcolors{1}{white}{lightgray}
     \centering
@@ -108,14 +107,14 @@ The results of the tests can be seen in \cref{tab:precisionTestResults}. \ranote
   \end{table}
 \ranote{look at columns headers, combine them? dDoc for details}
 \subparagraph{Partial Conclusion}
-As expected, the resistors did exhibit some imprecision under constant light. S2, however, was much worse than S1 under the minimum and average light scenarios, having more than 5 times the difference between minimum and maximum values. Both S1 and S2 were very consistent under intense light. \ranote{Not enough analysis, simply reading the result is pointless. Delete tha sub-paragraph? Or what did we wanna say?}
+The results of the tests can be seen in \cref{tab:precisionTestResults}. As can be seen in the table S2 had a significant lower base value. This means it will be better at detecting higher levels of light.
 
 \paragraph{Configuration}
 In order fully take advantage of the two photoresistors, an experiment was devised to find a configuration of pull-down resistors, which would offer a large range of meaningful values, i.e. be able to detect small differences under low light as well as intense light scenarios.
 \subparagraph{Hypothesis}
 Using different pull-down resistors on the photoresistors would make it possible to extend the range of values, which the sensor pair could register.
 \subparagraph{Test Procedure}
-The scenarios described in \cref{subsub:precision} are also used in this experiment. Between each set of scenarios, a pull-down resistor value was changed.\ranote{Gio doesn't understand, if changes in photoresistor intro works should solve this as well.} As the 10K $\Omega$ resistor used in the previous experiments responded well to low light conditions, and was almost impossible to bottom out, another resistor-value was sought which could complement this. To increase the tolerance to light, available resistors with less resistance than 10K $\Omega$ have been investigated.
+The scenarios described in \cref{subsub:precision} are also used in this experiment. Between each set of scenarios, a pull-down resistor value was changed. As the 10K $\Omega$ resistor used in the previous experiments responded well to low light conditions, and was almost impossible to bottom out, another resistor-value was sought which could complement this. To increase the tolerance to light, available resistors with less resistance than 10K $\Omega$ have been investigated.
 \subparagraph{Results}
 The results from the configuration experiments can be seen in \cref{tab:1KTestResults,tab:2.2KTestResults,tab:4.4KTestResults,tab:10KTestResults,tab:12.2KTestResults}.
 
@@ -185,4 +184,4 @@ The results from the configuration experiments can be seen in \cref{tab:1KTestRe
 \end{table}
 
 \subparagraph{Partial Conclusion}
-Using a 12.2K pull-down resistor on one photoresistor and a 4.4K pull-down resistor on the other allows for good precision both in darker and lighter envoirments, because one photoresistor is very sensitive to low light conditions and very tolerant\ranote{intolerant?} of intense light conditions, and the other is the inverse. This pairing seems more than adequate for the purpose in this project.
+Using a 12.2K pull-down resistor on one photoresistor and a 4.4K pull-down resistor on the other allows for good precision both in darker and lighter envoirments, because one photoresistor is very sensitive to low light conditions and very tolerant of intense light conditions, and the other is the inverse. This pairing seems more than adequate for the purpose in this project.
