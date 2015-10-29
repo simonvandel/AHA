@@ -30,18 +30,18 @@ One possibility is to have one central processing unit that controls and reads d
   \draw (mainController.east) -- (actuator1.west);
   \draw (mainController.south) -- (sensor2.north);
 \end{tikzpicture}
-\caption[Monolithic system]{Illustration of a monolithic system. The middle rectangle monitors the sensors, while also analysing the monitored sensor data.}\label{fig:monolithic_system}
+\caption[Monolithic system]{Illustration of a monolithic system. The central processing unit monitors the sensors and, at the same time, analyses the monitored sensor data.}\label{fig:monolithic_system}
 \end{figure}
 
 \paragraph{Variable number of sensors}
 The first solution is that the user has to add sensors and actuators to the system manually and inform the system about what they are, or alternatively require a technician to setup the system. This goes very much against the principle of easy usability.
 
-If the setup is managed by the user, it is vulnerable to user mistakes, which would increase the barrier to entry. For example, consider the case where a PIR sensor is connected to the system, but the system believes the connected sensor to be a thermometer. The data received from the PIR sensor will most likely not make any sense, so the system will be based on a wrong model of the world.
+If the setup is managed by the user, it is vulnerable to user mistakes, and would increase the barrier to entry. For example, consider the case where a PIR sensor is connected to the system, but the system believes the connected sensor to be a thermometer. The data received from the PIR sensor will most likely not make any sense, so the system will be based on a wrong model of the world.
 
-Another point is that the system would be limited by the total amount of sensors the processing unit physically can have, given that the number of input pins is finite.
+Another point is that the system would be limited by the total amount of sensors the processing unit physically can support, given that the number of input pins is limited.
 
 \paragraph{Fixed number of sensors}
-The second solution is that the system is pre made with a fixed number of sensors and actuators and the user can simply not extend the system with more hardware. This solution does not consider the fact that all houses are different and needs a variable number of sensors. Either there will be too many sensors in some houses, thereby consuming too much power compared to what is needed or there will be too few sensors in some houses meaning that the system will not be very effective and/or non existing in some rooms. This conflicts with the idea that the system should adapt to the working environment, and not vice versa.
+The second solution is that the system is pre made with a fixed number of sensors and actuators and the user can simply not extend the system with more hardware. This solution does not consider the fact that all houses are different. Either there will be too many sensors in some houses, thereby consuming too much power compared to what is needed or there will be too few sensors in some houses meaning that the system will not be very effective and/or non existing in some rooms. This conflicts with the idea that the system should adapt to the working environment, and not vice versa.
 
 Neither of these solutions are very modular and both go against the requirements described in, \cref{sec:systemDefinition}\jenote{Referer til system definitionen når den er her}. Also they are both in general not very practical.
 
@@ -68,10 +68,10 @@ A second solution tries to cope with the problem of modularity and ease of use b
   \draw (controller2.south) -- (actuator2.north);
   \draw[triangle 90-triangle 90] (controller1.east) -- node[anchor=south, align=center] {Knowledge} (controller2.west);
 \end{tikzpicture}
-\caption[Distributed system]{Illustration of a distributed system. In this example, two controllers each monitor their sensors and analyse the monitored data. The knowledge from the analysis is shared with other controllers in the system.}\label{fig:distributed_system}
+\caption[Distributed system]{Illustration of a distributed system. In this example, two controllers monitor their respective sensors and analyse the monitored data. The knowledge from the analysis is shared among different controllers in the system.}\label{fig:distributed_system}
 \end{figure}
 
-The user can choose exactly the number of subsystems needed for the home. If the subsystems are connected wirelessly, only power is needed to add additional subsystems to the system.
+The user can choose exactly the number of subsystems needed for the home. If the subsystems are connected wirelessly, there only needs to be wired power to the subsystem therefore removing that barrier to entry.
 
 This solution requires complex communication protocols among each individual subsystem, in order to reliably combine their knowledge. Furthermore the analysis of sensor data is a complex task, see \cref{sec:functions}, that needs more powerful hardware than the sensors and actuators.
 
@@ -97,13 +97,13 @@ Under this separation the system consists of three subsystems: sensor, actuator 
   \draw (actuatorController.south) -- (analysisController.north);
   \draw (actuatorController.north) -- (actuator1.south);
 \end{tikzpicture}
-\caption[Separated system]{Illustration of a separated system. In this example, the sensor and actuator subsystem each consists of one controller, controlling one sensor and actuator respectively.}\label{fig:separated_subsystems}
+\caption[Separated system]{Illustration of a separated system. The sensor and actuator subsystem each consists of one controller, controlling one sensor and actuator respectively.}\label{fig:separated_subsystems}
 \end{figure}
 
 This solution has the following advantages.
 
 \begin{itemize}
-  \item Allows variance in the number of sensors used
+  \item Allows for variance in the number of sensors used
   \item The knowledge about the problem domain is calculated and stored centrally, so there is no need to synchronise with other subsystems.
 \end{itemize}
 
@@ -207,13 +207,13 @@ Sensor data is sent to the analysis subsystem to be analysed for patterns. Behav
 
 \subsubsection{Choice of Architecture}
 
-Given the above architectural designs, the monolithic design is too restrictive in its extensibility. The distributed design allows for greater extensibility, but at the cost of the need for a complex synchronisation of knowledge between subsystems. The separated design allows for extensibility of sensors and actuators without complex synchronisation. Therefore the separated design seems the most sensible choice.
+Given the above architectural designs, the monolithic design lacks in extensibility. The distributed design allows for greater extensibility, but at the cost of the need for a complex synchronisation mechanism to make the different subsystems share their knowledge. The separated design allows for extensibility of sensors and actuators avoiding complex synchronisation. Therefore the separated design seems the most appropriate choice.
 
-However, as can be seen in the above paragraphs, many communication schemes are possible. This section will evaluate the best scheme by comparing each scheme on the following prioritised list of properties.
+Many communication schemes have been discussed. This section will evaluate the best scheme by comparing each of them based on the following prioritised list of properties.
 
 \begin{enumerate}
-\item \textbf{Number of critical communication paths.} A path is critical if the data communicated is important or has to arrive quickly. If a scheme has fewer critical communication paths, the system is less likely to fail, and the system will be more responsive
-\item \textbf{Memory consumption on actuator and sensor subsystems.} As the actuator and sensor subsystems should be based on an embedded platform, the amount of memory available is limited
+\item \textbf{Number of critical communication paths.} A path is critical if the data communicated is important or has to satisfy strict real-time contraints. If a scheme has fewer critical communication paths, the system is less likely to fail, and the system will be more responsive
+\item \textbf{Memory consumption on actuator and sensor subsystems.} As the actuator and sensor subsystems should be based on an embedded platform, the available amount of memory is limited
 \item \textbf{Amount of communication.} The less time spent communicating, the more time can be spent on other activities
 \item \textbf{Inter-dependency complexity.} How dependant is each subsystem on each other
 \item \textbf{Memory consumption on analysis subsystem.} As the analysis subsystem is not required to be energy efficient, the platform can be more computationally powerful, so it is not important to consider
@@ -235,6 +235,6 @@ Memory analysis        & Past sensor data                                  & Pas
 \end{tabular}
 \end{adjustbox}
 \caption[Evaluation table]{Evaluation table of communication schemes. S means sensor subsystem. Ac means actuator subsystem. A means analysis subsystem. In the \enquote{memory actuator/sensor row}, it is implicit that every scheme has to store the sensor data intermediately, before processing it.}\label{tab:scheme_choice}
-\end{table}
+\end{table}\ranote{fix table}
 
 Looking at \cref{tab:scheme_choice}, the following ranking of the schemes can be produced. \sinote{Find out which scheme is best, when we have tested the ZigBee sensors}
