@@ -39,7 +39,7 @@ int sendOKResponseQuery(char *query, int queryLength){
   int errorStatus = 0;
   
   if(errorStatus = sendQuery(query, queryLength, response, 3)){
-    free(response);
+    /* free(response); */
     return errorStatus;
   }
   
@@ -48,7 +48,7 @@ int sendOKResponseQuery(char *query, int queryLength){
     errorStatus = 1;
   }
   
-  free(response);
+  /* free(response); */
   return errorStatus;
 }
 
@@ -65,7 +65,7 @@ int setField(char *command, int commandLength){
   tmpCommand[commandLength] = '\r';
   
   if(errorStatus = sendOKResponseQuery(tmpCommand, commandLength + 1)){
-    free(tmpCommand);
+    /* free(tmpCommand); */
     return 1;    
   }
 
@@ -74,7 +74,7 @@ int setField(char *command, int commandLength){
 
   errorStatus = sendOKResponseQuery(ATWR, 5);
 
-  free(tmpCommand);
+  /* free(tmpCommand); */
   return errorStatus;
 }
 
@@ -94,7 +94,7 @@ int getField(char *fieldName, int nameLength, char *responseValue, int responseL
   
   responseValue[responseLength] = '\0';
 
-  free(tmpName);
+  /* free(tmpName); */
   return errorStatus;
 }
 
