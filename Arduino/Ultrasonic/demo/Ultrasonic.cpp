@@ -16,14 +16,14 @@ long Ultrasonic::MeasureTiming(){
   delayMicroseconds(10);        // to initiate sensor cycle
   
   digitalWrite(Trig_pin, LOW); // Then set low again, the sensor will now emit and receive
-                               // 8 cycles of supersonic sound waves at 40 khz
+                               // 8 cycles of ultrasonic sound waves at 40 khz
                                
   return pulseIn(Echo_pin,HIGH);  // Now wait for the sensor to output a pulse,
                                   // the pulse width corresponds to a distance,
                                   // given delta t from send to recieved.
 }
 
-long Ultrasonic::GetRange(){
+long Ultrasonic::GetDistance(){
   pulseWidth = MeasureTiming();
   return pulseWidth/58; // Optimisesesesesesesationsssssss
   //return (speedOfSound*pulseWidth)/2;   //L = C × T/2 

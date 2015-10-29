@@ -8,6 +8,6 @@ void setup() {
 
 void loop(){
   Serial.print("Distance(cm) = ");
-  Serial.println(ultrasonic.GetRange());
+  Serial.println(ultrasonic.GetDistance());
   delay(1000); // one second delay, minimum delay is 60 us delay otherwise long distance fucks up
 }

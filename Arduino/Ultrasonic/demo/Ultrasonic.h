@@ -1,7 +1,3 @@
-// https://arduino-info.wikispaces.com/Ultrasonic+Distance+Sensor
-// http://arduino-info.wikispaces.com/UltraSonicDistance
-// http://www.sengpielaudio.com/calculator-soundpath.htm
-
 #ifndef Ultrasonic_h
   #define Ultrasonic_h
 
@@ -14,7 +10,7 @@
     public:
       Ultrasonic(int TP, int EP);
       long MeasureTiming();
-      long GetRange();
+      long GetDistance();
   
       private:
       int Trig_pin;
