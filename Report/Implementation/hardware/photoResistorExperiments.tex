@@ -47,7 +47,7 @@ This program was run until more than 1000 readings were taken in each scenario.
 To find the minimum, maximum and average values, as well as the difference between maximum and minimum in percent. The data was copied into a file, which was then input to the C\#-program seen in \cref{lst:cShPhotoCode}.
 
 \lstset{language=[Sharp]C}
-\begin{lstlisting}[label = lst:cShPhotoCode, caption = C\# data processing code]
+\begin{lstlisting}[label = lst:cShPhotoCode, caption = C\# data processing code, showstringspaces=false]
 using System;
 using System.IO;
 
@@ -91,8 +91,9 @@ namespace ArduinoPhotoTest {
   }
 }
 \end{lstlisting}
-\paragraph{Configuration}
-In order to find a baseline for the two photoresistors a test was done where each photoresistor had a 10k$\Omega$ resistor. Results for this test can be seen in \cref{tab:precisionTestResults}.
+\subparagraph{Results}
+The results of the tests can be seen in \cref{tab:precisionTestResults}. "S1" refers to the first photoresistor. and "S2" refers to the second.
+
   \begin{table}[htbp]
     \centering
     \begin{tabular}{c c c c c c c c c}
