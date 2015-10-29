@@ -93,19 +93,22 @@ namespace ArduinoPhotoTest {
 \end{lstlisting}
 \paragraph{Configuration}
 In order to find a baseline for the two photoresistors a test was done where each photoresistor had a 10k$\Omega$ resistor. Results for this test can be seen in \cref{tab:precisionTestResults}.
-  \begin{table}
-\rowcolors{1}{white}{lightgray}
+  \begin{table}[htbp]
     \centering
-    \begin{tabular}[H!]{m{4.5em} c c c c c c c c}
-      Scenario & S1 min & S1 max & S1 avg & S1 diff & S2 min & S2 max & S2 avg & S2 diff \\
-      \hline
+    \begin{tabular}{c c c c c c c c c}
+      \toprule
+      Scenario & \multicolumn{4}{c}{S1} & \multicolumn{4}{c}{S2} \\
+      \cmidrule(rl){2-5} 
+      \cmidrule(rl){6-9}
+       & min & max & avg & diff & min & max & avg & diff \\ \midrule
       Minimum light & 136 & 138 & 137 & 1,47 \% & 25 & 27 & 26 & 8.00 \% \\
       Average room light & 875 & 889 & 883 & 1,60 \%  & 634 & 675 & 656 & 6,47 \% \\
-      Intense light & 931 & 933 & 932 & 0,21 \%  & 772 & 775 & 773 & 0,39 \% \\
+      Intense light & 931 & 933 & 932 & 0,21 \%  & 772 & 775 & 773 & 0,39 \% \\ \bottomrule
     \end{tabular}
-    \caption{Precision test results. "S1" refers to the first photoresistor. and "S2" refers to the second.}\label{tab:precisionTestResults}
+    \caption{Precision test results. "S1" refers to the first photoresistor. and
+      "S2" refers to the second. The min, max and avg values range from 0 to 1023.}\label{tab:precisionTestResults}
   \end{table}
-\ranote{look at columns headers, combine them? dDoc for details}
+
 \subparagraph{Partial Conclusion}
 The results of the tests can be seen in \cref{tab:precisionTestResults}. As can be seen in the table S2 had a significant lower base value. This means it will be better at detecting higher levels of light.
 
@@ -118,69 +121,64 @@ The scenarios described in \cref{subsub:precision} are also used in this experim
 \subparagraph{Results}
 The results from the configuration experiments can be seen in \cref{tab:1KTestResults,tab:2.2KTestResults,tab:4.4KTestResults,tab:10KTestResults,tab:12.2KTestResults}.
 
-\begin{table}[H]
-\rowcolors{1}{white}{lightgray}
+\begin{table}[htbp]
   \centering
-  \begin{tabular}{l c c c c}
-    Scenario & 1K $\Omega$ min & 1K $\Omega$ max & 1K $\Omega$ avg & 1K $\Omega$ diff \\
-    \hline
+  \begin{tabular}{c c c c c}
+    \toprule
+    Scenario & min & max & avg & diff \\ \midrule
     Minimum light & 0 & 0 & 0 & 0.00 \% \\
     Average room light & 16 & 18 & 17 & 12.50 \% \\
-    Intense light & 406 & 408 & 406 & 0.49 \% \\
+    Intense light & 406 & 408 & 406 & 0.49 \% \\ \bottomrule
   \end{tabular}
-  \caption{1K $\Omega$ resistor results}\label{tab:1KTestResults}
+  \caption{1K $\Omega$ resistor results. The min, max and avg values range from 0 to 1023.}\label{tab:1KTestResults}
 \end{table}
 
-\begin{table}[H]
-\rowcolors{1}{white}{lightgray}
+\begin{table}[htbp]
   \centering
-  \begin{tabular}{l c c c c}
-    Scenario & 1K $\Omega$ min & 2.2K $\Omega$ max & 2.2K $\Omega$ avg & 2.2K $\Omega$ diff \\
-    \hline
+  \begin{tabular}{c c c c c}
+    \toprule
+    Scenario & min & max & avg & diff \\ \midrule
     Minimum light & 0 & 0 & 0 & 0.00 \% \\
     Average room light & 49 & 58 & 53 & 18.37 \% \\
-    Intense light & 609 & 612 & 610 & 0.49 \% \\
+    Intense light & 609 & 612 & 610 & 0.49 \% \\ \bottomrule
   \end{tabular}
-  \caption{2.2K $\Omega$ resistor results}\label{tab:2.2KTestResults}
+  \caption{2.2K $\Omega$ resistor results. The min, max and avg values range from 0 to 1023.}\label{tab:2.2KTestResults}
 \end{table}
 
-\begin{table}[H]
-\rowcolors{1}{white}{lightgray}
+\begin{table}[htbp]
   \centering
-  \begin{tabular}{l c c c c}
-    Scenario & 4.4K $\Omega$ min & 4.4K $\Omega$ max & 4.4K $\Omega$ avg & 4.4K $\Omega$ diff \\
-    \hline
+  \begin{tabular}{c c c c c}
+    \toprule
+    Scenario & min & max & avg & diff \\ \midrule
     Minimum light & 7 & 11 & 11 & 57.14 \% \\
     Average room light & 282 & 287 & 284 & 1.77 \% \\
-    Intense light & 893 & 895 & 894 & 0.22 \% \\
+    Intense light & 893 & 895 & 894 & 0.22 \% \\ \bottomrule
   \end{tabular}
-  \caption{4.4K $\Omega$ resistor results}\label{tab:4.4KTestResults}
+  \caption{4.4K $\Omega$ resistor results. The min, max and avg values range from 0 to 1023.}\label{tab:4.4KTestResults}
 \end{table}
 
-\begin{table}[H]
-\rowcolors{1}{white}{lightgray}
+\begin{table}[htbp]
   \centering
-  \begin{tabular}{l c c c c}
-    Scenario & 10K $\Omega$ min & 10K $\Omega$ max & 10K $\Omega$ avg & 10K $\Omega$ diff \\
-    \hline
+  \begin{tabular}{c c c c c}
+    \toprule
+    Scenario & min & max & avg & diff \\ \midrule
     Minimum light & 136 & 138 & 137 & 1.47 \% \\
     Average room light & 875 & 889 & 883 & 1.60 \% \\
-    Intense light & 931 & 933 & 932 & 0.21 \% \\
+    Intense light & 931 & 933 & 932 & 0.21 \% \\ \bottomrule
   \end{tabular}
-  \caption {10K $\Omega$ resistor results}\label{tab:10KTestResults}
+  \caption {10K $\Omega$ resistor results. The min, max and avg values range from 0 to 1023.}\label{tab:10KTestResults}
 \end{table}
 
-\begin{table}[H]
-  \rowcolors{1}{white}{lightgray}
+\begin{table}[htbp]
   \centering
-  \begin{tabular}{l c c c c}
-    Scenario & 12.2K $\Omega$ min & 12.2K $\Omega$ max & 12.2K $\Omega$ avg & 12.2K $\Omega$ diff \\
-    \hline
+  \begin{tabular}{c c c c c}
+    \toprule
+    Scenario & min & max & avg & diff \\ \midrule
     Minimum light & 44 & 52 & 51 & 18.18 \% \\
     Average room light & 592 & 622 & 606 & 5.07 \% \\
-    Intense light & 979 & 982 & 980 & 0.31 \% \\
+    Intense light & 979 & 982 & 980 & 0.31 \% \\ \bottomrule
   \end{tabular}
-  \caption{12.2K $\Omega$ resistor results}\label{tab:12.2KTestResults}
+  \caption{12.2K $\Omega$ resistor results. The min, max and avg values range from 0 to 1023.}\label{tab:12.2KTestResults}
 \end{table}
 
 \subparagraph{Partial Conclusion}
