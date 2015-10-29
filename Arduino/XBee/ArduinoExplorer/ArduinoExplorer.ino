@@ -11,29 +11,36 @@ void setup(){
     Serial.print('\n');
     delay(1000);
   }
-  char *ATID;
-  if(!getField("ATID", 4, &ATID)){
-    Serial.print(ATID);
+  char *Field;
+  if(!getField("ATDH", 4, &Field)){
+    Serial.print(Field);
     Serial.print('\n');    
   }else{
     Serial.print("ERROR");
     Serial.print('\n');
   }
-  if(!setField("ATID 3454", 9)){
-    Serial.print("SUCCESS");
-    Serial.print('\n');
+  if(!getField("ATDL", 4, &Field)){
+    Serial.print(Field);
+    Serial.print('\n');    
   }else{
     Serial.print("ERROR");
     Serial.print('\n');
   }
-    if(!getField("ATID", 4, &ATID)){
-    Serial.print(ATID);
-    Serial.print('\n');
+  if(!getField("ATSH", 4, &Field)){
+    Serial.print(Field);
+    Serial.print('\n');    
   }else{
     Serial.print("ERROR");
     Serial.print('\n');
   }
-  free(ATID);
+  if(!getField("ATSL", 4, &Field)){
+    Serial.print(Field);
+    Serial.print('\n');    
+  }else{
+    Serial.print("ERROR");
+    Serial.print('\n');
+  }
+  free(Field);
 }
 
 void loop(){}
