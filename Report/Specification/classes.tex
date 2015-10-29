@@ -1,17 +1,14 @@
 %mainfile: ../master.tex
-\section{Classes}
-From the system definition \cref{sec:systemDefinition} we can extract some classes. A class is a \enquote{A description of a collection of objects with the same structure, behaviour and attributes} as described in \cite{OOAD}. Candidates for classes are found by observing nouns, adjectives and verbs present in the problem domain.
+\section{Classes}\label{sec:classes}
+From the system definition \cref{sec:systemDefinition} we can extract some classes. A class is \enquote{A description of a collection of objects with the same structure, behaviour and attributes} as described in \cite{OOAD}. Candidates for classes are found by observing nouns, adjectives and verbs present in the problem domain.
 
 These classes will be beneficial when figuring out what is relevant in our model of the problem domain. This system should be able to keep an always up to date model of the problem domain. The list below summarises some candidates for classes that the system uses to structure this model.
 
 \begin{itemize}
 \item Person - The user of the system. The problem domain can contain multiple persons with different usage patterns, so the system should be able to differentiate them
-\item Action - An action is a description of a specific behavior in the problem domain
-\item Pattern - A sequence of dependent repetetive actions in the problem domain
-\item Decision - A sensible choice made by the system based on knowledge gathered from the problem domain
-\item Feedback - An evaluation of a decision the system has made
-\item Sensor - The observational part of the system. Can observe actions that happen in the problem domain
-\item Actuator - The acting part of the system. Can influence the problem domain
+\item Action - An activity performed by the user
+\item State - A snapshot of all observable objects in the problem domain
+\item Pattern - A pattern is a sequence of actions, where the pattern is dependent on a state
 \item Location - A specific place in the problem domain
-\item Time - At what time, a given stimuli has happened
+\item Time - At what time a given stimuli has happened
 \end{itemize}

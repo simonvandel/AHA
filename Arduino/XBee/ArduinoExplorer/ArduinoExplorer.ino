@@ -1,5 +1,6 @@
-int getField(char*, int, byte*, int);
-int sendQuery(char *, int);
+int getField(char*, int, char**);
+int sendQuery(char*, int);
+int readResponse(char**);
 
 void setup(){
   // Start up our serial port, we configured our XBEE devices for 9600 bps.
@@ -10,38 +11,133 @@ void setup(){
     Serial.print('\n');
     delay(1000);
   }
-  char ATID[5];
-  if(!getField("ATID", 4, ATID, 4)){
-    Serial.print("Success! ");
+  char *ATID;
+  if(!getField("ATID", 4, &ATID)){
     Serial.print(ATID);
-  } else {
-    Serial.print("Error");
+    Serial.print('\n');    
+  }else{
+    Serial.print("ERROR");
+    Serial.print('\n');
   }
+  if(!setField("ATID 3454", 9)){
+    Serial.print("SUCCESS");
+    Serial.print('\n');
+  }else{
+    Serial.print("ERROR");
+    Serial.print('\n');
+  }
+    if(!getField("ATID", 4, &ATID)){
+    Serial.print(ATID);
+    Serial.print('\n');
+  }else{
+    Serial.print("ERROR");
+    Serial.print('\n');
+  }
+  free(ATID);
 }
 
 void loop(){}
 
-int getField(char *fieldName, int nameLength, char *responseValue, int responseLength){  
-  char startResponse[3];
-  uint8_t startQuery[3] = {43,43,43};
+int sendOKResponseQuery(char *query, int queryLength){
+  char *response;
+  int errorStatus = 0;
   
-  Serial.write(startQuery, 3);
-  while(!Serial.available()){} // Implement timeout
-  Serial.readBytes(startResponse, 3);
-  startResponse[2] = '\0';
-  if(strcmp(startResponse, "OK")){
-    return 1;
+  if(errorStatus = sendQuery(query, queryLength)){
+    return errorStatus;
   }
-  char tmpName[nameLength];
+  
+  if(errorStatus = readResponse(&response)){
+    free(response);
+    return errorStatus;
+  }
+  
+  if (strcmp(response, "OK")){
+    errorStatus = 1;
+  }
+  
+  free(response);
+  return errorStatus;
+}
+
+int setField(char *command, int commandLength){
+  int errorStatus = 0;
+
+  if(errorStatus = sendOKResponseQuery("+++", 3)){
+    return errorStatus;
+  }
+
+  char tmpCommand[commandLength + 1];
+  
+  strcpy(tmpCommand, command);
+  tmpCommand[commandLength] = '\r';
+  
+  if(errorStatus = sendOKResponseQuery(tmpCommand, commandLength + 1)){
+    return 1;    
+  }
+
+  char ATWR[5] = "ATWR";
+  ATWR[4] = '\r';
+
+  errorStatus = sendOKResponseQuery(ATWR, 5);
+
+  return errorStatus;
+}
+
+int getField(char *fieldName, int nameLength, char **responseValue){    
+  int errorStatus = 0;
+
+  if(errorStatus = sendOKResponseQuery("+++", 3)){
+    return errorStatus;
+  }
+  
+  char tmpName[nameLength + 1];
+  
   strcpy(tmpName, fieldName);
   tmpName[nameLength] = '\r';
-  sendQuery();
-  while(!Serial.available());
-  Serial.readBytes(responseValue, responseLength + 1);
-  responseValue[responseLength] = '\0';
-  return 0;
+  
+  if(errorStatus = sendQuery(tmpName, nameLength + 1)){
+    return 1;
+  }
+  
+  errorStatus = readResponse(responseValue);
+  return errorStatus;
 }
 
 int sendQuery(char *inputQuery, int queryLength){
-  Serial.write((uint8_t *)fieldName, nameLength + 1);
+  int i, j;
+  for(i = 0; i < 5; i++){
+    Serial.write((uint8_t *)inputQuery, queryLength);
+    for(j = 0; j < 10; j++){
+      if(Serial.available()){
+        Serial.print('\n');
+        return 0;
+      }
+      delay(1000);
+    }
+  }
+  return 1;
+}
+
+int readResponse(char **responseResult){
+  int tmpResponseLength = 1;
+  char responseChar;
+  char *tmpResponse, *response;
+  
+  response = (char *)malloc(tmpResponseLength);
+  response[0] = '\0';
+    
+  while((responseChar = Serial.read()) != '\r'){
+    if(++tmpResponseLength < 64){
+      tmpResponse = response;
+      response = (char *)malloc(tmpResponseLength);
+      strcpy(response, tmpResponse);
+      free(tmpResponse);
+      response[tmpResponseLength - 2] = responseChar;
+      response[tmpResponseLength - 1] = '\0';
+    } else {
+      return 1;
+    }
+  }
+  *responseResult = response;
+  return 0;
 }
