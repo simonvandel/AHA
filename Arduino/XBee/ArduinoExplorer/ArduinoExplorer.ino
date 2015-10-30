@@ -12,28 +12,7 @@ void setup(){
     delay(1000);
   }
   char *Field;
-  if(!getField("ATDH", 4, &Field)){
-    Serial.print(Field);
-    Serial.print('\n');    
-  }else{
-    Serial.print("ERROR");
-    Serial.print('\n');
-  }
-  if(!getField("ATDL", 4, &Field)){
-    Serial.print(Field);
-    Serial.print('\n');    
-  }else{
-    Serial.print("ERROR");
-    Serial.print('\n');
-  }
-  if(!getField("ATSH", 4, &Field)){
-    Serial.print(Field);
-    Serial.print('\n');    
-  }else{
-    Serial.print("ERROR");
-    Serial.print('\n');
-  }
-  if(!getField("ATSL", 4, &Field)){
+  if(!getField("ATID", 4, &Field)){
     Serial.print(Field);
     Serial.print('\n');    
   }else{
