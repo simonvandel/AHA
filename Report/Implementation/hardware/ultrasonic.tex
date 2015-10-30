@@ -6,7 +6,14 @@ The are number of different sensors for different purposes, depending on the pur
   \item the Doppler effect - for measuring speed\cite{ultrasound}
   \item the attenuation of sound waves - for measuring distance or directionality\cite{ultrasound}
 \end{itemize}
-The sensor HC-SR04 in consideration is utilizing time of flight principle. This sensor emit out a high-frequency (40 kHz) pulse, it then measures the time it takes for an echo of the pulse to reflect back. The sensor has 2 openings on its front. One opening emits ultrasonic waves, it acts as a speaker, a transmitter, the other receives them, acts as a microphone, a receiver.
+The sensor HC-SR04 in consideration is utilizing time of flight principle. This sensor emit out a high-frequency (40 kHz) pulse, it then measures the time it takes for an echo of the pulse to reflect back. The sensor has 2 openings on its front. One opening emits ultrasonic waves, it acts as a speaker, a transmitter, the other receives them, acts as a microphone, a receiver. \cref{fig:ultrasonicwiring} illustrates the setup of an arduino and the sensor, here depict as two speakers.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{arduino-ultrasonic-wiring.png}
+  \caption{The setup of the ultrasonic sensor testbed}
+  \label{fig:ultrasonicwiring}
+\end{figure}
 
 \paragraph{The technology}
 Ultrasonic soundwaves is at frequencies above human auditorial capablity, often at 40 kHz. Ultrasonic sound has a number of properties, relative to human audible sound, that can be exploited when in need of measuring the speed\cite{ultrasound}, thickness\cite{ultrasound2}, integrity\cite{ultrasound2} of an object, but also a distance to object as will be usefull in this context. These properties include the attenuation and reflectiveness of higher frequency waves and not being audible to humans.\chnote{more?} The sensors utilising this technology are very usefull for making measurements without touching or otherwise impeding a target. However, these following factors has to be taking into consideration in that may affect measurements.
@@ -19,39 +26,51 @@ Ultrasonic soundwaves is at frequencies above human auditorial capablity, often 
   \item Some materials may be more absorbent than others, and will therefore reflect less ultrasonic waves
   \end{itemize}
 
-\paragraph{The purpose} of the ultrasonic sensor in this project is figure out if a person is at a specific location in the problem domain eg. sitting in the sofa watching tv, where the PIR sensor\cref{sub:pir} is only capable of the measuring changes in infrared light over a larger(>100 degrees)\chnote{change to real values} angle, this sensor is capable of measuring a distance to an specifc object eg. a person. The distance is measured every second, so where is the PIR sensor\cref{sub:pir} would not capable of tracking a person if the person is not moving, the ultrasonic can detect a person by a change in distance from static state.
+\paragraph{The purpose} of the ultrasonic sensor in this project is figure out if a person is at a specific location in the problem domain eg. sitting in the sofa watching tv, where the PIR sensor in\cref{sub:pir}, is only capable of the measuring changes in infrared light over a larger(>100 degrees)\chnote{change to real values} angle, this sensor is capable of measuring a distance to an specifc object eg. a person. The distance is measured every second, so where is the PIR sensor would not capable of tracking a person if the person is not moving, the ultrasonic can detect a person by a change in distance from static state.
 
-\paragraph{The tests} of the sensors will include some aspects of the considerations\cref{sup:cons} mentioned above, also some tests on the values mentioned in the HC-SR04 datasheet\cite{hcsr04}. The tests will be performed on 3 identical HC-SR04 sensors.
-  
-  \subparagraph{Distance}
-  First the accuracy of the sensors over different distances will be tested, through this process the minimum and maximum range of the sensors will be discovered. 
-  \chnote{sæt data ind}
-  \begin{figure}[htbp]
+\paragraph{The tests} of the sensors will include some aspects of the considerations mentioned above, also some tests on the values mentioned in the HC-SR04 datasheet\cite{hcsr04}. The tests will be performed on 3 identical HC-SR04 sensors. The pictures \crefrange{fig:ultra1}{fig:ultra3} depicts how the test where carried out.
+
+\begin{figure}[htbp]
+  \begin{subfigure}{.3\textwidth}
     \centering
     \includegraphics[width=\textwidth]{ultra1.jpg}
     \caption{bla}
     \label{fig:ultra1}
-  \end{figure}
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{arduino-ultrasonic-wiring.png}
-    \caption{bla}
-    \label{fig:ultrasonicwiring}
-  \end{figure}
-  \begin{figure}[htbp]
+  \end{subfigure}
+  \begin{subfigure}{.3\textwidth}
     \centering
     \includegraphics[width=\textwidth]{ultra2.jpg}
     \caption{bla}
     \label{fig:ultra2}
-  \end{figure}
-  \subparagraph{Angles}
-  Of object, Of sensor
-  \chnote{sæt data ind}
-  \begin{figure}[htbp]
+  \end{subfigure}
+  \begin{subfigure}{.3\textwidth}
     \centering
     \includegraphics[width=\textwidth]{ultra3.jpg}
     \caption{bla}
     \label{fig:ultra3}
-  \end{figure}
+  \end{subfigure}
+\end{figure}
+  
+  \subparagraph{Distance}
+  First the accuracy of the sensors over different distances will be tested, through this process the minimum and maximum range of the sensors will be discovered. 
+  \begin{table}[htbp]
+    \centering
+    \begin{tabular}{@{}llll@{}}
+      \toprule
+      Run & x [cm] & y [cm] & angle [deg] \\ \midrule
+      1 (left) & 81 & 50 & 58.3136 \\
+      1 (right) & 79 & 97 & 39.1605  \\ \midrule
+      2 (left) & 106 & 49 & 65.1905 \\
+      2 (right) & 82 & 176 & 24.9812 \\ \midrule
+      3 (left) & 108 & 65 & 58.9582 \\
+      3 (right) & 88 & 174 & 26.8278 \\ \bottomrule
+    \end{tabular}
+    \caption{Distance test}
+    \label{tab:ult_distance}
+  \end{table}
+%  
+  \subparagraph{Angles}
+  Of object, Of sensor
+  \chnote{sæt data ind}
   
 \paragraph{Multiple ultrasonic sensors} in the problem domain may introduction interference in the measurements performed, in that if one sensor is capable of transmitting soundwaves to another sensor it is possible that this will result in a collision. If this is to be solved it is important that a collision is detectable or does simply not happen. Getting collision free measurements requires some coordination between sensors, who will talk when. Example of a solution, each sensor is given a timeslot, in which a sensor is allowed to speak, it is important that theres is slight delay between each timeslot to ensure that the sounds wave has attenuated.\chnote{måske noget om dynamisk kunne tilslutte frakoble sensors}
