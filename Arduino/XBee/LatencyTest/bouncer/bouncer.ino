@@ -8,6 +8,6 @@ void setup() {
 void loop() {};
 
 void serialEvent(){
-  dataLen = Serial.readBytesUntil('\r', dataRecieved, 64);
-  Serial.write(dataRecieved, dataLen);
+  dataLen = Serial.readBytesUntil('\0', dataRecieved, 64);
+  Serial.write((uint8_t *)dataRecieved, dataLen + 1);
 }

@@ -12,7 +12,11 @@ void loop(){
   delay(5000);
   Serial.write('1');                     // Send ping
   digitalWrite(ledpin, LOW);             // Loose ping
-  while(!Serial.available());            // Wait for pong
+  int timeout = 1000;
+  while(timeout && !Serial.available()){ // Wait for pong
+    timeout--;
+    delay(10);
+  }
   Serial.readBytes(pong, 2);             // Save pong and terminal character
   if(pong[0] == '1' && pong[1] == 0x0D){
     recognised();
@@ -23,7 +27,7 @@ void loop(){
 
 void recognised(){
   int i;
-  for(i = 0; i < 2; i++){
+  for(i = 0; i < 1; i++){
     digitalWrite(ledpin, HIGH);
     delay(100);
     digitalWrite(ledpin, LOW);
