@@ -1,4 +1,4 @@
-#define DATASET 10
+#define DATASET 64
 
 typedef struct Result {
   int time;
@@ -13,21 +13,24 @@ Result results[DATASET];
 int i = 0;
 
 void setup() {
+  pinMode(13, OUTPUT);
   Serial.begin(9600);
   dataSent[0] = '\0';
-  i = 1;
-  delay(1000);
+  i = 0;
+  delay(10000);
   timeStart = millis();
-  Serial.write((uint8_t *)dataSent, i);
+  Serial.write((uint8_t *)dataSent, i + 1);
+  blinkLED();
 }
 
 void loop() {}
 
 void serialEvent(){
   timeEnd = millis();
+  blinkLED();
   int dataLen = Serial.readBytesUntil('\0', dataRecieved, 64);
   Result tmpResult;
-  tmpResult.bytesSent = dataLen + 1;
+  tmpResult.bytesSent = dataLen;
   if(!strcmp(dataSent, dataRecieved)){
     tmpResult.time = timeEnd - timeStart;
   } else {
@@ -35,15 +38,17 @@ void serialEvent(){
   }
   results[i] = tmpResult;
   if(i < DATASET){
+    i++;
     memset(dataRecieved, 0, DATASET);
     dataSent[i-1] = 'A';
     dataSent[i] = '\0';
-    Serial.write((uint8_t *)dataSent, i);
+    delay(2000);
+    timeStart = millis();
+    Serial.write((uint8_t *)dataSent, i + 1);
   } else {
     printResult();
     while(1);
   }
-  i++;
 }
 
 void printResult(){
@@ -55,3 +60,10 @@ void printResult(){
     Serial.print('\n');
   }
 }
+
+void blinkLED(){
+  digitalWrite(13, HIGH);
+  delay(250);
+  digitalWrite(13, LOW);
+}
+
