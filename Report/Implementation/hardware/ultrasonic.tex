@@ -55,22 +55,52 @@ Ultrasonic soundwaves is at frequencies above human auditorial capablity, often 
   First the accuracy of the sensors over different distances will be tested, through this process the minimum and maximum range of the sensors will be discovered. 
   \begin{table}[htbp]
     \centering
-    \begin{tabular}{@{}llll@{}}
+    \begin{adjustbox}{max width=\textwidth}
+      \begin{tabular}{c*{15}{c}}
       \toprule
-      Run & x [cm] & y [cm] & angle [deg] \\ \midrule
-      1 (left) & 81 & 50 & 58.3136 \\
-      1 (right) & 79 & 97 & 39.1605  \\ \midrule
-      2 (left) & 106 & 49 & 65.1905 \\
-      2 (right) & 82 & 176 & 24.9812 \\ \midrule
-      3 (left) & 108 & 65 & 58.9582 \\
-      3 (right) & 88 & 174 & 26.8278 \\ \bottomrule
-    \end{tabular}
+                      & \multicolumn{5}{c}{Sensor 1} & \multicolumn{5}{c}{Sensor 2} & \multicolumn{5}{c}{Sensor 3} \\ 
+                        \cmidrule(rl){2-6}             \cmidrule(rl){7-11}            \cmidrule(rl){12-16}
+        Distance [cm] & 0\degree of object & 10\degree & 20\degree & 35\degree & 45\degree & 0\degree & 10\degree & 20\degree & 35\degree & 45\degree & 0\degree & 10\degree & 20\degree & 35\degree & 45\degree \\
+        \midrule
+        0             & 5   & -*  & -   & -   & -   & 5   & -   & -   & - & - & 4   & -   & - & - & - \\ 
+        1             & 2   & 2   & 2   & 2   & -   & 2   & 2   & -   & - & - & 2   & 2   & - & - & - \\ 
+        2             & 2   & 2   & 3   & 3   & 3   & 2   & 2   & -   & - & - & 2   & 2   & - & - & - \\ 
+        3             & 3   & 3   & 3   & 3   & 4   & 5   & -   & -   & - & - & 4   & -   & - & - & - \\ 
+        4             & 4   & 4   & 4   & 4   & 4   & 4   & 4   & -   & - & - & 4   & 4   & - & - & - \\ 
+        5             & 5   & 5   & 5   & 6   & 8   & 5   & 5   & -   & - & - & 5   & 5   & - & - & - \\ 
+        10            & 10  & 10  & 9   & 57  & 60  & 10  & 10  & -   & - & - & 10  & 10  & - & - & - \\ 
+        20            & 20  & 20  & 19  & 96  & 60  & 20  & 20  & -   & - & - & 20  & 20  & - & - & - \\ 
+        40            & 39  & 39  & 38  & 98  & 56  & 39  & 39  & -   & - & - & 39  & 39  & - & - & - \\ 
+        80            & 78  & 77  & 74  & 69  & x   & 78  & x   & x   & x & x & 79  & x   & x & x & x \\ 
+        160           & 157 & 154 & 148 & 137 & x   & 157 & -   & -   & - & - & 157 & -   & - & - & - \\ 
+        320           & 313 & -   & -   & -   & -   & 313 & -   & -   & - & - & 315 & -   & - & - & - \\ 
+        450           & 445 & -   & -   & -   & -   & 445 & -   & -   & - & - & 466 & -   & - & - & - \\ 
+        570           & 565 & -   & -   & -   & -   & -   & -   & -   & - & - & 566 & -   & - & - & - \\ 
+        600           & x   & -   & -   & -   & -   & 595 & -   & -   & - & - & x   & -   & - & - & - \\
+        \bottomrule
+      \end{tabular}
+    \end{adjustbox}
     \caption{Distance test}
     \label{tab:ult_distance}
   \end{table}
-%  
-  \subparagraph{Angles}
-  Of object, Of sensor
-  \chnote{sæt data ind}
+  At 570 cm sensor 1 and 3 stopped supplying stable reliable answers. 
+
+  \subparagraph{Angle of sensor}
+  \begin{table}[htbp]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+      \begin{tabular}{c*{13}{c}}
+      \toprule
+        Distance [cm] & -30\degree & -25\degree & -20\degree & -15\degree & -10\degree & -5\degree & 0\degree & 5\degree & 10\degree & 15\degree & 20\degree & 25\degree & 30\degree \\ 
+        \midrule
+        15            & x & x  & x & 16 & 16 & 15 & 15 & 15 & 16 & 17 & x  & x & x \\ 
+        30            & x & x & 31 & 30 & 30 & 30 & 30 & 30 & 30 & 30 & 31 & x & x \\ 
+      \bottomrule
+      \end{tabular}
+    \end{adjustbox}
+    \caption{Sensor angle test}
+    \label{tab:ult_angle}
+  \end{table}
+  The sensor is able to detect an object effectively at an angle of -20\degree to 20\degree, fairly precisely.
   
 \paragraph{Multiple ultrasonic sensors} in the problem domain may introduction interference in the measurements performed, in that if one sensor is capable of transmitting soundwaves to another sensor it is possible that this will result in a collision. If this is to be solved it is important that a collision is detectable or does simply not happen. Getting collision free measurements requires some coordination between sensors, who will talk when. Example of a solution, each sensor is given a timeslot, in which a sensor is allowed to speak, it is important that theres is slight delay between each timeslot to ensure that the sounds wave has attenuated.\chnote{måske noget om dynamisk kunne tilslutte frakoble sensors}
