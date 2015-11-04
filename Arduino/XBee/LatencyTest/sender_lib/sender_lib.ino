@@ -15,13 +15,34 @@ void setup() {
   pinMode(13, OUTPUT);
   Serial.begin(9600);
   xbee.setSerial(Serial);
+  
   payload[0] = 'A';
-  ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)payload, i + 1);
+  payload[1] = 'A';
+  payload[2] = 'A';
+  payload[3] = 'A';
+  payload[4] = 'A';
+  payload[5] = 'A';
+  
+  ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)payload, 6);
+
+  for(i = 0; i < 10; i++){
+    digitalWrite(13, HIGH);
+    delay(500);
+    digitalWrite(13, LOW);
+    delay(500);
+  }
   digitalWrite(13, HIGH);
-  delay(10000);
-  digitalWrite(13, LOW);
   timeStart = millis();
   xbee.send(zbTx);
+
+  if(xbee.readPacket(500)){
+    if (xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
+      xbee.getResponse().getZBTxStatusResponse(txStatus);
+      if (txStatus.getDeliveryStatus() == SUCCESS) {
+        digitalWrite(13, LOW);
+      }
+    }
+  }
 }
 
 void loop(){}
