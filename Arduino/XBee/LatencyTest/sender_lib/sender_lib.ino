@@ -17,18 +17,23 @@ void setup() {
   xbee.setSerial(Serial);
   payload[0] = '\0';
   ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)payload, i + 1);
+  digitalWrite(13, HIGH);
+  delay(10000);
+  digitalWrite(13, LOW);
   timeStart = millis();
   xbee.send(zbTx);
 }
 
-void loop() {}
+void loop(){}
 
 void serialEvent(){
   timeEnd = millis();
   dataRecieved = (char *)xbee.getResponse().getFrameData();
-  Serial.print(timeEnd - timeStart);
-  Serial.print("dataRecieved: ");
-  Serial.print((int)dataRecieved[0]);
-  Serial.print(' ');
-  Serial.print((int)dataRecieved[1]);
+  Serial.print("YAY!");
+  digitalWrite(13, HIGH);
+  //Serial.print(timeEnd - timeStart);
+  //Serial.print("dataRecieved: ");
+  //Serial.print((int)dataRecieved[0]);
+  //Serial.print(' ');
+  //Serial.print((int)dataRecieved[1]);
 }
