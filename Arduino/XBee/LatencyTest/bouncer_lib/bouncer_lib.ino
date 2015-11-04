@@ -2,10 +2,10 @@
 #include <XBee.h>
 
 // SH + SL Address of receiving XBee
-XBeeAddress64 addr64 = XBeeAddress64(0x0013a200, 0x40700308);
-ZBTxRequest zbTx;
+XBeeAddress64 addr64 = XBeeAddress64(0x0013a200, 0x40700308); // Sening to blue
+ZBTxRequest zbTx = ZBTxRequest();
+ZBRxResponse rx = ZBRxResponse();
 XBee xbee = XBee();
-XBeeResponse response;
 char *dataRecieved;
 int dataLen;
 
@@ -19,16 +19,24 @@ void loop(){}
 void serialEvent(){
   digitalWrite(13, HIGH);
   xbee.readPacket();
-  if (xbee.getResponse().isAvailable()) {
-    response = xbee.getResponse();
-    dataRecieved = (char *)response.getFrameData();
-    dataLen = response.getFrameDataLength();
-    zbTx = ZBTxRequest(addr64, (uint8_t *)dataRecieved, dataLen);
-    delay(250);
-    digitalWrite(13, LOW);
-  } else {
-    error();
+  if (xbee.getResponse().isAvailable() && 
+      xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
+        
+    xbee.getResponse().getZBRxResponse(rx);
+    dataRecieved = (char *)xbee.getResponse().getFrameData();
+    dataLen = xbee.getResponse().getFrameDataLength();
+    
+    if(rx.getOption() == ZB_PACKET_ACKNOWLEDGED){
+      Serial.println("\nDataRecieved: ");
+      Serial.write(dataRecieved, dataLen);
+      zbTx = ZBTxRequest(addr64, (uint8_t *)dataRecieved, dataLen);
+    } else {
+      Serial.println("Package not acknowledged: ");
+      Serial.write(dataRecieved, dataLen);
+    }
   }
+  delay(250);
+  digitalWrite(13, LOW);
 }
 
 void error(){
