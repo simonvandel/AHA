@@ -1,32 +1,43 @@
 #include <XBee.h>
 
 // SH + SL Address of receiving XBee
-XBeeAddress64 addr64 = XBeeAddress64(0x0013a200, 0x40700308); // Sening to blue
+XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0); // Sending to coordinator (green)
 ZBTxRequest zbTx = ZBTxRequest();
 ZBRxResponse rx = ZBRxResponse();
 XBee xbee = XBee();
-char *dataRecieved;
+char payload[64] = {0};
+char dataRecieved[64] = {0};
 int dataLen;
 
 void setup() {
     pinMode(13, OUTPUT);
     Serial.begin(9600);
     xbee.setSerial(Serial);
-    delay(5000);
+      
+    payload[0] = 'A';
+    payload[1] = 'A';
+    payload[2] = 'A';
+    payload[3] = 'A';
+    payload[4] = 'A';
+    payload[5] = 'A';
+  
+    zbTx = ZBTxRequest(addr64, (uint8_t *)payload, 6);
+    
     digitalWrite(13, HIGH);
     delay(250);
     digitalWrite(13, LOW);
 }
 
 void loop(){
-  xbee.readPacket();
-  if (xbee.getResponse().isAvailable()){
-
+  if(xbee.readPacket(500)){
     digitalWrite(13, HIGH);
-    delay(250);
+    xbee.send(zbTx);
     digitalWrite(13, LOW);
-    
-    if(xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
+    xbee.getResponse(rx);
+    strcpy(dataRecieved, (char *)rx.getData());
+    dataRecieved[6] = '\0';
+    Serial.println(dataRecieved);
+    /*if(xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
     
       xbee.getResponse().getZBRxResponse(rx);
       dataRecieved = (char *)xbee.getResponse().getFrameData();
@@ -39,22 +50,9 @@ void loop(){
       } else {
         Serial.println("Package not acknowledged: ");
         Serial.write(dataRecieved, dataLen);
-      }
+      }*/
     }
-  delay(250);
-  digitalWrite(13, LOW);
-  }
 }
 
-void serialEvent(){  
-}
-
-void error(){
-  while(1){
-    digitalWrite(13, HIGH);
-    delay(250);
-    digitalWrite(13, LOW);
-    delay(250);
-  }
-}
+void serialEvent(){}
 
