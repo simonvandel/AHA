@@ -22,36 +22,20 @@ void setup() {
     payload[5] = 'A';
   
     zbTx = ZBTxRequest(addr64, (uint8_t *)payload, 6);
-    
-    digitalWrite(13, HIGH);
-    delay(250);
-    digitalWrite(13, LOW);
 }
 
 void loop(){
   if(xbee.readPacket(500)){
-    digitalWrite(13, HIGH);
-    xbee.send(zbTx);
-    digitalWrite(13, LOW);
-    xbee.getResponse(rx);
-    strcpy(dataRecieved, (char *)rx.getData());
-    dataRecieved[6] = '\0';
-    Serial.println(dataRecieved);
-    /*if(xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
-    
-      xbee.getResponse().getZBRxResponse(rx);
-      dataRecieved = (char *)xbee.getResponse().getFrameData();
-      dataLen = xbee.getResponse().getFrameDataLength();
-    
-      if(rx.getOption() == ZB_PACKET_ACKNOWLEDGED){
-        Serial.println("\nDataRecieved: ");
-        Serial.write(dataRecieved, dataLen);
-        zbTx = ZBTxRequest(addr64, (uint8_t *)dataRecieved, dataLen);
-      } else {
-        Serial.println("Package not acknowledged: ");
-        Serial.write(dataRecieved, dataLen);
-      }*/
+    if(xbee.getResponse().isAvailable()){
+      if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
+        xbee.getResponse().getZBRxResponse(rx);
+        if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
+          xbee.send(zbTx);
+          digitalWrite(13, HIGH);
+        }
+      }
     }
+  }
 }
 
 void serialEvent(){}
