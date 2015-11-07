@@ -822,7 +822,16 @@ rsp, si, sil, sp, spl
 \DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
 
-\usepackage[mode=multiuser,draft]{fixme} % fixme config
+\usepackage{fixme} % fixme config
+\fxsetup{
+  mode=multiuser,
+  status=draft,
+  margin=false,
+  inline=false,
+  theme=color,
+  layout=pdfnote,
+  index=true
+}
 \FXRegisterAuthor{si}{asi}{Simon}
 \FXRegisterAuthor{ka}{aka}{Kasper}
 \FXRegisterAuthor{ra}{ara}{Rasmus}

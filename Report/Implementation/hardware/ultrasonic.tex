@@ -62,16 +62,16 @@ Ultrasonic soundwaves is at frequencies above human auditorial capablity, often 
                         \cmidrule(rl){2-6}             \cmidrule(rl){7-11}            \cmidrule(rl){12-16}
         Distance [cm] & 0\degree of object & 10\degree & 20\degree & 35\degree & 45\degree & 0\degree & 10\degree & 20\degree & 35\degree & 45\degree & 0\degree & 10\degree & 20\degree & 35\degree & 45\degree \\
         \midrule
-        0             & 5   & -*  & -   & -   & -   & 5   & -   & -   & - & - & 4   & -   & - & - & - \\ 
+        0             & 5   & .*  & .   & .   & .   & 5   & .   & .   & . & . & 4   & .   & . & . & . \\ 
         1             & 2   & 2   & 2   & 2   & -   & 2   & 2   & -   & - & - & 2   & 2   & - & - & - \\ 
         2             & 2   & 2   & 3   & 3   & 3   & 2   & 2   & -   & - & - & 2   & 2   & - & - & - \\ 
-        3             & 3   & 3   & 3   & 3   & 4   & 5   & -   & -   & - & - & 4   & -   & - & - & - \\ 
+        3             & 3   & 3   & 3   & 3   & 4   & 3   & 3   & -   & - & - & 3   & 3   & - & - & - \\ 
         4             & 4   & 4   & 4   & 4   & 4   & 4   & 4   & -   & - & - & 4   & 4   & - & - & - \\ 
         5             & 5   & 5   & 5   & 6   & 8   & 5   & 5   & -   & - & - & 5   & 5   & - & - & - \\ 
         10            & 10  & 10  & 9   & 57  & 60  & 10  & 10  & -   & - & - & 10  & 10  & - & - & - \\ 
         20            & 20  & 20  & 19  & 96  & 60  & 20  & 20  & -   & - & - & 20  & 20  & - & - & - \\ 
         40            & 39  & 39  & 38  & 98  & 56  & 39  & 39  & -   & - & - & 39  & 39  & - & - & - \\ 
-        80            & 78  & 77  & 74  & 69  & x   & 78  & x   & x   & x & x & 79  & x   & x & x & x \\ 
+        80            & 78  & 77  & 74  & 69  & x   & 78  & -   & -   & - & - & 79  & -   & - & - & - \\ 
         160           & 157 & 154 & 148 & 137 & x   & 157 & -   & -   & - & - & 157 & -   & - & - & - \\ 
         320           & 313 & -   & -   & -   & -   & 313 & -   & -   & - & - & 315 & -   & - & - & - \\ 
         450           & 445 & -   & -   & -   & -   & 445 & -   & -   & - & - & 466 & -   & - & - & - \\ 
@@ -80,12 +80,56 @@ Ultrasonic soundwaves is at frequencies above human auditorial capablity, often 
         \bottomrule
       \end{tabular}
     \end{adjustbox}
-    \caption{Distance test}
+    \caption{Distance test, x marks unstable measurements, and - marks missing. *Does not make sense to measure an angle at 0 distance}
     \label{tab:ult_distance}
   \end{table}
-  At 570 cm sensor 1 and 3 stopped supplying stable reliable answers. 
+  \begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}    
+      \begin{axis}[
+                    samples=14,
+                    title={Precision experiment 0\degree},
+                    xlabel={Actual distance [$\si{\centi\meter}$]},
+                    ylabel={Measure distance [$\si{\centi\meter}$]},
+                    %xtick={0,1,2,3,4,5,10,20,40,80,160,320,450,570,600},
+                    %ytick={0,1,2,3,4,5,10,20,40,80,160,320,450,570,595},
+                    %xmode = linear,
+                    %ymode = linear, 
+                    legend pos= north west,
+                    ymajorgrids=true,
+                    grid style=dashed
+                  ]
+        \input{Implementation/hardware/UltrasonicPlots/plot0angle}
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Distance test at 0 degrees angle, at 570 cm sensor 1 and 3 stopped supplying stable reliable answers.}
+    \label{fig:ult_precision}
+  \end{figure}
+%  \begin{figure}[htbp]
+%    \centering
+%    \begin{tikzpicture}    
+%      \begin{axis}[
+%                    samples=14,
+%                    title={Precision experiment 10\degree},
+%                    xlabel={Actual distance [$\si{\centi\meter}$]},
+%                    ylabel={Measure distance [$\si{\centi\meter}$]},
+%                    %xtick={0,1,2,3,4,5,10,20,40,80,160,320,450,570,600},
+%                    %ytick={0,1,2,3,4,5,10,20,40,80,160,320,450,570,595},
+%                    %xmode = linear,
+%                    %ymode = linear, 
+%                    legend pos= north west,
+%                    ymajorgrids=true,
+%                    grid style=dashed
+%                  ]
+%        \input{Implementation/hardware/UltrasonicPlots/plot10angle}
+%      \end{axis}
+%    \end{tikzpicture}
+%    \caption{Distance test at 10 degrees angle}
+%    \label{fig:ult_precision2}
+%  \end{figure}
 
   \subparagraph{Angle of sensor}
+  The angle of the field the sensor measures within is tested, see \cref{fig:ult_angle}. This gives an idea of the how directed to sensor is, and thereby at what span the sensor is able to detect an object.
   \begin{table}[htbp]
     \centering
     \begin{adjustbox}{max width=\textwidth}
@@ -102,5 +146,7 @@ Ultrasonic soundwaves is at frequencies above human auditorial capablity, often 
     \label{tab:ult_angle}
   \end{table}
   The sensor is able to detect an object effectively at an angle of -20\degree to 20\degree, fairly precisely.
+  
+  \subparagraph{Test observations} All of the sensor are pretty much identical, they reasonably accurate within 6 meters, see \cref{tab:ult_distance} and \cref{fig:ult_precision}, when an object within +/-15\degrees of the sensors center and its surface facing the sensor with a 20\degree angle, see \cref{tab:ult_angle}.
   
 \paragraph{Multiple ultrasonic sensors} in the problem domain may introduction interference in the measurements performed, in that if one sensor is capable of transmitting soundwaves to another sensor it is possible that this will result in a collision. If this is to be solved it is important that a collision is detectable or does simply not happen. Getting collision free measurements requires some coordination between sensors, who will talk when. Example of a solution, each sensor is given a timeslot, in which a sensor is allowed to speak, it is important that theres is slight delay between each timeslot to ensure that the sounds wave has attenuated.\chnote{måske noget om dynamisk kunne tilslutte frakoble sensors}
