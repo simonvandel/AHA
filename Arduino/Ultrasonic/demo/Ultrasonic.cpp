@@ -8,7 +8,7 @@ Ultrasonic::Ultrasonic(int TP, int EP){
    Echo_pin=EP;
 }
 
-long Ultrasonic::MeasureTiming(){
+unsigned long Ultrasonic::MeasureTiming(){
   digitalWrite(Trig_pin, LOW); // Ensure low
   delayMicroseconds(2); // Wait for stable low
   
@@ -23,9 +23,9 @@ long Ultrasonic::MeasureTiming(){
                                   // given delta t from send to recieved.
 }
 
-long Ultrasonic::GetDistance(){
+unsigned long Ultrasonic::GetDistance(){
   pulseWidth = MeasureTiming();
-  return pulseWidth/58; // Optimisesesesesesesationsssssss
+  return pulseWidth/58; // approximates (speedOfSound*pulseWidth)/2 
   //return (speedOfSound*pulseWidth)/2;   //L = C × T/2 
                                           //where L is the length,
                                           //C is the speed of sound in air(cm/us),
