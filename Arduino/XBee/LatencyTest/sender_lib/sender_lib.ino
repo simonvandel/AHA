@@ -5,13 +5,13 @@ unsigned long timeStart = 0;
 XBee xbee = XBee();
 char payload[64] = {0};
 char *dataRecieved;
-ZBTxRequest zbTx;
 int i = 0;
 
 // SH + SL Address of receiving XBee
-XBeeAddress64 addr64 = XBeeAddress64(0x13A200, 0x407156BA); // Sending to coordinator (green)
+XBeeAddress64 addr64 = XBeeAddress64(0x0, 0xFFFF); // Sending to coordinator (green)
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 ZBRxResponse rx = ZBRxResponse();
+ZBTxRequest zbTx;
 
 void setup() {
   pinMode(13, OUTPUT);
@@ -31,13 +31,12 @@ void setup() {
   
   zbTx = ZBTxRequest(addr64, (uint8_t *)payload, 6);
   int i;
-  for(i = 0; i < 10; i++){
+  for(i = 0; i < 15; i++){
     digitalWrite(13, HIGH);
     delay(500);
     digitalWrite(13, LOW);
     delay(500);
   }
-  digitalWrite(13, HIGH);
   /*while(1);
   digitalWrite(13, HIGH);
   if(xbee.readPacket(1000)){
@@ -53,30 +52,31 @@ void setup() {
 }
 
 void loop(){
+  digitalWrite(12, HIGH);
+  xbee.send(zbTx);
   
-  //xbee.send(zbTx);
-  
-  if(xbee.readPacket(2000)){
+  if(xbee.readPacket(500)){
     int apiId = xbee.getResponse().getApiId();
-    digitalWrite(13, HIGH);
-    delay(500);
-    digitalWrite(13, LOW);
-  } else {
-    digitalWrite(12, HIGH);
-    delay(500);
-    digitalWrite(12, LOW);
-  }
-  /*if(apiId == ZB_TX_STATUS_RESPONSE) {
+    if(apiId == ZB_TX_STATUS_RESPONSE) {
       xbee.getResponse().getZBTxStatusResponse(txStatus);
       if (txStatus.getDeliveryStatus() == SUCCESS) {
+        digitalWrite(12, LOW);
+        digitalWrite(13, HIGH);
+        delay(250);
         digitalWrite(13, LOW);
+        delay(250);
       }
     } else if (apiId == MODEM_STATUS_RESPONSE){
-      Serial.println("Modem status response:");
-      xbee.getResponse().getModemStatusResponse(rx);
-      Serial.println((char *)rx.getFrameData());
-    }*/
-  // }else { Serial.println();}
+      digitalWrite(12, HIGH);
+      digitalWrite(13, HIGH);
+      delay(250);
+      digitalWrite(12, LOW);
+      digitalWrite(13, LOW);
+      delay(250);
+    }
+  }
+
+  delay(2000);
 }
 
 void serialEvent(){}
