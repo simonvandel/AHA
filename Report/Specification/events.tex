@@ -1,9 +1,9 @@
 %mainfile: ../master.tex
 \section{Events}\label{sec:events}
 
-\citet{OOAD} describes an event the following way: \enquote{An instantanious event that involves one or more objects}. By understanding which events can happen in the problem domain, the behaviour of objects in the problem domain can be understood, further understanding possible usecases of the system.
+\citet{OOAD} defines an event as: \enquote{An instantanious event that involves one or more objects}. By understanding which events can happen in the problem domain, the behaviour of objects in the problem domain can be understood, further understanding possible usecases of the system.
 
-The events in \cref{tab:eventtable}, only showcases some possible events, that can take place in the problem domain. There are however infinitely many events that can happen, as an event can be identified as observable changes of sensor values. When choosing the events, the focus was on the events being representative of all possible events.
+The events in \cref{tab:eventtable}, only shows some possible events, that can take place in the problem domain. There are however infinitely many events that can happen, as an event can be identified as observable changes of sensor values. When choosing the events, the focus was on the events being representative of all possible events.
 
 A short clarification of the chosen examples of events can be seen in the following paragraphs.
 
@@ -11,7 +11,6 @@ A short clarification of the chosen examples of events can be seen in the follow
 \paragraph{Turn on/off appliance} A person has turned on or off an appliance in the home.
 \paragraph{Changes in external light} The light intensity outside of the home changes e.g. the sun rises.
 \paragraph{Watching TV} A person is inactive and watching the activated TV.
-\paragraph{Unexpected arrival} A person enters the home at a time which is irregular compared to the persons normal arrival pattern.
 
 \begin{table}
   \centering
@@ -26,8 +25,6 @@ A short clarification of the chosen examples of events can be seen in the follow
     Changes in external light & & & \checkmark & \checkmark & & \checkmark\\
     \hline
     Watching TV & \checkmark & \checkmark & & \checkmark & & \checkmark\\
-    \hline
-    Unexpectedly late & \checkmark & \checkmark & \checkmark & & \checkmark & \checkmark\\
     \hline
   \end{tabular}
   \caption{Event table}
