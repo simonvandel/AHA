@@ -9,12 +9,16 @@ ZBTxRequest zbTx;
 int i = 0;
 
 // SH + SL Address of receiving XBee
-XBeeAddress64 addr64 = XBeeAddress64(0x0, 0xFFFF); // Broadcasting (white, blue)
+XBeeAddress64 addr64 = XBeeAddress64(0x13A200, 0x407156BA); // Sending to coordinator (green)
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 ZBRxResponse rx = ZBRxResponse();
 
 void setup() {
   pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  digitalWrite(11, LOW);
+  
   Serial.begin(9600);
   xbee.setSerial(Serial);
   
@@ -26,28 +30,17 @@ void setup() {
   payload[5] = 'A';
   
   zbTx = ZBTxRequest(addr64, (uint8_t *)payload, 6);
-  delay(5000);
-  
-  digitalWrite(13, HIGH);
-  
-  xbee.send(zbTx);
-  
-  xbee.readPacket(500);
-  if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
-    xbee.getResponse().getTxStatusResponse(txStatus);
-    if (txStatus.getDeliveryStatus() == SUCCESS) {
-      digitalWrite(13, LOW);
-    } else {
-      //error();
-    }
-  } else {
-    Serial.println();
-    Serial.println(xbee.getResponse().getApiId());
-    error();
+  int i;
+  for(i = 0; i < 10; i++){
+    digitalWrite(13, HIGH);
+    delay(500);
+    digitalWrite(13, LOW);
+    delay(500);
   }
   digitalWrite(13, HIGH);
-  delay(500);
-  if(xbee.readPacket(500)){
+  /*while(1);
+  digitalWrite(13, HIGH);
+  if(xbee.readPacket(1000)){
     if(xbee.getResponse().isAvailable()){
       if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
         xbee.getResponse().getZBRxResponse(rx);
@@ -56,10 +49,35 @@ void setup() {
         }
       }
     }
-  }
+  }*/
 }
 
-void loop(){}
+void loop(){
+  
+  //xbee.send(zbTx);
+  
+  if(xbee.readPacket(2000)){
+    int apiId = xbee.getResponse().getApiId();
+    digitalWrite(13, HIGH);
+    delay(500);
+    digitalWrite(13, LOW);
+  } else {
+    digitalWrite(12, HIGH);
+    delay(500);
+    digitalWrite(12, LOW);
+  }
+  /*if(apiId == ZB_TX_STATUS_RESPONSE) {
+      xbee.getResponse().getZBTxStatusResponse(txStatus);
+      if (txStatus.getDeliveryStatus() == SUCCESS) {
+        digitalWrite(13, LOW);
+      }
+    } else if (apiId == MODEM_STATUS_RESPONSE){
+      Serial.println("Modem status response:");
+      xbee.getResponse().getModemStatusResponse(rx);
+      Serial.println((char *)rx.getFrameData());
+    }*/
+  // }else { Serial.println();}
+}
 
 void serialEvent(){}
 

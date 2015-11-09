@@ -1,7 +1,7 @@
 #include <XBee.h>
 
 // SH + SL Address of receiving XBee
-XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0); // Sending to coordinator (green)
+XBeeAddress64 addr64 = XBeeAddress64(0x0, 0xFFFF); // Broadcasting (white, blue)
 ZBTxRequest zbTx = ZBTxRequest();
 ZBRxResponse rx = ZBRxResponse();
 XBee xbee = XBee();
@@ -11,6 +11,10 @@ int dataLen;
 
 void setup() {
     pinMode(13, OUTPUT);
+    pinMode(12, OUTPUT);
+    pinMode(11, OUTPUT);
+    digitalWrite(11, LOW);
+    
     Serial.begin(9600);
     xbee.setSerial(Serial);
       
@@ -22,21 +26,49 @@ void setup() {
     payload[5] = 'A';
   
     zbTx = ZBTxRequest(addr64, (uint8_t *)payload, 6);
+    int i;
+    for(i = 0; i < 10; i++){
+      digitalWrite(13, HIGH);
+      delay(500);
+      digitalWrite(13, LOW);
+      delay(500);
+    }
 }
 
 void loop(){
-  if(xbee.readPacket(500)){
+  xbee.readPacket();
     if(xbee.getResponse().isAvailable()){
-      if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
+      int apiId = xbee.getResponse().getApiId();
+      if (apiId == ZB_RX_RESPONSE) {
         xbee.getResponse().getZBRxResponse(rx);
-        if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
+        int rxOption = rx.getOption();
+        if (rxOption == ZB_PACKET_ACKNOWLEDGED) {
+          error();
           xbee.send(zbTx);
+        } else {
+          Serial.println("ERROR rxOption:");
+          Serial.write(rxOption);
           digitalWrite(13, HIGH);
+          delay(250);
+          digitalWrite(13, LOW);
         }
+      } else {
+        Serial.println("ERROR apiId:");
+        Serial.println(apiId);
+        digitalWrite(12, HIGH);
+        delay(250);
+        digitalWrite(12, LOW);
       }
     }
-  }
 }
 
 void serialEvent(){}
 
+void error(){
+  while(1){
+    digitalWrite(13, HIGH);
+    delay(250);
+    digitalWrite(13, LOW);
+    delay(250);
+  }
+}
