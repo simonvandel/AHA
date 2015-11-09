@@ -15,17 +15,18 @@ The sensor HC-SR04 in consideration is utilizing time of flight principle. This 
   \label{fig:ultrasonicwiring}
 \end{figure}
 
+\paragraph{Operation of the sensor}
 The HC-SR04 sensor operates by following the description and \cref{fig:sensor-workings} suggests, firstly the sensors measuring mechanism is activated by setting the "TRIGGER" pin to high for 10$\si{\milli\second}$, now the sensor begin the measuring cycles, consisting of 8 consecutive transmit-receiver periods. At last the the sensor outputs the time it took for a ultrasonic to be transmitted and be received again, through the "ECHO" pin, this is then convertible into a distance by the following formula $L = (C × T)/2$, where $L$ is the distance, $C$ is the speed of sound, $T$ is the time it took for the wave to travel back and fourth, hence also why we divide by 2.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.4\textwidth]{sensor-workings.png}
+  \includegraphics[width=\textwidth]{sensor-workings.png}
   \caption{HC-SR04 timing diagram}
   \label{fig:sensor-workings}
 \end{figure}
 
 \paragraph{The technology}
-Ultrasonic sound waves is at frequencies above human auditorial capablity, often at 40 kHz. Ultrasonic sound has a number of properties, relative to human audible sound, that can be exploited when in need of measuring the speed\cite{ultrasound}, thickness\cite{ultrasound2}, integrity\cite{ultrasound2} of an object, but also a distance to object as will be useful in this context. These properties include the attenuation and reflectiveness of higher frequency waves and not being audible to humans.\chnote{more?} The sensors utilising this technology are very useful for making measurements without touching or otherwise impeding a target. However, these following factors has to be taking into consideration in that may affect measurements.
+Ultrasonic sound waves is at frequencies above human auditorial capability, often at 40 kHz. Ultrasonic sound has a number of properties, relative to human audible sound, that can be exploited when in need of measuring the speed\cite{ultrasound}, thickness\cite{ultrasound2}, integrity\cite{ultrasound2} of an object, but also a distance to object as will be useful in this context. These properties include the attenuation and reflectiveness of higher frequency waves and not being audible to humans.\chnote{more?} The sensors utilising this technology are very useful for making measurements without touching or otherwise impeding a target. However, these following factors has to be taking into consideration in that may affect measurements.
   \subparagraph{Considerations}\label{sup:cons}
   \begin{itemize}
   \item Temperatures and humidity affect the speed of sound in air
@@ -156,6 +157,6 @@ Ultrasonic sound waves is at frequencies above human auditorial capablity, often
   \end{table}
   The sensor is able to detect an object effectively at an angle of -20\degree to 20\degree, fairly precisely.
   
-  \subparagraph{Test observations} All of the sensor are pretty much identical, they reasonably accurate within 6 meters, see \cref{tab:ult_distance} and \cref{fig:ult_precision}, when an object within +/-15\degrees of the sensors center and its surface facing the sensor with a 20\degree angle, see \cref{tab:ult_angle}.
+  \subparagraph{Test observations} All of the sensor are pretty much identical, they reasonably accurate within 6 meters, see \cref{tab:ult_distance} and \cref{fig:ult_precision}, when an object within +/-15\degree of the sensors center and its surface facing the sensor with a 20\degree angle, see \cref{tab:ult_angle}.
   
 \paragraph{Multiple ultrasonic sensors} in the problem domain may introduction interference in the measurements performed, in that if one sensor is capable of transmitting sound waves to another sensor it is possible that this will result in a collision. If this is to be solved it is important that a collision is detectable or does simply not happen. Getting collision free measurements requires some coordination between sensors, who will talk when. Example of a solution, each sensor is given a timeslot, in which a sensor is allowed to speak, it is important that there is slight delay between each timeslot to ensure that the sounds wave has attenuated.\chnote{måske noget om dynamisk kunne tilslutte frakoble sensors}
