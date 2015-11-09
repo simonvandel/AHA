@@ -1,31 +1,14 @@
-%mainfile: ../../master.tex
-\section{Classes}
+%mainfile: ../master.tex
+\section{Classes}\label{sec:classes}
+From the system definition \cref{sec:systemDefinition} we can extract some classes. A class is \enquote{A description of a collection of objects with the same structure, behaviour and attributes} as described in \cite{OOAD}. Candidates for classes are found by observing nouns, adjectives and verbs present in the problem domain.
 
-From the system definition \cref{sec:systemDefinition} and "rich picture" of the problem domain that the system will be operating on/in, we can extract some classes. 
+These classes will be beneficial when figuring out what is relevant in our model of the problem domain. This system should be able to keep an always up to date model of the problem domain. The list below summarises some candidates for classes that the system uses to structure this model.
 
-\begin{quote}
-A description of a collection of objects with the same structure, behaviour and attributes
-\end{quote}
-as described in \cite{OOAD}
-
-These classes will be beneficial when figuring out what we need to keep track of in the problem domain, or what is relevant in our model of the problem domain.
-
-This system should be able to keep an always up to date model of the problem domain, \cref{lis:classes} summarises some candidates for classes that the system use to structure this model.
-
-\begin{figure}
-  \label{lis:classes}
-  \begin{itemize}
-    \item Person - The user of the system
-    \item Action - An action the system should recognise as feedback
-    \item Pattern - The usage patter of a user, what is typical behaviour
-    \item Mistake - System did something wrong by the user
-    \item Sensor - The observational member of the system
-    \item Switch - A feedback source
-    \item Lamp - The light source on which system action
-    \item Light intensity - luminance
-    \item Room - What room is the user in and its relations
-    \item Premise - The user home environment
-    \item Time - At what time, a pattern property
-  \end{itemize}
-  \caption{Candidates of classes}
-\end{figure}
+\begin{itemize}
+\item Person - The user of the system. The problem domain can contain multiple persons with different usage patterns, so the system should be able to differentiate them
+\item Action - An activity performed by the user
+\item State - A snapshot of all observable objects in the problem domain
+\item Pattern - A pattern is a sequence of actions, where the pattern is dependent on a state
+\item Location - A specific place in the problem domain
+\item Time - At what time a given stimuli has happened
+\end{itemize}
