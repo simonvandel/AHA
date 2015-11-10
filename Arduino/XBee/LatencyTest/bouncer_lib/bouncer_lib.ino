@@ -2,6 +2,7 @@
 
 // SH + SL Address of receiving XBee
 XBeeAddress64 addr64 = XBeeAddress64(0x0, 0xFFFF); // Broadcasting (white, blue)
+ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 ZBTxRequest zbTx = ZBTxRequest();
 ZBRxResponse rx = ZBRxResponse();
 XBee xbee = XBee();
@@ -28,25 +29,15 @@ void flashLed(int pin, int times, int wait) {
 
 void setup() {
   pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(9, OUTPUT);
-  digitalWrite(12, LOW);
-  digitalWrite(10, LOW);
   
   Serial.begin(9600);
   xbee.begin(Serial);
   
   int i;
-  for(i = 0; i < 2; i++){
+  for(i = 0; i < 10; i++){
     digitalWrite(13, HIGH);
-    digitalWrite(11, HIGH);
-    digitalWrite(9, HIGH);
     delay(500);
     digitalWrite(13, LOW);
-    digitalWrite(11, LOW);
-    digitalWrite(9, LOW);
     delay(500);
   }
 }
@@ -62,11 +53,22 @@ void loop(){
         
       xbee.getResponse().getZBRxResponse(rx);
       // now fill our zb rx class
-            
+      
       if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
         Serial.println("Direct packet acknowledged");
       } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
+        digitalWrite(13, HIGH);
         Serial.println("Broadcast packet acknowledged");
+        delay(2000);
+        xbee.send(zbTx);
+        if(xbee.readPacket(500)){
+          if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
+            xbee.getResponse().getZBTxStatusResponse(txStatus);
+            if (txStatus.getDeliveryStatus() == SUCCESS) {
+              digitalWrite(13, LOW);
+            }
+          }
+        }
       } else {
         Serial.println("Unknown packet status");
       }
@@ -98,3 +100,4 @@ void loop(){
 }
 
 void serialEvent(){}
+

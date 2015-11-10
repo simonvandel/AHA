@@ -15,9 +15,6 @@ ZBTxRequest zbTx;
 
 void setup() {
   pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(11, OUTPUT);
-  digitalWrite(11, LOW);
   
   Serial.begin(9600);
   xbee.setSerial(Serial);
@@ -31,49 +28,44 @@ void setup() {
   
   zbTx = ZBTxRequest(addr64, (uint8_t *)payload, 6);
   int i;
-  for(i = 0; i < 15; i++){
+  for(i = 0; i < 10; i++){
     digitalWrite(13, HIGH);
     delay(500);
     digitalWrite(13, LOW);
     delay(500);
   }
-  /*while(1);
-  digitalWrite(13, HIGH);
-  if(xbee.readPacket(1000)){
-    if(xbee.getResponse().isAvailable()){
-      if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
-        xbee.getResponse().getZBRxResponse(rx);
-        if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
-          digitalWrite(13, LOW);
-        }
-      }
-    }
-  }*/
 }
 
 void loop(){
-  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
   xbee.send(zbTx);
   
   if(xbee.readPacket(500)){
-    int apiId = xbee.getResponse().getApiId();
-    if(apiId == ZB_TX_STATUS_RESPONSE) {
+    if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
       xbee.getResponse().getZBTxStatusResponse(txStatus);
       if (txStatus.getDeliveryStatus() == SUCCESS) {
-        digitalWrite(12, LOW);
-        digitalWrite(13, HIGH);
-        delay(250);
         digitalWrite(13, LOW);
-        delay(250);
+        if(xbee.readPacket(4000)){
+          if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
+            xbee.getResponse().getZBRxResponse(rx);
+            if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
+              Serial.println("Direct packet acknowledged");
+            } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
+              digitalWrite(13, HIGH);
+              Serial.println("Broadcast packet acknowledged");
+            } else {
+              Serial.println("Unknown packet status");
+            }
+            Serial.print("Package: ");
+            Serial.println((char *)rx.getData());
+          } else {
+            Serial.println("Recieved package of wrong type");
+          }
+        } else {
+          Serial.println("No package recieved");
+        }
       }
-    } else if (apiId == MODEM_STATUS_RESPONSE){
-      digitalWrite(12, HIGH);
-      digitalWrite(13, HIGH);
-      delay(250);
-      digitalWrite(12, LOW);
-      digitalWrite(13, LOW);
-      delay(250);
-    }
+    } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE){}
   }
 
   delay(2000);
