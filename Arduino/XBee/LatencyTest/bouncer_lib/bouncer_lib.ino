@@ -54,98 +54,47 @@ void setup() {
 void loop(){
   xbee.readPacket();
     
-    if (xbee.getResponse().isAvailable()) {
-      // got something
-      
-      if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
-        // got a zb rx packet
+  if (xbee.getResponse().isAvailable()) {
+  // got something
+
+    if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
+    // got a zb rx packet
         
-        // now fill our zb rx class
-        xbee.getResponse().getZBRxResponse(rx);
+      xbee.getResponse().getZBRxResponse(rx);
+      // now fill our zb rx class
             
-        if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
-            // the sender got an ACK
-            Serial.println("P2P packet acknowledged");
-        } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
-            Serial.println("Broadcast packet acknowledged");
-        }
-        Serial.print("Package: ");
-        Serial.println((char *)rx.getData());
-      } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE) {
-        xbee.getResponse().getModemStatusResponse(msr);
-        // the local XBee sends this response on certain events, like association/dissociation
-        
-        if (msr.getStatus() == ASSOCIATED) {
-          // yay this is great.  flash led
-          Serial.print("MSR ASSOCIATED");
-          Serial.println(msr.getStatus());
-          flashLed(statusLed, 10, 10);
-        } else if (msr.getStatus() == DISASSOCIATED) {
-          // this is awful.. flash led to show our discontent
-          Serial.print("MSR DISASSOCIATED");
-          Serial.println(msr.getStatus());
-          flashLed(errorLed, 10, 10);
-        } else {
-          // another status
-          Serial.print("MSR ???");
-          Serial.println(msr.getStatus());
-          flashLed(statusLed, 5, 10);
-        }
+      if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
+        Serial.println("Direct packet acknowledged");
+      } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
+        Serial.println("Broadcast packet acknowledged");
       } else {
-        // not something we were expecting
-        flashLed(errorLed, 1, 25);
-        Serial.print("Unexpected ApiId: ");
-        Serial.println(xbee.getResponse().getApiId());
+        Serial.println("Unknown packet status");
       }
-      Serial.println("___________");
-    } else if (xbee.getResponse().isError()) {
-      Serial.print("Error reading packet.  Error code: ");  
-      Serial.println(xbee.getResponse().getErrorCode());
-    }
-  /*xbee.readPacketUntilAvailable();
-  Serial.print("apiId: ");
-  Serial.println(xbee.getResponse().getApiId());
-  xbee.getResponse().reset();
-  xbee.flush();
-  Serial.flush();
-  /*
-  if(xbee.getResponse().isAvailable()){
-    int apiId = xbee.getResponse().getApiId();
-    digitalWrite(12, HIGH);
-    delay(250);
-    digitalWrite(12, LOW);
-    //delay(250);
-    Serial.print("SUCCESS apiId: ");
-    Serial.println(apiId);
-      /*if (apiId == ZB_RX_RESPONSE) {
-        xbee.getResponse().getZBRxResponse(rx);
-        int rxOption = rx.getOption();
-        if (rxOption == ZB_PACKET_ACKNOWLEDGED) {
-          xbee.send(zbTx);
-        } else {
-          digitalWrite(13, HIGH);
-          delay(500);
-          digitalWrite(13, LOW);
-        }
+      Serial.print("Package: ");
+      Serial.println((char *)rx.getData());
+    } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE) {
+      xbee.getResponse().getModemStatusResponse(msr);
+      // the local XBee sends this response on certain events, like association/dissociation
+
+      if (msr.getStatus() == ASSOCIATED) {
+        Serial.print("Connected to modem: ");
+        Serial.println(msr.getStatus());
+      } else if (msr.getStatus() == DISASSOCIATED) {
+        Serial.print("Disconnected/No connection to modem: ");
+        Serial.println(msr.getStatus());
       } else {
-        digitalWrite(12, HIGH);
-        delay(500);
-        digitalWrite(12, LOW);
+        Serial.print("Unknown Modem Status: ");
+        Serial.println(msr.getStatus());
       }
+    } else {
+      Serial.print("Unexpected ApiId: ");
+      Serial.println(xbee.getResponse().getApiId());
     }
-  } else {
-    int apiId = xbee.getResponse().getApiId();
-    Serial.print("ERROR apiId: ");
-    Serial.println(apiId); 
-    if(xbee.getResponse().isError()){
-      Serial.print("Error: ");
-      Serial.println(xbee.getResponse().getErrorCode());
-    }
-    digitalWrite(13, HIGH);
-    delay(250);
-    digitalWrite(13, LOW);
-    //delay(250);
-  }*/
+    Serial.println("___________");
+  } else if (xbee.getResponse().isError()) {
+    Serial.print("Error reading packet.  Error code: ");  
+    Serial.println(xbee.getResponse().getErrorCode());
+  }
 }
 
 void serialEvent(){}
