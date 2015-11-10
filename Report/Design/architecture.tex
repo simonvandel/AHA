@@ -223,8 +223,8 @@ The properties are evaluated in \cref{tab:scheme_choice}.\sinote{mangler respons
 
 \begin{table}[htbp]
 \centering
-\begin{adjustbox}{angle=90}
-\begin{tabular}{m{7em} m{7em} m{7em} m{7em} m{8em} m{8em}}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{*{6}{c}}
 \toprule
                        & Scheme 1                                          & Scheme 2                                 & Scheme 3                                         & Scheme 4                      & Scheme 5                             \\ \midrule
 Critical paths         & 2:all                                             & 1:S to Ac                                & 1:S/Ac to S/Ac                                   & 2:all                         & 1:S to Ac                            \\ \midrule
@@ -235,6 +235,6 @@ Memory analysis        & Past sensor data                                  & Pas
 \end{tabular}
 \end{adjustbox}
 \caption[Evaluation table]{Evaluation table of communication schemes. S means sensor subsystem. Ac means actuator subsystem. A means analysis subsystem. In the \enquote{memory actuator/sensor row}, it is implicit that every scheme has to store the sensor data intermediately, before processing it.}\label{tab:scheme_choice}
-\end{table}\ranote{fix table}
+\end{table}
 
 Looking at \cref{tab:scheme_choice}, the following ranking of the schemes can be produced. \sinote{Find out which scheme is best, when we have tested the ZigBee sensors}

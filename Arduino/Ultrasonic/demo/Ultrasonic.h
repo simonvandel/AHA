@@ -9,12 +9,12 @@
   class Ultrasonic{
     public:
       Ultrasonic(int TP, int EP);
-      long MeasureTiming();
-      long GetDistance();
+      unsigned long MeasureTiming();
+      unsigned long GetDistance();
   
       private:
       int Trig_pin;
       int Echo_pin;
-      long pulseWidth;
+      unsigned long pulseWidth;
   };
 #endif
