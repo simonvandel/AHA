@@ -44,7 +44,6 @@ void setup() {
 
 void loop(){
   xbee.readPacket();
-    
   if (xbee.getResponse().isAvailable()) {
   // got something
 
@@ -55,11 +54,13 @@ void loop(){
       // now fill our zb rx class
       
       if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
-        Serial.println("Direct packet acknowledged");
+        Serial.print("Direct packet acknowledged, Package: ");
+        Serial.println((char *)rx.getData());
       } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
         digitalWrite(13, HIGH);
-        Serial.println("Broadcast packet acknowledged");
-        delay(2000);
+        Serial.print("Broadcast packet acknowledged, Package: ");
+        Serial.println((char *)rx.getData());
+        zbTx = ZBTxRequest(addr64, rx.getData(), rx.getDataLength());
         xbee.send(zbTx);
         if(xbee.readPacket(500)){
           if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
@@ -72,8 +73,6 @@ void loop(){
       } else {
         Serial.println("Unknown packet status");
       }
-      Serial.print("Package: ");
-      Serial.println((char *)rx.getData());
     } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE) {
       xbee.getResponse().getModemStatusResponse(msr);
       // the local XBee sends this response on certain events, like association/dissociation

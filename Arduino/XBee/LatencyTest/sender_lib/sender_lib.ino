@@ -34,12 +34,11 @@ void setup() {
     digitalWrite(13, LOW);
     delay(500);
   }
+  xbee.send(zbTx);
 }
 
 void loop(){
-  digitalWrite(13, HIGH);
-  xbee.send(zbTx);
-  
+  digitalWrite(13, HIGH);  
   if(xbee.readPacket(500)){
     if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
       xbee.getResponse().getZBTxStatusResponse(txStatus);
@@ -53,22 +52,27 @@ void loop(){
             } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
               digitalWrite(13, HIGH);
               Serial.println("Broadcast packet acknowledged");
+              delay(4000);
+              xbee.send(zbTx);
             } else {
               Serial.println("Unknown packet status");
             }
             Serial.print("Package: ");
             Serial.println((char *)rx.getData());
           } else {
-            Serial.println("Recieved package of wrong type");
+            Serial.print("Recieved package of wrong type, type: ");
+            Serial.println(xbee.getResponse().getApiId());
           }
         } else {
-          Serial.println("No package recieved");
+          Serial.println("No package recieved. Restarting.");
+          setup();
         }
       }
     } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE){}
+  } else {
+    Serial.println("Status response missed. Restarting.");
+    setup();
   }
-
-  delay(2000);
 }
 
 void serialEvent(){}
