@@ -60,10 +60,6 @@ void loop(){
         zbTx = ZBTxRequest(addr64, rx.getData(), rx.getDataLength());
         xbee.send(zbTx);
         digitalWrite(13, HIGH);
-        Serial.print("Broadcast packet acknowledged, Package: ");
-        strcpy(dataRecieved, (char *)rx.getData());
-        dataRecieved[rx.getDataLength()] = '\0';
-        Serial.println(dataRecieved);
         if(xbee.readPacket(10000)){
           if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
             xbee.getResponse().getZBTxStatusResponse(txStatus);

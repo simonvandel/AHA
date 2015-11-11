@@ -3,8 +3,8 @@
 unsigned long timeEnd = 0;
 unsigned long timeStart = 0;
 XBee xbee = XBee();
-char payload[64] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-char *dataRecieved;
+char payload[64] = {0};
+int results[64] = {0};
 int i = 0;
 
 // SH + SL Address of receiving XBee
@@ -14,13 +14,11 @@ ZBRxResponse rx = ZBRxResponse();
 ZBTxRequest zbTx;
 
 void setup() {
-  payload[63] = 'A';
   pinMode(13, OUTPUT);
   
   Serial.begin(9600);
   xbee.setSerial(Serial);
-    
-  zbTx = ZBTxRequest(addr64, (uint8_t *)payload, 1);
+
   int i;
   for(i = 0; i < 10; i++){
     digitalWrite(13, HIGH);
@@ -29,11 +27,14 @@ void setup() {
     delay(500);
   }
   Serial.flush();
+  i = 1;
+  payload[i - 1] = '1';
+  zbTx = ZBTxRequest(addr64, (uint8_t *)payload, i);
+  Serial.print("Sending message ");
+  Serial.println(i);
   timeStart = millis();
   xbee.send(zbTx);
-}
-
-void loop(){ 
+  while(i <= 64){
   digitalWrite(13, HIGH);  
   if(xbee.readPacket(10000)){
     if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
@@ -47,9 +48,15 @@ void loop(){
             if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
               timeEnd = millis();
               digitalWrite(13, HIGH);
-              Serial.println("Direct packet acknowledged. Time: ");
-              Serial.println(timeEnd - timeStart);
+              Serial.print("Saving result ");
+              Serial.println(i);
+              results[i - 1] = timeEnd - timeStart;
+              i++;
+              payload[i - 1] = '1';
+              zbTx = ZBTxRequest(addr64, (uint8_t *)payload, i);
               delay(1000);
+              Serial.print("Sending message ");
+              Serial.println(i);
               timeStart = millis();
               xbee.send(zbTx);
             } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
@@ -63,8 +70,6 @@ void loop(){
             } else {
               Serial.println("Unknown packet status");
             }
-            Serial.print("Package: ");
-            Serial.println((char *)rx.getData());
           } else {
             Serial.print("Recieved package of wrong type, type: ");
             Serial.println(xbee.getResponse().getApiId());
@@ -77,15 +82,29 @@ void loop(){
             Serial.println("No package recieved.");
           }
           Serial.println("Restarting.");
-          setup();
+          //setup();
         }
       }
     } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE){}
   } else {
     Serial.println("Status response missed. Restarting.");
-    setup();
+    //setup();
+    i++;
+    payload[i - 1] = 'B';
+    zbTx = ZBTxRequest(addr64, (uint8_t *)payload, i);
+    delay(1000);
+    Serial.print("Sending message ");
+    Serial.println(i);
+  }
+  }
+  for(i = 0; i < 64; i++){
+    Serial.print(i);
+    Serial.print(", ");
+    Serial.println(results[i]);
   }
 }
+
+void loop(){}
 
 void serialEvent(){}
 
