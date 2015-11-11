@@ -1,9 +1,9 @@
 #include <XBee.h>
 
 // SH + SL Address of receiving XBee
-XBeeAddress64 addr64 = XBeeAddress64(0x0, 0xFFFF); // Broadcasting (white, blue)
+XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0); // Broadcasting (white, blue)
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
-ZBTxRequest zbTx = ZBTxRequest();
+ZBTxRequest zbTx;
 ZBRxResponse rx = ZBRxResponse();
 XBee xbee = XBee();
 char dataRecieved[64] = {0};
@@ -34,7 +34,7 @@ void setup() {
   xbee.begin(Serial);
   
   int i;
-  for(i = 0; i < 10; i++){
+  for(i = 0; i < 1; i++){
     digitalWrite(13, HIGH);
     delay(500);
     digitalWrite(13, LOW);
@@ -57,18 +57,23 @@ void loop(){
         Serial.print("Direct packet acknowledged, Package: ");
         Serial.println((char *)rx.getData());
       } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
-        digitalWrite(13, HIGH);
-        Serial.print("Broadcast packet acknowledged, Package: ");
-        Serial.println((char *)rx.getData());
         zbTx = ZBTxRequest(addr64, rx.getData(), rx.getDataLength());
         xbee.send(zbTx);
-        if(xbee.readPacket(500)){
+        digitalWrite(13, HIGH);
+        Serial.print("Broadcast packet acknowledged, Package: ");
+        strcpy(dataRecieved, (char *)rx.getData());
+        dataRecieved[rx.getDataLength()] = '\0';
+        Serial.println(dataRecieved);
+        if(xbee.readPacket(10000)){
           if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
             xbee.getResponse().getZBTxStatusResponse(txStatus);
             if (txStatus.getDeliveryStatus() == SUCCESS) {
               digitalWrite(13, LOW);
             }
           }
+        } else {
+          Serial.println("No status response");
+          Serial.flush();
         }
       } else {
         Serial.println("Unknown packet status");
