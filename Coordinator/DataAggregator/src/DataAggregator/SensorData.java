@@ -1,5 +1,6 @@
 package DataAggregator;
 
+import DataAggregator.Exceptions.InvalidValueSizeException;
 import com.digi.xbee.api.models.XBeeMessage;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
@@ -16,7 +17,7 @@ public class SensorData {
     private String device;
     private List<Integer> values = new ArrayList<>();
 
-    public SensorData(XBeeMessage msg) {
+    public SensorData(XBeeMessage msg) throws InvalidValueSizeException {
         device = msg.getDevice().toString(); // TODO: probably do not just use toString method
         values = decodeData(msg.getData());
     }
@@ -25,7 +26,7 @@ public class SensorData {
      * @param data
      * @return Returns a list of sensor values, parsed from the raw packet
      */
-    private List<Integer> decodeData(byte[] data) throws Exception {
+    private List<Integer> decodeData(byte[] data) throws InvalidValueSizeException {
         List<Integer> returnList = new ArrayList<>();
         BitSet bitSet = new BitSet().valueOf(data);
         BitSetWrapper bsWrapper = new BitSetWrapper(bitSet);
@@ -54,7 +55,8 @@ public class SensorData {
                 case 1: bitSize = 1; break;
                 case 2: bitSize = 10; break;
                 case 3: bitSize = 32; break;
-                default: throw new Exception("Size of sensor values must be between 0-3"); // TODO: Create our own custom exception
+
+                default: throw new InvalidValueSizeException("Size of sensor values must be between 0-3");
             }
             analogValueInfo.set(i, Pair.with(bitSize,isEmulatable));
         }
@@ -68,7 +70,6 @@ public class SensorData {
         // BODY -----------------------
         // analogValues
         for (Pair<Integer,Boolean> pair: analogValueInfo) {
-
 
         }
 

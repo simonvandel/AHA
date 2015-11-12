@@ -167,9 +167,9 @@ public class main implements IDataReceiveListener,
         if (args.length > 0) {
             PORT = args[0];
         }
-        byte[] x = {127, 1};
+        //byte[] x = {127, 1};
 
-        System.out.println( "" + bitInteger );
+        //System.out.println( "" + bitInteger );
         new main();
     }
 
