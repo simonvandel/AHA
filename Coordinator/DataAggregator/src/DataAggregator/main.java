@@ -14,6 +14,7 @@ import com.digi.xbee.api.listeners.IDiscoveryListener;
 import com.digi.xbee.api.models.XBee64BitAddress;
 import com.digi.xbee.api.models.XBeeMessage;
 
+import java.util.BitSet;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -166,6 +167,9 @@ public class main implements IDataReceiveListener,
         if (args.length > 0) {
             PORT = args[0];
         }
+        byte[] x = {127, 1};
+
+        System.out.println( "" + bitInteger );
         new main();
     }
 
