@@ -1,4 +1,5 @@
 #include <XBee.h>
+#include <XBeeLibrary.h>
 
 // SH + SL Address of receiving XBee
 XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0); // Broadcasting (white, blue)
@@ -43,7 +44,10 @@ void setup() {
 }
 
 void loop(){
-  xbee.readPacket();
+  if(recieveMessage()){
+    send(message(
+  }
+  /*xbee.readPacket();
   if (xbee.getResponse().isAvailable()) {
   // got something
 
@@ -96,8 +100,44 @@ void loop(){
   } else if (xbee.getResponse().isError()) {
     Serial.print("Error reading packet.  Error code: ");  
     Serial.println(xbee.getResponse().getErrorCode());
-  }
+  }*/
 }
 
 void serialEvent(){}
+
+int sendMessage(XBeeAddress64 address, char *toSend, int sendLen){
+  ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)toSend, sendLen);
+  xbee.send(zbTx);
+  if(xbee.readPacket(500)){
+    if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
+      xbee.getResponse().getZBTxStatusResponse(txStatus);
+      if (txStatus.getDeliveryStatus() == SUCCESS) {
+        return 1;
+      }
+    }
+  }
+  return 0;
+}
+
+int recieveMessage(){
+  if(xbee.readPacket(500)){
+    if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
+      xbee.getResponse().getZBRxResponse(rx);
+      if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
+        return 1;       // Direct packet recieved
+      } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
+        return 1;       // Broadcast packet recieved
+      } else {
+        return 0;       // Unknown packet recieved
+      }
+    } else {
+       return 0; // Recieved package of wrong type
+    }
+  } else {
+    if (xbee.getResponse().isError()) {
+      return 0; // Error reading packet
+    }
+  }
+  return 0; // No package recieved
+}
 
