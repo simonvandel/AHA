@@ -48,18 +48,23 @@ public class main extends javax.swing.JFrame implements IDataReceiveListener,
         device = new XBeeDevice(PORT, BAUD_RATE);
 
         try {
+            //If device can open, device is succesfully connected
             device.open();
-            device.addDataListener(this);
-
             OutputTextArea.append("Device succesfully connected");
+            
+            //Invokes dataReceived when data is received, other listener available that raises on "packet received"
+            device.addDataListener(this);
+            
             network = device.getNetwork();
             network.addDiscoveryListener(this);
             network.setDiscoveryTimeout(5000);
             DiscoverNetwork();
 
-            //starts timer to update network
+            //starts timer to update network or some other thing
+            /*
             timer = new Timer();
             timer.schedule(timerTask, 15000);
+            */
         } catch (XBeeException e) {
             OutputTextArea.append("Device not found:\n" + e.getMessage());
         }
