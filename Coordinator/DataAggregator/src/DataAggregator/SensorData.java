@@ -22,7 +22,9 @@ public class SensorData {
      * @return Returns a list of sensor values, parsed from the raw packet
      */
     private List<Integer> decodeData(byte[] data) {
-        return null;
+         List<Integer> returnList = new ArrayList<>();
+
+        return returnList;
     }
 
     public String getDevice() {
