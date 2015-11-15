@@ -1,4 +1,4 @@
-#include "Ultrasonic.h"
+#include "../lib/Ultrasonic.h"
 Ultrasonic ultrasonic(12,13);
 
 void setup() {
@@ -8,6 +8,6 @@ void setup() {
 
 void loop(){
   Serial.print("Distance(cm) = ");
-  Serial.println(ultrasonic.GetDistance());
+  Serial.println(ultrasonic.getDistance());
   delay(1000); // one second delay, minimum delay is 60 us delay otherwise long distance fucks up
 }

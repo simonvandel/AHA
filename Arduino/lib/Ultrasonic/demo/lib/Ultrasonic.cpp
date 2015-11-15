@@ -4,27 +4,27 @@
 Ultrasonic::Ultrasonic(int TP, int EP){
    pinMode(TP,OUTPUT);
    pinMode(EP,INPUT);
-   Trig_pin=TP;
-   Echo_pin=EP;
+   trigPin=TP;
+   echoPin=EP;
 }
 
-unsigned long Ultrasonic::MeasureTiming(){
-  digitalWrite(Trig_pin, LOW); // Ensure low
+unsigned long Ultrasonic::measureTiming(){
+  digitalWrite(trigPin, LOW); // Ensure low
   delayMicroseconds(2); // Wait for stable low
-  
-  digitalWrite(Trig_pin, HIGH); // Set trigger pin to high for 10 microseconds
+
+  digitalWrite(trigPin, HIGH); // Set trigger pin to high for 10 microseconds
   delayMicroseconds(10);        // to initiate sensor cycle
-  
-  digitalWrite(Trig_pin, LOW); // Then set low again, the sensor will now emit and receive
+
+  digitalWrite(trigPin, LOW); // Then set low again, the sensor will now emit and receive
                                // 8 cycles of ultrasonic sound waves at 40 khz
-                               
-  return pulseIn(Echo_pin,HIGH);  // Now wait for the sensor to output a pulse,
+
+  return pulseIn(echoPin,HIGH);  // Now wait for the sensor to output a pulse,
                                   // the pulse width corresponds to a distance,
                                   // given delta t from send to recieved.
 }
 
-unsigned long Ultrasonic::GetDistance(){
-  pulseWidth = MeasureTiming();
+unsigned long Ultrasonic::getDistance(){
+  pulseWidth = measureTiming();
   return pulseWidth/58; // approximates (speedOfSound*pulseWidth)/2 
   //return (speedOfSound*pulseWidth)/2;   //L = C × T/2 
                                           //where L is the length,
