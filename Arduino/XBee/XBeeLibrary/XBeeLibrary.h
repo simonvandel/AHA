@@ -1,7 +1,4 @@
-#ifndefine XBeeLibrary_h
-#define XBeeLibrary_h
+#include <XBee.h>
+int sendData(XBeeAddress64 addr, char* toSend, int toSendLen, XBee xbee);
+int receiveData(XBee *xbee);
 
-    #include <XBee.h>
-    int SendData(XBeeAddress64 addr, char* toSend, int toSendLen);
-    int VerifySendResponse();
-#endif
