@@ -1,20 +1,36 @@
 #include "SensorPacketBuilder.h"
 
 SensorPacketBuilder::SensorPacketBuilder(){
-  sensorPacket.numAnalogValues = 0;
-  sensorPacket.indexAnalogEmulatable = 0;
-  // sensorPacket.analogValue1 = 0;
-  // sensorPacket.analogValue2 = 0;
-  // sensorPacket.analogValue3 = 0;
-  // sensorPacket.analogValue4 = 0;
-  // sensorPacket.analogValue5 = 0;
-  // sensorPacket.analogValue6 = 0;
-  sensorPacket.numDigitalValues = 0;
-  sensorPacket.indexDigitalEmulatable = 0;
+  memset(buffer, 0, 64);
+  remainingBitsInByte = 8;
+  currentByteIndex = 0;
 }
 
-void SensorPacketBuilder::add(boolean data, boolean isEmulatable){
-  sensorPacket.numDigitalValues += 1;
+void SensorPacketBuilder::add(unsigned long value, unsigned int bitsToSet){
+
+  if(bitsToSet > remainingBitsInByte) { //value fits into current byte, so it can just be set
+    byte valueByte = value & 0xff;
+    byte bitsToSetByte = bitsToSet & 0xff;
+    setBitsInByte(valueByte, bitsToSetByte);
+  } else {
+    byte bitsFitIntoCurrByte = bitsToSet - remainingBitsInByte;
+    setBitsInByte(getNBits(value, bitsFitIntoCurrByte), bitsFitIntoCurrByte); //sets number of bits left in byte
+    currentByteIndex++; //byte full, increment to next
+    remainingBitsInByte = 8;
+    add(value>>bitsFitIntoCurrByte, bitsToSet-bitsFitIntoCurrByte); //remove already set bytes from value, and recursively call function
+  }
+}
+void SensorPacketBuilder::setBitsInByte(byte value, byte bitsToSet) {
+  byte currentByte = buffer[currentByteIndex];
+  currentByte = currentByte << bitsToSet;
+  currentByte = currentByte | value;
+  buffer[currentByteIndex] = currentByte;
+  remainingBitsInByte -= bitsToSet;
+}
+
+byte SensorPacketBuilder::getNBits(byte value, byte bitsToGet) {
+  value = value << bitsToGet;
+  return value >> bitsToGet;
 }
 
 // Writes the packet data into the buffer given as parameter
