@@ -5,6 +5,7 @@ class SensorPacketBuilder {
     SensorPacketBuilder();
     void add(unsigned long value, unsigned int bitsToSet);
     unsigned int build(byte* outputBuffer);
+
   private:
     byte getNBits(byte value, byte bitsToGet);
     void setBitsInByte(byte value, byte bitsToSet);
