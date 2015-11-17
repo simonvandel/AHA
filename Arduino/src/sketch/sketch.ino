@@ -29,37 +29,38 @@ void printbincharpad(char c)
 
 void loop()
 {
+  // ********** Analog readings *********
   // 32 bit analog
   unsigned long distance = ultrasonic.getDistance();
   Serial.print("Distance: ");
   Serial.println(distance);
-  // digital sensor
-  boolean motion = pir.getMotionDetected();
-  Serial.print("Motion:");
-  Serial.println(motion);
   // 10 bit analog
   unsigned int lightIntensity = photoresistor.getLightIntensity();
   Serial.print("Light:");
   Serial.println(lightIntensity);
   Serial.println("");
 
+  // ********** digital readings *********
+  // digital sensor
+  boolean motion = pir.getMotionDetected();
+  Serial.print("Motion:");
+  Serial.println(motion);
+
+  // packet header
   sensorPacketBuilder.add(2, 3); // numAnalog
-  sensorPacketBuilder.add(1, 3); // indexAnalog
-  sensorPacketBuilder.add(3, 2); // Analog size 1
-  sensorPacketBuilder.add(2, 2);// Analog size 2
-  sensorPacketBuilder.add(3, 4);// num digital
-  sensorPacketBuilder.add(2, 4);// index digital
+  sensorPacketBuilder.add(0, 3); // indexAnalog. No emulatable analog sensor
+  sensorPacketBuilder.add(3, 2); // Analog size 1 = 32 bits
+  sensorPacketBuilder.add(2, 2);// Analog size 2 = 10 bits
+  sensorPacketBuilder.add(1, 4);// num digital
+  sensorPacketBuilder.add(0, 4);// index digital. No emulatable digital sensor
 
   // body
-  sensorPacketBuilder.add(4, 32);// analog val 1
-  sensorPacketBuilder.add(1000, 10);// analog val 2
-  sensorPacketBuilder.add(0, 1);// digital val 1
-  sensorPacketBuilder.add(1, 1);// digital val 2
-  sensorPacketBuilder.add(0, 1);// digital val 3
+  sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
+  sensorPacketBuilder.add(lightIntensity, 10);// analog val 2 = light
+  sensorPacketBuilder.add(motion, 1);// digital val 1 = pir
 
-  int i;
-  int size = sensorPacketBuilder.build(buildArray);
-  for(i = 0; i < size; i++) {
+  int packetSize = sensorPacketBuilder.build(buildArray);
+  for(int i = 0; i < packetSize; i++) {
     printbincharpad(buildArray[i]);
   }
   memset(buildArray, 0, 64);
