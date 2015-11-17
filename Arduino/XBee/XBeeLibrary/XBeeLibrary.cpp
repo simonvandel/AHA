@@ -1,6 +1,5 @@
 #include <XBee.h>
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
-
 int sendData(XBeeAddress64 address, char *toSend, int sendLen, XBee xbee){
   ZBTxRequest zbTx = ZBTxRequest(address, (uint8_t *)toSend, sendLen);
   xbee.send(zbTx);

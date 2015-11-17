@@ -1,5 +1,5 @@
-#include <XBee.h>
 #include <XBeeLibrary.h>
+#include <XBee.h>
 
 unsigned long timeEnd = 0;
 unsigned long timeStart = 0;
@@ -9,7 +9,7 @@ int results[64] = {0};
 int i = 0;
 
 // SH + SL Address of receiving XBee
-XBeeAddress64 addr64 = XBeeAddress64(0x0, 0xFFFF); // Sending to coordinator (green)
+XBeeAddress64 addr64 = XBeeAddress64(0, 0); // Sending to coordinator (green)
 ZBRxResponse rx = ZBRxResponse();
 
 void setup() {
@@ -24,7 +24,35 @@ void setup() {
     delay(500);
     digitalWrite(13, LOW);
     delay(500);
-  } 
+  }
+
+  Serial.flush();
+  char *result = getATField("DH", xbee);
+  setATField("DH", "13A200", 6, xbee);
+  setATField("DL", "407156BA", 8, xbee);
+  result = getATField("DH", xbee);
+  Serial.println();
+  Serial.print("DH: 0x");
+  Serial.print(result[0], HEX);
+  Serial.print("|");
+  Serial.print(result[1], HEX);
+  Serial.print("|");
+  Serial.print(result[2], HEX);
+  Serial.print("|");
+  Serial.println(result[3], HEX);
+  result = getATField("DL", xbee);
+  Serial.println();
+  Serial.print("DL: 0x");
+  Serial.print(result[0], HEX);
+  Serial.print("|");
+  Serial.print(result[1], HEX);
+  Serial.print("|");
+  Serial.print(result[2], HEX);
+  Serial.print("|");
+  Serial.println(result[3], HEX);
+
+  while(1);
+  
   /*i = 6;
   payload[i - 1] = '1';
   payload[i - 2] = '1';
@@ -69,15 +97,15 @@ void loop(){
   if(sendData(addr64, payload, 1, xbee)){
     Serial.println("Data send successfully");
     digitalWrite(13, LOW);
-    delay(1000);
+    delay(10000);
     if(recieveMessage()){
       Serial.println("Data recieved successfully");
       digitalWrite(13, HIGH);
     } else {
-      Serial.println("Data not recieved successfully");
+      Serial.println("Data not recieved");
     }
   } else {
-    Serial.println("Data send successfully");
+    Serial.println("Data not send");
   }
 }
 
