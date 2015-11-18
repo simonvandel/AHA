@@ -26,31 +26,40 @@ void setup() {
     delay(500);
   }
 
-  Serial.flush();
-  char *result = getATField("DH", xbee);
-  setATField("DH", "13A200", 6, xbee);
-  setATField("DL", "407156BA", 8, xbee);
-  result = getATField("DH", xbee);
-  Serial.println();
-  Serial.print("DH: 0x");
-  Serial.print(result[0], HEX);
-  Serial.print("|");
-  Serial.print(result[1], HEX);
-  Serial.print("|");
-  Serial.print(result[2], HEX);
-  Serial.print("|");
-  Serial.println(result[3], HEX);
-  result = getATField("DL", xbee);
-  Serial.println();
-  Serial.print("DL: 0x");
-  Serial.print(result[0], HEX);
-  Serial.print("|");
-  Serial.print(result[1], HEX);
-  Serial.print("|");
-  Serial.print(result[2], HEX);
-  Serial.print("|");
-  Serial.println(result[3], HEX);
+  if(getModemStatusResponse(xbee)){
+    Serial.println("Modem status response recieved");
+  } else {
+    Serial.println("No network");
+  }
+  if(getModemStatusResponse(xbee)){
+    Serial.println("Modem status response recieved");
+  } else {
+    Serial.println("No network");
+  }
 
+  if(setATField("DH", (uint8_t *)"13A200", 6, xbee)){
+    if(setATField("DL", (uint8_t *)"40700308", 8, xbee)){
+      AtCommandResponse result = AtCommandResponse();
+        if(getATField("DH", xbee, &result)){
+        Serial.println();
+        Serial.print("DH: 0x");
+        for(i = 0; i < result.getValueLength(); i++){
+          Serial.print("|");
+          Serial.print((char)result.getValue()[i]);
+        }
+        Serial.println();
+        if(getATField("DL", xbee, &result)){
+          Serial.println();
+          Serial.print("DL: 0x");
+          for(i = 0; i < result.getValueLength(); i++){
+            Serial.print("|");
+            Serial.print((char)result.getValue()[i]);
+          }
+          Serial.println();
+        }
+      }
+    }
+  }
   while(1);
   
   /*i = 6;
