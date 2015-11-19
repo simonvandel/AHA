@@ -1,14 +1,13 @@
-package DataAggregator;
+package Communication;
 
-import DataAggregator.Exceptions.InvalidValueSizeException;
+import Communication.Exceptions.InvalidValueSizeException;
 import com.digi.xbee.api.models.XBeeMessage;
-import com.sun.javaws.exceptions.InvalidArgumentException;
-import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
 import org.javatuples.Pair;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.BitSet;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by simon on 12/11/2015.
@@ -16,6 +15,7 @@ import java.util.BitSet;
 public class SensorData {
     private String device;
     private List<SensorValue> values = new ArrayList<>();
+    private Date time;
 
     public SensorData(XBeeMessage msg) throws InvalidValueSizeException {
         device = msg.getDevice().get64BitAddress().generateDeviceID();
@@ -91,5 +91,9 @@ public class SensorData {
 
     public List<SensorValue> getValues() {
         return values;
+    }
+
+    public Date getTime() {
+        return time;
     }
 }

@@ -5,6 +5,7 @@
  */
 package DataAggregator;
 
+import DataAggregator.Exceptions.InvalidValueSizeException;
 import com.digi.xbee.api.RemoteXBeeDevice;
 import com.digi.xbee.api.XBeeDevice;
 import com.digi.xbee.api.XBeeNetwork;
@@ -14,9 +15,11 @@ import com.digi.xbee.api.listeners.IDiscoveryListener;
 import com.digi.xbee.api.models.XBee64BitAddress;
 import com.digi.xbee.api.models.XBeeMessage;
 
+import java.io.File;
 import java.util.BitSet;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.*;
 
 import static java.lang.System.out;
 
@@ -32,6 +35,8 @@ public class main implements IDataReceiveListener,
     private static final int BAUD_RATE = 9600;
     private XBeeDevice device;
     private XBeeNetwork network;
+    private ThreadPoolExecutor threadPoolExecutor;
+    private BlockingQueue<Runnable> workQueue;
 
     //setup timer to continuisly discover network
     Timer timer;
@@ -40,6 +45,8 @@ public class main implements IDataReceiveListener,
             DiscoverNetwork();
         }
     };
+    private SensorDataMerger merger;
+    private File sensorValueFile;
 
     /**
      * Creates new form main
@@ -48,6 +55,11 @@ public class main implements IDataReceiveListener,
 
         //XBee device init
         device = new XBeeDevice(PORT, BAUD_RATE);
+
+        merger = new SensorDataMerger();
+        workQueue = new LinkedBlockingDeque<>();
+        threadPoolExecutor = new ThreadPoolExecutor(2,4,0, TimeUnit.MILLISECONDS,workQueue);
+        sensorValueFile = new File("sensorValues.txt");
 
         try {
             //If device can open, device is succesfully connected
@@ -81,12 +93,10 @@ public class main implements IDataReceiveListener,
     }
 
     public void DiscoverNetwork() {
-        RemoteDevicesList.setText("");
         out.println("\nDiscovering network");
         network.startDiscoveryProcess();
     }
 
-    // <editor-fold defaultstate="open" desc="SendMethods">
     private void SendData(byte[] dataToSend, XBee64BitAddress sendTo) {
         try {
             // Obtain the remote XBee device from the XBee network.
@@ -121,45 +131,52 @@ public class main implements IDataReceiveListener,
             out.println("\nError:\n" + e.getMessage());
         }
     }
-    // </editor-fold>
 
-    // <editor-fold defaultstate="open" desc="Listeners">
     @Override
     public void dataReceived(XBeeMessage xbeeMessage) {
         /*out.println("\n"
                 + String.format("From %s >> %s | %s%n", xbeeMessage.getDevice()
                         .get64BitAddress(), new String(xbeeMessage.getData())));*/
         //decodeMessage(xbeeMessage)
+        SensorData sensorData;
+        try {
+            sensorData = new SensorData(xbeeMessage);
+            merger.add(sensorData);
+            // if we have a complete snapshot, add it to the workqueue, to write to file
+            if(merger.snapshotReady()) {
+                SensorDataLogger logger = new SensorDataLogger(sensorValueFile, merger.getSnapshot());
+                workQueue.add(logger);
+            }
+
+        } catch (InvalidValueSizeException e) {
+            // packet received was malformed, so ignore the packet
+        }
     }
 
     @Override
     public void deviceDiscovered(RemoteXBeeDevice discoveredDevice) {
-
-        RemoteDevicesList.append("\n"
+        out.println("\n"
                 + String.format(">> Device discovered: %s%n",
                         discoveredDevice.toString()));
     }
 
     @Override
     public void discoveryError(String error) {
-        RemoteDevicesList.append("\n>> There was an error discovering devices: "
+        out.println("\n>> There was an error discovering devices: "
                 + error);
     }
 
     @Override
     public void discoveryFinished(String error) {
         if (error == null) {
-            RemoteDevicesList
-                    .append("\n>> Discovery process finished successfully.");
+            out.println("\n>> Discovery process finished successfully.");
         } else {
-            RemoteDevicesList
-                    .append("\n>> Discovery process finished due to the following error: "
+            out.println("\n>> Discovery process finished due to the following error: "
                             + error);
         }
 
     }
-
-
+    
     /**
      * @param args the command line arguments
      */
@@ -172,11 +189,4 @@ public class main implements IDataReceiveListener,
         //System.out.println( "" + bitInteger );
         new main();
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea OutputTextArea;
-    private javax.swing.JTextArea RemoteDevicesList;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    // End of variables declaration//GEN-END:variables
 }
