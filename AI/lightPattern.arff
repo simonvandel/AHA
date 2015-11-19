@@ -1,0 +1,68 @@
+% 1. Title: Light Pattern Database
+
+@RELATION lightPattern
+
+@ATTRIBUTE state1	      {0,1,2,3,4,5,6,7}
+@ATTRIBUTE state2 	    {0,1,2,3,4,5,6,7}
+@ATTRIBUTE state3 	    {0,1,2,3,4,5,6,7}
+@ATTRIBUTE state4	      {0,1,2,3,4,5,6,7}
+@ATTRIBUTE state5 	    {0,1,2,3,4,5,6,7}
+@ATTRIBUTE state6 	    {0,1,2,3,4,5,6,7}
+@ATTRIBUTE time	        REAL
+@ATTRIBUTE light1 	    {On,Off}
+@ATTRIBUTE light2 	    {On,Off}
+@ATTRIBUTE light3 	    {On,Off}
+%  ______________________________________
+% |         |        TV       |    WC    |
+% |         |                 |          |
+% |    R1   |        R2       |    R3    |
+%  /   L1   |        L2       |    L3    |
+% |_________|_________________|__________|
+%
+% D(state)= {0,..,7}
+%
+%      F             F             F        0
+%      T             F             F        1
+%      F             T             F        2
+%      F             F             T        3
+%      T             T             T        4
+%      T             T             F        5
+%      T             F             T        6
+%      F             T             T        7
+%
+
+
+@DATA
+% S1| S2| S3| S4| S5| S6| Time| L1| L2| L3
+  %Steady states
+  0,  0,  0,  0,  0,  0,  0,    Off,Off,Off
+  1,  1,  1,  1,  1,  1,  0,    On, Off,Off
+  2,  2,  2,  2,  2,  2,  0,    Off,On, Off
+  3,  3,  3,  3,  3,  3,  0,    Off,Off,On
+  %Move from R1 -> R2 -> R3, Turn on/off every room on the plain
+  0,  0,  0,  0,  0,  1,  0,    On, Off,Off
+  0,  0,  0,  0,  1,  2,  0,    Off,On, Off
+  0,  0,  0,  1,  2,  3,  0,    Off,Off,On
+  %Back again
+  0,  0,  1,  2,  3,  2,  0,    Off,On, Off
+  0,  1,  2,  3,  2,  1,  0,    On, Off,Off
+  %Leaving the vicinity
+  1,  2,  3,  2,  1,  0,  0,    Off,Off,Off
+  %Watching TV going to the WC
+  0,  0,  0,  0,  1,  2,  0,    Off,On, Off
+  0,  0,  0,  1,  2,  7,  0,    Off,On, On
+  0,  0,  1,  2,  7,  2,  0,    Off,On, Off
+  %Cleaning
+  1,  2,  1,  2,  1,  4,  0,    On, On, On
+  1,  5,  2,  3,  2,  4,  0,    On, On, On
+  1,  2,  5,  1,  2,  4,  0,    On, On, On
+  
+%  0,  0,  0,  0,  0,  1,  0,    On, Off,Off
+%  0,  0,  0,  0,  1,  1,  0,    On, Off,Off
+%  0,  0,  0,  1,  1,  2,  0,    Off,On, Off
+%  0,  0,  1,  1,  2,  2,  0,    Off,On, Off
+%  0,  1,  1,  2,  2,  3,  0,    Off,Off,On
+%  1,  1,  2,  2,  3,  3,  0,    Off,Off,On
+%
+%
+%
