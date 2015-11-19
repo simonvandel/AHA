@@ -37,15 +37,18 @@ void setup() {
     Serial.println("No network");
   }
 
-  if(setATField("DH", (uint8_t *)"13A200", 6, xbee)){
-    if(setATField("DL", (uint8_t *)"40700308", 8, xbee)){
+  uint8_t DHValue[] = {1, 2, 3, 4};
+  uint8_t DLValue[] = {5, 6, 7, 8};
+
+  if(setATField("DH", DHValue, 4, xbee)){
+    if(setATField("DL", DLValue, 4, xbee)){
       AtCommandResponse result = AtCommandResponse();
         if(getATField("DH", xbee, &result)){
         Serial.println();
         Serial.print("DH: 0x");
         for(i = 0; i < result.getValueLength(); i++){
           Serial.print("|");
-          Serial.print((char)result.getValue()[i]);
+          Serial.print(result.getValue()[i], HEX);
         }
         Serial.println();
         if(getATField("DL", xbee, &result)){
@@ -53,7 +56,7 @@ void setup() {
           Serial.print("DL: 0x");
           for(i = 0; i < result.getValueLength(); i++){
             Serial.print("|");
-            Serial.print((char)result.getValue()[i]);
+            Serial.print(result.getValue()[i], HEX);
           }
           Serial.println();
         }
