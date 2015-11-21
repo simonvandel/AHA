@@ -1,9 +1,10 @@
 package Normaliser;
 
-import Communication.*;
+import Communication.SensorState;
+import Communication.SensorValue;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class Normalizer
      */
     public NormalizedSensorState Normalize(SensorState sensorState)
     {
-        Date sTime = sensorState.getTime();
+        Instant sTime = sensorState.getTime();
         List<SensorValue> values = sensorState.getValues();
         Date normalizedTime = NormalizeTime(sTime);
         int nValue = 0;
@@ -67,7 +68,7 @@ public class Normalizer
         for (int i = 0; i < values.size(); i++)
         {
             oValue = values.get(i).getValue();
-            isEmulatable = values.get(i).getIsEmulatable();
+            isEmulatable = values.get(i).isEmulatable();
             temp = (oValue - max) / (max - min);
             nValue = DetermineRange(temp);
             normalizedValue = new NormalizedValue(nValue, isEmulatable);
@@ -159,7 +160,7 @@ public class Normalizer
      * @param sTime sensor time
      * @return normalized time
      */
-    private Date NormalizeTime(Date sTime)
+    private Date NormalizeTime(Instant sTime)
     {
         return null;
     }

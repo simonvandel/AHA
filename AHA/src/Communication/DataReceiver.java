@@ -1,22 +1,26 @@
 package Communication;
 
-import Communication.Exceptions.InvalidValueSizeException;
 import com.digi.xbee.api.listeners.IDataReceiveListener;
 import com.digi.xbee.api.models.XBeeMessage;
 
-/**
- * Created by simon on 19/11/2015.
- */
-public class DataReceiver implements IDataReceiveListener {
-    private SensorDataMerger merger;
+import java.time.Instant;
 
-    public DataReceiver() {
-        merger = new SensorDataMerger();
+public class DataReceiver implements IDataReceiveListener {
+    private IWorker worker;
+
+    public DataReceiver(IWorker worker) {
+        this.worker = worker;
     }
 
     @Override
     public void dataReceived(XBeeMessage xBeeMessage) {
-        SensorData sensorData;
+        Instant timeReceived = Instant.now();
+        String deviceAddress = xBeeMessage.getDevice().get64BitAddress().generateDeviceID();
+        byte[] content = xBeeMessage.getData();
+        PacketDetails packetDetails = new PacketDetails(timeReceived, content, deviceAddress);
+
+        worker.process(packetDetails);
+        /*SensorData sensorData;
         try {
             sensorData = new SensorData(xBeeMessage);
             merger.add(sensorData);
@@ -28,6 +32,6 @@ public class DataReceiver implements IDataReceiveListener {
 
         } catch (InvalidValueSizeException e) {
             // packet received was malformed, so ignore the packet
-        }
+        }*/
     }
 }
