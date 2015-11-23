@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Normalizer
 {
-    private Normalizer normalizer;
+    private static Normalizer normalizer;
 
     /**
      * Initializes an object of normalizer class.
@@ -28,14 +28,14 @@ public class Normalizer
      *
      * @return the one and only object of the Normalizer class.
      */
-    public Normalizer getInstance()
+    public static Normalizer getInstance()
     {
         if (normalizer == null)
         {
             normalizer = new Normalizer();
         }
 
-        return this.normalizer;
+        return normalizer;
     }
 
     /**
