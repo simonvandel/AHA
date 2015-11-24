@@ -70,10 +70,14 @@ public class SensorData {
 
         // ----------------------- BODY -----------------------
         // analogValues
+        // sensorIndex marks the sensor number on the device
+        int sensorIndex = 0;
         for (Pair<Integer,Boolean> pair: analogValueInfo) {
             // read the sensor values. The bits to read are stored in the pair
             int sensorValue = bsWrapper.getIntFromBits(pair.getValue0());
-            returnList.add(new SensorValue(sensorValue, pair.getValue1()));
+            returnList.add(new SensorValue(sensorValue, pair.getValue1(), deviceAddress, sensorIndex));
+            // go to the next sensor index
+            sensorIndex++;
         }
         // digitalValues
         for (int i = 0; i < numDigitalValues; i++) {
@@ -88,7 +92,9 @@ public class SensorData {
             else if ((i + 1) >= indexFirstDigital) {
                 isEmulatable = true;
             }
-            returnList.add(new SensorValue(sensorValue, isEmulatable));
+            returnList.add(new SensorValue(sensorValue, isEmulatable, deviceAddress, sensorIndex));
+            // go to the next sensor index
+            sensorIndex++;
         }
 
         return returnList;
