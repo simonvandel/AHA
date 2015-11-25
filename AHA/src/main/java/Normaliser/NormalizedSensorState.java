@@ -1,5 +1,6 @@
 package Normaliser;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,9 +11,9 @@ import java.util.List;
 public class NormalizedSensorState
 {
     private List<NormalizedValue> normalizesValues;
-    private Date time;
+    private Instant time;
 
-    public NormalizedSensorState(Date time)
+    public NormalizedSensorState(Instant time)
     {
         this.normalizesValues = new ArrayList<>();
         this.time = time;
@@ -33,7 +34,7 @@ public class NormalizedSensorState
      *
      * @return time.
      */
-    public Date getTime()
+    public Instant getTime()
     {
         return time;
     }

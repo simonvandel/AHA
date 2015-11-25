@@ -48,12 +48,11 @@ public class Normalizer
     {
         Instant sTime = sensorState.getTime();
         List<SensorValue> values = sensorState.getValues();
-        Date normalizedTime = NormalizeTime(sTime);
         int nValue = 0;
         int temp;
         int oValue = 0;
         boolean isEmulatable = true;
-        NormalizedSensorState normalizedSensorState = new NormalizedSensorState(normalizedTime);
+        NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sTime);
         NormalizedValue normalizedValue;
         int max;
         int min;
@@ -151,17 +150,5 @@ public class Normalizer
         }
 
         return min;
-    }
-
-    /**
-     * TODO: For time being return null fix this!
-     * Normalizes the time
-     *
-     * @param sTime sensor time
-     * @return normalized time
-     */
-    private Date NormalizeTime(Instant sTime)
-    {
-        return null;
     }
 }
