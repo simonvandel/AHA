@@ -2,39 +2,46 @@ package dk.sw501e15;
 
 import Communication.*;
 import Database.DB;
+import Normaliser.NormalizedSensorState;
+import Normaliser.NormalizedValue;
+import Normaliser.Normalizer;
 import Sampler.*;
+import sun.text.normalizer.NormalizerImpl;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedTransferQueue;
 
-public class Main {
+public class Main
+{
 
-    public static void main(String[] args) {
-        int scopeSize = 6;
-        int emulatableNum = 2;
+    public static void main(String[] args)
+    {
+        SensorPacketWorker oWorker = new SensorPacketWorker();
+        DataReceiver dr = new DataReceiver(oWorker);
+        Communicator oCommunicator = new Communicator("/dev/ttyUSB1", 9600, dr);
+        Normalizer nm = Normalizer.getInstance();
+        Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
+        oWorker.registerOutputTo(queueOfSensorState);
 
-        Sample sample;
+        List<NormalizedValue> nStateList;
 
-        SensorPacketWorker sensorPacketWorker = new SensorPacketWorker();
-        DataReceiver receiver = new DataReceiver(sensorPacketWorker);
-        //Communicator com = new Communicator("/dev/ttyUSB0", 9600, receiver);
-
-        DB db = DB.getInstance(scopeSize, emulatableNum);
-        db.createDB();
-
-        Sampler sampler = Sampler.getInstance(scopeSize, emulatableNum);
-
-        for(int i = 0; i<8; i++)
+        while (true)
         {
-            List<SensorValue> sensorValues = new ArrayList<>();
-            sensorValues.add(new SensorValue(52123 % (i * 4032 + 1), false, "Device1", 1));
-            sensorValues.add(new SensorValue(121321 % (i * 1321 + 1), false, "Device1", 2));
-            sensorValues.add(new SensorValue(121321 % (i * 156 + 1), true, "Device1", 4));
-            sensorValues.add(new SensorValue(0 + i, true, "Device1", 3));
-            sensorValues.add(new SensorValue(4212315 % (i * 232 + 1), false, "Device1", 5));
-            sample = sampler.getSample(new SensorState(sensorValues, Instant.now()));
-            db.putStateScopeIntoDB(sample);
+
+            if (!queueOfSensorState.isEmpty())
+            {
+                nStateList = nm.Normalize(queueOfSensorState.poll()).getNormalizesValues();
+                for(int i = 0; i < nStateList.size(); i++) {
+                    System.out.println("Got: " +nStateList.get(i).getValue() + ", isEmulatable: " + nStateList.get(i).isEmulatable());
+                }
+
+            }
+            nStateList = null;
         }
+
+
     }
 }
