@@ -12,7 +12,7 @@ The input to the AI subsystem is a stream of sensor value measurements. These pa
 The decoded sensor values and the time of arrival is then send to the normaliser.
 
 \subsubsection{Normaliser}
-To remove noise from the sensors and to reduce the size of the problem, a normalisation pass is performed on the input. The normalisation pass is explained deeper in \cref{}\sinote{referer til normalisation design}. The output of the normalisation is the same set of sensor values, but normalised to fit into a domain of size k. The time of arrival is not normalised.
+To remove noise from the sensors and to reduce the size of the problem, a normalisation pass is performed on the input. The normalisation pass is explained deeper in \cref{sec:normaliser}\sinote{referer til normalisation design}. The output of the normalisation is the same set of sensor values, but normalised to fit into a domain of size k. The time of arrival is not normalised.
 
 The normalised snapshots and the times of arrival are then fed to the sampler.
 
