@@ -68,6 +68,7 @@ public class Normalizer
         {
             oValue = values.get(i).getValue();
             isEmulatable = values.get(i).isEmulatable();
+            device =
             temp = (oValue - max) / (max - min);
             nValue = DetermineRange(temp);
             normalizedValue = new NormalizedValue(nValue, isEmulatable);

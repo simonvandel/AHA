@@ -27,7 +27,7 @@ public class SensorData {
      * @return Returns a list of sensor values, parsed from the raw packet
      */
     private List<SensorValue> decodeData(byte[] data) throws InvalidValueSizeException {
-        List<SensorValue> returnList = new ArrayList<>();
+        List<SensorValue> returnList = new ArrayList<SensorValue>();
         BitSet bitSet = BitSet.valueOf(data);
         BitSetWrapper bsWrapper = new BitSetWrapper(bitSet);
 
