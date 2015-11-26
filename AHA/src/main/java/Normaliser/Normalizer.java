@@ -5,7 +5,6 @@ import Communication.SensorValue;
 
 import java.math.BigDecimal;
 import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -51,6 +50,8 @@ public class Normalizer
         int nValue = 0;
         int temp;
         int oValue = 0;
+        String device = "";
+        int dIndex = 0;
         boolean isEmulatable = true;
         NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sTime);
         NormalizedValue normalizedValue;
@@ -68,9 +69,11 @@ public class Normalizer
         {
             oValue = values.get(i).getValue();
             isEmulatable = values.get(i).isEmulatable();
+            device = values.get(i).getDeviceAddress();
+            dIndex = values.get(i).getSensorIndexOnDevice();
             temp = (oValue - max) / (max - min);
             nValue = DetermineRange(temp);
-            normalizedValue = new NormalizedValue(nValue, isEmulatable);
+            normalizedValue = new NormalizedValue(nValue, isEmulatable,device,dIndex);
             normalizedSensorState.AddNormalizedValue(normalizedValue);
         }
 

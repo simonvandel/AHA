@@ -10,7 +10,7 @@ import java.util.List;
  * SensorState from time 1 and SensorState from time 2 will have the same ordering of sensor values.
  */
 public class SensorState {
-    private List<SensorValue> mValues = new ArrayList<>();
+    private List<SensorValue> mValues = new ArrayList<SensorValue>();
     private Instant mTime;
 
     public SensorState(List<SensorValue> values, Instant time) {

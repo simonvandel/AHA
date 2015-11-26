@@ -1,6 +1,6 @@
 package Database;
 
-import Communication.SensorState;
+import Normaliser.NormalizedSensorState;
 import Sampler.Sample;
 
 import java.sql.Connection;
@@ -12,12 +12,10 @@ import java.sql.Statement;
  * Created by heider on 19/11/15.
  */
 public class DB {
+  private static DB db;
 
   private int mScopeSize = 0;
   private int mActionsNum = 0;
-
-  private static DB db;
-
 
   private static Connection openConnection() {
     String url = "jdbc:sqlite:Samples.db";
@@ -101,27 +99,6 @@ public class DB {
     }
     return null;
   }
-
-  public static void printDB() {
-    Connection c = openConnection();
-    try (Statement stmt = c.createStatement();
-         ResultSet rs = stmt.executeQuery("SELECT * FROM Samples")
-    ) {
-      while (rs.next()) {
-        int numColumns = rs.getMetaData().getColumnCount();
-        for (int i = 1; i <= numColumns; i++) {
-          // Column numbers start at 1.
-          // Also there are many methods on the result set to return
-          //  the column as a particular type. Refer to the Sun documentation
-          //  for the list of valid conversions.
-          System.out.println("COLUMN " + i + " = " + rs.getObject(i));
-        }
-      }
-    } catch (Exception ex) {
-      System.out.println("SQLException: " + ex.getMessage());
-    }
-  }
-
   /**
    * @return the row index of the Sample in the table
    */
@@ -141,12 +118,11 @@ public class DB {
   /**
    * @return the row index of the SensorState in the table
    */
-  public static int putSensorStateIntoDB(SensorState state) {
+  public static int putSensorStateIntoDB(NormalizedSensorState state) {
     Connection c = openConnection();
     try {
       Statement st = c.createStatement();
-      ResultSet rs = st.executeQuery("INSERT INTO Samples VALUES (" + state.toString() + ");");
-      return rs.getRow(); // Refactor to succes/status variable
+      st.executeQuery("INSERT INTO NormalizedSensorStates VALUES (" + state.toString() + ");");
     } catch (Exception ex) {
       System.out.println("SQLException: " + ex.getMessage());
     }
