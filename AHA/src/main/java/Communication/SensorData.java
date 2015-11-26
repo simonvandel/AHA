@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class SensorData {
     private String deviceAddress;
-    private List<SensorValue> values = new ArrayList<>();
+    private List<SensorValue> values = new ArrayList<SensorValue>();
     private Instant timeReceived;
 
     public SensorData(PacketDetails packetDetails) throws InvalidValueSizeException {

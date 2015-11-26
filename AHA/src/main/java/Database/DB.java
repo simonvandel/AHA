@@ -1,6 +1,5 @@
 package Database;
 
-import Communication.SensorState;
 import Normaliser.NormalizedSensorState;
 import Sampler.Sample;
 

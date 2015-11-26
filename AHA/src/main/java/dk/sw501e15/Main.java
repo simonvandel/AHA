@@ -1,12 +1,14 @@
 package dk.sw501e15;
 
-import Communication.*;
+import Communication.DataReceiver;
+import Communication.SensorPacketWorker;
 import Database.DB;
-import Sampler.*;
+import Normaliser.NormalizedSensorState;
+import Normaliser.NormalizedValue;
+import Sampler.Sample;
+import Sampler.Sampler;
 
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -27,13 +29,13 @@ public class Main {
 
         for(int i = 0; i<8; i++)
         {
-            List<SensorValue> sensorValues = new ArrayList<>();
-            sensorValues.add(new SensorValue(52123 % (i * 4032 + 1), false, "Device1", 1));
-            sensorValues.add(new SensorValue(121321 % (i * 1321 + 1), false, "Device1", 2));
-            sensorValues.add(new SensorValue(121321 % (i * 156 + 1), true, "Device1", 4));
-            sensorValues.add(new SensorValue(0 + i, true, "Device1", 3));
-            sensorValues.add(new SensorValue(4212315 % (i * 232 + 1), false, "Device1", 5));
-            sample = sampler.getSample(new SensorState(sensorValues, Instant.now()));
+            NormalizedSensorState norm = new NormalizedSensorState(Instant.now());
+            norm.AddNormalizedValue(new NormalizedValue(52123 % (i * 4032 + 1), false, "Device1", 1));
+            norm.AddNormalizedValue(new NormalizedValue(121321 % (i * 1321 + 1), false, "Device1", 2));
+            norm.AddNormalizedValue(new NormalizedValue(121321 % (i * 156 + 1), true, "Device1", 4));
+            norm.AddNormalizedValue(new NormalizedValue(0 + i, true, "Device1", 3));
+            norm.AddNormalizedValue(new NormalizedValue(4212315 % (i * 232 + 1), false, "Device1", 5));
+            sample = sampler.getSample(norm);
             db.putStateScopeIntoDB(sample);
         }
     }

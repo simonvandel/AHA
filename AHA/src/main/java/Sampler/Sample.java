@@ -1,7 +1,5 @@
 package Sampler;
 
-import Communication.SensorState;
-import Communication.SensorValue;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
 
