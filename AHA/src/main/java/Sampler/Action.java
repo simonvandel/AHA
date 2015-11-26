@@ -28,6 +28,10 @@ public class Action {
     return mVal2.getValue();
   }
 
+  public SensorValue getVal1(){ return mVal1; }
+
+  public SensorValue getVal2(){ return mVal2; }
+
   @Override
   public String toString() {
     return mSensorId + "," + getChangeToValue();
