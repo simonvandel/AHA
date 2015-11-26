@@ -4,8 +4,8 @@
 #include "SensorPacketBuilder.h"
 #include <XBee.h>
 
-Ultrasonic ultrasonic(3,2);
-PIR pir(8);
+Ultrasonic ultrasonic(4,5);
+PIR pir(3);
 Photoresistor photoresistor(1);
 SensorPacketBuilder sensorPacketBuilder;
 
@@ -44,30 +44,32 @@ void loop()
   // ********** Analog readings *********
   // 32 bit analog
   unsigned long distance = ultrasonic.getDistance();
+  Serial.print("Distance: ");
+  Serial.println(distance);
   // 10 bit analog
   unsigned int lightIntensity = photoresistor.getLightIntensity();
 
   // ********** digital readings *********
   // digital sensor
   boolean motion = pir.getMotionDetected();
-
+  Serial.print("Motion: ");
+  Serial.println(motion);
   // packet header
-  sensorPacketBuilder.add(2, 3); // numAnalog
+  sensorPacketBuilder.add(1, 3); // numAnalog
   sensorPacketBuilder.add(0, 3); // indexAnalog. No emulatable analog sensor
   sensorPacketBuilder.add(3, 2); // Analog size 1 = 32 bits
-  sensorPacketBuilder.add(2, 2);// Analog size 2 = 10 bits
   sensorPacketBuilder.add(1, 4);// num digital
   sensorPacketBuilder.add(0, 4);// index digital. No emulatable digital sensor
 
   // body
   sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
-  sensorPacketBuilder.add(lightIntensity, 10);// analog val 2 = light
+  //sensorPacketBuilder.add(lightIntensity, 10);// analog val 2 = light
   sensorPacketBuilder.add(motion, 1);// digital val 1 = pir
 
   int packetSize = sensorPacketBuilder.build(buildArray);
 
   sendData(buildArray, packetSize);
-
+  
   // Continuously let xbee read packets and call callbacks.
   xbee.loop();
   //act on received data in the call back method zbReceive
@@ -77,11 +79,12 @@ void loop()
 }
 
 void sendData(byte*  toSend, int sendLen){
+  Serial.println("Send");
   ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)toSend, sendLen);
-  xbee.sendAndWait(zbTx, 100);
+  xbee.send(zbTx);
   ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //not sure whether better to have as global or local
   //Re-sends, and forgets, if not succesful
-  if(xbee.readPacket()){
+  if(xbee.readPacket(250)){
     if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
       xbee.getResponse().getZBTxStatusResponse(txStatus);
       if (txStatus.getDeliveryStatus() == SUCCESS) {
@@ -90,4 +93,5 @@ void sendData(byte*  toSend, int sendLen){
     }
   }
   xbee.send(zbTx);
+  Serial.println("Exit Send");
 }
