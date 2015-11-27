@@ -36,8 +36,8 @@ public class Reasoner {
           .build();
 
   public Reasoner() {
-    db = DB.getInstance();
-    currentModel = db.getModel();
+    //db = DB.getInstance();
+    //currentModel = db.getModel();
   }
 
   /**
@@ -73,14 +73,14 @@ public class Reasoner {
           validActions.remove(sample.getActions().get(i)); //remove invalid actions
           validActions.remove(sample.getActions().get(j));
           if(sentActions.getIfPresent(sample.getActions().get(i).toString()) != null){ //if first action was system action
-            db.flagModel(sample.getActions().get(i), sample.getActions().get(i)); //flag the model in DB, so learner knows a mistake was made
+            //db.flagModel(sample.getActions().get(i), sample.getActions().get(i)); //flag the model in DB, so learner knows a mistake was made
             currentModel.TakeFeedback(sample.getActions().get(i), sample.getActions().get(j)); //Update our current model, to not make the same mistake twice
           }
         }
       }
     }
 
-    db.flagEntries(validActions);
+    //db.flagEntries(validActions);
     //endregion
 
     Action action = currentModel.CalculateAction(sample);

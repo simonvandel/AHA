@@ -5,7 +5,9 @@ import Communication.SensorValue;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -14,6 +16,7 @@ import java.util.List;
 public class Normalizer
 {
     private static Normalizer normalizer;
+
 
     /**
      * Initializes an object of normalizer class.
@@ -38,6 +41,8 @@ public class Normalizer
         return normalizer;
     }
 
+    private HashMap<String, DeviceHistory> devices = new HashMap<String, DeviceHistory>();
+
     /**
      * The method normalizes the input data and returns an instance of NormalizedsensorState object.
      *
@@ -48,32 +53,44 @@ public class Normalizer
     {
         Instant sTime = sensorState.getTime();
         List<SensorValue> values = sensorState.getValues();
-        int nValue = 0;
-        int temp;
-        int oValue = 0;
-        boolean isEmulatable = true;
         NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sTime);
-        NormalizedValue normalizedValue;
-        int max;
-        int min;
 
-        //Find the MAX and MIN values
-        min = FindMin(values);
-        max = FindMax(values);
-
-        //Normalize the data
-        // Retrieve data from the list and use the local variables isEmulatable and nvalue
-        // nvalue = (oldvalue - max)/(max - min)
-        for (int i = 0; i < values.size(); i++)
+        for (int j = 0; j < values.size(); j++)
         {
-            oValue = values.get(i).getValue();
-            isEmulatable = values.get(i).isEmulatable();
+            //First we get device, then we add the currSensorValue, then we get the list of the complete history (including the current one)
+            //Then as first implemented we normalize but across the history instead of the sensor state
+            SensorValue currSensorValue = values.get(j);
+            if (!devices.containsKey(currSensorValue.getDeviceAddress()))
+                devices.put(currSensorValue.getDeviceAddress(), new DeviceHistory());
+
+            DeviceHistory dHistory = devices.get(currSensorValue.getDeviceAddress());
+
+            dHistory.AddValue(currSensorValue.getValue(), currSensorValue.getSensorIndexOnDevice());
+            ArrayList<Integer> currListOfValues = dHistory.GetValues(currSensorValue.getSensorIndexOnDevice());
+
+
+            int nValue = 0;
+            int temp;
+            int oValue = 0;
+            boolean isEmulatable = true;
+            NormalizedValue normalizedValue;
+            int max;
+            int min;
+
+            //Find the MAX and MIN values
+            min = FindMin(currListOfValues);
+            max = FindMax(currListOfValues);
+
+            //Normalize the data
+            // Retrieve data from the list and use the local variables isEmulatable and nvalue
+            // nvalue = (oldvalue - max)/(max - min)
+            oValue = currSensorValue.getValue();
+            isEmulatable = currSensorValue.isEmulatable();
             temp = (oValue - max) / (max - min);
             nValue = DetermineRange(temp);
-            normalizedValue = new NormalizedValue(nValue, isEmulatable);
+            normalizedValue = new NormalizedValue(nValue, isEmulatable, currSensorValue.getDeviceAddress(), currSensorValue.getSensorIndexOnDevice());
             normalizedSensorState.AddNormalizedValue(normalizedValue);
         }
-
         return normalizedSensorState;
     }
 
@@ -117,16 +134,16 @@ public class Normalizer
      * @param values list of sensorvalues
      * @return the maximum value of the list.
      */
-    private int FindMax(List<SensorValue> values)
+    private int FindMax(List<Integer> values)
     {
-        SensorValue currentSensorValue = values.get(0);
-        int max = currentSensorValue.getValue();
+        int currentSensorValue = values.get(0);
+        int max = currentSensorValue;
 
         for (int i = 0; i < values.size(); i++)
         {
             currentSensorValue = values.get(i);
-            if (currentSensorValue.getValue() > max)
-                max = currentSensorValue.getValue();
+            if (currentSensorValue > max)
+                max = currentSensorValue;
         }
 
         return max;
@@ -138,15 +155,15 @@ public class Normalizer
      * @param values list of sensorvalues
      * @return the minimum value of the list.
      */
-    private int FindMin(List<SensorValue> values)
+    private int FindMin(List<Integer> values)
     {
-        SensorValue currentSensorValue = values.get(0);
-        int min = currentSensorValue.getValue();
+        int currentSensorValue = values.get(0);
+        int min = values.get(0);
         for (int i = 0; i < values.size(); i++)
         {
             currentSensorValue = values.get(i);
-            if (min > currentSensorValue.getValue())
-                min = currentSensorValue.getValue();
+            if (min > currentSensorValue)
+                min = currentSensorValue;
         }
 
         return min;

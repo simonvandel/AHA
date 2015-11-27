@@ -2,7 +2,6 @@ package Normaliser;
 
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,7 +14,7 @@ public class NormalizedSensorState
 
     public NormalizedSensorState(Instant time)
     {
-        this.normalizesValues = new ArrayList<>();
+        this.normalizesValues = new ArrayList<NormalizedValue>();
         this.time = time;
     }
 
@@ -53,5 +52,13 @@ public class NormalizedSensorState
         }
 
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        String hash = "";
+        for(int i=0;i<normalizesValues.size()-1;i++)
+            hash = hash + normalizesValues.get(i).hashCode();
+        return hash.hashCode();
     }
 }

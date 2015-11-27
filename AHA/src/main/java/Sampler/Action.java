@@ -1,16 +1,14 @@
 package Sampler;
 
 import Communication.SensorValue;
+import Normaliser.NormalizedValue;
 
-/**
- * Created by deter on 23-Nov-15.
- */
 public class Action {
-  private SensorValue mVal1;
-  private SensorValue mVal2;
+  private NormalizedValue mVal1;
+  private NormalizedValue mVal2;
   private int mSensorId;
 
-  public Action(SensorValue val1, SensorValue val2, int sensorId) {
+  public Action(NormalizedValue val1, NormalizedValue val2, int sensorId) {
     this.mVal1 = val1;
     this.mVal2 = val2;
     this.mSensorId = sensorId;
@@ -28,9 +26,9 @@ public class Action {
     return mVal2.getValue();
   }
 
-  public SensorValue getVal1(){ return mVal1; }
+  public NormalizedValue getVal1(){ return mVal1; }
 
-  public SensorValue getVal2(){ return mVal2; }
+  public NormalizedValue getVal2(){ return mVal2; }
 
   @Override
   public String toString() {
