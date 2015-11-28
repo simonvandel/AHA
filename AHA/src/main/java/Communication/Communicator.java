@@ -1,9 +1,11 @@
 package Communication;
 
+import com.digi.xbee.api.RemoteXBeeDevice;
 import com.digi.xbee.api.XBeeDevice;
 import com.digi.xbee.api.XBeeNetwork;
 import com.digi.xbee.api.exceptions.XBeeException;
 import com.digi.xbee.api.listeners.IDataReceiveListener;
+import com.digi.xbee.api.models.XBee64BitAddress;
 
 import static java.lang.System.out;
 
@@ -47,5 +49,25 @@ public class Communicator {
             timer = new Timer();
             timer.schedule(timerTask, 15000);
             */
+    }
+
+    public boolean SendData(String addr64, byte[] toSend) {
+
+        try
+        {
+            for(int i = 0; i < network.getDevices().size(); i++) {
+                String currID = network.getDevices().get(i).get64BitAddress().generateDeviceID();
+                if(currID.equals(addr64)) {
+                    device.sendData(network.getDevices().get(i), toSend);
+                    break;
+                }
+            }
+
+        } catch(XBeeException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return true;
+
     }
 }
