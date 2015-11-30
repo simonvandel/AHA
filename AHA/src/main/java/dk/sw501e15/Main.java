@@ -22,19 +22,21 @@ public class Main
     {
         SensorPacketWorker oWorker = new SensorPacketWorker();
         DataReceiver dr = new DataReceiver(oWorker);
-        Communicator oCommunicator = new Communicator("/dev/ttyUSB1", 9600, dr);
+
+        Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr);
         Normalizer nm = Normalizer.getInstance();
         Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
         oWorker.registerOutputTo(queueOfSensorState);
 
         int scopeSize = 6;
         int emulatableNum = 2;
-
+/*
         Sample sample;
         DB db = DB.getInstance(scopeSize, emulatableNum);
+
         db.createDB();
         Sampler sampler = Sampler.getInstance(scopeSize, emulatableNum);
-
+*/
         List<NormalizedValue> nValueList;
         NormalizedSensorState nState;
 
@@ -42,15 +44,17 @@ public class Main
         {
             if (!queueOfSensorState.isEmpty())
             {
-                nValueList = nm.Normalize(queueOfSensorState.poll()).getNormalizesValues();
-                nState = nm.Normalize(queueOfSensorState.poll());
-                for (int i = 0; i < nValueList.size(); i++)
+                //nValueList = nm.Normalize(queueOfSensorState.poll()).getNormalizesValues();
+                SensorState oST = queueOfSensorState.poll();
+                nState = nm.Normalize(oST);
+                List<NormalizedValue> oList = nState.getNormalizesValues();
+                for (int i = 0; i < oList.size(); i++)
                 {
-                    System.out.println("Got: " + nValueList.get(i).getValue() + ", isEmulatable: " + nValueList.get(i).isEmulatable());
+                    System.out.println("Got: " + oList.get(i).getValue() + ", isEmulatable: " + oList.get(i).isEmulatable());
                 }
-
+/*
                 sample = sampler.getSample(nState);
-                db.putStateScopeIntoDB(sample);
+                db.putStateScopeIntoDB(sample);*/
             }
             nValueList = null;
         }
