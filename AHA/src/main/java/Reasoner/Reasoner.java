@@ -1,7 +1,9 @@
 package Reasoner;
+import Communication.Communicator;
 import Database.DB;
 import Sampler.Action;
 import Sampler.Sample;
+import com.digi.xbee.api.exceptions.XBeeException;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
@@ -23,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class Reasoner {
   private DB db = null;
   private IModel currentModel = null;
-  private ICom com = null;
+  private Communicator com = null;
   //husk actions vi har sendt, indenfor 5 sekunder, så vi kan tjekke om de actions vi får er bruger eller system
   private Cache<String, Action> sentActions = CacheBuilder
           .newBuilder()
@@ -47,7 +49,11 @@ public class Reasoner {
   public void reasonAndSend(Sample sample){
     Action action = reason(sample);
     if(action != null){
-      com.sendAction(action);
+      try{
+        com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
+      } catch (XBeeException e){
+        //Would probably be a good idea to handle the exception instead of ignoring it...
+      }
     }
   }
 
@@ -119,9 +125,9 @@ interface IModel {
   void TakeFeedback(Action a1, Action a2); //used to update the reasoners model based on two wrong actions
 }
 
-interface ICom {
-  public void sendAction(Action act);
-}
+//interface ICom {
+//  public void sendAction(Action act);
+//}
 
 //interface Action {
 //}
