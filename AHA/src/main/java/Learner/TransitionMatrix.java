@@ -35,4 +35,9 @@ public class TransitionMatrix
   {
     return matrix.getEntry(hiddenStateRowIndex, hiddenStateColoumnIndex);
   }
+
+  public void setEntry(int i, int j, double probability)
+  {
+    matrix.setEntry(i,j, probability);
+  }
 }

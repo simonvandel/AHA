@@ -16,11 +16,11 @@ public class EmissionMatrix
   private BlockRealMatrix matrix;
   private HashMap<Sample, Integer> observationMapping;
   /**
-   * Generates an observation matrix K x N (observationVariables x hiddenstates) with uniform distribution
+   * Generates an observation matrix K x N (numEmissionStates x hiddenstates) with uniform distribution
    */
-  public EmissionMatrix(int numObservationVariables, int numHiddenStates, List<Sample> samples)
+  public EmissionMatrix(int numEmissionStates, int numHiddenStates, List<Sample> samples)
   {
-    observationMapping = new HashMap<>(numObservationVariables);
+    observationMapping = new HashMap<>(numEmissionStates);
     // We want to map samples (that can contain duplicated samples) to an index of unique samples
     int indexCount = 0;
     for (Sample sample: samples)
@@ -29,11 +29,16 @@ public class EmissionMatrix
       indexCount++;
     }
 
-    double[][] data = new double[numObservationVariables][numHiddenStates];
-    double preset = 1/numObservationVariables;
+    double[][] data = new double[numEmissionStates][numHiddenStates];
+    double preset = 1/numEmissionStates;
     // initialize the matrix to a uniform distribution
     Arrays.fill(data, preset);
-    matrix = new BlockRealMatrix(numObservationVariables, numHiddenStates, data, true);
+    matrix = new BlockRealMatrix(numEmissionStates, numHiddenStates, data, true);
+  }
+
+  public EmissionMatrix(int numEmissionStates, int numHiddenStates)
+  {
+    matrix = new BlockRealMatrix(numEmissionStates, numHiddenStates);
   }
 
   public double getNorm()
@@ -46,9 +51,14 @@ public class EmissionMatrix
     return matrix.getRowDimension();
   }
 
-  public double getEntry(int hiddenStateIndex, Sample observation)
+  public double getEntry(int hiddenStateIndex, Sample emissionState)
   {
-    int observationIndex = observationMapping.get(observation);
-    return matrix.getEntry(observationIndex, hiddenStateIndex);
+    int emissionIndex = observationMapping.get(emissionState);
+    return matrix.getEntry(emissionIndex, hiddenStateIndex);
+  }
+
+  public void setEntry(int i, int j, double probability)
+  {
+    matrix.setEntry(i,j,probability);
   }
 }
