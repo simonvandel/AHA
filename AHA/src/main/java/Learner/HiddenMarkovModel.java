@@ -8,13 +8,13 @@ public class HiddenMarkovModel
 
   private InitialProbability initialProbability;
   private TransitionMatrix transitionMatrix;
-  private ObservationMatrix observationMatrix;
+  private EmissionMatrix emissionMatrix;
 
-  public HiddenMarkovModel(InitialProbability initialProbability, TransitionMatrix transitionMatrix, ObservationMatrix observationMatrix)
+  public HiddenMarkovModel(InitialProbability initialProbability, TransitionMatrix transitionMatrix, EmissionMatrix emissionMatrix)
   {
     this.initialProbability = initialProbability;
     this.transitionMatrix = transitionMatrix;
-    this.observationMatrix = observationMatrix;
+    this.emissionMatrix = emissionMatrix;
   }
 
   public InitialProbability getInitialProbability()
@@ -27,8 +27,17 @@ public class HiddenMarkovModel
     return transitionMatrix;
   }
 
-  public ObservationMatrix getObservationMatrix()
+  public EmissionMatrix getEmissionMatrix()
   {
-    return observationMatrix;
+    return emissionMatrix;
+  }
+
+  public int getNumHiddenStates()
+  {
+    return transitionMatrix.getNumberOfHiddenStates();
+  }
+  public int getNumEmissionVariables()
+  {
+    return emissionMatrix.getNumEmissionVariables();
   }
 }

@@ -1,17 +1,26 @@
 package Learner;
 
+import org.apache.commons.math3.linear.ArrayRealVector;
+
 /**
  * Created by simon on 11/30/15.
  */
 public class InitialProbability
 {
-  public double getProbability(HiddenState hiddenState){
+  private ArrayRealVector vector;
+  public InitialProbability(long numHiddenStates)
+  {
+    // initialize the vector to a uniform distribution
+    vector = new ArrayRealVector((int) numHiddenStates, 1/numHiddenStates);
+  }
 
-    return 0; // TODO: return
+  public double getProbability(int hiddenStateIndex){
+
+    return vector.getEntry(hiddenStateIndex);
   }
 
   public double getNorm()
   {
-    return 0; // TODO: use norm from apache commons math on matrix
+    return vector.getNorm();
   }
 }
