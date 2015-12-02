@@ -3,7 +3,6 @@ package Learner;
 import Sampler.Sample;
 import org.apache.commons.math3.linear.BlockRealMatrix;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -68,7 +67,7 @@ public class Learner
     return new HiddenMarkovModel(newInitProbability, newTransitionMatrix, newObervationMatrix);
   }
 
-  private BlockRealMatrix calcForwards(HiddenMarkovModel oldModel, List<Sample> samples) {
+  private BlockRealMatrix calcForwardsMatrix(HiddenMarkovModel oldModel, List<Sample> samples) {
     int numHiddenStates = oldModel.getNumHiddenStates();
     int observations = samples.size();
     BlockRealMatrix forwards = new BlockRealMatrix(numHiddenStates, observations);
@@ -77,32 +76,31 @@ public class Learner
     {
       for (int t = 0; t < observations; t++)
       {
-        double probability = calcForwardsRec(i,t, oldModel, samples);
+        double probability = calcForwardsProbability(i,t, oldModel, samples);
         forwards.setEntry(i,t,probability);
       }
     }
-    
+
     return forwards;
   }
 
-  private double calcForwardsRec(int hiddenStateIndex, int observationIndex, HiddenMarkovModel oldModel, List<Sample> samples) {
+  private double calcForwardsProbability(int hiddenStateIndex, int observationIndex, HiddenMarkovModel oldModel, List<Sample> samples) {
     if(observationIndex == 0) {
       return oldModel.getInitialProbability().getProbability(hiddenStateIndex)
-          * oldModel.getEmissionMatrix().getEntry(hiddenStateIndex,samples.get(observationIndex));
+          * oldModel.getEmissionMatrix().getEntry(hiddenStateIndex, samples.get(observationIndex));
     }
     else {
       double sum = 0;
       int numHiddenStates = oldModel.getNumHiddenStates();
       for (int i = 0; i < numHiddenStates; i++)
       {
-        sum += calcForwardsRec(i, observationIndex - 1, oldModel, samples) * oldModel.getTransitionMatrix().getEntry(i, observationIndex);
+        sum += calcForwardsProbability(i, observationIndex - 1, oldModel, samples) * oldModel.getTransitionMatrix().getEntry(i, hiddenStateIndex);
       }
       return oldModel.getEmissionMatrix().getEntry(hiddenStateIndex, samples.get(observationIndex)) * sum;
     }
   }
 
-  private BlockRealMatrix calcBackwards(HiddenMarkovModel oldModel, List<Sample> samples) {
-
+  private BlockRealMatrix calcBackwardsMatrix(HiddenMarkovModel oldModel, List<Sample> samples) {
     int numHiddenStates = oldModel.getNumHiddenStates();
     int observations = samples.size();
     BlockRealMatrix backwards = new BlockRealMatrix(numHiddenStates, observations);
@@ -111,7 +109,7 @@ public class Learner
     {
       for (int t = 0; t < observations; t++)
       {
-        double probability = calcBackwardsRec(i,t, oldModel, samples);
+        double probability = calcBackwardsProbability(i,t, oldModel, samples);
         backwards.setEntry(i,t,probability);
       }
     }
@@ -119,7 +117,7 @@ public class Learner
     return backwards;
   }
 
-  private double calcBackwardsRec(int hiddenStateIndex, int observationIndex, HiddenMarkovModel oldModel, List<Sample> samples) {
+  private double calcBackwardsProbability(int hiddenStateIndex, int observationIndex, HiddenMarkovModel oldModel, List<Sample> samples) {
     // base case is that are at the last observation
     if(observationIndex == samples.size() - 1) {
       return 1;
@@ -129,36 +127,83 @@ public class Learner
       int numHiddenStates = oldModel.getNumHiddenStates();
       for (int j = 0; j < numHiddenStates; j++)
       {
-        sum += calcBackwardsRec(j, observationIndex + 1, oldModel, samples)
-               * oldModel.getTransitionMatrix().getEntry(j, observationIndex)
+        sum += calcBackwardsProbability(j, observationIndex + 1, oldModel, samples)
+               * oldModel.getTransitionMatrix().getEntry(j, hiddenStateIndex)
                * oldModel.getEmissionMatrix().getEntry(j, samples.get(observationIndex + 1));
       }
       return sum;
     }
   }
 
-  private BlockRealMatrix calcXi(BlockRealMatrix forwards, BlockRealMatrix backwards, HiddenMarkovModel oldModel, Collection<Sample> samples) {
-    return null;
-  }
+  private double[][][] calcXiMatrix(BlockRealMatrix forwards, BlockRealMatrix backwards, HiddenMarkovModel oldModel, List<Sample> samples) {
+    int numHiddenStates = oldModel.getNumHiddenStates();
+    int observations = samples.size();
+    double[][][] xi = new double[numHiddenStates][numHiddenStates][observations];
 
-  private BlockRealMatrix calcGamma(BlockRealMatrix forwards, BlockRealMatrix backwards) {
-    /*// calculate gamma values. gammaValues.get(i).get(t) == gamma_i(t)
-    List<List<Double>> gammaValues = new ArrayList<>();
-    for (int i = 0; i < hiddenStates.size(); i++)
+    for (int i = 0; i < numHiddenStates; i++)
     {
-      List<Double> innerList = new ArrayList<>();
-      for (int t = 0; t < observations.size(); t++)
+      for (int j = 0; j < numHiddenStates; j++)
       {
-        double res = (forwards.get(i).get(t) * backwards.get(i).get(t)) / ();
-        innerList.add(res);
+        for (int t = 0; t < observations; t++)
+        {
+          double probability = calcXiProbability(i, j, t, oldModel, samples, forwards, backwards);
+          xi[i][j][t] = probability;
+        }
       }
-      gammaValues.add(i,innerList);
-    }*/
-    return null;
+    }
+
+    return xi;
   }
 
-  private InitialProbability calcNewInitialProbability(){
-    return  null;
+  private double calcXiProbability(int i, int j, int t, HiddenMarkovModel oldModel, List<Sample> samples, BlockRealMatrix forwards, BlockRealMatrix backwards)
+  {
+    double denominator = 0;
+    int sampleSize = samples.size();
+    for (int k = 0; k < oldModel.getNumHiddenStates(); k++)
+    {
+      denominator += forwards.getEntry(k, sampleSize - 1);
+    }
+
+    double numerator = forwards.getEntry(i, t)
+        * oldModel.getTransitionMatrix().getEntry(i, j)
+        * backwards.getEntry(j, t+1)
+        * oldModel.getEmissionMatrix().getEntry(j, samples.get(t+1));
+
+    return numerator / denominator;
+  }
+
+  private BlockRealMatrix calcGammaMatrix(BlockRealMatrix forwards, BlockRealMatrix backwards) {
+
+    int numHiddenStates = forwards.getRowDimension();
+    int numObservations = forwards.getColumnDimension();
+    BlockRealMatrix gamma = new BlockRealMatrix(numHiddenStates, numObservations);
+
+    for (int i = 0; i < numHiddenStates; i++)
+    {
+      for (int t = 0; t < numObservations; t++)
+      {
+        double probability = calcGammaProbability(i, t, forwards, backwards, numHiddenStates, numObservations);
+        gamma.setEntry(i,t,probability);
+      }
+    }
+
+    return gamma;
+  }
+
+  private double calcGammaProbability(int i, int t, BlockRealMatrix forwards, BlockRealMatrix backwards, int numHiddenStates, int numObservations)
+  {
+    double numerator = forwards.getEntry(i,t) * backwards.getEntry(i,t);
+    double denominator = 0;
+    for (int j = 0; j < numHiddenStates; j++)
+    {
+      denominator += forwards.getEntry(j, numObservations);
+    }
+
+    return numerator / denominator;
+  }
+
+  private InitialProbability calcNewInitialProbability(BlockRealMatrix gammaMatrix){
+    return new InitialProbability(gammaMatrix.getColumn(0));
   }
 
   /**

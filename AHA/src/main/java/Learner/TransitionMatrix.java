@@ -31,8 +31,8 @@ public class TransitionMatrix
     return matrix.getColumnDimension();
   }
 
-  public double getEntry(int rowIndex, int coloumnIndex)
+  public double getEntry(int hiddenStateRowIndex, int hiddenStateColoumnIndex)
   {
-    return matrix.getEntry(rowIndex, coloumnIndex);
+    return matrix.getEntry(hiddenStateRowIndex, hiddenStateColoumnIndex);
   }
 }

@@ -14,6 +14,11 @@ public class InitialProbability
     vector = new ArrayRealVector((int) numHiddenStates, 1/numHiddenStates);
   }
 
+  public InitialProbability(double[] values)
+  {
+    vector = new ArrayRealVector(values);
+  }
+
   public double getProbability(int hiddenStateIndex){
 
     return vector.getEntry(hiddenStateIndex);

@@ -20,12 +20,15 @@ public class EmissionMatrix
    */
   public EmissionMatrix(int numObservationVariables, int numHiddenStates, List<Sample> samples)
   {
+    observationMapping = new HashMap<>(numObservationVariables);
+    // We want to map samples (that can contain duplicated samples) to an index of unique samples
+    int indexCount = 0;
+    for (Sample sample: samples)
+    {
+      observationMapping.put(sample, indexCount);
+      indexCount++;
+    }
 
-    samples
-        .stream()
-        .map(sample -> new HiddenState(sample.getHash()))
-        .distinct()
-        .collect(Collectors.toList());
     double[][] data = new double[numObservationVariables][numHiddenStates];
     double preset = 1/numObservationVariables;
     // initialize the matrix to a uniform distribution
@@ -46,6 +49,6 @@ public class EmissionMatrix
   public double getEntry(int hiddenStateIndex, Sample observation)
   {
     int observationIndex = observationMapping.get(observation);
-    return matrix.getEntry(hiddenStateIndex, observationIndex);
+    return matrix.getEntry(observationIndex, hiddenStateIndex);
   }
 }
