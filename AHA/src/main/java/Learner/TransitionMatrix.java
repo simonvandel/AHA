@@ -1,6 +1,7 @@
 package Learner;
 
 import org.apache.commons.math3.linear.BlockRealMatrix;
+import org.javatuples.Pair;
 
 import java.util.Arrays;
 
@@ -39,5 +40,21 @@ public class TransitionMatrix
   public void setEntry(int i, int j, double probability)
   {
     matrix.setEntry(i,j, probability);
+  }
+
+  public Pair<Integer, Double> mostProbableTransitionFrom(int hiddenStateIndex)
+  {
+    double maxProbability = 0;
+    int mostProbableIndex = 0;
+    double[] row = matrix.getRow(hiddenStateIndex);
+    for (int i = 0; i < row.length; i++)
+    {
+      if (row[i] > maxProbability) {
+        maxProbability = row[i];
+        mostProbableIndex = i;
+      }
+    }
+
+    return Pair.with(mostProbableIndex, maxProbability);
   }
 }

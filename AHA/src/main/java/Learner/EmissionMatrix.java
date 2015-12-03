@@ -2,6 +2,7 @@ package Learner;
 
 import Sampler.Sample;
 import org.apache.commons.math3.linear.BlockRealMatrix;
+import org.javatuples.Pair;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -61,5 +62,21 @@ public class EmissionMatrix
   public void setEntry(int i, int j, double probability)
   {
     matrix.setEntry(i,j,probability);
+  }
+
+  public Pair<Integer, Double> mostProbableEmissionFrom(Integer hiddenStateIndex)
+  {
+    double maxProbability = 0;
+    int mostProbableIndex = 0;
+    double[] coloumn = matrix.getColumn(hiddenStateIndex);
+    for (int i = 0; i < coloumn.length; i++)
+    {
+      if (coloumn[i] > maxProbability) {
+        maxProbability = coloumn[i];
+        mostProbableIndex = i;
+      }
+    }
+
+    return Pair.with(mostProbableIndex, maxProbability);
   }
 }
