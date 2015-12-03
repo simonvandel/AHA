@@ -14,18 +14,19 @@ import java.util.stream.Collectors;
 public class EmissionMatrix
 {
   private BlockRealMatrix matrix;
-  private HashMap<Sample, Integer> observationMapping;
+  private HashMap<Integer, Integer> observationMapping;
+
   /**
    * Generates an observation matrix K x N (numEmissionStates x hiddenstates) with uniform distribution
    */
-  public EmissionMatrix(int numEmissionStates, int numHiddenStates, List<Sample> samples)
+  public EmissionMatrix(int numEmissionStates, int numHiddenStates, List<Integer> observations)
   {
     observationMapping = new HashMap<>(numEmissionStates);
-    // We want to map samples (that can contain duplicated samples) to an index of unique samples
+    // We want to map observations (that can contain duplicated observations) to an index of unique observations
     int indexCount = 0;
-    for (Sample sample: samples)
+    for (Integer observation: observations)
     {
-      observationMapping.put(sample, indexCount);
+      observationMapping.put(observation, indexCount);
       indexCount++;
     }
 
@@ -51,7 +52,7 @@ public class EmissionMatrix
     return matrix.getRowDimension();
   }
 
-  public double getEntry(int hiddenStateIndex, Sample emissionState)
+  public double getEntry(int hiddenStateIndex, Integer emissionState)
   {
     int emissionIndex = observationMapping.get(emissionState);
     return matrix.getEntry(emissionIndex, hiddenStateIndex);

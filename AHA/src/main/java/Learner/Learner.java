@@ -1,10 +1,8 @@
 package Learner;
 
 import Sampler.Sample;
-import jdk.nashorn.internal.ir.Block;
 import org.apache.commons.math3.linear.BlockRealMatrix;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -18,27 +16,35 @@ public class Learner
 
   private final double convergenceConstant = 0.001; // TODO: change to suitable number
 
-  public HiddenMarkovModel learn(List<Sample> observations){
+  public HiddenMarkovModel learn(List<Sample> sampleObservations){
+
+    List<Integer> observations = sampleObservations
+        .stream()
+        .map(sample -> sample.getHash().get(sample.getHash().size() - 1))
+        .collect(Collectors.toList());
+
     // an emission state is a snapshot. We can only emit all distinct snapshots we have seen.
     List<Integer> emissionStates = observations
                                       .stream()
-                                      .map(sample -> sample.getHash().get(sample.getHash().size() - 1))
                                       .distinct()
                                       .collect(Collectors.toList());
 
-    // the number of hidden states are the unique number of patterns.
+    // There are as many hidden states as there are unique patterns in our observations.
     // We only support patterns we have already seen, so we base this number on the number of different samples seen
-    // This is the N on the wikipedia article on Baum-Welch
-    int numHiddenStates = (int) observations
+    List<HiddenState> hiddenStates = sampleObservations
         .stream()
         .distinct()
-        .count();
+        .map(sample -> new HiddenState(sample.getHash()))
+        .collect(Collectors.toList());
+
+    // This is the N on the wikipedia article on Baum-Welch
+    int numHiddenStates = hiddenStates.size();
 
     // This is the K on the wikipedia article on Baum-Welch
     //noinspection UnnecessaryLocalVariable
     int numEmissionStates = emissionStates.size();
 
-    int numObservations = observations.size();
+    int numObservations = sampleObservations.size();
 
     // we need to check if a model has ever been generated.
     // If not, we generate one with uniform distribution of
@@ -49,7 +55,7 @@ public class Learner
       EmissionMatrix initEmissionMatrix = new EmissionMatrix(numEmissionStates, numHiddenStates, observations);
       TransitionMatrix initTransitionMatrix = new TransitionMatrix(numHiddenStates);
       InitialProbability initProbability = new InitialProbability(numHiddenStates);
-      currentModel = new HiddenMarkovModel(initProbability, initTransitionMatrix, initEmissionMatrix);
+      currentModel = new HiddenMarkovModel(initProbability, initTransitionMatrix, initEmissionMatrix, hiddenStates);
     //}
 
     // we are now sure that we have a model.
@@ -58,7 +64,7 @@ public class Learner
     HiddenMarkovModel newModel;
     boolean shouldContinue;
     do{
-      newModel = baumWelch(oldModel, observations, emissionStates, numHiddenStates, numEmissionStates, numObservations);
+      newModel = baumWelch(oldModel, observations, emissionStates, numHiddenStates, numEmissionStates, numObservations, hiddenStates);
       shouldContinue = diffModel(oldModel, newModel) > convergenceConstant;
       oldModel = newModel;
     }while (shouldContinue);
@@ -66,8 +72,8 @@ public class Learner
     return newModel;
   }
 
-  private HiddenMarkovModel baumWelch(HiddenMarkovModel oldModel, List<Sample> observations, List<Integer> emissionStates,
-                                      int numHiddenStates, int numEmissionStates, int numObservations)
+  private HiddenMarkovModel baumWelch(HiddenMarkovModel oldModel, List<Integer> observations, List<Integer> emissionStates,
+                                              int numHiddenStates, int numEmissionStates, int numObservations, List<HiddenState> hiddenStates)
   {
     BlockRealMatrix forwards = calcForwardsMatrix(oldModel,observations, numHiddenStates, numObservations);
     BlockRealMatrix backwards = calcBackwardsMatrix(oldModel, observations, numHiddenStates, numObservations);
@@ -79,10 +85,10 @@ public class Learner
     TransitionMatrix newTransitionMatrix = calcNewTransitionMatrix(gammaMatrix,xiMatrix, numHiddenStates, numObservations);
     EmissionMatrix newEmissionMatrix = calcNewEmissionMatrix(gammaMatrix, observations, emissionStates, numHiddenStates, numEmissionStates);
 
-    return new HiddenMarkovModel(newInitProbability, newTransitionMatrix, newEmissionMatrix);
+    return new HiddenMarkovModel(newInitProbability, newTransitionMatrix, newEmissionMatrix, hiddenStates);
   }
 
-  private BlockRealMatrix calcForwardsMatrix(HiddenMarkovModel oldModel, List<Sample> observations, int numHiddenStates, int numObservations) {
+  private BlockRealMatrix calcForwardsMatrix(HiddenMarkovModel oldModel, List<Integer> observations, int numHiddenStates, int numObservations) {
     BlockRealMatrix forwards = new BlockRealMatrix(numHiddenStates, numObservations);
 
     for (int i = 0; i < numHiddenStates; i++)
@@ -98,7 +104,7 @@ public class Learner
   }
 
   private double calcForwardsProbability(int hiddenStateIndex, int observationIndex,
-                                         HiddenMarkovModel oldModel, List<Sample> observations, int numHiddenStates) {
+                                         HiddenMarkovModel oldModel, List<Integer> observations, int numHiddenStates) {
     if(observationIndex == 0) {
       return oldModel.getInitialProbability().getProbability(hiddenStateIndex)
           * oldModel.getEmissionMatrix().getEntry(hiddenStateIndex, observations.get(observationIndex));
@@ -115,7 +121,7 @@ public class Learner
     }
   }
 
-  private BlockRealMatrix calcBackwardsMatrix(HiddenMarkovModel oldModel, List<Sample> observations, int numHiddenStates, int numObservations) {
+  private BlockRealMatrix calcBackwardsMatrix(HiddenMarkovModel oldModel, List<Integer> observations, int numHiddenStates, int numObservations) {
     BlockRealMatrix backwards = new BlockRealMatrix(numHiddenStates, numObservations);
 
     for (int i = 0; i < numHiddenStates; i++)
@@ -131,7 +137,7 @@ public class Learner
   }
 
   private double calcBackwardsProbability(int hiddenStateIndex, int observationIndex, HiddenMarkovModel oldModel,
-                                          List<Sample> observations, int numHiddenStates, int numObservations) {
+                                          List<Integer> observations, int numHiddenStates, int numObservations) {
     // base case is that are at the last observation
     if(observationIndex == numObservations - 1) {
       return 1;
@@ -149,7 +155,7 @@ public class Learner
   }
 
   private double[][][] calcXiMatrix(BlockRealMatrix forwards, BlockRealMatrix backwards, HiddenMarkovModel oldModel,
-                                    List<Sample> observations, int numHiddenStates, int numObservations) {
+                                    List<Integer> observations, int numHiddenStates, int numObservations) {
     double[][][] xi = new double[numHiddenStates][numHiddenStates][numObservations];
 
     for (int i = 0; i < numHiddenStates; i++)
@@ -167,7 +173,7 @@ public class Learner
     return xi;
   }
 
-  private double calcXiProbability(int i, int j, int t, HiddenMarkovModel oldModel, List<Sample> samples, BlockRealMatrix forwards,
+  private double calcXiProbability(int i, int j, int t, HiddenMarkovModel oldModel, List<Integer> observations, BlockRealMatrix forwards,
                                    BlockRealMatrix backwards, int numHiddenStates, int numObservations)
   {
     double denominator = 0;
@@ -179,7 +185,7 @@ public class Learner
     double numerator = forwards.getEntry(i, t)
         * oldModel.getTransitionMatrix().getEntry(i, j)
         * backwards.getEntry(j, t+1)
-        * oldModel.getEmissionMatrix().getEntry(j, samples.get(t+1));
+        * oldModel.getEmissionMatrix().getEntry(j, observations.get(t+1));
 
     return numerator / denominator;
   }
@@ -246,7 +252,7 @@ public class Learner
     return  numerator / denominator;
   }
 
-  private EmissionMatrix calcNewEmissionMatrix(BlockRealMatrix gammaMatrix, List<Sample> observations, List<Integer> emissionSamples,
+  private EmissionMatrix calcNewEmissionMatrix(BlockRealMatrix gammaMatrix, List<Integer> observations, List<Integer> emissionSamples,
                                                int numHiddenStates, int numEmissionStates) {
     EmissionMatrix emissionMatrix = new EmissionMatrix(numEmissionStates,numHiddenStates);
 
@@ -262,15 +268,14 @@ public class Learner
     return emissionMatrix;
   }
 
-  private double calcNewEmissionProbability(int i, Integer emissionSample, BlockRealMatrix gammaMatrix, int numObservations, List<Sample> observations)
+  private double calcNewEmissionProbability(int i, Integer emissionSample, BlockRealMatrix gammaMatrix, int numObservations, List<Integer> observations)
   {
     double numerator = 0;
     double denominator = 0;
     for (int t = 0; t < numObservations; t++)
     {
       double gammaProbability =  gammaMatrix.getEntry(i,t);
-      Sample observationSample = observations.get(t);
-      if(Objects.equals(emissionSample, observationSample.getHash().get(observationSample.getHash().size() - 1))) {
+      if(Objects.equals(emissionSample, observations.get(t))) {
         numerator += gammaProbability;
       }
       denominator += gammaProbability;
