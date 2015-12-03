@@ -5,28 +5,16 @@ import java.util.Set;
 
 public class Main {
 
-    static Set<Sensor> sensors = new HashSet<>();
 
     public static void main(String[] args) {
         // write your code here
 
 
-        String deviceId = "ss";
-        int sensorIndex = 0;
-        for (sensorIndex = 0; sensorIndex < 110; sensorIndex++) {
-            if (!sensors.add(new Sensor(deviceId, sensorIndex))) {
-                norm(deviceId, sensorIndex).normalize(2);
-            }
-        }
-        for (sensorIndex = 0; sensorIndex < 110; sensorIndex++) {
-            if (!sensors.add(new Sensor(deviceId, sensorIndex))) {
-                norm(deviceId, sensorIndex).normalize(2);
-            }
-        }
-        sensorIndex++;
 
     }
 
+    //portential implementation of Sensor list. HashSet ensures object exclusivity
+    static Set<Sensor> sensors = new HashSet<>();
     public static Sensor norm(String deviceId, int sensorIndex)  {
         for (Iterator<Sensor> sIte = sensors.iterator(); sIte.hasNext(); ) {
             Sensor s = sIte.next();

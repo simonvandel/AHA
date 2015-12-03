@@ -5,12 +5,13 @@ import java.util.*;
  */
 public class Sensor {
 
-    private String deviceID = "";
-    private int sensorIndex = -1;
-    private List<Integer> trainingData = new ArrayList<>();
-    private Model oModel = null;
+    private String deviceID = ""; //signifies the device this data is associated with
+    private int sensorIndex = -1; //signifies the sensor on the device this data is associated with
+    private List<Integer> trainingData = new ArrayList<>(); //the history of this sensor, or trainingData
+    private Model oModel = null; //the model, this is null until the first time we generate the model, after that
+                                // it will change each time we've recieved enough data according to trainingDataTreshhold
 
-    private int trainingDataThreshhold = 1500;
+    private int trainingDataThreshhold = 1500; //determines when we've got enough data to generate a new model
 
     public String getDeviceID() {
         return deviceID;
@@ -25,6 +26,7 @@ public class Sensor {
         this.sensorIndex = sensorIndex;
     }
 
+    //normalizes the input according to the model, and initiates the generation of a new model of appropriate
     public int normalize(int toNormalize) {
         int toReturn = -1;
 
@@ -44,6 +46,7 @@ public class Sensor {
         return toReturn;
     }
 
+    //starts the generation of a new model in a seperate thread
     private void createModelThread() {
         if(oModel == null)
             oModel = new Model();
