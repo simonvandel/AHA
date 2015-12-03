@@ -100,12 +100,7 @@ public class Reasoner {
   }
 }
 
-
-
-
 //This is just placeholders for now
-
-
 //public class DataBase {
 //  IModel GetModel(){}
 //
@@ -114,11 +109,6 @@ public class Reasoner {
 //  void FlagModel(Action a1, Action a2){}
 //}
 //
-interface IModel {
-  Action CalculateAction(Sample s); //should calculate the most likely action to occur (which is above a certain threshold)
-  void TakeFeedback(Action a1, Action a2); //used to update the reasoners model based on two wrong actions
-}
-
 interface ICom {
   public void sendAction(Action act);
 }
