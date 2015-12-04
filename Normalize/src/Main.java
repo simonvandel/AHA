@@ -17,11 +17,6 @@ public class Main {
             s.normalize(rnd.nextInt(550));
         while (true) {
             int temp = s.normalize(rnd.nextInt(550));
-            try{
-                Thread.sleep(1);
-            } catch(InterruptedException e) {
-
-            }
 
         }
 
