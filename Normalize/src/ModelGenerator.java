@@ -111,6 +111,7 @@ public class ModelGenerator {
 
         double gvf = 0;
         double treshhold = 0.90;
+
         do {
             int indexForLowestSdbc = -1;
             int indexForHighestSdbc = -1;

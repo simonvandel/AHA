@@ -52,7 +52,9 @@ public class Sensor {
             oModel = new Model();
 
         if (!(oModel.getModelBeingAssigned() || oModel.getModelBeingMade())) {
+            //oModel.modelBeingMade.set(true);
             oModel.setTrainingData(trainingData);
+            oModel.basedOnTrainingData = trainingData.size();
             (new Thread(oModel)).start();
         }
         //possibly check whether or not we should remove some of the training data?
