@@ -23,7 +23,7 @@ public class Main
         SensorPacketWorker oWorker = new SensorPacketWorker();
         DataReceiver dr = new DataReceiver(oWorker);
 
-        Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr);
+        Communicator oCommunicator = new Communicator("COM6", 9600, dr);
         Normalizer nm = Normalizer.getInstance();
         Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
         oWorker.registerOutputTo(queueOfSensorState);
@@ -52,7 +52,7 @@ public class Main
                 {
                     System.out.println("Got: " + oList.get(i).getValue() + ", isEmulatable: " + oList.get(i).isEmulatable());
                 }
-/*
+                /*
                 sample = sampler.getSample(nState);
                 db.putStateScopeIntoDB(sample);*/
             }

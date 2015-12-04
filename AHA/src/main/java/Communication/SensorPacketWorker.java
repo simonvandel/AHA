@@ -18,7 +18,7 @@ public class SensorPacketWorker implements IWorker<PacketDetails, SensorState> {
     public void process(PacketDetails packetDetails) {
         try {
             SensorData sensorData = new SensorData(packetDetails);
-            System.out.println(sensorData.getValues().get(0).getValue() + ", " + sensorData.getValues().get(1).getValue());
+           // System.out.println(sensorData.getValues().get(0).getValue() + ", " + sensorData.getValues().get(1).getValue());
 
             merger.add(sensorData);
         } catch (InvalidValueSizeException e) {
