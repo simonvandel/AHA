@@ -75,11 +75,11 @@ void loop()
   //act on received data in the call back method zbReceive
   
   memset(buildArray, 0, 64);
+  delay(1);
 
 }
 
 void sendData(byte*  toSend, int sendLen){
-  Serial.println("Send");
   ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)toSend, sendLen);
   xbee.send(zbTx);
   ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //not sure whether better to have as global or local
@@ -93,5 +93,4 @@ void sendData(byte*  toSend, int sendLen){
     }
   }
   xbee.send(zbTx);
-  Serial.println("Exit Send");
 }
