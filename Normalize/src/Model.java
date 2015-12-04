@@ -14,7 +14,10 @@ public class Model implements Runnable {
 
     public void setTrainingData(List<Integer> trainingData) {
         if(!(modelBeingAssigned || modelBeingMade)) //makes sure the training data isn't changed doing execution of run()
-            this.trainingData = trainingData;
+        {
+            this.trainingData.addAll(trainingData);
+            // = trainingData;
+        }
     }
 
     public boolean getModelBeingMade() {
@@ -45,8 +48,8 @@ public class Model implements Runnable {
         List<Range> rangesHolder;
         modelBeingMade = true;
         //call normalizer
-        //PLACEHOLDER code
-        rangesHolder = new ArrayList<>();
+        ModelGenerator oModelGen = new ModelGenerator();
+        rangesHolder = oModelGen.generateModel(trainingData);
         //**
         while(modelBeingUsed); //busy wait for mutex
         modelBeingAssigned = true;

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by brugeren on 04-12-2015.
  */
-public class Normalizer {
+public class ModelGenerator {
 
     //Elbow Method
 
