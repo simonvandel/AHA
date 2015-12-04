@@ -40,9 +40,9 @@ public class DB {
    *
    * @return the one and only object of the Sampler class.
    */
-  public static DB getInstance(int scopeSize, int actionsNum) {
+  public static DB getInstance() {
     if (db == null) {
-      db = new DB(actionsNum, scopeSize);
+      db = new DB(6, 6); //TODO scopeSize and actionsNum need proper values. 6 as it is the smallest perfect number: 1*2*3 = 6
     }
     return db;
   }

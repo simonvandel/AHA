@@ -18,7 +18,6 @@ public class Sampler {
   private List<NormalizedSensorState> mHistory;
   private NormalizedSensorState mPrevious;
   private int mScopeSize = 0;
-  private int mEmulatableNum = 0;
   private RemovalListener<String, Sample> sanitizerListener = removalNotification -> {
     Sample sample = removalNotification.getValue();
     if(removalNotification.getCause() != RemovalCause.EXPIRED){
@@ -49,7 +48,7 @@ public class Sampler {
   /**
    * Initializes an object of Sampler class.
    */
-  private Sampler(int scopeSize, int emulatableNum){
+  private Sampler(int scopeSize){
     mScopeSize = scopeSize;
     zeroVal.add(new NormalizedValue(0,false,"NotADevice",0));
     List<NormalizedSensorState> history = new ArrayList<NormalizedSensorState>(); //Initialize mHistory
@@ -58,7 +57,6 @@ public class Sampler {
     }
     mHistory = history;
     mPrevious = mHistory.get(mScopeSize-1);
-    mEmulatableNum = emulatableNum;
   }
 
   /**
@@ -66,9 +64,9 @@ public class Sampler {
    *
    * @return the one and only object of the Sampler class.
    */
-  public static Sampler getInstance(int scopeSize, int emulatableNum) {
+  public static Sampler getInstance() {
     if (mSampler == null) {
-      mSampler = new Sampler(scopeSize, emulatableNum);
+      mSampler = new Sampler(6); //TODO Scopesize needs to have a proper value. Why 6? Well, this exclamation has, unexpectedly, six 's', six 'i' and six 'x'!
     }
     return mSampler;
   }
