@@ -11,13 +11,15 @@ import java.util.*;
 public class Sensor
 {
 
+  private boolean adaptiveNormalization = true; //determains whether or not we countinusly adapt our model. Is currently only settable in the code
+
   private String deviceID = ""; //signifies the device this data is associated with
   private int sensorIndex = -1; //signifies the sensor on the device this data is associated with
   private List<Integer> trainingData = new ArrayList<>(); //the history of this sensor, or trainingData
   private Model oModel = null; //the model, this is null until the first time we generate the model, after that
   // it will change each time we've recieved enough data according to trainingDataTreshhold
 
-  private int trainingDataThreshhold = 1500; //determines when we've got enough data to generate a new model
+  private int trainingDataThreshhold = 500; //determines when we've got enough data to generate a new model
 
   public String getDeviceID()
   {
@@ -60,7 +62,7 @@ public class Sensor
       {
         if (!oModel.getModelBeingAssigned())
           toReturn = oModel.determineNormalization(toNormalize);
-        if ((trainingData.size() - oModel.basedOnTrainingData) > trainingDataThreshhold)
+        if ((trainingData.size() - oModel.basedOnTrainingData) > trainingDataThreshhold && adaptiveNormalization)
           createModelThread();
       }
     }

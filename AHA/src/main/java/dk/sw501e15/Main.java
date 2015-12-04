@@ -30,13 +30,13 @@ public class Main
 
         int scopeSize = 6;
         int emulatableNum = 2;
-/*
+
         Sample sample;
         DB db = DB.getInstance(scopeSize, emulatableNum);
 
         db.createDB();
         Sampler sampler = Sampler.getInstance(scopeSize, emulatableNum);
-*/
+
         List<NormalizedValue> nValueList;
         NormalizedSensorState nState;
 
@@ -52,9 +52,11 @@ public class Main
                 {
                     System.out.println("Got: " + oList.get(i).getValue() + ", isEmulatable: " + oList.get(i).isEmulatable());
                 }
-                /*
-                sample = sampler.getSample(nState);
-                db.putStateScopeIntoDB(sample);*/
+                if(oList.size() > 0)
+                {
+                    sample = sampler.getSample(nState);
+                    db.putStateScopeIntoDB(sample);
+                }
             }
             nValueList = null;
         }
