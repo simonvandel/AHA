@@ -8,19 +8,63 @@ import java.util.Arrays;
 /**
  * Created by simon on 11/30/15.
  */
-public class TransitionMatrix
+public class TransitionMatrix extends CommonMatrix
 {
-  // we expect this matrix to become large,
-  // so we use a BlockRealMatrix since the documentation suggests it is cache friendly.
-  // The matrix is dense, as we need to store all transitions.
-  private BlockRealMatrix matrix;
-  public TransitionMatrix(int numHiddenStates)
+  protected MapWarden mapWarden;
+  private GammaMatrix gammaMatrix;
+  private XiMatrix xiMatrix;
+
+  protected TransitionMatrix(){
+
+  }
+
+  public TransitionMatrix(MapWarden mapWarden)
   {
-    double[][] data = new double[numHiddenStates][numHiddenStates];
+    this.mapWarden = mapWarden;
+    int numHiddenStates = mapWarden.getNumHiddenStates();
+    double[][] values = new double[numHiddenStates][numHiddenStates];
     double preset = 1/numHiddenStates;
     // initialize the matrix to a uniform distribution
-    Arrays.fill(data, preset);
-    matrix = new BlockRealMatrix(numHiddenStates, numHiddenStates, data, true);
+    Arrays.fill(values, preset);
+    matrix = new BlockRealMatrix(numHiddenStates, numHiddenStates, values, true);
+  }
+
+  public TransitionMatrix(MapWarden mapWarden, GammaMatrix gammaMatrix, XiMatrix xiMatrix) {
+    this.mapWarden = mapWarden;
+    this.gammaMatrix = gammaMatrix;
+    this.xiMatrix = xiMatrix;
+    int numHiddenStates = mapWarden.getNumHiddenStates();
+    matrix = new BlockRealMatrix(numHiddenStates, numHiddenStates);
+    for (HiddenState i: mapWarden.iterateHiddenStates())
+    {
+      for (HiddenState j: mapWarden.iterateHiddenStates())
+      {
+        double probability = calcNewTransitionProbability(i, j);
+        int iIndex = mapWarden.hiddenStateToHiddenStateIndex(i);
+        int jIndex = mapWarden.hiddenStateToHiddenStateIndex(j);
+        matrix.setEntry(iIndex, jIndex, probability);
+      }
+    }
+  }
+
+  private double calcNewTransitionProbability(HiddenState i, HiddenState j)
+  {
+    double numerator = 0;
+    double denominator = 0;
+
+    for (Observation t: mapWarden.iterateObservations())
+    {
+      numerator += xiMatrix.getEntry(i, j, t);
+      denominator += gammaMatrix.getEntry(i,t);
+    }
+
+    return  numerator / denominator;
+  }
+
+  public NormalisedTransitionMatrix normalise()
+  {
+    double[][] normalisedMatrix = super.normalise(matrix);
+    return new NormalisedTransitionMatrix(mapWarden, normalisedMatrix);
   }
 
   public double getNorm()
@@ -32,9 +76,11 @@ public class TransitionMatrix
     return matrix.getColumnDimension();
   }
 
-  public double getEntry(int hiddenStateRowIndex, int hiddenStateColoumnIndex)
+  public double getEntry(HiddenState fromHiddenState, HiddenState toHiddenState)
   {
-    return matrix.getEntry(hiddenStateRowIndex, hiddenStateColoumnIndex);
+    int fromHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(fromHiddenState);
+    int toHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(toHiddenState);
+    return matrix.getEntry(toHiddenStateIndex, fromHiddenStateIndex);
   }
 
   public void setEntry(int i, int j, double probability)
@@ -42,19 +88,23 @@ public class TransitionMatrix
     matrix.setEntry(i,j, probability);
   }
 
-  public Pair<Integer, Double> mostProbableTransitionFrom(int hiddenStateIndex)
+  // returns the hidden state index that hiddenStateIndex is most likely to transition from, along with the probability to do so
+  public Pair<HiddenState, Double> mostProbableTransitionFrom(HiddenState hiddenState)
   {
     double maxProbability = 0;
     int mostProbableIndex = 0;
-    double[] row = matrix.getRow(hiddenStateIndex);
-    for (int i = 0; i < row.length; i++)
+    int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(hiddenState);
+    double[] column = matrix.getColumn(hiddenStateIndex);
+    for (int i = 0; i < column.length; i++)
     {
-      if (row[i] > maxProbability) {
-        maxProbability = row[i];
+      if (column[i] > maxProbability) {
+        maxProbability = column[i];
         mostProbableIndex = i;
       }
     }
 
-    return Pair.with(mostProbableIndex, maxProbability);
+    HiddenState mostProbableHiddenState = mapWarden.hiddenStateIndexToHiddenState(mostProbableIndex);
+
+    return Pair.with(mostProbableHiddenState, maxProbability);
   }
 }

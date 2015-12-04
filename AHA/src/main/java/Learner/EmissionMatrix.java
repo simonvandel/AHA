@@ -1,46 +1,42 @@
 package Learner;
 
-import Sampler.Sample;
 import org.apache.commons.math3.linear.BlockRealMatrix;
 import org.javatuples.Pair;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by simon on 11/30/15.
  */
-public class EmissionMatrix
+public class EmissionMatrix extends CommonMatrix
 {
-  private BlockRealMatrix matrix;
-  private HashMap<Integer, Integer> observationMapping;
 
   /**
    * Generates an observation matrix K x N (numEmissionStates x hiddenstates) with uniform distribution
    */
-  public EmissionMatrix(int numEmissionStates, int numHiddenStates, List<Integer> observations)
+  public EmissionMatrix(MapWarden mapWarden)
   {
-    observationMapping = new HashMap<>(numEmissionStates);
-    // We want to map observations (that can contain duplicated observations) to an index of unique observations
-    int indexCount = 0;
-    for (Integer observation: observations)
-    {
-      observationMapping.put(observation, indexCount);
-      indexCount++;
-    }
-
-    double[][] data = new double[numEmissionStates][numHiddenStates];
+    this.mapWarden = mapWarden;
+    int numEmissionStates = mapWarden.getNumEmissionStates();
+    int numHiddenStates = mapWarden.getNumHiddenStates();
+    double[][] values = new double[numEmissionStates][numHiddenStates];
     double preset = 1/numEmissionStates;
     // initialize the matrix to a uniform distribution
-    Arrays.fill(data, preset);
-    matrix = new BlockRealMatrix(numEmissionStates, numHiddenStates, data, true);
+    Arrays.fill(values, preset);
+    matrix = new BlockRealMatrix(numEmissionStates, numHiddenStates, values, true);
   }
 
-  public EmissionMatrix(int numEmissionStates, int numHiddenStates)
+  public EmissionMatrix(MapWarden mapWarden, double[][] values) {
+    this.mapWarden = mapWarden;
+    int numEmissionStates = mapWarden.getNumEmissionStates();
+    int numHiddenStates = mapWarden.getNumHiddenStates();
+    matrix = new BlockRealMatrix(numEmissionStates, numHiddenStates, values, true);
+  }
+
+  protected EmissionMatrix()
   {
-    matrix = new BlockRealMatrix(numEmissionStates, numHiddenStates);
   }
 
   public double getNorm()
@@ -53,30 +49,44 @@ public class EmissionMatrix
     return matrix.getRowDimension();
   }
 
-  public double getEntry(int hiddenStateIndex, Integer emissionState)
+  public NormalisedEmissionMatrix normalise()
   {
-    int emissionIndex = observationMapping.get(emissionState);
+    double[][] normalisedMatrix = super.normalise(matrix);
+    return new NormalisedEmissionMatrix(mapWarden, normalisedMatrix);
+  }
+
+  public double getEntry(HiddenState fromHiddenState, EmissionState toEmissionState)
+  {
+    int emissionIndex = mapWarden.emissionStateToEmissionStateIndex(toEmissionState);
+    int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(fromHiddenState);
     return matrix.getEntry(emissionIndex, hiddenStateIndex);
   }
 
-  public void setEntry(int i, int j, double probability)
+  public void setEntry(HiddenState fromHiddenState, EmissionState toEmissionState, double probability)
   {
-    matrix.setEntry(i,j,probability);
+    int emissionIndex = mapWarden.emissionStateToEmissionStateIndex(toEmissionState);
+    int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(fromHiddenState);
+    matrix.setEntry(emissionIndex, hiddenStateIndex, probability);
   }
 
-  public Pair<Integer, Double> mostProbableEmissionFrom(Integer hiddenStateIndex)
+  // returns the hidden state index that hiddenStateIndex is most likely to transition from, along with the probability to do so
+  public Pair<EmissionState, Double> mostProbableTransitionFrom(HiddenState hiddenState)
   {
     double maxProbability = 0;
     int mostProbableIndex = 0;
-    double[] coloumn = matrix.getColumn(hiddenStateIndex);
-    for (int i = 0; i < coloumn.length; i++)
+    int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(hiddenState);
+    double[] column = matrix.getColumn(hiddenStateIndex);
+    for (int i = 0; i < column.length; i++)
     {
-      if (coloumn[i] > maxProbability) {
-        maxProbability = coloumn[i];
+      if (column[i] > maxProbability) {
+        maxProbability = column[i];
         mostProbableIndex = i;
       }
     }
 
-    return Pair.with(mostProbableIndex, maxProbability);
+    EmissionState mostProbableEmissionState = mapWarden.emissionStateIndexToEmissionState(mostProbableIndex);
+
+    return Pair.with(mostProbableEmissionState, maxProbability);
   }
+
 }
