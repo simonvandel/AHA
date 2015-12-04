@@ -37,6 +37,7 @@ public class Sampler {
   //husk actions vi har fundet, indenfor 5 sekunder, så vi kan tjekke fejl der går på tværs af samples
   private Cache<String, Sample> uncleanSamples = CacheBuilder
       .newBuilder()
+      .concurrencyLevel(1)
       .expireAfterWrite(5, TimeUnit.SECONDS)
       .removalListener(sanitizerListener)
       .build();
