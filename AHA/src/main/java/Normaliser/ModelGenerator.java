@@ -4,6 +4,7 @@ import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by brugeren on 04-12-2015.
@@ -98,8 +99,8 @@ public class ModelGenerator {
     }
 //End of elbow
 
-    public List<Range> generateModel(List<Integer> trainingData) {
-        int numClusters = DetermineNumberOfClusters(trainingData);
+    public List<Range> generateModel(List<Integer> trainingData, int numClusters) {
+
         List<List<Integer>> clusters = new ArrayList<>(splitIntoClusers(trainingData, numClusters));
 
         List<Double> gvfs = new ArrayList<>();

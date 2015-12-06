@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Model implements Runnable {
     private List<Range> ranges = new ArrayList<>(); //what is acctually checked against when normalizing
+    private int numberOfClusters = -1;
 
     //mutex variables**
     public AtomicBoolean modelBeingMade = new AtomicBoolean();
@@ -57,7 +58,10 @@ public class Model implements Runnable {
 
         //call normalizer
         ModelGenerator oModelGen = new ModelGenerator();
-        rangesHolder = oModelGen.generateModel(trainingData);
+        if(numberOfClusters == -1)
+            numberOfClusters = oModelGen.DetermineNumberOfClusters(trainingData);
+
+        rangesHolder = oModelGen.generateModel(trainingData, numberOfClusters);
         //**
         while(modelBeingUsed.get()); //busy wait for mutex
         modelBeingAssigned.set(true);
