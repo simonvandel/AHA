@@ -139,4 +139,9 @@ public class MapWarden // dun dun du du dun dun
   {
     return observations.get(0);
   }
+
+  public Iterable<EmissionState> iterateEmissionStates()
+  {
+    return emissionStates;
+  }
 }

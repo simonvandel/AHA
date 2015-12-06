@@ -3,15 +3,16 @@ package Learner;
 import org.apache.commons.math3.linear.BlockRealMatrix;
 import org.javatuples.Pair;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by simon on 11/30/15.
  */
 public class EmissionMatrix extends CommonMatrix
 {
+
+  private GammaMatrix gammaMatrix;
+  protected MapWarden mapWarden;
 
   /**
    * Generates an observation matrix K x N (numEmissionStates x hiddenstates) with uniform distribution
@@ -33,6 +34,43 @@ public class EmissionMatrix extends CommonMatrix
     int numEmissionStates = mapWarden.getNumEmissionStates();
     int numHiddenStates = mapWarden.getNumHiddenStates();
     matrix = new BlockRealMatrix(numEmissionStates, numHiddenStates, values, true);
+  }
+
+  public EmissionMatrix(GammaMatrix gammaMatrix, MapWarden mapWarden) {
+    this.gammaMatrix = gammaMatrix;
+    this.mapWarden = mapWarden;
+    int numHiddenStates = mapWarden.getNumHiddenStates();
+    int numEmissionStates = mapWarden.getNumEmissionStates();
+    matrix = new BlockRealMatrix(numEmissionStates,numHiddenStates);
+
+    for (HiddenState i :
+        mapWarden.iterateHiddenStates())
+    {
+      for (EmissionState j :
+          mapWarden.iterateEmissionStates())
+      {
+        double probability = calcNewEmissionProbability(i, j);
+        int jIndex = mapWarden.emissionStateToEmissionStateIndex(j);
+        int iIndex = mapWarden.hiddenStateToHiddenStateIndex(i);
+        matrix.setEntry(jIndex, iIndex, probability);
+      }
+    }
+  }
+
+  private double calcNewEmissionProbability(HiddenState i, EmissionState emissionState)
+  {
+    double numerator = 0;
+    double denominator = 0;
+    for (Observation t: mapWarden.iterateObservations())
+    {
+      double gammaProbability = gammaMatrix.getEntry(i,t);
+      if(emissionState.equalsObservation(t)) {
+        numerator += gammaProbability;
+      }
+      denominator += gammaProbability;
+    }
+
+    return  numerator / denominator;
   }
 
   protected EmissionMatrix()

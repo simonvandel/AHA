@@ -13,6 +13,15 @@ public class Observation
     hashCode = sample.getHash().get(sample.getHash().size() - 1);
   }
 
+  public Observation(Integer hashCode)
+  {
+    this.hashCode = hashCode;
+  }
+
+
+  public int getHashCode() {
+    return hashCode;
+  }
   @Override
   public boolean equals(Object o)
   {

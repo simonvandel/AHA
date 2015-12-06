@@ -7,6 +7,7 @@ import org.javatuples.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by simon on 11/30/15.
@@ -43,19 +44,15 @@ public class HiddenMarkovModel implements IModel
     return emissionMatrix;
   }
 
-  public int getNumHiddenStates()
-  {
-    return transitionMatrix.getNumberOfHiddenStates();
-  }
-  public int getNumEmissionVariables()
-  {
-    return emissionMatrix.getNumEmissionVariables();
-  }
-
   @Override
-  public Action CalculateAction(Sample s)
+  public List<Action> CalculateAction(Sample s)
   {
-    List<HiddenState> viterbiPath = viterbi(s.getHash());
+    List<Observation> observationsFromSample = s.getHash().stream().map(observationHashcode -> new Observation(observationHashcode)).collect(Collectors.toList());
+    List<HiddenState> viterbiPath = viterbi(observationsFromSample);
+    // if the viterbiPath is null, it means something was wrong in the viterbi algorithm, so we can not predict the next action
+    if (viterbiPath == null) {
+      return null;
+    }
 
     // we find the confidence by summing all probabilities involved in our reasoning, and then dividing by the number of sums.
     // All probabilities involved are:
@@ -95,14 +92,13 @@ public class HiddenMarkovModel implements IModel
     // check whether we are confident enough to perform the action
     if (confidence > someThreshold) {
       EmissionState emissionStatePredicted = emissionPair.getValue0();
-      // TODO: calculate an action. Might have a problem because how do we calculate an action if all we have is hash code of sensor value
+      return emissionStatePredicted.getActions();
       // TODO: An action must not only be calculated based on the transition from the previous state. It has to be computed based the values of all emulatable sensor values
     }
     else {
       // we are not confident enough, so return a null action
       return null;
     }
-    return null;
   }
 
   private List<HiddenState> viterbi(List<Observation> observationHashes)
@@ -124,8 +120,13 @@ public class HiddenMarkovModel implements IModel
     for (HiddenState k: mapWarden.iterateHiddenStates())
     {
       EmissionState emissionState = mapWarden.observationToEmission(observationHashes.get(0));
-      if (emissionState)
-      double value = emissionMatrix.getEntry(k, ) * initialProbability.getProbability(k);
+      // if the emissionState is null, it has not yet been observed.
+      // We should just terminate the algorithm, as we can not predict anything sensible
+      // if we have not observed the observation before
+      if (emissionState == null) {
+        return null;
+      }
+      double value = emissionMatrix.getEntry(k, emissionState) * initialProbability.getProbability(k);
       int kIndex = mapWarden.hiddenStateToHiddenStateIndex(k);
       probabilities.set(kIndex,Pair.with(value, k));
     }

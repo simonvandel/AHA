@@ -21,15 +21,6 @@ public class Learner
 
     MapWarden mapWarden = new MapWarden(sampleObservations);
 
-    // This is the N on the wikipedia article on Baum-Welch
-    int numHiddenStates = mapWarden.getNumHiddenStates();
-
-    // This is the K on the wikipedia article on Baum-Welch
-    //noinspection UnnecessaryLocalVariable
-    int numEmissionStates = mapWarden.getNumEmissionStates();
-
-    int numObservations = mapWarden.getNumObservations();
-
     // we need to check if a model has ever been generated.
     // If not, we generate one with uniform distribution of
     // initial probability, transition matrix and observation matrix
@@ -58,53 +49,17 @@ public class Learner
 
   private HiddenMarkovModel baumWelch(HiddenMarkovModel oldModel, MapWarden mapWarden)
   {
-    ForwardsMatrix forwards = new ForwardsMatrix(oldModel, mapWarden); //calcForwardsMatrix(oldModel,observations, numHiddenStates, numObservations);
-    BackwardsMatrix backwards = new BackwardsMatrix(oldModel, mapWarden); //calcBackwardsMatrix(oldModel, observations, numHiddenStates, numObservations);
+    ForwardsMatrix forwards = new ForwardsMatrix(oldModel, mapWarden);
+    BackwardsMatrix backwards = new BackwardsMatrix(oldModel, mapWarden);
 
-    GammaMatrix gammaMatrix = new GammaMatrix(forwards, backwards, mapWarden); //calcGammaMatrix(forwards, backwards, numHiddenStates, numObservations);
-    XiMatrix xiMatrix = new XiMatrix(forwards, backwards, oldModel, mapWarden); // calcXiMatrix(forwards,backwards,oldModel, observations, numHiddenStates, numObservations);
+    GammaMatrix gammaMatrix = new GammaMatrix(forwards, backwards, mapWarden);
+    XiMatrix xiMatrix = new XiMatrix(forwards, backwards, oldModel, mapWarden);
 
     InitialProbability newInitProbability = new InitialProbability(mapWarden, gammaMatrix);
-    TransitionMatrix newTransitionMatrix = new TransitionMatrix(mapWarden, gammaMatrix, xiMatrix) // calcNewTransitionMatrix(gammaMatrix,xiMatrix, numHiddenStates, numObservations);
-    EmissionMatrix newEmissionMatrix = calcNewEmissionMatrix(gammaMatrix, observations, emissionStates, numHiddenStates, numEmissionStates);
+    TransitionMatrix newTransitionMatrix = new TransitionMatrix(mapWarden, gammaMatrix, xiMatrix);
+    EmissionMatrix newEmissionMatrix = new EmissionMatrix(gammaMatrix, mapWarden);
 
-    return new HiddenMarkovModel(newInitProbability, newTransitionMatrix, newEmissionMatrix, hiddenStates);
-  }
-
-
-
-
-  private EmissionMatrix calcNewEmissionMatrix(BlockRealMatrix gammaMatrix, List<Integer> observations, List<EmissionState> emissionStates, List<HiddenState> hiddenStates) {
-    EmissionMatrix emissionMatrix = new EmissionMatrix(emissionStates,hiddenStates);
-
-    for (HiddenState i :
-        hiddenStates)
-    {
-      for (EmissionState j :
-          emissionStates)
-      {
-        double probability = calcNewEmissionProbability(i, j, gammaMatrix, observations);
-        emissionMatrix.setEntry(i,j,probability);
-      }
-    }
-
-    return emissionMatrix;
-  }
-
-  private double calcNewEmissionProbability(HiddenState i, Integer emissionSample, BlockRealMatrix gammaMatrix, List<Integer> observations)
-  {
-    double numerator = 0;
-    double denominator = 0;
-    for (Integer t: observations)
-    {
-      double gammaProbability =  gammaMatrix.getEntry(i,t);
-      if(Objects.equals(emissionSample, observations.get(t))) {
-        numerator += gammaProbability;
-      }
-      denominator += gammaProbability;
-    }
-
-    return  numerator / denominator;
+    return new HiddenMarkovModel(newInitProbability, newTransitionMatrix, newEmissionMatrix, mapWarden);
   }
 
   /**

@@ -45,9 +45,11 @@ public class Reasoner {
    * @param sample the sample to reason about
      */
   public void reasonAndSend(Sample sample){
-    Action action = reason(sample);
-    if(action != null){
-      com.sendAction(action);
+    List<Action> actions = reason(sample);
+    if(actions != null){
+      for (Action action : actions) {
+        com.sendAction(action);
+      }
     }
   }
 
@@ -56,7 +58,7 @@ public class Reasoner {
    * @param sample the sample to reason about
    * @return an action which is probable according to the model
      */
-  public Action reason(Sample sample) {
+  public List<Action> reason(Sample sample) {
     //region Update received actions cache
     for (Action action: sample.getActions()){
       receivedActions.put(action.toString(), action);
@@ -83,11 +85,14 @@ public class Reasoner {
     //db.flagEntries(validActions);
     //endregion
 
-    Action action = currentModel.CalculateAction(sample);
-    if(action != null){
-      sentActions.put(action.toString(), action);
+    List<Action> actions = currentModel.CalculateAction(sample);
+    if(actions != null){
+      for (Action action: actions) {
+        sentActions.put(actions.toString(), action);
+      }
+
     }
-    return action;
+    return actions;
   }
 
   /**
