@@ -175,6 +175,7 @@ public class ModelGenerator {
                             gvfs.clear();
                     }
                 }
+                enough = Double.compare(0.0,gvf)==0;
 
 
                 j = 0;

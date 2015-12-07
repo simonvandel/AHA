@@ -1,9 +1,7 @@
 package Normaliser;
 
-import com.sun.javafx.scene.layout.region.Margins;
-import com.sun.xml.internal.ws.commons.xmlutil.Converter;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by brugeren on 03-12-2015.
@@ -65,7 +63,8 @@ public class Sensor
         if ((trainingData.size() - oModel.basedOnTrainingData) > trainingDataThreshhold && adaptiveNormalization)
           createModelThread();
       }
-    }
+    } else
+    toReturn = toNormalize;
     if (trainingData.size() > trainingDataThreshhold * 5)
       trainingData.subList(0, trainingDataThreshhold);
     return toReturn;

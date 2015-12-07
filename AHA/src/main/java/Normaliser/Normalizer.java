@@ -75,7 +75,8 @@ public class Normalizer
               currDeviceAddr,
               currSensorIndex
           ));
-        }
+        } else
+          return null;
       }
     }
 
