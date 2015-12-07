@@ -20,9 +20,17 @@ public class Reasoning
     return actions;
   }
 
+  public Reasoning(List<Action> actions, List<HiddenState> hiddenStates, List<Observation> observations)
+  {
+    this.actions = actions;
+    this.hiddenStates = hiddenStates;
+    this.observations = observations;
+  }
+
   public List<HiddenState> getHiddenStates()
   {
     return hiddenStates;
+
   }
 
   public List<Observation> getObservations()

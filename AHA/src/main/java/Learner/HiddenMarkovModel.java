@@ -93,7 +93,10 @@ public class HiddenMarkovModel implements IModel
     // check whether we are confident enough to perform the action
     if (confidence > someThreshold) {
       EmissionState emissionStatePredicted = emissionPair.getValue0();
-      return null; // TODO: emissionStatePredicted.getActions();
+      List<HiddenState> hiddenStatesPath = new ArrayList<>(viterbiPath);
+      hiddenStatesPath.add(finalHiddenState);
+      Reasoning reasoning = new Reasoning(emissionStatePredicted.getActions(), hiddenStatesPath, observationsFromSample);
+      return reasoning;
       // TODO: An action must not only be calculated based on the transition from the previous state. It has to be computed based the values of all emulatable sensor values
     }
     else {

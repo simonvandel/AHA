@@ -97,9 +97,8 @@ public class Sampler {
     List<NormalizedValue> emulatables2 = findEmulatables(state2);
     List<Action> actions = new ArrayList<Action>();
     for (int i = 0; i < emulatables1.size() && i < emulatables2.size(); i++) {//CANT ZIP Shitty java
-      if (emulatables1.get(i).getValue() != emulatables2.get(i).getValue()) {
-        actions.add(new Action(emulatables1.get(i),emulatables2.get(i),i));
-      }
+      // add all emulatable sensor values as actions
+      actions.add(new Action(emulatables1.get(i),emulatables2.get(i),emulatables2.get(i).getSensorIndexOnDevice()));
     }
     return actions;
   }
