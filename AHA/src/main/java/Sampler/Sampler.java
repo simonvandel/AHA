@@ -165,8 +165,8 @@ public class Sampler {
                   .getVal1()
                   .getValue()); //Correct the state to have the value of before the action happened
           if(reasoner.wasSystemAction(validActions.get(i))){
-            //Flag the model in the DB
-            //Tell Reasoner to update its model??
+            //TODO: Flag the model in the DB
+            //TODO: Tell Reasoner to update its model??
           }
         }
       }

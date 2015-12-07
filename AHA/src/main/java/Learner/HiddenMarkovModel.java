@@ -1,6 +1,7 @@
 package Learner;
 
 import Reasoner.IModel;
+import Reasoner.Reasoning;
 import Sampler.Action;
 import Sampler.Sample;
 import org.javatuples.Pair;
@@ -45,7 +46,7 @@ public class HiddenMarkovModel implements IModel
   }
 
   @Override
-  public List<Action> CalculateAction(Sample s)
+  public Reasoning CalculateReasoning(Sample s)
   {
     List<Observation> observationsFromSample = s.getHash().stream().map(observationHashcode -> new Observation(observationHashcode)).collect(Collectors.toList());
     List<HiddenState> viterbiPath = viterbi(observationsFromSample);
@@ -92,7 +93,7 @@ public class HiddenMarkovModel implements IModel
     // check whether we are confident enough to perform the action
     if (confidence > someThreshold) {
       EmissionState emissionStatePredicted = emissionPair.getValue0();
-      return emissionStatePredicted.getActions();
+      return null; // TODO: emissionStatePredicted.getActions();
       // TODO: An action must not only be calculated based on the transition from the previous state. It has to be computed based the values of all emulatable sensor values
     }
     else {
@@ -189,6 +190,5 @@ public class HiddenMarkovModel implements IModel
   @Override
   public void TakeFeedback(Action a1, Action a2)
   {
-
   }
 }

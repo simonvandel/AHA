@@ -7,7 +7,6 @@ import com.digi.xbee.api.exceptions.XBeeException;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * Model DB.getModel() //gets the most recent model from the DB
  * void DB.flagModel(Action a1, Action a2) //flags two actions as wrong in the databases model
  * void DB.flagEntries(List<Action> actions) //flags the actions in the databases history as valid
- * Action CalculateAction(Sample s); //should calculate the most likely action to occur (which is above a certain threshold)
+ * Action CalculateReasoning(Sample s); //should calculate the most likely action to occur (which is above a certain threshold)
  * void TakeFeedback(Action a1, Action a2); //used to update the reasoners model based on two wrong actions
  */
 public class Reasoner {
@@ -71,20 +70,20 @@ public class Reasoner {
    * @return an action which is probable according to the model
      */
   public List<Action> reason(Sample sample) {
-    List<Action> actions = currentModel.CalculateAction(sample);
+    Reasoning reasoning = currentModel.CalculateReasoning(sample);
     sentActions.cleanUp();
-    if (actions == null) {
+    if (reasoning == null) {
       return null;
     }
     for (Action action :
-        actions)
+        reasoning.getActions())
     {
       if(action != null){
-        sentActions.put(actions.toString(), action);
+        sentActions.put(reasoning.toString(), action);
       }
     }
 
-    return actions;
+    return reasoning.getActions();
   }
 
   /**
