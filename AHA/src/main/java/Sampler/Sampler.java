@@ -4,6 +4,7 @@ import Database.DB;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
 import Reasoner.Reasoner;
+import Reasoner.Reasoning;
 import com.google.common.cache.*;
 
 import java.time.Instant;
@@ -18,7 +19,6 @@ public class Sampler {
   private List<NormalizedSensorState> mHistory;
   private NormalizedSensorState mPrevious;
   private int mScopeSize = 0;
-  private int mEmulatableNum = 0;
   private RemovalListener<String, Sample> sanitizerListener = removalNotification -> {
     Sample sample = removalNotification.getValue();
     if(removalNotification.getCause() != RemovalCause.EXPIRED){
@@ -37,6 +37,7 @@ public class Sampler {
   //husk actions vi har fundet, indenfor 5 sekunder, så vi kan tjekke fejl der går på tværs af samples
   private Cache<String, Sample> uncleanSamples = CacheBuilder
       .newBuilder()
+      .concurrencyLevel(1)
       .expireAfterWrite(5, TimeUnit.SECONDS)
       .removalListener(sanitizerListener)
       .build();
@@ -48,7 +49,7 @@ public class Sampler {
   /**
    * Initializes an object of Sampler class.
    */
-  private Sampler(int scopeSize, int emulatableNum){
+  private Sampler(int scopeSize){
     mScopeSize = scopeSize;
     zeroVal.add(new NormalizedValue(0,false,"NotADevice",0));
     List<NormalizedSensorState> history = new ArrayList<NormalizedSensorState>(); //Initialize mHistory
@@ -57,7 +58,6 @@ public class Sampler {
     }
     mHistory = history;
     mPrevious = mHistory.get(mScopeSize-1);
-    mEmulatableNum = emulatableNum;
   }
 
   /**
@@ -65,9 +65,9 @@ public class Sampler {
    *
    * @return the one and only object of the Sampler class.
    */
-  public static Sampler getInstance(int scopeSize, int emulatableNum) {
+  public static Sampler getInstance() {
     if (mSampler == null) {
-      mSampler = new Sampler(scopeSize, emulatableNum);
+      mSampler = new Sampler(6); //TODO Scopesize needs to have a proper value. Why 6? Well, this exclamation has, unexpectedly, six 's', six 'i' and six 'x'!
     }
     return mSampler;
   }
@@ -98,9 +98,8 @@ public class Sampler {
     List<NormalizedValue> emulatables2 = findEmulatables(state2);
     List<Action> actions = new ArrayList<Action>();
     for (int i = 0; i < emulatables1.size() && i < emulatables2.size(); i++) {//CANT ZIP Shitty java
-      if (emulatables1.get(i).getValue() != emulatables2.get(i).getValue()) {
-        actions.add(new Action(emulatables1.get(i),emulatables2.get(i),i));
-      }
+      // add all emulatable sensor values as actions
+      actions.add(new Action(emulatables1.get(i),emulatables2.get(i),emulatables2.get(i).getSensorIndexOnDevice()));
     }
     return actions;
   }
@@ -165,9 +164,10 @@ public class Sampler {
                   .get(i)
                   .getVal1()
                   .getValue()); //Correct the state to have the value of before the action happened
-          if(reasoner.wasSystemAction(validActions.get(i))){
-            //Flag the model in the DB
-            //Tell Reasoner to update its model??
+          Reasoning reasoning = reasoner.getReasoningBehindAction(validActions.get(i));
+          if(reasoning != null){
+            db.flagModel(reasoning);
+            reasoner.updateModel(reasoning);
           }
         }
       }
