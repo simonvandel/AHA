@@ -42,6 +42,11 @@ public class Reasoner {
     return reasoner;
   }
 
+  public void setCommunicator(Communicator com) {
+    this.com = com;
+
+  }
+
   /**
    * Given a sample, calculate an action and send this to communicator
    * @param sample the sample to reason about

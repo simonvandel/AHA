@@ -8,6 +8,7 @@ import Database.DB;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
 import Normaliser.Normalizer;
+import Reasoner.Reasoner;
 import Sampler.*;
 
 import java.util.List;
@@ -28,35 +29,34 @@ public class Main
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
     oWorker.registerOutputTo(queueOfSensorState);
 
-    int scopeSize = 6;
-    int emulatableNum = 2;
-
     Sample sample;
-    DB db = DB.getInstance(scopeSize, emulatableNum);
+    DB db = DB.getInstance();
 
     db.createDB();
-    Sampler sampler = Sampler.getInstance(scopeSize, emulatableNum);
+    Sampler sampler = Sampler.getInstance();
 
-    List<NormalizedValue> nValueList;
+    Reasoner oReasoner = Reasoner.getInstance();
+    oReasoner.setCommunicator(oCommunicator);
+
     NormalizedSensorState nState;
 
     while (true)
     {
-      if (!queueOfSensorState.isEmpty())
+      while (!queueOfSensorState.isEmpty())
       {
         //nValueList = nm.Normalize(queueOfSensorState.poll()).getNormalizesValues();
         SensorState oST = queueOfSensorState.poll();
         nState = nm.Normalize(oST);
-        List<NormalizedValue> oList = null;
         if (nState != null)
         {
-          oList = nState.getNormalizesValues();
+          List<NormalizedValue> oList = nState.getNormalizesValues();
           
           sample = sampler.getSample(nState);
           db.putStateScopeIntoDB(sample);
+
+          oReasoner.reason(sample);
         }
       }
-      nValueList = null;
     }
   }
 }
