@@ -30,6 +30,7 @@ public class Reasoner {
   //husk actions vi har sendt, indenfor 5 sekunder, så vi kan tjekke om de actions vi får er bruger eller system
   private Cache<String, Action> sentActions = CacheBuilder
           .newBuilder()
+          .concurrencyLevel(1)
           .expireAfterWrite(5, TimeUnit.SECONDS)
           .build();
 
