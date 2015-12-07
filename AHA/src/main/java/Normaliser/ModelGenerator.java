@@ -74,7 +74,7 @@ public class ModelGenerator {
     private double findDistanceInCluster(List<Integer> cluster) {
 
         //assumes sorted
-        double median = findAverage(cluster); //.get(cluster.size() / 2);
+        int median = cluster.get(cluster.size() / 2);
 
         double Dk = 0;
 
@@ -84,7 +84,7 @@ public class ModelGenerator {
         return Dk;
     }
 
-    private double findDistance(double point1, double point2) {
+    private double findDistance(int point1, int point2) {
         return Math.abs(point1 - point2);
     }
 
@@ -153,8 +153,7 @@ public class ModelGenerator {
 
             sdbc = findDeviation(clusters.get(indexForLowestSdbc));
             sdcm = (sdam - sdbc);
-            gvf = sdcm == 0 ? 0 : ((sdam - sdcm) / sdam);
-
+            gvf = (sdam - sdcm) / sdam;
 
             gvfs.add(j, gvf);
             j++;
@@ -196,10 +195,6 @@ public class ModelGenerator {
         List<Range> toReturn = new ArrayList<Range>();
         for(List<Integer> cluster : normCluters) {
             upperBound = cluster.get(cluster.size()-1);
-            while(upperBound <= lowerBound) {
-                upperBound++;
-                lowerBound--;
-            }
             toReturn.add(new Range(lowerBound, upperBound));
             lowerBound = upperBound +1;
         }

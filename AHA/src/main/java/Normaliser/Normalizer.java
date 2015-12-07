@@ -10,14 +10,16 @@ import java.util.*;
 /**
  * Created by Zobair on 20-11-2015.
  */
-public class Normalizer{
+public class Normalizer
+{
   private static Normalizer normalizer;
 
 
   /**
    * Initializes an object of normalizer class.
    */
-  private Normalizer(){
+  private Normalizer()
+  {
 
   }
 
@@ -26,8 +28,10 @@ public class Normalizer{
    *
    * @return the one and only object of the Normalizer class.
    */
-  public static Normalizer getInstance(){
-    if (normalizer == null){
+  public static Normalizer getInstance()
+  {
+    if (normalizer == null)
+    {
       normalizer = new Normalizer();
     }
 
@@ -35,11 +39,10 @@ public class Normalizer{
   }
 
   private Set<Sensor> sensors = new HashSet();
-
-  public Sensor getSensor(String deviceId, int sensorIndex){
-    for (Iterator<Sensor> sIte = sensors.iterator(); sIte.hasNext(); ){
+  public Sensor getSensor(String deviceId, int sensorIndex)  {
+    for (Iterator<Sensor> sIte = sensors.iterator(); sIte.hasNext(); ) {
       Sensor s = sIte.next();
-      if (s.getDeviceID().equals(deviceId) && s.getSensorIndex() == sensorIndex){
+      if(s.getDeviceID().equals(deviceId) && s.getSensorIndex() == sensorIndex) {
         return s;
       }
     }
@@ -52,21 +55,29 @@ public class Normalizer{
    * @param sensorState
    * @return a normalized sensorstate object.
    */
-  public NormalizedSensorState Normalize(SensorState sensorState){
+  public NormalizedSensorState Normalize(SensorState sensorState)
+  {
     Instant sTime = sensorState.getTime();
     List<SensorValue> values = sensorState.getValues();
     NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sTime);
 
-    for (SensorValue currSV : values){
+    for(SensorValue currSV : values) {
       String currDeviceAddr = currSV.getDeviceAddress();
       int currSensorIndex = currSV.getSensorIndexOnDevice();
-      sensors.add(new Sensor(currDeviceAddr, currSensorIndex));
-      //the value is NOT added to the list it means it doesnt exsist and we can call getSensor
-      int normalizedValue = getSensor(currDeviceAddr, currSensorIndex).normalize(currSV.getValue());
-      if (normalizedValue > -1){
-        normalizedSensorState.AddNormalizedValue(new NormalizedValue(normalizedValue, currSV.isEmulatable(), currDeviceAddr, currSensorIndex));
-      } else return null;
-
+      if(!sensors.add(new Sensor(currDeviceAddr, currSensorIndex))) {
+        //the value is NOT added to the list it means it doesnt exsist and we can call getSensor
+        int normalizedValue = getSensor(currDeviceAddr, currSensorIndex).normalize(currSV.getValue());
+        if(normalizedValue > -1)
+        {
+          normalizedSensorState.AddNormalizedValue(new NormalizedValue(
+              normalizedValue,
+              currSV.isEmulatable(),
+              currDeviceAddr,
+              currSensorIndex
+          ));
+        } else
+          return null;
+      }
     }
 
 
