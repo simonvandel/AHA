@@ -56,9 +56,9 @@ public class NormalizedSensorState
 
     @Override
     public int hashCode() {
-        String hash = "";
-        for(int i=0;i<normalizesValues.size()-1;i++)
-            hash = hash + normalizesValues.get(i).hashCode();
-        return hash.hashCode();
+        int hash = 0;
+        for(int i=0;i<normalizesValues.size();i++)
+            hash +=  normalizesValues.get(i).getValue()*17;
+        return hash;
     }
 }

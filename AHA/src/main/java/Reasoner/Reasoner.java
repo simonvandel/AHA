@@ -1,11 +1,12 @@
 package Reasoner;
+import Communication.Communicator;
 import Database.DB;
 import Sampler.Action;
 import Sampler.Sample;
+import com.digi.xbee.api.exceptions.XBeeException;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -17,27 +18,33 @@ import java.util.concurrent.TimeUnit;
  * Model DB.getModel() //gets the most recent model from the DB
  * void DB.flagModel(Action a1, Action a2) //flags two actions as wrong in the databases model
  * void DB.flagEntries(List<Action> actions) //flags the actions in the databases history as valid
- * Action CalculateAction(Sample s); //should calculate the most likely action to occur (which is above a certain threshold)
+ * Action CalculateReasoning(Sample s); //should calculate the most likely action to occur (which is above a certain threshold)
  * void TakeFeedback(Action a1, Action a2); //used to update the reasoners model based on two wrong actions
  */
 public class Reasoner {
-  private DB db = null;
-  private IModel currentModel = null;
-  private ICom com = null;
+  private static Reasoner reasoner;
+  private DB db = DB.getInstance();
+  private IModel currentModel = null; //TODO db.getModel();
+  private Communicator com = null;
   //husk actions vi har sendt, indenfor 5 sekunder, så vi kan tjekke om de actions vi får er bruger eller system
-  private Cache<String, Action> sentActions = CacheBuilder
+  private Cache<Action, Reasoning> sentActions = CacheBuilder
           .newBuilder()
-          .expireAfterWrite(5, TimeUnit.SECONDS)
-          .build();
-  //husk actions vi har modtaget, indenfor x sekunder, så vi kan tjekke fejl der går på tværs af samples
-  private Cache<String, Action> receivedActions = CacheBuilder
-          .newBuilder()
+          .concurrencyLevel(1)
           .expireAfterWrite(5, TimeUnit.SECONDS)
           .build();
 
-  public Reasoner() {
-    //db = DB.getInstance();
-    //currentModel = db.getModel();
+  private Reasoner() {
+  }
+  public static Reasoner getInstance(){
+    if(reasoner == null){
+      reasoner = new Reasoner();
+    }
+    return reasoner;
+  }
+
+  public void setCommunicator(Communicator com) {
+    this.com = com;
+
   }
 
   /**
@@ -45,9 +52,18 @@ public class Reasoner {
    * @param sample the sample to reason about
      */
   public void reasonAndSend(Sample sample){
-    Action action = reason(sample);
-    if(action != null){
-      com.sendAction(action);
+    List<Action> actions = reason(sample);
+    if(actions != null){
+      for (Action action :
+          actions)
+      {
+        try{
+          com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
+        } catch (XBeeException e){
+          //Would probably be a good idea to handle the exception instead of ignoring it...
+        }
+      }
+
     }
   }
 
@@ -56,47 +72,41 @@ public class Reasoner {
    * @param sample the sample to reason about
    * @return an action which is probable according to the model
      */
-  public Action reason(Sample sample) {
-    //region Update received actions cache
-    for (Action action: sample.getActions()){
-      receivedActions.put(action.toString(), action);
-    }
-    //endregion
-
-    //region Feedback
-    receivedActions.cleanUp();
+  public List<Action> reason(Sample sample) {
+    Reasoning reasoning = currentModel.CalculateReasoning(sample);
     sentActions.cleanUp();
-    List<Action> validActions = new ArrayList<Action>(receivedActions.asMap().values());
-    for (int i = 0; i < sample.getActions().size() - 1; i++) {
-      for (int j = i + 1; j < sample.getActions().size() - 1; j++) { //Get all combinations of actions in sample
-        if (sample.getActions().get(i) == inverseAction(sample.getActions().get(j))) { //If two actions are inverse to each other
-          validActions.remove(sample.getActions().get(i)); //remove invalid actions
-          validActions.remove(sample.getActions().get(j));
-          if(sentActions.getIfPresent(sample.getActions().get(i).toString()) != null){ //if first action was system action
-            //db.flagModel(sample.getActions().get(i), sample.getActions().get(i)); //flag the model in DB, so learner knows a mistake was made
-            currentModel.TakeFeedback(sample.getActions().get(i), sample.getActions().get(j)); //Update our current model, to not make the same mistake twice
-          }
-        }
-      }
+    if (reasoning == null) {
+      return null;
     }
-
-    //db.flagEntries(validActions);
-    //endregion
-
-    Action action = currentModel.CalculateAction(sample);
-    if(action != null){
-      sentActions.put(action.toString(), action);
+    if(reasoning.getActions().isEmpty()){
+      return null;
     }
-    return action;
+    reasoning.getActions() //foreach action store in cache
+        .stream()
+        .filter(action -> action != null)
+        .forEach(action -> sentActions.put(action, reasoning));
+
+    return reasoning.getActions();
   }
 
   /**
-   * Gives the inverse action to the one given
-   * @param action the action from which the inverse is wanted
-     * @return the inverse action to the one given as input
-     */
-  private Action inverseAction(Action action) {
-    return new Action(action.getVal2(), action.getVal1(), action.getDevice());
+   * Gives the reasoning behind the given system action
+   * @param action the action to get the reasoning behind
+   * @return a reasoning or null, if action was not system action (or time limit has expired)
+   */
+  public Reasoning getReasoningBehindAction(Action action){
+    if(sentActions.asMap().containsKey(action)){
+      return sentActions.asMap().get(action);
+    }
+    return null;
+  }
+
+  /**
+   * Updates the reasoners instance of the model s.t. the same mistake will not be made several times in a row
+   * @param reasoning the reasoning behind the action, which was a mistake
+   */
+  public void updateModel(Reasoning reasoning){
+
   }
 }
 
@@ -114,18 +124,3 @@ public class Reasoner {
 //  void FlagModel(Action a1, Action a2){}
 //}
 //
-interface IModel {
-  Action CalculateAction(Sample s); //should calculate the most likely action to occur (which is above a certain threshold)
-  void TakeFeedback(Action a1, Action a2); //used to update the reasoners model based on two wrong actions
-}
-
-interface ICom {
-  public void sendAction(Action act);
-}
-
-//interface Action {
-//}
-//
-//class Sample {
-//  List<Action> Actions = null;
-//}

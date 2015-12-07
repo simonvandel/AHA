@@ -18,14 +18,10 @@ import java.util.concurrent.LinkedTransferQueue;
 public class Main
 {
 
-    public static void main(String[] args)
-    {
-        SensorPacketWorker oWorker = new SensorPacketWorker();
-        DataReceiver dr = new DataReceiver(oWorker);
-        Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr);
-        Normalizer nm = Normalizer.getInstance();
-        Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
-        oWorker.registerOutputTo(queueOfSensorState);
+  public static void main(String[] args)
+  {
+    SensorPacketWorker oWorker = new SensorPacketWorker();
+    DataReceiver dr = new DataReceiver(oWorker);
 
         int scopeSize = 6;
         int emulatableNum = 2;

@@ -5,167 +5,83 @@ import Communication.SensorValue;
 
 import java.math.BigDecimal;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Zobair on 20-11-2015.
  */
 public class Normalizer
 {
-    private static Normalizer normalizer;
+  private static Normalizer normalizer;
 
 
-    /**
-     * Initializes an object of normalizer class.
-     */
-    private Normalizer()
+  /**
+   * Initializes an object of normalizer class.
+   */
+  private Normalizer()
+  {
+
+  }
+
+  /**
+   * Get instance method to ensure singleton pattern,
+   *
+   * @return the one and only object of the Normalizer class.
+   */
+  public static Normalizer getInstance()
+  {
+    if (normalizer == null)
     {
-
+      normalizer = new Normalizer();
     }
 
-    /**
-     * Get instance method to ensure singleton pattern,
-     *
-     * @return the one and only object of the Normalizer class.
-     */
-    public static Normalizer getInstance()
-    {
-        if (normalizer == null)
+    return normalizer;
+  }
+
+  private Set<Sensor> sensors = new HashSet();
+  public Sensor getSensor(String deviceId, int sensorIndex)  {
+    for (Iterator<Sensor> sIte = sensors.iterator(); sIte.hasNext(); ) {
+      Sensor s = sIte.next();
+      if(s.getDeviceID().equals(deviceId) && s.getSensorIndex() == sensorIndex) {
+        return s;
+      }
+    }
+    throw new IllegalArgumentException("The item should always exsist when calling this method(Sensor norm)");
+  }
+
+  /**
+   * The method normalizes the input data and returns an instance of NormalizedsensorState object.
+   *
+   * @param sensorState
+   * @return a normalized sensorstate object.
+   */
+  public NormalizedSensorState Normalize(SensorState sensorState)
+  {
+    Instant sTime = sensorState.getTime();
+    List<SensorValue> values = sensorState.getValues();
+    NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sTime);
+
+    for(SensorValue currSV : values) {
+      String currDeviceAddr = currSV.getDeviceAddress();
+      int currSensorIndex = currSV.getSensorIndexOnDevice();
+      if(!sensors.add(new Sensor(currDeviceAddr, currSensorIndex))) {
+        //the value is NOT added to the list it means it doesnt exsist and we can call getSensor
+        int normalizedValue = getSensor(currDeviceAddr, currSensorIndex).normalize(currSV.getValue());
+        if(normalizedValue > -1)
         {
-            normalizer = new Normalizer();
-        }
-
-        return normalizer;
+          normalizedSensorState.AddNormalizedValue(new NormalizedValue(
+              normalizedValue,
+              currSV.isEmulatable(),
+              currDeviceAddr,
+              currSensorIndex
+          ));
+        } else
+          return null;
+      }
     }
 
-    private HashMap<String, DeviceHistory> devices = new HashMap<String, DeviceHistory>();
 
-    /**
-     * The method normalizes the input data and returns an instance of NormalizedsensorState object.
-     *
-     * @param sensorState
-     * @return a normalized sensorstate object.
-     */
-    public NormalizedSensorState Normalize(SensorState sensorState)
-    {
-        Instant sTime = sensorState.getTime();
-        List<SensorValue> values = sensorState.getValues();
-        NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sTime);
+    return normalizedSensorState;
+  }
 
-        for (int j = 0; j < values.size(); j++)
-        {
-            //First we get device, then we add the currSensorValue, then we get the list of the complete history (including the current one)
-            //Then as first implemented we normalize but across the history instead of the sensor state
-            SensorValue currSensorValue = values.get(j);
-            if (!devices.containsKey(currSensorValue.getDeviceAddress()))
-                devices.put(currSensorValue.getDeviceAddress(), new DeviceHistory());
-
-            DeviceHistory dHistory = devices.get(currSensorValue.getDeviceAddress());
-
-            dHistory.AddValue(currSensorValue.getValue(), currSensorValue.getSensorIndexOnDevice());
-            ArrayList<Integer> currListOfValues = dHistory.GetValues(currSensorValue.getSensorIndexOnDevice());
-
-
-            int nValue = 0;
-            int temp;
-            int oValue = 0;
-            boolean isEmulatable = true;
-            NormalizedValue normalizedValue;
-            int max;
-            int min;
-
-            //Find the MAX and MIN values
-            min = FindMin(currListOfValues);
-            max = FindMax(currListOfValues);
-
-            //Normalize the data
-            // Retrieve data from the list and use the local variables isEmulatable and nvalue
-            // nvalue = (oldvalue - max)/(max - min)
-            oValue = currSensorValue.getValue();
-            isEmulatable = currSensorValue.isEmulatable();
-            temp = (oValue - max) / (max - min);
-            nValue = DetermineRange(temp);
-            normalizedValue = new NormalizedValue(nValue, isEmulatable, currSensorValue.getDeviceAddress(), currSensorValue.getSensorIndexOnDevice());
-            normalizedSensorState.AddNormalizedValue(normalizedValue);
-        }
-        return normalizedSensorState;
-    }
-
-    /**
-     * Determines what range the temproray normalized value should in.
-     *  Do note that this might misbehave if the datatype is corrupt. Solution might be to truncate variable i.(SOLVED)
-     *  Another problem may occur, if input "temp" is something like 0.2135234523, it might be evaluated range 3.(SOLVED)
-     * @return normalized range.
-     */
-    private int DetermineRange(double temp)
-    {
-        int range = -1;
-        for (double i = 0; i < 1; i = i+0.1)
-        {
-            i = HalfRound(i);
-            if(temp < i);
-            {
-                range = (int)((i - 0.1)*10);
-                break;
-            }
-        }
-        return range;
-    }
-
-    /**
-     * Formats the decimal number and truncates with a half round up.
-     * @param i
-     * @return Rounded decimal
-     */
-    private double HalfRound(double i)
-    {
-        int decimalPlaces = 2;
-        BigDecimal bd = new BigDecimal(i);
-        bd = bd.setScale(decimalPlaces, BigDecimal.ROUND_HALF_UP);
-        return bd.doubleValue();
-    }
-
-    /**
-     * The method finds the maximum value in the list.
-     *
-     * @param values list of sensorvalues
-     * @return the maximum value of the list.
-     */
-    private int FindMax(List<Integer> values)
-    {
-        int currentSensorValue = values.get(0);
-        int max = currentSensorValue;
-
-        for (int i = 0; i < values.size(); i++)
-        {
-            currentSensorValue = values.get(i);
-            if (currentSensorValue > max)
-                max = currentSensorValue;
-        }
-
-        return max;
-    }
-
-    /**
-     * The method finds the minimum value in the list.
-     *
-     * @param values list of sensorvalues
-     * @return the minimum value of the list.
-     */
-    private int FindMin(List<Integer> values)
-    {
-        int currentSensorValue = values.get(0);
-        int min = values.get(0);
-        for (int i = 0; i < values.size(); i++)
-        {
-            currentSensorValue = values.get(i);
-            if (min > currentSensorValue)
-                min = currentSensorValue;
-        }
-
-        return min;
-    }
 }
