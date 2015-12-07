@@ -27,7 +27,7 @@ public class Main
         int emulatableNum = 2;
 
         Sample sample;
-        DB db = DB.getInstance(scopeSize, emulatableNum);
+        DB db = DB.getInstance();
         db.createDB();
         Sampler sampler = Sampler.getInstance(scopeSize, emulatableNum);
 
@@ -36,7 +36,7 @@ public class Main
 
         while (true)
         {
-            if (!queueOfSensorState.isEmpty())
+            /*if (!queueOfSensorState.isEmpty())
             {
                 nValueList = nm.Normalize(queueOfSensorState.poll()).getNormalizesValues();
                 nState = nm.Normalize(queueOfSensorState.poll());
@@ -48,7 +48,7 @@ public class Main
                 sample = sampler.getSample(nState);
                 db.putStateScopeIntoDB(sample);
             }
-            nValueList = null;
+            nValueList = null;*/
         }
     }
 }

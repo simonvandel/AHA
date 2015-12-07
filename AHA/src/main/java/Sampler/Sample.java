@@ -2,10 +2,9 @@ package Sampler;
 
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +12,6 @@ import java.util.List;
 /**
  * Created by heider on 19/11/15.
  */
-@Entity
-@Table(name = "Sample")
 public class Sample {
   private List<Integer> mStatesHashed = new ArrayList<Integer>();
   private Instant mTime = null;
@@ -32,7 +29,6 @@ public class Sample {
     return mStatesHashed;
   }
 
-  @Id
   public Instant getTime() {
     return mTime;
   }

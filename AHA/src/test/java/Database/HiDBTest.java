@@ -2,12 +2,11 @@ package Database;
 
 import Communication.SensorState;
 import Communication.SensorValue;
-import Normaliser.NormalizedSensorState;
 import Normaliser.Normalizer;
 import Sampler.Sample;
+import Sampler.Sampler;
 import org.junit.Before;
 import org.junit.Test;
-import org.omg.PortableServer.LIFESPAN_POLICY_ID;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -20,17 +19,18 @@ public class HiDBTest
 {
   List<SensorValue> svs = new ArrayList<>();
   List<Sample> samples = new ArrayList<>();
-  HiDB db;
+  static HiDB db = HiDB.getInstance();
 
   @Before
   public void setUp() {
-    svs.add(new SensorValue(1337,false,"fuckdigsimon",7331));
-    SensorState ss = new SensorState(svs, Instant.now());
+    Sampler sampler = Sampler.getInstance(2,1);
     Normalizer norm = Normalizer.getInstance();
-    List<NormalizedSensorState> norms = new ArrayList<>();
-    norms.add(norm.Normalize(ss));
-    samples.add(new Sample(norms,ss.getTime(), new ArrayList<>()));
-    db = HiDB.getInstance();
+    for(int i=0; i<4;i++){
+      svs.add(new SensorValue(1337*i, true, "fuckdigsimon", 7331*i));
+      svs.add(new SensorValue(7331*i, false, "fuckdigsimon", 1337*i));
+      SensorState ss = new SensorState(svs, Instant.now());
+      samples.add(sampler.getSample(norm.Normalize(ss)));
+    }
   }
 
   @Test
