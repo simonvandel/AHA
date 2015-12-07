@@ -26,29 +26,31 @@ public class Main
         int scopeSize = 6;
         int emulatableNum = 2;
 
-        Sample sample;
-        DB db = DB.getInstance();
-        db.createDB();
-        Sampler sampler = Sampler.getInstance(scopeSize, emulatableNum);
+    Sample sample;
+    DB db = DB.getInstance();
 
         List<NormalizedValue> nValueList;
         NormalizedSensorState nState;
 
         while (true)
         {
-            /*if (!queueOfSensorState.isEmpty())
-            {
-                nValueList = nm.Normalize(queueOfSensorState.poll()).getNormalizesValues();
-                nState = nm.Normalize(queueOfSensorState.poll());
-                for (int i = 0; i < nValueList.size(); i++)
-                {
-                    System.out.println("Got: " + nValueList.get(i).getValue() + ", isEmulatable: " + nValueList.get(i).isEmulatable());
-                }
+          sample = sampler.getSample(nState);
+          oReasoner.reason(sample);
+          db.putStateScopeIntoDB(sample);
 
-                sample = sampler.getSample(nState);
-                db.putStateScopeIntoDB(sample);
-            }
-            nValueList = null;*/
+
         }
+      }
+      if(Instant.now().isAfter(learnerRun.plusSeconds(learnerRunInverval))){
+        if(learnerThread.getState() == Thread.State.NEW){
+          learnerThread.start();
+          learnerRun = Instant.now();
+        } else if(learnerThread.getState() == Thread.State.WAITING) {
+          synchronized (learnerThread){
+            learnerThread.notify();
+          }
+          learnerRun = Instant.now();
+        }
+      }
     }
 }
