@@ -127,4 +127,28 @@ public class EmissionMatrix extends CommonMatrix
     return Pair.with(mostProbableEmissionState, maxProbability);
   }
 
+  public void setProbabilityAndNormalise(int newProbability, HiddenState hiddenState, EmissionState emissionState){
+    int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(hiddenState);
+    int emissionStateIndex = mapWarden.emissionStateToEmissionStateIndex(emissionState);
+
+    // calculate the difference between the current value and the value to set the probability to
+    double currentProbability = getEntry(hiddenState, emissionState);
+    double diff = newProbability - currentProbability;
+
+    // set the probability to the newProbability
+    setEntry(hiddenState, emissionState, newProbability);
+
+    // normalise the rest of the values
+    int valuesToNormalise = (matrix.getColumnDimension() * matrix.getRowDimension() - 1);
+    double valueToOffsetRest = diff / valuesToNormalise;
+    for (int row = 0; row < matrix.getRowDimension(); row++){
+      for (int col = 0; col < matrix.getColumnDimension(); col++){
+        if (row != emissionStateIndex && col != hiddenStateIndex) {
+          double curProb = matrix.getEntry(row, col);
+          double valueToSet = curProb + valueToOffsetRest;
+          matrix.setEntry(row, col, valueToSet);
+        }
+      }
+    }
+  }
 }

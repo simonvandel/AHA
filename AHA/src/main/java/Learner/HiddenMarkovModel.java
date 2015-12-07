@@ -2,7 +2,6 @@ package Learner;
 
 import Reasoner.IModel;
 import Reasoner.Reasoning;
-import Sampler.Action;
 import Sampler.Sample;
 import org.javatuples.Pair;
 
@@ -191,7 +190,26 @@ public class HiddenMarkovModel implements IModel
   }
 
   @Override
-  public void TakeFeedback(Action a1, Action a2)
+  public void TakeFeedback(Reasoning wrongReasoning)
   {
+    for (int i = 0; i < wrongReasoning.getHiddenStates().size() && i < wrongReasoning.getObservations().size(); i++) {
+      HiddenState currentHiddenState = wrongReasoning.getHiddenStates().get(i);
+      EmissionState currentEmissionState = mapWarden.observationToEmission(wrongReasoning.getObservations().get(i));
+      HiddenState nextHiddenState;
+
+      // check that we have not reached the end
+      if (i != wrongReasoning.getHiddenStates().size() - 1) {
+        nextHiddenState = wrongReasoning.getHiddenStates().get(i + 1);
+      }
+      else{
+        break;
+      }
+
+      // set the probability that currentHiddenState emits currentEmissionState to 0, as it was the wrong thing to do
+      emissionMatrix.setProbabilityAndNormalise(0, currentHiddenState, currentEmissionState);
+
+      // set the probability that currenHiddenState transitions to nextHiddenState to 0
+      transitionMatrix.setProbabilityAndNormalise(0, currentHiddenState, nextHiddenState);
+    }
   }
 }

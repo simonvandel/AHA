@@ -40,9 +40,7 @@ public class TransitionMatrix extends CommonMatrix
       for (HiddenState j: mapWarden.iterateHiddenStates())
       {
         double probability = calcNewTransitionProbability(i, j);
-        int iIndex = mapWarden.hiddenStateToHiddenStateIndex(i);
-        int jIndex = mapWarden.hiddenStateToHiddenStateIndex(j);
-        matrix.setEntry(iIndex, jIndex, probability);
+        setEntry(i, j, probability);
       }
     }
   }
@@ -83,9 +81,11 @@ public class TransitionMatrix extends CommonMatrix
     return matrix.getEntry(toHiddenStateIndex, fromHiddenStateIndex);
   }
 
-  public void setEntry(int i, int j, double probability)
+  public void setEntry(HiddenState fromHiddenState, HiddenState toHiddenState, double probability)
   {
-    matrix.setEntry(i,j, probability);
+    int fromHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(fromHiddenState);
+    int toHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(toHiddenState);
+    matrix.setEntry(toHiddenStateIndex, fromHiddenStateIndex, probability);
   }
 
   // returns the hidden state index that hiddenStateIndex is most likely to transition from, along with the probability to do so
@@ -106,5 +106,30 @@ public class TransitionMatrix extends CommonMatrix
     HiddenState mostProbableHiddenState = mapWarden.hiddenStateIndexToHiddenState(mostProbableIndex);
 
     return Pair.with(mostProbableHiddenState, maxProbability);
+  }
+
+  public void setProbabilityAndNormalise(double newProbability, HiddenState fromHiddenState, HiddenState toHiddenState){
+    int fromHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(fromHiddenState);
+    int toHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(toHiddenState);
+
+    // calculate the difference between the current value and the value to set the probability to
+    double currentProbability = getEntry(fromHiddenState, toHiddenState);
+    double diff = newProbability - currentProbability;
+
+    // set the probability to the newProbability
+    setEntry(fromHiddenState, toHiddenState, newProbability);
+
+    // normalise the rest of the values
+    int valuesToNormalise = (matrix.getColumnDimension() * matrix.getRowDimension() - 1);
+    double valueToOffsetRest = diff / valuesToNormalise;
+    for (int row = 0; row < matrix.getRowDimension(); row++){
+      for (int col = 0; col < matrix.getColumnDimension(); col++){
+        if (row != toHiddenStateIndex && col != fromHiddenStateIndex) {
+          double curProb = matrix.getEntry(row, col);
+          double valueToSet = curProb + valueToOffsetRest;
+          matrix.setEntry(row, col, valueToSet);
+        }
+      }
+    }
   }
 }
