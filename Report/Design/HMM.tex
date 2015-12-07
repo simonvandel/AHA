@@ -1,0 +1,45 @@
+­\section{Hidden Markov Model}
+The machine intellegence model of the project can only be based on the sesnsors of the problem domain and time since this is the only information the system gets. For this we will use the term ­\emph{snapshot}. A snapshot is here ment as the values of all sensors in the home at the same time, ­snapshot will from here on adhere to this definition.
+
+An initial implementation of a Markov chain in our problem domain could make the states in the model snapshots of the sensors in the home.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[ellipse] (1)    [draw=black, minimum width=1cm, minimum height=.75cm] {1};
+  \node[ellipse] (2)    [draw=black, minimum width=1cm, minimum height=.75cm, right=of 1] {2};
+  \node          (dots) [draw=none,  minimum width=1cm, minimum height=.75cm, right=of 2] {\LARGE \dots};
+  \node[ellipse] (tp1)  [draw=black, minimum width=1cm, minimum height=.75cm, right=of dots] {t-1};
+  \node[ellipse] (t)    [draw=black, minimum width=1cm, minimum height=.75cm, right=of tp1] {t};
+  \node[ellipse] (tf1)  [draw=black, minimum width=1cm, minimum height=.75cm, right=of t] {t+1};
+
+  %1. order lines
+  \draw [->, to path={-| (\tikztotarget)}] (1) edge[out=0,in=180] (2);
+  \draw [->, to path={-| (\tikztotarget)}] (2) edge[out=0,in=180] (dots);
+  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=0,in=180] (tp1)
+  \draw [->, to path={-| (\tikztotarget)}] (tp1) edge[out=0,in=180] (t);
+  \draw [->, to path={-| (\tikztotarget)}] (t) edge[out=0,in=180] (tf1);
+  
+  %2. order lines
+  \draw [->, to path={-| (\tikztotarget)}] (1) edge[out=45,in=135] (dots);
+  \draw [->, to path={-| (\tikztotarget)}] (2) edge[out=45,in=135] (dots);
+  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=45,in=135] (tp1);
+  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=45,in=135] (t);
+  \draw [->, to path={-| (\tikztotarget)}] (tp1) edge[out=45,in=135] (tf1);
+\end{tikzpicture}
+\caption[Caption]{Bla bla}\label{fig:monolithic_system}
+\end{figure}
+
+A markov chain can have multiple orders. This is how many . Another problem also arises when using markov models. Of how high order should the model be? A first order 
+
+ In a markov chain.
+Hidden states: The real pattern the user is currently doing.
+Evidence states: Snapshots of the problem domain.
+
+Hidden Markov chains are the simplest form of
+
+\subsection{Learning}
+For learning the Baum-Welch algorithm, a specific implementatian of the forwards-backwards algorithm, was choosen.
+
+\subsection{Prediction}
