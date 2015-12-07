@@ -50,13 +50,18 @@ public class Reasoner {
    * @param sample the sample to reason about
      */
   public void reasonAndSend(Sample sample){
-    Action action = reason(sample);
-    if(action != null){
-      try{
-        com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
-      } catch (XBeeException e){
-        //Would probably be a good idea to handle the exception instead of ignoring it...
+    List<Action> actions = reason(sample);
+    if(actions != null){
+      for (Action action :
+          actions)
+      {
+        try{
+          com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
+        } catch (XBeeException e){
+          //Would probably be a good idea to handle the exception instead of ignoring it...
+        }
       }
+
     }
   }
 
@@ -65,13 +70,21 @@ public class Reasoner {
    * @param sample the sample to reason about
    * @return an action which is probable according to the model
      */
-  public Action reason(Sample sample) {
-    Action action = currentModel.CalculateAction(sample);
+  public List<Action> reason(Sample sample) {
+    List<Action> actions = currentModel.CalculateAction(sample);
     sentActions.cleanUp();
-    if(action != null){
-      sentActions.put(action.toString(), action);
+    if (actions == null) {
+      return null;
     }
-    return action;
+    for (Action action :
+        actions)
+    {
+      if(action != null){
+        sentActions.put(actions.toString(), action);
+      }
+    }
+
+    return actions;
   }
 
   /**
@@ -102,7 +115,3 @@ public class Reasoner {
 //  void FlagModel(Action a1, Action a2){}
 //}
 //
-interface IModel {
-  Action CalculateAction(Sample s); //should calculate the most likely action to occur (which is above a certain threshold)
-  void TakeFeedback(Action a1, Action a2); //used to update the reasoners model based on two wrong actions
-}

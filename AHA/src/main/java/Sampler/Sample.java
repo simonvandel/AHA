@@ -55,4 +55,22 @@ public class Sample {
     }
     return string;
   }
+
+  @Override
+  public boolean equals(Object o)
+  {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Sample sample = (Sample) o;
+
+    return mStatesHashed.equals(sample.mStatesHashed);
+
+  }
+
+  @Override
+  public int hashCode()
+  {
+    return mStatesHashed.hashCode();
+  }
 }
