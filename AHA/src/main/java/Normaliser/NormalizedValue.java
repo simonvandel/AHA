@@ -4,7 +4,7 @@ package Normaliser;
  * Created by Zobair on 19-11-2015.
  */
 public class NormalizedValue{
-  private final int value;
+  private int value;
   private final boolean isEmulatable;
   private final String deviceAddress;
   private final int sensorIndexOnDevice;
@@ -21,6 +21,7 @@ public class NormalizedValue{
   {
     return this.value;
   }
+  public void setValue(int newValue){ value = newValue; }
 
   public boolean isEmulatable() {
     return isEmulatable;
