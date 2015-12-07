@@ -22,7 +22,7 @@ public class Main
     {
         SensorPacketWorker oWorker = new SensorPacketWorker();
         DataReceiver dr = new DataReceiver(oWorker);
-        Communicator oCommunicator = new Communicator("/dev/ttyUSB1", 9600, dr);
+        Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr);
         Normalizer nm = Normalizer.getInstance();
         Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
         oWorker.registerOutputTo(queueOfSensorState);

@@ -50,7 +50,7 @@ public class Sampler {
   public Sample getSample(NormalizedSensorState newState) {
     List<Action> acs = findActions(mPrevious,newState);
     moveScope(newState);
-    return new Sample(mHistory,newState.getTime().getNano(),acs);
+    return new Sample(mHistory,newState.getTime(),acs);
   }
 
   private void moveScope(NormalizedSensorState newState){

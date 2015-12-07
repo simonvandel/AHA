@@ -3,18 +3,24 @@ package Sampler;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by heider on 19/11/15.
  */
+@Entity
+@Table(name = "Sample")
 public class Sample {
   private List<Integer> mStatesHashed = new ArrayList<Integer>();
-  private int mTime = 0;
+  private Instant mTime = null;
   private List<Action> mActions = new ArrayList<Action>();
 
-  public Sample(List<NormalizedSensorState> states, int time, List<Action> actions) {
+  public Sample(List<NormalizedSensorState> states, Instant time, List<Action> actions) {
     for (int i = 0; i <= states.size() - 1; i++) {
       mStatesHashed.add(states.get(i).hashCode());
     }
@@ -26,7 +32,8 @@ public class Sample {
     return mStatesHashed;
   }
 
-  public int getTime() {
+  @Id
+  public Instant getTime() {
     return mTime;
   }
 
