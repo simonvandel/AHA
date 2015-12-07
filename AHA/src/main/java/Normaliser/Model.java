@@ -48,7 +48,6 @@ public class Model implements Runnable {
         return -1;
     }
 
-    //TODO implement the normalizer
     //modelBeingMade and modelBeingAssigned are mutex variables, there are two because we dont want to start generating a new model in the middle of generating one
     //but we also dont want to lock out the main loop while generating, when its only nessacary when implementing/assigning the new model
     public void run() {
