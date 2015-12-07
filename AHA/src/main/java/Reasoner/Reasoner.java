@@ -23,19 +23,17 @@ import java.util.concurrent.TimeUnit;
  */
 public class Reasoner {
   private static Reasoner reasoner;
-  private DB db = null;
-  private IModel currentModel = null;
+  private DB db = DB.getInstance();
+  private IModel currentModel = null; //TODO db.getModel();
   private Communicator com = null;
   //husk actions vi har sendt, indenfor 5 sekunder, så vi kan tjekke om de actions vi får er bruger eller system
-  private Cache<String, Action> sentActions = CacheBuilder
+  private Cache<Action, Reasoning> sentActions = CacheBuilder
           .newBuilder()
           .concurrencyLevel(1)
           .expireAfterWrite(5, TimeUnit.SECONDS)
           .build();
 
   private Reasoner() {
-    //db = DB.getInstance();
-    //currentModel = db.getModel();
   }
   public static Reasoner getInstance(){
     if(reasoner == null){
@@ -75,28 +73,35 @@ public class Reasoner {
     if (reasoning == null) {
       return null;
     }
-    for (Action action :
-        reasoning.getActions())
-    {
-      if(action != null){
-        sentActions.put(reasoning.toString(), action);
-      }
+    if(reasoning.getActions().isEmpty()){
+      return null;
     }
+    reasoning.getActions() //foreach action store in cache
+        .stream()
+        .filter(action -> action != null)
+        .forEach(action -> sentActions.put(action, reasoning));
 
     return reasoning.getActions();
   }
 
   /**
-   * Given an action, determines if this was performed by the system within the last 5 seconds
-   * @param action the action to check for
-   * @return true if the action was performed by the system, false otherwise
+   * Gives the reasoning behind the given system action
+   * @param action the action to get the reasoning behind
+   * @return a reasoning or null, if action was not system action (or time limit has expired)
    */
-  public boolean wasSystemAction(Action action){
-    sentActions.cleanUp();
-    if(sentActions.asMap().containsValue(action)){
-      return true;
+  public Reasoning getReasoningBehindAction(Action action){
+    if(sentActions.asMap().containsKey(action)){
+      return sentActions.asMap().get(action);
     }
-    return false;
+    return null;
+  }
+
+  /**
+   * Updates the reasoners instance of the model s.t. the same mistake will not be made several times in a row
+   * @param reasoning the reasoning behind the action, which was a mistake
+   */
+  public void updateModel(Reasoning reasoning){
+
   }
 }
 

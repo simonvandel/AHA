@@ -4,6 +4,7 @@ import Database.DB;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
 import Reasoner.Reasoner;
+import Reasoner.Reasoning;
 import com.google.common.cache.*;
 
 import java.time.Instant;
@@ -163,9 +164,10 @@ public class Sampler {
                   .get(i)
                   .getVal1()
                   .getValue()); //Correct the state to have the value of before the action happened
-          if(reasoner.wasSystemAction(validActions.get(i))){
-            //TODO: Flag the model in the DB
-            //TODO: Tell Reasoner to update its model??
+          Reasoning reasoning = reasoner.getReasoningBehindAction(validActions.get(i));
+          if(reasoning != null){
+            db.flagModel(reasoning);
+            reasoner.updateModel(reasoning);
           }
         }
       }

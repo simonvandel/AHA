@@ -1,6 +1,7 @@
 package Database;
 
 import Normaliser.NormalizedSensorState;
+import Reasoner.Reasoning;
 import Sampler.Sample;
 
 import java.sql.Connection;
@@ -42,7 +43,7 @@ public class DB {
    */
   public static DB getInstance() {
     if (db == null) {
-      db = new DB(6, 6); //TODO scopeSize and actionsNum need proper values. 6 as it is the smallest perfect number: 1*2*3 = 6
+      db = new DB(6, 6); //TODO scopeSize and actionsNum need proper values. 6 was chosen because it is the smallest perfect number: 1*2*3 = 6
     }
     return db;
   }
@@ -127,5 +128,14 @@ public class DB {
       System.out.println("SQLException: " + ex.getMessage());
     }
     return 0;
+  }
+
+  //TODO implement this pls
+  /**
+   * flags the model in the DB, s.t. the learner can tell that an action was wrong
+   * @param reasoning the reasoning behind the action
+   */
+  public void flagModel(Reasoning reasoning){
+    return;
   }
 }
