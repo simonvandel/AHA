@@ -4,7 +4,11 @@ The purpose of the normaliser is to reduce the size of data such that large data
 
 \subsection{The Elbow Method}
 \label{sub:elbow_method}
-The elbow method is using the variance 
-
+The elbow method uses the variance of the each cluster to determine, how many clusters are the optimal amount. The idea is simple and can be described as follows:
+$$ Start with k = 1   Where k is numbers of clusters and k>0
+$$ Increase k until the percentage difference in variance drops then
+optimal number of k is reached$$
+One start with a number clusters and then variance of each cluster is calculated and compared across the clusters. The variance is calculated in this fashion: 
+$$ \sum_{i = 1}^{n}x_{i}-\overline{x}$$
 \subsection{Jenks' Natural Breaks Optimisation}
 \label{sub:jenks} 
