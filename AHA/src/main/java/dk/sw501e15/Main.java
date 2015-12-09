@@ -37,7 +37,7 @@ public class Main
     DB db = DB.getInstance();
 
     db.createDB();
-    Sampler sampler = Sampler.getInstance(0,0);
+    Sampler sampler = Sampler.getInstance(2,2);
 
     Reasoner oReasoner = Reasoner.getInstance();
     oReasoner.setCommunicator(oCommunicator);
@@ -77,7 +77,7 @@ public class Main
         if (nState != null)
         {
           sample = sampler.getSample(nState);
-          oReasoner.reason(sample);
+          //oReasoner.reason(sample);
           db.putStateScopeIntoDB(sample);
 
         }
