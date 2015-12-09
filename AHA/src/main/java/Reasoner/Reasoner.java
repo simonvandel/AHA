@@ -73,15 +73,20 @@ public class Reasoner {
    * @return an action which is probable according to the model
      */
   public List<Action> reason(Sample sample) {
+    if(currentModel == null){
+      currentModel = db.getModel();
+      if(currentModel == null){
+        return null;
+      }
+    }
     Reasoning reasoning = currentModel.CalculateReasoning(sample);
-    sentActions.cleanUp();
     if (reasoning == null) {
       return null;
     }
     if(reasoning.getActions().isEmpty()){
       return null;
     }
-    reasoning.getActions() //foreach action store in cache
+    reasoning.getActions() //foreach action, store in cache
         .stream()
         .filter(action -> action != null)
         .forEach(action -> sentActions.put(action, reasoning));
