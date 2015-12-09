@@ -2,12 +2,19 @@ package Sampler;
 
 import Communication.SensorValue;
 import Normaliser.NormalizedValue;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
 import java.nio.ByteBuffer;
-
+@DatabaseTable(tableName = "Actions")
 public class Action {
+  @DatabaseField(canBeNull = true, foreign = true)
+  private Sample dbs;
+  @DatabaseField(foreign = true)
   private NormalizedValue mVal1;
+  @DatabaseField(foreign = true)
   private NormalizedValue mVal2;
+  @DatabaseField
   private int mSensorId;
 
   public Action(NormalizedValue val1, NormalizedValue val2, int sensorId) {
@@ -15,6 +22,8 @@ public class Action {
     this.mVal2 = val2;
     this.mSensorId = sensorId;
   }
+
+  private Action(){}
 
   public int getDevice() {
     return mSensorId;

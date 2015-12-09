@@ -3,6 +3,7 @@ package Database;
 import Communication.SensorState;
 import Communication.SensorValue;
 import Normaliser.Sensor;
+import Sampler.Action;
 import Sampler.Sample;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
@@ -23,6 +24,7 @@ public class HiDB
   private static Dao<Sample,String> samplesDao = null;
   private static Dao<SensorState,String> sensorStateDao = null;
   private static Dao<SensorValue,String> sensorValueDao = null;
+  private static Dao<Action,String> actionDao = null;
 
   protected void setUp() {
     //this uses h2 but you can change it to match your database
@@ -33,13 +35,16 @@ public class HiDB
 
       // Sampler Dao and database
       samplesDao = DaoManager.createDao(connectionSource, Sample.class);
-      TableUtils.createTable(connectionSource, Sample.class);
+      TableUtils.createTableIfNotExists(connectionSource, Sample.class);
       // SensorState Dao and database
       sensorStateDao = DaoManager.createDao(connectionSource, SensorState.class);
-      TableUtils.createTable(connectionSource, SensorState.class);
+      TableUtils.createTableIfNotExists(connectionSource, SensorState.class);
       // SensorValue Dao and database
       sensorValueDao = DaoManager.createDao(connectionSource, SensorValue.class);
-      TableUtils.createTable(connectionSource, SensorValue.class);
+      TableUtils.createTableIfNotExists(connectionSource, SensorValue.class);
+      // Action Dao and database
+      actionDao = DaoManager.createDao(connectionSource, Action.class);
+      TableUtils.createTableIfNotExists(connectionSource, Action.class);
     } catch (Exception ex){
       ex.printStackTrace();
     }

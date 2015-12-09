@@ -25,7 +25,7 @@ public class HiDBTest
   @Before
   public void setUp() {
     Sampler sampler = Sampler.getInstance(2,1);
-    for(int i=0; i<4;i++){
+    for(int i=0; i<10;i++){
       NormalizedSensorState ns = new NormalizedSensorState(Instant.now());
       ns.AddNormalizedValue(new NormalizedValue(1337*i, true, "fuckdigsimon", 7331*i));
       samples.add(sampler.getSample(ns));
@@ -39,7 +39,7 @@ public class HiDBTest
 
   @Test
   public void getSamplesTest() {
-    db.getSamples();
+    System.out.print(db.getSamples());
   }
 
   @Test
@@ -47,12 +47,16 @@ public class HiDBTest
     List<SensorValue> svs = new ArrayList<>();
     svs.add(new SensorValue(1337, true, "fuckdigsimon", 7331));
     svs.add(new SensorValue(7331, false, "fuckdigsimon", 1337));
+    svs.add(new SensorValue(1337, true, "fuckdigsimon", 7331));
+    svs.add(new SensorValue(7331, false, "fuckdigsimon", 1337));
+    svs.add(new SensorValue(1337, true, "fuckdigsimon", 7331));
+    svs.add(new SensorValue(7331, false, "fuckdigsimon", 1337));
     db.putNewSensorState(new SensorState(svs,Instant.now()));
   }
 
   @Test
   public void getSensorStateTest() {
-    db.getSensorStates();
+      db.getSensorStates();
   }
 
   @Test
@@ -62,6 +66,6 @@ public class HiDBTest
 
   @Test
   public void getSensorValuesTest() {
-    db.getSensorValues();
+    System.out.print(db.getSensorValues());
   }
 }

@@ -19,7 +19,7 @@ import java.util.List;
 public class SensorState {
     @DatabaseField(generatedId = true, unique = true)
     private int id;
-    @ForeignCollectionField(eager = false)
+    @ForeignCollectionField(eager = true)
     private Collection<SensorValue> mpValues = new ArrayList<SensorValue>(); //persistable values
     private List<SensorValue> mValues = new ArrayList<SensorValue>();
     @DatabaseField(persisterClass = InstantPersister.class)

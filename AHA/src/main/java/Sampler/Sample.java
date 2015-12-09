@@ -1,12 +1,16 @@
 package Sampler;
 
+import Communication.SensorValue;
+import Database.InstantPersister;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -16,19 +20,23 @@ import java.util.List;
 public class Sample {
   @DatabaseField(generatedId = true, unique = true)
   private int id;
-
+  //@ForeignCollectionField(eager = true)
+  //private Collection<Integer> mpStatesHashed = new ArrayList<Integer>(); //persistable values
   private List<Integer> mStatesHashed = new ArrayList<Integer>();
-
+  @DatabaseField(persisterClass = InstantPersister.class)
   private Instant mTime = null;
-
+  @ForeignCollectionField(eager = true)
+  private Collection<Action> mpActions = new ArrayList<Action>(); //persistable values
   private List<Action> mActions = new ArrayList<Action>();
 
   public Sample(List<NormalizedSensorState> states, Instant time, List<Action> actions) {
     for (int i = 0; i <= states.size() - 1; i++) {
       mStatesHashed.add(states.get(i).hashCode());
     }
+    //mpStatesHashed = mStatesHashed;
     mTime = time;
     mActions = actions;
+    mpActions = actions;
   }
 
   private Sample(){}
