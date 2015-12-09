@@ -10,7 +10,9 @@ import Normaliser.NormalizedValue;
 import Normaliser.Normalizer;
 import Sampler.*;
 
+import java.sql.Time;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.LinkedTransferQueue;
@@ -35,7 +37,6 @@ public class Main
 
         while (true)
         {
-          /*
           sample = sampler.getSample(nState);
           oReasoner.reason(sample);
           db.putStateScopeIntoDB(sample);
@@ -53,7 +54,6 @@ public class Main
           }
           learnerRun = Instant.now();
         }
-       */
       }
     }
 }
