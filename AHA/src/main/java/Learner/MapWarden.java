@@ -17,6 +17,7 @@ public class MapWarden // dun dun du du dun dun
   private HashMap<EmissionState, Integer> emissionStateMap;
   private HashMap<Observation, Integer> observationToIndexMap;
   private HashMap<Observation, EmissionState> observationToEmissionStateMap;
+  private double[] scalingFactor;
 
   public EmissionState observationToEmission(Observation observation)
   {
@@ -87,6 +88,17 @@ public class MapWarden // dun dun du du dun dun
       Observation observation = observations.get(i);
       observationToIndexMap.putIfAbsent(observation, i);
     }
+
+    scalingFactor = new double[getNumObservations()];
+
+  }
+
+  public void setScalingFactor(int index, double value) {
+    scalingFactor[index] = value;
+  }
+
+  public double getScalingFactor(int index) {
+    return scalingFactor[index];
   }
 
   public int getNumEmissionStates()
@@ -162,5 +174,14 @@ public class MapWarden // dun dun du du dun dun
   public Iterable<EmissionState> iterateEmissionStates()
   {
     return emissionStates;
+  }
+
+  public void addObservationMapping(Observation observation){
+    for (int j = 0; j < emissionStates.size(); j++){
+      EmissionState emissionState = emissionStates.get(j);
+      if (emissionState.equalsObservation(observation)){
+        observationToEmissionStateMap.putIfAbsent(observation, emissionState);
+      }
+    }
   }
 }

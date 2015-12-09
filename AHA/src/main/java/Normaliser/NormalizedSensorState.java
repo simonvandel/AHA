@@ -1,8 +1,11 @@
 package Normaliser;
 
+import Communication.SensorState;
+
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Zobair on 19-11-2015.
@@ -16,6 +19,14 @@ public class NormalizedSensorState
     {
         this.normalizesValues = new ArrayList<NormalizedValue>();
         this.time = time;
+    }
+
+    public NormalizedSensorState(SensorState sensorState) {
+        this.normalizesValues = sensorState
+            .getValues().stream()
+            .map(x -> new NormalizedValue(x.getValue(), x.isEmulatable(), x.getDeviceAddress(), x.getSensorIndexOnDevice()))
+            .collect(Collectors.toList());
+        this.time = sensorState.getTime();
     }
 
     /**
@@ -58,7 +69,7 @@ public class NormalizedSensorState
     public int hashCode() {
         int hash = 0;
         for(int i=0;i<normalizesValues.size();i++)
-            hash += normalizesValues.get(i).getValue() * 17 * time.hashCode();
+            hash += normalizesValues.get(i).getValue() * 17;
         return hash;
     }
 }

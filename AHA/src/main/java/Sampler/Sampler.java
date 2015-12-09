@@ -1,20 +1,28 @@
 package Sampler;
 
+import Database.DB;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
+import Reasoner.Reasoner;
+import Reasoner.Reasoning;
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.RemovalCause;
+import com.google.common.cache.RemovalListener;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class Sampler {
   private static Sampler mSampler;
-  private final static int SCOPE_SIZE = 2;
+  private final static int SCOPE_SIZE = 1;
   private DB db = DB.getInstance();
   private List<NormalizedSensorState> mHistory;
   private NormalizedSensorState mPrevious;
-  private int mScopeSize = 0;  //TODO Scopesize needs to have a proper value. Why 6? Well, this exclamation has, unexpectedly, six 's', six 'i' and six 'x'!
+  private int mScopeSize = SCOPE_SIZE;  //TODO Scopesize needs to have a proper value. Why 6? Well, this exclamation has, unexpectedly, six 's', six 'i' and six 'x'!
   private RemovalListener<String, Sample> sanitizerListener = removalNotification -> {
     Sample sample = removalNotification.getValue();
     if(removalNotification.getCause() != RemovalCause.EXPIRED){
@@ -73,10 +81,10 @@ public class Sampler {
    */
   public Sample getSample(NormalizedSensorState newState) {
     List<Action> acs = findActions(mPrevious,newState);
-    findInvertedActionsAndCleanStates(new Sample(mHistory,newState.getTime().getNano(),acs), newState); //important: The sample here is not the same as the one below, as newState is modified in this method
+    findInvertedActionsAndCleanStates(new Sample(mHistory,newState.getTime(),acs), newState); //important: The sample here is not the same as the one below, as newState is modified in this method
     List<Action> acsCorrected = findActions(mPrevious, newState); //we find actions again, as newState is modified
     moveScope(newState);
-    Sample res = new Sample(mHistory, newState.getTime().getNano(), acsCorrected);
+    Sample res = new Sample(mHistory, newState.getTime(), acsCorrected);
     return res;
   }
 
@@ -91,9 +99,12 @@ public class Sampler {
    * @return A sensor state
    */
   public List<Action> findActions(NormalizedSensorState state1, NormalizedSensorState state2) {
-    if (state1 == null || state2 == null) {
+    if (state1 == null) {
       // return empty list, as we cannot not find a action if the previous or current state was null
-      return new ArrayList<>();
+      List<Action> acs = findEmulatables(state2).stream()
+          .map(nv -> new Action(null, nv, nv.getSensorIndexOnDevice()))
+          .collect(Collectors.toList());
+      return acs;
     }
     List<NormalizedValue> emulatables1 = findEmulatables(state1);
     List<NormalizedValue> emulatables2 = findEmulatables(state2);

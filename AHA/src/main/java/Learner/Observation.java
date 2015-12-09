@@ -11,7 +11,7 @@ public class Observation
   private int time;
   public Observation(Sample sample)
   {
-    time = sample.getTime();
+    time = sample.getTime().getNano();
     hashCode = sample.getHash().get(sample.getHash().size() - 1);
   }
 

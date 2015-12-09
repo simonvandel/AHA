@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class XiMatrix
 {
-  // matrix[row][col][depth] where rows are hidden states, cols are hidden states and depths are observations
+  /*// matrix[row][col][depth] where rows are hidden states, cols are hidden states and depths are observations
   private double[][][] matrix;
   private final ForwardsMatrix forwards;
   private final BackwardsMatrix backwards;
@@ -74,5 +74,5 @@ public class XiMatrix
     int jIndex = mapWarden.hiddenStateToHiddenStateIndex(j);
     int tIndex = mapWarden.observationToObservationIndex(t);
     return matrix[iIndex][jIndex][tIndex];
-  }
+  }*/
 }

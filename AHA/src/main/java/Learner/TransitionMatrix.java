@@ -30,12 +30,14 @@ public class TransitionMatrix extends CommonMatrix
     matrix = new BlockRealMatrix(values);
   }
 
-  public TransitionMatrix(MapWarden mapWarden, GammaMatrix gammaMatrix, XiMatrix xiMatrix) {
+  public TransitionMatrix(MapWarden mapWarden, GammaMatrix gammaMatrix) {
     this.mapWarden = mapWarden;
     this.gammaMatrix = gammaMatrix;
-    this.xiMatrix = xiMatrix;
+
     int numHiddenStates = mapWarden.getNumHiddenStates();
     matrix = new BlockRealMatrix(numHiddenStates, numHiddenStates);
+
+    /*
     for (HiddenState i: mapWarden.iterateHiddenStates())
     {
       for (HiddenState j: mapWarden.iterateHiddenStates())
@@ -43,10 +45,25 @@ public class TransitionMatrix extends CommonMatrix
         double probability = calcNewTransitionProbability(i, j);
         setEntry(i, j, probability);
       }
+    }*/
+
+    for (HiddenState i : mapWarden.iterateHiddenStates()){
+      for (HiddenState j : mapWarden.iterateHiddenStates()){
+        double numer = 0;
+        double denom = 0;
+        for (int t = 0; t <= mapWarden.getNumObservations() - 2; t++){
+          Observation tObservation = mapWarden.observationIndexToObservation(t);
+          numer += gammaMatrix.getXiEntry(tObservation, i, j);
+          denom += gammaMatrix.getGammaEntry(tObservation, i);
+        }
+
+        double value = numer / denom;
+        setEntry(i, j, value);
+      }
     }
   }
 
-  private double calcNewTransitionProbability(HiddenState i, HiddenState j)
+  /*private double calcNewTransitionProbability(HiddenState i, HiddenState j)
   {
     double numerator = 0;
     double denominator = 0;
@@ -56,7 +73,7 @@ public class TransitionMatrix extends CommonMatrix
       // do not compute values for the last observation
       if (t != mapWarden.lastObservation()) {
         numerator += xiMatrix.getEntry(i, j, t);
-        denominator += gammaMatrix.getEntry(i,t);
+        denominator += gammaMatrix.getGammaEntry(i,t);
       }
     }
     if (numerator / denominator > 1.0) {
@@ -64,7 +81,7 @@ public class TransitionMatrix extends CommonMatrix
     }
 
     return  numerator / denominator;
-  }
+  }*/
 
   public NormalisedTransitionMatrix normalise()
   {
@@ -97,11 +114,11 @@ public class TransitionMatrix extends CommonMatrix
     double maxProbability = 0;
     int mostProbableIndex = 0;
     int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(hiddenState);
-    double[] column = matrix.getColumn(hiddenStateIndex);
-    for (int i = 0; i < column.length; i++)
+    double[] row = matrix.getRow(hiddenStateIndex);
+    for (int i = 0; i < row.length; i++)
     {
-      if (column[i] > maxProbability) {
-        maxProbability = column[i];
+      if (row[i] > maxProbability) {
+        maxProbability = row[i];
         mostProbableIndex = i;
       }
     }

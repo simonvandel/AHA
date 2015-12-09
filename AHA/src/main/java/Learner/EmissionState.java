@@ -44,6 +44,6 @@ public class EmissionState
 
   public boolean equalsObservation(Observation t)
   {
-    return hashcode == t.getHashCode();
+    return hashcode ==t.getHashCode();
   }
 }

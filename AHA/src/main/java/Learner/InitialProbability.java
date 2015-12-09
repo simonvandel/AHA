@@ -2,8 +2,6 @@ package Learner;
 
 import org.apache.commons.math3.linear.ArrayRealVector;
 
-import java.util.List;
-
 /**
  * Created by simon on 11/30/15.
  */
@@ -24,12 +22,11 @@ public class InitialProbability
   {
     this.mapWarden = mapWarden;
     vector = new ArrayRealVector(mapWarden.getNumHiddenStates());
+    Observation firstObservation = mapWarden.firstObservation();
     for (HiddenState i: this.mapWarden.iterateHiddenStates())
     {
       int iIndex = this.mapWarden.hiddenStateToHiddenStateIndex(i);
-      Observation firstObservation = mapWarden.firstObservation();
-
-      double probability = gammaMatrix.getEntry(i, firstObservation);
+      double probability = gammaMatrix.getGammaEntry(firstObservation, i);
       vector.setEntry(iIndex, probability);
     }
   }

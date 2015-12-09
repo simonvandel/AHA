@@ -47,7 +47,11 @@ public class HiddenMarkovModel implements IModel
   @Override
   public Reasoning CalculateReasoning(Sample s)
   {
-    List<Observation> observationsFromSample = s.getHash().stream().map(observationHashcode -> new Observation(observationHashcode)).collect(Collectors.toList());
+    List<Observation> observationsFromSample = s.getHash()
+        .stream()
+        .map(observationHashcode -> new Observation(observationHashcode))
+        .collect(Collectors.toList());
+
     List<HiddenState> viterbiPath = viterbi(observationsFromSample);
     // if the viterbiPath is null, it means something was wrong in the viterbi algorithm, so we can not predict the next action
     if (viterbiPath == null) {
@@ -87,7 +91,7 @@ public class HiddenMarkovModel implements IModel
     confidence += transitionPair.getValue1();
     sums += 1;
 
-    Pair<Observation, Double> emissionPair = normalisedEmissionMatrix.mostProbableTransitionFrom(transitionPair.getValue0());
+    Pair<EmissionState, Double> emissionPair = normalisedEmissionMatrix.mostProbableTransitionFrom(transitionPair.getValue0());
     confidence += emissionPair.getValue1();
     sums += 1;
 
@@ -96,10 +100,9 @@ public class HiddenMarkovModel implements IModel
 
     // check whether we are confident enough to perform the action
     if (confidence > someThreshold) {
-      Observation observationPredicted = emissionPair.getValue0();
       List<HiddenState> hiddenStatesPath = new ArrayList<>(viterbiPath);
       hiddenStatesPath.add(finalHiddenState);
-      EmissionState emissionStatePredicted = mapWarden.observationToEmission(observationPredicted);
+      EmissionState emissionStatePredicted = emissionPair.getValue0();
       Reasoning reasoning = new Reasoning(emissionStatePredicted.getActions(), hiddenStatesPath, observationsFromSample);
       return reasoning;
       }
@@ -128,19 +131,17 @@ public class HiddenMarkovModel implements IModel
     List<List<Pair<Double, HiddenState>>> VList = new ArrayList<>(observationHashes.size());
     List<Pair<Double, HiddenState>> probabilities = new ArrayList<>(numHiddenStates);
 
+
+    Observation firstObservation = observationHashes.get(0);
+    mapWarden.addObservationMapping(firstObservation);
+    EmissionState firstEmissionState = mapWarden.observationToEmission(firstObservation);
     // Calculate the probabilities that each hidden state k emitted the first observed value.
-    for (HiddenState k: mapWarden.iterateHiddenStates())
+    for (HiddenState i: mapWarden.iterateHiddenStates())
     {
-      Observation observation = observationHashes.get(0);
-      // if the emissionState is null, it has not yet been observed.
-      // We should just terminate the algorithm, as we can not predict anything sensible
-      // if we have not observed the observation before
-      if (observation == null) {
-        return null;
-      }
-      double value = emissionMatrix.getEntry(k, observation) * initialProbability.getProbability(k);
-      int kIndex = mapWarden.hiddenStateToHiddenStateIndex(k);
-      probabilities.add(kIndex,Pair.with(value, k));
+      // taking the log probability
+      double value = Math.log( initialProbability.getProbability(i) * emissionMatrix.getEntry(i, firstEmissionState) );
+      int iIndex = mapWarden.hiddenStateToHiddenStateIndex(i);
+      probabilities.add(iIndex,Pair.with(value, i));
     }
 
     // copy the probabilities calculated for the first observation value to VList
@@ -153,23 +154,33 @@ public class HiddenMarkovModel implements IModel
       probabilities.clear();
 
       // k is the k th hidden state
-      for (HiddenState k: mapWarden.iterateHiddenStates())
+      for (HiddenState i: mapWarden.iterateHiddenStates())
       {
-        double maxProbability = 0;
+        double maxProbability = Double.NEGATIVE_INFINITY;
         HiddenState maxState = null;
-        double factor = emissionMatrix.getEntry(k, mapWarden.observationIndexToObservation(t));
+        Observation tObservation = observationHashes.get(t); //mapWarden.observationIndexToObservation(t);
+        mapWarden.addObservationMapping(tObservation);
+        EmissionState tEmissionState = mapWarden.observationToEmission(tObservation);
+
+        if (tEmissionState == null) {
+          // we have never seen an emission like that before, so we can not reason about it
+          return null;
+        }
+
+        // we take the log of the probability
+        double factor = Math.log( emissionMatrix.getEntry(i, tEmissionState) );
 
         // x is the x th hidden state
-        for (HiddenState x: mapWarden.iterateHiddenStates())
+        for (HiddenState j: mapWarden.iterateHiddenStates())
         {
-          int xIndex = mapWarden.hiddenStateToHiddenStateIndex(x);
-          double tempProb = factor * transitionMatrix.getEntry(x,k) * VList.get(t-1).get(xIndex).getValue0();
+          int jIndex = mapWarden.hiddenStateToHiddenStateIndex(j);
+          double tempProb = VList.get(t - 1).get(jIndex).getValue0() +  Math.log(transitionMatrix.getEntry(j, i)) + factor;
           if (tempProb > maxProbability) {
             maxProbability = tempProb;
-            maxState = x;
+            maxState = j;
           }
         }
-        int kIndex = mapWarden.hiddenStateToHiddenStateIndex(k);
+        int kIndex = mapWarden.hiddenStateToHiddenStateIndex(i);
         // store what the maximum probability was to emit observation t from hidden state k, as well as k represented as a hidden state type
         probabilities.add(kIndex, Pair.with(maxProbability, maxState));
       }
@@ -196,11 +207,13 @@ public class HiddenMarkovModel implements IModel
     }
 
     return path;
+
   }
 
   @Override
   public void TakeFeedback(Reasoning wrongReasoning)
   {
+    /*
     for (int i = 0; i < wrongReasoning.getHiddenStates().size() && i < wrongReasoning.getObservations().size(); i++) {
       HiddenState currentHiddenState = wrongReasoning.getHiddenStates().get(i);
       Observation currentObservation = wrongReasoning.getObservations().get(i);
@@ -220,5 +233,6 @@ public class HiddenMarkovModel implements IModel
       // set the probability that currenHiddenState transitions to nextHiddenState to 0
       transitionMatrix.setProbabilityAndNormalise(0, currentHiddenState, nextHiddenState);
     }
+    */
   }
 }

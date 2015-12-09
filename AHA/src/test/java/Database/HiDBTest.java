@@ -24,7 +24,7 @@ public class HiDBTest
 
   @Before
   public void setUp() {
-    Sampler sampler = Sampler.getInstance(2,1);
+    Sampler sampler = Sampler.getInstance();
     for(int i=0; i<10;i++){
       NormalizedSensorState ns = new NormalizedSensorState(Instant.now());
       ns.AddNormalizedValue(new NormalizedValue(1337*i, true, "fuckdigsimon", 7331*i));

@@ -12,6 +12,7 @@ import org.junit.Test;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -32,13 +33,15 @@ public class LearnerTest{
     Learner learner = new Learner();
 
     List<Sample> allSamples = new ArrayList<>();
-    for (int i = 0; i < 1; i++){
 
-      mkSampleandAdd(0, 0, 0, allSamples);
+    Random r = new Random(0);
+    for (int i = 0; i < 100; i++){
+
+      /*mkSampleandAdd(0, 0, 0, allSamples);
       mkSampleandAdd(0, 0, 1, allSamples);
       mkSampleandAdd(0, 1, 0, allSamples);
       mkSampleandAdd(0, 1, 1, allSamples);
-      mkSampleandAdd(0, 0, 0, allSamples);
+      mkSampleandAdd(0, 0, 0, allSamples);*/
 
       /*mkSampleandAdd(0, 0, 1, allSamples);
       mkSampleandAdd(1, 0, 1, allSamples);
@@ -50,13 +53,32 @@ public class LearnerTest{
       mkSampleandAdd(0, 0, 0, allSamples);
       mkSampleandAdd(0, 0, 1, allSamples);
       mkSampleandAdd(1, 0, 1, allSamples);
-      mkSampleandAdd(1, 1, 1, allSamples);
-*/    }
+      mkSampleandAdd(1, 1, 1, allSamples);*/
 
+      /*int random1 = r.nextBoolean() ? 1 : 0;
+      int random2 = r.nextBoolean() ? 1 : 0;
+      mkSampleandAdd( random1, 1, 1, allSamples);
+      mkSampleandAdd( random2, 0, 1, allSamples);*/
+
+      int random1 = r.nextBoolean() ? 1 : 0;
+      mkSampleandAdd(0, 0, random1, allSamples);
+      random1 = r.nextBoolean() ? 1 : 0;
+      mkSampleandAdd(0, 0, random1, allSamples);
+      random1 = r.nextBoolean() ? 1 : 0;
+      mkSampleandAdd(1, 0, random1, allSamples);
+      random1 = r.nextBoolean() ? 1 : 0;
+      mkSampleandAdd(1, 1, random1, allSamples);
+      random1 = r.nextBoolean() ? 1 : 0;
+      mkSampleandAdd(1, 1, random1, allSamples);
+      random1 = r.nextBoolean() ? 1 : 0;
+      mkSampleandAdd(1, 1, random1, allSamples);
+
+      /*mkSampleandAdd(1, 1, 1, allSamples);*/
+    }
 
     HiddenMarkovModel model = learner.learn(allSamples);
 
-    Sample inputSample = mkSample(1, 0, 1);
+    Sample inputSample = mkSample(1, 0, 0);
     Reasoning reasoning = model.CalculateReasoning(inputSample);
     // there is only 1 action, so look at index 0
     assertEquals(1, reasoning.getActions().get(0).getChangeToValue());
@@ -70,10 +92,10 @@ public class LearnerTest{
     SensorState sensorState = new SensorState(sensorValues, Instant.ofEpochMilli(timeCounter));
     timeCounter++;
 
-    Normalizer nm = Normalizer.getInstance();
+    //Normalizer nm = Normalizer.getInstance();
     Sampler sampler = Sampler.getInstance();
 
-    NormalizedSensorState normalizedSensorState = nm.Normalize(sensorState);
+    NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sensorState); //nm.Normalize(sensorState);
     return sampler.getSample(normalizedSensorState);
   }
 

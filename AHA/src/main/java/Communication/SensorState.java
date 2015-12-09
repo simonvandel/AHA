@@ -60,7 +60,7 @@ public class SensorState {
     public int hashCode() {
         String hash = "";
         for(int i=0;i<mValues.size()-1;i++)
-            hash = hash + mValues.get(i).hashCode();
+            hash = hash + mValues.get(i).hashCode() * 17;
         return hash.hashCode();
     }
 }

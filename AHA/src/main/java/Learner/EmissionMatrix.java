@@ -13,17 +13,17 @@ public class EmissionMatrix extends CommonMatrix
   protected MapWarden mapWarden;
 
   /**
-   * Generates an observation matrix N x K (hiddenstates x observations) with uniform distribution
+   * Generates an observation matrix N x M (hiddenstates x emissionStates) with uniform distribution
    */
   public EmissionMatrix(MapWarden mapWarden)
   {
     this.mapWarden = mapWarden;
-    int numObservations = mapWarden.getNumObservations();
+    int numEmissionStates = mapWarden.getNumEmissionStates();
     int numHiddenStates = mapWarden.getNumHiddenStates();
-    double[][] values = new double[numHiddenStates][numObservations];
-    double preset = 1d / numObservations;
+    double[][] values = new double[numHiddenStates][numEmissionStates];
+    double preset = 1d / numEmissionStates;
     // initialize the matrix to a uniform distribution
-    double[] innerValueArray = new double[numObservations];
+    double[] innerValueArray = new double[numEmissionStates];
     Arrays.fill(innerValueArray, preset);
     Arrays.fill(values, innerValueArray);
     matrix = new BlockRealMatrix(values);
@@ -33,10 +33,10 @@ public class EmissionMatrix extends CommonMatrix
     this.gammaMatrix = gammaMatrix;
     this.mapWarden = mapWarden;
     int numHiddenStates = mapWarden.getNumHiddenStates();
-    int numObservations = mapWarden.getNumObservations();
-    matrix = new BlockRealMatrix(numHiddenStates, numObservations);
+    int numEmissionStates = mapWarden.getNumEmissionStates();
+    matrix = new BlockRealMatrix(numHiddenStates, numEmissionStates);
 
-    for (HiddenState i :
+/*    for (HiddenState i :
         mapWarden.iterateHiddenStates())
     {
       int iIndex = mapWarden.hiddenStateToHiddenStateIndex(i);
@@ -47,6 +47,23 @@ public class EmissionMatrix extends CommonMatrix
 
         matrix.setEntry(iIndex, jIndex, probability);
       }
+    }*/
+
+    for (HiddenState i : mapWarden.iterateHiddenStates()){
+      for (EmissionState j : mapWarden.iterateEmissionStates()){
+        double numer = 0;
+        double denom = 0;
+        for (Observation t : mapWarden.iterateObservations()){
+          EmissionState tEmission = mapWarden.observationToEmission(t);
+          if (tEmission.equals(j)) {
+            numer += gammaMatrix.getGammaEntry(t, i);
+          }
+          denom += gammaMatrix.getGammaEntry(t, i);
+        }
+
+        double value = numer / denom;
+        setEntry(i, j, value);
+      }
     }
   }
 
@@ -55,13 +72,13 @@ public class EmissionMatrix extends CommonMatrix
     matrix = new BlockRealMatrix(values);
   }
 
-  private double calcNewEmissionProbability(HiddenState i, Observation observation)
+/*  private double calcNewEmissionProbability(HiddenState i, Observation observation)
   {
     double numerator = 0;
     double denominator = 0;
     for (Observation t: mapWarden.iterateObservations())
     {
-      double gammaProbability = gammaMatrix.getEntry(i,t);
+      double gammaProbability = gammaMatrix.getGammaEntry(i,t);
       if(observation.equals(t)) {
         numerator += gammaProbability;
       }
@@ -69,7 +86,7 @@ public class EmissionMatrix extends CommonMatrix
     }
 
     return  numerator / denominator;
-  }
+  }*/
 
   protected EmissionMatrix()
   {
@@ -86,57 +103,57 @@ public class EmissionMatrix extends CommonMatrix
     return new NormalisedEmissionMatrix(mapWarden, normalisedMatrix);
   }
 
-  public double getEntry(HiddenState fromHiddenState, Observation observation)
+  public double getEntry(HiddenState fromHiddenState, EmissionState emissionState)
   {
-    int observationIndex = mapWarden.observationToObservationIndex(observation);
+    int emissionStateIndex = mapWarden.emissionStateToEmissionStateIndex(emissionState);
     int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(fromHiddenState);
-    return matrix.getEntry(hiddenStateIndex, observationIndex);
+    return matrix.getEntry(hiddenStateIndex, emissionStateIndex);
   }
 
-  public void setEntry(HiddenState fromHiddenState, Observation observation, double probability)
+  public void setEntry(HiddenState fromHiddenState, EmissionState emissionState, double probability)
   {
-    int observationIndex = mapWarden.observationToObservationIndex(observation);
+    int emissionStateIndex = mapWarden.emissionStateToEmissionStateIndex(emissionState);
     int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(fromHiddenState);
-    matrix.setEntry(hiddenStateIndex, observationIndex, probability);
+    matrix.setEntry(hiddenStateIndex, emissionStateIndex, probability);
   }
 
   // returns the hidden state index that hiddenStateIndex is most likely to transition from, along with the probability to do so
-  public Pair<Observation, Double> mostProbableTransitionFrom(HiddenState hiddenState)
+  public Pair<EmissionState, Double> mostProbableTransitionFrom(HiddenState hiddenState)
   {
     double maxProbability = 0;
     int mostProbableIndex = 0;
     int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(hiddenState);
-    double[] column = matrix.getColumn(hiddenStateIndex);
-    for (int i = 0; i < column.length; i++)
+    double[] row = matrix.getRow(hiddenStateIndex);
+    for (int i = 0; i < row.length; i++)
     {
-      if (column[i] > maxProbability) {
-        maxProbability = column[i];
+      if (row[i] > maxProbability) {
+        maxProbability = row[i];
         mostProbableIndex = i;
       }
     }
 
-    Observation mostProbableEmissionState = mapWarden.observationIndexToObservation(mostProbableIndex);
+    EmissionState mostProbableEmissionState = mapWarden.emissionStateIndexToEmissionState(mostProbableIndex);
 
     return Pair.with(mostProbableEmissionState, maxProbability);
   }
 
-  public void setProbabilityAndNormalise(int newProbability, HiddenState hiddenState, Observation observation){
+  public void setProbabilityAndNormalise(int newProbability, HiddenState hiddenState, EmissionState emissionState){
     int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(hiddenState);
-    int observationIndex = mapWarden.observationToObservationIndex(observation);
+    int emissionStateIndex = mapWarden.emissionStateToEmissionStateIndex(emissionState);
 
     // calculate the difference between the current value and the value to set the probability to
-    double currentProbability = getEntry(hiddenState, observation);
+    double currentProbability = getEntry(hiddenState, emissionState);
     double diff = newProbability - currentProbability;
 
     // set the probability to the newProbability
-    setEntry(hiddenState, observation, newProbability);
+    setEntry(hiddenState, emissionState, newProbability);
 
     // normalise the rest of the values
     int valuesToNormalise = (matrix.getColumnDimension() * matrix.getRowDimension() - 1);
     double valueToOffsetRest = diff / valuesToNormalise;
     for (int row = 0; row < matrix.getRowDimension(); row++){
       for (int col = 0; col < matrix.getColumnDimension(); col++){
-        if (row != observationIndex && col != hiddenStateIndex) {
+        if (row != emissionStateIndex && col != hiddenStateIndex) {
           double curProb = matrix.getEntry(row, col);
           double valueToSet = curProb + valueToOffsetRest;
           matrix.setEntry(row, col, valueToSet);

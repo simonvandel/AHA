@@ -37,7 +37,7 @@ public class Main
     DB db = DB.getInstance();
 
     db.createDB();
-    Sampler sampler = Sampler.getInstance(2,2);
+    Sampler sampler = Sampler.getInstance();
 
     Reasoner oReasoner = Reasoner.getInstance();
     oReasoner.setCommunicator(oCommunicator);
