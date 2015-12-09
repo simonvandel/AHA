@@ -1,32 +1,112 @@
 ­\section{Hidden Markov Model}
-The machine intellegence model of the project can only be based on the sesnsors of the problem domain and time since this is the only information the system gets. For this we will use the term ­\emph{snapshot}. A snapshot is here ment as the values of all sensors in the home at the same time, ­snapshot will from here on adhere to this definition.
+The only information available for the machine intelligence model of the project are the sensors of the problem domain and time. For this we will use the term ­\emph{snapshot}. A snapshot is here meant as the values of all sensors in the home at the same time, snapshot will from here on adhere to this definition. 
 
-An initial implementation of a Markov chain in our problem domain could make the states in the model snapshots of the sensors in the home.
+To model the machine intelligence the Markov model was chosen. This model en-copes discrete time changes in the states of a world. This is an nearly exact match to this project domain. Further more the model assumes a Newtonian world view. This means what is going to happen in the future is only dependent on what is currently true en the present, not what has happened in the past. We will now introduce the diagrams mainly used to illustrate how the models changes over time graphically. These diagrams are called Trellis diagrams. The simplest form of a Markov model can be seen in \cref{fig:1stMarkovModel}. Here we can see the property that at any state in time $s_t$ the next discrete time future $s_{t+1}$ is only dependent on the current state $s_t$.
 
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
-  %Nodes
-  \node[ellipse] (1)    [draw=black, minimum width=1cm, minimum height=.75cm] {1};
-  \node[ellipse] (2)    [draw=black, minimum width=1cm, minimum height=.75cm, right=of 1] {2};
-  \node          (dots) [draw=none,  minimum width=1cm, minimum height=.75cm, right=of 2] {\LARGE \dots};
-  \node[ellipse] (tp1)  [draw=black, minimum width=1cm, minimum height=.75cm, right=of dots] {t-1};
-  \node[ellipse] (t)    [draw=black, minimum width=1cm, minimum height=.75cm, right=of tp1] {t};
-  \node[ellipse] (tf1)  [draw=black, minimum width=1cm, minimum height=.75cm, right=of t] {t+1};
+  %World States Nodes
+  \node          (dots) [draw=none,  minimum width=1.25cm, minimum height=.75cm] {\LARGE \dots};
+  \node[ellipse] (htp2) [draw=black, minimum width=1.25cm, minimum height=.75cm, right=of dots] {$s_{t-2}$};
+  \node[ellipse] (htp1) [draw=black, minimum width=1.25cm, minimum height=.75cm, right=of htp2] {$s_{t-1}$};
+  \node[ellipse] (ht)   [draw=black, minimum width=1.25cm, minimum height=.75cm, right=of htp1] {$s_t$};
+  \node[ellipse] (htf1) [draw=black, minimum width=1.25cm, minimum height=.75cm, right=of ht] {$s_{t+1}$};
+  
+  %1. order transition lines
+  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=0,in=180] (htp2);
+  \draw [->, to path={-| (\tikztotarget)}] (htp2) edge[out=0,in=180] (htp1);
+  \draw [->, to path={-| (\tikztotarget)}] (htp1) edge[out=0,in=180] (ht);
+  \draw [->, to path={-| (\tikztotarget)}] (ht) edge[out=0,in=180] (htf1);
+\end{tikzpicture}
+\caption[Trellis diagram for a simple Markov model]{The trellis diagram for a hidden Markov model with descrete time world state changes}\label{fig:1stMarkovModel}
+\end{figure}
+Even though these diagrams are good at illustrating the models and how they change over time it is important to remember that these are not illustrating the models themselves. The model could be illustrated via causal/Bayesian networks, which also will be used later.
 
+Even though this model is this is a good fit, problems arises when using it. These problem arises since the model has a Newtonian world view. One could argue that this world view is also applicable for our problem domain; what the user is going to do is only dependent on the complete current physical state of the world and what the user is current thinking and remembering. The problem is that we can not sensor everything about the current complete physical state and differently not what the user is thinking and remembering.
+
+We start by trying to encompass the current complete physical state. For this we need a hidden Markov model (HMM). The hidden states of the HMM are introduced to represent the exact reality, encompassing everything, but cannot be observed. An observed state can then emit an observable state. In this project this means that the hidden states are the true state of the world that then emits values to the sensors, an observable state. Now the problem is however that these hidden states are all possible complete worlds and would in practice be infinitely many. This solution for this we find in the second problem. To illustrate the HMM we look to \cref{fig:2ndMarkovModel}. Here we can see that any given hidden state emits an observable state. 
+
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Hidden Nodes
+  \node          (dots) [draw=none,  minimum width=1.25cm, minimum height=.75cm] {\LARGE \dots};
+  \node[ellipse] (htp2) [draw=black, minimum width=1.25cm, minimum height=.75cm, right=of dots] {$x_{t-2}$};
+  \node[ellipse] (htp1) [draw=black, minimum width=1.25cm, minimum height=.75cm, right=of htp2] {$x_{t-1}$};
+  \node[ellipse] (ht)   [draw=black, minimum width=1.25cm, minimum height=.75cm, right=of htp1] {$x_t$};
+  \node[ellipse] (htf1) [draw=black, minimum width=1.25cm, minimum height=.75cm, right=of ht] {$x_{t+1}$};
+
+  %Emission states
+  \node[ellipse] (etp1) [draw=black, minimum width=1.25cm, minimum height=.75cm, below=of htp1] {$e_{t-1}$};
+  \node[ellipse] (etp2) [draw=black, minimum width=1.25cm, minimum height=.75cm, below=of htp2] {$e_{t-1}$};
+  \node[ellipse] (et)   [draw=black, minimum width=1.25cm, minimum height=.75cm, below=of ht] {$e_t$};
+  \node[ellipse] (etf1) [draw=black, minimum width=1.25cm, minimum height=.75cm, below=of htf1] {$e_{t+1}$};
+
+  %Separator
+  \draw[dashed, draw=black] ($(htp2)!0.5!(etp2)$,0) -- ($(htp2)!0.5!(etp2)$,5);
+  %\draw[dashed] ($(htp2)!0.5!(etp2)$) -- ($(htf1)!0.5!(etf1)$);
+  
+  %Emission lines
+  \draw[->, to path={-| (\tikztotarget)}] (htp1) edge[out=-90,in=90] (etp1);
+  \draw[->, to path={-| (\tikztotarget)}] (htp2) edge[out=-90,in=90] (etp2);
+  \draw[->, to path={-| (\tikztotarget)}] (ht) edge[out=-90,in=90] (et);
+  \draw[->, to path={-| (\tikztotarget)}] (htf1) edge[out=-90,in=90] (etf1);
+  
   %1. order lines
-  \draw [->, to path={-| (\tikztotarget)}] (1) edge[out=0,in=180] (2);
-  \draw [->, to path={-| (\tikztotarget)}] (2) edge[out=0,in=180] (dots);
-  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=0,in=180] (tp1);
-  \draw [->, to path={-| (\tikztotarget)}] (tp1) edge[out=0,in=180] (t);
-  \draw [->, to path={-| (\tikztotarget)}] (t) edge[out=0,in=180] (tf1);
+  \draw[->, to path={-| (\tikztotarget)}] (dots) edge[out=0,in=180] (htp2);
+  \draw[->, to path={-| (\tikztotarget)}] (htp2) edge[out=0,in=180] (htp1);
+  \draw[->, to path={-| (\tikztotarget)}] (htp1) edge[out=0,in=180] (ht);
+  \draw[->, to path={-| (\tikztotarget)}] (ht) edge[out=0,in=180] (htf1);
+\end{tikzpicture}
+\caption[Trellis diagram for a simple Hidden Markov Model]{The trellis diagram for a simple hidden Markov model that implements a Newtonian worldveiw}\label{fig:2ndMarkovModel}
+\end{figure}
+
+To encompass what the user is currently thinking and remembering, essentially depend on what happened in the past. We therefore need a way to encope the past in the current state. This is called the order of HMM. The more  We therefore need to en-cope the history in the hidden states of the model. 
+
+the possibly to en-cope unobserved variables in the states via hidden states (explained later in this section)
+
+An initial implementation of a Markov chain in our problem domain could make the states in the model snapshots of the sensors in the home. Here two problems arises. First, what a person decides to do next is not only dependent on what he or she is currently doing, also what has happen in the past.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Hidden Nodes
+  \node[ellipse] (h1)   [draw=black, minimum width=1cm, minimum height=.75cm] {$x_1$};
+  \node[ellipse] (h2)   [draw=black, minimum width=1cm, minimum height=.75cm, right=of h1] {$x_2$};
+  \node          (dots) [draw=none,  minimum width=1cm, minimum height=.75cm, right=of h2] {\LARGE \dots};
+  \node[ellipse] (htp1) [draw=black, minimum width=1cm, minimum height=.75cm, right=of dots] {$x_{t-1}$};
+  \node[ellipse] (ht)   [draw=black, minimum width=1cm, minimum height=.75cm, right=of htp1] {$x_t$};
+  \node[ellipse] (htf1) [draw=black, minimum width=1cm, minimum height=.75cm, right=of ht] {$x_{t+1}$};
+
+  %Emission states
+  \node[ellipse] (e1)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of h1] {$e_1$};
+  \node[ellipse] (e2)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of h2] {$e_2$};
+  \node[ellipse] (etp1) [draw=black, minimum width=1cm, minimum height=.75cm, below=of htp1] {$e_{t-1}$};
+  \node[ellipse] (et)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of ht] {$e_t$};
+  \node[ellipse] (etf1) [draw=black, minimum width=1cm, minimum height=.75cm, below=of htf1] {$e_{t+1}$};
+  
+  %Emission lines
+  \draw [->, to path={-| (\tikztotarget)}] (h1) edge[out=-90,in=90] (e1);
+  \draw [->, to path={-| (\tikztotarget)}] (h2) edge[out=-90,in=90] (e2);
+  \draw [->, to path={-| (\tikztotarget)}] (htp1) edge[out=-90,in=90] (etp1);
+  \draw [->, to path={-| (\tikztotarget)}] (ht) edge[out=-90,in=90] (et);
+  \draw [->, to path={-| (\tikztotarget)}] (htf1) edge[out=-90,in=90] (etf1);
+  
+  %1. order lines
+  \draw [->, to path={-| (\tikztotarget)}] (h1) edge[out=0,in=180] (h2);
+  \draw [->, to path={-| (\tikztotarget)}] (h2) edge[out=0,in=180] (dots);
+  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=0,in=180] (htp1);
+  \draw [->, to path={-| (\tikztotarget)}] (htp1) edge[out=0,in=180] (ht);
+  \draw [->, to path={-| (\tikztotarget)}] (ht) edge[out=0,in=180] (htf1);
   
   %2. order lines
-  \draw [->, to path={-| (\tikztotarget)}] (1) edge[out=45,in=135] (dots);
-  \draw [->, to path={-| (\tikztotarget)}] (2) edge[out=45,in=135] (dots);
-  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=45,in=135] (tp1);
-  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=45,in=135] (t);
-  \draw [->, to path={-| (\tikztotarget)}] (tp1) edge[out=45,in=135] (tf1);
+  \draw [->, to path={-| (\tikztotarget)}] (h1) edge[out=45,in=135] (dots);
+  \draw [->, to path={-| (\tikztotarget)}] (h2) edge[out=45,in=135] (dots);
+  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=45,in=135] (htp1);
+  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=45,in=135] (ht);
+  \draw [->, to path={-| (\tikztotarget)}] (htp1) edge[out=45,in=135] (htf1);
 \end{tikzpicture}
 \caption[Caption]{Bla bla}\label{fig:monolithic_system}
 \end{figure}
