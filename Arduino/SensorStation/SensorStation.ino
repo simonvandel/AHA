@@ -9,6 +9,7 @@
 #define LightBtn 2
 
 boolean lightSwitchVal = false;
+Serialization serialization;
 
 Ultrasonic ultrasonic(4,5);
 PIR pir(3);
@@ -31,7 +32,7 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
     data[i] = rx.getData(i);
   }
   int mes[2];
-  Deserialize(data, mes);
+  serialization.Deserialize(data, mes);
   if(mes[0] == LightSwitch){
     if(photoresistor.getLightIntensity() < mes[1]){
       digitalWrite(LightSwitch, HIGH);
