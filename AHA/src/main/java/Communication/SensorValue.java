@@ -1,11 +1,23 @@
 package Communication;
 
-public class SensorValue {
 
-    private final int value;
-    private final boolean isEmulatable;
-    private final String deviceAddress;
-    private final int sensorIndexOnDevice;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable(tableName = "SensorValues")
+public class SensorValue {
+    @DatabaseField(canBeNull = true, foreign = true)
+    private SensorState dbss;
+    @DatabaseField(generatedId = true, unique = true)
+    private int id;
+    @DatabaseField
+    private int value;
+    @DatabaseField
+    private boolean isEmulatable;
+    @DatabaseField(canBeNull = false)
+    private String deviceAddress;
+    @DatabaseField
+    private int sensorIndexOnDevice;
 
     public SensorValue(int value, boolean isEmulatable, String deviceAddress, int sensorIndexOnDevice) {
         this.value = value;
@@ -13,6 +25,8 @@ public class SensorValue {
         this.deviceAddress = deviceAddress;
         this.sensorIndexOnDevice = sensorIndexOnDevice;
     }
+
+    private SensorValue(){}
 
     public int getValue()
     {

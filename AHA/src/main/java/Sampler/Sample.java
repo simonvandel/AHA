@@ -2,9 +2,9 @@ package Sampler;
 
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
-import org.hibernate.annotations.GenericGenerator;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-import javax.persistence.*;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +12,15 @@ import java.util.List;
 /**
  * Created by heider on 19/11/15.
  */
+@DatabaseTable(tableName = "Samples")
 public class Sample {
+  @DatabaseField(generatedId = true, unique = true)
+  private int id;
+
   private List<Integer> mStatesHashed = new ArrayList<Integer>();
+
   private Instant mTime = null;
+
   private List<Action> mActions = new ArrayList<Action>();
 
   public Sample(List<NormalizedSensorState> states, Instant time, List<Action> actions) {
@@ -24,6 +30,8 @@ public class Sample {
     mTime = time;
     mActions = actions;
   }
+
+  private Sample(){}
 
   public List<Integer> getHash() {
     return mStatesHashed;

@@ -1,7 +1,13 @@
 package Communication;
 
+import Database.InstantPersister;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
+import com.j256.ormlite.table.DatabaseTable;
+
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -9,12 +15,21 @@ import java.util.List;
  * The ordering of the sensor values can be assumed to not change. That is,
  * SensorState from time 1 and SensorState from time 2 will have the same ordering of sensor values.
  */
+@DatabaseTable(tableName = "SensorStates")
 public class SensorState {
+    @DatabaseField(generatedId = true, unique = true)
+    private int id;
+    @ForeignCollectionField(eager = false)
+    private Collection<SensorValue> mpValues = new ArrayList<SensorValue>(); //persistable values
     private List<SensorValue> mValues = new ArrayList<SensorValue>();
+    @DatabaseField(persisterClass = InstantPersister.class)
     private Instant mTime;
+
+    private SensorState(){}
 
     public SensorState(List<SensorValue> values, Instant time) {
         mValues = values;
+        mpValues = values;
         mTime = time;
     }
 
