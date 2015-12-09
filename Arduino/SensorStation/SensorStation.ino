@@ -2,6 +2,7 @@
 #include "PIR.h"
 #include "Photoresistor.h"
 #include "SensorPacketBuilder.h"
+#include "Serialization.h"
 #include <XBee.h>
 
 Ultrasonic ultrasonic(4,5);
@@ -15,8 +16,21 @@ XBeeWithCallbacks xbee;
 XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0);
 
 //uses Printers.h so Serial.print works differently
-void zbReceive(ZBRxResponse& rx, uintptr_t) {
-  //do something with the data
+void zbReceive(ZBRxResponse& rx, uintptr_t) { //This signature is really weird/incomplete
+  if(rx.getDataLength() != 4) { //getDataLength hopefully returns value in bytes
+    //Report error, "repeat message"-message?
+    return;
+  }
+  byte data[4];
+  for (int i = 0; i < 4; i++) { //load data from response into byte array
+    data[i] = rx.getData(i);
+  }
+  int mes[2];
+  Deserialize(data, mes);
+
+  //where are the actuators of the system defined?
+  //The actuator with index:mes[0] needs to be set to value:mes[1]
+  return;
 }
 //
 void setup()
@@ -69,11 +83,11 @@ void loop()
   int packetSize = sensorPacketBuilder.build(buildArray);
 
   sendData(buildArray, packetSize);
-  
+
   // Continuously let xbee read packets and call callbacks.
   xbee.loop();
   //act on received data in the call back method zbReceive
-  
+
   memset(buildArray, 0, 64);
   delay(1);
 
