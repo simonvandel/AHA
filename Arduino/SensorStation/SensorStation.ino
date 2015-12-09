@@ -2,7 +2,13 @@
 #include "PIR.h"
 #include "Photoresistor.h"
 #include "SensorPacketBuilder.h"
+#include "Serialization.h"
 #include <XBee.h>
+
+#define LightSwitch 13
+#define LightBtn 2
+
+boolean lightSwitchVal = false;
 
 Ultrasonic ultrasonic(4,5);
 PIR pir(3);
@@ -16,11 +22,46 @@ XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0);
 
 //uses Printers.h so Serial.print works differently
 void zbReceive(ZBRxResponse& rx, uintptr_t) {
-  //do something with the data
+  if(rx.getDataLength() != 4) { //getDataLength hopefully returns value in bytes
+    //Report error, "repeat message"-message?
+    return;
+  }
+  byte data[4];
+  for (int i = 0; i < 4; i++) { //load data from response into byte array
+    data[i] = rx.getData(i);
+  }
+  int mes[2];
+  Deserialize(data, mes);
+  if(mes[0] == LightSwitch){
+    if(photoresistor.getLightIntensity() < mes[1]){
+      digitalWrite(LightSwitch, HIGH);
+      lightSwitchVal = true;
+    }
+    else if(photoresistor.getLightIntensity() > mes[1]){
+      digitalWrite(LightSwitch, LOW);
+      lightSwitchVal = false;
+    }
+  }
+  return;
 }
+
+void toggleLightSwitch(){
+  if(lightSwitchVal){
+    digitalWrite(LightSwitch, LOW);
+    lightSwitchVal = false;
+  }
+  else{
+    digitalWrite(LightSwitch, HIGH);
+    lightSwitchVal = true;
+  }
+}
+
 //
 void setup()
 {
+  pinMode(LightSwitch, OUTPUT);
+  pinMode(LightBtn, INPUT);
+  attachInterrupt(0, toggleLightSwitch, RISING);
   Serial.begin(9600);
   xbee.setSerial(Serial);
   // Called when an actual packet received
@@ -33,9 +74,9 @@ void printbincharpad(char c)
 {
   int i;
   for (i = 7; i >= 0; --i)
-    {
-      Serial.write( (c & (1 << i)) ? '1' : '0' );
-    }
+  {
+    Serial.write( (c & (1 << i)) ? '1' : '0' );
+  }
   Serial.print('\n');
 }
 
@@ -69,11 +110,11 @@ void loop()
   int packetSize = sensorPacketBuilder.build(buildArray);
 
   sendData(buildArray, packetSize);
-  
+
   // Continuously let xbee read packets and call callbacks.
   xbee.loop();
   //act on received data in the call back method zbReceive
-  
+
   memset(buildArray, 0, 64);
   delay(1);
 

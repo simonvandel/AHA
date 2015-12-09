@@ -46,10 +46,12 @@ public class ModelGenerator {
             // System.out.println("dV: " + varianceDifference);
         } while (varianceDifference > treshHold);
 
+        if(numOfClusters > 12)
+            return 12;
         return numOfClusters;
     }
 
-    private ArrayList<ArrayList<Integer>> splitIntoClusers(List<Integer> superSet, int numOfSplit) {
+    public ArrayList<ArrayList<Integer>> splitIntoClusers(List<Integer> superSet, int numOfSplit) {
 
         int subSetSize = (int) Math.floor(superSet.size() / numOfSplit);
         ArrayList<ArrayList<Integer>> toReturn = new ArrayList<ArrayList<Integer>>();
@@ -88,7 +90,7 @@ public class ModelGenerator {
         return Math.abs(point1 - point2);
     }
 
-    private double findClusterVariance(List<List<Integer>> clusters) {
+    public double findClusterVariance(List<List<Integer>> clusters) {
         double clusterVariance = 0;
         for (int i = 0; i < clusters.size(); i++) {
             double Dk = findDistanceInCluster(clusters.get(i));
@@ -101,6 +103,7 @@ public class ModelGenerator {
 
     public List<Range> generateModel(List<Integer> trainingData, int numClusters) {
 
+        Collections.sort(trainingData);
         List<List<Integer>> clusters = new ArrayList<>(splitIntoClusers(trainingData, numClusters));
 
         List<Double> gvfs = new ArrayList<>();
@@ -227,7 +230,7 @@ public class ModelGenerator {
     private double sumOfSquaredDeviation(List<List<Integer>> listOfClusters) {
         double sum = 0;
         for (List<Integer> cluster : listOfClusters) {
-            sum += Math.pow(findDeviation(cluster), 2);
+            sum += findDeviation(cluster);
         }
         return sum;
     }

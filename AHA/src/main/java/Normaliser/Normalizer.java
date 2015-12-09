@@ -61,7 +61,7 @@ public class Normalizer{
       String currDeviceAddr = currSV.getDeviceAddress();
       int currSensorIndex = currSV.getSensorIndexOnDevice();
       sensors.add(new Sensor(currDeviceAddr, currSensorIndex));
-      //the value is NOT added to the list it means it doesnt exsist and we can call getSensor
+
       int normalizedValue = getSensor(currDeviceAddr, currSensorIndex).normalize(currSV.getValue());
       if (normalizedValue > -1){
         normalizedSensorState.AddNormalizedValue(new NormalizedValue(normalizedValue, currSV.isEmulatable(), currDeviceAddr, currSensorIndex));

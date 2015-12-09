@@ -1,6 +1,7 @@
 package Database;
 
 import Normaliser.NormalizedSensorState;
+import Reasoner.IModel;
 import Reasoner.Reasoning;
 import Sampler.Sample;
 
@@ -137,5 +138,15 @@ public class DB {
    */
   public void flagModel(Reasoning reasoning){
     return;
+  }
+
+  //TODO Implement this
+
+  /**
+   * Gets the current model in the db
+   * @return the model
+   */
+  public IModel getModel(){
+    return null;
   }
 }

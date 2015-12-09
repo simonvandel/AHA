@@ -1,6 +1,7 @@
 package Normaliser;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public class Sensor
   private Model oModel = null; //the model, this is null until the first time we generate the model, after that
   // it will change each time we've recieved enough data according to trainingDataTreshhold
 
-  private int trainingDataThreshhold = 500; //determines when we've got enough data to generate a new model
+  private int trainingDataThreshhold = 5000; //determines when we've got enough data to generate a new model
 
   public String getDeviceID()
   {
@@ -52,8 +53,9 @@ public class Sensor
       //else we normalize the model, as long as the model isn't being assigned by the model creation thread Then check wether or not we should update our model
       if (oModel == null)
       {
-        if (trainingData.size() > trainingDataThreshhold)
+        if (determainValidatyOfTrainingData())
         {
+          trainingDataThreshhold = trainingData.size(); //sets the treshhold to the trainingdata size because this should be a baseline for future model gens.
           createModelThread();
         }
       } else
@@ -70,6 +72,17 @@ public class Sensor
     return toReturn;
   }
 
+  private boolean determainValidatyOfTrainingData() {
+    ModelGenerator oModelGen = new ModelGenerator();
+    if(trainingData.size() > 50){
+      Collections.sort(trainingData);
+      List<List<Integer>> cluters = new ArrayList<>(oModelGen.splitIntoClusers(trainingData, 2));
+      double clusterVariance = oModelGen.findClusterVariance(cluters);
+      System.out.println(clusterVariance);
+      return clusterVariance > 100;
+    }
+    return false;
+  }
   //starts the generation of a new model in a seperate thread
   private void createModelThread()
   {
