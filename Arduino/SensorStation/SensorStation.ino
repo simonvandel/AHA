@@ -5,6 +5,11 @@
 #include "Serialization.h"
 #include <XBee.h>
 
+#define LightSwitch 13
+#define LightBtn 2
+
+boolean lightSwitchVal = false;
+
 Ultrasonic ultrasonic(4,5);
 PIR pir(3);
 Photoresistor photoresistor(1);
@@ -16,7 +21,7 @@ XBeeWithCallbacks xbee;
 XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0);
 
 //uses Printers.h so Serial.print works differently
-void zbReceive(ZBRxResponse& rx, uintptr_t) { //This signature is really weird/incomplete
+void zbReceive(ZBRxResponse& rx, uintptr_t) {
   if(rx.getDataLength() != 4) { //getDataLength hopefully returns value in bytes
     //Report error, "repeat message"-message?
     return;
@@ -27,14 +32,36 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) { //This signature is really weird/i
   }
   int mes[2];
   Deserialize(data, mes);
-
-  //where are the actuators of the system defined?
-  //The actuator with index:mes[0] needs to be set to value:mes[1]
+  if(mes[0] == LightSwitch){
+    if(photoresistor.getLightIntensity() < mes[1]){
+      digitalWrite(LightSwitch, HIGH);
+      lightSwitchVal = true;
+    }
+    else if(photoresistor.getLightIntensity() > mes[1]){
+      digitalWrite(LightSwitch, LOW);
+      lightSwitchVal = false;
+    }
+  }
   return;
 }
+
+void toggleLightSwitch(){
+  if(lightSwitchVal){
+    digitalWrite(LightSwitch, LOW);
+    lightSwitchVal = false;
+  }
+  else{
+    digitalWrite(LightSwitch, HIGH);
+    lightSwitchVal = true;
+  }
+}
+
 //
 void setup()
 {
+  pinMode(LightSwitch, OUTPUT);
+  pinMode(LightBtn, INPUT);
+  attachInterrupt(0, toggleLightSwitch, RISING);
   Serial.begin(9600);
   xbee.setSerial(Serial);
   // Called when an actual packet received
@@ -47,9 +74,9 @@ void printbincharpad(char c)
 {
   int i;
   for (i = 7; i >= 0; --i)
-    {
-      Serial.write( (c & (1 << i)) ? '1' : '0' );
-    }
+  {
+    Serial.write( (c & (1 << i)) ? '1' : '0' );
+  }
   Serial.print('\n');
 }
 
