@@ -4,6 +4,6 @@
 using namespace std;
 class Serialization {
 public:
-    char * Serialize(short data[]);
-    int* Deserialize(uint8_t data[]);
+    void Serialize(short *data, char *result);
+    void Deserialize(char *data, short *result);
 };
