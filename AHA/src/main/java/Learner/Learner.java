@@ -6,6 +6,7 @@ import org.apache.commons.math3.linear.BlockRealMatrix;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 /**
@@ -15,7 +16,7 @@ public class Learner
 {
   private HiddenMarkovModel currentModel;
 
-  private final double convergenceConstant = 0.001; // TODO: change to suitable number
+  private final double convergenceConstant = 0.001e-15; // TODO: change to suitable number
 
   public HiddenMarkovModel learn(List<Sample> sampleObservations){
 
@@ -25,22 +26,42 @@ public class Learner
     // If not, we generate one with uniform distribution of
     // initial probability, transition matrix and observation matrix
 
-    // this null check is needed when we support reusing an already learnt model. Currently, we discard the old learnt model
-    // if(currentModel == null){
-      EmissionMatrix initEmissionMatrix = new EmissionMatrix(mapWarden);
-      TransitionMatrix initTransitionMatrix = new TransitionMatrix(mapWarden);
-      InitialProbability initProbability = new InitialProbability(mapWarden);
-      currentModel = new HiddenMarkovModel(initProbability, initTransitionMatrix, initEmissionMatrix, mapWarden);
-    //}
+
+    /*EmissionMatrix initEmissionMatrix = new EmissionMatrix(mapWarden);
+    TransitionMatrix initTransitionMatrix = new TransitionMatrix(mapWarden);
+    InitialProbability initProbability = new InitialProbability(mapWarden);*/
+    double[][] randomEmissionValues = new double[mapWarden.getNumHiddenStates()][mapWarden.getNumObservations()];
+
+    Random r = new Random(0); // TODO: seed er sat til 0
+    for (int row = 0; row < randomEmissionValues.length; row++){
+      int remaining = 100;
+      for (int col = 0; col < randomEmissionValues[row].length - 1; col++){
+        int tempRes = r.nextInt(remaining - (randomEmissionValues[row].length - col) - 1) + 1;
+        remaining -= tempRes;
+        double res = tempRes / 100d;
+        randomEmissionValues[row][col] = res;
+      }
+      randomEmissionValues[row][randomEmissionValues[row].length - 1] = remaining / 100d;
+    }
+
+    EmissionMatrix initEmissionMatrix = new EmissionMatrix(mapWarden, randomEmissionValues);
+    TransitionMatrix initTransitionMatrix = new TransitionMatrix(mapWarden);
+    InitialProbability initProbability = new InitialProbability(mapWarden);
+    currentModel = new HiddenMarkovModel(initProbability, initTransitionMatrix, initEmissionMatrix, mapWarden);
+
 
     // we are now sure that we have a model.
     // We how want to iteratively apply the Baum-Welch algorithm to the model until we converge on some model.
     HiddenMarkovModel oldModel = currentModel;
     HiddenMarkovModel newModel;
+    double previousDiff = 0;
     boolean shouldContinue;
     do{
       newModel = baumWelch(oldModel, mapWarden);
-      shouldContinue = diffModel(oldModel, newModel) > convergenceConstant;
+      double newDiff = diffModel(oldModel, newModel);
+      double percentageChange = (newDiff - previousDiff) / newDiff;
+      shouldContinue = Math.abs(percentageChange) > convergenceConstant;
+      previousDiff = newDiff;
       oldModel = newModel;
     }while (shouldContinue);
 
@@ -69,8 +90,10 @@ public class Learner
    */
   private double diffModel(HiddenMarkovModel model1, HiddenMarkovModel model2)
   {
-    return Math.abs( model1.getInitialProbability().getNorm() - model2.getInitialProbability().getNorm()
-             - model1.getEmissionMatrix().getNorm() - model2.getEmissionMatrix().getNorm()
-             - model1.getTransitionMatrix().getNorm() - model2.getTransitionMatrix().getNorm());
+    double value = Math.abs(
+        (model1.getInitialProbability().getNorm() - model2.getInitialProbability().getNorm())
+             + (model1.getEmissionMatrix().getNorm() - model2.getEmissionMatrix().getNorm())
+             + (model1.getTransitionMatrix().getNorm() - model2.getTransitionMatrix().getNorm()));
+    return value;
   }
 }

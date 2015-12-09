@@ -3,8 +3,6 @@ package Learner;
 import org.apache.commons.math3.linear.BlockRealMatrix;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -12,17 +10,18 @@ import java.util.Objects;
  */
 public class ForwardsMatrix
 {
+  // rows are hidden states, cols are observations
   private BlockRealMatrix matrix;
-  HashMap<HiddenState, Integer> hiddenStatesMap = new HashMap<>();
-  HashMap<Integer, Integer> observationsMap = new HashMap<>();
   MapWarden mapWarden;
   private HiddenMarkovModel oldModel;
+  private HashMap<HiddenStateObservationPair, Double> calculatedValues;
 
   public ForwardsMatrix(HiddenMarkovModel oldModel, MapWarden mapWarden) {
     this.oldModel = oldModel;
     this.mapWarden = mapWarden;
     int numHiddenStates = mapWarden.getNumHiddenStates();
     int numObservations = mapWarden.getNumObservations();
+    calculatedValues = new HashMap<>(numHiddenStates * numObservations);
     matrix = new BlockRealMatrix(numHiddenStates, numObservations);
 
     for (HiddenState i: mapWarden.iterateHiddenStates())
@@ -30,35 +29,46 @@ public class ForwardsMatrix
       int iIndex = mapWarden.hiddenStateToHiddenStateIndex(i);
       for (Observation t: mapWarden.iterateObservations())
       {
-        double probability = calcForwardsProbability(i,t);
         int tIndex = mapWarden.observationToObservationIndex(t);
+        double probability = calcForwardsProbability(i,t, calculatedValues);
         matrix.setEntry(iIndex, tIndex, probability);
       }
     }
   }
 
-  private double calcForwardsProbability(HiddenState hiddenState, Observation observation) {
+  private double calcForwardsProbability(HiddenState hiddenState, Observation observation, HashMap<HiddenStateObservationPair, Double> calculatedValues) {
     if(Objects.equals(observation, mapWarden.observationIndexToObservation(0))) {
-      return oldModel.getInitialProbability().getProbability(hiddenState)
-          * oldModel.getEmissionMatrix().getEntry(hiddenState, mapWarden.observationToEmission(observation) );
+      double result = oldModel.getInitialProbability().getProbability(hiddenState)
+          * oldModel.getEmissionMatrix().getEntry(hiddenState, observation );
+
+      calculatedValues.put(new HiddenStateObservationPair(hiddenState, observation), result);
+      return result;
     }
     else {
       double sum = 0;
       for (HiddenState i: mapWarden.iterateHiddenStates())
       {
         Observation previousObservation = mapWarden.previousObservation(observation);
-        sum += calcForwardsProbability(i, previousObservation)
+        Double recResult = calculatedValues.get(new HiddenStateObservationPair(hiddenState, previousObservation));
+        if (recResult == null) {
+          recResult = calcForwardsProbability(i, previousObservation, calculatedValues);
+        }
+        sum += recResult
             * oldModel.getTransitionMatrix().getEntry(i, hiddenState);
       }
-      return oldModel.getEmissionMatrix().getEntry(hiddenState, mapWarden.observationToEmission(observation))
+      double result = oldModel.getEmissionMatrix().getEntry(hiddenState, observation)
           * sum;
+
+      calculatedValues.put(new HiddenStateObservationPair(hiddenState, observation), result);
+      return result;
     }
   }
 
   public double getEntry(HiddenState i, Observation t)
   {
-    int hiddenStateIndex = hiddenStatesMap.get(i);
-    int observationIndex = observationsMap.get(t);
-    return matrix.getEntry(observationIndex, hiddenStateIndex);
+    int hiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(i);
+    int observationIndex = mapWarden.observationToObservationIndex(t);
+    return matrix.getEntry(hiddenStateIndex, observationIndex);
   }
+
 }

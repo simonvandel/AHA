@@ -5,9 +5,7 @@ import org.javatuples.Pair;
 
 import java.util.Arrays;
 
-/**
- * Created by simon on 11/30/15.
- */
+// matrix info: rows are fromHiddenStates, cols are toHiddenStates
 public class TransitionMatrix extends CommonMatrix
 {
   protected MapWarden mapWarden;
@@ -23,10 +21,13 @@ public class TransitionMatrix extends CommonMatrix
     this.mapWarden = mapWarden;
     int numHiddenStates = mapWarden.getNumHiddenStates();
     double[][] values = new double[numHiddenStates][numHiddenStates];
-    double preset = 1/numHiddenStates;
+    double preset = 1d / numHiddenStates;
     // initialize the matrix to a uniform distribution
-    Arrays.fill(values, preset);
-    matrix = new BlockRealMatrix(numHiddenStates, numHiddenStates, values, true);
+
+    double[] innerValueArray = new double[numHiddenStates];
+    Arrays.fill(innerValueArray, preset);
+    Arrays.fill(values, innerValueArray);
+    matrix = new BlockRealMatrix(values);
   }
 
   public TransitionMatrix(MapWarden mapWarden, GammaMatrix gammaMatrix, XiMatrix xiMatrix) {
@@ -52,8 +53,14 @@ public class TransitionMatrix extends CommonMatrix
 
     for (Observation t: mapWarden.iterateObservations())
     {
-      numerator += xiMatrix.getEntry(i, j, t);
-      denominator += gammaMatrix.getEntry(i,t);
+      // do not compute values for the last observation
+      if (t != mapWarden.lastObservation()) {
+        numerator += xiMatrix.getEntry(i, j, t);
+        denominator += gammaMatrix.getEntry(i,t);
+      }
+    }
+    if (numerator / denominator > 1.0) {
+      int k = 0;
     }
 
     return  numerator / denominator;
@@ -70,22 +77,18 @@ public class TransitionMatrix extends CommonMatrix
     return matrix.getNorm();
   }
 
-  public int getNumberOfHiddenStates() {
-    return matrix.getColumnDimension();
-  }
-
   public double getEntry(HiddenState fromHiddenState, HiddenState toHiddenState)
   {
     int fromHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(fromHiddenState);
     int toHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(toHiddenState);
-    return matrix.getEntry(toHiddenStateIndex, fromHiddenStateIndex);
+    return matrix.getEntry(fromHiddenStateIndex, toHiddenStateIndex);
   }
 
-  public void setEntry(HiddenState fromHiddenState, HiddenState toHiddenState, double probability)
+  private void setEntry(HiddenState fromHiddenState, HiddenState toHiddenState, double probability)
   {
     int fromHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(fromHiddenState);
     int toHiddenStateIndex = mapWarden.hiddenStateToHiddenStateIndex(toHiddenState);
-    matrix.setEntry(toHiddenStateIndex, fromHiddenStateIndex, probability);
+    matrix.setEntry(fromHiddenStateIndex, toHiddenStateIndex, probability);
   }
 
   // returns the hidden state index that hiddenStateIndex is most likely to transition from, along with the probability to do so

@@ -7,10 +7,12 @@ import java.util.List;
  */
 public class HiddenState
 {
+  private int cachedHashCode;
   private List<Integer> sampleHashes;
   public HiddenState(List<Integer> sampleHashes)
   {
     this.sampleHashes = sampleHashes;
+    this.cachedHashCode = sampleHashes.hashCode();
   }
 
   @Override
@@ -27,6 +29,6 @@ public class HiddenState
   @Override
   public int hashCode()
   {
-    return sampleHashes.hashCode();
+    return cachedHashCode;
   }
 }

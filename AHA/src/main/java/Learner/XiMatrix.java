@@ -11,6 +11,7 @@ import java.util.Map;
  */
 public class XiMatrix
 {
+  // matrix[row][col][depth] where rows are hidden states, cols are hidden states and depths are observations
   private double[][][] matrix;
   private final ForwardsMatrix forwards;
   private final BackwardsMatrix backwards;
@@ -47,16 +48,24 @@ public class XiMatrix
     double denominator = 0;
     for (HiddenState k: mapWarden.iterateHiddenStates())
     {
-      denominator += forwards.getEntry(k, mapWarden.previousObservation(t));
+      Observation lastObservation = mapWarden.lastObservation();
+      denominator += forwards.getEntry(k, lastObservation);
     }
 
     Observation nextObservation = mapWarden.nextObservation(t);
+    if (nextObservation == null) {
+      // there is no next observation, so we can not calculate this xi probability
+      return 0;
+    }
     double numerator = forwards.getEntry(i, t)
         * oldModel.getTransitionMatrix().getEntry(i, j)
         * backwards.getEntry(j, nextObservation)
-        * oldModel.getEmissionMatrix().getEntry(j, mapWarden.observationToEmission(nextObservation));
+        * oldModel.getEmissionMatrix().getEntry(j, nextObservation);
 
-    return numerator / denominator;
+    if (denominator == 0) return 0;
+    else {
+      return numerator / denominator;
+    }
   }
 
   public double getEntry(HiddenState i, HiddenState j, Observation t)

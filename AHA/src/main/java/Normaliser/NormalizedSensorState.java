@@ -58,7 +58,7 @@ public class NormalizedSensorState
     public int hashCode() {
         int hash = 0;
         for(int i=0;i<normalizesValues.size();i++)
-            hash +=  normalizesValues.get(i).getValue()*17;
+            hash += normalizesValues.get(i).getValue() * 17 * time.hashCode();
         return hash;
     }
 }

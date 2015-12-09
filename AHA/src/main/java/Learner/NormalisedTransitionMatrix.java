@@ -10,7 +10,6 @@ public class NormalisedTransitionMatrix extends TransitionMatrix
   public NormalisedTransitionMatrix(MapWarden mapWarden, double[][] values)
   {
     this.mapWarden = mapWarden;
-    int numHiddenStates = mapWarden.getNumHiddenStates();
-    matrix = new BlockRealMatrix(numHiddenStates, numHiddenStates, values, true);
+    matrix = new BlockRealMatrix(values);
   }
 }

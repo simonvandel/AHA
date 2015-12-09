@@ -9,9 +9,10 @@ import java.util.List;
  */
 public class GammaMatrix
 {
-
   private final ForwardsMatrix forwards;
   private final BackwardsMatrix backwards;
+
+  // rows are hidden states, cols are observations
   private final BlockRealMatrix matrix;
   private MapWarden mapWarden;
 
@@ -39,14 +40,17 @@ public class GammaMatrix
   {
     double numerator = forwards.getEntry(i,t) * backwards.getEntry(i,t);
     double denominator = 0;
+    Observation lastObservation = mapWarden.lastObservation();
 
     for (HiddenState j: mapWarden.iterateHiddenStates())
     {
-      Observation lastObservation = mapWarden.lastObservation();
-      denominator += forwards.getEntry(j,  lastObservation);
+      denominator += forwards.getEntry(j, lastObservation);
     }
 
-    return numerator / denominator;
+    if (denominator == 0) return 0;
+    else {
+      return numerator / denominator;
+    }
   }
 
   public double getEntry(HiddenState hiddenState, Observation observation)

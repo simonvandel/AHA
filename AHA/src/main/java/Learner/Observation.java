@@ -8,8 +8,10 @@ import Sampler.Sample;
 public class Observation
 {
   private Integer hashCode;
+  private int time;
   public Observation(Sample sample)
   {
+    time = sample.getTime();
     hashCode = sample.getHash().get(sample.getHash().size() - 1);
   }
 
@@ -22,21 +24,23 @@ public class Observation
   public int getHashCode() {
     return hashCode;
   }
+
   @Override
-  public boolean equals(Object o)
-  {
+  public boolean equals(Object o){
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
     Observation that = (Observation) o;
 
+    if (time != that.time) return false;
     return hashCode.equals(that.hashCode);
 
   }
 
   @Override
-  public int hashCode()
-  {
-    return hashCode.hashCode();
+  public int hashCode(){
+    int result = hashCode.hashCode();
+    result = 31 * result + time;
+    return result;
   }
 }

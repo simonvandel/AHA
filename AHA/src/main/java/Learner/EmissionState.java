@@ -19,21 +19,22 @@ public class EmissionState
   }
 
   @Override
-  public boolean equals(Object o)
-  {
+  public boolean equals(Object o){
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
     EmissionState that = (EmissionState) o;
 
-    return hashcode.equals(that.hashcode);
+    if (!hashcode.equals(that.hashcode)) return false;
+    return actions.equals(that.actions);
 
   }
 
   @Override
-  public int hashCode()
-  {
-    return hashcode.hashCode();
+  public int hashCode(){
+    int result = hashcode.hashCode();
+    result = 31 * result + actions.hashCode();
+    return result;
   }
 
   public List<Action> getActions()

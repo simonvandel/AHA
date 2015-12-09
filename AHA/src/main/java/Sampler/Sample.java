@@ -31,7 +31,14 @@ public class Sample {
 
   public Sample(List<NormalizedSensorState> states, Instant time, List<Action> actions) {
     for (int i = 0; i <= states.size() - 1; i++) {
-      mStatesHashed.add(states.get(i).hashCode());
+      NormalizedSensorState e = states.get(i);
+      if (e == null) {
+        mStatesHashed.add(null);
+      }
+      else {
+        mStatesHashed.add(e.hashCode());
+      }
+
     }
     //mpStatesHashed = mStatesHashed;
     mTime = time;
@@ -90,6 +97,7 @@ public class Sample {
   @Override
   public int hashCode()
   {
-    return mStatesHashed.hashCode();
+    int hashCode = mStatesHashed.hashCode();
+    return hashCode;
   }
 }

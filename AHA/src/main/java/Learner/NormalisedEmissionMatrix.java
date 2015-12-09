@@ -12,6 +12,6 @@ public class NormalisedEmissionMatrix extends EmissionMatrix
     this.mapWarden = mapWarden;
     int numHiddenStates = mapWarden.getNumHiddenStates();
     int numEmissionStates = mapWarden.getNumEmissionStates();
-    matrix = new BlockRealMatrix(numEmissionStates, numHiddenStates, values, true);
+    matrix = new BlockRealMatrix(values);
   }
 }

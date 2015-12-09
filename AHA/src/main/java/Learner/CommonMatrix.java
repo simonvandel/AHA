@@ -31,10 +31,18 @@ public class CommonMatrix
           .min().getAsDouble();
 
       double diffMaxMin = max - min;
+      double[] newColoumn;
+      if (diffMaxMin == 0.0) {
+        newColoumn = Arrays.stream(coloumn)
+            .map(value -> 1.0)
+            .toArray();
+      } else {
+        newColoumn = Arrays.stream(coloumn)
+            .map(value -> (value - min) / diffMaxMin)
+            .toArray();
+      }
       // normalisedValue = (value - min) / diff
-      double[] newColoumn = Arrays.stream(coloumn)
-          .map(value -> (value - min) / diffMaxMin)
-          .toArray();
+
       normalisedMatrix.setColumn(coloumnIndex, newColoumn);
     }
 

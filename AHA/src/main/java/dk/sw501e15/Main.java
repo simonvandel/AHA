@@ -77,8 +77,11 @@ public class Main
         if (nState != null)
         {
           sample = sampler.getSample(nState);
-          //oReasoner.reason(sample);
-          db.putStateScopeIntoDB(sample);
+          if (sample != null) {
+            db.putStateScopeIntoDB(sample);
+
+            oReasoner.reason(sample);
+          }
 
         }
       }

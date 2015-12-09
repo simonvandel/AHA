@@ -17,16 +17,17 @@ public class InitialProbability
     this.mapWarden = mapWarden;
     int numHiddenStates = mapWarden.getNumHiddenStates();
     // initialize the vector to a uniform distribution
-    vector = new ArrayRealVector(numHiddenStates, 1/numHiddenStates);
+    vector = new ArrayRealVector(numHiddenStates, 1d / numHiddenStates);
   }
 
-  public InitialProbability(MapWarden mapWardens, GammaMatrix gammaMatrix)
+  public InitialProbability(MapWarden mapWarden, GammaMatrix gammaMatrix)
   {
-    vector = new ArrayRealVector(mapWardens.getNumHiddenStates());
-    for (HiddenState i: mapWarden.iterateHiddenStates())
+    this.mapWarden = mapWarden;
+    vector = new ArrayRealVector(mapWarden.getNumHiddenStates());
+    for (HiddenState i: this.mapWarden.iterateHiddenStates())
     {
-      int iIndex = mapWarden.hiddenStateToHiddenStateIndex(i);
-      Observation firstObservation = mapWardens.firstObservation();
+      int iIndex = this.mapWarden.hiddenStateToHiddenStateIndex(i);
+      Observation firstObservation = mapWarden.firstObservation();
 
       double probability = gammaMatrix.getEntry(i, firstObservation);
       vector.setEntry(iIndex, probability);
