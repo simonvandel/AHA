@@ -9,6 +9,8 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * A SensorState is a representation of sensor values in a given time snapshot.
@@ -25,9 +27,10 @@ public class SensorState {
     @DatabaseField(persisterClass = InstantPersister.class)
     private Instant mTime;
 
-    private SensorState(){}
+    SensorState(){ mValues = mpValues.stream().collect(Collectors.toList());}
 
     public SensorState(List<SensorValue> values, Instant time) {
+        values.stream().forEach(val -> val.addDBSS(this));
         mValues = values;
         mpValues = values;
         mTime = time;
@@ -50,10 +53,10 @@ public class SensorState {
     @Override
     public String toString() {
         String string = "";
-        for (int i = 0; i <= mValues.size(); i++) {
-            string = string + "," + mValues.toString();
+        for (SensorValue val : mpValues) {
+            string = string + "," + val.toString();
         }
-        return string + mTime.toString();
+        return string;
     }
 
     @Override

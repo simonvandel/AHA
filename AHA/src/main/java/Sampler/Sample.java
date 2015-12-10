@@ -2,26 +2,31 @@ package Sampler;
 
 import Communication.SensorValue;
 import Database.InstantPersister;
+import Database.pInteger;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
+import com.j256.ormlite.dao.ForeignCollection;
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by heider on 19/11/15.
  */
 @DatabaseTable(tableName = "Samples")
-public class Sample {
+public class Sample{
   @DatabaseField(generatedId = true, unique = true)
   private int id;
-  //@ForeignCollectionField(eager = true)
-  //private Collection<Integer> mpStatesHashed = new ArrayList<Integer>(); //persistable values
+  @ForeignCollectionField(eager = true)
+  private Collection<pInteger> mpStatesHashed = new ArrayList<pInteger>(); //persistable values
   private List<Integer> mStatesHashed = new ArrayList<Integer>();
   @DatabaseField(persisterClass = InstantPersister.class)
   private Instant mTime = null;
@@ -37,16 +42,16 @@ public class Sample {
       }
       else {
         mStatesHashed.add(e.hashCode());
+        mpStatesHashed.add(new pInteger(e.hashCode()));
       }
 
     }
-    //mpStatesHashed = mStatesHashed;
     mTime = time;
     mActions = actions;
     mpActions = actions;
   }
 
-  private Sample(){}
+  Sample(){}
 
   public List<Integer> getHash() {
     return mStatesHashed;

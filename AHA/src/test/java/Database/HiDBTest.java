@@ -25,16 +25,19 @@ public class HiDBTest
   @Before
   public void setUp() {
     Sampler sampler = Sampler.getInstance();
-    for(int i=0; i<10;i++){
+    for(int i=0; i<60;i++){
       NormalizedSensorState ns = new NormalizedSensorState(Instant.now());
       ns.AddNormalizedValue(new NormalizedValue(1337*i, true, "fuckdigsimon", 7331*i));
+      ns.AddNormalizedValue(new NormalizedValue(2337*i, false, "fuckdigahmed", 2331*i));
+      ns.AddNormalizedValue(new NormalizedValue(1337*i, true, "fuckdi213gsimon", 73323*i));
+      ns.AddNormalizedValue(new NormalizedValue(2337*i, false, "fuckdiga123hmed", 2321431*i));
       samples.add(sampler.getSample(ns));
     }
   }
 
   @Test
   public void putSampleTest() {
-    db.putNewSample(samples.get(0));
+    db.putNewSample(samples.get(37));
   }
 
   @Test
@@ -46,17 +49,17 @@ public class HiDBTest
   public void putNewSensorStateTest() {
     List<SensorValue> svs = new ArrayList<>();
     svs.add(new SensorValue(1337, true, "fuckdigsimon", 7331));
-    svs.add(new SensorValue(7331, false, "fuckdigsimon", 1337));
-    svs.add(new SensorValue(1337, true, "fuckdigsimon", 7331));
-    svs.add(new SensorValue(7331, false, "fuckdigsimon", 1337));
-    svs.add(new SensorValue(1337, true, "fuckdigsimon", 7331));
-    svs.add(new SensorValue(7331, false, "fuckdigsimon", 1337));
+    svs.add(new SensorValue(7331, false, "fuckdig123simon", 12337));
+    svs.add(new SensorValue(133137, true, "fuckdigs1121223imon", 7331));
+    svs.add(new SensorValue(73131, false, "fuckdig155623simon", 1321237));
+    svs.add(new SensorValue(13237, true, "fuc854889kdigsimon", 732131));
+    svs.add(new SensorValue(73231, false, "fuckdig5748simon", 13137));
     db.putNewSensorState(new SensorState(svs,Instant.now()));
   }
 
   @Test
   public void getSensorStateTest() {
-      db.getSensorStates();
+    System.out.print(db.getSensorStates());
   }
 
   @Test

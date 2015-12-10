@@ -8,7 +8,7 @@ import com.j256.ormlite.table.DatabaseTable;
 import java.nio.ByteBuffer;
 @DatabaseTable(tableName = "Actions")
 public class Action {
-  @DatabaseField(canBeNull = true, foreign = true)
+  @DatabaseField(foreign = true, foreignAutoCreate=true)
   private Sample dbs;
   @DatabaseField(foreign = true)
   private NormalizedValue mVal1;
@@ -23,7 +23,7 @@ public class Action {
     this.mSensorId = sensorId;
   }
 
-  private Action(){}
+  Action(){}
 
   public int getDevice() {
     return mSensorId;
