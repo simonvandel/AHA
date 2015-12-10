@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
  */
 public class HiddenMarkovModel implements IModel
 {
-
   private InitialProbability initialProbability;
   private TransitionMatrix transitionMatrix;
   private EmissionMatrix emissionMatrix;
@@ -213,7 +212,6 @@ public class HiddenMarkovModel implements IModel
   @Override
   public void TakeFeedback(Reasoning wrongReasoning)
   {
-    /*
     for (int i = 0; i < wrongReasoning.getHiddenStates().size() && i < wrongReasoning.getObservations().size(); i++) {
       HiddenState currentHiddenState = wrongReasoning.getHiddenStates().get(i);
       Observation currentObservation = wrongReasoning.getObservations().get(i);
@@ -228,11 +226,11 @@ public class HiddenMarkovModel implements IModel
       }
 
       // set the probability that currentHiddenState emits currentEmissionState to 0, as it was the wrong thing to do
-      emissionMatrix.setProbabilityAndNormalise(0, currentHiddenState, currentObservation);
+      EmissionState currentEmissionState = mapWarden.observationToEmission(currentObservation);
+      emissionMatrix.setProbabilityAndNormalise(0, currentHiddenState, currentEmissionState);
 
       // set the probability that currenHiddenState transitions to nextHiddenState to 0
       transitionMatrix.setProbabilityAndNormalise(0, currentHiddenState, nextHiddenState);
     }
-    */
   }
 }
