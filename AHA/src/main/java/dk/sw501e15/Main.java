@@ -29,15 +29,15 @@ public class Main
     SensorPacketWorker oWorker = new SensorPacketWorker();
     DataReceiver dr = new DataReceiver(oWorker);
 
-    Communicator oCommunicator = new Communicator("COM6", 9600, dr);
+    Communicator oCommunicator = new Communicator("COM7", 9600, dr);
     Normalizer nm = Normalizer.getInstance();
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
     oWorker.registerOutputTo(queueOfSensorState);
 
     Sample sample;
-    DB db = DB.getInstance();
+//    HiDB db = HiDB.getInstance();
 
-    db.createDB();
+//    db.createDB();
     Sampler sampler = Sampler.getInstance();
 
     Reasoner oReasoner = Reasoner.getInstance();
@@ -47,16 +47,19 @@ public class Main
 
     Instant learnerRun = Instant.now();
     long learnerRunInverval = 60; //in seconds
-    boolean learnerHasRun = false;
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){
         Reasoner oReasoner = Reasoner.getInstance();
-        HiDB db = HiDB.getInstance();
+        SampleList sampleList = SampleList.getInstance();
+
         while(true){
           System.out.println("Ran learner");
           Learner oLearner = new Learner();
-          oReasoner.setCurrentModel(oLearner.learn(db.getSamples()));
+          List<Sample> samples = sampleList.getSamples();
+          if(samples != null){
+            oReasoner.setCurrentModel(oLearner.learn(samples));
+          }
           //db.pushModel(oLearner.learn(db.getHistory())); //get the history to learn on and push the model once finished
           try{
             this.wait();
@@ -68,6 +71,7 @@ public class Main
     };
     Learner oLearner = new Learner();
     List<Sample> learnerData = new ArrayList<>();
+    SampleList sampleList = SampleList.getInstance();
     while (true)
     {
       while (!queueOfSensorState.isEmpty())
@@ -81,9 +85,10 @@ public class Main
         {
           sample = sampler.getSample(nState);
           if (sample != null) {
-            db.putStateScopeIntoDB(sample);
+            //sampleList.add(sample);
+            //db.putNewSample(sample);
 
-            oReasoner.reason(sample);
+            oReasoner.reasonAndSend(sample);
           }
 
         }

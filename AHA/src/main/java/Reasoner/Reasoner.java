@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Reasoner {
   private static Reasoner reasoner;
-  private DB db = DB.getInstance();
+  //private DB db = DB.getInstance();
   private IModel currentModel = null; //TODO db.getModel();
   private Communicator com = null;
   //husk actions vi har sendt, indenfor 5 sekunder, så vi kan tjekke om de actions vi får er bruger eller system
@@ -59,6 +59,7 @@ public class Reasoner {
           actions)
       {
         try{
+          System.out.println("Sending data: " + action.toString());
           com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
         } catch (XBeeException e){
           //Would probably be a good idea to handle the exception instead of ignoring it...
