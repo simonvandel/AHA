@@ -38,7 +38,7 @@ public class MapWarden // dun dun du du dun dun
   }
 
   public MapWarden(List<Sample> sampleObservations){
-    observations = sampleObservations.stream().map(sample -> new Observation(sample)).collect(Collectors.toList());
+    observations = sampleObservations.stream().filter(s -> s.getHash().get(s.getHash().size()-1) != null).map(sample -> new Observation(sample)).collect(Collectors.toList());
 
     // an emission state is a snapshot along with an action to perform. We can only emit all distinct snapshots we have seen.
     //emissionStates = sampleObservations.stream().map(distinctSample -> new EmissionState(distinctSample)).distinct().collect(Collectors.toList());

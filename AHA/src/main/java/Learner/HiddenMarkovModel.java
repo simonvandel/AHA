@@ -134,6 +134,9 @@ public class HiddenMarkovModel implements IModel
     Observation firstObservation = observationHashes.get(0);
     mapWarden.addObservationMapping(firstObservation);
     EmissionState firstEmissionState = mapWarden.observationToEmission(firstObservation);
+    if (firstEmissionState == null) {
+      return null;
+    }
     // Calculate the probabilities that each hidden state k emitted the first observed value.
     for (HiddenState i: mapWarden.iterateHiddenStates())
     {
