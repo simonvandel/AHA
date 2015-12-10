@@ -130,23 +130,4 @@ public class DB {
     }
     return 0;
   }
-
-  //TODO implement this pls
-  /**
-   * flags the model in the DB, s.t. the learner can tell that an action was wrong
-   * @param reasoning the reasoning behind the action
-   */
-  public void flagModel(Reasoning reasoning){
-    return;
-  }
-
-  //TODO Implement this
-
-  /**
-   * Gets the current model in the db
-   * @return the model
-   */
-  public IModel getModel(){
-    return null;
-  }
 }

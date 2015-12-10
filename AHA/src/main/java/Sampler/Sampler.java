@@ -178,7 +178,6 @@ public class Sampler {
                   .getValue()); //Correct the state to have the value of before the action happened
           Reasoning reasoning = reasoner.getReasoningBehindAction(validActions.get(i));
           if(reasoning != null){
-            db.flagModel(reasoning);
             reasoner.updateModel(reasoning);
           }
         }

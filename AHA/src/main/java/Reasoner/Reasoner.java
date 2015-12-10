@@ -7,6 +7,7 @@ import com.digi.xbee.api.exceptions.XBeeException;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
+import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -74,10 +75,7 @@ public class Reasoner {
      */
   public List<Action> reason(Sample sample) {
     if(currentModel == null){
-      currentModel = db.getModel();
-      if(currentModel == null){
-        return null;
-      }
+      return null;
     }
     Reasoning reasoning = currentModel.CalculateReasoning(sample);
     if (reasoning == null) {
@@ -112,6 +110,14 @@ public class Reasoner {
    */
   public void updateModel(Reasoning reasoning){
 
+  }
+
+  public void setCurrentModel(IModel model){
+      try{
+        currentModel = model;
+      } catch (ConcurrentModificationException e){
+        setCurrentModel(model);
+      }
   }
 }
 

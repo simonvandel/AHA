@@ -5,6 +5,7 @@ import Communication.DataReceiver;
 import Communication.SensorPacketWorker;
 import Communication.SensorState;
 import Database.DB;
+import Database.HiDB;
 import Learner.Learner;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
@@ -50,10 +51,12 @@ public class Main
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){
+        Reasoner oReasoner = Reasoner.getInstance();
+        HiDB db = HiDB.getInstance();
         while(true){
           System.out.println("Ran learner");
-          DB db = DB.getInstance();
           Learner oLearner = new Learner();
+          oReasoner.setCurrentModel(oLearner.learn(db.getSamples()));
           //db.pushModel(oLearner.learn(db.getHistory())); //get the history to learn on and push the model once finished
           try{
             this.wait();
