@@ -1,3 +1,4 @@
+#define NUM_READINGS 10
 class Photoresistor {
   public:
     Photoresistor(unsigned int pin);
