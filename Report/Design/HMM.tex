@@ -1,5 +1,5 @@
-­\section{Hidden Markov Model}
-The only information available for the machine intelligence model of the project are the sensors of the problem domain and time. For this we will use the term ­\emph{snapshot}. A snapshot is here meant as the values of all sensors in the home at the same time, snapshot will from here on adhere to this definition. 
+\section{Hidden Markov Model}
+The only information available for the machine intelligence model of the project are the sensors of the problem domain and time. For this we will use the term -\emph{snapshot}. A snapshot is here meant as the values of all sensors in the home at the same time, snapshot will from here on adhere to this definition. 
 
 To model the machine intelligence the Markov model was chosen. This model en-copes discrete time changes in the states of a world. This is an nearly exact match to this project domain. Further more the model assumes a Newtonian world view. This means what is going to happen in the future is only dependent on what is currently true en the present, not what has happened in the past. We will now introduce the diagrams mainly used to illustrate how the models changes over time graphically. These diagrams are called Trellis diagrams. The simplest form of a Markov model can be seen in \cref{fig:1stMarkovModel}. Here we can see the property that at any state in time $s_t$ the next discrete time future $s_{t+1}$ is only dependent on the current state $s_t$.
 
