@@ -110,7 +110,14 @@ To encompass what the user is currently thinking and remembering, essentially de
 
 On the basis of this we can now find the specific hidden states. We introduce the term sample that covers the current obervable state with the history of snapshots n steps back. The size of this n will be discussed in \cref{}\jenote{need reference to section about the sampler}. Since the history is en-coded in the states we can only differentiate between a history of snapshots. A hidden state will therefore be created for every sample in the HMM.
 
-The formal definition of a HMM is $\theta=\{A,B,\pi\}|A = \text{transition matrix}, B = \text{emission matrix}, \pi = \text{initial distribition}$. The transition matirix is the matrix that.
+In a hidden Markov model a node is connected with a direction to other nodes with a certain probability. This denotes the probability of transition from one state to another. There are two different forms of transition in such a model.
+First there is the hidden state transition from one state to another here denoted as $a_ij$, meaning the transition from hidden state $x_i$ to hidden state $x_j$. It can also be described as, the probability that we know that the state is $x_i$ at time t, what is the probability that the next hidden state is $x_j$. We use the term hidden state transition for this.
+Secondly we have the transition from a hidden state to a emission state, this is called emitting a observable state. It is noted as $b_ij$, meaning emitting emission state $e_j$ in hidden state $x_i$. This is also associated to a certain probability.
+Furthermore we also have the initial distribution. This denotes the probability distribution of any hidden state without a prior hidden state, the initial probability for being in hidden state $x_i$. Each of these 
+
+The formal definition of a HMM is 
+
+$\theta=\{A,B,\pi\}|A = \text{transition matrix} = P(X_t=j|X_{t-1}, B = \text{emission matrix}, \pi = \text{initial distribition}$. The transition matirix is the matrix that.
 
 \begin{figure}[htbp]
 \centering
