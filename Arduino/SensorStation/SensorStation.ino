@@ -85,7 +85,7 @@ void loop()
 {
   // ********** Analog readings *********
   // 32 bit analog
-  unsigned long distance = ultrasonic.getDistance();
+  unsigned long distance = 0; //ultrasonic.getDistance();
   Serial.print("Distance: ");
   Serial.println(distance);
   // 10 bit analog
@@ -93,20 +93,21 @@ void loop()
 
   // ********** digital readings *********
   // digital sensor
-  boolean motion = pir.getMotionDetected();
+  boolean motion = 0;// pir.getMotionDetected();
   Serial.print("Motion: ");
   Serial.println(motion);
   // packet header
   sensorPacketBuilder.add(1, 3); // numAnalog
   sensorPacketBuilder.add(0, 3); // indexAnalog. No emulatable analog sensor
-  sensorPacketBuilder.add(3, 2); // Analog size 1 = 32 bits
+  sensorPacketBuilder.add(2, 2); // Analog size 1 = 32 bits
+  
   sensorPacketBuilder.add(1, 4);// num digital
-  sensorPacketBuilder.add(0, 4);// index digital. No emulatable digital sensor
+  sensorPacketBuilder.add(1, 4);// index digital. No emulatable digital sensor
 
   // body
-  sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
-  //sensorPacketBuilder.add(lightIntensity, 10);// analog val 2 = light
-  sensorPacketBuilder.add(motion, 1);// digital val 1 = pir
+  //sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
+  sensorPacketBuilder.add(lightIntensity, 10);// analog val 2 = light
+  sensorPacketBuilder.add(lightSwitchVal, 1);// digital val 1 = pir
 
   int packetSize = sensorPacketBuilder.build(buildArray);
 
