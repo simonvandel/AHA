@@ -1,6 +1,6 @@
 #ifndef Ultrasonic_h
   #define Ultrasonic_h
-
+  #define NUM_READINGS 10
   #define speedOfSound 0.03432 // ~343.2 m/s at 20 degrees celcius room temperature
                                // 0.03432 cm/us
 
