@@ -4,21 +4,19 @@ import Communication.Communicator;
 import Communication.DataReceiver;
 import Communication.SensorPacketWorker;
 import Communication.SensorState;
-import Database.DB;
-import Database.HiDB;
 import Learner.Learner;
 import Normaliser.NormalizedSensorState;
-import Normaliser.NormalizedValue;
 import Normaliser.Normalizer;
 import Reasoner.Reasoner;
 import Sampler.*;
 
-import java.sql.Time;
+import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.LinkedTransferQueue;
+import java.util.logging.*;
 
 
 public class Main
@@ -26,10 +24,11 @@ public class Main
 
   public static void main(String[] args)
   {
+    instantiateLoggers();
     SensorPacketWorker oWorker = new SensorPacketWorker();
     DataReceiver dr = new DataReceiver(oWorker);
 
-    Communicator oCommunicator = new Communicator("COM7", 9600, dr);
+    Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr);
     Normalizer nm = Normalizer.getInstance();
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
     oWorker.registerOutputTo(queueOfSensorState);
@@ -54,7 +53,6 @@ public class Main
         SampleList sampleList = SampleList.getInstance();
 
         while(true){
-          System.out.println("Ran learner");
           Learner oLearner = new Learner();
           List<Sample> samples = sampleList.getSamples();
           if(samples != null){
@@ -76,11 +74,11 @@ public class Main
     {
       while (!queueOfSensorState.isEmpty())
       {
+        System.out.print('.');
+        if(queueOfSensorState.size() >  100)
+          Logger.getLogger("mainLogger").log(Level.SEVERE, "Behind in sensor queue: " + queueOfSensorState.size());
         SensorState oST = queueOfSensorState.poll();
         nState = nm.Normalize(oST);
-        if(queueOfSensorState.size() > 10) {
-          System.out.println("Size of queue: " + queueOfSensorState.size());
-        }
         if (nState != null)
         {
           sample = sampler.getSample(nState);
@@ -93,7 +91,7 @@ public class Main
 
         }
       }
-      if(Instant.now().isAfter(learnerRun.plusSeconds(learnerRunInverval))){
+      if(Instant.now().isAfter(learnerRun.plusSeconds(learnerRunInverval)) && sampleList.getSamples().size() > 100){
         if(learnerThread.getState() == Thread.State.NEW){
           learnerThread.start();
           learnerRun = Instant.now();
@@ -105,5 +103,24 @@ public class Main
         }
       }
     }
+  }
+
+  private static void instantiateLoggers(){
+    Logger logger = Logger.getLogger("mainLogger");
+    try{
+      Handler handler = new FileHandler("log");
+      logger.addHandler(handler);
+      Logger.getLogger("comLogger").addHandler(handler);
+      Logger.getLogger("comLogger").setLevel(Level.SEVERE);
+      Logger.getLogger("normLogger").addHandler(handler);
+      Logger.getLogger("normLogger").setLevel(Level.SEVERE);
+      Logger.getLogger("aiLogger").addHandler(handler);
+      Logger.getLogger("reasonLogger").addHandler(handler);
+      Logger.getLogger("comLogger").log(Level.SEVERE, "testlog do");
+
+    } catch (IOException e){
+      e.printStackTrace();
+    }
+
   }
 }

@@ -7,19 +7,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
  * Created by simon on 11/30/15.
  */
-public class Learner
-{
+public class Learner{
+  private Logger logger = Logger.getLogger("normLogger");
   private HiddenMarkovModel currentModel;
 
   private final double convergenceConstant = 0.001e-15; // TODO: change to suitable number
 
   public HiddenMarkovModel learn(List<Sample> sampleObservations){
-
+    logger.log(Level.SEVERE, "Sample size for generating hidden markov model: " + sampleObservations.size());
     MapWarden mapWarden = new MapWarden(sampleObservations);
 
     // we need to check if a model has ever been generated.
@@ -32,7 +34,7 @@ public class Learner
     InitialProbability initProbability = new InitialProbability(mapWarden);*/
     double[][] randomEmissionValues = new double[mapWarden.getNumHiddenStates()][mapWarden.getNumObservations()];
 
-    int startRemaining = mapWarden.getNumObservations()*10;
+    int startRemaining = mapWarden.getNumObservations() * 10;
     Random r = new Random(0); // TODO: seed er sat til 0
     for (int row = 0; row < randomEmissionValues.length; row++){
       int remaining = startRemaining;
@@ -61,15 +63,15 @@ public class Learner
     double oldLogProb = Double.NEGATIVE_INFINITY;
 
     boolean shouldContinue = true;
-    while (shouldContinue) {
+    while (shouldContinue){
       iters++;
       double logProb = computeLog(mapWarden);
 
-      if (iters < maxIters && logProb > oldLogProb) {
+      if (iters < maxIters && logProb > oldLogProb){
         oldLogProb = logProb;
         newModel = baumWelch(oldModel, mapWarden);
         shouldContinue = true;
-      } else {
+      } else{
         shouldContinue = false;
       }
 
@@ -92,8 +94,7 @@ public class Learner
     return -logProb;
   }
 
-  private HiddenMarkovModel baumWelch(HiddenMarkovModel oldModel, MapWarden mapWarden)
-  {
+  private HiddenMarkovModel baumWelch(HiddenMarkovModel oldModel, MapWarden mapWarden){
     ForwardsMatrix forwards = new ForwardsMatrix(oldModel, mapWarden);
     BackwardsMatrix backwards = new BackwardsMatrix(oldModel, mapWarden);
 

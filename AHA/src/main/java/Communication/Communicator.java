@@ -7,6 +7,9 @@ import com.digi.xbee.api.exceptions.XBeeException;
 import com.digi.xbee.api.listeners.IDataReceiveListener;
 import com.digi.xbee.api.models.XBee64BitAddress;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import static java.lang.System.out;
 
 /**
@@ -16,6 +19,7 @@ public class Communicator
 {
   private XBeeDevice device;
   private XBeeNetwork network;
+  private Logger logger = Logger.getLogger("comLogger");
 
   public Communicator(String devicePort, int baudRate, IDataReceiveListener dataListener)
   {
@@ -62,10 +66,12 @@ public class Communicator
       if (currID.equals(addr64))
       {
         device.sendData(network.getDevices().get(i), toSend);
+        logger.log(Level.SEVERE ,"Sent data to device: " + currID);
         return true;
       }
     }
     network.startDiscoveryProcess(); //should we check if we found the device and try to send again?
+    logger.log(Level.SEVERE, "Failed sending data. Started network discovery process");
     return false;
 
   }

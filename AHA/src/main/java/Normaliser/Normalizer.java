@@ -6,12 +6,14 @@ import Communication.SensorValue;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * Created by Zobair on 20-11-2015.
  */
 public class Normalizer{
   private static Normalizer normalizer;
+  private Logger logger = Logger.getLogger("normLogger");
 
 
   /**

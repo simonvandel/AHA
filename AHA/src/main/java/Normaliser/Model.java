@@ -2,6 +2,8 @@ package Normaliser;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Model implements Runnable{
   private List<Range> ranges = new ArrayList<>(); //what is acctually checked against when normalizing
@@ -34,6 +36,10 @@ public class Model implements Runnable{
     return modelBeingAssigned.get();
   }
 
+  public List<Range>  getRanges() {
+    return ranges;
+  }
+
   //determines which cluster the input fits into and returns it. The 'cluster' is the index of the range as defined in the normalizer class
   public int determineNormalization(int toNormalize){
 
@@ -55,13 +61,11 @@ public class Model implements Runnable{
   //but we also dont want to lock out the main loop while generating, when its only nessacary when implementing/assigning the new model
   public void run(){
     modelBeingMade.set(true);
-    System.out.println("Model being generated, on: " + trainingData.size());
     List<Range> rangesHolder;
 
     //call normalizer
     ModelGenerator oModelGen = new ModelGenerator();
     if (numberOfClusters == -1) numberOfClusters = oModelGen.DetermineNumberOfClusters(trainingData);
-
     rangesHolder = oModelGen.generateModel(trainingData, numberOfClusters);
     //**
     while (modelBeingUsed.get()) ; //busy wait for mutex
@@ -72,7 +76,6 @@ public class Model implements Runnable{
     modelBeingAssigned.set(false);
     basedOnTrainingData = trainingData.size();
     this.trainingData.clear();
-    System.out.println("Model changed");
 
   }
 

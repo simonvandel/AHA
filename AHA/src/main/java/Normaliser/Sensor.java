@@ -3,13 +3,15 @@ package Normaliser;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by brugeren on 03-12-2015.
  */
 public class Sensor
 {
-
+  private Logger logger = Logger.getLogger("normLogger");
   private boolean adaptiveNormalization = true; //determains whether or not we countinusly adapt our model. Is currently only settable in the code
 
   private String deviceID = ""; //signifies the device this data is associated with
@@ -41,20 +43,19 @@ public class Sensor
   {
     int toReturn = -1;
 
-
+System.out.println("Norm: " + toNormalize);
     trainingData.add(toNormalize);
-    if (trainingData.size() % 100 == 0)
-    {
-      System.out.println("For index: " + sensorIndex + ", trainingdata: " + trainingData.size());
-    }
     if (!trainingData.stream().allMatch(x -> x == 0 || x == 1))
     {
+
       //if model is null we it means we havnt had enough trainingdata for that sensor to make a model, so we start making one
       //else we normalize the model, as long as the model isn't being assigned by the model creation thread Then check wether or not we should update our model
       if (oModel == null)
       {
         if (determainValidatyOfTrainingData())
         {
+          logger.log(Level.SEVERE, "in normalize: Size of training data: " + trainingData.size() + ". ID: " + sensorIndex + ". addr: " + deviceID);
+          System.out.println("should have logged model");
           trainingDataThreshhold = trainingData.size(); //sets the treshhold to the trainingdata size because this should be a baseline for future model gens.
           createModelThread();
         }
@@ -62,8 +63,18 @@ public class Sensor
       {
         if (!oModel.getModelBeingAssigned())
           toReturn = oModel.determineNormalization(toNormalize);
-        if ((trainingData.size() - oModel.basedOnTrainingData) > trainingDataThreshhold && adaptiveNormalization)
+        if ((trainingData.size() - oModel.basedOnTrainingData) > trainingDataThreshhold && adaptiveNormalization){
           createModelThread();
+          String log = "";
+          int i = 0;
+          for(Range r : oModel.getRanges()){
+            log += "range: " + i + "; lowerbound: " + r.lowerBound + ", upperbound: " + r.upperBound;
+            i++;
+          }
+          System.out.println(log);
+          logger.log(Level.SEVERE, "Model for sensor: " + sensorIndex +", on device: " + deviceID + "Model:\n" + log);
+        }
+
       }
     } else
     toReturn = toNormalize;
@@ -79,7 +90,7 @@ public class Sensor
       List<List<Integer>> cluters = new ArrayList<>(oModelGen.splitIntoClusers(trainingData, 2));
       double clusterVariance = oModelGen.findClusterVariance(cluters);
       System.out.println(clusterVariance);
-      return clusterVariance > 100;
+      return clusterVariance > 15;
     }
     return false;
   }
