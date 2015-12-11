@@ -46,14 +46,14 @@ This module performs three tasks:
 
 \begin{enumerate}
 \item It connects snapshots with the previous n snapshots. The previous n snapshots represent the history of the snapshot fed to the sampler. Together the current snapshot and its history of snapshots form a state scope.
-\item It calculates whether an action has occured from the previous snapshot to the current. An action has occured when one or more emulatable sensors have changed its value.
+\item It calculates whether an action has occurred from the previous snapshot to the current. An action has occurred when one or more emulatable sensors have changed its value.
 \item It hashes the state scope.
 \end{enumerate}
 
-The hashed state scopes and the calculated action aswell as the time of arrival is now sent to 2 modules: the database and the reasoner.
+The hashed state scopes and the calculated action as well as the time of arrival is now sent to 2 modules: the database and the reasoner.
 
 \subsection{Database}
-The database has the responsibility to store the learned model used for predicting user patterns, aswell as storing samples of data observed from the sensors.
+The database has the responsibility to store the learned model used for predicting user patterns, as well as storing samples of data observed from the sensors.
 
 \subsection{Learner}
 The responsibility of the learner is to infer the best parameters of the model. This is further described in \cref{} \sinote{link til learner design}. The learner will utilise the samples stored in the database. When parameters for a model has been learned, the model is stored in the database, for others to consume.

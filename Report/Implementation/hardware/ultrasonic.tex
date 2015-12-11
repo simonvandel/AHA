@@ -14,7 +14,7 @@ The sensor \enquote{HC-SR04} in consideration is utilising the time of flight pr
 \begin{figure}[htbp]
   \centering
   \includegraphics[angle=-90, width=0.6\textwidth]{arduino-ultrasonic-wiring.png}
-  \caption[The setup of the ultrasonic sensor testbed]{The setup of the ultrasonic sensor testbed. The 2 speakers on the figure should symbolise an ultrasonic sensor.}\label{fig:ultrasonicwiring}
+  \caption[The setup of the ultrasonic sensor test bed]{The setup of the ultrasonic sensor test bed. The 2 speakers on the figure should symbolise an ultrasonic sensor.}\label{fig:ultrasonicwiring}
 \end{figure}
 
 \paragraph{Operation of the Sensor}
@@ -49,7 +49,7 @@ When using the technology, the following considerations should be taken into acc
 \paragraph{The Purpose}
 The purpose of the ultrasonic sensor in this project is to figure out if a person is at a specific location in the problem domain e.g. sitting in the sofa watching TV. The PIR sensor described in \cref{sub:pir}, is only capable of sensing motion. The ultrasonic sensor described in this section is capable of measuring a distance to an specific object e.g. a person. The distance is measured every second, so where the PIR sensor would not be capable of tracking a person if the person is not moving, the ultrasonic can detect a person by a change in the distance.
 
-\paragraph{The Tests} The tests of the sensors will include some aspects of the considerations mentioned above, also some tests on the values mentioned in the HC-SR04 datasheet\cite{hcsr04}. The tests will be performed on 3 identical HC-SR04 sensors. The pictures \crefrange{fig:ultra1}{fig:ultra3} depicts how the tests were carried out.
+\paragraph{The Tests} The tests of the sensors will include some aspects of the considerations mentioned above, also some tests on the values mentioned in the HC-SR04 data sheet\cite{hcsr04}. The tests will be performed on 3 identical HC-SR04 sensors. The pictures \crefrange{fig:ultra1}{fig:ultra3} depicts how the tests were carried out.
 
 \begin{figure}[htbp]
   \centering
@@ -155,4 +155,4 @@ The angle of the field the sensor measures within is tested, see \cref{tab:ult_a
 The results can be seen in \cref{tab:ult_angle}. The sensors can reliably sense objects within a angle of -20\degree/20\degree.
  
 \paragraph{Multiple Ultrasonic Sensors}
-If multiple ultrasonic sensors are used in the problem domain at the same time, the sensors may interfere with each other. One sensor is capable of transmitting sound waves to another sensor, which would result in a collision. If this is to be solved, it is important that a collision is detectable or does simply not happen. Getting collision-free measurements requires some coordination between sensors, i.e. who will measure when. An example of a solution is that each sensor is given a timeslot, in which a sensor is allowed to speak, it is important that there is slight delay between each timeslot to ensure that the sound waves has attenuated.
+If multiple ultrasonic sensors are used in the problem domain at the same time, the sensors may interfere with each other. One sensor is capable of transmitting sound waves to another sensor, which would result in a collision. If this is to be solved, it is important that a collision is detectable or does simply not happen. Getting collision-free measurements requires some coordination between sensors, i.e. who will measure when. An example of a solution is that each sensor is given a time slot, in which a sensor is allowed to speak, it is important that there is slight delay between each time slot to ensure that the sound waves has attenuated.
