@@ -1,5 +1,3 @@
-\subsection{Architecture}
-
 \Cref{sec:architecture} describes the overall architecture of the system that solves the three tasks; data collection, analysis of data and mimicking patterns learned from the analysis. This section will zoom in on the architecture designed to perform the second and third task. This is the artificial intelligence (AI) subsystem of the system.
 
 % DRAWING
@@ -33,17 +31,17 @@
 
 As can be seen from \cref{fig:ai_architecture}, the AI subsystem contains 6 modules: communication, normaliser, sampler, database, learner and reasoner. The rationale of this particular architecture and its modules is explained in the following.
 
-\subsubsection{Communication}
+\subsection{Communication}
 The input to the AI subsystem is a stream of packets. These packets of sensor values, from now on called snapshots, arrive continuously as devices from the sensor/actuator subsystem send them. The communication module handles these packets and also provides functionality to send data to devices in the sensor/actuator subsystem. When snapshots arrive at the communication module, the data of the packet is encoded in the binary format described in \cref{}\sinote{link til encoding beskrivelse}. The communication module decodes the binary data and notes the time the packet was received.
 
 The decoded sensor values and the time of arrival is then send to the normaliser.
 
-\subsubsection{Normaliser}
+\subsection{Normaliser}
 To remove noise from the sensors and to reduce the size of the problem, a normalisation pass is performed on the input. The normalisation pass is explained deeper in \cref{sec:normaliser}. The output of the normalisation is the same set of sensor values, but normalised to fit into a domain of size k. The time of arrival is not normalised.
 
 The normalised snapshots and the times of arrival are then fed to the sampler.
 
-\subsubsection{Sampler}
+\subsection{Sampler}
 This module performs three tasks:
 
 \begin{enumerate}
@@ -54,11 +52,11 @@ This module performs three tasks:
 
 The hashed state scopes and the calculated action aswell as the time of arrival is now sent to 2 modules: the database and the reasoner.
 
-\subsubsection{Database}
+\subsection{Database}
 The database has the responsibility to store the learned model used for predicting user patterns, aswell as storing samples of data observed from the sensors.
 
-\subsubsection{Learner}
+\subsection{Learner}
 The responsibility of the learner is to infer the best parameters of the model. This is further described in \cref{} \sinote{link til learner design}. The learner will utilise the samples stored in the database. When parameters for a model has been learned, the model is stored in the database, for others to consume.
 
-\subsubsection{Reasoner}
+\subsection{Reasoner}
 The reasoner should, based on the model retrieved from the database and the current scope,time and actions, infer which actions are sensible to perform.
