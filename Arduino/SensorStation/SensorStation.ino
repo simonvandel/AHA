@@ -2,10 +2,17 @@
 #include "PIR.h"
 #include "Photoresistor.h"
 #include "SensorPacketBuilder.h"
+#include "Serialization.h"
 #include <XBee.h>
 
-Ultrasonic ultrasonic(3,2);
-PIR pir(8);
+#define LightSwitch 13
+#define LightBtn 2
+
+boolean lightSwitchVal = false;
+Serialization serialization;
+
+Ultrasonic ultrasonic(4,5);
+PIR pir(3);
 Photoresistor photoresistor(1);
 SensorPacketBuilder sensorPacketBuilder;
 
@@ -16,11 +23,46 @@ XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0);
 
 //uses Printers.h so Serial.print works differently
 void zbReceive(ZBRxResponse& rx, uintptr_t) {
-  //do something with the data
+  if(rx.getDataLength() != 4) { //getDataLength hopefully returns value in bytes
+    //Report error, "repeat message"-message?
+    return;
+  }
+  byte data[4];
+  for (int i = 0; i < 4; i++) { //load data from response into byte array
+    data[i] = rx.getData(i);
+  }
+  int mes[2];
+  serialization.Deserialize(data, mes);
+  if(mes[0] == LightSwitch){
+    if(photoresistor.getLightIntensity() < mes[1]){
+      digitalWrite(LightSwitch, HIGH);
+      lightSwitchVal = true;
+    }
+    else if(photoresistor.getLightIntensity() > mes[1]){
+      digitalWrite(LightSwitch, LOW);
+      lightSwitchVal = false;
+    }
+  }
+  return;
 }
+
+void toggleLightSwitch(){
+  if(lightSwitchVal){
+    digitalWrite(LightSwitch, LOW);
+    lightSwitchVal = false;
+  }
+  else{
+    digitalWrite(LightSwitch, HIGH);
+    lightSwitchVal = true;
+  }
+}
+
 //
 void setup()
 {
+  pinMode(LightSwitch, OUTPUT);
+  pinMode(LightBtn, INPUT);
+  attachInterrupt(0, toggleLightSwitch, RISING);
   Serial.begin(9600);
   xbee.setSerial(Serial);
   // Called when an actual packet received
@@ -33,9 +75,9 @@ void printbincharpad(char c)
 {
   int i;
   for (i = 7; i >= 0; --i)
-    {
-      Serial.write( (c & (1 << i)) ? '1' : '0' );
-    }
+  {
+    Serial.write( (c & (1 << i)) ? '1' : '0' );
+  }
   Serial.print('\n');
 }
 
@@ -43,26 +85,29 @@ void loop()
 {
   // ********** Analog readings *********
   // 32 bit analog
-  unsigned long distance = ultrasonic.getDistance();
+  unsigned long distance = 0; //ultrasonic.getDistance();
+  Serial.print("Distance: ");
+  Serial.println(distance);
   // 10 bit analog
   unsigned int lightIntensity = photoresistor.getLightIntensity();
 
   // ********** digital readings *********
   // digital sensor
-  boolean motion = pir.getMotionDetected();
-
+  boolean motion = 0;// pir.getMotionDetected();
+  Serial.print("Motion: ");
+  Serial.println(motion);
   // packet header
-  sensorPacketBuilder.add(2, 3); // numAnalog
+  sensorPacketBuilder.add(1, 3); // numAnalog
   sensorPacketBuilder.add(0, 3); // indexAnalog. No emulatable analog sensor
-  sensorPacketBuilder.add(3, 2); // Analog size 1 = 32 bits
-  sensorPacketBuilder.add(2, 2);// Analog size 2 = 10 bits
+  sensorPacketBuilder.add(2, 2); // Analog size 1 = 32 bits
+  
   sensorPacketBuilder.add(1, 4);// num digital
-  sensorPacketBuilder.add(0, 4);// index digital. No emulatable digital sensor
+  sensorPacketBuilder.add(1, 4);// index digital. No emulatable digital sensor
 
   // body
-  sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
+  //sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
   sensorPacketBuilder.add(lightIntensity, 10);// analog val 2 = light
-  sensorPacketBuilder.add(motion, 1);// digital val 1 = pir
+  sensorPacketBuilder.add(lightSwitchVal, 1);// digital val 1 = pir
 
   int packetSize = sensorPacketBuilder.build(buildArray);
 
@@ -71,17 +116,18 @@ void loop()
   // Continuously let xbee read packets and call callbacks.
   xbee.loop();
   //act on received data in the call back method zbReceive
-  
+
   memset(buildArray, 0, 64);
+  delay(1);
 
 }
 
 void sendData(byte*  toSend, int sendLen){
   ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)toSend, sendLen);
-  xbee.sendAndWait(zbTx, 100);
+  xbee.send(zbTx);
   ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //not sure whether better to have as global or local
   //Re-sends, and forgets, if not succesful
-  if(xbee.readPacket()){
+  if(xbee.readPacket(250)){
     if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
       xbee.getResponse().getZBTxStatusResponse(txStatus);
       if (txStatus.getDeliveryStatus() == SUCCESS) {

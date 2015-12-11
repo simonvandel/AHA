@@ -12,20 +12,17 @@ A short clarification of the chosen examples of events can be seen in the follow
 \paragraph{Changes in external light} The light intensity outside of the home changes e.g. the sun rises.
 \paragraph{Watching TV} A person is inactive and watching the activated TV.
 
-\begin{table}
+\begin{table}[htbp]
   \centering
-  \begin{tabular}{*{7}{|l}|}
-    \hline
+  \begin{tabular}{*{7}{c}}
+    \toprule
     Event & Person & Action & State & Pattern & Location & Time \\
-    \hline
+    \midrule
     Enter/leave room & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark\\
-    \hline
     Turn on/off appliance & \checkmark & \checkmark & \checkmark & \checkmark & & \checkmark\\
-    \hline
     Changes in external light & & & \checkmark & \checkmark & & \checkmark\\
-    \hline
     Watching TV & \checkmark & \checkmark & & \checkmark & & \checkmark\\
-    \hline
+    \bottomrule
   \end{tabular}
   \caption{Event table}
   \label{tab:eventtable}
@@ -61,7 +58,8 @@ A short clarification of the chosen examples of events can be seen in the follow
 %   \label{tab:eventtable}
 % \end{table}
 
-\sinote{Udkommenteret i Tex dokument, er et behaviour diagram. Hvad skal det bruges til?}
+% \sinote{Udkommenteret i Tex dokument, er et behaviour diagram. Hvad skal det bruges til?}
+
 % \begin{figure}
 %    \centering
 %    \begin{adjustbox}{max width=\textwidth}

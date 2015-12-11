@@ -14,7 +14,7 @@ The sensor \enquote{HC-SR04} in consideration is utilising the time of flight pr
 \begin{figure}[htbp]
   \centering
   \includegraphics[angle=-90, width=0.6\textwidth]{arduino-ultrasonic-wiring.png}
-  \caption{The setup of the ultrasonic sensor testbed. The 2 speakers on the figure should symbolise an ultrasonic sensor.}\label{fig:ultrasonicwiring}
+  \caption[The setup of the ultrasonic sensor testbed]{The setup of the ultrasonic sensor testbed. The 2 speakers on the figure should symbolise an ultrasonic sensor.}\label{fig:ultrasonicwiring}
 \end{figure}
 
 \paragraph{Operation of the Sensor}
@@ -23,7 +23,7 @@ The \enquote{HC-SR04} sensor operates by the following description. This is also
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{sensor-workings.png}
-  \caption{HC-SR04 timing diagram. First, the \enquote{TRIGGER} pin is set HIGH for 10$\si{\micro\second}$. Internally, the sensor will then do 8 cycles of transmit-receive. Finally, the \enquote{ECHO} pin is set HIGH, for the user of the sensor to measure.}
+  \caption[HC-SR04 timing diagram]{HC-SR04 timing diagram. First, the \enquote{TRIGGER} pin is set HIGH for 10$\si{\micro\second}$. Internally, the sensor will then do 8 cycles of transmit-receive. Finally, the \enquote{ECHO} pin is set HIGH, for the user of the sensor to measure.}
   \label{fig:sensor-workings}
 \end{figure}
 
@@ -105,7 +105,7 @@ The results can be seen in \cref{tab:ult_distance}. All three sensors are very c
         \bottomrule
       \end{tabular}
     \end{adjustbox}
-    \caption{Distance test, x marks unstable measurements, and - marks missing. *Does not make sense to measure an angle at 0 distance}\label{tab:ult_distance}
+    \caption[Distance test]{Distance test, x marks unstable measurements, and - marks missing. *Does not make sense to measure an angle at 0 distance}\label{tab:ult_distance}
   \end{table}
 
   \begin{figure}[htbp]
@@ -127,7 +127,7 @@ The results can be seen in \cref{tab:ult_distance}. All three sensors are very c
         \input{Implementation/hardware/UltrasonicPlots/plot0angle}
       \end{axis}
     \end{tikzpicture}
-    \caption{Distance test at 0 degrees angle, at 570 cm sensor 1 and 3 stopped supplying stable reliable answers.}
+    \caption[Distance test results]{Distance test at 0 degrees angle, at 570 cm sensor 1 and 3 stopped supplying stable reliable answers.}
     \label{fig:ult_precision}
   \end{figure}
   
@@ -146,7 +146,7 @@ The angle of the field the sensor measures within is tested, see \cref{tab:ult_a
       \bottomrule
       \end{tabular}
     \end{adjustbox}
-    \caption{Sensor angle test. x marks unstable measurements.}
+    \caption[Sensor angle test]{Sensor angle test. x marks unstable measurements.}
     \label{tab:ult_angle}
   \end{table}
 
