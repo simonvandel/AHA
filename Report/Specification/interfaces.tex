@@ -1,4 +1,4 @@
-\section{User Interfaces}
+\section{User Interfaces}\label{sec:userInterfaces}
 There are two kinds of user interaction in the system: passive and active interaction.
 
 \subsection{Passive User Interaction}
@@ -10,7 +10,7 @@ Active interactions are all those interactions that the user consciously has wit
 \subsection{Design of User Interface}
 As stated in \cref{sec:requirements}, the system should be as invisible to the user as possible. This means that passive user interaction is to be preferred whenever possible. 
 
-\subsubsection{Informing the system of wrong actions}
+\subsubsection{Informing the System of Wrong Actions}
 
 The system has to gradually learn which actions suits the user the best. To learn, the system has to have a fitness function to evaluate how well its performed actions were. The best input for such a fitness function is the user's opinion. However, this function can not extracted the input it needs from passive user interaction. The user has to actively interact with the system, telling the system how appropriate its actions were. Therefore, a mix of active and passive interaction is needed between the user and the system.
 
@@ -20,6 +20,6 @@ One way the user could inform the system of a mistake, is by reversing the actio
 
 The best user experience is by having the user reverse the wrong action of the user, but in cases where this is not possible, an alternative interface is needed. One possible solution is a graphical user interface that displays all actions the system has made. The user can then choose actions and mark them as wrong. In contrast to the system inferring that an action were wrong because the user reverted it, as described above, this way of informing the system is unambiguous. Unambiguous because even if it took the user 30 minutes to mark the action as wrong the system can not interpret it as a rule instead. However this method of user input is also less convenient for the user.
 
-\subsubsection{Visualising system knowledge}
+\subsubsection{Visualising System Knowledge}
 
 As discussed in \cref{sec:interviewReports}, one of the problems of the Nest system was that the user could not reason about the actions of the system. That is, they would not know why a given action was made. To alleviate this problem, the knowledge of the system should be transparent. A solution would be to visually represent the knowledge of the system. The earlier paragraph mentioned a graphical user interface for displaying all actions the system has made. This can be extended to also include why a given action was made. For example, the interface could display the action \enquote{light turned on in living room at 21:30}. If the user clicked on this action, the system would display the reasoning behind this action. In this case, it could be: \enquote{The light intensity in the room was below 10 lux}.
