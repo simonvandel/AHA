@@ -106,18 +106,22 @@ To encompass what the user is currently thinking and remembering, essentially de
 \caption[Trellis diagram for a 2nd order Hidden Markov Model]{A trellis diagram for a 2nd order hidden Markov model.}\label{fig:3rdMarkovModel}
 \end{figure}
 
-\Cref{fig:3rdMarkovModel} shows the trellis diagram for a 2nd order hidden Markov model. Here we can see that every state $s_t$ is dependent on two states in the past $s_{t-1}$ and $s_{t-2}$ meaning that every states is not only dependent on what happened the time step before. This can trivially be expanded to any nth order. One would probably notice now that every model we have look at so far has been a 1st order Markov model. Any nth order Markov model where $n>1$ violates the Newtonian world-view, also known as the Markov property. Many algorithms within this field assumes this Markov property, including the ones later used in this project. Any nth order Markov model can be converted to a 1st order Markov model, thereby keeping the Markov property. This is in this project done by encoding the needed past in the hidden state together with the current state.
+\Cref{fig:3rdMarkovModel} shows the trellis diagram for a 2nd order hidden Markov model. Here we can see that every state $s_t$ is dependent on two states in the past $s_{t-1}$ and $s_{t-2}$ meaning that every state is not only dependent on what happened the time step before. This can trivially be expanded to any nth order. Every model we have look at so far has been a 1st order Markov model. Any nth order Markov model where $n>1$ violates the Newtonian world-view, also known as the Markov property. Many algorithms within this field assumes this Markov property, including the ones later used in this project. Any nth order Markov model can be converted to a 1st order Markov model, thereby keeping the Markov property. This is in this project done by encoding the needed past, in form of the prior hidden states, in the hidden state together with the current.
 
-On the basis of this we can now find the specific hidden states. We introduce the term sample that covers the current obervable state with the history of snapshots n steps back. The size of this n will be discussed in \cref{}\jenote{need reference to section about the sampler}. Since the history is en-coded in the states we can only differentiate between a history of snapshots. A hidden state will therefore be created for every sample in the HMM.
+On the basis of this we can now find the specific hidden states. We introduce the term \emph{sample} that covers the current observable state together with the history of snapshots n steps back. The size of this n will be discussed in \cref{}\jenote{need reference to section about the sampler}. This sample is used to find hidden states. A list of samples are created from an observation sequence of snapshots, further described in \cref{}\jenote{need sampler reference}. One could argue that this sample needed to be created from history of hidden states, not snapshots, since it is these we depend on in the current state. The problem here arises because both learning probabilities and the what nodes to include cannot really be done completely in the same graph. A compromise was therefore made so that the samples and thereby hidden states are found from the observations and history of observation, on the reasoning that we can not destinct between two hidden states form anything else then the observations. A hidden state will therefore be created for every sample in the HMM to keep the model in 1st order and keeping the Markov property.
 
 In a hidden Markov model a node is connected with a direction to other nodes with a certain probability. This denotes the probability of transition from one state to another. There are two different forms of transition in such a model.
-First there is the hidden state transition from one state to another here denoted as $a_ij$, meaning the transition from hidden state $x_i$ to hidden state $x_j$. It can also be described as, the probability that we know that the state is $x_i$ at time t, what is the probability that the next hidden state is $x_j$. We use the term hidden state transition for this.
-Secondly we have the transition from a hidden state to a emission state, this is called emitting a observable state. It is noted as $b_ij$, meaning emitting emission state $e_j$ in hidden state $x_i$. This is also associated to a certain probability.
-Furthermore we also have the initial distribution. This denotes the probability distribution of any hidden state without a prior hidden state, the initial probability for being in hidden state $x_i$. Each of these 
-
-The formal definition of a HMM is 
-
-$\theta=\{A,B,\pi\}|A = \text{transition matrix} = P(X_t=j|X_{t-1}, B = \text{emission matrix}, \pi = \text{initial distribition}$. The transition matirix is the matrix that.
+First there is the hidden state transition from one state to another here denoted as $a_{ij}$, meaning the transition from hidden state $x_i$ to hidden state $x_j$. It can also be described as, the probability that we know that the state is $x_i$ at time t, what is the probability that the next hidden state is $x_j$. We use the term hidden state transition for this.
+Secondly we have the transition from a hidden state to a emission state, this is called emitting a observable state. It is noted as $b_{ij}$, meaning emitting emission state $e_j$ in hidden state $x_i$. This is also associated to a certain probability.
+Furthermore we also have the initial distribution. This denotes the probability distribution of any hidden state without a prior hidden state, the initial probability for being in hidden state $x_i$. This can essentially be described as, the probability of starting in that state.
+All of these types of transition and probability can be described in a matrix each, which brings us to the formal definition of a HMM:
+\begin{align*}
+\theta = \{A,B,\pi\} &|\\
+A &= \text{hidden state transition matrix}\\
+B &= \text{emission matrix}\\
+\pi &= \text{initial distribition}
+\end{align*}
+Here we can see that we have a matrix for each form of probability. This means that each matrix is containing probabilities. The transition matrix A is the matrix denoting the hidden state transition probability $P(X_t=x_j|X_{t-1}=x_i)$. The emission matrix B is denoting the emission probability, $P(E_t=e_j|X_t=x_j)$. This is very similar to Bayesian networks and hidden Markov models are actually a specific form of Bayesian networks. We can therefore also graphically represent these two matrices in a causal network, this can be seen in \cref{fig:HMMCausalNet}.
 
 \begin{figure}[htbp]
 \centering
@@ -129,14 +133,14 @@ $\theta=\{A,B,\pi\}|A = \text{transition matrix} = P(X_t=j|X_{t-1}, B = \text{em
   \node[circle, draw=black, minimum size=1cm, node distance=3cm, below=of x2] (x4) {$x_4$};
 
   %Emission states
-  \node[circle] (e11) [draw=black, minimum size=1cm, node distance=2cm, above=of x1] {$e_1$};
-  \node[circle] (e12) [draw=black, minimum size=1cm, node distance=2cm, left=of x1] {$e_2$};
-  \node[circle] (e21) [draw=black, minimum size=1cm, node distance=2cm, above=of x2] {$e_1$};
-  \node[circle] (e22) [draw=black, minimum size=1cm, node distance=2cm, right=of x2] {$e_2$};
-  \node[circle] (e31) [draw=black, minimum size=1cm, node distance=2cm, left=of x3] {$e_1$};
-  \node[circle] (e32) [draw=black, minimum size=1cm, node distance=2cm, below=of x3] {$e_2$};
-  \node[circle] (e41) [draw=black, minimum size=1cm, node distance=2cm, below=of x4] {$e_1$};
-  \node[circle] (e42) [draw=black, minimum size=1cm, node distance=2cm, right=of x4] {$e_2$};
+  \node[circle] (e11) [draw=black, minimum size=1cm, node distance=1.5cm, above=of x1] {$e_1$};
+  \node[circle] (e12) [draw=black, minimum size=1cm, node distance=1.5cm, left=of x1] {$e_2$};
+  \node[circle] (e21) [draw=black, minimum size=1cm, node distance=1.5cm, above=of x2] {$e_1$};
+  \node[circle] (e22) [draw=black, minimum size=1cm, node distance=1.5cm, right=of x2] {$e_2$};
+  \node[circle] (e31) [draw=black, minimum size=1cm, node distance=1.5cm, left=of x3] {$e_1$};
+  \node[circle] (e32) [draw=black, minimum size=1cm, node distance=1.5cm, below=of x3] {$e_2$};
+  \node[circle] (e41) [draw=black, minimum size=1cm, node distance=1.5cm, below=of x4] {$e_1$};
+  \node[circle] (e42) [draw=black, minimum size=1cm, node distance=1.5cm, right=of x4] {$e_2$};
   
   \path
   %Emission lines
@@ -164,19 +168,17 @@ $\theta=\{A,B,\pi\}|A = \text{transition matrix} = P(X_t=j|X_{t-1}, B = \text{em
     (x3) edge[out=60,in=-150] node[rectangle,fill=white] {$a_{32}$} (x2)
     (x2) edge[out=-120,in=30] node[rectangle,fill=white] {$a_{23}$} (x3)
 
-    (x1) edge [out=150,in=120,loop,looseness=10] node[rectangle,fill=white] {$a_{11}$} (x1)
-    (x2) edge [out=60,in=30,loop,looseness=10] node[rectangle,fill=white] {$a_{22}$} (x2)
-    (x3) edge [out=-120,in=-150,loop,looseness=10] node[rectangle,fill=white] {$a_{33}$} (x3)
-    (x4) edge [out=-30,in=-60,loop,looseness=10] node[rectangle,fill=white] {$a_{44}$} (x4);
+    (x1) edge [out=150,in=120,loop,looseness=15] node[rectangle,fill=white] {$a_{11}$} (x1)
+    (x2) edge [out=60,in=30,loop,looseness=15] node[rectangle,fill=white] {$a_{22}$} (x2)
+    (x3) edge [out=-120,in=-150,loop,looseness=15] node[rectangle,fill=white] {$a_{33}$} (x3)
+    (x4) edge [out=-30,in=-60,loop,looseness=15] node[rectangle,fill=white] {$a_{44}$} (x4);
 \end{tikzpicture}
-\caption[Caption]{Bla bla}\label{fig:monolithic_system}
+\caption[A hidden Markov model represented as a causal network.]{A hidden Markov model, with 4 hidden states and 2 emission states, represented as a causal network.}\label{fig:HMMCausalNet}
 \end{figure}
 
-We therefore need to en-cope the history in the hidden states of the model. 
+\Cref{fig:HMMCausalNet} represents a HMM with 4 hidden notes and 2 emission states. The names on the arrows in the matrix (eg $a_{ij}$ and $b_{ij}$) represent entries in the two matrices, ie a probabilities. We can see that every hidden state is connected to every hidden state (including itself) and that every hidden state can emit every emission state. This is not always the case in really, since some hidden states could never directly reach other states and not every emission state could be emitted from every hidden state. This could be represented either as a sparse matrix or a matrix with entries with the value 0. In essence, they are equal, since a connection that has a probability of 0 can never happen, hence, there is no connection. This is just a case of how one represents \enquote{no connection}. Both of these representations pose a problem. The learning algorithms for HMMs cannot learn the connections between states, meaning that if there is no connection to begin with, there never will be in the future, no matter what. This is a dangerous assumption to make since we rarely have a complete understanding of the problem domain (after all, it is why we are using machine learning) and/or have a complete understanding of what each state exactly represent. In some cases a complete understanding of these things is not necessary, some things are simply just impossible. This cannot be said about this project; firstly all hidden states can emit all emission states. Since we have a world with unreliable sensors and what we think is an impossible world/transition at this time could simply be faulty sensors way of representing it. Further more, addressing the transition between hidden states, the hidden states are partly based on the users memory and how he/she is thinking. This can change from one state to another at will, even if the transition is physically impossible. As an initial assumption we have that the system thinks the user remembers the events in the past as they happened but since a user can forget, see reality differently or our sensors observe wrongly, we leave all connections in the model and thereby making it able to accommodate this change and unreliability.
 
-the possibly to en-cope unobserved variables in the states via hidden states (explained later in this section)
-
-An initial implementation of a Markov chain in our problem domain could make the states in the model snapshots of the sensors in the home. Here two problems arises. First, what a person decides to do next is not only dependent on what he or she is currently doing, also what has happen in the past.
+In the formal definition of HMM we also had $\pi$, a matrix denoting the initial hidden state probability distribution, $P(X_1=x_i)$. Until now we have only illustrated models with relative time, but the initial probabilities gives us the notion that there is an absolute time starting at time 1 with a probability of this table. This is needed since any observation must have a starting point, and is going to become very important later when we will learn and reason about the model. We can now expand the trellis diagrams with this notion of a starting point as can be seen in \cref{4thMarkovModel}.
 
 \begin{figure}[htbp]
 \centering
@@ -209,16 +211,21 @@ An initial implementation of a Markov chain in our problem domain could make the
   \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=0,in=180] (htp1);
   \draw [->, to path={-| (\tikztotarget)}] (htp1) edge[out=0,in=180] (ht);
   \draw [->, to path={-| (\tikztotarget)}] (ht) edge[out=0,in=180] (htf1);
-  
-  %2. order lines
-  \draw [->, to path={-| (\tikztotarget)}] (h1) edge[out=45,in=135] (dots);
-  \draw [->, to path={-| (\tikztotarget)}] (h2) edge[out=45,in=135] (dots);
-  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=45,in=135] (htp1);
-  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=45,in=135] (ht);
-  \draw [->, to path={-| (\tikztotarget)}] (htp1) edge[out=45,in=135] (htf1);
 \end{tikzpicture}
-\caption[Caption]{Bla bla}\label{fig:monolithic_system}
+\caption[Absolute and relative time trellis diagram for hidden markov model]{An absolute and relative time trellis diagram for a 1st order hidden Markov model}\label{fig:4thMarkovModel}
 \end{figure}
+
+
+
+
+The transition matrix is the matrix that.
+
+We therefore need to en-cope the history in the hidden states of the model. 
+
+the possibly to en-cope unobserved variables in the states via hidden states (explained later in this section)
+
+An initial implementation of a Markov chain in our problem domain could make the states in the model snapshots of the sensors in the home. Here two problems arises. First, what a person decides to do next is not only dependent on what he or she is currently doing, also what has happen in the past.
+
 
 A markov chain can have multiple orders. This is how many . Another problem also arises when using markov models. Of how high order should the model be? A first order 
 
