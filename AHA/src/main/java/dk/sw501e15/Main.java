@@ -28,7 +28,7 @@ public class Main
     SensorPacketWorker oWorker = new SensorPacketWorker();
     DataReceiver dr = new DataReceiver(oWorker);
 
-    Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr);
+    Communicator oCommunicator = new Communicator("COM6", 9600, dr);
     Normalizer nm = Normalizer.getInstance();
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
     oWorker.registerOutputTo(queueOfSensorState);
@@ -88,10 +88,9 @@ public class Main
 
             oReasoner.reasonAndSend(sample);
           }
-
         }
       }
-      if(Instant.now().isAfter(learnerRun.plusSeconds(learnerRunInverval)) && sampleList.getSamples().size() > 100){
+      if(Instant.now().isAfter(learnerRun.plusSeconds(learnerRunInverval)) && sampleList.getSamples().size() > 10){
         if(learnerThread.getState() == Thread.State.NEW){
           learnerThread.start();
           learnerRun = Instant.now();
@@ -114,6 +113,8 @@ public class Main
       Logger.getLogger("comLogger").setLevel(Level.SEVERE);
       Logger.getLogger("normLogger").addHandler(handler);
       Logger.getLogger("normLogger").setLevel(Level.SEVERE);
+      Logger.getLogger("sampleLogger").addHandler(handler);
+      Logger.getLogger("sampleLogger").setLevel(Level.SEVERE);
       Logger.getLogger("aiLogger").addHandler(handler);
       Logger.getLogger("reasonLogger").addHandler(handler);
       Logger.getLogger("comLogger").log(Level.SEVERE, "testlog do");

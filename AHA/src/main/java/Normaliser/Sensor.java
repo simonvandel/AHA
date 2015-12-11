@@ -43,7 +43,6 @@ public class Sensor
   {
     int toReturn = -1;
 
-System.out.println("Norm: " + toNormalize);
     trainingData.add(toNormalize);
     if (!trainingData.stream().allMatch(x -> x == 0 || x == 1))
     {
@@ -55,7 +54,8 @@ System.out.println("Norm: " + toNormalize);
         if (determainValidatyOfTrainingData())
         {
           logger.log(Level.SEVERE, "in normalize: Size of training data: " + trainingData.size() + ". ID: " + sensorIndex + ". addr: " + deviceID);
-          System.out.println("should have logged model");
+
+
           trainingDataThreshhold = trainingData.size(); //sets the treshhold to the trainingdata size because this should be a baseline for future model gens.
           createModelThread();
         }
@@ -90,7 +90,7 @@ System.out.println("Norm: " + toNormalize);
       List<List<Integer>> cluters = new ArrayList<>(oModelGen.splitIntoClusers(trainingData, 2));
       double clusterVariance = oModelGen.findClusterVariance(cluters);
       System.out.println(clusterVariance);
-      return clusterVariance > 15;
+      return clusterVariance > 50;
     }
     return false;
   }

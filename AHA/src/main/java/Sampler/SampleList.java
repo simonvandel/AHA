@@ -10,7 +10,9 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class SampleList{
   private static SampleList sampleList = null;
-  private ConcurrentHashMap<Integer, Sample> list = new ConcurrentHashMap<>();
+  private ConcurrentHashMap<Long, Sample> list = new ConcurrentHashMap<>();
+
+  private Long sampleKey = new Long(0);
 
   private SampleList(){}
   public static SampleList getInstance(){
@@ -32,6 +34,7 @@ public class SampleList{
    * @param s the sample to add
    */
   public void add(Sample s){
-    list.put(s.hashCode(), s);
+    list.put(sampleKey, s);
+    sampleKey++;
   }
 }

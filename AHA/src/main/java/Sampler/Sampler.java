@@ -14,6 +14,8 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class Sampler {
@@ -25,13 +27,14 @@ public class Sampler {
   private int mScopeSize = SCOPE_SIZE;
   private RemovalListener<String, Sample> sanitizerListener = removalNotification -> {
     Sample sample = removalNotification.getValue();
-    if(removalNotification.getCause() != RemovalCause.EXPIRED){
+    if(removalNotification.getCause() != RemovalCause.EXPIRED && removalNotification.getCause() != RemovalCause.REPLACED){
       //we done goofed
       //something was removed from uncleanSamples due to something else than time expiration
+      Logger.getLogger("sampleLogger").log(Level.SEVERE, "Sample were removed from cache for reasons: " + removalNotification.getCause().toString());
       return;
     }
     if(sample == null){
-      //we're fucked
+      Logger.getLogger("sampleLogger").log(Level.SEVERE, "Sample from cache were null");//we're fucked
       //value was garbage-collected before removalListener got to it. Yay dynamic garbage collection! just ignore? not much else to do..
       return;
     }
