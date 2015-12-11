@@ -26,13 +26,14 @@
 \usepackage{algorithm}
 \usepackage{tikz}
 \usepackage[simplified]{pgf-umlcd}
-\usetikzlibrary{arrows,positioning}
+\usetikzlibrary{calc,arrows,positioning,shapes,snakes}
 
 \tikzset{
 squarednode/.style={
   rectangle,
   draw=black,
   text width=8em,
+  minimum height=3em,
   align=center,
   }
 }
@@ -72,6 +73,7 @@ node[very near end, below]{#3};
 \usepackage[nounderscore]{syntax}
 \usepackage{gensymb}
 \setlength{\grammarindent}{100pt}
+\usepackage{subcaption} % subfigures
 
 %%%%%%%flotte listings
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -820,9 +822,16 @@ rsp, si, sil, sp, spl
 \DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
 
-\usepackage{subfig} % support for sidebyside figures
-
-\usepackage[mode=multiuser,draft]{fixme} % fixme config
+\usepackage{fixme} % fixme config
+\fxsetup{
+  mode=multiuser,
+  status=draft,
+  margin=false,
+  inline=false,
+  theme=color,
+  layout=pdfnote,
+  index=true
+}
 \FXRegisterAuthor{si}{asi}{Simon}
 \FXRegisterAuthor{ka}{aka}{Kasper}
 \FXRegisterAuthor{ra}{ara}{Rasmus}

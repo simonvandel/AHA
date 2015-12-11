@@ -1,35 +1,23 @@
+#include <XBeeLibrary.h>
 #include <XBee.h>
 
 unsigned long timeEnd = 0;
 unsigned long timeStart = 0;
 XBee xbee = XBee();
 char payload[64] = {0};
-char *dataRecieved;
-ZBTxRequest zbTx;
+int results[64] = {0};
 int i = 0;
 
 // SH + SL Address of receiving XBee
-XBeeAddress64 addr64 = XBeeAddress64(0x13A200, 0x407156BA); // Sending to coordinator (green)
-ZBTxStatusResponse txStatus = ZBTxStatusResponse();
+XBeeAddress64 addr64 = XBeeAddress64(0, 0); // Sending to coordinator (green)
 ZBRxResponse rx = ZBRxResponse();
 
 void setup() {
   pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(11, OUTPUT);
-  digitalWrite(11, LOW);
   
   Serial.begin(9600);
   xbee.setSerial(Serial);
-  
-  payload[0] = 'A';
-  payload[1] = 'A';
-  payload[2] = 'A';
-  payload[3] = 'A';
-  payload[4] = 'A';
-  payload[5] = 'A';
-  
-  zbTx = ZBTxRequest(addr64, (uint8_t *)payload, 6);
+
   int i;
   for(i = 0; i < 10; i++){
     digitalWrite(13, HIGH);
@@ -37,55 +25,120 @@ void setup() {
     digitalWrite(13, LOW);
     delay(500);
   }
-  digitalWrite(13, HIGH);
-  /*while(1);
-  digitalWrite(13, HIGH);
-  if(xbee.readPacket(1000)){
-    if(xbee.getResponse().isAvailable()){
-      if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
-        xbee.getResponse().getZBRxResponse(rx);
-        if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
-          digitalWrite(13, LOW);
+
+  if(getModemStatusResponse(xbee)){
+    Serial.println("Modem status response recieved");
+  } else {
+    Serial.println("No network");
+  }
+  if(getModemStatusResponse(xbee)){
+    Serial.println("Modem status response recieved");
+  } else {
+    Serial.println("No network");
+  }
+
+  uint8_t DHValue[] = {1, 2, 3, 4};
+  uint8_t DLValue[] = {5, 6, 7, 8};
+
+  if(setATField("DH", DHValue, 4, xbee)){
+    if(setATField("DL", DLValue, 4, xbee)){
+      AtCommandResponse result = AtCommandResponse();
+        if(getATField("DH", xbee, &result)){
+        Serial.println();
+        Serial.print("DH: 0x");
+        for(i = 0; i < result.getValueLength(); i++){
+          Serial.print("|");
+          Serial.print(result.getValue()[i], HEX);
+        }
+        Serial.println();
+        if(getATField("DL", xbee, &result)){
+          Serial.println();
+          Serial.print("DL: 0x");
+          for(i = 0; i < result.getValueLength(); i++){
+            Serial.print("|");
+            Serial.print(result.getValue()[i], HEX);
+          }
+          Serial.println();
         }
       }
     }
+  }
+  while(1);
+  
+  /*i = 6;
+  payload[i - 1] = '1';
+  payload[i - 2] = '1';
+  payload[i - 3] = '1';
+  payload[i - 4] = '1';
+  payload[i - 5] = '1';
+  payload[i - 6] = '1';
+  Serial.print("Sending message ");
+  Serial.println(i);
+  timeStart = millis();
+  while(i <= 64){
+  digitalWrite(13, HIGH);
+        //Serial.println("Packet delivered successfully");
+        digitalWrite(13, LOW);
+        
+    } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE){}
+  } else {
+    Serial.println("Status response missed. Restarting.");
+    //setup();
+    i++;
+    payload[i - 1] = 'B';
+    zbTx = ZBTxRequest(addr64, (uint8_t *)payload, i);
+    delay(1000);
+    Serial.print("Sending message ");
+    Serial.println(i);
+    timeStart = millis();
+    xbee.send(zbTx);
+  }
+  }
+  for(i = 0; i < 64; i++){
+    Serial.print(i);
+    Serial.print(", ");
+    Serial.println(results[i]);
   }*/
 }
 
 void loop(){
-  
-  //xbee.send(zbTx);
-  
-  if(xbee.readPacket(2000)){
-    int apiId = xbee.getResponse().getApiId();
-    digitalWrite(13, HIGH);
-    delay(500);
+  delay(1000);
+  digitalWrite(13, HIGH);
+  Serial.flush();
+  payload[0] = 'A';
+  if(sendData(addr64, payload, 1, xbee)){
+    Serial.println("Data send successfully");
     digitalWrite(13, LOW);
+    delay(10000);
+    if(recieveMessage()){
+      Serial.println("Data recieved successfully");
+      digitalWrite(13, HIGH);
+    } else {
+      Serial.println("Data not recieved");
+    }
   } else {
-    digitalWrite(12, HIGH);
-    delay(500);
-    digitalWrite(12, LOW);
+    Serial.println("Data not send");
   }
-  /*if(apiId == ZB_TX_STATUS_RESPONSE) {
-      xbee.getResponse().getZBTxStatusResponse(txStatus);
-      if (txStatus.getDeliveryStatus() == SUCCESS) {
-        digitalWrite(13, LOW);
-      }
-    } else if (apiId == MODEM_STATUS_RESPONSE){
-      Serial.println("Modem status response:");
-      xbee.getResponse().getModemStatusResponse(rx);
-      Serial.println((char *)rx.getFrameData());
-    }*/
-  // }else { Serial.println();}
 }
 
-void serialEvent(){}
-
-void error(){
-  while(1){
-    digitalWrite(13, HIGH);
-    delay(250);
-    digitalWrite(13, LOW);
-    delay(250);
+int recieveMessage(){
+  if(xbee.readPacket(500)){
+    if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
+      xbee.getResponse().getZBRxResponse(rx);
+      if (rx.getOption() == ZB_PACKET_ACKNOWLEDGED) {
+        return 1;       // Direct packet recieved
+      } else if (rx.getOption() == ZB_BROADCAST_PACKET) {
+        return 1;       // Broadcast packet recieved
+      } else {
+        return 0;       // Unknown packet recieved
+      }
+    } else {
+       return 0; // Recieved package of wrong type
+    }
+  } else {
+    if (xbee.getResponse().isError()) {
+      return 0; // Error reading packet
+    }
   }
+  return 0; // No package recieved
 }

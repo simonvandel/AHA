@@ -1,0 +1,40 @@
+\section{Normaliser}
+\label{sec:normaliser}
+The purpose of the normaliser is to reduce the size of data such that large data can be handled. The Normalisation process consists of two parts. The first part is responsible for clustering the data using the method known as the elbow method. The second part is responsible for optimisation of these clusters. The optimisation is to even out deviations and thereby increase the accuracy of the clusters by eliminating hard breaks. The second part can be achieved using a method known as Jenks natural breaks optimisation.
+
+\subsection{The Elbow Method}
+\label{sub:elbow_method}
+The elbow method uses the variance of the each cluster to determine, how many clusters are the optimal amount. The idea is simple and can be described as follows:
+ $$Start\ with\ k = 1\ Where \ k \ is \ numbers \ of \ clusters \ and \ k>0.$$ 
+Increase k until the percentage difference in variance is below some given threshold then optimal number of k is reached.
+The variance of each cluster is calculated and compared across the clusters. The variance of a cluster is calculated as follows:
+$Let\ (x_1,x_2,x_3,...x_i) \ be \ a\ cluster $
+\\\\Then the variance $\sigma$ is found as such
+$$\sigma^2 = \frac{\displaystyle\sum_{i = 1}^{n}(x_{i}-\overline{x})^2 }{n} \Biggr\rvert\ \overline{x}  =\frac{\displaystyle\sum_{i=1}^{n}x_{i}}{n},\ n =number\ of\ all\ elements\ in\ a\ cluster ,$$ 
+$$ x_{i} = i_{th}\ element $$
+\\\\
+Once $\sigma^2$ is found for the existing clusters, the data is split up into k+1 new clusters and the variance for this set of clusters is calculated. If the calculated variance has a greater percent variance then some threshold, the process is repeated with the starting number of clusters being k+1. If the percent variance is lower than the threshold then it means that the right amount of clusters is reached.
+\subsection{Jenks' Natural Breaks Optimisation}
+\label{sub:jenks} 
+When the number of cluster are determined another method is used to optimise the distribution of the data within the specified clusters. This method uses the squared sum of deviation within clusters as well as the squared sum of deviation of the average, to determine goodness of fit for the data. The goodness of fit describes, how well the data fits within the clusters.
+\\\\
+The method can simply be described in following four steps.
+\begin{enumerate}
+  \item Calculate squared sum of deviations for each cluster (C)
+  \item Calculate squared sum of deviations from array mean (M)
+  \item Subtract M from C, this will give MC.
+  \item After inspecting C for every cluster, then move units from cluster with largest C value toward cluster with lowest C.
+\end{enumerate}
+In the first step squared sum of deviations for each cluster is calculated. The deviation is just a measure of, how far away a certain point, in the data set, is from the mean. Where the mean is $\overline{x}$. Since the deviation is $(x_i-\overline{x})$ the sum of squared must be $$C= \displaystyle\sum_{i=1}^{n}(x_i-\overline{x})^2$$
+
+The second step is almost the same as the first step. The difference is that the mean is calculated from entire collection instead of the clusters. So the only modifications would be to change $\overline{x}$.
+\\\\
+The third step is quite self-explanatory and consists of a basic arithmetic operation. The result of this step is however used later on in the method.
+\\\\
+When all the calculations are done, the existing clusters are inspected and the $C$ value is taken into consideration. Since the clusters are sorted in ascending order.The top element from the cluster with the largest $C$ value is moved toward a cluster with the lowest $C$ value. After such rearrangement the $C$ value for every cluster is recalculated. The process is repeated and for each repetition the fit of the data is measured with goodness of fit.
+
+
+As aforementioned goodness of variance fit describes how well certain data fits into a cluster. The goodness of variance fit , shorten as gvf, is calculated such $$gvf = \frac{M-MC}{M}$$
+$$0<gvf<1$$
+$gvf$ is a number between 0 and 1 where $gvf = 1$ is perfect fit and $gvf = 0$ worst fit.
+The process of redistributing the data is repeated until a satisfying $gvf$ is reached.
