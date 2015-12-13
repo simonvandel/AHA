@@ -69,7 +69,7 @@ public class Main
     Learner oLearner = new Learner();
     List<Sample> learnerData = new ArrayList<>();
     SampleList sampleList = SampleList.getInstance();
-    //queueOfSensorState.addAll(db.getSensorStates());
+    queueOfSensorState.addAll(db.getSensorStates());
     while (true)
     {
       while (!queueOfSensorState.isEmpty())
@@ -79,6 +79,7 @@ public class Main
           Logger.getLogger("mainLogger").log(Level.SEVERE, "Behind in sensor queue: " + queueOfSensorState.size());
 
         SensorState oST = queueOfSensorState.poll();
+        db.putNewSensorState(oST); //TODO: Is there delay on the db write? If there is we should decouple this call from the main loop
         nState = nm.Normalize(oST);
         if (nState != null)
         {

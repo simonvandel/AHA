@@ -24,8 +24,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Reasoner {
   private static Reasoner reasoner;
-  //private DB db = DB.getInstance();
-  private IModel currentModel = null; //TODO db.getModel();
+  private IModel currentModel = null;
   private Communicator com = null;
   //husk actions vi har sendt, indenfor 5 sekunder, så vi kan tjekke om de actions vi får er bruger eller system
   private Cache<Action, Reasoning> sentActions = CacheBuilder
