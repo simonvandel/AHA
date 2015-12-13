@@ -2,5 +2,21 @@
 \section{Sampler}
 
 The job of the sampler is to map, the current sensor values with given history of sensor values into some input features, for the learner.
+The concept of this idea is that instead of finding correlation between sensor values at a given time $t$, instead we want to find correlations between snapshots from time $t_{n-k}$ to $t_n$. This is also the reason for making a new state scope everytime a new normalised snapshot is received, due to first order markov models inherently having the markov property\footnote{The probability distribution of the next state depends only on the current state and not on the sequence of events that preceded it.\cite{wiki_markov_chain}}. To overcome this problem, the history of how a the system arrived at this state is encoded in the input feature for the learner. Why this markov assumption is not preferable in the context of this system is discussed in this paper\cite{Allahviranloo201316} by Mahdieh Allahviranloo and Will Recker, it mentions that state $t+1$ is potentialy depended on the whole history of states.
 
-The 
+Some research on how many states a usage pattern streches over should be investigated, in order to find how many states should be included in the scopes.
+
+\subsection{Emulatable actions}
+One can infer that an action has happend in the problem domain, when an observed sensor value, which is also emulatable, changes from the state given at time $t-1$ to the state given at time $t$. The sampler can then, along with the history of the states that lead to this infered action, pass the action itself, to the learner, in this system to the intermediate database storing the samples. The format of an action is a tuple of 3, $(S,V_1,V_2)$ what sensor was affected and on what values(the sensors values at time $t-1$ and $t$).
+
+\subsection{Unique identifier for each snapshot}
+
+In order to differentiate one snapshot from another without having to observe the each individual sensorvalue in the snapshots
+
+This approach has some benefits but also some limitations. The learning algorithm has less of an opputunity to overfit on a certain sensorvalue in the problem domain, in that it can not directly observe the individual sensorvalues from each other.
+Another benefit is that by concatenating all the sensor values into one feature, we reduce the number of features the learner has as input for the problem, on the other hand we increase the value domain of each of the features, to differentiate snapshot from eachother.
+
+\subsection{Loss of resolution}
+
+But the big disadvantage is that states is closely similar in terms of sensor value, might not be close by the unique identifier, which means that clustering sensor states by the numeric values of identifier might not make sense, due not having an ordering or localicalisation between the assign unique values.
+The aformentioned note on overfitting, might also reveal itself as not being a problem at all, as were the individual sensor values as features for the learner might be beneficial to reasoning properly in the problem domain.
