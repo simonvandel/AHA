@@ -34,6 +34,13 @@ public class Main
     Communicator oCommunicator = new Communicator("COM6", 9600, dr);
     Normalizer nm = Normalizer.getInstance();
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
+
+    List<SensorState> tempDbSensorState = db.getSensorStates();
+    if(tempDbSensorState != null){
+      queueOfSensorState.addAll(tempDbSensorState);
+      tempDbSensorState = null;
+    }
+    
     oWorker.registerOutputTo(queueOfSensorState);
 
     Sample sample;
@@ -69,7 +76,6 @@ public class Main
     Learner oLearner = new Learner();
     List<Sample> learnerData = new ArrayList<>();
     SampleList sampleList = SampleList.getInstance();
-    queueOfSensorState.addAll(db.getSensorStates());
     while (true)
     {
       while (!queueOfSensorState.isEmpty())
