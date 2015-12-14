@@ -11,9 +11,9 @@ The main concern of choosing an encoding for our communication subsystem, is min
 The sensor/actuator subsystem needs to transmit sensor values of the following types:
 
 \begin{itemize}
-\item Boolean values (true, false) - For example a PIR sensor - 1 bit required
-\item Values from analog input pins ranging from 0 to 1023 - For example a photoresistor - 10 bits required, as this is the precision for Arduino Uno analog input pins
-\item Sensor values from 0 to 4294967295 - For example a distance sensor - 32 bits required, as the result of the calculation made to derive the distance is stored in a 32 bit integer on the Arduino Uno
+\item Binary values (0, 1) - For example a PIR sensor - 1 bit required
+\item Values ranging from 0 to 1023 - For example a photoresistor - 10 bits required, as this is the precision for Arduino Uno analog input pins
+\item Values ranging from 0 to 4294967295 - For example a distance sensor - 32 bits required, as the result of the calculation made to derive the distance is stored in a 32 bit integer on the Arduino Uno
 \end{itemize}
 
 There also needs to be a flag that describes whether the sensor is emulatable by the system.
@@ -23,16 +23,16 @@ This is the actual data that needs to be transmitted, so we call this the body o
 The header contains the following fields:
 
 \begin{itemize}
-\item Number of analog values - 3 bits required, as the Arduino Uno has 6 analog input pins
-\item Index (starting from 1) of the first emulatable analog sensor - 3 bits
-\item From 0 up to max number of analog fields describing the size of the analog values - 2 bits required, with the following meaning of the bits: 00: 0 bits, 01: 1 bit, 10: 10 bits, 11: 32 bits
-\item Number of binary values - 4 bits required, as the Arduino Uno has 14 digital input pins
-\item Index (starting from 1) of the first digital emulatable sensor value - 4 bits required
+\item Number of non-binary values - 5 bits required. The Arduino Uno has 20 input pins, so a maximum of 20 sensors can be connected
+\item Index (starting from 1) of the first emulatable non-binary sensor - 5 bits
+\item This field is repeating. There are as many fields of this type as there are number of non-binary values. This field type describes the size of the values - 1 bits required, with the following meaning of the bits: 0: 10 bits, 1: 32 bits
+\item Number of binary values - 5 bits required. The Arduino Uno has 20 input pins, so a maximum of 20 sensors can be connectedas
+\item Index (starting from 1) of the first binary emulatable sensor value - 5 bits required
 \end{itemize}
 
 By including both the header and the body in the packet, we can compact the data representation.
 
-The worst case packet size for this encoding scheme is sending 6 analog values that each occupy 32 bits, and 14 digital values that each occupy 1 bit. This would require the header to be of size $3 + 3 + 6 * 2 + 4 + 4 = 26$ bits. The body would require size $6 * 32 + 14 * 1 = 206$. In total the size of the encoding would be $26 + 206 = 232$ bits $= 29$ bytes. This is a theoretical maximum size that would be reached only if we assume sensors only need 1 input pin. In any case the size fits into the serial buffer of the Arduino Uno.
+The worst case packet size for this encoding scheme is sending 6 non-binary values that each occupy 32 bits, and 14 binary values that each occupy 1 bit. This would require the header to be of size $5 + 5 + 6 * 1 + 5 + 5 = 26$ bits. The body would require size $6 * 32 + 14 * 1 = 206$. In total the size of the encoding would be $26 + 206 = 232$ bits $= 29$ bytes. This is a theoretical maximum size that would be reached only if we assume sensors only need 1 input pin. In any case the size fits into the serial buffer of the Arduino Uno.
 
 \subsection{From  AI Subsystem To Sensor/Actuator Subsystem}
 
