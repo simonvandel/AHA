@@ -24,10 +24,11 @@ One possibility is to have one central processing unit that controls and reads d
   \node[squarednode] (actuator2) [left=of mainController] {Actuator 2};
 
   %Lines
-  \draw (mainController.north) -- (sensor1.south);
-  \draw (mainController.west) -- (actuator2.east);
-  \draw (mainController.east) -- (actuator1.west);
-  \draw (mainController.south) -- (sensor2.north);
+  \path
+    (mainController.north) edge (sensor1.south)
+    (mainController.west) edge(actuator2.east)
+    (mainController.east) edge (actuator1.west)
+    (mainController.south) edge (sensor2.north);
 \end{tikzpicture}
 \caption[Monolithic system]{Illustration of a monolithic system. The central processing unit monitors the sensors and, at the same time, analyses the monitored sensor data.}\label{fig:monolithic_system}
 \end{figure}
@@ -60,17 +61,18 @@ A second solution tries to cope with the problem of modularity and ease of use b
   \node[squarednode] (actuator2) [below=of controller2] {Actuator 2};
 
   %Lines
-  \draw (controller1.north) -- (sensor1.south);
-  \draw (controller1.west) -- (actuator1.east);
-  \draw (controller1.south) -- (sensor2.north);
-  \draw (controller2.north) -- (sensor3.south);
-  \draw (controller2.south) -- (actuator2.north);
-  \draw[triangle 90-triangle 90] (controller1.east) -- node[anchor=south, align=center] {Knowledge} (controller2.west);
+  \path
+    (controller1.north) edge (sensor1.south)
+    (controller1.west) edge (actuator1.east)
+    (controller1.south) edge (sensor2.north)
+    (controller2.north) edge (sensor3.south)
+    (controller2.south) edge (actuator2.north)
+    (controller1) edge[out=east,in=west,triangle 90-triangle 90] node[anchor=south] {Knowledge} (controller2);
 \end{tikzpicture}
 \caption[Distributed system]{Illustration of a distributed system. In this example, two controllers monitor their respective sensors and analyse the monitored data. The knowledge from the analysis is shared among different controllers in the system.}\label{fig:distributed_system}
 \end{figure}
 
-The user can choose exactly the number of subsystems needed for the home. If the subsystems are connected wirelessly, there only needs to be wired power to the subsystem therefore removing that barrier to entry.
+The user can choose exactly the number of subsystems needed for the home. If the subsystems are connected wirelessly, there only needs to be wired power to the subsystem therefore reducing the barrier to entry greatly.
 
 This solution requires complex communication protocols among each individual subsystem, in order to reliably combine their knowledge. Furthermore the analysis of sensor data is a complex task, see \cref{sec:functions}, that needs more powerful hardware than the sensors and actuators.
 
@@ -90,11 +92,12 @@ Under this separation the system consists of three subsystems: sensor, actuator 
   \node[squarednode] (actuator1) [above=of actuatorController] {Actuator 1};
 
   %Lines
-  \draw (sensorController.north) -- (sensor1.south);
-  \draw (sensorController.south) -- (analysisController.north);
-  \draw (sensorController.east) -- (actuatorController.west);
-  \draw (actuatorController.south) -- (analysisController.north);
-  \draw (actuatorController.north) -- (actuator1.south);
+  \path
+    (sensorController.north) edge (sensor1.south)
+    (sensorController) edge[out=south,in=west] (analysisController)
+    (sensorController.east) edge (actuatorController.west)
+    (actuatorController) edge[out=south,in=east] (analysisController)
+    (actuatorController.north) edge (actuator1.south);
 \end{tikzpicture}
 \caption[Separated system]{Illustration of a separated system. The sensor and actuator subsystem each consists of one controller, controlling one sensor and actuator respectively.}\label{fig:separated_subsystems}
 \end{figure}
@@ -114,15 +117,16 @@ In this scheme, the sensor subsystem sends its sensor data to the analysis subsy
 
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[->]
   %Nodes
   \node[squarednode] (sensorSubsystem) {Sensor subsystem};
   \node[squarednode] (analysisSubsystem) [below right=of sensorSubsystem] {Analysis subsystem};
   \node[squarednode] (actuatorSubsystem) [above right=of analysisSubsystem] {Actuator subsystem};
 
   %Lines
-  \draw[-triangle 90] (sensorSubsystem.south) -- node[anchor=east] {sensor data} (analysisSubsystem.north);
-  \draw[-triangle 90] (analysisSubsystem.north) -- node[anchor=west] {action} (actuatorSubsystem.south);
+  \path[-triangle 90]
+    (sensorSubsystem) edge[out=south,in=west] node[anchor=east] {sensor data} (analysisSubsystem)
+    (analysisSubsystem) edge[out=east,in=south] node[anchor=west] {action} (actuatorSubsystem);
 \end{tikzpicture}
 \caption[Communication scheme 1]{Illustration of communication scheme 1 for a separated system.}\label{fig:separated_subsystems_scheme1}
 \end{figure}
@@ -140,9 +144,10 @@ This scheme is similar to scheme 1, but instead of the analysis subsystem sendin
   \node[squarednode] (actuatorSubsystem) [above right=of analysisSubsystem] {Actuator subsystem};
 
   %Lines
-  \draw[-triangle 90] (sensorSubsystem.south) -- node[anchor=east] {sensor data} (analysisSubsystem.north);
-  \draw[-triangle 90] (sensorSubsystem.east) -- node[anchor=south] {sensor data} (actuatorSubsystem.west);
-  \draw[-triangle 90] (analysisSubsystem.north) -- node[anchor=west] {rules} (actuatorSubsystem.south);
+  \path[-triangle 90]
+  (sensorSubsystem) edge[out=south,in=west] node[anchor=east] {sensor data} (analysisSubsystem)
+  (sensorSubsystem) edge[out=east,in=west] node[anchor=south] {sensor data} (actuatorSubsystem)
+  (analysisSubsystem) edge[out=east,in=south] node[anchor=west] {rules} (actuatorSubsystem);
 \end{tikzpicture}
 \caption[Communication scheme 2]{Illustration of communication scheme 2 for a separated system.}\label{fig:separated_subsystems_scheme2}
 \end{figure}
