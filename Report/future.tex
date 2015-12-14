@@ -1,19 +1,15 @@
 \chapter{Future Work}
 \label{chap:future_work}
-This chapter describes the improvements that could be done in the future. These improvements could be in the following areas:
-\begin{itemize}
-\item Security
-\item Other areas of the home
-\item Multiple users
-\end{itemize}
+This chapter describes the improvements that could be done in the future. These improvements could be in the following areas.
 
 \section{Security}
-One of the improvements that could be made is the area of security. T
-The system is considered secure, since all communication is internal and locally. However since the communication is through Xbee modules, there is a certain risk that the packets,sent and received internally, can be sniffed with external Xbee module. If a person with a laptop and an external Xbee module is present near the system, it is possible for the person to sniff the internal packets. Since the packets are not encrypted it can easily be decoded thus the personal information can be exposed.An internal encryption of the packets, sent and received, would increase the security in certain degree.
+The system is considered secure, in the way that no information is transmitted across the internet, only locally using Xbee modules. However since the communication is through Xbee modules, there is a certain risk that the packets, sent and received internally, can be sniffed with external Xbee modules. If a person with a laptop and an external Xbee module is present near the system, it is possible for the person to sniff the internal packets. Since the packets are not encrypted it can easily be decoded thus the personal information can be exposed. An internal encryption of the packets, sent and received, would sove this security problem.
 
 \section{Other Areas of the Home}
-The system, as it is for now, controls lights and appliances, due to the lack of time and resources. A huge improvement could be done in this area if the further resources were available. These resources might be in terms of additional sensors and actuator, to monitor and affect the problem domain further.
+The system, as it is for now, only controls lights and appliances, due to the lack of time and resources. A huge improvement could be done in this area if the system would be able to control and monitor additional sensors and actuators, to monitor and affect the problem domain further.
+
 \section{Multiple Users}
-The system is designed to learn the use patterns of the user. However due to lack of proper sensors to identify a specific user, the system cannot differentiate between users and thus the system can only be applied to one user at a time. One of the major future improvements would therefore be to make the system applicable for multiple users. This can be achieved if the system learns to differentiate between users by some sort of identity. The identity must be unique to the user. This process would need additional sensors. 
+The system is designed to learn the use patterns of the user. However due to lack of proper sensors to identify a specific user, the system cannot differentiate between users and thus the system can only be applied to one user at a time. This also means that two users with conflicting patterns will confused the system. One of the major future improvements would therefore be to make the system applicable for multiple users. This can be achieved if the system learns to differentiate between users by some sort of identity. The identity must be unique to the user. This process would need additional sensors. Additinally, the learning algorithm would use the sensors differentiating users to learn patterns specific for specific users.
+
 \section{Tracking Ability}
-The system could improve if it had the ability to track the user and take actions based on where the user is. The tracking could of course be through the users smartphone or any other mobile devices. The tracking ability would make the system able to take actions knowing that the user is nearby. Those actions could be trivial yet convenient, such as turning on the coffee machine such that the user arrives and does not have to wait.
+The system could improve if it had the ability to track the user and take actions based on where the user is. The tracking could be through the user's smartphone or any other mobile device. The tracking ability would make the system able to take actions knowing that the user is nearby. Those actions could be trivial yet convenient, such as turning on the coffee machine 5 minutes before the user arrives, meaning the user does not have to wait.
