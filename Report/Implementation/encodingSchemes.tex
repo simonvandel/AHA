@@ -1,4 +1,4 @@
-\section{Encoding Schemes}
+\section{Encoding Schemes}\label{sec:encoding}
 
 In order for the sensor/actuator subsystem to communicate with the artificial intelligence subsystem, as shown in \cref{sec:ai}, the data transmitted back and forth, must be encoded in some way. It is shown in \cref{}\sinote{referer til xbee resultater afsnit}, that the transmission speed reduces gradually as packet size increases. Additionally, the Arduino Uno we are using in the sensor/actuator subsystem has a serial buffer of 64 bytes. This means that we can not send packages bigger than 64 bytes minus some overhead from the ZigBee protocol. Therefore, the encoding of the data should be as compact as possible, to minimise the transmission speed and to allow packages to be sent from the Arduino Uno.
 

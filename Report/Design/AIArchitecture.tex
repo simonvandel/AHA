@@ -33,7 +33,7 @@
 As can be seen from \cref{fig:ai_architecture}, the AI subsystem contains 6 modules: communication, normaliser, sampler, database, learner and reasoner. The rationale of this particular architecture and its modules is explained in the following.
 
 \subsection{Communication}
-The input to the AI subsystem is a stream of packets. These packets of sensor values, from now on called snapshots \chnote{wrong? the output is the snapshots}, arrive continuously as devices from the sensor/actuator subsystem send them. The communication module handles these packets and also provides functionality to send data to devices in the sensor/actuator subsystem. When snapshots arrive at the communication module, the data of the packet is encoded in the binary format described in \cref{}\sinote{link til encoding beskrivelse}. The communication module decodes the binary data and notes the time the packet was received.
+The input to the AI subsystem is a stream of packets. These packets of sensor values, from now on called snapshots \chnote{wrong? the output is the snapshots}, arrive continuously as devices from the sensor/actuator subsystem send them. The communication module handles these packets and also provides functionality to send data to devices in the sensor/actuator subsystem. When snapshots arrive at the communication module, the data of the packet is encoded in the binary format described in \cref{sec:encoding}. The communication module decodes the binary data and notes the time the packet was received.
 
 The decoded sensor values and the time of arrival\chnote{capture?} is then send to the normaliser. \chnote{should be revised, ambiguity in the choice of words}
 
