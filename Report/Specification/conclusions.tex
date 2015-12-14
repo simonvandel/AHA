@@ -1,0 +1,12 @@
+\section{Conclusions}
+
+Based on the previous sections in this chapter, many requirements about the system can be extracted. These will have to be considered in the design of the system. However not all these requirements will be considered in the design, because of their complexity. 
+
+\begin{itemize}
+\item \Cref{sec:classes,sec:events} explores which objects and events the system should model. This includes users and their patterns, as well as which events happen in the context of the system
+\item As described in \cref{sub:multiple_users_problems}, multiple users can be actively influencing the context of the system. To be perfect, the system should support this. However, the design of the system will not consider this
+\item \Cref{sub:userscenarios} describes possible user scenarios. These can serve as test cases when verifying the implementation of the system
+\item \Cref{sec:pact} finds that the system is not dependent on the physical characteristics of the users, as long as there are enough sensors to observe relevant events. Additionally the system should not be deployed in environments where the users are dependent on their lives being regular, as the system might make mistakes when mimicking users. This section also defines which sensors and actuators should be supported in the system
+\item \Cref{sec:functions} specifies which functions the system should be able to support to adhere to the requirements specified in \cref{sec:requirements}
+\item \Cref{sec:userInterfaces} discusses ways of getting feedback from the user based on system actions. Passive user interaction is preferred over active user interaction, because it is less invasive. The design of the system will consider the passive user interaction, but not the active user interaction. Also, the system designed and implemented in this report will not have a visual representation of actions performed by the system
+\end{itemize}

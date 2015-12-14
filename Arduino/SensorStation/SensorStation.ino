@@ -33,12 +33,12 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
   }
   int mes[2];
   serialization.Deserialize(data, mes);
-  if(mes[0] == LightSwitch){
-    if(photoresistor.getLightIntensity() < mes[1]){
+  if(mes[0] == 1){
+    if(mes[1]){
       digitalWrite(LightSwitch, HIGH);
       lightSwitchVal = true;
     }
-    else if(photoresistor.getLightIntensity() > mes[1]){
+    else {
       digitalWrite(LightSwitch, LOW);
       lightSwitchVal = false;
     }
@@ -85,28 +85,30 @@ void loop()
 {
   // ********** Analog readings *********
   // 32 bit analog
-  unsigned long distance = ultrasonic.getDistance();
-  Serial.print("Distance: ");
-  Serial.println(distance);
+  unsigned long distance = 1;//ultrasonic.getDistance();
+  Serial.print("LighrSwitch: ");
+  Serial.println(lightSwitchVal);
   // 10 bit analog
   unsigned int lightIntensity = photoresistor.getLightIntensity();
 
   // ********** digital readings *********
   // digital sensor
-  boolean motion = pir.getMotionDetected();
-  Serial.print("Motion: ");
-  Serial.println(motion);
+  //boolean motion = pir.getMotionDetected();
+  Serial.print("lightIntensity: ");
+  Serial.println(lightIntensity);
   // packet header
   sensorPacketBuilder.add(1, 3); // numAnalog
   sensorPacketBuilder.add(0, 3); // indexAnalog. No emulatable analog sensor
-  sensorPacketBuilder.add(3, 2); // Analog size 1 = 32 bits
+  sensorPacketBuilder.add(2, 2); // Analog size 1 = 32 bits
+  
   sensorPacketBuilder.add(1, 4);// num digital
-  sensorPacketBuilder.add(0, 4);// index digital. No emulatable digital sensor
+  //hacks, index is index plus 1, so to address index 1 put 2, and for 2 put 3 and so on..
+  sensorPacketBuilder.add(2, 4);// index digital. No emulatable digital sensor
 
   // body
-  sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
-  //sensorPacketBuilder.add(lightIntensity, 10);// analog val 2 = light
-  sensorPacketBuilder.add(motion, 1);// digital val 1 = pir
+  //sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
+  sensorPacketBuilder.add(lightIntensity, 10);// analog val 2 = light
+  sensorPacketBuilder.add(lightSwitchVal, 1);// digital val 1 = pir
 
   int packetSize = sensorPacketBuilder.build(buildArray);
 
@@ -122,6 +124,9 @@ void loop()
 }
 
 void sendData(byte*  toSend, int sendLen){
+  for(int i = 0; i < 4; i++) {
+    printbincharpad(toSend[i]);
+  }
   ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)toSend, sendLen);
   xbee.send(zbTx);
   ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //not sure whether better to have as global or local

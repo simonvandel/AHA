@@ -1,0 +1,63 @@
+%mainfile: ../master.tex
+\Cref{sec:architecture} describes the overall architecture of the system that solves the three tasks; data collection, analysis of data and mimicking patterns learned from the analysis. This section will expand on the architecture designed to perform the second and third task. This is the artificial intelligence (AI) subsystem of the system.
+
+% DRAWING
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  %Nodes
+  \node[squarednode] (sensorActuatorSubsystem) {Sensor/actuator subsystem};
+  \node[squarednode] (communication) [right=of sensorActuatorSubsystem, xshift=5em] {Communication};
+  \node[squarednode] (normaliser) [right=of communication, xshift=5em] {Normaliser};
+  \node[squarednode] (sampler) [below=of normaliser, yshift=-3em] {Sampler};
+  \node[squarednode] (database) [below=of communication, yshift=-9em] {Database};
+  \node[squarednode] (learner) [below=of database, yshift=-3em] {Learner};
+  \node[squarednode] (reasoner) [below=of sensorActuatorSubsystem, yshift=-3em] {Reasoner};
+
+  %Lines
+  \draw[-triangle 90, transform canvas={yshift=-1em}] (sensorActuatorSubsystem.east) -- node[anchor=north] {sensor data} (communication.west);
+  \draw[-triangle 90, transform canvas={yshift=1em}] (communication.west) -- node[anchor=south] {actions} (sensorActuatorSubsystem.east);
+  \draw[-triangle 90, text width=6em] (communication.east) -- node[anchor=south] {snapshot, time} (normaliser);
+  \draw[-triangle 90, text width=6em] (normaliser.south) -- node[anchor=east] {normalised snapshot, time} (sampler.north);
+  \draw[-triangle 90, text width=7em] (sampler.south) |- node[anchor=north east] {scope, time, actions} (database.east);
+  \draw[-triangle 90, text width=6em, transform canvas={xshift=-1em}] (database.south) -- node[anchor=east] {scope, time, actions} (learner.north);
+  \draw[-triangle 90, text width=7em, transform canvas={xshift=1em}] (learner.north) -- node[anchor=west] {model} (database.south);
+  \draw[-triangle 90, transform canvas={yshift=1em}] (sampler.west) -- node[anchor=south] {scope, time, actions} (reasoner.east);
+  \draw[-triangle 90] (database.north) |- node[anchor=north east] {model} (reasoner.east);
+  \draw[-triangle 90] (reasoner.north) -- node[anchor=north west] {actions} (communication.south);
+  \draw[-triangle 90] (reasoner.south) |- node[anchor=north west] {feedback} (database.west);
+\end{tikzpicture}
+\caption[AI architecture]{Overview of the modules in the AI architecture.}\label{fig:ai_architecture}
+\end{figure}
+
+As can be seen from \cref{fig:ai_architecture}, the AI subsystem contains 6 modules: communication, normaliser, sampler, database, learner and reasoner. The rationale of this particular architecture and its modules is explained in the following.
+
+\subsection{Communication}
+The input to the AI subsystem is a stream of packets. These packets of sensor values, from now on called snapshots \chnote{wrong? the output is the snapshots}, arrive continuously as devices from the sensor/actuator subsystem send them. The communication module handles these packets and also provides functionality to send data to devices in the sensor/actuator subsystem. When snapshots arrive at the communication module, the data of the packet is encoded in the binary format described in \cref{}\sinote{link til encoding beskrivelse}. The communication module decodes the binary data and notes the time the packet was received.
+
+The decoded sensor values and the time of arrival\chnote{capture?} is then send to the normaliser. \chnote{should be revised, ambiguity in the choice of words}
+
+\subsection{Normaliser}
+To remove noise from the sensors and to reduce the size of the problem, a normalisation pass is performed on the input. The normalisation pass is explained deeper in \cref{sec:normaliser}. The output of the normalisation is the same set of sensor values, but normalised to fit into a domain of size k. The time of arrival is not normalised.
+
+The normalised snapshots and the times of arrival are then fed to the sampler.
+
+\subsection{Sampler}
+This module performs three tasks:
+
+\begin{enumerate}
+\item It connects snapshots with the previous n snapshots. The previous $n$ snapshots represent the history of the snapshot fed to the sampler. Together the current snapshot and its history of snapshots form a state scope.
+\item It calculates whether an action has occurred from the previous snapshot to the current. An action has occurred when one or more emulatable sensors have changed its value.
+\item It hashes the state scope.
+\end{enumerate}
+
+The hashed state scopes and the calculated action as well as the time of arrival is now sent to 2 modules: the database and the reasoner.
+
+\subsection{Database}
+The database has the responsibility to store the learned model used for predicting user patterns, as well as storing samples of data observed from the sensors.
+
+\subsection{Learner}
+The responsibility of the learner is to infer the best parameters of the model. This is further described in \cref{} \sinote{link til learner design}. The learner will utilise the samples stored in the database. When parameters for a model has been learned, the model is stored in the database, for others to consume.
+
+\subsection{Reasoner}
+The reasoner should, based on the model retrieved from the database and the current scope,time and actions, infer which actions are sensible \chnote{what does sensible mean in this context?} to perform.

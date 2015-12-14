@@ -1,6 +1,5 @@
 package Sampler;
 
-import Communication.SensorValue;
 import Normaliser.NormalizedValue;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -8,42 +7,42 @@ import com.j256.ormlite.table.DatabaseTable;
 import java.nio.ByteBuffer;
 @DatabaseTable(tableName = "Actions")
 public class Action {
-  @DatabaseField(canBeNull = true, foreign = true)
+  @DatabaseField(foreign = true, foreignAutoCreate=true)
   private Sample dbs;
   @DatabaseField(foreign = true)
-  private NormalizedValue mVal1;
+  private NormalizedValue mValPrevious;
   @DatabaseField(foreign = true)
-  private NormalizedValue mVal2;
+  private NormalizedValue mValCurrent;
   @DatabaseField
   private int mSensorId;
 
   public Action(NormalizedValue val1, NormalizedValue val2, int sensorId) {
-    this.mVal1 = val1;
-    this.mVal2 = val2;
+    this.mValPrevious = val1;
+    this.mValCurrent = val2;
     this.mSensorId = sensorId;
   }
 
-  private Action(){}
+  Action(){}
 
   public int getDevice() {
     return mSensorId;
   }
 
   public int getDiff() {
-    return mVal2.getValue() - mVal1.getValue();
+    return mValCurrent.getValue() - mValPrevious.getValue();
   }
 
   public int getChangeToValue() {
-    return mVal2.getValue();
+    return mValCurrent.getValue();
   }
 
-  public NormalizedValue getVal1(){ return mVal1; }
+  public NormalizedValue getVal1(){ return mValPrevious; }
 
-  public NormalizedValue getVal2(){ return mVal2; }
+  public NormalizedValue getVal2(){ return mValCurrent; }
 
   @Override
   public String toString() {
-    return mSensorId + "," + getChangeToValue();
+    return String.format("Set sensor id %d to value %d", mSensorId, getChangeToValue());
   }
 
   /** A method to serialize the Action as a byte[]
@@ -52,7 +51,7 @@ public class Action {
    */
   public byte[] serialize(){
     return ByteBuffer.allocate(4)
-            .putShort((short) mVal2.getSensorIndexOnDevice())
-            .putShort((short) mVal2.getValue()).array();
+            .putShort((short) mValCurrent.getSensorIndexOnDevice())
+            .putShort((short) mValCurrent.getValue()).array();
   }
 }

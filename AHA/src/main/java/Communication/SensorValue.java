@@ -6,7 +6,7 @@ import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "SensorValues")
 public class SensorValue {
-    @DatabaseField(canBeNull = true, foreign = true)
+    @DatabaseField(foreign = true)
     private SensorState dbss;
     @DatabaseField(generatedId = true, unique = true)
     private int id;
@@ -28,6 +28,11 @@ public class SensorValue {
 
     private SensorValue(){}
 
+    public void addDBSS(SensorState that)
+    {
+        dbss = that;
+    }
+
     public int getValue()
     {
         return this.value;
@@ -43,5 +48,10 @@ public class SensorValue {
 
     public int getSensorIndexOnDevice() {
         return sensorIndexOnDevice;
+    }
+
+    @Override
+    public String toString(){
+        return ""+value;
     }
 }

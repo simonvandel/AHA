@@ -21,10 +21,11 @@ public class HiDB
 {
   private static HiDB db = null;
   private static ConnectionSource connectionSource = null;
-  private static Dao<Sample,String> samplesDao = null;
-  private static Dao<SensorState,String> sensorStateDao = null;
-  private static Dao<SensorValue,String> sensorValueDao = null;
-  private static Dao<Action,String> actionDao = null;
+  private static Dao<Sample,Integer> samplesDao = null;
+  private static Dao<SensorState,Integer> sensorStateDao = null;
+  private static Dao<SensorValue,Integer> sensorValueDao = null;
+  private static Dao<Action,Integer> actionDao = null;
+  private static Dao<pInteger,Integer> pIntegerDao = null;
 
   protected void setUp() {
     //this uses h2 but you can change it to match your database
@@ -45,6 +46,9 @@ public class HiDB
       // Action Dao and database
       actionDao = DaoManager.createDao(connectionSource, Action.class);
       TableUtils.createTableIfNotExists(connectionSource, Action.class);
+      // Action Dao and database
+      pIntegerDao = DaoManager.createDao(connectionSource, pInteger.class);
+      TableUtils.createTableIfNotExists(connectionSource, pInteger.class);
     } catch (Exception ex){
       ex.printStackTrace();
     }
@@ -70,6 +74,7 @@ public class HiDB
   {
     try{
       samplesDao.create(sample);
+      actionDao.create(sample.getActions().get(0));
     } catch (Exception ex){
       ex.printStackTrace();
     }
@@ -79,6 +84,9 @@ public class HiDB
   {
     try{
       sensorStateDao.create(state);
+      for(SensorValue val : state.getValues()){
+        sensorValueDao.create(val);
+      }
     } catch (Exception ex){
       ex.printStackTrace();
     }

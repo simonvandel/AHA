@@ -14,28 +14,31 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class Sampler {
   private static Sampler mSampler;
   private final static int SCOPE_SIZE = 1;
-  private DB db = DB.getInstance();
   private List<NormalizedSensorState> mHistory;
   private NormalizedSensorState mPrevious;
-  private int mScopeSize = SCOPE_SIZE;  //TODO Scopesize needs to have a proper value. Why 6? Well, this exclamation has, unexpectedly, six 's', six 'i' and six 'x'!
+  private SampleList sampleList = SampleList.getInstance();
+  private int mScopeSize = SCOPE_SIZE;
   private RemovalListener<String, Sample> sanitizerListener = removalNotification -> {
     Sample sample = removalNotification.getValue();
-    if(removalNotification.getCause() != RemovalCause.EXPIRED){
+    if(removalNotification.getCause() != RemovalCause.EXPIRED && removalNotification.getCause() != RemovalCause.REPLACED){
       //we done goofed
       //something was removed from uncleanSamples due to something else than time expiration
+      Logger.getLogger("sampleLogger").log(Level.SEVERE, "Sample were removed from cache for reasons: " + removalNotification.getCause().toString());
       return;
     }
     if(sample == null){
-      //we're fucked
+      Logger.getLogger("sampleLogger").log(Level.SEVERE, "Sample from cache were null");//we're fucked
       //value was garbage-collected before removalListener got to it. Yay dynamic garbage collection! just ignore? not much else to do..
       return;
     }
-    db.putStateScopeIntoDB(sample);
+    sampleList.add(sample);
     return;
   };
   //husk actions vi har fundet, indenfor 5 sekunder, så vi kan tjekke fejl der går på tværs af samples
@@ -80,6 +83,9 @@ public class Sampler {
    * @return A sensor state
    */
   public Sample getSample(NormalizedSensorState newState) {
+    if(newState == null){
+      System.out.println("newState was null!");
+    }
     List<Action> acs = findActions(mPrevious,newState);
     findInvertedActionsAndCleanStates(new Sample(mHistory,newState.getTime(),acs), newState); //important: The sample here is not the same as the one below, as newState is modified in this method
     List<Action> acsCorrected = findActions(mPrevious, newState); //we find actions again, as newState is modified
@@ -178,7 +184,6 @@ public class Sampler {
                   .getValue()); //Correct the state to have the value of before the action happened
           Reasoning reasoning = reasoner.getReasoningBehindAction(validActions.get(i));
           if(reasoning != null){
-            db.flagModel(reasoning);
             reasoner.updateModel(reasoning);
           }
         }

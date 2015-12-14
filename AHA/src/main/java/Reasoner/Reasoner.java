@@ -7,6 +7,7 @@ import com.digi.xbee.api.exceptions.XBeeException;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
+import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -23,8 +24,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Reasoner {
   private static Reasoner reasoner;
-  private DB db = DB.getInstance();
-  private IModel currentModel = null; //TODO db.getModel();
+  private IModel currentModel = null;
   private Communicator com = null;
   //husk actions vi har sendt, indenfor 5 sekunder, så vi kan tjekke om de actions vi får er bruger eller system
   private Cache<Action, Reasoning> sentActions = CacheBuilder
@@ -58,6 +58,7 @@ public class Reasoner {
           actions)
       {
         try{
+          System.out.println("Sending data: " + action.toString());
           com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
         } catch (XBeeException e){
           //Would probably be a good idea to handle the exception instead of ignoring it...
@@ -74,10 +75,7 @@ public class Reasoner {
      */
   public List<Action> reason(Sample sample) {
     if(currentModel == null){
-      currentModel = db.getModel();
-      if(currentModel == null){
-        return null;
-      }
+      return null;
     }
     Reasoning reasoning = currentModel.CalculateReasoning(sample);
     if (reasoning == null) {
@@ -112,6 +110,14 @@ public class Reasoner {
    */
   public void updateModel(Reasoning reasoning){
 
+  }
+
+  public void setCurrentModel(IModel model){
+      try{
+        currentModel = model;
+      } catch (ConcurrentModificationException e){
+        setCurrentModel(model);
+      }
   }
 }
 
