@@ -234,60 +234,31 @@ Many communication schemes have been discussed. This section will evaluate the b
 
 \subsubsection{Scheme 2 Evaluation}
 \begin{itemize}
-\item \textbf{Number of critical communication paths} x
-\item \textbf{Memory consumption on actuator and sensor subsystems} x
-\item \textbf{Amount of communication} x
-\item \textbf{Inter-dependency complexity} x
-\item \textbf{Memory consumption on analysis subsystem} x
+\item \textbf{Number of critical communication paths} The path from analysis to actuator path is critical in the sense that if the packet is lost, the actuator will not have received the rule, and can therefore not perform any actions. The path from sensor subsystem to actuator subsystem is already critical in the sense that the path must happen quickly in order for the system to be responsive. If the sensor data takes a long time to arrive to the actuator subsystem, the actuator will take a long time to perform an action
+\item \textbf{Memory consumption on actuator and sensor subsystems} The actuator subsystem has to store rules it receives from the analysis subsystem
+\item \textbf{Amount of communication} The sensor subsystem to analysis subsystem communication path happens often. The sensor subsystem to actuator subsystem also happens often. The analysis subsystem to actuator subsystem path is only used when a new rule is generated, which should not be often
+\item \textbf{Inter-dependency complexity} The sensor subsystem has to know of the analysis and actuator subsystems. The analysis subsystem has to know of the actuator subsystem to send rules to
+\item \textbf{Memory consumption on analysis subsystem} This is the same as in scheme 1
 \end{itemize}
 
 \subsubsection{Scheme 3 Evaluation}
-\begin{itemize}
-\item \textbf{Number of critical communication paths} x
-\item \textbf{Memory consumption on actuator and sensor subsystems} x
-\item \textbf{Amount of communication} x
-\item \textbf{Inter-dependency complexity} x
-\item \textbf{Memory consumption on analysis subsystem} x
-\end{itemize}
+This has the same characteristic as scheme 2, but the critical path from sensor subsystem to actuator subsystem is more reliable as the sensors and actuators are on the same controller.
 
 \subsubsection{Scheme 4 Evaluation}
-\begin{itemize}
-\item \textbf{Number of critical communication paths} x
-\item \textbf{Memory consumption on actuator and sensor subsystems} x
-\item \textbf{Amount of communication} x
-\item \textbf{Inter-dependency complexity} x
-\item \textbf{Memory consumption on analysis subsystem} x
-\end{itemize}
+This scheme has the same characteristics as scheme 1, but the sensor and actuator subsystems are merged.
 
 \subsubsection{Scheme 5 Evaluation}
 \begin{itemize}
-\item \textbf{Number of critical communication paths} x
-\item \textbf{Memory consumption on actuator and sensor subsystems} x
-\item \textbf{Amount of communication} x
-\item \textbf{Inter-dependency complexity} x
-\item \textbf{Memory consumption on analysis subsystem} x
+\item \textbf{Number of critical communication paths} The sensor subsystem to actuator subsystem communication path is critical, because if the packet is lost or slow, it will impact the responsiveness of the system. The analysis subsystem to sensor subsystem communication path is critical because if rules are lost, the system can be perceived to malfunction
+\item \textbf{Memory consumption on actuator and sensor subsystems} The sensor subsystem has to store rules
+\item \textbf{Amount of communication} The sensor subsystem to analysis subsystem communication path occurs often. The analysis subsystem to sensor subsystem communication path is only used when new rules are generated. The sensor subsystem to actuator subsystem occurs every time an is to be performed, which could happen fairly often
+\item \textbf{Inter-dependency complexity} The sensor subsystem has to know about the analysis and actuator subsystems. The analysis subsystem has to know about the sensor subsystem
+\item \textbf{Memory consumption on analysis subsystem} This is the same as in scheme 1
 \end{itemize}
 
-
-
-
-
-The properties are evaluated in \cref{tab:scheme_choice}.\sinote{mangler responstid som property}
-
-\begin{table}[htbp]
-\centering
-\begin{adjustbox}{max width=\textwidth}
-\begin{tabular}{*{6}{c}}
-\toprule
-                       & Scheme 1                                          & Scheme 2                                 & Scheme 3                                         & Scheme 4                      & Scheme 5                             \\ \midrule
-Critical paths         & 2:all                                             & 1:S to Ac                                & 1:S/Ac to S/Ac                                   & 2:all                         & 1:S to Ac                            \\ \midrule
-Memory actuator/sensor & Nothing                                           & Ac stores rules                          & S/Ac stores rules                                & Nothing                       & S stores rules                       \\ \midrule
-Communication          & S to A: high, A to Ac: low                        & S to A: high, S to Ac:high, A to Ac: low & S/Ac to A:high, A to S/Ac:low, S/Ac to S/Ac:high & S/Ac to A:high, A to S/Ac:low & S to A:high, A to S:low, S to Ac:low \\ \midrule
-Complexity             & Best                                              & 4th best                                 & 3rd best                                         & 2nd best                      & 5th best                             \\ \midrule
-Memory analysis        & Past sensor data                                  & Past sensor data                         & Past sensor data + rules                         & Past sensor data + rules      & Past sensor data                     \\ \bottomrule
-\end{tabular}
-\end{adjustbox}
-\caption[Evaluation table]{Evaluation table of communication schemes. S means sensor subsystem. Ac means actuator subsystem. A means analysis subsystem. In the \enquote{memory actuator/sensor row}, it is implicit that every scheme has to store the sensor data intermediately, before processing it.}\label{tab:scheme_choice}
-\end{table}
-
-Looking at \cref{tab:scheme_choice}, the following ranking of the schemes can be produced. \sinote{Find out which scheme is best, when we have tested the ZigBee sensors}
+\subsubsection{Conclusion}
+Scheme 4 is chosen because of the following factors.
+\begin{itemize}
+\item It has only one critical communication path
+\item The memory consumption on the embedded systems is minimal, so no limitation on rules is imposed on the system
+\end{itemize}
