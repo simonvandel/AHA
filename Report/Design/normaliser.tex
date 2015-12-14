@@ -1,9 +1,0 @@
-\subsection{Normaliser}
-\label{sec:normaliser}
-In order to reduce the size of data and minimise noise the data is passed through a normaliser. The normaliser has the responsibility to shrink and standardise the data with a standard method used for normalisation of statistics.
-\\\\
-The method consists of a standardisation formula, that indexes the input data into a number between $0$ and $1$.
-The standardisation formula is given as 
-$Norm_{i} =\frac{X_i-X_{min}}{X_{max}-X_{min}}$, where $1 < Norm_i < 0$, $X_i$ is data point $i$, $X_{min}$ is the minimum among the data, $X_{max}$ is maximum among the data and $Norm_i$ is the normalised data point $i$.
-
-The formula calculates a decimal number between 0 and 1 the decimal number is rounded and indexed into a number between 0 and 9. The indices are determined by the first decimal of the $Norm_i$ e.g. $if Norm_i = 0.12$ then the index would be $1$. \sinote{One can say? mærkeligt sprog}{One can say that the decimal will be multiplied by 10 and rounded to the closest integer.}
