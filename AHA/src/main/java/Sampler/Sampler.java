@@ -38,6 +38,7 @@ public class Sampler {
       //value was garbage-collected before removalListener got to it. Yay dynamic garbage collection! just ignore? not much else to do..
       return;
     }
+    Logger.getLogger("sampleLogger").log(Level.SEVERE, sample.toString1());
     sampleList.add(sample);
     return;
   };
