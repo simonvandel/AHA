@@ -21,7 +21,7 @@ public class HiddenMarkovModel implements IModel{
   private TransitionMatrix transitionMatrix;
   private EmissionMatrix emissionMatrix;
   private MapWarden mapWarden;
-  private final double someThreshold = 0.50; // TODO change threshold
+  private final double someThreshold = 0.75; // TODO change threshold
 
   public HiddenMarkovModel(InitialProbability initialProbability, TransitionMatrix transitionMatrix, EmissionMatrix emissionMatrix, MapWarden mapWarden){
     this.initialProbability = initialProbability;

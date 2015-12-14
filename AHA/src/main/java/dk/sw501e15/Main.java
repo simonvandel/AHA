@@ -4,6 +4,7 @@ import Communication.Communicator;
 import Communication.DataReceiver;
 import Communication.SensorPacketWorker;
 import Communication.SensorState;
+import Database.HiDB;
 import Learner.Learner;
 import Normaliser.NormalizedSensorState;
 import Normaliser.Normalizer;
@@ -28,15 +29,21 @@ public class Main
     SensorPacketWorker oWorker = new SensorPacketWorker();
     DataReceiver dr = new DataReceiver(oWorker);
 
-    Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr);
+    HiDB db = HiDB.getInstance();
+
+    Communicator oCommunicator = new Communicator("COM6", 9600, dr);
     Normalizer nm = Normalizer.getInstance();
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
+
+    List<SensorState> tempDbSensorState = db.getSensorStates();
+    if(tempDbSensorState != null){
+      queueOfSensorState.addAll(tempDbSensorState);
+      tempDbSensorState = null;
+    }
+    
     oWorker.registerOutputTo(queueOfSensorState);
 
     Sample sample;
-//    HiDB db = HiDB.getInstance();
-
-//    db.createDB();
     Sampler sampler = Sampler.getInstance();
 
     Reasoner oReasoner = Reasoner.getInstance();
@@ -58,7 +65,6 @@ public class Main
           if(samples != null){
             oReasoner.setCurrentModel(oLearner.learn(samples));
           }
-          //db.pushModel(oLearner.learn(db.getHistory())); //get the history to learn on and push the model once finished
           try{
             this.wait();
           } catch(InterruptedException e) {
@@ -77,21 +83,19 @@ public class Main
         System.out.print('.');
         if(queueOfSensorState.size() >  100)
           Logger.getLogger("mainLogger").log(Level.SEVERE, "Behind in sensor queue: " + queueOfSensorState.size());
+
         SensorState oST = queueOfSensorState.poll();
+        db.putNewSensorState(oST); //TODO: Is there delay on the db write? If there is we should decouple this call from the main loop
         nState = nm.Normalize(oST);
         if (nState != null)
         {
           sample = sampler.getSample(nState);
           if (sample != null) {
-            //sampleList.add(sample);
-            //db.putNewSample(sample);
-
             oReasoner.reasonAndSend(sample);
           }
-
         }
       }
-      if(Instant.now().isAfter(learnerRun.plusSeconds(learnerRunInverval)) && sampleList.getSamples().size() > 100){
+      if(Instant.now().isAfter(learnerRun.plusSeconds(learnerRunInverval)) && sampleList.getSamples().size() > 10){
         if(learnerThread.getState() == Thread.State.NEW){
           learnerThread.start();
           learnerRun = Instant.now();
@@ -111,13 +115,10 @@ public class Main
       Handler handler = new FileHandler("log");
       logger.addHandler(handler);
       Logger.getLogger("comLogger").addHandler(handler);
-      Logger.getLogger("comLogger").setLevel(Level.SEVERE);
       Logger.getLogger("normLogger").addHandler(handler);
-      Logger.getLogger("normLogger").setLevel(Level.SEVERE);
+      Logger.getLogger("sampleLogger").addHandler(handler);
       Logger.getLogger("aiLogger").addHandler(handler);
       Logger.getLogger("reasonLogger").addHandler(handler);
-      Logger.getLogger("comLogger").log(Level.SEVERE, "testlog do");
-
     } catch (IOException e){
       e.printStackTrace();
     }

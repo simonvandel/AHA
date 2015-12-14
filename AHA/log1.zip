@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-11T17:44:09</date>
+  <millis>1449852249876</millis>
+  <sequence>0</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>instantiateLoggers</method>
+  <thread>1</thread>
+  <message>testlog do</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:16</date>
+  <millis>1449852256578</millis>
+  <sequence>1</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>in normalize: Size of training data: 51. ID: 0. addr: 00000000-00000000-A20040FF-FF700308</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:22</date>
+  <millis>1449852262053</millis>
+  <sequence>2</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:28</date>
+  <millis>1449852268011</millis>
+  <sequence>3</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:28</date>
+  <millis>1449852268144</millis>
+  <sequence>4</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:28</date>
+  <millis>1449852268249</millis>
+  <sequence>5</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:28</date>
+  <millis>1449852268379</millis>
+  <sequence>6</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:28</date>
+  <millis>1449852268513</millis>
+  <sequence>7</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:28</date>
+  <millis>1449852268631</millis>
+  <sequence>8</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:28</date>
+  <millis>1449852268768</millis>
+  <sequence>9</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:28</date>
+  <millis>1449852268850</millis>
+  <sequence>10</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:29</date>
+  <millis>1449852269016</millis>
+  <sequence>11</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:29</date>
+  <millis>1449852269125</millis>
+  <sequence>12</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:29</date>
+  <millis>1449852269248</millis>
+  <sequence>13</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:29</date>
+  <millis>1449852269375</millis>
+  <sequence>14</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:29</date>
+  <millis>1449852269507</millis>
+  <sequence>15</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:29</date>
+  <millis>1449852269612</millis>
+  <sequence>16</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:29</date>
+  <millis>1449852269746</millis>
+  <sequence>17</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:29</date>
+  <millis>1449852269899</millis>
+  <sequence>18</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:30</date>
+  <millis>1449852270019</millis>
+  <sequence>19</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:30</date>
+  <millis>1449852270144</millis>
+  <sequence>20</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:30</date>
+  <millis>1449852270233</millis>
+  <sequence>21</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:30</date>
+  <millis>1449852270364</millis>
+  <sequence>22</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:30</date>
+  <millis>1449852270510</millis>
+  <sequence>23</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:30</date>
+  <millis>1449852270678</millis>
+  <sequence>24</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:30</date>
+  <millis>1449852270748</millis>
+  <sequence>25</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:30</date>
+  <millis>1449852270885</millis>
+  <sequence>26</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:31</date>
+  <millis>1449852271056</millis>
+  <sequence>27</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:31</date>
+  <millis>1449852271197</millis>
+  <sequence>28</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:31</date>
+  <millis>1449852271264</millis>
+  <sequence>29</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:31</date>
+  <millis>1449852271385</millis>
+  <sequence>30</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:31</date>
+  <millis>1449852271566</millis>
+  <sequence>31</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:31</date>
+  <millis>1449852271659</millis>
+  <sequence>32</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:31</date>
+  <millis>1449852271761</millis>
+  <sequence>33</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:31</date>
+  <millis>1449852271889</millis>
+  <sequence>34</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:32</date>
+  <millis>1449852272021</millis>
+  <sequence>35</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:32</date>
+  <millis>1449852272159</millis>
+  <sequence>36</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:32</date>
+  <millis>1449852272268</millis>
+  <sequence>37</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:32</date>
+  <millis>1449852272403</millis>
+  <sequence>38</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:32</date>
+  <millis>1449852272569</millis>
+  <sequence>39</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:32</date>
+  <millis>1449852272701</millis>
+  <sequence>40</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:32</date>
+  <millis>1449852272768</millis>
+  <sequence>41</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:32</date>
+  <millis>1449852272884</millis>
+  <sequence>42</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:33</date>
+  <millis>1449852273082</millis>
+  <sequence>43</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:33</date>
+  <millis>1449852273153</millis>
+  <sequence>44</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:33</date>
+  <millis>1449852273277</millis>
+  <sequence>45</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:33</date>
+  <millis>1449852273421</millis>
+  <sequence>46</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:33</date>
+  <millis>1449852273536</millis>
+  <sequence>47</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:33</date>
+  <millis>1449852273698</millis>
+  <sequence>48</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:33</date>
+  <millis>1449852273820</millis>
+  <sequence>49</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:33</date>
+  <millis>1449852273948</millis>
+  <sequence>50</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:34</date>
+  <millis>1449852274082</millis>
+  <sequence>51</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:34</date>
+  <millis>1449852274194</millis>
+  <sequence>52</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:34</date>
+  <millis>1449852274320</millis>
+  <sequence>53</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:34</date>
+  <millis>1449852274424</millis>
+  <sequence>54</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:34</date>
+  <millis>1449852274591</millis>
+  <sequence>55</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:34</date>
+  <millis>1449852274671</millis>
+  <sequence>56</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:34</date>
+  <millis>1449852274819</millis>
+  <sequence>57</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:34</date>
+  <millis>1449852274942</millis>
+  <sequence>58</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:35</date>
+  <millis>1449852275081</millis>
+  <sequence>59</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:35</date>
+  <millis>1449852275200</millis>
+  <sequence>60</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:35</date>
+  <millis>1449852275318</millis>
+  <sequence>61</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:35</date>
+  <millis>1449852275428</millis>
+  <sequence>62</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:35</date>
+  <millis>1449852275598</millis>
+  <sequence>63</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:35</date>
+  <millis>1449852275691</millis>
+  <sequence>64</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:35</date>
+  <millis>1449852275815</millis>
+  <sequence>65</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:35</date>
+  <millis>1449852275945</millis>
+  <sequence>66</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:36</date>
+  <millis>1449852276060</millis>
+  <sequence>67</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:36</date>
+  <millis>1449852276238</millis>
+  <sequence>68</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:36</date>
+  <millis>1449852276320</millis>
+  <sequence>69</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:36</date>
+  <millis>1449852276461</millis>
+  <sequence>70</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:36</date>
+  <millis>1449852276682</millis>
+  <sequence>71</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:36</date>
+  <millis>1449852276723</millis>
+  <sequence>72</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:36</date>
+  <millis>1449852276819</millis>
+  <sequence>73</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:36</date>
+  <millis>1449852276940</millis>
+  <sequence>74</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:37</date>
+  <millis>1449852277093</millis>
+  <sequence>75</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:37</date>
+  <millis>1449852277203</millis>
+  <sequence>76</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:37</date>
+  <millis>1449852277309</millis>
+  <sequence>77</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:37</date>
+  <millis>1449852277480</millis>
+  <sequence>78</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:37</date>
+  <millis>1449852277648</millis>
+  <sequence>79</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:37</date>
+  <millis>1449852277720</millis>
+  <sequence>80</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:37</date>
+  <millis>1449852277845</millis>
+  <sequence>81</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:37</date>
+  <millis>1449852277988</millis>
+  <sequence>82</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:38</date>
+  <millis>1449852278143</millis>
+  <sequence>83</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:38</date>
+  <millis>1449852278222</millis>
+  <sequence>84</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:38</date>
+  <millis>1449852278330</millis>
+  <sequence>85</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:38</date>
+  <millis>1449852278484</millis>
+  <sequence>86</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:38</date>
+  <millis>1449852278597</millis>
+  <sequence>87</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:38</date>
+  <millis>1449852278770</millis>
+  <sequence>88</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
+<record>
+  <date>2015-12-11T17:44:38</date>
+  <millis>1449852278885</millis>
+  <sequence>89</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF700308Model:
+range: 0; lowerbound: 0, upperbound: 44range: 1; lowerbound: 45, upperbound: 720range: 2; lowerbound: 721, upperbound: 722</message>
+</record>
