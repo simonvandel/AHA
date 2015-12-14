@@ -25,72 +25,9 @@ The tests varied in the amount of light exposed to the resistors. The light leve
 
 To record the readings from the resistors, the code in \cref{lst:arduinoPhotoCode} was used for the Arduino. This program simply reads the value from the two sensors and prints it to the serial output, which in this case was a connected computer.
 
-\lstset{language=C}
-\begin{lstlisting}[label = lst:arduinoPhotoCode, caption = Arduino program for photoresistor tests]
-#define sensor1Pin 0
-#define sensor2Pin 1
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  int val1 = analogRead(sensor1Pin);
-  int val2 = analogRead(sensor2Pin);
-  Serial.print(val1);
-  Serial.print(",");
-  Serial.print(val2);
-  Serial.print("\n");
-}
-\end{lstlisting}
-
 This program was run until more than 1000 readings were taken in each scenario.
 To find the minimum, maximum and average values, as well as the difference between maximum and minimum in percent. The data was copied into a file, which was then input to the C\#-program seen in \cref{lst:cShPhotoCode}.
 
-\lstset{language=[Sharp]C}
-\begin{lstlisting}[label = lst:cShPhotoCode, caption = C\# data processing code, showstringspaces=false]
-using System;
-using System.IO;
-
-namespace ArduinoPhotoTest {
-  class Program {
-    [STAThreadAttribute]
-    static void Main(string[] args) {
-      StreamReader file = new StreamReader(@"Path/To/File.txt");
-      string line;
-      int a0Min = 99999;
-      int a1Min = 99999;
-      int a0Avg = 0;
-      int a1Avg = 0;
-      int a0Max = 0;
-      int a1Max = 0;
-      int counter = 0;
-      while ((line = file.ReadLine()) != null) {
-        int a0 = Convert.ToInt32(line.Split(',')[0]);
-        int a1 = Convert.ToInt32(line.Split(',')[1]);
-        a0Avg += a0;
-        a1Avg += a1;
-        if (a0Min > a0) a0Min = a0;
-        else if (a0Max < a0) a0Max = a0;
-        if (a1Min > a1) a1Min = a1;
-        else if (a1Max < a1) a1Max = a1;
-        counter++;
-      }
-      a0Avg /= counter;
-      a1Avg /= counter;
-      double a0Diff = ((double)a0Max / (double)a0Min) * 100d - 100;
-      double a1Diff = ((double)a1Max / (double)a1Min) * 100d - 100;
-      string text = string.Format("a0Avg = {0}\na0Min = {1}
-                                  \na0Max = {2}\na0Diff = {6}
-                                  %\na1Avg = {3}\na1Min = {4}
-                                  \na1Max = {5}\na1Diff = {7}%",
-        a0Avg, a0Min, a0Max, a1Avg, a1Min, a1Max, a0Diff, a1Diff);
-      Console.WriteLine(text);
-      System.Windows.Forms.Clipboard.SetText(text);
-      Console.Read();
-    }
-  }
-}
-\end{lstlisting}
 \subparagraph{Results}
 The results of the tests can be seen in \cref{tab:precisionTestResults}. "S1" refers to the first photoresistor. and "S2" refers to the second.
 
