@@ -16,22 +16,23 @@ public class SensorDataTest {
     @Test
     public void testDecode() throws InvalidValueSizeException {
         // --------HEADER----------
-        // numAnalog = 1 = 0b001
-        // analogIndex = 0 = 0b000
-        // 1stAnalog (10 bits) = 2 = 0b10
-        // numDigital = 2 = 0b0010
-        // indexDigital = 2 = 0b0010
+        // numNonBinary = 1 = 0b00001
+        // IndexNonBinary = 0 = 0b00000
+        // 1stNonBinary (10 bits) = 0 = 0b0
+        // numBinary = 2 = 0b00010
+        // indexBinary = 3 = 0b00011 // hack index
         // --------BODY----------
-        // 1stAnalogVal (NOT emulatable) = 900 = 0b1110000100
-        // 1stDigitalVal (NOT emulatable) = 0 = 0b0
-        // 2ndDigitalVal (emulatable) = 1 = 0b1
+        // 1stNonBinaryVal (NOT emulatable) = 900 = 0b1110000100
+        // 1stBinaryVal (NOT emulatable) = 0 = 0b0
+        // 2ndBinaryVal (emulatable) = 1 = 0b1
 
         // ----------SUMMARY-----------
-        // byte0 = 0b10000001 (numAnalog + analogIndex + 1stAnalog)
-        // byte1 = 0b00100010 (numDigital + indexDigital)
-        // byte2 = 0b10000100 (first 8 bits least significant of 1stAnalog)
-        // byte3 = 0b00001011 (last 2 bits of 1stAnalog + 1stDigital + 2ndDigital)
-        byte[] bytes = new byte[]{(byte) 0b10000001, 0b00100010, (byte) 0b10000100, 0b00001011};
+        // byte0 = 0b000 00001 (numNonBinary + (first 3 bits least significant of indexNonBinary))
+        // byte1 = 0b00010 0 00 ((last 2 bits of indexNonBinary) + 1stNonBinary + numBinary)
+        // byte2 = 0b100 00011 (indexBinary + first 3 bits of 1stNonBinaryVal)
+        // byte3 = 0b0 1110000 (last 7 bits of 1stNonBinaryVal + 1stBinaryVal)
+        // byte4 = 0b0000000 1 (2ndBinaryVal + rest is nothing)
+        byte[] bytes = new byte[]{(byte) 0b00000001, 0b00010000, (byte) 0b10000011, (byte) 0b01110000, 0b00000001};
         PacketDetails packetDetails = new PacketDetails(Instant.ofEpochMilli(0), bytes, "");
         List<SensorValue> sensorValues = new SensorData(packetDetails).getValues();
         // 1st analog value

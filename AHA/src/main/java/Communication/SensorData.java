@@ -33,40 +33,38 @@ public class SensorData {
 
 
         // ----------------- HEADER --------------------
-        int numAnalogValues = bsWrapper.getIntFromBits(3);
-        int indexFirstAnalog = bsWrapper.getIntFromBits(3);
+        int numNonBinaryValues = bsWrapper.getIntFromBits(5);
+        int indexFirstNonBinaryEmulatable = bsWrapper.getIntFromBits(5);
 
         // Contains the bits the values occupy and whether the sensor is emulatable
-        List<Pair<Integer, Boolean>> analogValueInfo = new ArrayList<>(numAnalogValues);
+        List<Pair<Integer, Boolean>> analogValueInfo = new ArrayList<>(numNonBinaryValues);
 
-        // Read numAnalogValues from header, and store how many bits the sensorValues occupy in the body
-        for (int i = 0; i < numAnalogValues; i++) {
-            int sizeInfo = bsWrapper.getIntFromBits(2);
+        // Read numNonBinaryValues from header, and store how many bits the sensorValues occupy in the body
+        for (int i = 0; i < numNonBinaryValues; i++) {
+            int sizeInfo = bsWrapper.getIntFromBits(1);
             Boolean isEmulatable = false;
 
             // if the index of emutability is 0, there is no emutable sensors
-            if (indexFirstAnalog == 0) {
+            if (indexFirstNonBinaryEmulatable == 0) {
                 isEmulatable = false;
             }
-            // else, if we are looking at sensor at index indexFirstAnalog+1, it is emulatable
-            else if ((i + 1) >= indexFirstAnalog) {
+            // else, if we are looking at sensor at index indexFirstNonBinaryEmulatable+1, it is emulatable
+            else if ((i + 1) >= indexFirstNonBinaryEmulatable) {
                 isEmulatable = true;
             }
 
             int bitSize = 0;
             switch (sizeInfo) {
-                case 0: bitSize = 0; break;
-                case 1: bitSize = 1; break;
-                case 2: bitSize = 10; break;
-                case 3: bitSize = 32; break;
+                case 0: bitSize = 10; break;
+                case 1: bitSize = 32; break;
 
-                default: throw new InvalidValueSizeException("Size of sensor values must be between 0-3");
+                default: throw new InvalidValueSizeException("Size of sensor values must be between 0-1");
             }
             analogValueInfo.add(i, Pair.with(bitSize, isEmulatable));
         }
 
-        int numDigitalValues = bsWrapper.getIntFromBits(4);
-        int indexFirstDigital = bsWrapper.getIntFromBits(4);
+        int numDigitalValues = bsWrapper.getIntFromBits(5);
+        int indexFirstBinary = bsWrapper.getIntFromBits(5);
 
         // ----------------------- BODY -----------------------
         // analogValues
@@ -85,13 +83,13 @@ public class SensorData {
             int sensorValue = bsWrapper.getIntFromBits(1);
             boolean isEmulatable = false;
             // if the index of emutability is 0, there is no emutable sensors
-            if (indexFirstDigital == 0 || indexFirstDigital == 1) {
+            if (indexFirstBinary == 0 || indexFirstBinary == 1) {
                 isEmulatable = false;
             }
-            // else, if we are looking at sensor at index indexFirstDigital+1, it is emulatable
+            // else, if we are looking at sensor at index indexFirstBinary+1, it is emulatable
             //Because unknown error we cant define index 1, but we still want to address it so,
-            // we address index 2 technically on the sender, and changes it here to index one. Hence the indexFirstDigital-1
-            else if ((i + 1) >= indexFirstDigital-1) {
+            // we address index 2 technically on the sender, and changes it here to index one. Hence the indexFirstBinary-1
+            else if ((i + 1) >= indexFirstBinary-1) {
                 isEmulatable = true;
             }
             returnList.add(new SensorValue(sensorValue, isEmulatable, deviceAddress, sensorIndex));

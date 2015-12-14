@@ -73,6 +73,7 @@ public class Main
         }
       }
     };
+    learnerThread.setDaemon(true);
     Learner oLearner = new Learner();
     List<Sample> learnerData = new ArrayList<>();
     SampleList sampleList = SampleList.getInstance();
@@ -111,12 +112,12 @@ public class Main
 
   private static void instantiateLoggers(){
     try{
-      Handler mainHandler = new FileHandler("mainLog");
-      Handler sampleHandler = new FileHandler("sampleLog");
-      Handler comHandler = new FileHandler("comLog");
-      Handler normHandler = new FileHandler("normLog");
-      Handler aiHandler = new FileHandler("aiLog");
-      Handler reasonHandler = new FileHandler("reasonLog");
+      Handler mainHandler = new FileHandler("logMain");
+      Handler sampleHandler = new FileHandler("logSample");
+      Handler comHandler = new FileHandler("logCom");
+      Handler normHandler = new FileHandler("logNorm");
+      Handler aiHandler = new FileHandler("logAI");
+      Handler reasonHandler = new FileHandler("logReason");
       Logger.getLogger("mainLogger").addHandler(mainHandler);
       Logger.getLogger("comLogger").addHandler(comHandler);
       Logger.getLogger("normLogger").addHandler(normHandler);
