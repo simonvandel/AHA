@@ -1,10 +1,11 @@
-\section{Encoding Schemes}\label{sec:encoding}
+%mainfile: ../master.tex
+\section{Encoding Schemes}
 
-In order for the sensor/actuator subsystem to communicate with the artificial intelligence subsystem, as shown in \cref{sec:ai}, the data transmitted back and forth, must be encoded in some way. It is shown in \cref{}\sinote{referer til xbee resultater afsnit}, that the transmission speed reduces gradually as packet size increases. Additionally, the Arduino Uno we are using in the sensor/actuator subsystem has a serial buffer of 64 bytes. This means that we can not send packages bigger than 64 bytes minus some overhead from the ZigBee protocol. Therefore, the encoding of the data should be as compact as possible, to minimise the transmission speed and to allow packages to be sent from the Arduino Uno.
+In order for the sensor/actuator subsystem to communicate with the artificial intelligence subsystem, as shown in \cref{sec:ai}, the data transmitted back and forth, must be encoded in some way. It is shown in \cref{}\sinote{referer til xbee resultater afsnit}, that the transmission speed reduces gradually as packet size increases. Additionally, the Arduino Uno we are using in the sensor/actuator subsystem has a serial buffer of 64 bytes. This means that we can not send packages bigger than 64 bytes minus some overhead from the ZigBee protocol. Because of the responsiveness requirement\chnote{insert ref to requirements}, the encoding of the data should be as compact as possible, to minimise the transmission speed and to allow packages to be sent from the Arduino Uno withput splitting data into more packages.
 
-One could reuse exising binary encoding instead of designing a new one from scratch. An example of an exising binary encoding standard would be Protocol Buffers\footnote{\url{https://developers.google.com/protocol-buffers/}}. Using an existing encoding format, would provide \enquote{free} encoding and decoding methods, as only the specification of the data would need to be described. An advantage of designing an encoding from scratch is that there is more control over the size of the final encoding size. It also allows for domain specific knowedge to be used in the encoding. For example, it is known that digital values can only have values 0 or 1, so 1 bit is enough to describe this.
+One could reuse exising binary encoding instead of designing a new one from scratch. An example of an exising binary encoding standard would be Protocol Buffers\footnote{\url{https://developers.google.com/protocol-buffers/}}. Using an existing encoding format, would provide \enquote{free} encoding and decoding methods, as only the specification of the data would need to be described. An advantage of designing an encoding from scratch is that there is more control over the size of the final encoding size. It also allows for domain specific knowedge to be exploited in the encoding. For example, if it is known that a sensor only has a binary value domain, 1 bit is enough to encode this.
 
-As size is the main goal of the encoding of the data, a simple encoding scheme is designed as described below. This will cover schemes to and from the sensor/actuator subsystem and the artificial intelligence subsystem. Note that the encodings assume little endianness.
+The main concern of choosing an encoding for our communication subsystem, is minimising the size of the packages communicated. An implementation of a simple domain specific encoding scheme is described below. This will cover schemes to and from the sensor/actuator subsystem and the artificial intelligence subsystem. Note that the encodings assume little endianness.
 
 \subsection{From Sensor/Actuator Subsystem To AI Subsystem}
 The sensor/actuator subsystem needs to transmit sensor values of the following types:
@@ -12,7 +13,7 @@ The sensor/actuator subsystem needs to transmit sensor values of the following t
 \begin{itemize}
 \item Boolean values (true, false) - For example a PIR sensor - 1 bit required
 \item Values from analog input pins ranging from 0 to 1023 - For example a photoresistor - 10 bits required, as this is the precision for Arduino Uno analog input pins
-\item Values from analog input 0 to 4294967295 - For example a distance sensor - 32 bits required, as the result of the calculation made to derive the distance is stored in a 32 bit integer on the Arduino Uno
+\item Sensor values from 0 to 4294967295 - For example a distance sensor - 32 bits required, as the result of the calculation made to derive the distance is stored in a 32 bit integer on the Arduino Uno
 \end{itemize}
 
 There also needs to be a flag that describes whether the sensor is emulatable by the system.
@@ -25,13 +26,13 @@ The header contains the following fields:
 \item Number of analog values - 3 bits required, as the Arduino Uno has 6 analog input pins
 \item Index (starting from 1) of the first emulatable analog sensor - 3 bits
 \item From 0 up to max number of analog fields describing the size of the analog values - 2 bits required, with the following meaning of the bits: 00: 0 bits, 01: 1 bit, 10: 10 bits, 11: 32 bits
-\item Number of digital values - 4 bits required, as the Arduino Uno has 14 digital input pins
+\item Number of binary values - 4 bits required, as the Arduino Uno has 14 digital input pins
 \item Index (starting from 1) of the first digital emulatable sensor value - 4 bits required
 \end{itemize}
 
 By including both the header and the body in the packet, we can compact the data representation.
 
-The worst case packet size for this encoding scheme is sending 6 analog vales that each occupy 32 bits, and 14 digital values that each occupy 1 bit. This would require the header to be of size $3 + 3 + 6 * 2 + 4 + 4 = 26$ bits. The body would require size $6 * 32 + 14 * 1 = 206$. In total the size of the encoding would be $26 + 206 = 232$ bits $= 29$ bytes. This is a theoretical maximum size that would be reached only if we assume sensors only need 1 input pin. In any case the size fits into the serial buffer of the Arduino Uno.
+The worst case packet size for this encoding scheme is sending 6 analog values that each occupy 32 bits, and 14 digital values that each occupy 1 bit. This would require the header to be of size $3 + 3 + 6 * 2 + 4 + 4 = 26$ bits. The body would require size $6 * 32 + 14 * 1 = 206$. In total the size of the encoding would be $26 + 206 = 232$ bits $= 29$ bytes. This is a theoretical maximum size that would be reached only if we assume sensors only need 1 input pin. In any case the size fits into the serial buffer of the Arduino Uno.
 
 \subsection{From  AI Subsystem To Sensor/Actuator Subsystem}
 
