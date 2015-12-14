@@ -1,9 +1,9 @@
 %mainfile: ../master.tex
 \section{Encoding Schemes}
 
-In order for the sensor/actuator subsystem to communicate with the artificial intelligence subsystem, as shown in \cref{sec:ai}, the data transmitted back and forth, must be encoded in some way. It is shown in \cref{}\sinote{referer til xbee resultater afsnit}, that the transmission speed reduces gradually as packet size increases. Additionally, the Arduino Uno we are using in the sensor/actuator subsystem has a serial buffer of 64 bytes. This means that we can not send packages bigger than 64 bytes minus some overhead from the ZigBee protocol. Because of the responsiveness requirement\chnote{insert ref to requirements}, the encoding of the data should be as compact as possible, to minimise the transmission speed and to allow packages to be sent from the Arduino Uno withput splitting data into more packages.
+In order for the sensor/actuator subsystem to communicate with the artificial intelligence subsystem, as shown in \cref{sec:ai}, the data transmitted back and forth, must be encoded in some way. It is shown in \cref{}\sinote{referer til xbee resultater afsnit}, that the transmission speed reduces gradually as packet size increases. Additionally, the Arduino Uno we are using in the sensor/actuator subsystem has a serial buffer of 64 bytes. This means that we can not send packages bigger than 64 bytes minus some overhead from the ZigBee protocol. Because of the responsiveness requirement\chnote{insert ref to requirements}, the encoding of the data should be as compact as possible, to minimise the transmission speed and to allow packages to be sent from the Arduino Uno without splitting data into more packages.
 
-One could reuse exising binary encoding instead of designing a new one from scratch. An example of an exising binary encoding standard would be Protocol Buffers\footnote{\url{https://developers.google.com/protocol-buffers/}}. Using an existing encoding format, would provide \enquote{free} encoding and decoding methods, as only the specification of the data would need to be described. An advantage of designing an encoding from scratch is that there is more control over the size of the final encoding size. It also allows for domain specific knowedge to be exploited in the encoding. For example, if it is known that a sensor only has a binary value domain, 1 bit is enough to encode this.
+One could reuse existing binary encoding instead of designing a new one from scratch. An example of an existing binary encoding standard would be Protocol Buffers\footnote{\url{https://developers.google.com/protocol-buffers/}}. Using an existing encoding format, would provide \enquote{free} encoding and decoding methods, as only the specification of the data would need to be described. An advantage of designing an encoding from scratch is that there is more control over the size of the final encoding size. It also allows for domain specific knowledge to be exploited in the encoding. For example, if it is known that a sensor only has a binary value domain, 1 bit is enough to encode this.
 
 The main concern of choosing an encoding for our communication subsystem, is minimising the size of the packages communicated. An implementation of a simple domain specific encoding scheme is described below. This will cover schemes to and from the sensor/actuator subsystem and the artificial intelligence subsystem. Note that the encodings assume little endianness.
 
@@ -12,7 +12,7 @@ We assume that the sensor/actuator subsystem only needs to transmit sensor value
 
 \begin{itemize}
 \item Binary values (0, 1) - For example a PIR sensor - 1 bit required
-\item Values ranging from 0 to 1023 - For example a photoresistor - 10 bits required, as this is the precision for Arduino Uno analog input pins
+\item Values ranging from 0 to 1023 - For example a photoresistor - 10 bits required, as this is the precision for Arduino Uno analogue input pins
 \item Values ranging from 0 to 4294967295 - For example a distance sensor - 32 bits required, as the result of the calculation made to derive the distance is stored in a 32 bit integer on the Arduino Uno
 \end{itemize}
 By this assumption we can make some domain specific implementation for the encoding.
@@ -26,7 +26,7 @@ The header contains the following fields:
 \item Number of non-binary values - 5 bits required. The Arduino Uno has 20 input pins, so a maximum of 20 sensors can be connected
 \item Index (starting from 1) of the first emulatable non-binary sensor - 5 bits
 \item This field is repeating. There are as many fields of this type as there are number of non-binary values. This field type describes the size of the values - 1 bit required, with the following meaning of the bits: 0: 10 bits, 1: 32 bits
-\item Number of binary values - 5 bits required. The Arduino Uno has 20 input pins, so a maximum of 20 sensors can be connectedas
+\item Number of binary values - 5 bits required. The Arduino Uno has 20 input pins, so a maximum of 20 sensors can be connected
 \item Index (starting from 1) of the first binary emulatable sensor value - 5 bits required
 \end{itemize}
 

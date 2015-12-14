@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 spellcheck() {
   echo Spellchecking $1
