@@ -107,8 +107,6 @@ To encompass what the user is currently thinking and remembering, essentially de
 \caption[Trellis diagram for a 2nd order Hidden Markov Model]{A trellis diagram for a 2nd order hidden Markov model.}\label{fig:3rdMarkovModel}
 \end{figure}
 
-\jenote{Ignore this note (unless we are handing the report in) (Jens, it is here)}
-
 \Cref{fig:3rdMarkovModel} shows the trellis diagram for a 2nd order hidden Markov model. Here we can see that every state $s_t$ is dependent on two states in the past $s_{t-1}$ and $s_{t-2}$ meaning that every state is not only dependent on what happened the time step before. This can trivially be expanded to any nth order. Every model we have look at so far has been a 1st order Markov model. Any nth order Markov model where $n>1$ violates the Newtonian world-view, also known as the Markov property. Many algorithms within this field assumes this Markov property, including the ones later used in this project. Any nth order Markov model can be converted to a 1st order Markov model, thereby keeping the Markov property. This is in this project done by encoding the needed past, in form of the prior hidden states, in the hidden state together with the current.
 
 On the basis of this we can now find the specific hidden states. We introduce the term \emph{sample} that covers the current observable state together with the history of snapshots n steps back. The size of this n will be discussed in \cref{}\jenote{need reference to section about the sampler}. This sample is used to find hidden states. A list of samples are created from an observation sequence of snapshots, further described in \cref{}\jenote{need sampler reference}. One could argue that this sample needed to be created from history of hidden states, not snapshots, since it is these we depend on in the current state. The problem here arises because both learning probabilities, and the which nodes to include, can not really be done completely in the same graph. A compromise was therefore made so that the samples and thereby hidden states are found from the observations and history of observations, on the reasoning that we can not distinct between two hidden states form anything else then the observations. A hidden state will therefore be created for every sample in the HMM to keep the model in 1st order and keeping the Markov property.
@@ -220,25 +218,18 @@ In the formal definition of HMM we also had $\pi$, a matrix denoting the initial
 
 Now that we have a complete model of the problem domain, we can move on to the two tasks this project will do on this model, learning and reasoning.
 
-\subsection{Notes:}
-
-An initial implementation of a Markov chain in our problem domain could make the states in the model snapshots of the sensors in the home. Here two problems arises. First, what a person decides to do next is not only dependent on what he or she is currently doing, also what has happen in the past.
-
-
-A Markov chain can have multiple orders. This is how many . Another problem also arises when using Markov models. Of how high order should the model be? A first order 
-
- In a Markov chain.
-Hidden states: The real pattern the user is currently doing.
-Evidence states: Snapshots of the problem domain.
-
-Hidden Markov chains are the simplest form of
-
-
 \subsection{Learning}
-Learning is the task of determinating the probabilities of the transitions in the HMM. Remember that we cannot reliably learn the structure (the states) and probabilities of the HMM. Therefore we in the previous section discussed how to determinate the states. We will now look into how to determinate the probabilities between the states.
+Learning is the task of determining the probabilities of the transitions in the HMM. Remember that we cannot reliably learn the structure (the states) and probabilities of the HMM. Therefore we, in the previous section, discussed how to determinate the states. We will now look into how to determinate the probabilities between the states.
 
 For learning this project uses the Baum-Welch algorithm, a specific implementation of the forwards-backwards algorithm. 
 
+Given the model $\theta = \{A, B, \pi\}$ and a sequence of observations $\mathcal{O}$, $\alpha = P(\mathcal{O}|\theta)$.
+
+$\xi_t (i, j)$ is the probability of being in state $x_i$ at time t and transiting to state $x_j$ at
+time t + 1.
+
+
+
 \subsection{Prediction}
-The task of predicting is done after the model has been learned. This is the task, of predicting given list of observations $\{o_1,\dots,o_t\}$ and a model, what is most likely to be emitted in the next time step $x_{t+1}$. This can be done, partly, via the Viterbi algorithm. From a sequence of observations the Viterbi algorithm can find the most probable sequence of hidden states that caused this list of observations to occur, ie what sequence of hidden states $\{x_1,\dots,x_t\}$ is most probable to have emitted the sequence. From this we can then predict what is most likely going to be the next hidden state, and then from this, what is most likely going to be emitted. The whole point of doing this is then that now we can look at the difference in what is currently true in the problem domain, and what is most likely going to be true next. From this we can find out if we can emulate any of this and if the probability of what is going to happen next is high enough, ie our confidence that that is what is going next, and we can emulate it, we do it. This hopefully means that the system does the action the user would do next before him/her.
+The task of predicting is done after the model has been learned. This is the task of predicting, given list of observations $\{o_1,\dots,o_t\}$ and a model, what is most likely to be emitted in the next time step $x_{t+1}$. This can be done, partly, via the Viterbi algorithm. From a sequence of observations the Viterbi algorithm can find the most probable sequence of hidden states that caused this list of observations to occur, ie what sequence of hidden states $\{x_1,\dots,x_t\}$ is most probable to have emitted the sequence. From this we can then predict what is most likely going to be the next hidden state, and then from this, what is most likely going to be emitted. The whole point of doing this is then that now we can look at the difference in what is currently true in the problem domain, and what is most likely going to be true next. From this we can find out if we can emulate any of this and if the probability of what is going to happen next is high enough, ie our confidence that that is what is going next, and we can emulate it, we do it. This means that the system does the action the user would do next before him/her.
 
