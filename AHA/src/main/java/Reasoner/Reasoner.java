@@ -13,14 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * created by kafuch
- *
- * THESE NEED TO BE IMPLEMENTED FOR THIS TO WORK:
- * Model //class
- * Model DB.getModel() //gets the most recent model from the DB
- * void DB.flagModel(Action a1, Action a2) //flags two actions as wrong in the databases model
- * void DB.flagEntries(List<Action> actions) //flags the actions in the databases history as valid
- * Action CalculateReasoning(Sample s); //should calculate the most likely action to occur (which is above a certain threshold)
- * void TakeFeedback(Action a1, Action a2); //used to update the reasoners model based on two wrong actions
  */
 public class Reasoner {
   private static Reasoner reasoner;
@@ -109,7 +101,9 @@ public class Reasoner {
    * @param reasoning the reasoning behind the action, which was a mistake
    */
   public void updateModel(Reasoning reasoning){
-
+    if(currentModel != null){
+      currentModel.TakeFeedback(reasoning);
+    }
   }
 
   public void setCurrentModel(IModel model){
