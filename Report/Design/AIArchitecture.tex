@@ -9,23 +9,25 @@
   \node[squarednode] (sensorActuatorSubsystem) {Sensor/actuator subsystem};
   \node[squarednode] (communication) [right=of sensorActuatorSubsystem, xshift=5em] {Communication};
   \node[squarednode] (normaliser) [right=of communication, xshift=5em] {Normaliser};
-  \node[squarednode] (sampler) [below=of normaliser, yshift=-3em] {Sampler};
-  \node[squarednode] (database) [below=of communication, yshift=-9em] {Database};
-  \node[squarednode] (learner) [below=of database, yshift=-3em] {Learner};
   \node[squarednode] (reasoner) [below=of sensorActuatorSubsystem, yshift=-3em] {Reasoner};
+  \node[squarednode] (modelDatabase) [below=of reasoner, yshift=-3em] {Model Database};
+  \node[squarednode] (sampler) [below=of normaliser, yshift=-3em] {Sampler};
+  \node[squarednode] (historyDatabase) [below=of sampler, yshift=-3em] {History Database};
+  \node[squarednode] (learner) [right=of modelDatabase, xshift=5em] {Learner};
 
   %Lines
-  \draw[-triangle 90, transform canvas={yshift=-1em}] (sensorActuatorSubsystem.east) -- node[anchor=north] {sensor data} (communication.west);
-  \draw[-triangle 90, transform canvas={yshift=1em}] (communication.west) -- node[anchor=south] {actions} (sensorActuatorSubsystem.east);
-  \draw[-triangle 90, text width=6em] (communication.east) -- node[anchor=south] {snapshot, time} (normaliser);
-  \draw[-triangle 90, text width=6em] (normaliser.south) -- node[anchor=east] {normalised snapshot, time} (sampler.north);
-  \draw[-triangle 90, text width=7em] (sampler.south) |- node[anchor=north east] {scope, time, actions} (database.east);
-  \draw[-triangle 90, text width=6em, transform canvas={xshift=-1em}] (database.south) -- node[anchor=east] {scope, time, actions} (learner.north);
-  \draw[-triangle 90, text width=7em, transform canvas={xshift=1em}] (learner.north) -- node[anchor=west] {model} (database.south);
-  \draw[-triangle 90, transform canvas={yshift=1em}] (sampler.west) -- node[anchor=south] {scope, time, actions} (reasoner.east);
-  \draw[-triangle 90] (database.north) |- node[anchor=north east] {model} (reasoner.east);
-  \draw[-triangle 90] (reasoner.north) -- node[anchor=north west] {actions} (communication.south);
-  \draw[-triangle 90] (reasoner.south) |- node[anchor=north west] {feedback} (database.west);
+  \path[-triangle 90]
+  (sensorActuatorSubsystem.east) edge[transform canvas={yshift=-1em}] node[anchor=north] {sensor data} (communication.west)
+  (communication.west) edge[transform canvas={yshift=1em}] node[anchor=south] {actions} (sensorActuatorSubsystem.east)
+  (communication.east) edge node[anchor=south] {snapshot, time} (normaliser)
+  (normaliser.south) edge node[anchor=east,text width=6em] {normalised snapshot, time} (sampler.north)
+  (sampler.south) edge node[anchor=east,text width=6em] {scope, time, actions} (historyDatabase.north)
+  (historyDatabase.west) edge node[anchor=south, text width=6em] {scope, time, actions} (learner.east)
+  (learner.west) edge node[anchor=south] {model} (modelDatabase.east)
+  (sampler.west) edge node[anchor=south, text width=6em] {scope, time, actions} (reasoner.east)
+  (modelDatabase.north) edge[transform canvas={xshift=-1em}] node[anchor=east] {model} (reasoner.south)
+  (reasoner) edge[out=north,in=south] node[anchor=north] {actions} (communication)
+  (reasoner.south) edge[transform canvas={xshift=1em}] node[anchor=west] {feedback} (modelDatabase.north);
 \end{tikzpicture}
 \caption[AI architecture]{Overview of the modules in the AI architecture.}\label{fig:ai_architecture}
 \end{figure}
