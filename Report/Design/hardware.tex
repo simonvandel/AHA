@@ -31,7 +31,7 @@ To control lighting and appliances, one has to have a way to conditionally allow
 It is obvious that the computational device, controlling the sensors and actuators, has to have sufficient number of pins for connecting said sensors and actuators.
 
 \subsubsection{Computational Performance}
-The chosen architecture for the system, as described in \cref{sec:architecture}, requires the hardware to be fast enough to be able to read all sensors, encode a package, send the package to the artificial intelligence subsystem, and check whether it has received any actions from the artificial intelligence subsystem. All of this has to happen within 350 ms, as described in \cref{}\sinote{referer til hvor vi beskriver om deadlines}.
+The chosen architecture for the system, as described in \cref{sec:architecture}, requires the hardware to be fast enough to be able to read all sensors, encode a package, send the package to the artificial intelligence subsystem, and check whether it has received any actions from the artificial intelligence subsystem. All of this has to happen within 100 ms, as described in \cref{sub:people}.
 
 \subsubsection{Scheduling Options}
 In \cref{sec:architecture}, the chosen architecture describes that the sensor and actuator controllers have two functions: Control its sensors and communicate sensor data to other devices. To precisely control when actions happen on the platform, it should be possible to manually schedule tasks to run.
@@ -48,7 +48,7 @@ Arduino Uno boards are chosen for controlling the sensors and actuators. The Ard
 \subsection{Artificial Intelligence Subsystem}
 
 \subsubsection{Computational Performance}
-The subsystem has to be powerful enough to be able to decide which actions to perform, if any, based on the sensor data received from the sensor/actuator subsystem. The deadline for this is described in \sinote{referer til hvor vi beskriver om deadlines}. The hardware platform used in the sensor/actuator subsystem is not powerful enough to perform these computations in reasonable time. Therefore more powerful hardware is needed.
+The subsystem has to be powerful enough to be able to decide which actions to perform, if any, based on the sensor data received from the sensor/actuator subsystem. The deadline for this is described in \cref{sub:people}. The hardware platform used in the sensor/actuator subsystem is not powerful enough to perform these computations in reasonable time. Therefore more powerful hardware is needed.
 
 \subsubsection{Input/Output Pin Availability}
 The AI subsystem has to have accessible input and output pins in order to attach radio modules to the AI computational device.
