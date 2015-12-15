@@ -1,5 +1,5 @@
 #include <XBee.h>
-int sendData(XBeeAddress64 addr, char* toSend, int toSendLen, XBee xbee);
+int sendData(XBeeAddress64 addr, byte* toSend, int toSendLen, XBee xbee);
 int getModemStatusResponse(XBee xbee);
 int receiveData(XBee *xbee);
 int getATField(char *request, XBee xbee, AtCommandResponse *result);

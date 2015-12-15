@@ -13,6 +13,9 @@ boolean lightSwitchVal = false;
 boolean btnSensorVal = false;
 Serialization serialization;
 
+long unsigned startTime = 0;
+long unsigned packages = 0;
+
 //Ultrasonic ultrasonic(4,5);
 //PIR pir(3);
 //Photoresistor photoresistor(1);
@@ -90,10 +93,12 @@ void printbincharpad(char c)
 
 void loop()
 {
+  Serial.println("\n----- Loop Start -----");  
+  startTime = millis();
   // ********** Analog readings *********
   // 32 bit analog
   //unsigned long distance = 1;//ultrasonic.getDistance();
-  Serial.print("LighrSwitch: ");
+  Serial.print("LightSwitch: ");
   Serial.println(lightSwitchVal);
   // 10 bit analog
   //unsigned int lightIntensity = photoresistor.getLightIntensity();
@@ -119,7 +124,7 @@ void loop()
 
   int packetSize = sensorPacketBuilder.build(buildArray);
 
-  sendData(buildArray, packetSize);
+  sendData((uint8_t *)buildArray, packetSize);
 
   // Continuously let xbee read packets and call callbacks.
   xbee.loop();
@@ -128,13 +133,21 @@ void loop()
   memset(buildArray, 0, 64);
   delay(1);
 
+  packages++;
+
+  Serial.println();
+  Serial.print("----- Loop end (");
+  Serial.print(millis() - startTime);
+  Serial.print(")(");
+  Serial.print(packages);
+  Serial.println(") -----");
 }
 
-void sendData(byte*  toSend, int sendLen){
+void sendData(uint8_t* toSend, int sendLen){
   for(int i = 0; i < sendLen; i++) {
-    printbincharpad(toSend[i]);
+    Serial.println(toSend[i], BIN);
   }
-  ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)toSend, sendLen);
+  ZBTxRequest zbTx = ZBTxRequest(addr64, toSend, sendLen);
   xbee.send(zbTx);
   ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //not sure whether better to have as global or local
   //Re-sends, and forgets, if not succesful
@@ -146,5 +159,4 @@ void sendData(byte*  toSend, int sendLen){
       }
     }
   }
-  xbee.send(zbTx);
 }
