@@ -109,22 +109,26 @@ void loop()
   Serial.print("btnSensorVal: ");
   Serial.println(btnSensorVal);
   // packet header
-  sensorPacketBuilder.add(0, 5); // numAnalog
+  sensorPacketBuilder.add(1, 5); // numAnalog
   sensorPacketBuilder.add(0, 5); // indexAnalog. No emulatable analog sensor
-  //sensorPacketBuilder.add(0, 2); // Analog size 1 = 32 bits
+  sensorPacketBuilder.add(2, 1); // Analog size 1 = 32 bits
 
-  sensorPacketBuilder.add(2, 5);// num digital
+  sensorPacketBuilder.add(1, 5);// num digital
   //hacks, index is index plus 1, so to address index 1 put 2, and for 2 put 3 and so on..
-  sensorPacketBuilder.add(3, 5);// index digital. No emulatable digital sensor
-
+  sensorPacketBuilder.add(2, 4);// index digital. No emulatable digital sensor
+  //sensorPacketBuilder.add(1, 3); // vka
   // body
   //sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
-  sensorPacketBuilder.add(btnSensorVal, 1);// analog val 2 = light
-  sensorPacketBuilder.add(lightSwitchVal, 1);// digital val 1 = pir
+  sensorPacketBuilder.add(0, 10);// analog val 2 = light
+  sensorPacketBuilder.add(0, 1);// analog val 2 = light //bla
+  //sensorPacketBuilder.add(0, 11);// analog val 2 = light //bla
+  //sensorPacketBuilder.add(1, 9);// digital val 1 = pir
 
   int packetSize = sensorPacketBuilder.build(buildArray);
-
-  sendData((uint8_t *)buildArray, packetSize);
+  for(int i = 0; i < packetSize; i++) {
+    Serial.println(buildArray[i], BIN);
+  }
+  sendData((uint8_t *)"000000000000", 4);
 
   // Continuously let xbee read packets and call callbacks.
   xbee.loop();
@@ -144,9 +148,6 @@ void loop()
 }
 
 void sendData(uint8_t* toSend, int sendLen){
-  for(int i = 0; i < sendLen; i++) {
-    Serial.println(toSend[i], BIN);
-  }
   ZBTxRequest zbTx = ZBTxRequest(addr64, toSend, sendLen);
   xbee.send(zbTx);
   ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //not sure whether better to have as global or local
