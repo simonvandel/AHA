@@ -1,5 +1,5 @@
 %mainfile: ../master.tex
-\Cref{sec:architecture} describes the overall architecture of the system that solves the three tasks; data collection, analysis of data and mimicking patterns learned from the analysis. This section will expand on the architecture designed to perform the second and third task. This is the artificial intelligence (AI) subsystem of the system.
+\Cref{sec:architecture} describes the overall architecture of the system that solves the three tasks; data collection, analysis of data and mimicking patterns learned from the analysis. This section will expand on the architecture designed to perform the second and third task, that is the artificial intelligence (AI) subsystem of the system.
 
 % DRAWING
 \begin{figure}[htbp]
@@ -37,7 +37,7 @@ As can be seen from \cref{fig:ai_architecture}, the AI subsystem contains 6 modu
 \subsection{Communication}
 The input to the AI subsystem is a stream of packets. These packets of sensor values arrive continuously as devices from the sensor/actuator subsystem send them. The communication module handles these packets and also provides functionality to send data to devices in the sensor/actuator subsystem. When sensor values arrive at the communication module, the data of the packet is encoded in the binary format described in \cref{sec:encoding}. The communication module decodes the binary data and notes the time the packet was received.
 
-When sensor values have been received from all sensor/actuator stations, the decoded sensor values and the time of arrival (the arrival time of the newest sensor value) is then send to the normaliser. This collection of sensor values is from now on called snapshots.
+When sensor values have been received from all sensor/actuator stations, the decoded sensor values and the time of arrival (the arrival time of the newest sensor value) is then sent to the normaliser. This collection of sensor values are henceforth called snapshots.
 
 \subsection{Normaliser}
 To remove noise from the sensors and to reduce the size of the problem, a normalisation pass is performed on the input. The normalisation pass is explained deeper in \cref{sec:normaliser}. The output of the normalisation is the same set of sensor values, but normalised to fit into a domain of size k. The time of arrival is not normalised.
@@ -59,7 +59,7 @@ The hashed state scopes and the calculated action as well as the time of arrival
 The database has the responsibility to store the learned model used for predicting user patterns, as well as storing samples of data observed from the sensors.
 
 \subsection{Learner}
-The responsibility of the learner is to infer the best parameters of the model. This is further described in \cref{} \sinote{link til learner design}. The learner will utilise the samples stored in the database. When parameters for a model has been learned, the model is stored in the database, for others to consume.
+The responsibility of the learner is to infer the best parameters of the model. This is further described in \cref{sec:learner}. The learner will utilise the samples stored in the database. When parameters for a model has been learned, the model is stored in the database, for others to consume.
 
 \subsection{Reasoner}
 The reasoner should, based on the model retrieved from the database and the current scope,time and actions, infer which actions are sensible \chnote{what does sensible mean in this context?} to perform.
