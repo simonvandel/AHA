@@ -4,7 +4,7 @@ As discussed earlier the communication in the system will be done using xbee mod
 \subsection{Sending Modes}
 The xbee module have two different control interfaces transparent- and API-mode.
 \subsubsection{Transparent Mode}
-In transparent mode whatever the xbee module receives on its serial input pins it immediately sends over the network to the address specified in the firmware settings. This means the time to send data is insignificant. \ranote(Put the specifics of this result in an appendix?) A single message can be sent in under 2ms, however because there is no administration of the network spamming the network will increase the sent time to upwards of 60ms. Unless the client/host program handles it, there is no guarantee that each package is received.
+In transparent mode whatever the xbee module receives on its serial input pins it immediately sends over the network to the address specified in the firmware settings. This means the time to send data is insignificant. \ranote(Put the specifics of this result in an appendix?) A single message can be sent in under 2ms, however because there is no administration of the network spamming the network will increase the sent time to upwards of 60ms. Unless the client/host program handles it, there is no guarantee that each package is received. \cref{arduino_at_mode}
 In this mode a lot of messages can be sent quickly but with little control.
 %https://docs.digi.com/display/WirelessConnectivityKit/Command+mode
 \subsubsection{API Mode}
