@@ -93,7 +93,7 @@ void loop()
   // ********** Analog readings *********
   // 32 bit analog
   unsigned long distance = 1;//ultrasonic.getDistance();
-  Serial.print("LighrSwitch: ");
+  Serial.print("LightSwitch: ");
   Serial.println(lightSwitchVal);
   // 10 bit analog
   //unsigned int lightIntensity = photoresistor.getLightIntensity();
@@ -131,7 +131,7 @@ void loop()
 }
 
 void sendData(byte*  toSend, int sendLen){
-  for(int i = 0; i < 4; i++) {
+  for(int i = 0; i < sendLen; i++) {
     printbincharpad(toSend[i]);
   }
   ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)toSend, sendLen);
