@@ -92,8 +92,8 @@ void loop()
 {
   // ********** Analog readings *********
   // 32 bit analog
-  unsigned long distance = 1;//ultrasonic.getDistance();
-  Serial.print("LightSwitch: ");
+  //unsigned long distance = 1;//ultrasonic.getDistance();
+  Serial.print("LighrSwitch: ");
   Serial.println(lightSwitchVal);
   // 10 bit analog
   //unsigned int lightIntensity = photoresistor.getLightIntensity();
@@ -107,7 +107,7 @@ void loop()
   sensorPacketBuilder.add(0, 5); // numAnalog
   sensorPacketBuilder.add(0, 5); // indexAnalog. No emulatable analog sensor
   //sensorPacketBuilder.add(0, 2); // Analog size 1 = 32 bits
-  
+
   sensorPacketBuilder.add(2, 5);// num digital
   //hacks, index is index plus 1, so to address index 1 put 2, and for 2 put 3 and so on..
   sensorPacketBuilder.add(3, 5);// index digital. No emulatable digital sensor
