@@ -1,9 +1,11 @@
-personal_ws-1.1 en 109 
+personal_ws-1.1 en 112 
+prepended
 htf
 SEEED
 htp
 actuatorController
 directionality
+encodings
 emulatable
 Stærmose
 Vandel
@@ -29,6 +31,7 @@ Qauomi
 Christiansen
 unretriggerable
 normaliser
+endianness
 namespace
 VCC
 nd

@@ -7,13 +7,15 @@
 
 #define LightSwitch 13
 #define LightBtn 2
+#define BtnSensor 3
 
 boolean lightSwitchVal = false;
+boolean btnSensorVal = false;
 Serialization serialization;
 
-Ultrasonic ultrasonic(4,5);
-PIR pir(3);
-Photoresistor photoresistor(1);
+//Ultrasonic ultrasonic(4,5);
+//PIR pir(3);
+//Photoresistor photoresistor(1);
 SensorPacketBuilder sensorPacketBuilder;
 
 byte buildArray[64];
@@ -57,12 +59,17 @@ void toggleLightSwitch(){
   }
 }
 
+void toggleBtnSensorVal(){
+  btnSensorVal = !btnSensorVal;
+}
+
 //
 void setup()
 {
   pinMode(LightSwitch, OUTPUT);
   pinMode(LightBtn, INPUT);
   attachInterrupt(0, toggleLightSwitch, RISING);
+  attachInterrupt(1, toggleBtnSensorVal, RISING);
   Serial.begin(9600);
   xbee.setSerial(Serial);
   // Called when an actual packet received
@@ -89,25 +96,25 @@ void loop()
   Serial.print("LighrSwitch: ");
   Serial.println(lightSwitchVal);
   // 10 bit analog
-  unsigned int lightIntensity = photoresistor.getLightIntensity();
+  //unsigned int lightIntensity = photoresistor.getLightIntensity();
 
   // ********** digital readings *********
   // digital sensor
   //boolean motion = pir.getMotionDetected();
-  Serial.print("lightIntensity: ");
-  Serial.println(lightIntensity);
+  Serial.print("btnSensorVal: ");
+  Serial.println(btnSensorVal);
   // packet header
-  sensorPacketBuilder.add(1, 3); // numAnalog
-  sensorPacketBuilder.add(0, 3); // indexAnalog. No emulatable analog sensor
-  sensorPacketBuilder.add(2, 2); // Analog size 1 = 32 bits
+  sensorPacketBuilder.add(0, 5); // numAnalog
+  sensorPacketBuilder.add(0, 5); // indexAnalog. No emulatable analog sensor
+  //sensorPacketBuilder.add(0, 2); // Analog size 1 = 32 bits
   
-  sensorPacketBuilder.add(1, 4);// num digital
+  sensorPacketBuilder.add(2, 5);// num digital
   //hacks, index is index plus 1, so to address index 1 put 2, and for 2 put 3 and so on..
-  sensorPacketBuilder.add(2, 4);// index digital. No emulatable digital sensor
+  sensorPacketBuilder.add(3, 5);// index digital. No emulatable digital sensor
 
   // body
   //sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
-  sensorPacketBuilder.add(lightIntensity, 10);// analog val 2 = light
+  sensorPacketBuilder.add(btnSensorVal, 1);// analog val 2 = light
   sensorPacketBuilder.add(lightSwitchVal, 1);// digital val 1 = pir
 
   int packetSize = sensorPacketBuilder.build(buildArray);

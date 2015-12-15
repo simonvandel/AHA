@@ -96,7 +96,9 @@ public class Sensor{
         i++;
       }
       logger.log(Level.SEVERE, "Model for sensor: " + sensorIndex + ", on device: " + deviceID + "Model:"+ newLine + log);
-      (new Thread(oModel)).start();
+      Thread thread = new Thread(oModel);
+      thread.setDaemon(true);
+      thread.start();
     }
   }
 

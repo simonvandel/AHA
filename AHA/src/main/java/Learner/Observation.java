@@ -5,23 +5,26 @@ import Sampler.Sample;
 /**
  * Created by simon on 04/12/2015.
  */
-public class Observation
-{
+public class Observation{
   private Integer hashCode;
   private int time;
-  public Observation(Sample sample)
-  {
-    time = sample.getTime().getNano();
-    hashCode = sample.getHash().get(sample.getHash().size() - 1);
+
+  public Observation(Sample sample){
+    if (sample.getTime() != null){
+      time = sample.getTime().getNano();
+      hashCode = sample.getHash().get(sample.getHash().size() - 1);
+    }
   }
 
-  public Observation(Integer hashCode)
-  {
+  public Observation(Integer hashCode){
     this.hashCode = hashCode;
   }
 
 
-  public int getHashCode() {
+  public int getHashCode(){
+    if(hashCode == null){
+      hashCode = 0;
+    }
     return hashCode;
   }
 

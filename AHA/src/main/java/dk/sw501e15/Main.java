@@ -31,7 +31,7 @@ public class Main
 
     HiDB db = HiDB.getInstance();
 
-    Communicator oCommunicator = new Communicator("COM6", 9600, dr);
+    Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr);
     Normalizer nm = Normalizer.getInstance();
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
 
@@ -73,6 +73,7 @@ public class Main
         }
       }
     };
+    learnerThread.setDaemon(true);
     Learner oLearner = new Learner();
     List<Sample> learnerData = new ArrayList<>();
     SampleList sampleList = SampleList.getInstance();
@@ -110,16 +111,28 @@ public class Main
   }
 
   private static void instantiateLoggers(){
-    Logger logger = Logger.getLogger("mainLogger");
     try{
-      Handler handler = new FileHandler("log");
-      logger.addHandler(handler);
-      Logger.getLogger("comLogger").addHandler(handler);
-      Logger.getLogger("normLogger").addHandler(handler);
-      Logger.getLogger("sampleLogger").addHandler(handler);
-      Logger.getLogger("aiLogger").addHandler(handler);
-      Logger.getLogger("reasonLogger").addHandler(handler);
+      Handler mainHandler = new FileHandler("logMain");
+      Handler sampleHandler = new FileHandler("logSample");
+      Handler comHandler = new FileHandler("logCom");
+      Handler normHandler = new FileHandler("logNorm");
+      Handler aiHandler = new FileHandler("logAI");
+      Handler reasonHandler = new FileHandler("logReason");
+      Logger.getLogger("mainLogger").addHandler(mainHandler);
+      Logger.getLogger("comLogger").addHandler(comHandler);
+      Logger.getLogger("normLogger").addHandler(normHandler);
+      Logger.getLogger("sampleLogger").addHandler(sampleHandler);
+      Logger.getLogger("aiLogger").addHandler(aiHandler);
+      Logger.getLogger("reasonLogger").addHandler(reasonHandler);
+
+      Logger.getLogger("mainLogger").log(Level.SEVERE, "TEST");
+      Logger.getLogger("comLogger").log(Level.SEVERE, "TEST");
+      Logger.getLogger("normLogger").log(Level.SEVERE, "TEST");
+      Logger.getLogger("sampleLogger").log(Level.SEVERE, "TEST");
+      Logger.getLogger("aiLogger").log(Level.SEVERE, "TEST");
+      Logger.getLogger("reasonLogger").log(Level.SEVERE, "TEST");
     } catch (IOException e){
+      System.out.println("ERROR INSTANTIATING LOGGERS");
       e.printStackTrace();
     }
 

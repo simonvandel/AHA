@@ -38,6 +38,7 @@ public class Sampler {
       //value was garbage-collected before removalListener got to it. Yay dynamic garbage collection! just ignore? not much else to do..
       return;
     }
+    Logger.getLogger("sampleLogger").log(Level.SEVERE, "Sample: " + sample.toString1());
     sampleList.add(sample);
     return;
   };
@@ -84,7 +85,7 @@ public class Sampler {
    */
   public Sample getSample(NormalizedSensorState newState) {
     if(newState == null){
-      System.out.println("newState was null!");
+      Logger.getLogger("sampleLogger").log(Level.SEVERE, "newState is null");
     }
     List<Action> acs = findActions(mPrevious,newState);
     findInvertedActionsAndCleanStates(new Sample(mHistory,newState.getTime(),acs), newState); //important: The sample here is not the same as the one below, as newState is modified in this method

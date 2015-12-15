@@ -14,15 +14,19 @@ public class SampleList{
 
   private Long sampleKey = new Long(0);
 
-  private SampleList(){}
+  private SampleList(){
+  }
+
   public static SampleList getInstance(){
-    if(sampleList == null){
+    if (sampleList == null){
       sampleList = new SampleList();
     }
     return sampleList;
   }
+
   /**
    * Gets the list of samples. Is thread-safe
+   *
    * @return a list of samples
    */
   public List<Sample> getSamples(){
@@ -31,10 +35,13 @@ public class SampleList{
 
   /**
    * Puts the sample s into the collection. Is thread-safe
+   *
    * @param s the sample to add
    */
   public void add(Sample s){
-    list.put(sampleKey, s);
-    sampleKey++;
+    if (s != null){
+      list.put(sampleKey, s);
+      sampleKey++;
+    }
   }
 }
