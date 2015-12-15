@@ -24,7 +24,7 @@ unsigned long Ultrasonic::measureTiming(){
 }
 
 unsigned long Ultrasonic::getDistance(){
-  unsigned long pulseWidths[NUM_READINGS];
+  //unsigned long pulseWidths[NUM_READINGS];
   int i;
   unsigned long result = 0;
   for (i = 0; i < NUM_READINGS; i++) {

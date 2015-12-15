@@ -92,7 +92,7 @@ void loop()
 {
   // ********** Analog readings *********
   // 32 bit analog
-  unsigned long distance = 1;//ultrasonic.getDistance();
+  //unsigned long distance = 1;//ultrasonic.getDistance();
   Serial.print("LighrSwitch: ");
   Serial.println(lightSwitchVal);
   // 10 bit analog

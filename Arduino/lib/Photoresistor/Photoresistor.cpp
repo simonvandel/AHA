@@ -6,7 +6,7 @@ Photoresistor::Photoresistor(unsigned int pin) {
 }
 
 unsigned int Photoresistor::getLightIntensity() {
-  unsigned int result;
+  unsigned int result = 0;
   int i;
   for (i = 0; i < NUM_READINGS; i++) {
     result += analogRead(inputPin);
