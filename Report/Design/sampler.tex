@@ -1,5 +1,5 @@
 %mainfile: ../master.tex
-\section{Sampler}
+\section{Sampler}\label{sec:sampler}
 The job of the sampler is to map, the current sensor values with a given history of snapshots into some input features for the learner.
 The concept of this idea is to find correlation between sensor values at a given time $t$, rather than finding correlations between snapshots from time $t_{n-k}$ to $t_n$. This is also the reason for making a new state scope everytime a new normalised snapshot is received, due to first order markov models inherently having the markov property\footnote{The probability distribution of the next state depends only on the current state and not on the sequence of events that preceded it.\cite{wiki_markov_chain}}. To overcome this problem, the history of how the system arrived at this state is encoded in the input feature for the learner. Why the markov assumption is not preferable in the context of this system is discussed in this paper\cite{Allahviranloo201316} by Mahdieh Allahviranloo and Will Recker, it mentions that state $t+1$ is potentialy depended on the whole history of states.
 
