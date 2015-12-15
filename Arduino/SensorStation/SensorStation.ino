@@ -107,7 +107,7 @@ void loop()
   sensorPacketBuilder.add(0, 5); // numAnalog
   sensorPacketBuilder.add(0, 5); // indexAnalog. No emulatable analog sensor
   //sensorPacketBuilder.add(0, 2); // Analog size 1 = 32 bits
-  
+
   sensorPacketBuilder.add(2, 5);// num digital
   //hacks, index is index plus 1, so to address index 1 put 2, and for 2 put 3 and so on..
   sensorPacketBuilder.add(3, 5);// index digital. No emulatable digital sensor
@@ -131,7 +131,7 @@ void loop()
 }
 
 void sendData(byte*  toSend, int sendLen){
-  for(int i = 0; i < 4; i++) {
+  for(int i = 0; i < sendLen; i++) {
     printbincharpad(toSend[i]);
   }
   ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)toSend, sendLen);
