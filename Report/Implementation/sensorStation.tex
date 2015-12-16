@@ -1,12 +1,21 @@
 %mainfile: ../master.tex
 \subsection{Sensor Station}\label{sub:sensorStation}
 
-The sensor stations are responsible for collecting data from sensor placed around a vicinty and acting on lighting appliances around the vicinty. Having more than one sensor station is 
+The sensor stations are responsible for collecting data from sensor placed around a vicinty and acting on lighting appliances around the vicinty. The sensor station should transmit most recent collected data to the ai subsystem all the time, this should also be done in a timely fashion, remember the responsiveness requirement of the system, that states that a response should be reacted upon within 100ms.
 
-The loop:
+Having more than one sensor station is supported by the ZigBee protocol on the XBee devices. It is important to note when using a CSMA-CA protocol, multiple transmitting devices can potentially result in an additional small delay to the overhead of transmitting, the delay cannot not exceed $D$ though otherwise the package is dropped. This additional applies both ways from sensor station to ai subsystem and back.
+\begin{equation*}
+D = \sum\limits_{BE=0}^{5}(2^{BE} - 1)\dot 0.340 = 19.38
+\end{equation*}
+
+Besides the communicational overhead, the sensor station should also read from and act on sensor connected to it, \chnote{tilføj timings for at læse fra sensorer} as found \cref{} and \cref{}.
+
+The loop of the sensor station:
 \begin{itemize}
   \item Read sensors
   \item Send sensor values
   \item Receive actions
   \item Act
 \end{itemize}
+
+As far as schedueling, the implementation is a simple roundrobin executing each task in a predefined order.\chnote{indsæt pseudo kode af loopet?}
