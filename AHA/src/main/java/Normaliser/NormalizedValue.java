@@ -19,6 +19,29 @@ public class NormalizedValue{
   @DatabaseField
   private int sensorIndexOnDevice;
 
+  @Override
+  public boolean equals(Object o){
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    NormalizedValue that = (NormalizedValue) o;
+
+    if (value != that.value) return false;
+    if (isEmulatable != that.isEmulatable) return false;
+    if (sensorIndexOnDevice != that.sensorIndexOnDevice) return false;
+    return !(deviceAddress != null ? !deviceAddress.equals(that.deviceAddress) : that.deviceAddress != null);
+
+  }
+
+  @Override
+  public int hashCode(){
+    int result = value;
+    result = 31 * result + (isEmulatable ? 1 : 0);
+    result = 31 * result + (deviceAddress != null ? deviceAddress.hashCode() : 0);
+    result = 31 * result + sensorIndexOnDevice;
+    return result;
+  }
+
   public NormalizedValue(int value, boolean isEmulatable, String deviceAddress, int sensorIndexOnDevice)
   {
     this.value = value;

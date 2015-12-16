@@ -30,6 +30,15 @@ public class MapWarden // dun dun du du dun dun
   }
 
   public int hiddenStateToHiddenStateIndex(HiddenState hiddenState) {
+    if(hiddenState == null){
+      return 0;
+    }
+    if(hiddenStateMap == null){
+      return 0;
+    }
+    if(hiddenStateMap.get(hiddenState) == null){
+      return 0;
+    }
     return hiddenStateMap.get(hiddenState);
   }
 

@@ -52,7 +52,7 @@ public class Main
     NormalizedSensorState nState;
 
     Instant learnerRun = Instant.now();
-    long learnerRunInverval = 60; //in seconds
+    long learnerRunInverval = 90; //in seconds
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){
@@ -86,11 +86,11 @@ public class Main
           Logger.getLogger("mainLogger").log(Level.SEVERE, "Behind in sensor queue: " + queueOfSensorState.size());
 
         SensorState oST = queueOfSensorState.poll();
-        db.putNewSensorState(oST); //TODO: Is there delay on the db write? If there is we should decouple this call from the main loop
+       // db.putNewSensorState(oST); //TODO: Is there delay on the db write? If there is we should decouple this call from the main loop
         nState = nm.Normalize(oST);
         if (nState != null)
         {
-          sample = sampler.getSample(nState);ugk 
+          sample = sampler.getSample(nState);
           if (sample != null) {
             oReasoner.reasonAndSend(sample);
           }
@@ -112,12 +112,12 @@ public class Main
 
   private static void instantiateLoggers(){
     try{
-      Handler mainHandler = new FileHandler("logMain");
-      Handler sampleHandler = new FileHandler("logSample");
-      Handler comHandler = new FileHandler("logCom");
-      Handler normHandler = new FileHandler("logNorm");
-      Handler aiHandler = new FileHandler("logAI");
-      Handler reasonHandler = new FileHandler("logReason");
+      Handler mainHandler = new FileHandler("logs/logMain" + Instant.now().toString() + ".xml");
+      Handler sampleHandler = new FileHandler("logs/logSample" + Instant.now().toString() + ".xml");
+      Handler comHandler = new FileHandler("logs/logCom" + Instant.now().toString() + ".xml");
+      Handler normHandler = new FileHandler("logs/logNorm" + Instant.now().toString() + ".xml");
+      Handler aiHandler = new FileHandler("logs/logAI" + Instant.now().toString() + ".xml");
+      Handler reasonHandler = new FileHandler("logs/logReason" + Instant.now().toString() + ".xml");
       Logger.getLogger("mainLogger").addHandler(mainHandler);
       Logger.getLogger("comLogger").addHandler(comHandler);
       Logger.getLogger("normLogger").addHandler(normHandler);

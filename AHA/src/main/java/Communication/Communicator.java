@@ -60,6 +60,7 @@ public class Communicator
 
   public boolean SendData(String addr64, byte[] toSend) throws XBeeException
   {
+    logger.log(Level.SEVERE, toSend.toString());
     for (int i = 0; i < network.getDevices().size(); i++)
     {
       String currID = network.getDevices().get(i).get64BitAddress().generateDeviceID();
