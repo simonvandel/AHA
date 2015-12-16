@@ -157,7 +157,7 @@ void loop()
   //act on received data in the call back method zbReceive
 
   memset(buildArray, 0, 64);
-  delay(500);
+  delay(1);
 
   packages++;
 
