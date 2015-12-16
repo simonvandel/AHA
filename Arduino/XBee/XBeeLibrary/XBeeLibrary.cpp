@@ -10,42 +10,40 @@ int getModemStatusResponse(XBee xbee){
     if(xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE) {
       xbee.getResponse().getModemStatusResponse(msr);
         if (msr.getStatus() == ASSOCIATED) {
-        return 1; // Connected to modem: msr.getStatus()
+        return 0; // Connected to modem: msr.getStatus()
       } else if (msr.getStatus() == DISASSOCIATED) {
-        Serial.println("Disconnected/No connection to modem: msr.getStatus()");
-        return 0;
+        return 1; // Disconnected/No connection to modem: msr.getStatus()
       } else {
-        Serial.print("Unknown Modem Status: ");
-        Serial.println(msr.getStatus());
-        return 0;
+        return 2; // Unknown Modem Status: msr.getStatus()
       }
     } else {
-      Serial.println("Unexpected ApiId: xbee.getResponse().getApiId()");
-      return 0;
+      return 3; // Unexpected ApiId: xbee.getResponse().getApiId()
     }
   } else if (xbee.getResponse().isError()) {
-    Serial.println("Error reading packet. Error code: xbee.getResponse().getErrorCode()");
-    return 0;
+    return 4; // Error reading packet. Error code: xbee.getResponse().getErrorCode()
   }
-  Serial.println("No packet recieved");
-  return 0;
+  return 5; // No packet recieved
 }
 
-int sendData(XBeeAddress64 address, char *toSend, int sendLen, XBee xbee){
+int sendData(XBeeAddress64 address, byte* toSend, int sendLen, XBee xbee){
   ZBTxRequest zbTx = ZBTxRequest(address, (uint8_t *)toSend, sendLen);
   Serial.print("Sending to ");
   Serial.print(address.getMsb());
   Serial.println(address.getLsb());
   xbee.send(zbTx);
-  if(xbee.readPacket(500)){
+  if(xbee.readPacket(250)){
     if(xbee.getResponse().getApiId() == ZB_TX_STATUS_RESPONSE) {
       xbee.getResponse().getZBTxStatusResponse(txStatus);
       if (txStatus.getDeliveryStatus() == SUCCESS) {
+        return 0;
+      } else {
         return 1;
       }
+    } else {
+      return 2;
     }
   }
-  return 0;
+  return 3;
 }
 
 int receiveData(XBee *xbee) {

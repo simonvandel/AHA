@@ -24,13 +24,7 @@ unsigned long Ultrasonic::measureTiming(){
 }
 
 unsigned long Ultrasonic::getDistance(){
-  //unsigned long pulseWidths[NUM_READINGS];
-  int i;
-  unsigned long result = 0;
-  for (i = 0; i < NUM_READINGS; i++) {
-    result += measureTiming()/58; // 58 approximates (speedOfSound*measureTiming())/2
-  }
-  return result/NUM_READINGS;
+  return measureTiming()/58; // 58 approximates (speedOfSound*measureTiming())/2
   //return (speedOfSound*pulseWidth)/2;   //L = C × T/2
                                           //where L is the length,
                                           //C is the speed of sound in air(cm/us),
