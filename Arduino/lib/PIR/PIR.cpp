@@ -6,7 +6,7 @@ PIR::PIR(unsigned int tp) {
   pinMode(triggerPin, INPUT);
   readIndex = 0;
   total = 0;
-  average = 0;
+  average = 0.0;
   // zero array
   for (int thisReading = 0; thisReading < NUM_READINGS; thisReading++) {
     readings[thisReading] = 0;
@@ -31,9 +31,9 @@ bool PIR::getMotionDetected() {
   }
 
   // calculate the average:
-  average = total / NUM_READINGS;
+  average = ((float) total) / ((float) NUM_READINGS);
 
-  if(average <= 0) {
+  if(average <= 0.5) {
     return false;
   }
   else {

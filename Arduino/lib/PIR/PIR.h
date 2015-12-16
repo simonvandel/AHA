@@ -7,7 +7,7 @@ class PIR {
   private:
     unsigned int readings[NUM_READINGS];
     unsigned int readIndex;
-    unsigned int average;
+    float average;
     unsigned int total;
     unsigned int triggerPin;
 };
