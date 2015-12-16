@@ -13,6 +13,9 @@ boolean lightSwitchVal = false;
 boolean btnSensorVal = false;
 Serialization serialization;
 
+long unsigned startTime = 0;
+long unsigned packages = 0;
+
 //Ultrasonic ultrasonic(4,5);
 //PIR pir(3);
 //Photoresistor photoresistor(1);
@@ -90,10 +93,12 @@ void printbincharpad(char c)
 
 void loop()
 {
+  Serial.println("\n----- Loop Start -----");  
+  startTime = millis();
   // ********** Analog readings *********
   // 32 bit analog
   //unsigned long distance = 1;//ultrasonic.getDistance();
-  Serial.print("LighrSwitch: ");
+  Serial.print("LightSwitch: ");
   Serial.println(lightSwitchVal);
   // 10 bit analog
   //unsigned int lightIntensity = photoresistor.getLightIntensity();
@@ -104,22 +109,26 @@ void loop()
   Serial.print("btnSensorVal: ");
   Serial.println(btnSensorVal);
   // packet header
-  sensorPacketBuilder.add(0, 5); // numAnalog
+  sensorPacketBuilder.add(1, 5); // numAnalog
   sensorPacketBuilder.add(0, 5); // indexAnalog. No emulatable analog sensor
-  //sensorPacketBuilder.add(0, 2); // Analog size 1 = 32 bits
+  sensorPacketBuilder.add(2, 1); // Analog size 1 = 32 bits
 
-  sensorPacketBuilder.add(2, 5);// num digital
+  sensorPacketBuilder.add(1, 5);// num digital
   //hacks, index is index plus 1, so to address index 1 put 2, and for 2 put 3 and so on..
-  sensorPacketBuilder.add(3, 5);// index digital. No emulatable digital sensor
-
+  sensorPacketBuilder.add(2, 4);// index digital. No emulatable digital sensor
+  //sensorPacketBuilder.add(1, 3); // vka
   // body
   //sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
-  sensorPacketBuilder.add(btnSensorVal, 1);// analog val 2 = light
-  sensorPacketBuilder.add(lightSwitchVal, 1);// digital val 1 = pir
+  sensorPacketBuilder.add(0, 10);// analog val 2 = light
+  sensorPacketBuilder.add(0, 1);// analog val 2 = light //bla
+  //sensorPacketBuilder.add(0, 11);// analog val 2 = light //bla
+  //sensorPacketBuilder.add(1, 9);// digital val 1 = pir
 
   int packetSize = sensorPacketBuilder.build(buildArray);
-
-  sendData(buildArray, packetSize);
+  for(int i = 0; i < packetSize; i++) {
+    Serial.println(buildArray[i], BIN);
+  }
+  sendData((uint8_t *)"000000000000", 4);
 
   // Continuously let xbee read packets and call callbacks.
   xbee.loop();
@@ -128,13 +137,18 @@ void loop()
   memset(buildArray, 0, 64);
   delay(1);
 
+  packages++;
+
+  Serial.println();
+  Serial.print("----- Loop end (");
+  Serial.print(millis() - startTime);
+  Serial.print(")(");
+  Serial.print(packages);
+  Serial.println(") -----");
 }
 
-void sendData(byte*  toSend, int sendLen){
-  for(int i = 0; i < sendLen; i++) {
-    printbincharpad(toSend[i]);
-  }
-  ZBTxRequest zbTx = ZBTxRequest(addr64, (uint8_t *)toSend, sendLen);
+void sendData(uint8_t* toSend, int sendLen){
+  ZBTxRequest zbTx = ZBTxRequest(addr64, toSend, sendLen);
   xbee.send(zbTx);
   ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //not sure whether better to have as global or local
   //Re-sends, and forgets, if not succesful
@@ -146,5 +160,4 @@ void sendData(byte*  toSend, int sendLen){
       }
     }
   }
-  xbee.send(zbTx);
 }

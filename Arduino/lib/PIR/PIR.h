@@ -5,9 +5,5 @@ class PIR {
     PIR(unsigned int tp);
     bool getMotionDetected();
   private:
-    unsigned int readings[NUM_READINGS];
-    unsigned int readIndex;
-    unsigned int average;
-    unsigned int total;
     unsigned int triggerPin;
 };
