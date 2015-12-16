@@ -10,8 +10,16 @@ Overall the system has to perform three tasks.
 \end{itemize}
 This section discusses different architectural designs for the system.
 
+\subsection{Variable Number of Sensors}
+If the system was to support a variable number of sensors, the user has to add sensors and actuators to the system manually and inform the system about what they are, or alternatively require a technician to setup the system. This reduces usability.
+
+If the setup is managed by the user, it is vulnerable to user mistakes, and would increase the barrier to entry. For example, consider the case where a PIR sensor is connected to the system, but the system believes the connected sensor to be a thermometer. The data received from the PIR sensor will most likely not make any sense, so the system will be based on a wrong model of the world.
+
+\subsection{Fixed Number of Sensors}
+If the system was to support a fixed number of sensors, the system is pre made with a fixed number of sensors and actuators and the user can simply not extend the system with more hardware. This solution does not consider the fact that all houses are different. Either there will be too many sensors in some houses, thereby consuming too much power compared to what is needed or there will be too few sensors in some houses meaning that the system will not be very effective and/or non existing in some rooms. This conflicts with the idea that the system should adapt to the working environment, and not vice versa.
+
 \subsection{Monolithic System}
-One possibility is to have one central processing unit that controls and reads data  from all available sensors, sanitises and analyses it, decides which, if any, action to perform, and performs it via its actuators. This is illustrated in \cref{fig:monolithic_system}. The system could be made in two ways.
+One possibility is to have one central processing unit that controls and reads data from all available sensors, sanitises and analyses it, decides which, if any, action to perform, and performs it via its actuators. This is illustrated in \cref{fig:monolithic_system}. A disadvantage to this architecture, is that it is not very resiliant. If the system crashes, the whole system crashes.
 
 \begin{figure}[htbp]
 \centering
@@ -33,20 +41,9 @@ One possibility is to have one central processing unit that controls and reads d
 \caption[Monolithic system]{Illustration of a monolithic system. The central processing unit monitors the sensors and, at the same time, analyses the monitored sensor data.}\label{fig:monolithic_system}
 \end{figure}
 
-\subsubsection{Variable Number of Sensors}
-The first solution is that the user has to add sensors and actuators to the system manually and inform the system about what they are, or alternatively require a technician to setup the system. This goes very much against the principle of easy usability.\chnote{this goes very much againts my use of english}
-
-If the setup is managed by the user, it is vulnerable to user mistakes, and would increase the barrier to entry. For example, consider the case where a PIR sensor is connected to the system, but the system believes the connected sensor to be a thermometer. The data received from the PIR sensor will most likely not make any sense, so the system will be based on a wrong model of the world.
-
-Another point is that the system would be limited by the total amount of sensors the processing unit physically can support, given that the number of input pins is limited.\chnote{not arguments for or againt a monolithic system}
-
-\subsubsection{Fixed Number of Sensors}
-The second solution is that the system is pre made with a fixed number of sensors and actuators and the user can simply not extend the system with more hardware. This solution does not consider the fact that all houses are different. Either there will be too many sensors in some houses, thereby consuming too much power compared to what is needed or there will be too few sensors in some houses meaning that the system will not be very effective and/or non existing in some rooms. This conflicts with the idea that the system should adapt to the working environment, and not vice versa.
-
-Neither of these solutions are very modular and both go against the requirements described in, \cref{sec:systemDefinition}. Also they are both in general not very practical.\chnote{revise this, is this really true?}
 
 \subsection{Distributed System}
-A second solution tries to cope with the problem of modularity and ease of use by distributing the sensors and actuators on several units. The system is comprised of multiple subsystems that each have a processing unit that is aware of what sensors and actuators are connected to it. It is responsible for sanitising the sensor data and activating the actuators. They can communicate and combine their knowledge to get a complete model of the problem domain. See \cref{fig:distributed_system}.
+A second architecture tries to cope with the problem of modularity and ease of use by distributing the sensors and actuators on several units. The system is comprised of multiple subsystems that each have a processing unit that is aware of what sensors and actuators are connected to it. It is responsible for sanitising the sensor data and activating the actuators. They can communicate and combine their knowledge to get a complete model of the problem domain. See \cref{fig:distributed_system}.
 
 \begin{figure}[htbp]
 \centering
@@ -79,7 +76,7 @@ This solution requires complex communication protocols among each individual sen
 \subsection{Separated Subsystems}
 A separation of data collection and actuation of tasks, and analysis of data, is needed. In this architecture, a distributed system of small low-power processing units collect the sensor data and complete the actuation of tasks while the analysis of the sensor data is performed on a more powerful computation device.
 
-Under this separation the system consists of three subsystems: sensor, actuator and analysis. The general architecture can be seen in \cref{fig:separated_subsystems}.
+Under this separation the system consists of three subsystems: sensor, actuator and analysis. These subsystems might run on the same device. The general architecture can be seen in \cref{fig:separated_subsystems}.
 
 \begin{figure}[htbp]
 \centering
@@ -113,7 +110,7 @@ To form the complete system, some communication must take place between the subs
 
 \subsubsection{Communication Scheme 1}
 
-In this scheme, the sensor subsystem sends its sensor data to the analysis subsystem to be analysed and to match for behavioural patterns. When sensor data matches a certain behavioural pattern, an action is sent to the actuator subsystem, to be immediately performed. The scheme is illustrated in \cref{fig:separated_subsystems_scheme1}.\chnote{A note on that these subsystems might be on the same device?}
+In this scheme, the sensor subsystem sends its sensor data to the analysis subsystem to be analysed and to match for behavioural patterns. When sensor data matches a certain behavioural pattern, an action is sent to the actuator subsystem, to be immediately performed.  The scheme is illustrated in \cref{fig:separated_subsystems_scheme1}.
 
 \begin{figure}[htbp]
 \centering
@@ -133,7 +130,7 @@ In this scheme, the sensor subsystem sends its sensor data to the analysis subsy
 
 \subsubsection{Communication Scheme 2}
 
-This scheme is similar to scheme 1, but instead of the analysis subsystem sending actions to the actuator subsystem, rules are sent. In order for the actuator subsystem to use the rules\chnote{what are rules?, also a section on that a rule can be dependent on many sensorvalue which can lead to communication paths between multiple subsystems}, sensor data is needed. Therefore the sensor subsystem also sends its sensor data to the actuator subsystem. See \cref{fig:separated_subsystems_scheme2} for a visual representation.\chnote{Alsa a note on that these subsystems might be on the same device?}
+This scheme is similar to scheme 1, but instead of the analysis subsystem sending actions to the actuator subsystem, rules are sent. A rule specifies when a actions should be specified. This rule can depend on multiple sensor values. In order for the actuator subsystem to use the rules, sensor data is needed. Therefore the sensor subsystem also sends its sensor data to the actuator subsystem. See \cref{fig:separated_subsystems_scheme2} for a visual representation.
 
 \begin{figure}[htbp]
 \centering
@@ -211,16 +208,15 @@ Sensor data is sent to the analysis subsystem to be analysed for patterns. Behav
 
 \subsection{Choice of Architecture}
 
-Given the above architectural designs, the monolithic design lacks in extensibility.\chnote{not extensibility? not true? maybe it is not as portable, the arguments should rather be on reliance, and safety is one of the distributed components crashes} The distributed design allows for greater extensibility, but at the cost of the need for a complex synchronisation mechanism to make the different subsystems share their knowledge. The separated design\chnote{what is this design?} allows for extensibility of sensors and actuators avoiding complex synchronisation. Therefore the separated design seems the most appropriate choice.
+Given the above architectural designs, the monolithic design lacks in reliance. The distributed design allows for greater reliance, but at the cost of the need for a complex synchronisation mechanism to make the different subsystems share their knowledge. The separated designs described above allows for greater reliance, as well as avoiding complex synchronisation between the subsystems. Therefore the separated design seems the most appropriate choice.
 
 Many communication schemes has been discussed. This section will evaluate the schemes by comparing each of them based on the following prioritised list of properties, to find the most fitting scheme for our system.
 
 \begin{enumerate}
 \item \textbf{Number of critical communication paths.} A path is critical if the data communicated is important or has to satisfy strict real-time constraints. If a scheme has fewer critical communication paths, the system is less likely to fail, and the system will be more responsive
-\item \textbf{Memory consumption on actuator and sensor subsystems.} As the actuator and sensor subsystems should be based on an embedded\chnote{is this defined?, What definition do we use?} platform, the available amount of memory is limited
+\item \textbf{Memory consumption on actuator and sensor subsystems.} As the actuator and sensor subsystems should be based on an embedded to reduce the size and power usage, the available amount of memory is limited
 \item \textbf{Amount of communication.} The less time spent communicating, the more time can be spent on other activities, such as reading output of sensors. If too much time is spent on communication, it could mean that some deadlines are not met
-\item \textbf{Inter-dependency complexity.} How dependant\chnote{what does it mean to be dependant, isnt this basicly the other points in this list?} is each subsystem on each other
-\item \textbf{Memory consumption on analysis subsystem.} As the analysis\chnote{is this defined?, does it need a footnote with a reference?} subsystem is not required to be energy efficient, the platform\chnote{what platform?} can be more computationally powerful, so it is not important to consider
+\item \textbf{Memory consumption on analysis subsystem.} In order for the analysis subsystem to be able to be able to reason about sensor data, the hardware can be more powerful, so it is not important to consider this property
 \end{enumerate}
 
 \subsubsection{Scheme 1 Evaluation}
@@ -228,7 +224,6 @@ Many communication schemes has been discussed. This section will evaluate the sc
 \item \textbf{Number of critical communication paths} This scheme has 1 critical communication path; from the analysis subsystem to the actuator subsystem. If this action package is lost or slow, the system will be perceived as unresponsive or unreliable
 \item \textbf{Memory consumption on actuator and sensor subsystems} Nothing needs to be stored on the actuator and sensor subsystems
 \item \textbf{Amount of communication} The sensor subsystem sends sensor data very often. The analysis subsystem sends actions when certain sensor value conditions are met
-\item \textbf{Inter-dependency complexity} The inter-dependency complexity is low as the sensor subsystem just needs to know the analysis subsystem it has to send sensor data to. The analysis subsystem only needs to know which actuator subsystems it has to send actions to
 \item \textbf{Memory consumption on analysis subsystem} The analysis subsystem has to store the history of all sensor data received
 \end{itemize}
 
@@ -237,7 +232,6 @@ Many communication schemes has been discussed. This section will evaluate the sc
 \item \textbf{Number of critical communication paths} The path from analysis to actuator path is critical in the sense that if the packet is lost, the actuator will not have received the rule, and can therefore not perform any actions. The path from sensor subsystem to actuator subsystem is already critical in the sense that the path must happen quickly in order for the system to be responsive. If the sensor data takes a long time to arrive to the actuator subsystem, the actuator will take a long time to perform an action
 \item \textbf{Memory consumption on actuator and sensor subsystems} The actuator subsystem has to store rules it receives from the analysis subsystem
 \item \textbf{Amount of communication} The sensor subsystem to analysis subsystem communication path happens often. The sensor subsystem to actuator subsystem also happens often. The analysis subsystem to actuator subsystem path is only used when a new rule is generated, which should not be often
-\item \textbf{Inter-dependency complexity} The sensor subsystem has to know of the analysis and actuator subsystems. The analysis subsystem has to know of the actuator subsystem to send rules to
 \item \textbf{Memory consumption on analysis subsystem} This is the same as in scheme 1
 \end{itemize}
 
@@ -252,7 +246,6 @@ This scheme has the same characteristics as scheme 1, but the sensor and actuato
 \item \textbf{Number of critical communication paths} The sensor subsystem to actuator subsystem communication path is critical, because if the packet is lost or slow, it will impact the responsiveness of the system. The analysis subsystem to sensor subsystem communication path is critical because if rules are lost, the system can be perceived to malfunction
 \item \textbf{Memory consumption on actuator and sensor subsystems} The sensor subsystem has to store rules
 \item \textbf{Amount of communication} The sensor subsystem to analysis subsystem communication path occurs often. The analysis subsystem to sensor subsystem communication path is only used when new rules are generated. The sensor subsystem to actuator subsystem occurs every time an is to be performed, which could happen fairly often
-\item \textbf{Inter-dependency complexity} The sensor subsystem has to know about the analysis and actuator subsystems. The analysis subsystem has to know about the sensor subsystem
 \item \textbf{Memory consumption on analysis subsystem} This is the same as in scheme 1
 \end{itemize}
 
@@ -263,5 +256,5 @@ Scheme 4 is chosen because of the following factors.
 \item The memory consumption on the embedded systems is minimal, so no limitation on rules is imposed on the system
 \end{itemize}
 
-\chnote{rule based communication generates many communication path which is not preferable by the list of properties}
+Rule based schemes need many communication paths which is not preferable according the above list of properties.
 
