@@ -22,17 +22,30 @@ import java.util.logging.*;
 
 public class Main
 {
+  static private Logger mainLogger;
+  static private Logger comLogger;
+  static private Logger normLogger;
+  static private Logger aiLogger;
+  static private Logger reasonLogger;
+  static private Logger sampleLogger;
 
   public static void main(String[] args)
   {
     instantiateLoggers();
+    mainLogger.log(Level.SEVERE, "TEST");
+    comLogger.log(Level.SEVERE, "TEST");
+    normLogger.log(Level.SEVERE, "TEST");
+    aiLogger.log(Level.SEVERE, "TEST");
+    reasonLogger.log(Level.SEVERE, "TEST");
+    sampleLogger.log(Level.SEVERE, "TEST");
+
     SensorPacketWorker oWorker = new SensorPacketWorker();
     DataReceiver dr = new DataReceiver(oWorker);
 
     HiDB db = HiDB.getInstance();
 
     Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr);
-    Normalizer nm = Normalizer.getInstance();
+    Normalizer nm = Normalizer.getInstance(normLogger);
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
 
     /*List<SensorState> tempDbSensorState = db.getSensorStates();
@@ -46,21 +59,21 @@ public class Main
     Sample sample;
     Sampler sampler = Sampler.getInstance();
 
-    Reasoner oReasoner = Reasoner.getInstance();
+    Reasoner oReasoner = Reasoner.getInstance(reasonLogger);
     oReasoner.setCommunicator(oCommunicator);
 
     NormalizedSensorState nState;
 
     Instant learnerRun = Instant.now();
-    long learnerRunInverval = 90; //in seconds
+    long learnerRunInverval = 180; //in seconds
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){
-        Reasoner oReasoner = Reasoner.getInstance();
+        Reasoner oReasoner = Reasoner.getInstance(reasonLogger);
         SampleList sampleList = SampleList.getInstance();
 
         while(true){
-          Learner oLearner = new Learner();
+          Learner oLearner = new Learner(aiLogger);
           List<Sample> samples = sampleList.getSamples();
           if(samples != null){
             oReasoner.setCurrentModel(oLearner.learn(samples));
@@ -74,7 +87,7 @@ public class Main
       }
     };
     learnerThread.setDaemon(true);
-    Learner oLearner = new Learner();
+    Learner oLearner = new Learner(aiLogger);
     List<Sample> learnerData = new ArrayList<>();
     SampleList sampleList = SampleList.getInstance();
     while (true)
@@ -83,7 +96,7 @@ public class Main
       {
         System.out.print('.');
         if(queueOfSensorState.size() >  100)
-          Logger.getLogger("mainLogger").log(Level.SEVERE, "Behind in sensor queue: " + queueOfSensorState.size());
+          mainLogger.log(Level.SEVERE, "Behind in sensor queue: " + queueOfSensorState.size());
 
         SensorState oST = queueOfSensorState.poll();
        // db.putNewSensorState(oST); //TODO: Is there delay on the db write? If there is we should decouple this call from the main loop
@@ -112,25 +125,26 @@ public class Main
 
   private static void instantiateLoggers(){
     try{
-      Handler mainHandler = new FileHandler("logs/logMain" + Instant.now().toString() + ".xml");
-      Handler sampleHandler = new FileHandler("logs/logSample" + Instant.now().toString() + ".xml");
-      Handler comHandler = new FileHandler("logs/logCom" + Instant.now().toString() + ".xml");
-      Handler normHandler = new FileHandler("logs/logNorm" + Instant.now().toString() + ".xml");
-      Handler aiHandler = new FileHandler("logs/logAI" + Instant.now().toString() + ".xml");
-      Handler reasonHandler = new FileHandler("logs/logReason" + Instant.now().toString() + ".xml");
-      Logger.getLogger("mainLogger").addHandler(mainHandler);
-      Logger.getLogger("comLogger").addHandler(comHandler);
-      Logger.getLogger("normLogger").addHandler(normHandler);
-      Logger.getLogger("sampleLogger").addHandler(sampleHandler);
-      Logger.getLogger("aiLogger").addHandler(aiHandler);
-      Logger.getLogger("reasonLogger").addHandler(reasonHandler);
+      Handler mainHandler = new FileHandler("logs/main/logMain" + Instant.now().toString() + ".xml");
+      Handler sampleHandler = new FileHandler("logs/sampler/logSample" + Instant.now().toString() + ".xml");
+      Handler comHandler = new FileHandler("logs/com/logCom" + Instant.now().toString() + ".xml");
+      Handler normHandler = new FileHandler("logs/normalizer/logNorm" + Instant.now().toString() + ".xml");
+      Handler aiHandler = new FileHandler("logs/learner/logAI" + Instant.now().toString() + ".xml");
+      Handler reasonHandler = new FileHandler("logs/reasoner/logReason" + Instant.now().toString() + ".xml");
 
-      Logger.getLogger("mainLogger").log(Level.SEVERE, "TEST");
-      Logger.getLogger("comLogger").log(Level.SEVERE, "TEST");
-      Logger.getLogger("normLogger").log(Level.SEVERE, "TEST");
-      Logger.getLogger("sampleLogger").log(Level.SEVERE, "TEST");
-      Logger.getLogger("aiLogger").log(Level.SEVERE, "TEST");
-      Logger.getLogger("reasonLogger").log(Level.SEVERE, "TEST");
+      mainLogger = Logger.getLogger("mainLogger");
+      comLogger = Logger.getLogger("comLogger");
+      normLogger = Logger.getLogger("normLogger");
+      aiLogger = Logger.getLogger("aiLogger");
+      reasonLogger = Logger.getLogger("reasonLogger");
+      sampleLogger = Logger.getLogger("sampleLogger");
+
+      mainLogger.addHandler(mainHandler);
+      comLogger.addHandler(comHandler);
+      normLogger.addHandler(normHandler);
+      aiLogger.addHandler(aiHandler);
+      reasonLogger.addHandler(reasonHandler);
+      sampleLogger.addHandler(sampleHandler);
     } catch (IOException e){
       System.out.println("ERROR INSTANTIATING LOGGERS");
       e.printStackTrace();

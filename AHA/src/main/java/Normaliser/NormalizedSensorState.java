@@ -72,4 +72,19 @@ public class NormalizedSensorState
             hash += normalizesValues.get(i).getValue() * (normalizesValues.get(i).getSensorIndexOnDevice() + 1);
         return hash;
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (obj instanceof NormalizedSensorState){
+            List<NormalizedValue> inputNormalizedValues = ((NormalizedSensorState) obj).getNormalizesValues();
+            if(inputNormalizedValues.size() == normalizesValues.size()){
+                for(int i = 0; i < inputNormalizedValues.size(); i++){
+                    if (!inputNormalizedValues.get(i).equals(normalizesValues.get(i))){
+                        return false;
+                    }
+                }
+                return true;
+            }else return false;
+        }else return false;
+    }
 }

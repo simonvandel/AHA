@@ -31,7 +31,10 @@ public class HiDBTest
       ns.AddNormalizedValue(new NormalizedValue(2337*i, false, "fuckdigahmed", 2331*i));
       ns.AddNormalizedValue(new NormalizedValue(1337*i, true, "fuckdi213gsimon", 73323*i));
       ns.AddNormalizedValue(new NormalizedValue(2337*i, false, "fuckdiga123hmed", 2321431*i));
-      samples.add(sampler.getSample(ns));
+      Sample sample = sampler.getSample(ns);
+      if(sample != null){
+        samples.add(sample);
+      }
     }
   }
 

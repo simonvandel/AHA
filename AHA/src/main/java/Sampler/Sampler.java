@@ -9,17 +9,23 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.RemovalCause;
 import com.google.common.cache.RemovalListener;
+import com.j256.ormlite.logger.Log;
 import org.javatuples.Pair;
 
+import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class Sampler {
+  private static Logger sampleLogger;
+  private static Logger reasonLogger;
   private static Sampler mSampler;
   private final static int SCOPE_SIZE = 5;
   private List<NormalizedSensorState> mHistory;
@@ -32,15 +38,15 @@ public class Sampler {
     if(removalNotification.getCause() != RemovalCause.EXPIRED && removalNotification.getCause() != RemovalCause.REPLACED){
       //we done goofed
       //something was removed from uncleanSamples due to something else than time expiration
-      Logger.getLogger("sampleLogger").log(Level.SEVERE, "Sample were removed from cache for reasons: " + removalNotification.getCause().toString());
+      sampleLogger.log(Level.SEVERE, "Sample were removed from cache for reasons: " + removalNotification.getCause().toString());
       return;
     }
     if(sample == null){
-      Logger.getLogger("sampleLogger").log(Level.SEVERE, "Sample from cache were null");//we're fucked
+      sampleLogger.log(Level.SEVERE, "Sample from cache were null");//we're fucked
       //value was garbage-collected before removalListener got to it. Yay dynamic garbage collection! just ignore? not much else to do..
       return;
     }
-    Logger.getLogger("sampleLogger").log(Level.SEVERE, "Sample: " + sample.toString1());
+    sampleLogger.log(Level.SEVERE, "Sample: " + sample.toString1());
     for (Pair<Action, Action> actions: actionsToBeSanitised){
       if(sample.getActions().contains(actions.getValue0())){
         sample
@@ -100,17 +106,17 @@ public class Sampler {
   private Cache<String, Sample> uncleanSamples = CacheBuilder
       .newBuilder()
       .concurrencyLevel(1)
-      .expireAfterWrite(5, TimeUnit.SECONDS)
+      .expireAfterWrite(1, TimeUnit.SECONDS)
       .removalListener(sanitizerListener)
       .build();
-  private Reasoner reasoner = Reasoner.getInstance();
+  private Reasoner reasoner = Reasoner.getInstance(reasonLogger);
 
   List<NormalizedValue> zeroVal = new ArrayList<NormalizedValue>();
 
   /**
    * Initializes an object of Sampler class.
    */
-  private Sampler(int SCOPE_SIZE){
+  private Sampler(int SCOPE_SIZE, Logger sampleLogger, Logger reasonLogger){
     mScopeSize = SCOPE_SIZE;
     zeroVal.add(new NormalizedValue(0,false,"NotADevice",0));
     List<NormalizedSensorState> history = new ArrayList<NormalizedSensorState>(); //Initialize mHistory
@@ -120,6 +126,8 @@ public class Sampler {
     }
     mHistory = history;
     mPrevious = null;
+    this.sampleLogger = sampleLogger;
+    this.reasonLogger = reasonLogger;
   }
 
   /**
@@ -129,7 +137,7 @@ public class Sampler {
    */
   public static Sampler getInstance() {
     if (mSampler == null) {
-      mSampler = new Sampler(SCOPE_SIZE);
+      mSampler = new Sampler(SCOPE_SIZE, sampleLogger, reasonLogger);
     }
     return mSampler;
   }
@@ -137,15 +145,21 @@ public class Sampler {
   /**
    * @return A sensor state
    */
+  private NormalizedSensorState oldState = null;
+
   public Sample getSample(NormalizedSensorState newState) {
     if(newState == null){
-      Logger.getLogger("sampleLogger").log(Level.SEVERE, "newState is null");
+      sampleLogger.log(Level.SEVERE, "newState is null");
     }
-    List<Action> acs = findActions(mPrevious,newState);
-    findInvertedActionsAndCleanStates(new Sample(mHistory,newState.getTime(),acs), newState); //important: The sample here is not the same as the one below, as newState is modified in this method
-    List<Action> acsCorrected = findActions(mPrevious, newState); //we find actions again, as newState is modified
-    moveScope(newState);
-    Sample res = new Sample(mHistory, newState.getTime(), acsCorrected);
+    Sample res = null;
+    if(oldState != null && !oldState.equals(newState)){
+      List<Action> acs = findActions(mPrevious, newState);
+      findInvertedActionsAndCleanStates(new Sample(mHistory, newState.getTime(), acs), newState); //important: The sample here is not the same as the one below, as newState is modified in this method
+      List<Action> acsCorrected = findActions(mPrevious, newState); //we find actions again, as newState is modified
+      moveScope(newState);
+      res = new Sample(mHistory, newState.getTime(), acsCorrected);
+    }
+    oldState = newState;
     return res;
   }
 
