@@ -155,14 +155,14 @@ Here we can see that we have a matrix for each form of probability. This means t
 
   \path[-triangle 90]
   %Emission lines
-    (x1) edge node[rectangle,fill=white,anchor=west] {$b_{11}$} (e11)
-    (x1) edge node[rectangle,fill=white,anchor=north] {$b_{12}$} (e12)
-    (x2) edge node[rectangle,fill=white,anchor=east] {$b_{21}$} (e21)
-    (x2) edge node[rectangle,fill=white,anchor=north] {$b_{22}$} (e22)
-    (x3) edge node[rectangle,fill=white] {$b_{31}$} (e31)
-    (x3) edge node[rectangle,fill=white] {$b_{32}$} (e32)
-    (x4) edge node[rectangle,fill=white] {$b_{41}$} (e41)
-    (x4) edge node[rectangle,fill=white] {$b_{42}$} (e42)
+    (x1) edge node[anchor=west] {$b_{11}$} (e11)
+    (x1) edge node[anchor=north] {$b_{12}$} (e12)
+    (x2) edge node[anchor=east] {$b_{21}$} (e21)
+    (x2) edge node[anchor=north] {$b_{22}$} (e22)
+    (x3) edge node[anchor=south] {$b_{31}$} (e31)
+    (x3) edge node[anchor=west] {$b_{32}$} (e32)
+    (x4) edge node[anchor=east] {$b_{41}$} (e41)
+    (x4) edge node[anchor=south] {$b_{42}$} (e42)
 
   %Transition lines
     (x1) edge[out=15,in=165] node[rectangle,fill=white] {$a_{12}$} (x2)
