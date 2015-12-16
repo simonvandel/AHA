@@ -10,6 +10,8 @@ import com.google.common.cache.CacheBuilder;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * created by kafuch
@@ -50,7 +52,7 @@ public class Reasoner {
           actions)
       {
         try{
-          System.out.println("Sending data: " + action.toString());
+          Logger.getLogger("logReason").log(Level.SEVERE, "Sending data: " + action.toString());
           com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
         } catch (XBeeException e){
           //Would probably be a good idea to handle the exception instead of ignoring it...

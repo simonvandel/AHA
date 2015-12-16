@@ -65,8 +65,8 @@ public class SensorData {
             analogValueInfo.add(i, Pair.with(bitSize, isEmulatable));
         }
 
-        int numDigitalValues = bsWrapper.getIntFromBits(4);
-        int indexFirstDigital = bsWrapper.getIntFromBits(4);
+        int numDigitalValues = bsWrapper.getIntFromBits(3);
+        int indexFirstDigital = bsWrapper.getIntFromBits(3);
 
         // ----------------------- BODY -----------------------
         // analogValues

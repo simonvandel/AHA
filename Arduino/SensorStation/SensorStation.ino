@@ -29,8 +29,10 @@ XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0);
 
 //uses Printers.h so //Serial.print works differently
 void zbReceive(ZBRxResponse& rx, uintptr_t) {
+  Serial.println("test");
   if(rx.getDataLength() != 4) { //getDataLength hopefully returns value in bytes
     //Report error, "repeat message"-message?
+    Serial.println("Received unexpected data size");
     return;
   }
   byte data[4];
@@ -40,6 +42,7 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
   int mes[2];
   serialization.Deserialize(data, mes);
   if(mes[0] == 1){
+    Serial.println("Happy days, got index 1");
     if(mes[1]){
       digitalWrite(LightSwitch1, HIGH);
       lightSwitch1Val = true;
@@ -154,7 +157,7 @@ void loop()
   //act on received data in the call back method zbReceive
 
   memset(buildArray, 0, 64);
-  delay(1);
+  delay(500);
 
   packages++;
 

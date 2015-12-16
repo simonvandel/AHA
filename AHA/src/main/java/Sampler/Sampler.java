@@ -9,6 +9,7 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.RemovalCause;
 import com.google.common.cache.RemovalListener;
+import org.javatuples.Pair;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -20,11 +21,12 @@ import java.util.stream.Collectors;
 
 public class Sampler {
   private static Sampler mSampler;
-  private final static int SCOPE_SIZE = 1;
+  private final static int SCOPE_SIZE = 5;
   private List<NormalizedSensorState> mHistory;
   private NormalizedSensorState mPrevious;
   private SampleList sampleList = SampleList.getInstance();
   private int mScopeSize = SCOPE_SIZE;
+  private List<Pair<Action,Action>> actionsToBeSanitised = new ArrayList<>();
   private RemovalListener<String, Sample> sanitizerListener = removalNotification -> {
     Sample sample = removalNotification.getValue();
     if(removalNotification.getCause() != RemovalCause.EXPIRED && removalNotification.getCause() != RemovalCause.REPLACED){
@@ -39,6 +41,58 @@ public class Sampler {
       return;
     }
     Logger.getLogger("sampleLogger").log(Level.SEVERE, "Sample: " + sample.toString1());
+    for (Pair<Action, Action> actions: actionsToBeSanitised){
+      if(sample.getActions().contains(actions.getValue0())){
+        sample
+            .getActions()
+            .get
+                (sample
+                    .getActions()
+                    .indexOf
+                        (actions
+                            .getValue0()
+                        )
+                )
+            .setVal2
+                (sample
+                    .getActions()
+                    .get
+                        (sample
+                            .getActions()
+                            .indexOf
+                                (actions
+                                    .getValue0()
+                                )
+                        )
+                    .getVal1()
+                );
+      }
+      if(sample.getActions().contains(actions.getValue1())){
+        sample
+            .getActions()
+            .get
+                (sample
+                    .getActions()
+                    .indexOf
+                        (actions
+                            .getValue1()
+                        )
+                )
+            .setVal1
+                (sample
+                    .getActions()
+                    .get
+                        (sample
+                            .getActions()
+                            .indexOf
+                                (actions
+                                    .getValue1()
+                                )
+                        )
+                    .getVal2()
+                );
+      }
+    }
     sampleList.add(sample);
     return;
   };
@@ -159,30 +213,18 @@ public class Sampler {
 
 
     for (int i = 0; i < validActions.size() - 1; i++) {
+      Action actionI = validActions.get(i);
+      if(actionI.getVal1() == null) {
+        continue;
+      }
       for (int j = i + 1; j < validActions.size() - 1; j++) { //Get all combinations of actions in sample
-        if (validActions.get(i) == inverseAction(validActions.get(j))) { //If two actions are inverse to each other
-          state2
-              .getNormalizesValues()
-              .get(state2
-                  .getNormalizesValues()
-                  .indexOf(validActions
-                      .get(i)
-                      .getVal2()))
-              .setValue(validActions
-                  .get(j)
-                  .getVal2()
-                  .getValue()); //Correct the state to have the value of before the action happened
-          state2
-              .getNormalizesValues()
-              .get(state2
-                  .getNormalizesValues()
-                  .indexOf(validActions
-                      .get(j)
-                      .getVal1()))
-              .setValue(validActions
-                  .get(i)
-                  .getVal1()
-                  .getValue()); //Correct the state to have the value of before the action happened
+        Action actionJ = validActions.get(j);
+        if(actionJ.getVal1() == null) {
+          continue;
+        }
+        if ( (!actionI.getVal1().equals(actionJ.getVal1()) || !actionI.getVal2().equals(actionJ.getVal2())) && actionI.equals(inverseAction(actionJ))) { //If two actions are inverse to each other
+          actionsToBeSanitised.add(new Pair<>(actionI, actionJ));
+
           Reasoning reasoning = reasoner.getReasoningBehindAction(validActions.get(i));
           if(reasoning != null){
             reasoner.updateModel(reasoning);

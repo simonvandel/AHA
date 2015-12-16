@@ -11,6 +11,30 @@ public class Action {
   private Sample dbs;
   @DatabaseField(foreign = true)
   private NormalizedValue mValPrevious;
+
+  @Override
+  public boolean equals(Object o){
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Action action = (Action) o;
+
+    if (mSensorId != action.mSensorId) return false;
+    if (dbs != null ? !dbs.equals(action.dbs) : action.dbs != null) return false;
+    if (mValPrevious != null ? !mValPrevious.equals(action.mValPrevious) : action.mValPrevious != null) return false;
+    return !(mValCurrent != null ? !mValCurrent.equals(action.mValCurrent) : action.mValCurrent != null);
+
+  }
+
+  @Override
+  public int hashCode(){
+    int result = dbs != null ? dbs.hashCode() : 0;
+    result = 31 * result + (mValPrevious != null ? mValPrevious.hashCode() : 0);
+    result = 31 * result + (mValCurrent != null ? mValCurrent.hashCode() : 0);
+    result = 31 * result + mSensorId;
+    return result;
+  }
+
   @DatabaseField(foreign = true)
   private NormalizedValue mValCurrent;
   @DatabaseField
@@ -37,8 +61,10 @@ public class Action {
   }
 
   public NormalizedValue getVal1(){ return mValPrevious; }
+  public void setVal1(NormalizedValue value){mValPrevious = value;}
 
   public NormalizedValue getVal2(){ return mValCurrent; }
+  public void setVal2(NormalizedValue value){mValCurrent = value;}
 
   @Override
   public String toString() {
