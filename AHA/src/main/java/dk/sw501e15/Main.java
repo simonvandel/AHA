@@ -90,7 +90,7 @@ public class Main
         nState = nm.Normalize(oST);
         if (nState != null)
         {
-          sample = sampler.getSample(nState);
+          sample = sampler.getSample(nState);ugk 
           if (sample != null) {
             oReasoner.reasonAndSend(sample);
           }
