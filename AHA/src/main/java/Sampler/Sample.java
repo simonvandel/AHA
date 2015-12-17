@@ -75,7 +75,7 @@ public class Sample{
     List<Action> acs = new ArrayList<Action>();
     for (int i = 0; i < actionNum; i++){
       if (i < mActions.size()) acs.add(mActions.get(i));
-      else acs.add(new Action(new NormalizedValue(0, false, "NAD", 0), new NormalizedValue(0, false, "NAD", 0), 0));
+      else acs.add(new Action(new NormalizedValue(0, false, "NAD", 0, 2), new NormalizedValue(0, false, "NAD", 0, 2), 0));
     }
     for (int i = 0; i < actionNum; i++){
       string = string + "," + acs.get(i).toString();

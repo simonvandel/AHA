@@ -7,11 +7,15 @@
 
 #define LightSwitch1 13
 #define LightSwitch2 11
+#define LightSwitch3 9
 #define btn1 2
-#define btn2 3
+#define btn2 5
+#define btn3 4
+#define event2 3
 
 boolean lightSwitch1Val = false;
 boolean lightSwitch2Val = false;
+boolean lightSwitch3Val = false;
 Serialization serialization;
 
 long unsigned startTime = 0;
@@ -56,6 +60,9 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
 }
 
 void toggleLightSwitch1(){
+  Serial.println();
+  Serial.print("btn1: ");
+  Serial.println(digitalRead(btn1));
   if(lightSwitch1Val){
     digitalWrite(LightSwitch1, LOW);
     lightSwitch1Val = false;
@@ -66,14 +73,32 @@ void toggleLightSwitch1(){
   }
 }
 
-void toggleLightSwitch2(){
-  if(lightSwitch2Val){
-    digitalWrite(LightSwitch2, LOW);
-    lightSwitch2Val = false;
+void toggleLightSwitch23(){
+  Serial.println();
+  Serial.print("btn2: ");
+  Serial.println(digitalRead(btn2));
+  Serial.print("btn3: ");
+  Serial.println(digitalRead(btn3));
+  
+  if(!digitalRead(btn2)){
+    if(lightSwitch2Val){
+      digitalWrite(LightSwitch2, LOW);
+      lightSwitch2Val = false;
+    }
+    else{
+      digitalWrite(LightSwitch2, HIGH);
+      lightSwitch2Val = true;
+    }
   }
-  else{
-    digitalWrite(LightSwitch2, HIGH);
-    lightSwitch2Val = true;
+  if(!digitalRead(btn3)){
+    if(lightSwitch3Val){
+      digitalWrite(LightSwitch3, LOW);
+      lightSwitch3Val = false;
+    }
+    else{
+      digitalWrite(LightSwitch3, HIGH);
+      lightSwitch3Val = true;
+    }
   }
 }
 
@@ -84,12 +109,17 @@ void setup()
   pinMode(btn1, INPUT);
   pinMode(LightSwitch2, OUTPUT);
   pinMode(btn2, INPUT);
+  pinMode(LightSwitch3, OUTPUT);
+  pinMode(btn3, INPUT);
+  pinMode(event2, INPUT);
 
   pinMode(12, OUTPUT);
+  pinMode(10, OUTPUT);
   digitalWrite(12, LOW);
+  digitalWrite(10, LOW);
   
   attachInterrupt(0, toggleLightSwitch1, RISING);
-  attachInterrupt(1, toggleLightSwitch2, RISING);
+  attachInterrupt(1, toggleLightSwitch23, RISING);
   Serial.begin(9600);
   xbee.setSerial(Serial);
   // Called when an actual packet received
@@ -99,9 +129,11 @@ void setup()
   for(i = 0; i < 10; i++){
     digitalWrite(LightSwitch1, HIGH);
     digitalWrite(LightSwitch2, HIGH);
+    digitalWrite(LightSwitch3, HIGH);
     delay(250);
     digitalWrite(LightSwitch1, LOW);
     digitalWrite(LightSwitch2, LOW);
+    digitalWrite(LightSwitch3, LOW);
     delay(250);
   }
 }
@@ -139,7 +171,7 @@ void loop()
   sensorPacketBuilder.add(0, 3); // indexAnalog. No emulatable analog sensor
   //sensorPacketBuilder.add(0, 2); // Analog size 1 = 32 bits
 
-  sensorPacketBuilder.add(2, 3);// num digital
+  sensorPacketBuilder.add(3, 3);// num digital
   //hacks, index is index plus 1, so to address index 1 put 2, and for 2 put 3 and so on..
   sensorPacketBuilder.add(3, 3);// index digital. No emulatable digital sensor
 
@@ -147,6 +179,7 @@ void loop()
   //sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
   sensorPacketBuilder.add(lightSwitch2Val, 1);// analog val 2 = light
   sensorPacketBuilder.add(lightSwitch1Val, 1);// digital val 1 = pir
+  sensorPacketBuilder.add(lightSwitch3Val, 1);// digital val 1 = pir
 
   int packetSize = sensorPacketBuilder.build(buildArray);
 
@@ -157,7 +190,7 @@ void loop()
   //act on received data in the call back method zbReceive
 
   memset(buildArray, 0, 64);
-  delay(500);
+  delay(10);
 
   packages++;
 
@@ -174,6 +207,7 @@ void sendData(uint8_t* toSend, int sendLen){
     //printbincharpad(toSend[i]);
   }
   ZBTxRequest zbTx = ZBTxRequest(addr64, toSend, sendLen);
+  zbTx.setAddress16(0);
   xbee.send(zbTx);
   ZBTxStatusResponse txStatus = ZBTxStatusResponse(); //not sure whether better to have as global or local
   //Re-sends, and forgets, if not succesful

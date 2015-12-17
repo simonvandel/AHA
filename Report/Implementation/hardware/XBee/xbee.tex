@@ -1,17 +1,39 @@
-\section{XBee}
+\section{XBee}\label{sec:xbee}
 As discussed earlier, the communication in the system will be done using XBee modules, using the ZigBee protocol. In this section, the specific implementation in this system will be discussed, along with the impact this choice could have on the real-time system requirements.
+
+The following calculations define the theoretical timings for sending packets using Xbee modules.
+
+\begin{equation*}
+\text{BACKOFF} = \sum\limits_{R=0}^{n=4}(2^{R} - 1) 0.320 + 0.128_{CCA} ms = 8.96 ms
+\end{equation*}
+Where $R$ denotes the number of retries, $n$ denotes the maximal number of retries, $CCA = \text{Clear Channel Assessment}$.
+
+For this project we use 64 bit unicast, due to the considerations made in \cref{sec:xbee}.
+Transmission time of a 64bit packet is given by $T_{\text{air}}$
+\begin{equation*}
+T_{\text{air}}(B) = 0.416_{\text{header}} + 0.032B_{\text{payload}} ms
+\end{equation*}
+Where $B$ is the number of bytes in the packet, $T_{\text{air}}(72) = 2.72 ms$ is the maximum transmission time as 72 bytes is the maximum payload for the ZigBee protocol\cref{xbee_latency}
+
+The worst time of a packet arriving and getting before just getting dropped is given by $\text{WORST}$ assuming the ACK arrived 0.1ms before ACK wait timer ran out.
+\begin{equation*}
+\text{WORST} = (\text{BACKOFF} + T_{\text{air}}(72) + 0.864_{\text{wait for ACK}})*4_{\text{maximum number of retries}} - 0.1 ms = 50.076 ms
+\end{equation*}
+Note that the worst case increases the more retries are added to increase reliability of a packet arriving.
 
 \subsection{Sending Modes}
 The XBee module has two different control interfaces transparent- and API mode.
 \subsubsection{Transparent Mode}
-In transparent mode, whatever the xbee module receives on its serial input pins, it immediately sends over the network to the address specified in the firmware settings. This means that the time it takes to send data is insignificant. \ranote{Put the specifics of this result in an appendix?} A single message can be sent in under 2 ms, however, because there is no administration of the network, spamming the network will increase the time to send to upwards of 60 ms. Unless the client/host program handles it, there is no guarantee that each package is received. \cref{arduino_at_mode}
+In transparent mode, whatever the xbee module receives on its serial input pins, it immediately sends over the network to the address specified in the firmware settings. Unless the client/host program handles it, there is no guarantee that each package is received. \cref{arduino_at_mode}
 In this mode a lot of messages can be sent quickly, but with little control.
 %https://docs.digi.com/display/WirelessConnectivityKit/Command+mode
 \subsubsection{API Mode}
-In API mode, the XBee module buffers the data it receives on its serial pins, to a limit of 64 bytes, until a specific command is received. If it receives a send command, it packages the data in its buffer in the ZigBee protocol\footnote{The zigbee protocol is IEEE 802.15.4 based}, which includes the module's address and network information, and makes the receiving module send back a received acknowledgement (except if broadcasting). In addition the protocol implements either a beacon frame or a exponential back off algorithm. A beacon frame asks for permission to use the network, then the coordinator of the network makes sure no other modules transmits while the asking module uses it. An exponential back off algorithm waits a random amount of time before re-sending the collided package, if the collision happens again it waits an incremental amount of random time. The xbee documentation does not specify which of these methods is implemented however the beacon frame is not definable in xbee, so it is assumed that the xbee module uses exponential back off. This process creates overhead, resulting in the time to send (including receiving the acknowledgement) taking up to 60 ms. However, it is possible to ignore the acknowledgement, this means the time to send is lowered significantly\ranote{lav testen eller traek et tal op af hatten? eller lad det staa som nu?}.
+In API mode, the XBee module buffers the data it receives on its serial pins, to a limit of 64 bytes, until a specific command is received. If it receives a send command, it packages the data in its buffer in the ZigBee protocol\footnote{The ZigBee protocol is IEEE 802.15.4 based}, which includes the module's address and network information, and makes the receiving module send back a received acknowledgement (except if broadcasting). In addition the protocol implements either a beacon frame or a exponential back off algorithm. A beacon frame asks for permission to use the network, then the coordinator of the network makes sure no other modules transmits while the asking module uses it. An exponential back off algorithm waits a random amount of time before re-sending the collided package, if the collision happens again it waits an incremental amount of random time. The xbee documentation does not specify which of these methods is implemented however the beacon frame is not definable in xbee, so it is assumed that the xbee module uses exponential back off. This process creates overhead, resulting in the time to send (including receiving the acknowledgement) taking up to be around $50$ ms, as calculated above. However, it is possible to ignore the acknowledgement, this means the time to send is lowered significantly.
+
 \subsection{Implementation}
-While there should be no single sensor state, so significant, that the system would take a considerable precision hit, in the case it gets lost. In the testing of the modules, the time to send did not slow down the system, to a degree that made it break the real-time requirement. The actions which the server sends needs to always reach its client, for this reason this system uses the API mode.
+While there should be no single sensor state, so significant, that the system would take a considerable precision hit, in the case it gets lost. The actions which the server sends needs to always reach its client, for this reason this system uses the API mode, so that we get an acknowledgment.
+
 \subsubsection{Aruino Implementation}
-Using the official XBee library\cref{xbee_arduino_library} for Arduino, simple calls to the Arduino is facilitated through the C++ objects given in the library. Sending is handled by passing a send command  to the module, the system then waits a maximum of 250 ms for a acknowledgement.
+Using the XBee library\cref{xbee_arduino_library} for Arduino, simple calls to the Arduino is facilitated through the C++ objects given in the library. Sending is handled by passing a send command  to the module, the system then waits a maximum of 250 ms for a acknowledgement. Packets are send using 64-bit addressing, as this is what is supported for series 2 Xbee modules.
 Receiving data is done, using predefined call back methods from the library. A single method call ensures that every kind of package is processed, and the method for handling the relevant packages can be overwritten. The relevant package for the Arduino is the zbReceive, i.e. the package that contains user defined data. On the Arduino, the only possible data, this can contain, is an action, so the overwritten method decodes and performs the appropriate action.
 %https://github.com/andrewrapp/xbee-arduino

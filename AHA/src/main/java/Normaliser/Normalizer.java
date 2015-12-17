@@ -13,14 +13,13 @@ import java.util.logging.Logger;
  */
 public class Normalizer{
   private static Normalizer normalizer;
-  private Logger logger = Logger.getLogger("normLogger");
-
+  private static Logger logger;
 
   /**
    * Initializes an object of normalizer class.
    */
-  private Normalizer(){
-
+  private Normalizer(Logger normLogger){
+    logger = normLogger;
   }
 
   /**
@@ -28,9 +27,10 @@ public class Normalizer{
    *
    * @return the one and only object of the Normalizer class.
    */
-  public static Normalizer getInstance(){
+  public static Normalizer getInstance(Logger normLogger){
     if (normalizer == null){
-      normalizer = new Normalizer();
+      logger = normLogger;
+      normalizer = new Normalizer(logger);
     }
 
     return normalizer;
@@ -64,13 +64,12 @@ public class Normalizer{
       int currSensorIndex = currSV.getSensorIndexOnDevice();
       sensors.add(new Sensor(currDeviceAddr, currSensorIndex));
 
-      int normalizedValue = getSensor(currDeviceAddr, currSensorIndex).normalize(currSV.getValue());
+      Sensor sensor = getSensor(currDeviceAddr, currSensorIndex);
+      int normalizedValue = sensor.normalize(currSV.getValue());
       if (normalizedValue > -1){
-        normalizedSensorState.AddNormalizedValue(new NormalizedValue(normalizedValue, currSV.isEmulatable(), currDeviceAddr, currSensorIndex));
+        normalizedSensorState.AddNormalizedValue(new NormalizedValue(normalizedValue, currSV.isEmulatable(), currDeviceAddr, currSensorIndex, sensor.getNumberOfClusters()));
       } else return null;
-
     }
-
 
     return normalizedSensorState;
   }

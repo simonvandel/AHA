@@ -37,6 +37,13 @@ public class Sensor{
     return sensorIndex;
   }
 
+  public int getNumberOfClusters(){
+    if (oModel == null){
+      return 2;
+    }
+    return oModel.getNumberOfClusters();
+  }
+
   public Sensor(String device, int sensorIndex){
     this.deviceID = device;
     this.sensorIndex = sensorIndex;

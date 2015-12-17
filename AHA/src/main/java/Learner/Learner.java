@@ -15,10 +15,14 @@ import java.util.stream.Collectors;
  * Created by simon on 11/30/15.
  */
 public class Learner{
-  private Logger logger = Logger.getLogger("normLogger");
+  private static Logger logger;
   private HiddenMarkovModel currentModel;
 
   private final double convergenceConstant = 0.001e-15; // TODO: change to suitable number
+
+  public Learner(Logger aiLogger){
+    logger = aiLogger;
+  }
 
   public HiddenMarkovModel learn(List<Sample> sampleObservations){
     logger.log(Level.SEVERE, "Sample size for generating hidden markov model: " + sampleObservations.size());

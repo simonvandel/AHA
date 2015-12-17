@@ -9,10 +9,14 @@ import Sampler.Sample;
 import Sampler.Sampler;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Logger;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -21,16 +25,36 @@ import static junit.framework.TestCase.assertEquals;
  */
 public class LearnerTest{
 
+  static private Logger aiLogger;
+  static private Logger sampleLogger;
+  static private Logger reasonLogger;
+
   private int timeCounter = 0;
   @Test
   public void testLearner() {
+    try{
+      Handler aiHandler = new FileHandler("logs/learner/logAI" + Instant.now().toString() + ".xml");
+      Handler reasonHandler = new FileHandler("logs/reasoner/logReason" + Instant.now().toString() + ".xml");
+      Handler sampleHandler = new FileHandler("logs/sampler/logSample" + Instant.now().toString() + ".xml");
+
+      aiLogger = Logger.getLogger("aiLogger");
+      reasonLogger = Logger.getLogger("reasonLogger");
+      sampleLogger = Logger.getLogger("sampleLogger");
+
+      aiLogger.addHandler(aiHandler);
+      reasonLogger.addHandler(reasonHandler);
+      sampleLogger.addHandler(sampleHandler);
+    }catch (IOException e){
+      System.out.println("ERROR INSTANTIATING LOGGERS");
+      e.printStackTrace();
+    }
     String deviceAddress = "123";
     // test data: when first sensor in sensorValues list is 0,
     // the second sensor value (emulatable) in sensorValues should be 1
     // when 1, 0 is given as input, it is expected that the HMM should infer that the action should be to turn on sensor 2
 
     // sensor1 (movement in room), sensor2 (lamp), sensor3 (random noise)
-    Learner learner = new Learner();
+    Learner learner = new Learner(aiLogger);
 
     List<Sample> allSamples = new ArrayList<>();
 
@@ -93,9 +117,10 @@ public class LearnerTest{
     timeCounter++;
 
     //Normalizer nm = Normalizer.getInstance();
-    Sampler sampler = Sampler.getInstance();
+    Sampler sampler = Sampler.getInstance(sampleLogger,reasonLogger);
 
-    NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sensorState); //nm.Normalize(sensorState);
+    NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sensorState, 2); //nm.Normalize(sensorState);
+
     return sampler.getSample(normalizedSensorState);
   }
 

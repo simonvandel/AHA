@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  */
 public class Reasoner {
   private static Reasoner reasoner;
+  private static Logger logger;
   private IModel currentModel = null;
   private Communicator com = null;
   //husk actions vi har sendt, indenfor 5 sekunder, så vi kan tjekke om de actions vi får er bruger eller system
@@ -27,11 +28,13 @@ public class Reasoner {
           .expireAfterWrite(5, TimeUnit.SECONDS)
           .build();
 
-  private Reasoner() {
+  private Reasoner(Logger reasonLogger) {
+    logger = reasonLogger;
   }
-  public static Reasoner getInstance(){
+  public static Reasoner getInstance(Logger reasonLogger){
+    logger = reasonLogger;
     if(reasoner == null){
-      reasoner = new Reasoner();
+      reasoner = new Reasoner(logger);
     }
     return reasoner;
   }
@@ -52,7 +55,7 @@ public class Reasoner {
           actions)
       {
         try{
-          Logger.getLogger("logReason").log(Level.SEVERE, "Sending data: " + action.toString());
+          logger.log(Level.SEVERE, "Sending data: " + action.toString());
           com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
         } catch (XBeeException e){
           //Would probably be a good idea to handle the exception instead of ignoring it...

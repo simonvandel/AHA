@@ -1,27 +1,11 @@
 %mainfile: ../master.tex
 \section{Sensor Station}\label{sub:sensorStation}
 
-The sensor stations are responsible for collecting data from sensor placed around a vicinity and acting on lighting appliances around the vicinity. The sensor station should transmit most recent collected data to the IA subsystem all the time, this should also be done in a timely fashion, remember the responsiveness requirement of the system, that states that a response should be reacted upon within 100ms. Hereafter we will go through a little worst case analysis of the sensor station.
+The sensor stations are responsible for collecting data from sensors placed around a vicinity and acting on lighting appliances around the vicinity. The sensor station should transmit the most recent collected data to the AI subsystem all the time. This should also be done in a timely fashion, according to the responsiveness requirement of the system, that states that a response should be reacted upon within 100ms. Hereafter we will go through a little worst case analysis of the sensor station.
 
+Having more than one sensor station is supported by the ZigBee\cref{xbee_latency} protocol on the Xbee devices. It is important to note when using a CSMA-CA protocol, that multiple transmitting devices can potentially result in an additional small delay to the overhead of transmitting. The delay cannot exceed $\text{BACKOFF}$ though otherwise the packet is dropped. This additionally applies both ways from sensor station to the AI subsystem and back.
 
-Having more than one sensor station is supported by the ZigBee\cref{xbee_latency} protocol on the Xbee devices. It is important to note when using a CSMA-CA protocol, multiple transmitting devices can potentially result in an additional small delay to the overhead of transmitting, the delay cannot not exceed $BACKOFF$ though otherwise the packet is dropped. This additional applies both ways from sensor station to IA subsystem and back.
-\begin{equation*}
-BACKOFF = \sum\limits_{R=0}^{4_{maximum number of retries}}(2^{R} - 1) 0.320 + 0.128_{CCA} ms = 8.96 ms
-\end{equation*}
-Where $R$ denotes the number of retries.
-
-For this project we use 64 bit unicast, due to the considerations made in\cref{}\chnote{vores afsnit om xbee/ZigBee}.
-Transmission time of a 64bit packet is given by $T_{air}$
-\begin{equation*}
-T_air(B) = 0.416_{header} + 0.032B_{payload} ms
-\end{equation*}
-Where $B$ is the number of bytes in the packet, $T_{air}(72) = 2.72 ms$ is the maximum transmission time as 72 bytes is the maximum payload for the ZigBee protocol\cref{xbee_latency}
-
-The worst time of a packet arriving and getting before just getting dropped is given by $WORST$ assuming the ACK arrived 0.1ms before ACK wait timer ran out.
-\begin{equation*}
-WORST = (BACKOFF + T_{air}(72) + 0.864_{wait for ACK})*4_{maximum number of retries} - 0.1 ms = 50.076 ms
-\end{equation*}
-Note that the worst case increase a more retries are added to increase reliability of a packet arriving.
+The calculations made in \cref{sec:xbee} shows that the theoretical worst case time to send a packet is $50.076$ ms.
 
 Besides the communications overhead, the sensor station should also read from and act on sensor connected to it, \chnote{tilføj timings for at læse fra sensorer} as found \cref{} and \cref{}.
 
