@@ -141,7 +141,7 @@ public class TransitionMatrix extends CommonMatrix
 
     // normalise the rest of the values
     int valuesToNormalise = (matrix.getColumnDimension() * matrix.getRowDimension() - 1);
-    double valueToOffsetRest = diff / valuesToNormalise;
+    double valueToOffsetRest = diff / (double) valuesToNormalise;
     for (int row = 0; row < matrix.getRowDimension(); row++){
       for (int col = 0; col < matrix.getColumnDimension(); col++){
         if (row != toHiddenStateIndex && col != fromHiddenStateIndex) {
