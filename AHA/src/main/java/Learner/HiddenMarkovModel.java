@@ -21,7 +21,7 @@ public class HiddenMarkovModel implements IModel{
   private TransitionMatrix transitionMatrix;
   private EmissionMatrix emissionMatrix;
   private MapWarden mapWarden;
-  private final double someThreshold = 0.5; // TODO change threshold
+  private final double someThreshold = 0.6; // TODO change threshold
 
   public HiddenMarkovModel(InitialProbability initialProbability, TransitionMatrix transitionMatrix, EmissionMatrix emissionMatrix, MapWarden mapWarden,Logger aiLogger){
     this.initialProbability = initialProbability;
@@ -105,11 +105,11 @@ public class HiddenMarkovModel implements IModel{
         for (Action a : reasoning.getActions())
           log += "\n" + a.toString();
       }
-      logger.log(Level.SEVERE, log);
+      logger.log(Level.INFO, log);
       return reasoning;
     } else{
       // we are not confident enough, so return a null action
-      logger.log(Level.SEVERE, "No Confidence: " + confidence);
+      logger.log(Level.INFO, "No Confidence: " + confidence);
       return null;
     }
   }

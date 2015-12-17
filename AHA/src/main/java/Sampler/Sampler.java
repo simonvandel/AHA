@@ -46,7 +46,7 @@ public class Sampler {
       //value was garbage-collected before removalListener got to it. Yay dynamic garbage collection! just ignore? not much else to do..
       return;
     }
-    sampleLogger.log(Level.INFO, "Sample: " + sample.toString1());
+    sampleLogger.log(Level.INFO, "Sample:" + sample.toString1());
     for (Pair<Action, Action> actions: actionsToBeSanitised){
       if(sample.getActions().contains(actions.getValue0())){
         sample
@@ -109,7 +109,7 @@ public class Sampler {
       .expireAfterWrite(1, TimeUnit.SECONDS)
       .removalListener(sanitizerListener)
       .build();
-  private Reasoner reasoner = Reasoner.getInstance(reasonLogger);
+  private Reasoner reasoner;
 
   List<NormalizedValue> zeroVal = new ArrayList<NormalizedValue>();
 
@@ -119,6 +119,7 @@ public class Sampler {
   private Sampler(int SCOPE_SIZE, Logger sampleLogger, Logger reasonLogger){
     this.sampleLogger = sampleLogger;
     this.reasonLogger = reasonLogger;
+    reasoner = Reasoner.getInstance(reasonLogger);
     mScopeSize = SCOPE_SIZE;
     zeroVal.add(new NormalizedValue(0,false,"NotADevice",0,0));
     List<NormalizedSensorState> history = new ArrayList<NormalizedSensorState>(); //Initialize mHistory

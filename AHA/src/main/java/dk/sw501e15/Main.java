@@ -65,7 +65,7 @@ public class Main
     NormalizedSensorState nState;
 
     Instant learnerRun = Instant.now();
-    long learnerRunInverval = 120; //in seconds
+    long learnerRunInverval = 20; //in seconds
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){
@@ -149,8 +149,8 @@ public class Main
       sampleLogger.addHandler(sampleHandler);
 
       mainLogger.setUseParentHandlers(false);
-      reasonLogger.setUseParentHandlers(false);
       normLogger.setUseParentHandlers(false);
+      comLogger.setUseParentHandlers(false);
 
     } catch (IOException e){
       System.out.println("ERROR INSTANTIATING LOGGERS");

@@ -31,10 +31,10 @@ public class Reasoner {
   private Reasoner(Logger reasonLogger) {
     logger = reasonLogger;
   }
+
   public static Reasoner getInstance(Logger reasonLogger){
-    logger = reasonLogger;
     if(reasoner == null){
-      reasoner = new Reasoner(logger);
+      reasoner = new Reasoner(reasonLogger);
     }
     return reasoner;
   }
@@ -55,7 +55,7 @@ public class Reasoner {
           actions)
       {
         try{
-          logger.log(Level.SEVERE, "Sending data: " + action.toString());
+          logger.log(Level.INFO, "Sending data: " + action.toString());
           com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
         } catch (XBeeException e){
           //Would probably be a good idea to handle the exception instead of ignoring it...

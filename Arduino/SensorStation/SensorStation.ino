@@ -60,7 +60,7 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
       lightSwitch1Val = false;
     }
   }
-  if(startTimingSwitchVal == true) {
+  if(startTimingSwitchVal) {
     Serial.print("It took ");
     Serial.print(millis() - startTime);
     Serial.println("ms to receive an action");
@@ -152,8 +152,18 @@ void printbincharpad(char c)
 
 void loop()
 {
-  startTimingSwitchVal = digitalRead(startTimingSwitch);
-  startTime = millis();
+  if(!digitalRead(startTimingSwitch) && !startTimingSwitchVal) {
+    
+    Serial.println("started timing");
+    if(lightSwitch2Val == 0) {
+       digitalWrite(LightSwitch2, HIGH); 
+    } else {
+      digitalWrite(LightSwitch2, LOW); 
+    }
+    lightSwitch2Val = !lightSwitch2Val;
+    startTimingSwitchVal = true;
+    startTime = millis();
+  }
   
   sensorPacketBuilder.add(0, 3); // Number of analog sensors
   sensorPacketBuilder.add(0, 3); // Emulatable analog index. No emulatable analog sensors
@@ -174,7 +184,7 @@ void loop()
   //act on received data in the call back method zbReceive
 
   memset(buildArray, 0, 64);
-  delay(500);
+  delay(100);
 
   packages++;
 
