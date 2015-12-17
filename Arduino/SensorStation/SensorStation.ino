@@ -8,6 +8,7 @@
 #define LightSwitch1 13
 #define LightSwitch2 11
 #define LightSwitch3 9
+#define startTimingSwitch 8
 #define btn1 2
 #define btn2 5
 #define btn3 4
@@ -16,6 +17,7 @@
 boolean lightSwitch1Val = false;
 boolean lightSwitch2Val = false;
 boolean lightSwitch3Val = false;
+boolean startTimingSwitchVal = false;
 Serialization serialization;
 
 long unsigned startTime = 0;
@@ -58,7 +60,11 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
       lightSwitch1Val = false;
     }
   }
-  return;
+  if(startTimingSwitchVal == true) {
+    Serial.print("It took ");
+    Serial.print(millis() - startTime);
+    Serial.println("ms to receive an action");
+  }
 }
 
 void toggleLightSwitch1(){
@@ -106,6 +112,8 @@ void setup()
   pinMode(btn3, INPUT);
   pinMode(event2, INPUT);
 
+  pinMode(startTimingSwitch, INPUT);
+
   pinMode(12, OUTPUT);
   pinMode(10, OUTPUT);
   digitalWrite(12, LOW);
@@ -144,6 +152,9 @@ void printbincharpad(char c)
 
 void loop()
 {
+  startTimingSwitchVal = digitalRead(startTimingSwitch);
+  startTime = millis();
+  
   sensorPacketBuilder.add(0, 3); // Number of analog sensors
   sensorPacketBuilder.add(0, 3); // Emulatable analog index. No emulatable analog sensors
 
