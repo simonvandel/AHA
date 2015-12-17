@@ -27,7 +27,7 @@ public class Sampler {
   private static Logger sampleLogger;
   private static Logger reasonLogger;
   private static Sampler mSampler;
-  private final static int SCOPE_SIZE = 10;
+  private final static int SCOPE_SIZE = 3;
   private List<NormalizedSensorState> mHistory;
   private NormalizedSensorState mPrevious;
   private SampleList sampleList = SampleList.getInstance();

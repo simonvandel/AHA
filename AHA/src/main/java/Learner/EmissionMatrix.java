@@ -149,15 +149,13 @@ public class EmissionMatrix extends CommonMatrix
     setEntry(hiddenState, emissionState, newProbability);
 
     // normalise the rest of the values
-    int valuesToNormalise = (matrix.getColumnDimension() * matrix.getRowDimension() - 1);
+    int valuesToNormalise = matrix.getColumnDimension()- 1;
     double valueToOffsetRest = diff / (double) valuesToNormalise;
-    for (int row = 0; row < matrix.getRowDimension(); row++){
       for (int col = 0; col < matrix.getColumnDimension(); col++){
-        if (row != emissionStateIndex && col != hiddenStateIndex) {
-          double curProb = matrix.getEntry(row, col);
-          double valueToSet = curProb + valueToOffsetRest;
-          matrix.setEntry(row, col, valueToSet);
-        }
+        if (col != emissionStateIndex) {
+          double curProb = matrix.getEntry(hiddenStateIndex, col);
+          double valueToSet = curProb - valueToOffsetRest;
+          matrix.setEntry(hiddenStateIndex, col, valueToSet);
       }
     }
   }

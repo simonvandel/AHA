@@ -97,7 +97,10 @@ public class HiddenMarkovModel implements IModel{
       List<HiddenState> hiddenStatesPath = new ArrayList<>(viterbiPath);
       hiddenStatesPath.add(finalHiddenState);
       EmissionState emissionStatePredicted = emissionPair.getValue0();
-      Reasoning reasoning = new Reasoning(emissionStatePredicted.getActions(), hiddenStatesPath, observationsFromSample);
+      List<EmissionState> emissionStatesGenerated = new ArrayList<>();
+      emissionStatesGenerated.addAll(observationsFromSample.stream().map(o -> mapWarden.observationToEmission(o)).collect(Collectors.toList()));
+      emissionStatesGenerated.add(emissionStatePredicted);
+      Reasoning reasoning = new Reasoning(emissionStatePredicted.getActions(), hiddenStatesPath, emissionStatesGenerated);
       String log = "";
       log += "Confidence: " + confidence;
       if (reasoning.getActions().size() > 0){
@@ -209,9 +212,10 @@ public class HiddenMarkovModel implements IModel{
 
   @Override
   public void TakeFeedback(Reasoning wrongReasoning){
-    for (int i = 0; i < wrongReasoning.getHiddenStates().size() && i < wrongReasoning.getObservations().size(); i++){
+    logger.log(Level.INFO, "TakeFeedback called with wrong actions: " + wrongReasoning.toString());
+    for (int i = 0; i < wrongReasoning.getHiddenStates().size(); i++){
       HiddenState currentHiddenState = wrongReasoning.getHiddenStates().get(i);
-      Observation currentObservation = wrongReasoning.getObservations().get(i);
+      EmissionState currentEmission = wrongReasoning.getEmissions().get(i);
       HiddenState nextHiddenState;
 
       // check that we have not reached the end
@@ -221,12 +225,13 @@ public class HiddenMarkovModel implements IModel{
         break;
       }
 
-      // set the probability that currentHiddenState emits currentEmissionState to 0, as it was the wrong thing to do
-      EmissionState currentEmissionState = mapWarden.observationToEmission(currentObservation);
-      emissionMatrix.setProbabilityAndNormalise(0, currentHiddenState, currentEmissionState);
+      // set the probability that currentHiddenState emits currentEmissionState to half of the current probability, as it was the wrong thing to do
+      double newEmissionProbability = getEmissionMatrix().getEntry(currentHiddenState, currentEmission) * 0.5;
+      emissionMatrix.setProbabilityAndNormalise(newEmissionProbability, currentHiddenState, currentEmission);
 
-      // set the probability that currenHiddenState transitions to nextHiddenState to 0
-      transitionMatrix.setProbabilityAndNormalise(0, currentHiddenState, nextHiddenState);
+      double newTransitionProbability = getTransitionMatrix().getEntry(currentHiddenState, nextHiddenState) * 0.5;
+      // set the probability that currenHiddenState transitions to nextHiddenState to half of the current probability
+      transitionMatrix.setProbabilityAndNormalise(newTransitionProbability, currentHiddenState, nextHiddenState);
     }
   }
 }

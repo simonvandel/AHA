@@ -1,7 +1,7 @@
 package Reasoner;
 
+import Learner.EmissionState;
 import Learner.HiddenState;
-import Learner.Observation;
 import Sampler.Action;
 
 import java.util.List;
@@ -13,18 +13,18 @@ public class Reasoning
 {
   private List<Action> actions;
   private List<HiddenState> hiddenStates;
-  private List<Observation> observations;
+  private List<EmissionState> emissionStates;
 
   public List<Action> getActions()
   {
     return actions;
   }
 
-  public Reasoning(List<Action> actions, List<HiddenState> hiddenStates, List<Observation> observations)
+  public Reasoning(List<Action> actions, List<HiddenState> hiddenStates, List<EmissionState> emissionStates)
   {
     this.actions = actions;
     this.hiddenStates = hiddenStates;
-    this.observations = observations;
+    this.emissionStates = emissionStates;
   }
 
   public List<HiddenState> getHiddenStates()
@@ -33,8 +33,17 @@ public class Reasoning
 
   }
 
-  public List<Observation> getObservations()
+  @Override
+  public String toString(){
+    String s = "";
+    for (Action a : actions){
+      s += a.toString() + "; ";
+    }
+    return s;
+  }
+
+  public List<EmissionState> getEmissions()
   {
-    return observations;
+    return emissionStates;
   }
 }
