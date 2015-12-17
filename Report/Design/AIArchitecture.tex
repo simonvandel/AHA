@@ -62,4 +62,4 @@ The database has the responsibility to store the learned model used for predicti
 The responsibility of the learner is to infer the best parameters of the model. This is further described in \cref{sec:learner}. The learner will utilise the samples stored in the database. When parameters for a model has been learned, the model is stored in the database, for others to consume.
 
 \subsection{Reasoner}
-The reasoner should, based on the model retrieved from the database and the current scope,time and actions, infer which actions are sensible \chnote{what does sensible mean in this context?} to perform.
+The reasoner should, based on the model retrieved from the database and the current scope, time and actions, infer which actions the user wants performed.
