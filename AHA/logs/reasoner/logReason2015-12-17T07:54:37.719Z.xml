@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-17T08:54:37</date>
+  <millis>1450338877740</millis>
+  <sequence>4</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-17T08:57:43</date>
+  <millis>1450339063560</millis>
+  <sequence>74</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T08:57:47</date>
+  <millis>1450339067208</millis>
+  <sequence>79</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T08:57:51</date>
+  <millis>1450339071381</millis>
+  <sequence>84</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T08:57:56</date>
+  <millis>1450339076098</millis>
+  <sequence>89</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T08:58:01</date>
+  <millis>1450339081084</millis>
+  <sequence>94</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 1</message>
+</record>
+</log>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-17T11:03:51</date>
+  <millis>1450346631888</millis>
+  <sequence>3</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-17T11:05:52</date>
+  <millis>1450346752505</millis>
+  <sequence>24</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>21</thread>
+  <message>Sample size for generating hidden markov model: 18</message>
+</record>
+</log>

@@ -21,10 +21,10 @@ public class NormalizedSensorState
         this.time = time;
     }
 
-    public NormalizedSensorState(SensorState sensorState) {
+    public NormalizedSensorState(SensorState sensorState, int range) {
         this.normalizesValues = sensorState
             .getValues().stream()
-            .map(x -> new NormalizedValue(x.getValue(), x.isEmulatable(), x.getDeviceAddress(), x.getSensorIndexOnDevice()))
+            .map(x -> new NormalizedValue(x.getValue(), x.isEmulatable(), x.getDeviceAddress(), x.getSensorIndexOnDevice(), range))
             .collect(Collectors.toList());
         this.time = sensorState.getTime();
     }
@@ -68,8 +68,12 @@ public class NormalizedSensorState
     @Override
     public int hashCode() {
         int hash = 0;
-        for(int i=0;i<normalizesValues.size();i++)
-            hash += normalizesValues.get(i).getValue() * (normalizesValues.get(i).getSensorIndexOnDevice() + 1);
+        int usedValues = 0;
+        for(int i=0;i<normalizesValues.size();i++){
+            NormalizedValue normalizedValue = normalizesValues.get(i);
+            hash += usedValues + normalizedValue.getValue() * Math.pow(normalizedValue.getRange(), (normalizedValue.getSensorIndexOnDevice()));
+            usedValues += normalizedValue.getRange();
+        }
         return hash;
     }
 

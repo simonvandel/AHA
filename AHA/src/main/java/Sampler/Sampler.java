@@ -117,8 +117,10 @@ public class Sampler {
    * Initializes an object of Sampler class.
    */
   private Sampler(int SCOPE_SIZE, Logger sampleLogger, Logger reasonLogger){
+    this.sampleLogger = sampleLogger;
+    this.reasonLogger = reasonLogger;
     mScopeSize = SCOPE_SIZE;
-    zeroVal.add(new NormalizedValue(0,false,"NotADevice",0));
+    zeroVal.add(new NormalizedValue(0,false,"NotADevice",0,0));
     List<NormalizedSensorState> history = new ArrayList<NormalizedSensorState>(); //Initialize mHistory
 
     for (int i = 0; i < mScopeSize; i++) {
@@ -126,8 +128,6 @@ public class Sampler {
     }
     mHistory = history;
     mPrevious = null;
-    this.sampleLogger = sampleLogger;
-    this.reasonLogger = reasonLogger;
   }
 
   /**
@@ -135,7 +135,7 @@ public class Sampler {
    *
    * @return the one and only object of the Sampler class.
    */
-  public static Sampler getInstance() {
+  public static Sampler getInstance(Logger sampleLogger, Logger reasonLogger) {
     if (mSampler == null) {
       mSampler = new Sampler(SCOPE_SIZE, sampleLogger, reasonLogger);
     }

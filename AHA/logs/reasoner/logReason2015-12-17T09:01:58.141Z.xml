@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-17T10:01:58</date>
+  <millis>1450342918171</millis>
+  <sequence>4</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:02</date>
+  <millis>1450343042413</millis>
+  <sequence>54</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:02</date>
+  <millis>1450343042465</millis>
+  <sequence>57</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:07</date>
+  <millis>1450343047109</millis>
+  <sequence>64</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:07</date>
+  <millis>1450343047160</millis>
+  <sequence>67</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:31</date>
+  <millis>1450343071641</millis>
+  <sequence>77</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:31</date>
+  <millis>1450343071692</millis>
+  <sequence>80</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:33</date>
+  <millis>1450343073206</millis>
+  <sequence>87</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:33</date>
+  <millis>1450343073257</millis>
+  <sequence>90</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:34</date>
+  <millis>1450343074772</millis>
+  <sequence>97</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:34</date>
+  <millis>1450343074823</millis>
+  <sequence>100</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:35</date>
+  <millis>1450343135314</millis>
+  <sequence>121</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:35</date>
+  <millis>1450343135365</millis>
+  <sequence>124</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:56</date>
+  <millis>1450343156712</millis>
+  <sequence>136</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:56</date>
+  <millis>1450343156763</millis>
+  <sequence>139</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+</log>

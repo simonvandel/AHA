@@ -64,13 +64,12 @@ public class Normalizer{
       int currSensorIndex = currSV.getSensorIndexOnDevice();
       sensors.add(new Sensor(currDeviceAddr, currSensorIndex));
 
-      int normalizedValue = getSensor(currDeviceAddr, currSensorIndex).normalize(currSV.getValue());
+      Sensor sensor = getSensor(currDeviceAddr, currSensorIndex);
+      int normalizedValue = sensor.normalize(currSV.getValue());
       if (normalizedValue > -1){
-        normalizedSensorState.AddNormalizedValue(new NormalizedValue(normalizedValue, currSV.isEmulatable(), currDeviceAddr, currSensorIndex));
+        normalizedSensorState.AddNormalizedValue(new NormalizedValue(normalizedValue, currSV.isEmulatable(), currDeviceAddr, currSensorIndex, sensor.getNumberOfClusters()));
       } else return null;
-
     }
-
 
     return normalizedSensorState;
   }

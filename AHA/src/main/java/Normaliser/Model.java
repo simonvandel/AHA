@@ -36,6 +36,8 @@ public class Model implements Runnable{
     return modelBeingAssigned.get();
   }
 
+  public int getNumberOfClusters(){return numberOfClusters;}
+
   public List<Range>  getRanges() {
     return ranges;
   }

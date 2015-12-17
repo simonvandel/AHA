@@ -1,0 +1,2424 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-17T10:06:31</date>
+  <millis>1450343191957</millis>
+  <sequence>5</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:43</date>
+  <millis>1450343203161</millis>
+  <sequence>6</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample: </message>
+</record>
+<record>
+  <date>2015-12-17T10:06:46</date>
+  <millis>1450343206287</millis>
+  <sequence>7</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:46</date>
+  <millis>1450343206287</millis>
+  <sequence>8</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:47</date>
+  <millis>1450343207330</millis>
+  <sequence>9</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 5 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:47</date>
+  <millis>1450343207854</millis>
+  <sequence>10</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 5 2 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:48</date>
+  <millis>1450343208896</millis>
+  <sequence>11</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 5 2 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:48</date>
+  <millis>1450343208897</millis>
+  <sequence>12</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 2 6 3 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:51</date>
+  <millis>1450343211508</millis>
+  <sequence>13</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 6 3 1 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:54</date>
+  <millis>1450343214114</millis>
+  <sequence>14</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 1 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:58</date>
+  <millis>1450343218289</millis>
+  <sequence>15</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 1 2 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:58</date>
+  <millis>1450343218290</millis>
+  <sequence>16</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 2 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:06:59</date>
+  <millis>1450343219855</millis>
+  <sequence>17</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 3 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:04</date>
+  <millis>1450343224553</millis>
+  <sequence>18</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 1 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:04</date>
+  <millis>1450343224554</millis>
+  <sequence>19</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 1 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:06</date>
+  <millis>1450343226118</millis>
+  <sequence>20</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 4 1 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:08</date>
+  <millis>1450343228729</millis>
+  <sequence>21</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 4 1 2 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:08</date>
+  <millis>1450343228730</millis>
+  <sequence>22</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 2 5 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:19</date>
+  <millis>1450343239688</millis>
+  <sequence>23</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 2 5 2 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:26</date>
+  <millis>1450343246996</millis>
+  <sequence>24</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 5 2 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:28</date>
+  <millis>1450343248038</millis>
+  <sequence>25</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 2 3 6 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:29</date>
+  <millis>1450343249606</millis>
+  <sequence>26</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 3 6 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:32</date>
+  <millis>1450343252234</millis>
+  <sequence>27</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 6 4 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:33</date>
+  <millis>1450343253813</millis>
+  <sequence>28</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 4 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:34</date>
+  <millis>1450343254878</millis>
+  <sequence>29</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:37</date>
+  <millis>1450343257508</millis>
+  <sequence>30</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:37</date>
+  <millis>1450343257509</millis>
+  <sequence>31</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:38</date>
+  <millis>1450343258550</millis>
+  <sequence>32</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:39</date>
+  <millis>1450343259074</millis>
+  <sequence>33</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:40</date>
+  <millis>1450343260117</millis>
+  <sequence>34</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:40</date>
+  <millis>1450343260117</millis>
+  <sequence>35</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:41</date>
+  <millis>1450343261162</millis>
+  <sequence>36</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:41</date>
+  <millis>1450343261684</millis>
+  <sequence>37</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:42</date>
+  <millis>1450343262204</millis>
+  <sequence>38</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:42</date>
+  <millis>1450343262727</millis>
+  <sequence>39</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:43</date>
+  <millis>1450343263771</millis>
+  <sequence>40</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:43</date>
+  <millis>1450343263772</millis>
+  <sequence>41</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:45</date>
+  <millis>1450343265337</millis>
+  <sequence>42</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:46</date>
+  <millis>1450343266380</millis>
+  <sequence>43</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:48</date>
+  <millis>1450343268989</millis>
+  <sequence>44</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:48</date>
+  <millis>1450343268990</millis>
+  <sequence>45</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:50</date>
+  <millis>1450343270034</millis>
+  <sequence>46</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 2 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:51</date>
+  <millis>1450343271599</millis>
+  <sequence>47</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:55</date>
+  <millis>1450343275774</millis>
+  <sequence>48</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 2 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:57</date>
+  <millis>1450343277352</millis>
+  <sequence>49</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:57</date>
+  <millis>1450343277353</millis>
+  <sequence>50</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 2 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:07:58</date>
+  <millis>1450343278937</millis>
+  <sequence>51</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 3 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:00</date>
+  <millis>1450343280002</millis>
+  <sequence>52</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 3 4 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:00</date>
+  <millis>1450343280524</millis>
+  <sequence>53</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 4 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:01</date>
+  <millis>1450343281045</millis>
+  <sequence>54</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 4 0 1 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:01</date>
+  <millis>1450343281569</millis>
+  <sequence>55</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 0 1 4 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:02</date>
+  <millis>1450343282090</millis>
+  <sequence>56</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 4 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:03</date>
+  <millis>1450343283133</millis>
+  <sequence>57</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 4 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:03</date>
+  <millis>1450343283133</millis>
+  <sequence>58</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 3 0 3 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:04</date>
+  <millis>1450343284177</millis>
+  <sequence>59</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 4 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:04</date>
+  <millis>1450343284700</millis>
+  <sequence>60</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 4 0 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:05</date>
+  <millis>1450343285222</millis>
+  <sequence>61</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 4 0 4 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:05</date>
+  <millis>1450343285743</millis>
+  <sequence>62</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 0 4 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:06</date>
+  <millis>1450343286264</millis>
+  <sequence>63</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 4 3 0 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:06</date>
+  <millis>1450343286786</millis>
+  <sequence>64</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 3 0 4 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:07</date>
+  <millis>1450343287309</millis>
+  <sequence>65</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 4 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:16</date>
+  <millis>1450343296180</millis>
+  <sequence>66</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 4 3 0 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:16</date>
+  <millis>1450343296181</millis>
+  <sequence>67</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 3 0 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:17</date>
+  <millis>1450343297227</millis>
+  <sequence>68</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 4 1 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:18</date>
+  <millis>1450343298791</millis>
+  <sequence>69</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 4 1 4 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:18</date>
+  <millis>1450343298792</millis>
+  <sequence>70</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 4 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:19</date>
+  <millis>1450343299835</millis>
+  <sequence>71</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 4 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:20</date>
+  <millis>1450343300902</millis>
+  <sequence>72</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:20</date>
+  <millis>1450343300902</millis>
+  <sequence>73</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:21</date>
+  <millis>1450343301944</millis>
+  <sequence>74</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 2 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:22</date>
+  <millis>1450343302465</millis>
+  <sequence>75</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 2 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:23</date>
+  <millis>1450343303010</millis>
+  <sequence>76</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:23</date>
+  <millis>1450343303529</millis>
+  <sequence>77</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:24</date>
+  <millis>1450343304052</millis>
+  <sequence>78</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:24</date>
+  <millis>1450343304573</millis>
+  <sequence>79</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 3 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:25</date>
+  <millis>1450343305097</millis>
+  <sequence>80</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 3 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:28</date>
+  <millis>1450343308748</millis>
+  <sequence>81</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 1 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:28</date>
+  <millis>1450343308748</millis>
+  <sequence>82</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 1 0 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:31</date>
+  <millis>1450343311357</millis>
+  <sequence>83</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 3 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:32</date>
+  <millis>1450343312923</millis>
+  <sequence>84</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 2 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:32</date>
+  <millis>1450343312923</millis>
+  <sequence>85</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:34</date>
+  <millis>1450343314493</millis>
+  <sequence>86</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 3 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:34</date>
+  <millis>1450343314493</millis>
+  <sequence>87</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:35</date>
+  <millis>1450343315538</millis>
+  <sequence>88</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 2 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:36</date>
+  <millis>1450343316060</millis>
+  <sequence>89</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 2 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:36</date>
+  <millis>1450343316586</millis>
+  <sequence>90</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 2 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:38</date>
+  <millis>1450343318715</millis>
+  <sequence>91</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:38</date>
+  <millis>1450343318715</millis>
+  <sequence>92</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:39</date>
+  <millis>1450343319757</millis>
+  <sequence>93</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:40</date>
+  <millis>1450343320281</millis>
+  <sequence>94</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:40</date>
+  <millis>1450343320802</millis>
+  <sequence>95</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:41</date>
+  <millis>1450343321324</millis>
+  <sequence>96</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:41</date>
+  <millis>1450343321845</millis>
+  <sequence>97</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:42</date>
+  <millis>1450343322368</millis>
+  <sequence>98</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:42</date>
+  <millis>1450343322890</millis>
+  <sequence>99</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:43</date>
+  <millis>1450343323411</millis>
+  <sequence>100</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:43</date>
+  <millis>1450343323935</millis>
+  <sequence>101</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:44</date>
+  <millis>1450343324454</millis>
+  <sequence>102</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:44</date>
+  <millis>1450343324977</millis>
+  <sequence>103</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:45</date>
+  <millis>1450343325498</millis>
+  <sequence>104</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:46</date>
+  <millis>1450343326020</millis>
+  <sequence>105</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:46</date>
+  <millis>1450343326541</millis>
+  <sequence>106</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:47</date>
+  <millis>1450343327065</millis>
+  <sequence>107</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:47</date>
+  <millis>1450343327588</millis>
+  <sequence>108</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:48</date>
+  <millis>1450343328109</millis>
+  <sequence>109</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 2 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:50</date>
+  <millis>1450343330196</millis>
+  <sequence>110</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:50</date>
+  <millis>1450343330196</millis>
+  <sequence>111</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 2 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:52</date>
+  <millis>1450343332827</millis>
+  <sequence>112</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:53</date>
+  <millis>1450343333870</millis>
+  <sequence>113</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 2 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:55</date>
+  <millis>1450343335437</millis>
+  <sequence>114</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:55</date>
+  <millis>1450343335437</millis>
+  <sequence>115</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 3 2 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:56</date>
+  <millis>1450343336501</millis>
+  <sequence>116</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 2 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:57</date>
+  <millis>1450343337555</millis>
+  <sequence>117</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 3 2 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:57</date>
+  <millis>1450343337555</millis>
+  <sequence>118</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 3 2 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:59</date>
+  <millis>1450343339121</millis>
+  <sequence>119</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 3 2 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:08:59</date>
+  <millis>1450343339122</millis>
+  <sequence>120</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 3 2 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:01</date>
+  <millis>1450343341208</millis>
+  <sequence>121</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 3 2 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:01</date>
+  <millis>1450343341208</millis>
+  <sequence>122</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 3 2 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:02</date>
+  <millis>1450343342775</millis>
+  <sequence>123</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 3 2 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:02</date>
+  <millis>1450343342776</millis>
+  <sequence>124</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 3 2 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:05</date>
+  <millis>1450343345385</millis>
+  <sequence>125</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 3 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:05</date>
+  <millis>1450343345385</millis>
+  <sequence>126</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 3 2 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:06</date>
+  <millis>1450343346427</millis>
+  <sequence>127</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 0 1 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:06</date>
+  <millis>1450343346950</millis>
+  <sequence>128</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 1 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:07</date>
+  <millis>1450343347471</millis>
+  <sequence>129</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 4 1 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:08</date>
+  <millis>1450343348516</millis>
+  <sequence>130</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 4 1 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:08</date>
+  <millis>1450343348517</millis>
+  <sequence>131</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 4 1 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:10</date>
+  <millis>1450343350081</millis>
+  <sequence>132</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 4 1 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:11</date>
+  <millis>1450343351126</millis>
+  <sequence>133</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 4 1 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:11</date>
+  <millis>1450343351647</millis>
+  <sequence>134</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 4 1 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:12</date>
+  <millis>1450343352169</millis>
+  <sequence>135</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 4 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:12</date>
+  <millis>1450343352691</millis>
+  <sequence>136</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 4 1 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:13</date>
+  <millis>1450343353212</millis>
+  <sequence>137</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 0 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:13</date>
+  <millis>1450343353756</millis>
+  <sequence>138</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 3 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:14</date>
+  <millis>1450343354800</millis>
+  <sequence>139</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 6 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:14</date>
+  <millis>1450343354800</millis>
+  <sequence>140</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 6 3 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:15</date>
+  <millis>1450343355843</millis>
+  <sequence>141</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 6 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:16</date>
+  <millis>1450343356364</millis>
+  <sequence>142</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 6 3 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:16</date>
+  <millis>1450343356888</millis>
+  <sequence>143</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 6 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:17</date>
+  <millis>1450343357931</millis>
+  <sequence>144</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 6 3 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:17</date>
+  <millis>1450343357932</millis>
+  <sequence>145</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 6 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:21</date>
+  <millis>1450343361063</millis>
+  <sequence>146</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 6 3 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:22</date>
+  <millis>1450343362629</millis>
+  <sequence>147</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 6 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:22</date>
+  <millis>1450343362629</millis>
+  <sequence>148</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 6 3 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:23</date>
+  <millis>1450343363673</millis>
+  <sequence>149</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 6 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:28</date>
+  <millis>1450343368369</millis>
+  <sequence>150</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 6 3 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:28</date>
+  <millis>1450343368369</millis>
+  <sequence>151</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 6 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:29</date>
+  <millis>1450343369936</millis>
+  <sequence>152</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 6 3 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:29</date>
+  <millis>1450343369937</millis>
+  <sequence>153</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 2 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:30</date>
+  <millis>1450343370980</millis>
+  <sequence>154</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 0 3 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:32</date>
+  <millis>1450343372020</millis>
+  <sequence>155</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 3 4 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:32</date>
+  <millis>1450343372021</millis>
+  <sequence>156</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 4 3 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:33</date>
+  <millis>1450343373587</millis>
+  <sequence>157</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 4 3 4 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:34</date>
+  <millis>1450343374633</millis>
+  <sequence>158</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 3 4 0 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:35</date>
+  <millis>1450343375676</millis>
+  <sequence>159</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 4 0 5 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:36</date>
+  <millis>1450343376720</millis>
+  <sequence>160</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 0 5 2 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:37</date>
+  <millis>1450343377764</millis>
+  <sequence>161</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 5 2 5 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:37</date>
+  <millis>1450343377765</millis>
+  <sequence>162</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 2 5 2 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:39</date>
+  <millis>1450343379328</millis>
+  <sequence>163</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 5 2 5 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:40</date>
+  <millis>1450343380373</millis>
+  <sequence>164</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 2 5 2 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:41</date>
+  <millis>1450343381417</millis>
+  <sequence>165</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 5 2 5 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:41</date>
+  <millis>1450343381418</millis>
+  <sequence>166</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 2 5 2 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:42</date>
+  <millis>1450343382461</millis>
+  <sequence>167</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 5 2 5 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:42</date>
+  <millis>1450343382983</millis>
+  <sequence>168</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 2 5 2 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:43</date>
+  <millis>1450343383504</millis>
+  <sequence>169</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 5 2 5 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:44</date>
+  <millis>1450343384026</millis>
+  <sequence>170</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 2 5 2 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:51</date>
+  <millis>1450343391854</millis>
+  <sequence>171</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 5 2 5 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:51</date>
+  <millis>1450343391854</millis>
+  <sequence>172</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 2 5 2 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:52</date>
+  <millis>1450343392899</millis>
+  <sequence>173</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 5 2 5 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:54</date>
+  <millis>1450343394465</millis>
+  <sequence>174</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 2 5 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:09:54</date>
+  <millis>1450343394465</millis>
+  <sequence>175</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 5 0 3 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:04</date>
+  <millis>1450343464395</millis>
+  <sequence>176</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 0 3 2 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:05</date>
+  <millis>1450343465967</millis>
+  <sequence>177</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 2 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:07</date>
+  <millis>1450343467555</millis>
+  <sequence>178</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 2 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:07</date>
+  <millis>1450343467555</millis>
+  <sequence>179</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:08</date>
+  <millis>1450343468597</millis>
+  <sequence>180</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:09</date>
+  <millis>1450343469643</millis>
+  <sequence>181</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:10</date>
+  <millis>1450343470687</millis>
+  <sequence>182</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:16</date>
+  <millis>1450343476968</millis>
+  <sequence>183</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:16</date>
+  <millis>1450343476968</millis>
+  <sequence>184</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:18</date>
+  <millis>1450343478555</millis>
+  <sequence>185</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 3 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:19</date>
+  <millis>1450343479620</millis>
+  <sequence>186</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 3 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:20</date>
+  <millis>1450343480684</millis>
+  <sequence>187</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:21</date>
+  <millis>1450343481751</millis>
+  <sequence>188</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 0 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:22</date>
+  <millis>1450343482772</millis>
+  <sequence>189</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:27</date>
+  <millis>1450343487468</millis>
+  <sequence>190</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:28</date>
+  <millis>1450343488512</millis>
+  <sequence>191</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:30</date>
+  <millis>1450343490093</millis>
+  <sequence>192</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 1 0 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:30</date>
+  <millis>1450343490094</millis>
+  <sequence>193</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 1 0 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:31</date>
+  <millis>1450343491137</millis>
+  <sequence>194</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 4 1 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:32</date>
+  <millis>1450343492203</millis>
+  <sequence>195</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 4 1 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:35</date>
+  <millis>1450343495833</millis>
+  <sequence>196</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 4 1 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:36</date>
+  <millis>1450343496876</millis>
+  <sequence>197</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 4 1 4 1</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:37</date>
+  <millis>1450343497925</millis>
+  <sequence>198</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 4 1 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:39</date>
+  <millis>1450343499487</millis>
+  <sequence>199</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 4 1 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:40</date>
+  <millis>1450343500530</millis>
+  <sequence>200</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 1 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:41</date>
+  <millis>1450343501052</millis>
+  <sequence>201</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  1 0 2 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:49</date>
+  <millis>1450343509944</millis>
+  <sequence>202</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:49</date>
+  <millis>1450343509944</millis>
+  <sequence>203</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 2 0 2</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:50</date>
+  <millis>1450343510988</millis>
+  <sequence>204</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 2 0</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:51</date>
+  <millis>1450343511510</millis>
+  <sequence>205</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 2 0 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:52</date>
+  <millis>1450343512555</millis>
+  <sequence>206</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 2 0 3 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:52</date>
+  <millis>1450343512555</millis>
+  <sequence>207</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  2 0 3 4 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:54</date>
+  <millis>1450343514121</millis>
+  <sequence>208</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  0 3 4 6 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:55</date>
+  <millis>1450343515164</millis>
+  <sequence>209</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 4 6 4 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:58</date>
+  <millis>1450343518295</millis>
+  <sequence>210</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 6 4 6 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:58</date>
+  <millis>1450343518295</millis>
+  <sequence>211</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 4 6 4 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:59</date>
+  <millis>1450343519861</millis>
+  <sequence>212</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 6 4 6 4</message>
+</record>
+<record>
+  <date>2015-12-17T10:11:59</date>
+  <millis>1450343519861</millis>
+  <sequence>213</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 4 6 4 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:00</date>
+  <millis>1450343520905</millis>
+  <sequence>214</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 6 4 5 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:01</date>
+  <millis>1450343521948</millis>
+  <sequence>215</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 4 5 6 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:28</date>
+  <millis>1450343548567</millis>
+  <sequence>216</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  4 5 6 5 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:28</date>
+  <millis>1450343548567</millis>
+  <sequence>217</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 6 5 6 5</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:29</date>
+  <millis>1450343549611</millis>
+  <sequence>218</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 5 6 5 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:30</date>
+  <millis>1450343550656</millis>
+  <sequence>219</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 6 5 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:31</date>
+  <millis>1450343551700</millis>
+  <sequence>220</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 5 6 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:33</date>
+  <millis>1450343553815</millis>
+  <sequence>221</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  5 6 3 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:33</date>
+  <millis>1450343553816</millis>
+  <sequence>222</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 6 3 6</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:35</date>
+  <millis>1450343555383</millis>
+  <sequence>223</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  3 6 3 6 3</message>
+</record>
+<record>
+  <date>2015-12-17T10:12:35</date>
+  <millis>1450343555383</millis>
+  <sequence>224</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>Sampler.Sampler</class>
+  <method>lambda$new$0</method>
+  <thread>1</thread>
+  <message>Sample:  6 3 6 3 6</message>
+</record>
+</log>

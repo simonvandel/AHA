@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-17T10:01:58</date>
+  <millis>1450342918169</millis>
+  <sequence>1</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:02</date>
+  <millis>1450343042413</millis>
+  <sequence>55</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@76f2b07d</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:02</date>
+  <millis>1450343042464</millis>
+  <sequence>56</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:02</date>
+  <millis>1450343042465</millis>
+  <sequence>58</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@2781e022</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:02</date>
+  <millis>1450343042518</millis>
+  <sequence>59</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:07</date>
+  <millis>1450343047109</millis>
+  <sequence>65</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@4232c52b</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:07</date>
+  <millis>1450343047159</millis>
+  <sequence>66</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:07</date>
+  <millis>1450343047160</millis>
+  <sequence>68</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@305fd85d</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:07</date>
+  <millis>1450343047212</millis>
+  <sequence>69</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:31</date>
+  <millis>1450343071641</millis>
+  <sequence>78</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@11438d26</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:31</date>
+  <millis>1450343071692</millis>
+  <sequence>79</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:31</date>
+  <millis>1450343071693</millis>
+  <sequence>81</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@7a1ebcd8</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:31</date>
+  <millis>1450343071742</millis>
+  <sequence>82</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:33</date>
+  <millis>1450343073207</millis>
+  <sequence>88</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@528931cf</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:33</date>
+  <millis>1450343073257</millis>
+  <sequence>89</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:33</date>
+  <millis>1450343073257</millis>
+  <sequence>91</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@1563da5</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:33</date>
+  <millis>1450343073310</millis>
+  <sequence>92</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:34</date>
+  <millis>1450343074773</millis>
+  <sequence>98</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@30a3107a</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:34</date>
+  <millis>1450343074822</millis>
+  <sequence>99</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:34</date>
+  <millis>1450343074823</millis>
+  <sequence>101</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@34c4973</message>
+</record>
+<record>
+  <date>2015-12-17T10:04:34</date>
+  <millis>1450343074874</millis>
+  <sequence>102</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:35</date>
+  <millis>1450343135314</millis>
+  <sequence>122</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@7a765367</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:35</date>
+  <millis>1450343135365</millis>
+  <sequence>123</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:35</date>
+  <millis>1450343135365</millis>
+  <sequence>125</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@17d677df</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:35</date>
+  <millis>1450343135416</millis>
+  <sequence>126</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:56</date>
+  <millis>1450343156712</millis>
+  <sequence>137</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@78e67e0a</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:56</date>
+  <millis>1450343156763</millis>
+  <sequence>138</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:56</date>
+  <millis>1450343156763</millis>
+  <sequence>140</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>[B@2f943d71</message>
+</record>
+<record>
+  <date>2015-12-17T10:05:56</date>
+  <millis>1450343156814</millis>
+  <sequence>141</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>Communication.Communicator</class>
+  <method>SendData</method>
+  <thread>1</thread>
+  <message>Sent data to device: 00000000-00000000-A20040FF-FF7156BA</message>
+</record>
+</log>

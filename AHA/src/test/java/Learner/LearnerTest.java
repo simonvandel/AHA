@@ -26,14 +26,24 @@ import static junit.framework.TestCase.assertEquals;
 public class LearnerTest{
 
   static private Logger aiLogger;
+  static private Logger sampleLogger;
+  static private Logger reasonLogger;
 
   private int timeCounter = 0;
   @Test
   public void testLearner() {
     try{
       Handler aiHandler = new FileHandler("logs/learner/logAI" + Instant.now().toString() + ".xml");
+      Handler reasonHandler = new FileHandler("logs/reasoner/logReason" + Instant.now().toString() + ".xml");
+      Handler sampleHandler = new FileHandler("logs/sampler/logSample" + Instant.now().toString() + ".xml");
+
       aiLogger = Logger.getLogger("aiLogger");
+      reasonLogger = Logger.getLogger("reasonLogger");
+      sampleLogger = Logger.getLogger("sampleLogger");
+
       aiLogger.addHandler(aiHandler);
+      reasonLogger.addHandler(reasonHandler);
+      sampleLogger.addHandler(sampleHandler);
     }catch (IOException e){
       System.out.println("ERROR INSTANTIATING LOGGERS");
       e.printStackTrace();
@@ -107,9 +117,9 @@ public class LearnerTest{
     timeCounter++;
 
     //Normalizer nm = Normalizer.getInstance();
-    Sampler sampler = Sampler.getInstance();
+    Sampler sampler = Sampler.getInstance(sampleLogger,reasonLogger);
 
-    NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sensorState); //nm.Normalize(sensorState);
+    NormalizedSensorState normalizedSensorState = new NormalizedSensorState(sensorState, 2); //nm.Normalize(sensorState);
 
     return sampler.getSample(normalizedSensorState);
   }

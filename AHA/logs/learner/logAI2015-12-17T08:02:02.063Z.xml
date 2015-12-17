@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-17T09:02:02</date>
+  <millis>1450339322084</millis>
+  <sequence>3</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:32</date>
+  <millis>1450339412595</millis>
+  <sequence>40</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>21</thread>
+  <message>Sample size for generating hidden markov model: 34</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:33</date>
+  <millis>1450339413553</millis>
+  <sequence>42</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8668783888317774. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:36</date>
+  <millis>1450339416154</millis>
+  <sequence>47</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:37</date>
+  <millis>1450339417200</millis>
+  <sequence>52</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:40</date>
+  <millis>1450339420330</millis>
+  <sequence>57</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8500478043567713. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:41</date>
+  <millis>1450339421375</millis>
+  <sequence>62</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8668783888317774. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:43</date>
+  <millis>1450339423986</millis>
+  <sequence>67</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:45</date>
+  <millis>1450339425029</millis>
+  <sequence>72</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:47</date>
+  <millis>1450339427118</millis>
+  <sequence>77</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8500478043567713. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:48</date>
+  <millis>1450339428162</millis>
+  <sequence>82</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8668783888317774. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:50</date>
+  <millis>1450339430251</millis>
+  <sequence>87</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:51</date>
+  <millis>1450339431296</millis>
+  <sequence>92</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:53</date>
+  <millis>1450339433905</millis>
+  <sequence>97</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8500478043567713. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:54</date>
+  <millis>1450339434948</millis>
+  <sequence>102</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8668783888317774. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:58</date>
+  <millis>1450339438601</millis>
+  <sequence>107</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:03:59</date>
+  <millis>1450339439647</millis>
+  <sequence>112</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:04:04</date>
+  <millis>1450339444345</millis>
+  <sequence>117</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8500478043567713. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:04:05</date>
+  <millis>1450339445388</millis>
+  <sequence>122</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8668783888317774. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:04:07</date>
+  <millis>1450339447999</millis>
+  <sequence>127</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:04:09</date>
+  <millis>1450339449042</millis>
+  <sequence>132</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9086960271686232. Actions: 
+Set sensor id 1 to value 1</message>
+</record>
+<record>
+  <date>2015-12-17T09:04:11</date>
+  <millis>1450339451653</millis>
+  <sequence>137</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8500478043567713. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+<record>
+  <date>2015-12-17T09:04:12</date>
+  <millis>1450339452695</millis>
+  <sequence>142</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8668783888317774. Actions: 
+Set sensor id 1 to value 0</message>
+</record>
+</log>

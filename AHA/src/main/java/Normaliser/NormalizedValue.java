@@ -42,14 +42,19 @@ public class NormalizedValue{
     return result;
   }
 
-  public NormalizedValue(int value, boolean isEmulatable, String deviceAddress, int sensorIndexOnDevice)
+  public NormalizedValue(int value, boolean isEmulatable, String deviceAddress, int sensorIndexOnDevice, int valueRange)
   {
     this.value = value;
     this.isEmulatable = isEmulatable;
     this.deviceAddress = deviceAddress;
     this.sensorIndexOnDevice = sensorIndexOnDevice;
+    this.range = valueRange;
   }
   private NormalizedValue(){}
+
+  private int range;
+
+  public int getRange(){return range;}
 
   public int getValue()
   {

@@ -10,27 +10,45 @@ import Sampler.Sampler;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Logger;
 
 /**
  * Created by heider on 07/12/15.
  */
 public class HiDBTest
 {
+  static private Logger sampleLogger;
+  static private Logger reasonLogger;
   List<Sample> samples = new ArrayList<>();
   static HiDB db = HiDB.getInstance();
 
   @Before
-  public void setUp() {
-    Sampler sampler = Sampler.getInstance();
+  public void setUp() {    try{
+    Handler reasonHandler = new FileHandler("logs/reasoner/logReason" + Instant.now().toString() + ".xml");
+    Handler sampleHandler = new FileHandler("logs/sampler/logSample" + Instant.now().toString() + ".xml");
+
+    reasonLogger = Logger.getLogger("reasonLogger");
+    sampleLogger = Logger.getLogger("sampleLogger");
+
+    reasonLogger.addHandler(reasonHandler);
+    sampleLogger.addHandler(sampleHandler);
+  }catch (IOException e){
+    System.out.println("ERROR INSTANTIATING LOGGERS");
+    e.printStackTrace();
+  }
+    Sampler sampler = Sampler.getInstance(sampleLogger,reasonLogger);
     for(int i=0; i<60;i++){
       NormalizedSensorState ns = new NormalizedSensorState(Instant.now());
-      ns.AddNormalizedValue(new NormalizedValue(1337*i, true, "fuckdigsimon", 7331*i));
-      ns.AddNormalizedValue(new NormalizedValue(2337*i, false, "fuckdigahmed", 2331*i));
-      ns.AddNormalizedValue(new NormalizedValue(1337*i, true, "fuckdi213gsimon", 73323*i));
-      ns.AddNormalizedValue(new NormalizedValue(2337*i, false, "fuckdiga123hmed", 2321431*i));
+      ns.AddNormalizedValue(new NormalizedValue(1337*i, true, "fuckdigsimon", 7331*i,2));
+      ns.AddNormalizedValue(new NormalizedValue(2337*i, false, "fuckdigahmed", 2331*i,2));
+      ns.AddNormalizedValue(new NormalizedValue(1337*i, true, "fuckdi213gsimon", 73323*i,2));
+      ns.AddNormalizedValue(new NormalizedValue(2337*i, false, "fuckdiga123hmed", 2321431*i,2));
       Sample sample = sampler.getSample(ns);
       if(sample != null){
         samples.add(sample);

@@ -19,9 +19,9 @@ public class Communicator
 {
   private XBeeDevice device;
   private XBeeNetwork network;
-  private Logger logger = Logger.getLogger("comLogger");
+  private Logger logger;
 
-  public Communicator(String devicePort, int baudRate, IDataReceiveListener dataListener)
+  public Communicator(String devicePort, int baudRate, IDataReceiveListener dataListener, Logger comLogger)
   {
     //XBee device init
     device = new XBeeDevice(devicePort, baudRate);
@@ -56,6 +56,7 @@ public class Communicator
             timer = new Timer();
             timer.schedule(timerTask, 15000);
             */
+    logger = comLogger;
   }
 
   public boolean SendData(String addr64, byte[] toSend) throws XBeeException
