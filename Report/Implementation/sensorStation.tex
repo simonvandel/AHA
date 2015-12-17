@@ -12,17 +12,20 @@ Besides the communications overhead, the sensor station should also read from an
 The loop of the sensor station:
 \begin{enumerate}
   \item Read sensors
+  \item Encode sensor values
   \item Send sensor values
-  \item Receive actions
-  \item Act
+  \item Decode actions
+  \item Perform actions
 \end{enumerate}
 
-As far as scheduling, the implementation is a simple round robin executing each task in a predefined order. The execution time is measured and following results are found
+As far as scheduling, the implementation is a simple round robin executing each task in a predefined order. The execution time of each step in this loop is described below. This assumes a setup where the following sensors are connected: a PIR, a ultrasonic sensor and a photoresistor.
+
  \begin{itemize}
-  \item Read Sensor : DUMMY ms
-  \item Send Sensor Values : DUMMY ms
-  \item Receive Actions : DUMMY ms
-  \item Act : DUMMY ms 
+  \item \textbf{Read sensors} According to our measurements, an analog read takes $0.116 ms$. A digital read/write takes $0.008 ms$. The code to read the PIR sensor makes $10$ calls to digitalRead. That is, it takes approx $0.08 ms$ to read the PIR sensor. The code to read the photoresistor makes $10$ calls to analogRead. This sums to approx $1.16 ms$ for a reading of the photoresistor. The ultrasonic sensor makes 3 calls to digitalWrite, and waits in total 12 microsends. In addition to that, the sensor has to wait for the echo to come back. Assuming that the ultrasonic sensor is $0.2$ m away from an object. The speed of sound is approx. $342 m/s$. So it will take $0.2 m / 342 m/s = 0.000584 s = 0.584 ms$ for the sound travelling one way. So $0.584 ms * 2 = 1.168 ms$ for a round trip. A ultrasonic reading in total takes $3 * 0.008 ms + 0.012 ms + 1.168 ms = 1.204 ms$. In total, it takes $0.08 ms + 1.16 ms + 1.204 ms = 2.444 ms$ to read all sensors
+  \item \textbf{Encode sensor values} According to our measurements, an encoding of the above sensor values, takes $0.134 ms$. The sensor values are encoded into 8 bytes
+  \item \textbf{Send sensor values} According to the theoretical calculations presented in \cref{sec:xbee}, it takes $T_{\text{air}}(8) + CCA = 0.8_{\text{header}} + 0.032*8 ms + 0.128 ms = 1.184 ms$ to send 8 bytes.
+  \item \textbf{Decode actions} This is a very simple operation, so it is estimated to take less than $0.1 ms$
+  \item \textbf{Perform actions} For every action, either an digital write or analog write is performed. Assuming just 1 action is to be performed, and a digitalWrite is to be called, it will take $0.008 ms$. 
 \end{itemize}
 
-Which leads to a worst case execution time of the sensor station from read to act in the loop is ....\chnote{calculate} \chnote{this is a part wise conclusion, same should be done for the AI subsystem(through normaliser, sampler and reasoner) og så adderes sammen i rapportens conclusion}
+Which leads to the following execution time of the sensor station from read of sensors to actuation: $\text{read sensors} + \text{encode} + \text{send} + \text{decode} + \text{actuate} = 2.444 ms + 0.134 ms + 1.184 ms + 0.1 ms + 0.008 ms = 3.87 ms$. This execution time is not including the time it takes for the AI subsystem to calculate an action based on sensor data. Also, a theoretical calculation is used for calculating \enquote(send sensor values). It may actually take longer.
