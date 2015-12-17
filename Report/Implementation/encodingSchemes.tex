@@ -33,7 +33,7 @@ The header contains the following fields:
 
 By including both the header and the body in the packet, we can compact the data representation.
 
-The worst case packet size for this encoding scheme is sending 6 non-binary values that each occupy 32 bits, and 14 binary values that each occupy 1 bit. This would require the header to be of size $5 + 5 + 6 * 1 + 5 + 5 = 26$ bits. The body would require size $6 * 32 + 14 * 1 = 206$. In total the size of the encoding would be $26 + 206 = 232$ bits $= 29$ bytes. This is a theoretical maximum size that would be reached only if we assume sensors only need 1 input pin. In any case the size fits into the serial buffer of the Arduino Uno.
+The worst case packet size for this encoding scheme is sending 6 non-binary values that each occupy 32 bits, and 14 binary values that each occupy 1 bit. This would require the header to be of size $5 + 5 + 6 * 1 + 5 + 5 = 26$ bits. The body would require size $6 * 32 + 14 * 1 = 206$. In total the size of the encoding would be $26 + 206 = 232$ bits $= 29$ bytes. This is a theoretical maximum size that would be reached only if we assume sensors only need 1 input pin. In any case the size fits into a ZigBee packet.
 
 The data can be decoded in the following way.
 
