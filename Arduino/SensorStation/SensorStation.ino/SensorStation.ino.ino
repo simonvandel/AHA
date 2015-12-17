@@ -8,7 +8,6 @@
 #define LightSwitch1 13
 #define LightSwitch2 11
 #define LightSwitch3 9
-#define startTimingSwitch 8
 #define btn1 2
 #define btn2 5
 #define btn3 4
@@ -17,11 +16,10 @@
 boolean lightSwitch1Val = false;
 boolean lightSwitch2Val = false;
 boolean lightSwitch3Val = false;
-boolean startTimingSwitchVal = false;
+boolean messageReady = false;
 Serialization serialization;
 
 long unsigned startTime = 0;
-long unsigned packages = 0;
 
 //Ultrasonic ultrasonic(4,5);
 //PIR pir(3);
@@ -45,11 +43,6 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
   }
   int mes[2];
   serialization.Deserialize(data, mes);
-  Serial.println();
-  Serial.print("Toggle sensor ");
-  Serial.print(mes[0]);
-  Serial.print(" to value ");
-  Serial.println(mes[1]);
   if(mes[0] == 2){
     if(mes[1]){
       digitalWrite(LightSwitch1, HIGH);
@@ -60,11 +53,7 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
       lightSwitch1Val = false;
     }
   }
-  if(startTimingSwitchVal) {
-    Serial.print("It took ");
-    Serial.print(millis() - startTime);
-    Serial.println("ms to receive an action");
-  }
+  messageReady = true;
 }
 
 void toggleLightSwitch1(){
@@ -112,8 +101,6 @@ void setup()
   pinMode(btn3, INPUT);
   pinMode(event2, INPUT);
 
-  pinMode(startTimingSwitch, INPUT);
-
   pinMode(12, OUTPUT);
   pinMode(10, OUTPUT);
   digitalWrite(12, LOW);
@@ -152,18 +139,6 @@ void printbincharpad(char c)
 
 void loop()
 {
-  if(!digitalRead(startTimingSwitch) && !startTimingSwitchVal) {
-    
-    Serial.println("started timing");
-    if(lightSwitch2Val == 0) {
-       digitalWrite(LightSwitch2, HIGH); 
-    } else {
-      digitalWrite(LightSwitch2, LOW); 
-    }
-    lightSwitch2Val = !lightSwitch2Val;
-    startTimingSwitchVal = true;
-    startTime = millis();
-  }
   
   sensorPacketBuilder.add(0, 3); // Number of analog sensors
   sensorPacketBuilder.add(0, 3); // Emulatable analog index. No emulatable analog sensors
@@ -180,13 +155,14 @@ void loop()
   sendData(buildArray, packetSize);
 
   // Continuously let xbee read packets and call callbacks.
-  xbee.loop();
+  startTime = millis();
+  while((millis() - startTime) < 100 && !messageReady){
+    xbee.loop();
+  }
+  messageReady = false;
   //act on received data in the call back method zbReceive
 
   memset(buildArray, 0, 64);
-  delay(100);
-
-  packages++;
 
   //Serial.println();
   //Serial.print("----- Loop end (");
