@@ -1,22 +1,27 @@
 All the logs can be found in appendix \ranote{ref to correct appendix also actually put the logs in the appendix}
 \subsubsection{Single pattern test}
-The setup consisted of a single sensor station with two switches connected to two Light-Emitting Diodes (LED). The pattern being performed; when turning on one LED the other one is turned on as well. A snippet of the samples this produced can be seen in \cref{Table:SampleSnippet}, where time moves from left to right so the leftmost state is the newest.
+The setup consisted of a single sensor station with two switches. The switches were connected to  Light-Emitting Diodes (LED) such that each switch controlled one LED. The pattern being performed; when turning on one LED the other one is turned on as well. A snippet of the samples this produced can be seen in \cref{Table:SampleSnippet}, where time moves from left to right so the leftmost state is the newest.
 \begin{center}
-\begin{figure}
-	\begin{tabular}{ | c | }
-			\hline
-		1 3 2 0 1 \\ \hline
-		3 2 0 1 3 \\ \hline
-		2 0 1 3 2 \\ \hline
-		0 1 3 2 0 \\ \hline
-		1 3 2 0 1 \\ \hline
-		3 2 0 1 3 \\ \hline
-		2 0 1 3 2 \\ \hline
-		0 1 3 2 0 \\ \hline
-		1 3 2 0 1  \hline
-	\end{tabular}
-	\caption{Samples from test with simple pattern, as performed by the user}
-\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{c c c c c c}
+    \toprule
+    Sample & & & & &  \\ \midrule
+    1 & 1 & 3 & 2 & 0 & 1 \\
+    2 & 3 & 2 & 0 & 1 & 3 \\
+    3 & 2 & 0 & 1 & 3 & 2 \\
+    4 & 0 & 1 & 3 & 2 & 0 \\
+    5 & 1 & 3 & 2 & 0 & 1 \\
+    6 & 3 & 2 & 0 & 1 & 3 \\
+    7 & 2 & 0 & 1 & 3 & 2 \\
+    8 & 0 & 1 & 3 & 2 & 0 \\
+    9 & 1 & 3 & 2 & 0 & 1 \\
+     \\ \bottomrule
+  \end{tabular}
+  \caption{Samples from test with simple pattern, as performed by the user}
+\end{table}
+
 \label{Table:SampleSnippet}
 \end{center}
 Once 31 samples had been received, as can be seen in a snippet from the learner log\cref{Listing:MarkovGenLog}, the learner were run and a model generated.
