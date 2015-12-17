@@ -11,13 +11,13 @@ Where $R$ denotes the number of retries, $n$ denotes the maximal number of retri
 For this project we use 64 bit unicast, due to the considerations made in \cref{sec:xbee}.
 Transmission time of a 64bit packet is given by $T_{\text{air}}$
 \begin{equation*}
-T_{\text{air}}(B) = 0.416_{\text{header}} + 0.032B_{\text{payload}} ms
+T_{\text{air}}(B) = 0.8_{\text{header}} + 0.032B_{\text{payload}} ms
 \end{equation*}
-Where $B$ is the number of bytes in the packet, $T_{\text{air}}(72) = 2.72 ms$ is the maximum transmission time as 72 bytes is the maximum payload for the ZigBee protocol\cref{xbee_latency}
+Where $B$ is the number of bytes in the packet, $T_{\text{air}}(72) = 3.104 ms$ is the maximum transmission time as 72 bytes is the maximum payload for the ZigBee protocol\cref{xbee_latency}
 
 The worst time of a packet arriving and getting before just getting dropped is given by $\text{WORST}$ assuming the ACK arrived 0.1ms before ACK wait timer ran out.
 \begin{equation*}
-\text{WORST} = (\text{BACKOFF} + T_{\text{air}}(72) + 0.864_{\text{wait for ACK}})*4_{\text{maximum number of retries}} - 0.1 ms = 50.076 ms
+\text{WORST} = (\text{BACKOFF} + T_{\text{air}}(72) + 0.864_{\text{wait for ACK}})*4_{\text{maximum number of retries}} - 0.1 ms = 51.612 ms
 \end{equation*}
 Note that the worst case increases the more retries are added to increase reliability of a packet arriving.
 
