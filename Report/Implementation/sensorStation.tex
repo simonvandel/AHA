@@ -19,8 +19,9 @@ Where $B$ is the number of bytes in the packet, $T_{air}(72) = 2.72 ms$ is the m
 
 The worst time of a packet arriving and getting before just getting dropped is given by $WORST$ assuming the ACK arrived 0.1ms before ACK wait timer ran out.
 \begin{equation*}
-WORST = (BACKOFF + T_{air}(72) + 0.864_{wait for ACK})*4 - 0.1 ms = 50.076 ms
+WORST = (BACKOFF + T_{air}(72) + 0.864_{wait for ACK})*4_{maximum number of retries} - 0.1 ms = 50.076 ms
 \end{equation*}
+Note that the worst case increase a more retries are added to increase reliability of a packet arriving.
 
 Besides the communications overhead, the sensor station should also read from and act on sensor connected to it, \chnote{tilføj timings for at læse fra sensorer} as found \cref{} and \cref{}.
 
