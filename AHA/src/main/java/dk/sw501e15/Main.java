@@ -65,7 +65,7 @@ public class Main
     NormalizedSensorState nState;
 
     Instant learnerRun = Instant.now();
-    long learnerRunInverval = 60; //in seconds
+    long learnerRunInverval = 120; //in seconds
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){
@@ -90,30 +90,32 @@ public class Main
     Learner oLearner = new Learner(aiLogger);
     List<Sample> learnerData = new ArrayList<>();
     SampleList sampleList = SampleList.getInstance();
+    long loopStart;
     while (true)
     {
-      while (!queueOfSensorState.isEmpty())
-      {
+      while (!queueOfSensorState.isEmpty()){
+        loopStart = System.currentTimeMillis();
         System.out.print('.');
-        if(queueOfSensorState.size() >  100)
+        if (queueOfSensorState.size() > 100)
           mainLogger.log(Level.SEVERE, "Behind in sensor queue: " + queueOfSensorState.size());
 
         SensorState oST = queueOfSensorState.poll();
-       // db.putNewSensorState(oST); //TODO: Is there delay on the db write? If there is we should decouple this call from the main loop
+        comLogger.log(Level.INFO, "Sensor State Received: " + oST.toString());
+        // db.putNewSensorState(oST); //TODO: Is there delay on the db write? If there is we should decouple this call from the main loop
         nState = nm.Normalize(oST);
-        if (nState != null)
-        {
+        if (nState != null){
           sample = sampler.getSample(nState);
-          if (sample != null) {
+          if (sample != null){
             oReasoner.reasonAndSend(sample);
+            mainLogger.log(Level.INFO, "Loop time: " + (System.currentTimeMillis() - loopStart));
           }
         }
       }
       if(Instant.now().isAfter(learnerRun.plusSeconds(learnerRunInverval)) && sampleList.getSamples().size() > 10){
-        if(learnerThread.getState() == Thread.State.NEW){
+        if (learnerThread.getState() == Thread.State.NEW){
           learnerThread.start();
           learnerRun = Instant.now();
-        } else if(learnerThread.getState() == Thread.State.WAITING) {
+        } else if (learnerThread.getState() == Thread.State.WAITING){
           synchronized (learnerThread){
             learnerThread.notify();
           }
@@ -145,6 +147,11 @@ public class Main
       aiLogger.addHandler(aiHandler);
       reasonLogger.addHandler(reasonHandler);
       sampleLogger.addHandler(sampleHandler);
+
+      mainLogger.setUseParentHandlers(false);
+      reasonLogger.setUseParentHandlers(false);
+      normLogger.setUseParentHandlers(false);
+
     } catch (IOException e){
       System.out.println("ERROR INSTANTIATING LOGGERS");
       e.printStackTrace();

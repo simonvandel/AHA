@@ -85,13 +85,11 @@ public class SensorData {
             int sensorValue = bsWrapper.getIntFromBits(1);
             boolean isEmulatable = false;
             // if the index of emutability is 0, there is no emutable sensors
-            if (indexFirstDigital == 0 || indexFirstDigital == 1) {
+            if (indexFirstDigital == 0) {
                 isEmulatable = false;
             }
             // else, if we are looking at sensor at index indexFirstDigital+1, it is emulatable
-            //Because unknown error we cant define index 1, but we still want to address it so,
-            // we address index 2 technically on the sender, and changes it here to index one. Hence the indexFirstDigital-1
-            else if ((i + 1) >= indexFirstDigital-1) {
+            else if ((i + 1) >= indexFirstDigital) {
                 isEmulatable = true;
             }
             returnList.add(new SensorValue(sensorValue, isEmulatable, deviceAddress, sensorIndex));

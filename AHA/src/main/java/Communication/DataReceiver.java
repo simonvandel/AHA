@@ -8,9 +8,7 @@ import java.time.Instant;
 public class DataReceiver implements IDataReceiveListener {
     private IWorker worker;
 
-    public DataReceiver(IWorker worker) {
-        this.worker = worker;
-    }
+    public DataReceiver(IWorker worker) {this.worker = worker;}
 
     @Override
     public void dataReceived(XBeeMessage xBeeMessage) {

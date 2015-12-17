@@ -16,18 +16,19 @@ import java.util.stream.Collectors;
  * Created by simon on 11/30/15.
  */
 public class HiddenMarkovModel implements IModel{
-  private Logger logger = Logger.getLogger("aiLogger");
+  private Logger logger;
   private InitialProbability initialProbability;
   private TransitionMatrix transitionMatrix;
   private EmissionMatrix emissionMatrix;
   private MapWarden mapWarden;
-  private final double someThreshold = 0.75; // TODO change threshold
+  private final double someThreshold = 0.5; // TODO change threshold
 
-  public HiddenMarkovModel(InitialProbability initialProbability, TransitionMatrix transitionMatrix, EmissionMatrix emissionMatrix, MapWarden mapWarden){
+  public HiddenMarkovModel(InitialProbability initialProbability, TransitionMatrix transitionMatrix, EmissionMatrix emissionMatrix, MapWarden mapWarden,Logger aiLogger){
     this.initialProbability = initialProbability;
     this.transitionMatrix = transitionMatrix;
     this.emissionMatrix = emissionMatrix;
     this.mapWarden = mapWarden;
+    this.logger = aiLogger;
   }
 
   public InitialProbability getInitialProbability(){

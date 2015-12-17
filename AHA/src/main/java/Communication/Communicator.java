@@ -61,14 +61,13 @@ public class Communicator
 
   public boolean SendData(String addr64, byte[] toSend) throws XBeeException
   {
-    logger.log(Level.SEVERE, toSend.toString());
     for (int i = 0; i < network.getDevices().size(); i++)
     {
       String currID = network.getDevices().get(i).get64BitAddress().generateDeviceID();
       if (currID.equals(addr64))
       {
         device.sendData(network.getDevices().get(i), toSend);
-        logger.log(Level.SEVERE ,"Sent data to device: " + currID);
+        logger.log(Level.INFO ,"Sent data to device: " + currID);
         return true;
       }
     }

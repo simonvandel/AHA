@@ -81,4 +81,12 @@ public class Model implements Runnable{
 
   }
 
+  @Override
+  public String toString(){
+    String retString = "";
+    for (Range r : ranges){
+      retString += "," + r.toString();
+    }
+    return retString;
+  }
 }

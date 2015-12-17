@@ -25,7 +25,7 @@ public class Learner{
   }
 
   public HiddenMarkovModel learn(List<Sample> sampleObservations){
-    logger.log(Level.SEVERE, "Sample size for generating hidden markov model: " + sampleObservations.size());
+    logger.log(Level.INFO, "Sample size for generating hidden markov model: " + sampleObservations.size());
     MapWarden mapWarden = new MapWarden(sampleObservations);
 
     // we need to check if a model has ever been generated.
@@ -55,7 +55,7 @@ public class Learner{
     //EmissionMatrix initEmissionMatrix = new EmissionMatrix(mapWarden);
     TransitionMatrix initTransitionMatrix = new TransitionMatrix(mapWarden);
     InitialProbability initProbability = new InitialProbability(mapWarden);
-    currentModel = new HiddenMarkovModel(initProbability, initTransitionMatrix, initEmissionMatrix, mapWarden);
+    currentModel = new HiddenMarkovModel(initProbability, initTransitionMatrix, initEmissionMatrix, mapWarden, logger);
 
     // we are now sure that we have a model.
     // We how want to iteratively apply the Baum-Welch algorithm to the model until we converge on some model.
@@ -109,7 +109,7 @@ public class Learner{
     TransitionMatrix newTransitionMatrix = new TransitionMatrix(mapWarden, gammaMatrix);
     EmissionMatrix newEmissionMatrix = new EmissionMatrix(gammaMatrix, mapWarden);
 
-    return new HiddenMarkovModel(newInitProbability, newTransitionMatrix, newEmissionMatrix, mapWarden);
+    return new HiddenMarkovModel(newInitProbability, newTransitionMatrix, newEmissionMatrix, mapWarden, logger);
   }
 
 /*  *//**

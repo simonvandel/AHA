@@ -15,4 +15,9 @@ public class Range {
     public boolean fits(int i) {
         return (lowerBound < i) && (upperBound > i);
     }
+
+    @Override
+    public String toString(){
+        return "(" + lowerBound + ".." + upperBound + ")";
+    }
 }

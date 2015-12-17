@@ -60,17 +60,20 @@ public class Sensor{
       if (oModel == null){
         if (determainValidatyOfTrainingData()){
           trainingDataThreshhold = trainingData.size(); //sets the treshhold to the trainingdata size because this should be a baseline for future model gens.
-          logger.log(Level.SEVERE, "in normalize: Size of training data treshold: " + trainingDataThreshhold + ". ID: " + sensorIndex + ". addr: " + deviceID);
+          logger.log(Level.CONFIG, "In normalize: Size of training data threshold: " + trainingDataThreshhold + ". ID: " + sensorIndex + ". addr: " + deviceID);
           createModelThread();
         }
       } else{
         if (!oModel.getModelBeingAssigned()) toReturn = oModel.determineNormalization(toNormalize);
         if ((trainingData.size() - oModel.basedOnTrainingData) > trainingDataThreshhold && adaptiveNormalization){
+          logger.log(Level.INFO, "Normalised model for sensor " + sensorIndex + " on device " + deviceID + ": " + oModel.toString());
           createModelThread();
         }
 
       }
-    } else toReturn = toNormalize;
+    } else {
+      toReturn = toNormalize;
+    }
     //TODO: test, the removal is new
     if (trainingData.size() > trainingDataThreshhold * 10) trainingData.removeAll(trainingData.subList(0, trainingDataThreshhold));
     return toReturn;
