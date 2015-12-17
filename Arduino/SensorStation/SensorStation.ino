@@ -33,10 +33,8 @@ XBeeAddress64 addr64 = XBeeAddress64(0x0, 0x0);
 
 //uses Printers.h so //Serial.print works differently
 void zbReceive(ZBRxResponse& rx, uintptr_t) {
-  Serial.println("test");
   if(rx.getDataLength() != 4) { //getDataLength hopefully returns value in bytes
     //Report error, "repeat message"-message?
-    Serial.println("Received unexpected data size");
     return;
   }
   byte data[4];
@@ -45,8 +43,12 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
   }
   int mes[2];
   serialization.Deserialize(data, mes);
-  if(mes[0] == 1){
-    Serial.println("Happy days, got index 1");
+  Serial.println();
+  Serial.print("Toggle sensor ");
+  Serial.print(mes[0]);
+  Serial.print(" to value ");
+  Serial.println(mes[1]);
+  if(mes[0] == 2){
     if(mes[1]){
       digitalWrite(LightSwitch1, HIGH);
       lightSwitch1Val = true;
@@ -60,9 +62,6 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
 }
 
 void toggleLightSwitch1(){
-  Serial.println();
-  Serial.print("btn1: ");
-  Serial.println(digitalRead(btn1));
   if(lightSwitch1Val){
     digitalWrite(LightSwitch1, LOW);
     lightSwitch1Val = false;
@@ -73,13 +72,7 @@ void toggleLightSwitch1(){
   }
 }
 
-void toggleLightSwitch23(){
-  Serial.println();
-  Serial.print("btn2: ");
-  Serial.println(digitalRead(btn2));
-  Serial.print("btn3: ");
-  Serial.println(digitalRead(btn3));
-  
+void toggleLightSwitch23(){  
   if(!digitalRead(btn2)){
     if(lightSwitch2Val){
       digitalWrite(LightSwitch2, LOW);
@@ -151,35 +144,15 @@ void printbincharpad(char c)
 
 void loop()
 {
-  //Serial.println("\n----- Loop Start -----");  
-  startTime = millis();
-  // ********** Analog readings *********
-  // 32 bit analog
-  //unsigned long distance = 1;//ultrasonic.getDistance();
-  //Serial.print("LightSwitch1: ");
-  //Serial.println(lightSwitch1Val);
-  // 10 bit analog
-  //unsigned int lightIntensity = photoresistor.getLightIntensity();
+  sensorPacketBuilder.add(0, 3); // Number of analog sensors
+  sensorPacketBuilder.add(0, 3); // Emulatable analog index. No emulatable analog sensors
 
-  // ********** digital readings *********
-  // digital sensor
-  //boolean motion = pir.getMotionDetected();
-  //Serial.print("LightSwitch2: ");
-  //Serial.println(lightSwitch2Val);
-  // packet header
-  sensorPacketBuilder.add(0, 3); // numAnalog
-  sensorPacketBuilder.add(0, 3); // indexAnalog. No emulatable analog sensor
-  //sensorPacketBuilder.add(0, 2); // Analog size 1 = 32 bits
+  sensorPacketBuilder.add(3, 3); // Number of digital sensors
+  sensorPacketBuilder.add(3, 3); // Emulatable analog index
 
-  sensorPacketBuilder.add(3, 3);// num digital
-  //hacks, index is index plus 1, so to address index 1 put 2, and for 2 put 3 and so on..
-  sensorPacketBuilder.add(3, 3);// index digital. No emulatable digital sensor
-
-  // body
-  //sensorPacketBuilder.add(distance, 32);// analog val 1 = distance
-  sensorPacketBuilder.add(lightSwitch2Val, 1);// analog val 2 = light
-  sensorPacketBuilder.add(lightSwitch1Val, 1);// digital val 1 = pir
-  sensorPacketBuilder.add(lightSwitch3Val, 1);// digital val 1 = pir
+  sensorPacketBuilder.add(lightSwitch3Val, 1); // Digital sensor 3
+  sensorPacketBuilder.add(lightSwitch2Val, 1); // Digital sensor 2
+  sensorPacketBuilder.add(lightSwitch1Val, 1); // Digital sensor 1. Emulatable
 
   int packetSize = sensorPacketBuilder.build(buildArray);
 
@@ -190,7 +163,7 @@ void loop()
   //act on received data in the call back method zbReceive
 
   memset(buildArray, 0, 64);
-  delay(10);
+  delay(500);
 
   packages++;
 
@@ -203,9 +176,9 @@ void loop()
 }
 
 void sendData(uint8_t* toSend, int sendLen){
-  for(int i = 0; i < sendLen; i++) {
+  /*for(int i = 0; i < sendLen; i++) {
     //printbincharpad(toSend[i]);
-  }
+  }*/
   ZBTxRequest zbTx = ZBTxRequest(addr64, toSend, sendLen);
   zbTx.setAddress16(0);
   xbee.send(zbTx);
