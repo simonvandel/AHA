@@ -1,0 +1,68 @@
+All the logs can be found in appendix \ranote{ref to correct appendix also actually put the logs in the appendix}
+\subsubsection{Single pattern test}
+The setup consisted of a single sensor station with two switches. The switches were connected to  Light-Emitting Diodes (LED) such that each switch controlled one LED. The pattern being performed; when turning on one LED the other one is turned on as well. A snippet of the samples this produced can be seen in \cref{Table:SampleSnippet}, where time moves from left to right so the leftmost state is the newest.
+\begin{center}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{c c c c c c}
+    \toprule
+    Sample & & & & &  \\ \midrule
+    1 & 1 & 3 & 2 & 0 & 1 \\
+    2 & 3 & 2 & 0 & 1 & 3 \\
+    3 & 2 & 0 & 1 & 3 & 2 \\
+    4 & 0 & 1 & 3 & 2 & 0 \\
+    5 & 1 & 3 & 2 & 0 & 1 \\
+    6 & 3 & 2 & 0 & 1 & 3 \\
+    7 & 2 & 0 & 1 & 3 & 2 \\
+    8 & 0 & 1 & 3 & 2 & 0 \\
+    9 & 1 & 3 & 2 & 0 & 1 \\
+     \\ \bottomrule
+  \end{tabular}
+  \caption{Samples from test with simple pattern, as performed by the user}
+\end{table}
+
+\label{Table:SampleSnippet}
+\end{center}
+Once 31 samples had been received, as can be seen in a snippet from the learner log\cref{Listing:MarkovGenLog}, the learner were run and a model generated.
+\lstset{language=xml}
+\begin{lstlisting}[label = Listing:MarkovGenLog, caption = Snippet of log from model generation]
+  <date>2015-12-17T09:03:32</date>
+  <logger>aiLogger</logger>
+  <message>Sample size for generating hidden markov model: 34</message>
+\end{lstlisting}
+With this model the system started trying to predict actions. At this point no user actions were being performed on sensor id 1. The confidence threshold for this test were 75\%. The log trace for the first action can be seen in \cref{Listing:CompletActionTrace}. And as can be seen the in the logs the system predicted the state at 09:03:36 based on the state from 09:03:33. Looking at the logs beforehand that shows user actions, it can be seen that this pattern was repeated by the user.
+\begin{lstlisting}[label = Listing:CompletActionTrace, caption = Snippets from different logs to show how the process of making an action]
+	<record>
+	  <date>2015-12-17T09:03:33</date>
+	  <millis>1450339413544</millis>
+	  <logger>sampleLogger</logger>
+	  <thread>1</thread>
+	  <message>Sample:  3 2 0 1 3</message>
+	</record>
+	
+	<record>
+	  <date>2015-12-17T09:03:33</date>
+	  <millis>1450339413553</millis>
+	  <logger>aiLogger</logger>
+	  <thread>1</thread>
+	  <message>Confidence: 0.8668783888317774. Actions: 
+	Set sensor id 1 to value 0</message>
+	</record>
+	
+	<record>
+	  <date>2015-12-17T09:03:33</date>
+	  <millis>1450339413555</millis>
+	  <logger>reasonLogger</logger>
+	  <thread>1</thread>
+	  <message>Sending data: Set sensor id 1 to value 0</message>
+	</record>
+	
+	<record>
+	  <date>2015-12-17T09:03:36</date>
+	  <millis>1450339416153</millis>
+	  <logger>sampleLogger</logger>
+	  <message>Sample:  2 0 1 3 2</message>
+	</record>
+\end{lstlisting}
+Based on this it can be concluded that the system successfully learned and imitated a pattern.
