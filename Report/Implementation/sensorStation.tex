@@ -1,16 +1,17 @@
 %mainfile: ../master.tex
-\subsection{Sensor Station}\label{sub:sensorStation}
+\section{Sensor Station}\label{sub:sensorStation}
 
-The sensor stations are responsible for collecting data from sensor placed around a vicinty and acting on lighting appliances around the vicinty. The sensor station should transmit most recent collected data to the ai subsystem all the time, this should also be done in a timely fashion, remember the responsiveness requirement of the system, that states that a response should be reacted upon within 100ms. Hereafter we will go through a little worst case analysis of the sensor station.\chnote{maybe the same should be made for the ai subsystem}
+The sensor stations are responsible for collecting data from sensor placed around a vicinity and acting on lighting appliances around the vicinity. The sensor station should transmit most recent collected data to the IA subsystem all the time, this should also be done in a timely fashion, remember the responsiveness requirement of the system, that states that a response should be reacted upon within 100ms. Hereafter we will go through a little worst case analysis of the sensor station.
 
-Having more than one sensor station is supported by the ZigBee\cref{xbee_latency} protocol on the XBee devices. It is important to note when using a CSMA-CA protocol, multiple transmitting devices can potentially result in an additional small delay to the overhead of transmitting, the delay cannot not exceed $BACKOFF$ though otherwise the packet is dropped. This additional applies both ways from sensor station to ai subsystem and back.
+
+Having more than one sensor station is supported by the ZigBee\cref{xbee_latency} protocol on the Xbee devices. It is important to note when using a CSMA-CA protocol, multiple transmitting devices can potentially result in an additional small delay to the overhead of transmitting, the delay cannot not exceed $BACKOFF$ though otherwise the packet is dropped. This additional applies both ways from sensor station to IA subsystem and back.
 \begin{equation*}
 BACKOFF = \sum\limits_{R=0}^{4_{maximum number of retries}}(2^{R} - 1) 0.320 + 0.128_{CCA} ms = 8.96 ms
 \end{equation*}
 Where $R$ denotes the number of retries.
 
-For this project we use 64 bit unicast, due to the considerations made in\cref{}\chnote{vores afsnit om xbee/zigbee}.
-Tranmission time of a 64bit packet is given by $T_{air}$
+For this project we use 64 bit unicast, due to the considerations made in\cref{}\chnote{vores afsnit om xbee/ZigBee}.
+Transmission time of a 64bit packet is given by $T_{air}$
 \begin{equation*}
 T_air(B) = 0.416_{header} + 0.032B_{payload} ms
 \end{equation*}
@@ -21,16 +22,22 @@ The worst time of a packet arriving and getting before just getting dropped is g
 WORST = (BACKOFF + T_{air}(72) + 0.864_{wait for ACK})*4 - 0.1 ms = 50.076 ms
 \end{equation*}
 
-Besides the communicational overhead, the sensor station should also read from and act on sensor connected to it, \chnote{tilføj timings for at læse fra sensorer} as found \cref{} and \cref{}.
+Besides the communications overhead, the sensor station should also read from and act on sensor connected to it, \chnote{tilføj timings for at læse fra sensorer} as found \cref{} and \cref{}.
 
 The loop of the sensor station:
-\begin{itemize}
+\begin{enumerate}
   \item Read sensors
   \item Send sensor values
   \item Receive actions
   \item Act
+\end{enumerate}
+
+As far as scheduling, the implementation is a simple round robin executing each task in a predefined order. The execution time is measured and following results are found
+ \begin{itemize}
+  \item Read Sensor : DUMMY ms
+  \item Send Sensor Values : DUMMY ms
+  \item Receive Actions : DUMMY ms
+  \item Act : DUMMY ms 
 \end{itemize}
 
-As far as schedueling, the implementation is a simple roundrobin executing each task in a predefined order.\chnote{indsæt pseudo kode af loopet?}
-
-Which leads to a worst case execution time of the sensor station from read to act in the loop is ....\chnote{calculate} \chnote{this is a partwise conclusion, same should be done for the ai subsystem(through normaliser, sampler and reasoner) og så adderes sammen i rapportens konklusion}
+Which leads to a worst case execution time of the sensor station from read to act in the loop is ....\chnote{calculate} \chnote{this is a part wise conclusion, same should be done for the AI subsystem(through normaliser, sampler and reasoner) og så adderes sammen i rapportens conclusion}
