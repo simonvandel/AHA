@@ -28,12 +28,4 @@ An example of a setup can be seen in \cref{fig:arduino_pir_wiring}.
 \end{figure}
 
 \subsubsection{Sampling Input Data}
-
-To reduce noise on the signal of the sensor, a simple statistical algorithm is
-performed on the input data. The purpose of the algorithm is to increase reliability of the input data. Since the data can include false detection of objects that are not present, the algorithm is there to reduce  faulty data.  Essentially the data is reduced to two tiers
-of data. First, the input data is accumulated into a tier1 low and a tier1 high
-counter. When $n_{tier1}$ number of samples have been collected, a tier2 sampling round begins. If tier1
-had more high counts than low counts, tier2 high is incremented and the opposite if
-tier1 had the most lows. When the sample count of tier2 has reached a number
-$n_{tier2}$, the calculated signal can be reported. If tier2 had the most highs,
-report high and vice versa for tier2 lows.
+To reduce noise on the signal of the sensor, the sensor is probed 10 times. The average of these readings is the result.

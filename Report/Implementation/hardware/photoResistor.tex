@@ -8,3 +8,6 @@ Because the resistor is too sensitive for the purpose of this project, a pull-do
   \includegraphics[width=\textwidth]{Implementation/hardware/PhotoSensorTests/Images/photoresistor_setup.png}
   \caption[Photoresistor]{The figure depicts wiring for a photoresistor with a pull-down resistor.}\label{fig:arduino_photoresistor_wiring}
 \end{figure}
+
+\subsubsection{Sampling Input Data}
+To reduce noise on the signal of the sensor, the sensor is probed 10 times. The average of these readings is the result.
