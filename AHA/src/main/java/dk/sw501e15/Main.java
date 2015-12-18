@@ -44,7 +44,7 @@ public class Main
 
     HiDB db = HiDB.getInstance();
 
-    Communicator oCommunicator = new Communicator("/dev/ttyUSB1", 9600, dr, comLogger);
+    Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr, comLogger);
     Normalizer nm = Normalizer.getInstance(normLogger);
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
 
@@ -65,7 +65,7 @@ public class Main
     NormalizedSensorState nState;
 
     Instant learnerRun = Instant.now();
-    long learnerRunInverval = 120; //in seconds
+    long learnerRunInverval = 60; //in seconds
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){
@@ -127,12 +127,14 @@ public class Main
 
   private static void instantiateLoggers(){
     try{
-      Handler mainHandler = new FileHandler("logs/main/logMain" + Instant.now().toString() + ".xml");
-      Handler sampleHandler = new FileHandler("logs/sampler/logSample" + Instant.now().toString() + ".xml");
-      Handler comHandler = new FileHandler("logs/com/logCom" + Instant.now().toString() + ".xml");
-      Handler normHandler = new FileHandler("logs/normalizer/logNorm" + Instant.now().toString() + ".xml");
-      Handler aiHandler = new FileHandler("logs/learner/logAI" + Instant.now().toString() + ".xml");
-      Handler reasonHandler = new FileHandler("logs/reasoner/logReason" + Instant.now().toString() + ".xml");
+      String fileEnding = Instant.now().toString() + ".xml";
+      fileEnding = fileEnding.replace(':', '-');
+      Handler mainHandler = new FileHandler("logs/main/logMain" + fileEnding);
+      Handler sampleHandler = new FileHandler("logs/sampler/logSample" + fileEnding);
+      Handler comHandler = new FileHandler("logs/com/logCom" + fileEnding);
+      Handler normHandler = new FileHandler("logs/normalizer/logNorm" + fileEnding);
+      Handler aiHandler = new FileHandler("logs/learner/logAI" + fileEnding);
+      Handler reasonHandler = new FileHandler("logs/reasoner/logReason" + fileEnding);
 
       mainLogger = Logger.getLogger("mainLogger");
       comLogger = Logger.getLogger("comLogger");

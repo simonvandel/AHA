@@ -52,13 +52,11 @@ public class Reasoner {
    * Given a sample, calculate an action and send this to communicator
    * @param sample the sample to reason about
      */
-  public void reasonAndSend(Sample sample){
+  public void reasonAndSend(Sample sample) {
     List<Action> actions = reason(sample);
     if( actions == null ) { return; }
     boolean skip = false;
-    for (Action action :
-        actions)
-    {
+    for (Action action : actions) {
       for(Sample sampleListSample: sampleList.getSamples()){
         for (Action sampleAction: sampleListSample.getActions()){
           if(action == Sampler.inverseAction(sampleAction)){
@@ -103,6 +101,7 @@ public class Reasoner {
     List<Action> actions = reasoning.getActions()
         .stream()
         .filter(action -> action != null)
+        .filter(action -> action.getVal1().getValue() != action.getVal2().getValue())
         .filter(action -> !sentActions.asMap().keySet().contains(Sampler.inverseAction(action))).collect(Collectors.toList());
 
     actions

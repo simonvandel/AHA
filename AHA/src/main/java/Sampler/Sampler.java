@@ -206,8 +206,9 @@ public class Sampler {
    * @return the inverse action to the one given as input
    */
   public static Action inverseAction(Action action) {
-    if(action.getVal1() == action.getVal2()){
-      
+    if(action == null || action.getVal1() == null || action.getVal2() == null) {return null;}
+    if(action.getVal1().getValue() == action.getVal2().getValue()){
+      return null;
     }
     return new Action(action.getVal2(), action.getVal1(), action.getDevice());
   }
@@ -217,7 +218,7 @@ public class Sampler {
    * @param sample the current sample
    * @param state2 the state which correlates to the action
    */
-  private void findInvertedActionsAndCleanStates(Sample sample, NormalizedSensorState state2){
+  private void findInvertedActionsAndCleanStates(Sample sample, NormalizedSensorState state2) {
     //region Update found samples cache
     uncleanSamples.put(sample.toString(), sample);
     //endregion
@@ -226,7 +227,11 @@ public class Sampler {
     List<Action> validActions = new ArrayList<Action>();
     for (Sample s: uncleanSamples.asMap().values())
     {
-      validActions.addAll(s.getActions());
+      for (Action action: s.getActions()){
+        if(action != null && action.getVal1() != null && action.getVal2() != null){
+          validActions.add(action);
+        }
+      }
     }
 
 
@@ -240,7 +245,7 @@ public class Sampler {
         if(actionJ.getVal1() == null) {
           continue;
         }
-        if ( (!actionI.getVal1().equals(actionJ.getVal1()) || !actionI.getVal2().equals(actionJ.getVal2())) && actionI.equals(inverseAction(actionJ))) { //If two actions are inverse to each other
+        if (actionI.equals(inverseAction(actionJ))) { //If two actions are inverse to each other
           actionsToBeSanitised.add(new Pair<>(actionI, actionJ));
 
           Reasoning reasoning = reasoner.getReasoningBehindAction(validActions.get(i));
