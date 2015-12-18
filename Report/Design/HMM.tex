@@ -231,7 +231,7 @@ Now that we have a complete model of the problem domain, we can move on to the t
 \subsection{Learning}
 Learning is the task of determining the parameters of a HMM. Remember that we cannot reliably learn the structure (the states) and probabilities of the HMM. Therefore we, in the previous section, discussed how to determinate the states.
 
-For learning, this project uses the Baum-Welch algorithm, a specific implementation of the forwards-backwards algorithm.
+For learning, this project uses the Baum-Welch algorithm\cite{hmmIntroduction}. This section will explain how the Baum-Welch algorithm is computed.
 
 Given the model $\theta = \{A, B, \pi\}$ and a sequence of observations $\mathcal{O}$, the algorithm tries to find the parameters $A$, $B$ and $\pi$ that maximises the probability of the observations given as input, that is $P(Y | \theta)$. It is important to note that the algorithm is only guaranteed to find a local minima to this maximisation of probabilities.
 
@@ -290,6 +290,6 @@ Another possible property to include in each snapshot is time, but just using li
 An implementation of these time divisions would act as any other sensor in the system. It was decided that the variance of the sensors is already sufficient for illustrating the concept behind the project. Since these time divisions take considerably longer to find, and are more error prone compared to other sensors, it was chosen to delimit the project from this consideration.
 
 \subsection{Prediction}\label{sub:Prediction}
-The task of predicting is done after the model has been learned. This is the task of predicting, given list of observations $\{o_1,\dots,o_t\}$ and a model, what the most likely observation to be emitted in the next time step $x_{t+1}$ is. This can be done, partly, via the Viterbi algorithm\kanote{should have a source}. From a sequence of observations, the Viterbi algorithm can find the most probable sequence of hidden states, that caused this list of observations to occur, i.e. what sequence of hidden states $\{x_1,\dots,x_t\}$ is most probable to have emitted the observation sequence.
+The task of predicting is done after the model has been learned. This is the task of predicting, given list of observations $\{o_1,\dots,o_t\}$ and a model, what the most likely observation to be emitted in the next time step $x_{t+1}$ is. This can be done, partly, via the Viterbi algorithm\cite{russell2010artificial}. From a sequence of observations, the Viterbi algorithm can find the most probable sequence of hidden states, that caused this list of observations to occur, i.e. what sequence of hidden states $\{x_1,\dots,x_t\}$ is most probable to have emitted the observation sequence.
 
 From this we can then predict what is most likely going to be the next hidden state, and then from this, what is most likely going to be emitted. The whole point of doing this is that we can now look at the difference in what is currently true in the problem domain, and what is most likely going to be true next. From this we can find out if we can emulate any of this, and if the probability of what is going to happen next is high enough, i.e. our confidence of what is going to happen next, we can emulate it. This means that the system does the action, which the user would do next, before the user has to.
