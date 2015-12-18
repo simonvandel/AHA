@@ -15,7 +15,7 @@ T_{\text{air}}(B) = 0.8_{\text{header}} + 0.032B_{\text{payload}} ms
 \end{equation*}
 Where $B$ is the number of bytes in the packet, $T_{\text{air}}(72) = 3.104 ms$ is the maximum transmission time as 72 bytes is the maximum payload for the ZigBee protocol\cref{xbee_latency}
 
-The worst case time of a packet arriving and getting\kanote{getting?} before just getting dropped is given by $\text{WORST}$ assuming the ACK arrived 0.1ms before ACK wait timer ran out.
+The worst case time of a packet being transmitted and being received before just getting dropped is given by $\text{WORST}$ assuming the ACK arrived 0.1ms before ACK wait timer ran out.
 \begin{equation*}
 \text{WORST} = (\text{BACKOFF} + T_{\text{air}}(72) + 0.864_{\text{wait for ACK}})*4_{\text{maximum number of retries}} - 0.1 ms = 51.612 ms
 \end{equation*}
