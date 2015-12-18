@@ -15,5 +15,4 @@ This approach has some benefits, but also some limitations. The learning algorit
 Another benefit is that by concatenating all the sensor values into one feature, we reduce the number of features the learner has as input for the problem, on the other hand we increase the value domain of each of the features, to differentiate snapshot from each other.
 
 \subsection{Loss of Resolution}
-The major disadvantage is that states that are closely similar in terms of sensor value, might not be close by the unique identifier, which means that clustering sensor states by the numeric value of their identifiers, might not make sense, due to not having an ordering or localisation between the assigned unique values.
-The aforementioned note on overfitting, might also reveal itself as not being a problem at all, as were the individual sensor values as features for the learner might be beneficial to reasoning properly in the problem domain\kanote{I don't get this point}.
+A disadvantage of using a unique identifier for snapshots is that it is impossible to reason about the actual sensor values in the snapshots, as those are removed when using a unique identifier. It is impossible to determine the \enquote{distance} between two snapshots, as there is no ordering of the unique identifiers used for snapshots.
