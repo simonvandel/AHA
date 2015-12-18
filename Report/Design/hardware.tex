@@ -17,7 +17,7 @@ Another solution for handling time, is to record the time messages are received 
 To measure light intensity, photoresistors are often chosen because of their small size and low cost. These properties fit the requirements of the system very well. In this project, the \enquote{VT90N2} photoresistor is chosen, because of its availability. Further information and experiments can be found in \cref{sub:photoresistor}.
 
 \subsubsection{Spatial Awareness}
-The movement of the user can be determined by a motion sensor. One example of a accessible motion sensor is a passive infrared sensor (PIR). These type of sensors are small in size, and low in cost. The specific PIR sensor used in this project is \enquote{SEN32357P}, because of its availability. Additional information and experiments on this sensor can be found in \cref{sub:pir}.
+The movement of the user can be determined by a motion sensor. One example of an accessible motion sensor is a passive infrared sensor (PIR). These type of sensors are small in size, and low in cost. The specific PIR sensor used in this project is \enquote{SEN32357P}, because of its availability. Additional information and experiments on this sensor can be found in \cref{sub:pir}.
 
 The location of the user can be detected by a distance sensor. In this project, ultrasound distance sensors will be used. The sensor is small in size, and does not cost much. The specific component used has the part number \enquote{HC-SR04}. It was chosen because of its high availability. See \cref{sub:ultrasonic} for more information and experiments.
 
@@ -28,7 +28,7 @@ To determine whether a given appliance is turned on, one can measure the number 
 To control lighting and appliances, one has to have a way to conditionally allow current to flow. This can be achieved with a relay. However, in this project, relays will not be used. Instead, a simple LED that can be turned on and off will represent lighting and appliances.
 
 \subsubsection{Input/Output Pins}
-It is obvious that the computational device, controlling the sensors and actuators, has to have sufficient number of pins for connecting said sensors and actuators.
+The computational device, controlling the sensors and actuators, has to have sufficient number of pins for connecting said sensors and actuators.
 
 \subsubsection{Computational Performance}
 The chosen architecture for the system, as described in \cref{sec:architecture}, requires the hardware to be fast enough to be able to read all sensors, encode a package, send the package to the artificial intelligence subsystem, and check whether it has received any actions from the artificial intelligence subsystem. All of this has to happen within 100 ms, as described in \cref{sub:people}.
@@ -46,6 +46,7 @@ The conclusion of the analysis, as described in \cref{sec:requirements}, lists p
 Arduino Uno boards are chosen for controlling the sensors and actuators. The Arduino boards were already available, so no hardware was needed to be purchased. However, the Arduino Unos also fulfil all the above requirements for the hardware platform.
 
 \subsection{Artificial Intelligence Subsystem}
+\kanote{Should there be small intro here?}
 
 \subsubsection{Computational Performance}
 The subsystem has to be powerful enough to be able to decide which actions to perform, if any, based on the sensor data received from the sensor/actuator subsystem. The deadline for this is described in \cref{sub:people}. The hardware platform used in the sensor/actuator subsystem is not powerful enough to perform these computations in reasonable time. Therefore more powerful hardware is needed.

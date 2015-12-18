@@ -16,10 +16,10 @@ If the system was to support a variable number of sensors, the user has to add s
 If the setup is managed by the user, it is vulnerable to user mistakes, and would increase the barrier to entry. For example, consider the case where a PIR sensor is connected to the system, but the system believes the connected sensor to be a thermometer. The data received from the PIR sensor will most likely not make any sense, so the system will be based on a wrong model of the world.
 
 \subsection{Fixed Number of Sensors}
-If the system was to support a fixed number of sensors, the system is pre made with a fixed number of sensors and actuators and the user can simply not extend the system with more hardware. This solution does not consider the fact that all houses are different. Either there will be too many sensors in some houses, thereby consuming too much power compared to what is needed or there will be too few sensors in some houses meaning that the system will not be very effective and/or non existing in some rooms. This conflicts with the idea that the system should adapt to the working environment, and not vice versa.
+If the system was to support a fixed number of sensors, the system is preassembled with a fixed number of sensors and actuators and the user can simply not extend the system with more hardware. This solution does not consider the fact that all houses are different. Either there will be too many sensors in some houses, thereby consuming too much power compared to what is needed, or there will be too few sensors in some houses, meaning that the system will not be very effective and/or non existing in some rooms. This conflicts with the idea that the system should adapt to the working environment, and not vice versa.
 
 \subsection{Monolithic System}
-One possibility is to have one central processing unit that controls and reads data from all available sensors, sanitises and analyses it, decides which, if any, action to perform, and performs it via its actuators. This is illustrated in \cref{fig:monolithic_system}. A disadvantage to this architecture, is that it is not very resiliant. If the system crashes, the whole system crashes.
+One possibility is to have one central processing unit that controls and reads data from all available sensors, sanitises and analyses it, decides which, if any, action to perform, and performs it via its actuators. This is illustrated in \cref{fig:monolithic_system}. A disadvantage to this architecture, is that it is not very resiliant. If any part of the system crashes, the whole system is brought down with it.
 
 \begin{figure}[htbp]
 \centering
@@ -43,7 +43,7 @@ One possibility is to have one central processing unit that controls and reads d
 
 
 \subsection{Distributed System}
-A second architecture tries to cope with the problem of modularity and ease of use by distributing the sensors and actuators on several units. The system is comprised of multiple subsystems that each have a processing unit that is aware of what sensors and actuators are connected to it. It is responsible for sanitising the sensor data and activating the actuators. They can communicate and combine their knowledge to get a complete model of the problem domain. See \cref{fig:distributed_system}.
+A second architecture tries to introduce modularity and ease of use, by distributing the sensors and actuators on several units. The system is comprised of multiple subsystems that each have a processing unit, which is aware of what sensors and actuators are connected to it. It is responsible for sanitising the sensor data and activating the actuators. They can communicate and combine their knowledge to get a complete model of the problem domain. See \cref{fig:distributed_system}.
 
 \begin{figure}[htbp]
 \centering
@@ -69,14 +69,14 @@ A second architecture tries to cope with the problem of modularity and ease of u
 \caption[Distributed system]{Illustration of a distributed system. In this example, two controllers monitor their respective sensors and analyse the monitored data. The knowledge from the analysis is shared among different controllers in the system.}\label{fig:distributed_system}
 \end{figure}
 
-The user can choose exactly the number of sensor/actuator units needed for the home. If the units are connected wirelessly, there only needs to be wired power to the unit therefore reducing the barrier to entry greatly.
+The user can choose exactly the number of sensor/actuator units needed for the home. If the units are connected wirelessly, there only needs to be wired power to the unit, thereby reducing the barrier to entry greatly.
 
-This solution requires complex communication protocols among each individual sensor/actuator unit, in order to reliably combine their knowledge. Furthermore the analysis of sensor data is a complex task, see \cref{sec:functions}, that needs powerful hardware. This would mean that each unit would need to have powerful hardware, increasing power usage.
+This solution requires complex communication protocols among each individual sensor/actuator unit, in order to reliably combine their knowledge. Furthermore, the analysis of sensor data is a complex task, see \cref{sec:functions}, that needs powerful hardware. This would mean that each unit would need to have powerful hardware, increasing power usage.
 
 \subsection{Separated Subsystems}
 A separation of data collection and actuation of tasks, and analysis of data, is needed. In this architecture, a distributed system of small low-power processing units collect the sensor data and complete the actuation of tasks while the analysis of the sensor data is performed on a more powerful computation device.
 
-Under this separation the system consists of three subsystems: sensor, actuator and analysis. These subsystems might run on the same device. The general architecture can be seen in \cref{fig:separated_subsystems}.
+Under this separation the system consists of three subsystems; sensor, actuator and analysis. These subsystems might run on the same device. The general architecture can be seen in \cref{fig:separated_subsystems}.
 
 \begin{figure}[htbp]
 \centering
@@ -99,12 +99,7 @@ Under this separation the system consists of three subsystems: sensor, actuator 
 \caption[Separated system]{Illustration of a separated system. The sensor and actuator subsystem each consists of one controller, controlling one sensor and actuator respectively.}\label{fig:separated_subsystems}
 \end{figure}
 
-This solution has the following advantages.
-
-\begin{itemize}
-  \item Allows for variance in the number of sensors used
-  \item The knowledge about the problem domain is calculated and stored centrally, so there is no need to synchronise with other subsystems.
-\end{itemize}
+This solution has the advantage of allowing for variance in the number of sensors used, as well as calculating and storing the knowledge about the problem domain centrally, so there is no need to synchronise with other subsystems.
 
 To form the complete system, some communication must take place between the subsystems. There are different possible communication schemes.
 
@@ -210,7 +205,7 @@ Sensor data is sent to the analysis subsystem to be analysed for patterns. Behav
 
 Given the above architectural designs, the monolithic design lacks in reliance. The distributed design allows for greater reliance, but at the cost of the need for a complex synchronisation mechanism to make the different subsystems share their knowledge. The separated designs described above allows for greater reliance, as well as avoiding complex synchronisation between the subsystems. Therefore the separated design seems the most appropriate choice.
 
-Many communication schemes has been discussed. This section will evaluate the schemes by comparing each of them based on the following prioritised list of properties, to find the most fitting scheme for our system.
+Many communication schemes have been discussed. This section will evaluate the schemes by comparing each of them based on the following prioritised list of properties, to find the most fitting scheme for our system.
 
 \begin{enumerate}
 \item \textbf{Number of critical communication paths.} A path is critical if the data communicated is important or has to satisfy strict real-time constraints. If a scheme has fewer critical communication paths, the system is less likely to fail, and the system will be more responsive
@@ -256,5 +251,4 @@ Scheme 4 is chosen because of the following factors.
 \item The memory consumption on the embedded systems is minimal, so no limitation on rules is imposed on the system
 \end{itemize}
 
-Rule based schemes need many communication paths which is not preferable according the above list of properties.
-
+Rule based schemes need many communication paths, which is not preferable according the above list of properties.
