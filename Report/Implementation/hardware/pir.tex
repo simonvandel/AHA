@@ -2,7 +2,7 @@
 
 The sensor used to detect movement is a passive infrared sensor (PIR). The model
 number is \enquote{SEN32357P} and is manufactured by SEEED Studio. A data sheet
-can be found in:
+can be found in
 \cite{datasheet_pir1}. The
 sensor is implemented using the \enquote{BISS0001} integrated circuit. A data sheet for this can
 be found in \cite{datasheet_pir2}.
@@ -14,7 +14,7 @@ delay is the time the sensor reports movement after it is detected. So
 if a movement is detected, the sensor with time delay set to 10 seconds will report that motion is detected for 10 seconds after the movement.
 The time delay on this specific sensor can be adjusted from 1 second to 25 seconds. A switch, on the sensor, controls whether the sensor is retriggerable (H position) or unretriggerable (L position). In a retriggerable position, the delay time is extended every time movement is detected. In the unretriggerable mode, the delay time remaining is not reset when motion is detected.
 
-The sensor has 4 pins, GND, VCC, NC and SIG. The sensor signals motion detected on its SIG pin. LOW on this pin means no motion and HIGH means motion.
+The sensor has four pins, GND, VCC, NC and SIG. The sensor signals motion detected on its SIG pin. LOW on this pin means no motion and HIGH means motion.
 
 An example of a setup can be seen in \cref{fig:arduino_pir_wiring}.
 
