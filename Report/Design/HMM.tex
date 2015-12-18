@@ -1,9 +1,10 @@
 \section{Hidden Markov Model}
-A hidden Markov model (HMM) is used in this project as a mathematical model for the learning procedure. HMMs are typically used when reasoning over time, as they incorporate discrete time changes. Finding temporal patterns suits the needs for this project. A HMM, that approximates the real world, can be inferred, or \enquote{learned}. The components of such a HMM are described in detail below. Using this learned HMM, it is possible to solve many problems. In this project, HMMs are relevant for the problem of prediction. That is, given a sequence of observations up to time $t$ in the problem domain, what is the most likely observation in time $t+1$?
+\label{sec:hmm}
+A hidden Markov model (HMM) is used in this project as a mathematical model for the learning procedure. HMMs are typically used when reasoning over time, as they incorporate discrete time changes. A HMM, that approximates the real world, can be inferred, or \enquote{learned}. The components of such a HMM are described in detail below. In this project, HMMs are relevant for the problem of prediction. That is, given a sequence of observations up to time $t$ in the problem domain, what is the most likely observation in time $t+1$?
 
 Other mathematical models could also have been chosen. If the focus in this project was finding the best possible way to predict user actions in the fastest, most precise way, multiple models would have to be compared based on real observation data.
 The known, or observable, data in this project is what the sensors observe. 
-We will now introduce the diagrams visually, mainly to illustrate how the models change over time. These diagrams are called trellis diagrams. The simplest form of a Markov model can be seen in \cref{fig:1stMarkovModel}. Here we can see the property that at any state in time $s_t$ the next discrete time future $s_{t+1}$ is only dependent on the current state $s_t$, and not on previous states. This is called the \emph{Markov property}.
+We will now introduce the diagrams visually, mainly to illustrate how the models change over time. These diagrams are called trellis diagrams. The simplest form of a Markov model can be seen in \cref{fig:1stMarkovModel}. Here we can see the property that at any state in time $s_t$ the next discrete time future $s_{t+1}$ is only dependent on the current state $s_t$, and not on previous states. This is called the \emph{Markov property}. But this Markov property is also means that if we want to predict the next state $t+1$, just based on sensor values in states $t$, we could only choose the state that is most occurring after the state at time $t$, this is not preferable in the context of this system, because some states might be equal in terms of sensor values but can lead to multiple different states depending on how we arrived at state at time $t$, therefore we want to find relations between states not between sensor values. This is also discussed in this paper\cite{Allahviranloo201316} by Mahdieh Allahviranloo and Will Recker, it mentions that state $t+1$ is potentially dependent on the whole history of states. This however is overcome by instead of the sensor values being the input features, a state and some of the states prior to that state, its history, is the input features. The effect of this is instead of reasoning between sensor values at in the state at time $t$, the learner can reason on how we arrived at the state at time $t$. Thereby encoding the some history $t-n$ of the state $t$ in state $t$ itself.
 
 \begin{figure}[htbp]
 \centering
@@ -108,7 +109,7 @@ As described in \cref{sec:sampler}, the Markov property might not model the real
 \caption[Trellis diagram for a 2nd order HMM]{A trellis diagram for a 2nd order HMM.}\label{fig:3rdMarkovModel}
 \end{figure}
 
-\Cref{fig:3rdMarkovModel} shows the trellis diagram for a 2nd order Markov model. Here, we can see that every state $s_t$ is dependent on two states in the past, $s_{t-1}$ and $s_{t-2}$, meaning that every state is not only dependent on what happened the time step before, violating the \emph{Markov property}. This can trivially be expanded to any \emph{n}th order Markov model. Every model we have looked at so far has been a 1st order Markov model. Any \emph{n}th order Markov model, where $n>1$, violates the Markov property. Many algorithms within this field assumes the Markov property, including the ones later used in this project. Any \emph{n}th order Markov model can be converted to a 1st order Markov model, thereby keeping the Markov property. This is, in this project, done by encoding the past, in form of the prior hidden states, in the hidden state.
+\Cref{fig:3rdMarkovModel} shows the trellis diagram for a 2nd order Markov model. Here, we can see that every state $s_t$ is dependent on two states in the past, $s_{t-1}$ and $s_{t-2}$, meaning that every state is not only dependent on what happened the time step before, violating the \emph{Markov property}. This can trivially be expanded to any \emph{n}th order Markov model. Every model we have looked at so far has been a 1st order Markov model. Any \emph{n}th order Markov model, where $n>1$, violates the Markov property. Many algorithms within this field assumes the Markov property, including the ones later used in this project. Any \emph{n}th order Markov model can be converted to a 1st order Markov model, thereby keeping the Markov property. This is, in this project, done by encoding the past, in form of the prior hidden states, in the hidden state. The sampler as will be describe in later chapters is responsibile for this.\cref{sec:sampler}
 
 On the basis of this, we can now find the specific hidden states. We introduce the term \emph{sample} that covers the current observable snapshot together with the history of snapshots $n$ steps back. The size of this $n$ will be discussed in \cref{sec:sampler}. This sample is used to find hidden states. A list of samples are created from an observation sequence of snapshots, further described in \cref{sec:sampler}. One could argue that this sample needs to be created from a history of hidden states, not snapshots, since it is these we depend on in the current state. A compromise was therefore made so that the samples, and thereby hidden states, are found from the observations and history of observations, on the reasoning that we cannot distinguish between two hidden states from anything else then the observations. A hidden state will therefore be created for every sample in the HMM to keep the model in 1st order and thereby keep the Markov property.
 
@@ -228,16 +229,25 @@ In the formal definition of HMMs we also had $\pi$, a matrix denoting the initia
 Now that we have a complete model of the problem domain, we can move on to the two tasks, this project will use this model for; learning and prediction.
 
 \subsection{Learning}
-Learning is the task of determining the probabilities of the transitions in the HMM. It is noteworthy that we cannot reliably learn the states and probabilities of the HMM. Therefore we, in the previous section, discussed how to determinate the states. We will now look into how to determinate the probabilities between the states.
+Learning is the task of determining the parameters of a HMM. Remember that we cannot reliably learn the structure (the states) and probabilities of the HMM. Therefore we, in the previous section, discussed how to determinate the states.
 
-For learning, this project uses the Baum-Welch algorithm\kanote{should have a source}, a specific implementation of the forwards-backwards algorithm\kanote{should have a source}.
+For learning, this project uses the Baum-Welch algorithm\cite{hmmIntroduction}. This section will explain how the Baum-Welch algorithm is computed.
 
-Given the model $\theta = \{A, B, \pi\}$ and a sequence of observations $\mathcal{O}$, the algorithm tries to find the parameters $A$, $B$ and $\pi$, which maximise the probability of the observations given as input, that is $P(Y | \theta)$.
+Given the model $\theta = \{A, B, \pi\}$ and a sequence of observations $\mathcal{O}$, the algorithm tries to find the parameters $A$, $B$ and $\pi$ that maximises the probability of the observations given as input, that is $P(Y | \theta)$. It is important to note that the algorithm is only guaranteed to find a local minima to this maximisation of probabilities.
 
-These new parameters can be calculated in the following way\cite{hmmIntroduction}.
+The algorithm can be summarised in the following points\cite{hmmIntroduction}.
+
+\begin{enumerate}
+\item Initialise $A$, $B$ and $\pi$
+\item Compute $\alpha_t(i)$, $\beta_t(i)$, $\gamma_t(i,t)$ and $\gamma_t(i)$
+\item Re-estimate the parameters $A$, $B$ and $\pi$
+\item If $P(\mathcal{O} | \theta)$ increases, or the number of iterations has not exceeded a maximum number of iteration, repeat from step 2
+\end{enumerate}
+
+The new parameters can be calculated in the following way\cite{hmmIntroduction}.
 
 \begin{equation*}
-\pi_i = \sum\limits_{i=0}^{N-1} \sum\limits_{j=0}^{N-1} \gamma_0(j)
+\pi_i = \sum\limits_{j=0}^{N-1} \gamma_0(j)
 \end{equation*}
 
 \begin{equation*}
@@ -245,17 +255,41 @@ a_{ij} = \frac{\sum\limits_{t=0}^{T-2} \gamma_t(i, j)}{ \sum\limits_{t=0}^{T-2} 
 \end{equation*}
 
 \begin{equation*}
-b_j(k)
+b_j(k) = \frac{ \sum\limits_{t \in \{0,\ldots, T-1\}, \mathcal{O}_t = k} \gamma_t(j) } { \sum\limits_{t=0}^{T-1} \gamma_t(j) }
 \end{equation*}
 
-$\xi_t (i, j)$ is the probability of being in state $x_i$ at time t and transiting to state $x_j$ at
-time t + 1.
+In the above formula, $\gamma_t(i)$ and $\gamma_t(i, j)$ can be calculated in the following way.
+
+$\gamma_t(i, j)$ is the probability of being in state $x_i$ at time $t$ and transitioning to state $x_j$ at time $t+1$.
+
+\begin{equation*}
+\gamma_t(i,j) = \frac { \alpha_t(i) a_{ij} b_j(\mathcal{O}_{t+1}) \beta_{t+1}(j) } { \sum\limits_{k=0}^{T-1} \alpha_{T-1}(k) }
+\end{equation*}
+
+$\gamma_t(i)$ is the probability of being in state $x_i$ at time $t$ given the observed sequence $\mathcal{O}$ and the parameters $\theta$.
+
+\begin{equation*}
+\gamma_t(i) = \sum\limits_{j=0}^{N-1} \gamma_t(i,j)
+\end{equation*}
+
+$\alpha_t(i)$ is the probability of the partial observation sequence up to time $t$, where the hidden state is in $x_i$ at time $t$. $\alpha_t(i)$ can be computed using the following recursive formular.
+
+\begin{align*}
+\alpha_0(i) &= \pi_i b_i(\mathcal{O}_0) \\
+\alpha_t(i) &= \Bigg( \sum\limits_{j=0}^{N-1} \alpha_{t-1}(j) a_{ji} \Bigg) b_i(\mathcal{O}_t)
+\end{align*}
+
+$\beta_t(i)$ is the probability of the ending observation sequence $o_t,\ldots,o_{T_1}$ given starting state $i$ at time $t$.
+\begin{align*}
+\beta_{T-1}(i) &= 1 \\
+\beta_t(i) &= \sum\limits_{j=0}^{N-1} a_{ij} b_j(\mathcal{O}_{t+1}) \beta_{t+1}(j)
+\end{align*}
 
 \subsection{Time as a sensor}
 Another possible property to include in each snapshot is time, but just using linear time\footnote{e.g. time from to Unix Epoch\cite{unix_epoch}} as a feature of the state will not benefit the model, since two states will never equivalent by linear time. But if we instead use divisions of this time, we can consider two instances of time as the same, e.g. the hour of the day, the day of the week. Now the learner can learn on these features if relevant or not for the users pattern. E.g an user always does the laundry at around 12:00 o'clock on Monday, for this pattern, the month and year divisions will be consider as irrelevant for the behavioral pattern. These time formats should be found prior to implementation of the system and be based on studies on human perceptions of time. Figuring if a division of time is relevant on a pattern and the system only has two weeks of samples, then nothing can be said about the day of the week yet, since there are only instances of repeating days.\\
 An implementation of these time divisions would act as any other sensor in the system. It was decided that the variance of the sensors is already sufficient for illustrating the concept behind the project. Since these time divisions take considerably longer to find, and are more error prone compared to other sensors, it was chosen to delimit the project from this consideration.
 
 \subsection{Prediction}\label{sub:Prediction}
-The task of predicting is done after the model has been learned. This is the task of predicting, given list of observations $\{o_1,\dots,o_t\}$ and a model, what the most likely observation to be emitted in the next time step $x_{t+1}$ is. This can be done, partly, via the Viterbi algorithm\kanote{should have a source}. From a sequence of observations, the Viterbi algorithm can find the most probable sequence of hidden states, that caused this list of observations to occur, i.e. what sequence of hidden states $\{x_1,\dots,x_t\}$ is most probable to have emitted the observation sequence.
+The task of predicting is done after the model has been learned. This is the task of predicting, given list of observations $\{o_1,\dots,o_t\}$ and a model, what the most likely observation to be emitted in the next time step $x_{t+1}$ is. This can be done, partly, via the Viterbi algorithm\cite{russell2010artificial}. From a sequence of observations, the Viterbi algorithm can find the most probable sequence of hidden states, that caused this list of observations to occur, i.e. what sequence of hidden states $\{x_1,\dots,x_t\}$ is most probable to have emitted the observation sequence.
 
 From this we can then predict what is most likely going to be the next hidden state, and then from this, what is most likely going to be emitted. The whole point of doing this is that we can now look at the difference in what is currently true in the problem domain, and what is most likely going to be true next. From this we can find out if we can emulate any of this, and if the probability of what is going to happen next is high enough, i.e. our confidence of what is going to happen next, we can emulate it. This means that the system does the action, which the user would do next, before the user has to.

@@ -14,10 +14,10 @@ We assume that the embedded subsystem only needs to transmit sensor values of th
 \begin{itemize}
 \item Binary values (0, 1) - For example a PIR sensor - 1 bit required
 \item Values ranging from 0 to 1023 - For example a photoresistor - 10 bits required, as this is the precision for Arduino Uno analogue input pins
-\item Values ranging from 0 to 4294967295 - For example a distance sensor - 32 bits required, as the result of the calculation made to derive the distance is stored in a 32 bit integer on the Arduino Uno
+\item Values ranging from 0 to 4294967295 - For example a distance sensor, which stores the distance in a 32 bit integer - 32 bits required
+\item A flag that describes whether the sensor is emulatable by the system
 \end{itemize}
 By this assumption we can make some domain specific implementation for the encoding.
-There also needs to be a flag that describes whether the sensor is emulatable by the system.
 
 This is the actual data that needs to be transmitted, so we call this the body of the packet. If just this body was sent as the packet, every value would have to be 32 bits values as the size of the values is not specified in the packet. To solve this problem, a header is prepended to the packet that contains some metadata, allowing for a more compact data representation.
 
@@ -26,8 +26,7 @@ The header contains the following fields:
 \begin{itemize}
 \item Number of non-binary values - 5 bits required. The Arduino Uno has 20 input pins, so a maximum of 20 sensors can be connected
 \item Index (starting from 1) of the first emulatable non-binary sensor - 5 bits
-\item This field is repeating. There are as many fields of this type   as there are number of non-binary values. This field type describes
-the size of the values - 1 bit required, with the following meaning of the bits: 0: 10 bits, 1: 32 bits
+\item This field is repeating. There are as many fields of this type as there are number of non-binary values. This field type describes the size of the values - 1 bit required, with the following meaning of the bits: 0: 10 bits, 1: 32 bits
 \item Number of binary values - 5 bits required. The Arduino Uno has 20 input pins, so a maximum of 20 sensors can be connected
 \item Index (starting from 1) of the first binary emulatable sensor value - 5 bits required
 \end{itemize}
@@ -35,6 +34,17 @@ the size of the values - 1 bit required, with the following meaning of the bits:
 The worst case packet size for this encoding scheme is sending 6 non-binary values that each occupy 32 bits, and 14 binary values that each occupy 1 bit. This would require the header to be of size $5 + 5 + 6 * 1 + 5 + 5 = 26$ bits. The body would require size $6 * 32 + 14 * 1 = 206$. In total the size of the encoding would be $26 + 206 = 232$ bits $= 29$ bytes. This is a theoretical maximum size that would be reached only if we assume sensors only need 1 input pin on the Arduino. In any case the size fits into a ZigBee packet.
 
 If the same values were to be sent naively, each value would occupy 32 bits, so the packet would be of size $20 * 32 = 640$ bits $=80$ bytes. This would not fit into a ZigBee packet.
+
+The data can be decoded in the following way.
+
+\begin{enumerate}
+\item Read the bits representing the number of non-binary values in the header
+\item Read the bits representing the index of the first emulatable non-binary sensor
+\item For all number of non-binary values, read the field describing the size of the non-binary value
+\item Read the bits representing the number of binary values in the header
+\item Read the bits representing the index of the first emulatable binary sensor
+\item Read the sensor values based on the sizes read in the header
+\end{enumerate}
 
 \subsection{From  Learning Subsystem To Embedded Subsystem}
 
