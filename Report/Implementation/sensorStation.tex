@@ -3,7 +3,7 @@
 
 The embedded subsystem is responsible for collecting data from sensors, placed around a vicinity, and acting on lighting appliances around the vicinity. The embedded subsystem should transmit the most recent collected data to the learning subsystem continuously. This should also be done in a timely fashion, according to the responsiveness requirement of the system, that states that a response should be reacted upon within 100 ms. We will now look at a worst case analysis of the embedded subsystem.
 
-Having more than one device in the embedded subsystem is supported by the ZigBee\cref{xbee_latency} protocol on the XBee devices. It is important to note when using a CSMA-CA protocol, that multiple transmitting devices can potentially result in an additional small delay to the overhead of transmitting. The delay cannot exceed $\text{BACKOFF}$, as otherwise the packet is dropped. This additionally applies both from the embedded subsystem to the learning subsystem and back.
+Having more than one device in the embedded subsystem is supported by the ZigBee\cite{xbee_latency} protocol on the XBee devices. It is important to note when using a CSMA-CA protocol, that multiple transmitting devices can potentially result in an additional small delay to the overhead of transmitting. The delay cannot exceed $\text{BACKOFF}$, as otherwise the packet is dropped. This additionally applies both from the embedded subsystem to the learning subsystem and back.
 
 The calculations made in \cref{sec:xbee} shows that the theoretical worst case time to send a packet is $50.076$ ms.
 

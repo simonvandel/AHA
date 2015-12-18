@@ -13,7 +13,7 @@ Transmission time of a 64 bit packet is given by $T_{\text{air}}$
 \begin{equation*}
 T_{\text{air}}(B) = 0.8_{\text{header}} + 0.032B_{\text{payload}} ms
 \end{equation*}
-Where $B$ is the number of bytes in the packet, $T_{\text{air}}(72) = 3.104 ms$ is the maximum transmission time as 72 bytes is the maximum payload for the ZigBee protocol\cref{xbee_latency}
+Where $B$ is the number of bytes in the packet, $T_{\text{air}}(72) = 3.104 ms$ is the maximum transmission time as 72 bytes is the maximum payload for the ZigBee protocol\cite{xbee_latency}
 
 The worst case time of a packet being transmitted and being received before just getting dropped is given by $\text{WORST}$ assuming the ACK arrived 0.1ms before ACK wait timer ran out.
 \begin{equation*}
@@ -24,7 +24,7 @@ Note that the worst case increases, the more retries are added, to increase reli
 \subsection{Sending Modes}
 The XBee module has two different control interfaces; transparent- and API mode.
 \subsubsection{Transparent Mode}
-In transparent mode, whatever the XBee module receives on its serial input pins, it immediately sends over the network to the address specified in the firmware settings. Unless the client/host program handles it, there is no guarantee that a package is received. \cref{arduino_at_mode}
+In transparent mode, whatever the XBee module receives on its serial input pins, it immediately sends over the network to the address specified in the firmware settings. Unless the client/host program handles it, there is no guarantee that a package is received. \cite{arduino_at_mode}
 In this mode, a lot of messages can be sent quickly, but with little control.
 %https://docs.digi.com/display/WirelessConnectivityKit/Command+mode
 \subsubsection{API Mode}
@@ -34,6 +34,6 @@ In API mode, the XBee module buffers the data, it receives on its serial pins, t
 While there should be no single sensor state, so significant, that the system would take a considerable precision hit, in the case it gets lost. The actions which the server sends needs to always reach its client, for this reason this system uses the API mode, so that we get an acknowledgement.
 
 \subsubsection{Arduino Implementation}
-Using the XBee library\cref{xbee_arduino_library} for Arduino, simple calls to the Arduino is facilitated through the C++ objects given in the library. Sending is handled by passing a send command  to the module, the system then waits a maximum of 250 ms for a acknowledgement. Packets are send using 64-bit addressing, as this is what is supported for series 2 XBee modules.
+Using the XBee library\cite{xbee_arduino_library} for Arduino, simple calls to the Arduino is facilitated through the C++ objects given in the library. Sending is handled by passing a send command  to the module, the system then waits a maximum of 250 ms for a acknowledgement. Packets are send using 64-bit addressing, as this is what is supported for series 2 XBee modules.
 Receiving data is done, using predefined call back methods from the library. A single method call ensures that every kind of package is processed, and the method for handling the relevant packages can be overwritten. The relevant package for the Arduino is the zbReceive, i.e. the package that contains user defined data. On the Arduino, the only possible data, this can contain, is an action, so the overwritten method decodes and performs the appropriate action.
 %https://github.com/andrewrapp/xbee-arduino

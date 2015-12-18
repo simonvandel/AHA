@@ -1,6 +1,6 @@
 \section{Reasoner}\label{sec:Reasoner}
 The main responsibility of the reasoner module of the learning subsystem is calculating the next action to be performed by the system, given the current model and the current sample, given respectively by the learner module and the sampler module.
-The reasoner calculates this action using the method described in \cref{sub:prediction}.
+The reasoner calculates this action using the method described in \cref{sub:Prediction}.
 The reasoner has other responsibilities as well. Once an action has been calculated, the reasoner will serialise the action and pass it to the communicator module.
 
 In order for the sampler module to sanitise its input, it has to know which actions have been performed by the system, so it can differentiate them from the user's actions. The reasoner therefore remembers the actions it has calculated and exposes these, such that the sampler can access this information.
