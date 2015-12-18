@@ -29,7 +29,7 @@ Once 31 samples had been received, as can be seen in a snippet from the learner 
 \begin{lstlisting}[label = Listing:MarkovGenLog, caption = Snippet of log from model generation]
   <date>2015-12-17T09:03:32</date>
   <logger>aiLogger</logger>
-  <message>Sample size for generating hidden markov model: 34</message>
+  <message>Sample size for generating hidden Markov model: 34</message>
 \end{lstlisting}
 With this model, the system started trying to predict actions. At this point, no user actions were being performed on sensor id 1. The confidence threshold for this test was 75\%. The log trace for the first action can be seen in \cref{Listing:CompletActionTrace}. As can be seen in the logs, the system predicted the state at 09:03:36, based on the state from 09:03:33. Looking at the logs before that, shows user actions; it can be seen that this pattern was repeated by the user.
 \begin{lstlisting}[label = Listing:CompletActionTrace, caption = Snippets from different logs to show how the process of making an action]
@@ -68,7 +68,7 @@ With this model, the system started trying to predict actions. At this point, no
 Based on this it can be concluded that the system successfully learned and imitated a pattern.
 
 \subsubsection{Real Time Test}
-To perform this test the system were first taught a simple pattern as it were important, that a certain action on the arduino forced a prediction of an action by the server model. A separate button were added that had no other function then to start the test (ie. it were not part of the pattern). This allowed the test code to artificially create an action on the other button and then immediately start a timer. The button were then disabled as to avoid restarting the timer. Then once the arduino received the action the timer were stopped and the time for a full loop of the system were found. One thing to note, this time can vary depending on when in the arduino loop the button were pressed. To document this two tests were performed one were the artificial button press happened at the theoretically best time and one at the theoretically worst time. The worst case happens when we perform the button press after we send a state to the server but before we start receiving data. This means we have to wait for the receiving delay, then send again, and then wait for the receive delay again. For the best case test, the lowest observed time were 140ms\ranote{insert actual test}, which is 40ms above the deadline. This could be attributed to the send and receive of the xbee modules which in practical testing showed a delay of up to 60ms for one send, however theoretically the worst case should be 50ms\cref{xbee_latency}. This variance could be due to a number of things, eg. cheap hardware or non-optimally implementation. For each other separate module we have the approximate time, and so an average case for a full loop of the system would be 155 as seen in \cref{Table:RunTimeAprox}.
+To perform this test the system were first taught a simple pattern as it were important, that a certain action on the Arduino forced a prediction of an action by the server model. A separate button were added that had no other function then to start the test (ie. it were not part of the pattern). This allowed the test code to artificially create an action on the other button and then immediately start a timer. The button were then disabled as to avoid restarting the timer. Then once the Arduino received the action the timer were stopped and the time for a full loop of the system were found. One thing to note, this time can vary depending on when in the Arduino loop the button were pressed. To document this two tests were performed one were the artificial button press happened at the theoretically best time and one at the theoretically worst time. The worst case happens when we perform the button press after we send a state to the server but before we start receiving data. This means we have to wait for the receiving delay, then send again, and then wait for the receive delay again. For the best case test, the lowest observed time were 140ms\ranote{insert actual test}, which is 40ms above the deadline. This could be attributed to the send and receive of the XBee modules which in practical testing showed a delay of up to 60ms for one send, however theoretically the worst case should be 50ms\cref{xbee_latency}. This variance could be due to a number of things, eg. cheap hardware or non-optimally implementation. For each other separate module we have the approximate time, and so an average case for a full loop of the system would be 155 as seen in \cref{Table:RunTimeAprox}.
 \begin{center}
 	\begin{table}[htbp]
 	  \centering
@@ -83,7 +83,7 @@ To perform this test the system were first taught a simple pattern as it were im
 		Total			& 155		\\
 									\\ \bottomrule
 	  \end{tabular}
-	  \caption{An approximation of run time of each separate module, from single pattern test. When performing an action at the optimal time in the arduino loop}
+	  \caption{An approximation of run time of each separate module, from single pattern test. When performing an action at the optimal time in the Arduino loop}
 	\end{table}
  \label{Table:RunTimeAprox}
 \end{center}
@@ -108,7 +108,7 @@ The average case for this test can be seen in \cref{Table:WorstRunTimeAprox}
 		Total			& 308		\\
 									\\ \bottomrule
 	  \end{tabular}
-	  \caption{An approximation of run time of each separate module, from single pattern test. When performing an action at the worst time in the arduino loop}
+	  \caption{An approximation of run time of each separate module, from single pattern test. When performing an action at the worst time in the Arduino loop}
 	\end{table}
  \label{Table:WorstRunTimeAprox}
 \end{center}
