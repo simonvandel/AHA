@@ -1,15 +1,15 @@
 %mainfile: ../master.tex
-\Cref{sec:architecture} describes the overall architecture of the system, which solves the three tasks; data collection, analysis of data and mimicking patterns learned from the analysis. This section will expand on the architecture designed to perform the second and third task, that is the artificial intelligence (AI)\kanote{we should make this abbreviation the first time we use the term} subsystem of the system.
+\Cref{sec:architecture} describes the overall architecture of the system, which solves the three tasks; data collection, learning and mimicking patterns learned from the learning procedure. This section will expand on the architecture designed to perform the second and third task, that is the learning subsystem of the system.
 
 % DRAWING
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
   %Nodes
-  \node[squarednode] (sensorActuatorSubsystem) {Sensor/actuator subsystem};
-  \node[squarednode] (communication) [right=of sensorActuatorSubsystem, xshift=5em] {Communication};
+  \node[squarednode] (embeddedSubsystem) {Embedded subsystem};
+  \node[squarednode] (communication) [right=of embeddedSubsystem, xshift=5em] {Communication};
   \node[squarednode] (normaliser) [right=of communication, xshift=5em] {Normaliser};
-  \node[squarednode] (reasoner) [below=of sensorActuatorSubsystem, yshift=-3em] {Reasoner};
+  \node[squarednode] (reasoner) [below=of embeddedSubsystem, yshift=-3em] {Reasoner};
   \node[squarednode] (modelDatabase) [below=of reasoner, yshift=-3em] {Model Database};
   \node[squarednode] (sampler) [below=of normaliser, yshift=-3em] {Sampler};
   \node[squarednode] (historyDatabase) [below=of sampler, yshift=-3em] {History Database};
@@ -17,8 +17,8 @@
 
   %Lines
   \path[-triangle 90]
-  (sensorActuatorSubsystem.east) edge[transform canvas={yshift=-1em}] node[anchor=north] {sensor data} (communication.west)
-  (communication.west) edge[transform canvas={yshift=1em}] node[anchor=south] {actions} (sensorActuatorSubsystem.east)
+  (embeddedSubsystem.east) edge[transform canvas={yshift=-1em}] node[anchor=north] {sensor data} (communication.west)
+  (communication.west) edge[transform canvas={yshift=1em}] node[anchor=south] {actions} (embeddedSubsystem.east)
   (communication.east) edge node[anchor=south] {snapshot, time} (normaliser)
   (normaliser.south) edge node[anchor=east,text width=6em] {normalised snapshot, time} (sampler.north)
   (sampler.south) edge node[anchor=east,text width=6em] {scope, time, actions} (historyDatabase.north)
@@ -29,15 +29,15 @@
   (reasoner) edge[out=north,in=south] node[anchor=north] {actions} (communication)
   (reasoner.south) edge[transform canvas={xshift=1em}] node[anchor=west] {feedback} (modelDatabase.north);
 \end{tikzpicture}
-\caption[AI architecture]{Overview of the modules in the AI architecture.}\label{fig:ai_architecture}
+\caption[Learning architecture]{Overview of the modules in the learning architecture.}\label{fig:learning_architecture}
 \end{figure}
 
-As can be seen from \cref{fig:ai_architecture}, the AI subsystem contains six modules; communication, normaliser, sampler, database, learner and reasoner. The rationale of this particular architecture and its modules is explained in the following.
+As can be seen from \cref{fig:learning_architecture}, the learning subsystem contains six modules; communication, normaliser, sampler, database, learner and reasoner. The rationale of this particular architecture and its modules is explained in the following. The term \emph{snapshot} is used to describe the set of the values of all sensors at a time. For example, in a system with two sensors $S1,S2$, a snapshot at time $t$ is a particular instance of the values of the sensors, e.g. $S1=1, S2=0$.
 
 \subsection{Communication}
-The input to the AI subsystem is a stream of packets. These packets of sensor values arrive continuously, as devices from the sensor/actuator subsystem send them. The communication module handles these packets and also provides functionality to send data to devices in the sensor/actuator subsystem. When sensor values arrive at the communication module, the data of the packet is encoded in the binary format described in \cref{sec:encoding}. The communication module decodes the binary data and notes the time the packet was received.
+The input to the learning subsystem is a stream of packets. These packets of sensor values arrive continuously, as devices from the embedded subsystem send them. The communication module handles these packets and also provides functionality to send data to devices in the learning subsystem. When sensor values arrive at the communication module, the data of the packet is encoded in the binary format described in \cref{sec:encoding}. The communication module decodes the binary data and notes the time the packet was received.
 
-When sensor values have been received from all sensor/actuator stations, the decoded sensor values and the time of arrival (the arrival time of the newest sensor value) is then sent to the normaliser. This collection of sensor values are henceforth called snapshots.
+When sensor values have been received from all learning stations, the decoded sensor values and the time of arrival (the arrival time of the newest sensor value) is then sent to the normaliser. This collection of sensor values are henceforth called snapshots.
 
 \subsection{Normaliser}
 To remove noise from the sensors and to reduce the size of the problem, a normalisation pass is performed on the input. The normalisation pass is explained deeper in \cref{sec:normaliser}. The output of the normalisation is the same set of sensor values, but normalised to fit into a domain of size \emph{k}. The time of arrival is not normalised.

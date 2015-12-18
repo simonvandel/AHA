@@ -1,5 +1,5 @@
 \section{XBee}\label{sec:xbee}
-As discussed earlier, the communication in the system will be done using XBee modules, using the ZigBee protocol\kanote{this is the first time we mention xbee.. awkwaaaard}. In this section, the specific implementation in this system will be discussed, along with the impact this choice could have on the real-time system\kanote{do we mean sensor/actuator subsystem? (which is a fantastic name btw)} requirements.
+As discussed earlier, communication in the system will be done through XBee modules, using the ZigBee protocol\kanote{this is the first time we mention xbee.. awkwaaaard}. In this section, the specific implementation for using the XBee devices will be discussed, along with some calculations of the worst case execution time of this part of the system.
 
 The following calculations define the theoretical timings for sending packets using Xbee modules.
 
@@ -15,7 +15,7 @@ T_{\text{air}}(B) = 0.8_{\text{header}} + 0.032B_{\text{payload}} ms
 \end{equation*}
 Where $B$ is the number of bytes in the packet, $T_{\text{air}}(72) = 3.104 ms$ is the maximum transmission time as 72 bytes is the maximum payload for the ZigBee protocol\cref{xbee_latency}
 
-The worst case time of a packet arriving and getting\kanote{getting?} before just getting dropped is given by $\text{WORST}$ assuming the ACK arrived 0.1ms before ACK wait timer ran out.
+The worst case time of a packet being transmitted and being received before just getting dropped is given by $\text{WORST}$ assuming the ACK arrived 0.1ms before ACK wait timer ran out.
 \begin{equation*}
 \text{WORST} = (\text{BACKOFF} + T_{\text{air}}(72) + 0.864_{\text{wait for ACK}})*4_{\text{maximum number of retries}} - 0.1 ms = 51.612 ms
 \end{equation*}

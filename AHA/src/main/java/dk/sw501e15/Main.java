@@ -44,7 +44,7 @@ public class Main
 
     HiDB db = HiDB.getInstance();
 
-    Communicator oCommunicator = new Communicator("/dev/ttyUSB0", 9600, dr, comLogger);
+    Communicator oCommunicator = new Communicator("/dev/ttyUSB1", 9600, dr, comLogger);
     Normalizer nm = Normalizer.getInstance(normLogger);
     Queue<SensorState> queueOfSensorState = new LinkedTransferQueue<SensorState>();
 
@@ -65,7 +65,7 @@ public class Main
     NormalizedSensorState nState;
 
     Instant learnerRun = Instant.now();
-    long learnerRunInverval = 60; //in seconds
+    long learnerRunInverval = 120; //in seconds
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){

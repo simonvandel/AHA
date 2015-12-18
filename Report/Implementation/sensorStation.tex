@@ -1,15 +1,13 @@
 %mainfile: ../master.tex
-\section{Sensor Station}\label{sub:sensorStation}
+\section{Embedded Subsystem}\label{sub:sensorStation}
 
-The sensor stations are responsible for collecting data from sensors placed around a vicinity and acting on lighting appliances around the vicinity. The sensor station should transmit the most recent collected data to the AI subsystem all the time. This should also be done in a timely fashion, according to the responsiveness requirement of the system, that states that a response should be reacted upon within 100ms. Hereafter we will go through a little worst case analysis of the sensor station.
+The embedded subsystem is responsible for collecting data from sensors placed around a vicinity and acting on lighting appliances around the vicinity. The embedded subsystem should transmit the most recent collected data to the learning subsystem all the time. This should also be done in a timely fashion, according to the responsiveness requirement of the system, that states that a response should be reacted upon within 100ms. Hereafter we will go through a little worst case analysis of the embedded subsystem.
 
-Having more than one sensor station is supported by the ZigBee\cref{xbee_latency} protocol on the Xbee devices. It is important to note when using a CSMA-CA protocol, that multiple transmitting devices can potentially result in an additional small delay to the overhead of transmitting. The delay cannot exceed $\text{BACKOFF}$ though otherwise the packet is dropped. This additionally applies both ways from sensor station to the AI subsystem and back.
+Having more than one device in the embedded subsystem is supported by the ZigBee\cref{xbee_latency} protocol on the Xbee devices. It is important to note when using a CSMA-CA protocol, that multiple transmitting devices can potentially result in an additional small delay to the overhead of transmitting. The delay cannot exceed $\text{BACKOFF}$ though otherwise the packet is dropped. This additionally applies both ways from the embedded subsystem to the learning subsystem and back.
 
 The calculations made in \cref{sec:xbee} shows that the theoretical worst case time to send a packet is $50.076$ ms.
 
-Besides the communications overhead, the sensor station should also read from and act on sensor connected to it, \chnote{tilføj timings for at læse fra sensorer} as found \cref{} and \cref{}.
-
-The loop of the sensor station:
+The embedded subsystem does the following tasks in a loop:
 \begin{enumerate}
   \item Read sensors
   \item Encode sensor values
@@ -20,12 +18,12 @@ The loop of the sensor station:
 
 As far as scheduling, the implementation is a simple round robin executing each task in a predefined order. The execution time of each step in this loop is described below. This assumes a setup where the following sensors are connected: a PIR, a ultrasonic sensor and a photoresistor.
 
- \begin{itemize}
+ \begin{enumerate}
   \item \textbf{Read sensors} According to our measurements, an analog read takes $0.116 ms$. A digital read/write takes $0.008 ms$. The code to read the PIR sensor makes $10$ calls to digitalRead. That is, it takes approx $0.08 ms$ to read the PIR sensor. The code to read the photoresistor makes $10$ calls to analogRead. This sums to approx $1.16 ms$ for a reading of the photoresistor. The ultrasonic sensor makes 3 calls to digitalWrite, and waits in total 12 microsends. In addition to that, the sensor has to wait for the echo to come back. Assuming that the ultrasonic sensor is $0.2$ m away from an object. The speed of sound is approx. $342 m/s$. So it will take $0.2 m / 342 m/s = 0.000584 s = 0.584 ms$ for the sound travelling one way. So $0.584 ms * 2 = 1.168 ms$ for a round trip. A ultrasonic reading in total takes $3 * 0.008 ms + 0.012 ms + 1.168 ms = 1.204 ms$. In total, it takes $0.08 ms + 1.16 ms + 1.204 ms = 2.444 ms$ to read all sensors
   \item \textbf{Encode sensor values} According to our measurements, an encoding of the above sensor values, takes $0.134 ms$. The sensor values are encoded into 8 bytes
   \item \textbf{Send sensor values} According to the theoretical calculations presented in \cref{sec:xbee}, it takes $T_{\text{air}}(8) + CCA = 0.8_{\text{header}} + 0.032*8 ms + 0.128 ms = 1.184 ms$ to send 8 bytes.
   \item \textbf{Decode actions} This is a very simple operation, so it is estimated to take less than $0.1 ms$
   \item \textbf{Perform actions} For every action, either an digital write or analog write is performed. Assuming just 1 action is to be performed, and a digitalWrite is to be called, it will take $0.008 ms$. 
-\end{itemize}
+\end{enumerate}
 
-Which leads to the following execution time of the sensor station from read of sensors to actuation: $\text{read sensors} + \text{encode} + \text{send} + \text{decode} + \text{actuate} = 2.444 ms + 0.134 ms + 1.184 ms + 0.1 ms + 0.008 ms = 3.87 ms$. This execution time is not including the time it takes for the AI subsystem to calculate an action based on sensor data. Also, a theoretical calculation is used for calculating \enquote(send sensor values). It may actually take longer.
+Which leads to the following execution time of the embedded subsystem: $\text{read sensors} + \text{encode} + \text{send} + \text{decode} + \text{actuate} = 2.444 ms + 0.134 ms + 1.184 ms + 0.1 ms + 0.008 ms = 3.87 ms$. This execution time is not including the time it takes for the learning subsystem to calculate an action based on sensor data. Also, a theoretical calculation is used for calculating \enquote(send sensor values). It may actually take longer.
