@@ -1,6 +1,6 @@
 All the logs can be found in \cref{app:cd}. \ranote{remember to put the logs on the CD}
-\subsubsection{Single pattern test}
-The setup consisted of a single sensor station with two switches. The switches were connected to  Light-Emitting Diodes (LED) such that each switch controlled one LED. The pattern being performed; when turning on one LED the other one is turned on as well. A snippet of the samples this produced can be seen in \cref{Table:SampleSnippet}, where time moves from right to left so the rightmost state is the newest.
+\subsubsection{Single Pattern Test}
+The setup consisted of a single sensor station with two switches. The switches were connected to light-emitting diodes (LEDs), such that each switch controlled one LED. The pattern being performed; when turning on one LED, the other one is turned on as well. A snippet of the samples this produced can be seen in \cref{Table:SampleSnippet}, where time moves from left to right so the rightmost state is the most recent.
 \begin{center}
 
 \begin{table}[htbp]
@@ -24,14 +24,14 @@ The setup consisted of a single sensor station with two switches. The switches w
 
 \label{Table:SampleSnippet}
 \end{center}
-Once 31 samples had been received, as can be seen in a snippet from the learner log\cref{Listing:MarkovGenLog}, the learner were run and a model generated.
+Once 31 samples had been received, as can be seen in a snippet from the learner log\cref{Listing:MarkovGenLog}, the learner was run and a model generated.
 \lstset{language=xml}
 \begin{lstlisting}[label = Listing:MarkovGenLog, caption = Snippet of log from model generation]
   <date>2015-12-17T09:03:32</date>
   <logger>aiLogger</logger>
   <message>Sample size for generating hidden markov model: 34</message>
 \end{lstlisting}
-With this model the system started trying to predict actions. At this point no user actions were being performed on sensor id 1. The confidence threshold for this test were 75\%. The log trace for the first action can be seen in \cref{Listing:CompletActionTrace}. And as can be seen the in the logs the system predicted the state at 09:03:36 based on the state from 09:03:33. Looking at the logs beforehand that shows user actions, it can be seen that this pattern was repeated by the user.
+With this model, the system started trying to predict actions. At this point, no user actions were being performed on sensor id 1. The confidence threshold for this test was 75\%. The log trace for the first action can be seen in \cref{Listing:CompletActionTrace}. As can be seen in the logs, the system predicted the state at 09:03:36, based on the state from 09:03:33. Looking at the logs before that, shows user actions; it can be seen that this pattern was repeated by the user.
 \begin{lstlisting}[label = Listing:CompletActionTrace, caption = Snippets from different logs to show how the process of making an action]
 	<record>
 	  <date>2015-12-17T09:03:33</date>
@@ -40,16 +40,16 @@ With this model the system started trying to predict actions. At this point no u
 	  <thread>1</thread>
 	  <message>Sample:  3 2 0 1 3</message>
 	</record>
-	
+
 	<record>
 	  <date>2015-12-17T09:03:33</date>
 	  <millis>1450339413553</millis>
 	  <logger>aiLogger</logger>
 	  <thread>1</thread>
-	  <message>Confidence: 0.8668783888317774. Actions: 
+	  <message>Confidence: 0.8668783888317774. Actions:
 	Set sensor id 1 to value 0</message>
 	</record>
-	
+
 	<record>
 	  <date>2015-12-17T09:03:33</date>
 	  <millis>1450339413555</millis>
@@ -57,7 +57,7 @@ With this model the system started trying to predict actions. At this point no u
 	  <thread>1</thread>
 	  <message>Sending data: Set sensor id 1 to value 0</message>
 	</record>
-	
+
 	<record>
 	  <date>2015-12-17T09:03:36</date>
 	  <millis>1450339416153</millis>
@@ -72,10 +72,10 @@ To perform this test the system were first taught a simple pattern as it were im
 \begin{center}
 	\begin{table}[htbp]
 	  \centering
-	  \begin{tabular}{c | c}
+	  \begin{tabular}{l | l}
 		\toprule
 		Sample  		& 			\\ \midrule
-		Test Start		&
+		Test Start		&     \\
 		encode 			& <2ms  	\\
 		send   			& <50  		\\
 		Reason loop 	& avg: 53 	\\
@@ -88,12 +88,12 @@ To perform this test the system were first taught a simple pattern as it were im
  \label{Table:RunTimeAprox}
 \end{center}
 The test for the worst case test, were .... best case and worst case.
-The average case for this test can be seen in \creft{Table:WorstRunTimeAprox}
+The average case for this test can be seen in \cref{Table:WorstRunTimeAprox}
 
 \begin{center}
 	\begin{table}[htbp]
 	  \centering
-	  \begin{tabular}{c | c}
+	  \begin{tabular}{l | l}
 		\toprule
 		Sample  		& 			\\ \midrule
 		encode 			& 		  	\\
@@ -112,11 +112,3 @@ The average case for this test can be seen in \creft{Table:WorstRunTimeAprox}
 	\end{table}
  \label{Table:WorstRunTimeAprox}
 \end{center}
-
-
-
-
-
-
-
-
