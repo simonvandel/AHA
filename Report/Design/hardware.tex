@@ -1,5 +1,5 @@
 \section{Hardware}
-As decided in \cref{sec:architecture}, the system should consist of 2 subsystems: a sensor/actuator subsystem and a AI subsystem. This section will summarise the hardware requirements for the 2 subsystems, and at the end choose which hardware is suitable choices.
+As decided in \cref{sec:architecture}, the system should consist of 2 subsystems: a sensor/actuator subsystem and a learning subsystem. This section will summarise the hardware requirements for the 2 subsystems, and at the end choose which hardware is suitable choices.
 
 \subsection{Sensor/Actuator Subsystem}
 The sensor/actuator subsystem consists of sensors, actuators and computational devices driving the sensors and actuators. \Cref{sec:requirements} lists some properties that the system should be able to monitor. \Cref{sec:architecture} specifies requirements for the computational devices driving the sensors and actuators. The following sections discuss different hardware components that could fulfil the requirements.
@@ -11,7 +11,7 @@ An alternative method of keeping track of time is by using an internal clock on 
 
 In the context of this system, it is important that every component of the system has the same notion of time. The time has to be synchronised between all subsystems. This is true even for the real-time clock components, as even a slight drift in time would result in different notions of time across the whole system. One can therefore argue that the persistence property of a real-time clock is not needed. An internal clock in the hardware platform is adequate, as long as it is synchronised sufficiently often with other devices in the system.
 
-Another solution for handling time, is to record the time messages are received on the AI subsystem. That way, only one clock is used, so there is no need for synchronisation. This means that the hardware in the AI subsystem needs to have a clock.
+Another solution for handling time, is to record the time messages are received on the learning subsystem. That way, only one clock is used, so there is no need for synchronisation. This means that the hardware in the learning subsystem needs to have a clock.
 
 \subsubsection{Light Intensity}
 To measure light intensity, photoresistors are often chosen because of their small size and low cost. These properties fit the requirements of the system very well. In this project, the \enquote{VT90N2} photoresistor is chosen, because of its availability. Further information and experiments can be found in \cref{sub:photoresistor}.
@@ -31,7 +31,7 @@ To control lighting and appliances, one has to have a way to conditionally allow
 The computational device, controlling the sensors and actuators, has to have sufficient number of pins for connecting said sensors and actuators.
 
 \subsubsection{Computational Performance}
-The chosen architecture for the system, as described in \cref{sec:architecture}, requires the hardware to be fast enough to be able to read all sensors, encode a package, send the package to the AI subsystem, and check whether it has received any actions from the AI subsystem. All of this has to happen within 100 ms, as described in \cref{sub:people}.
+The chosen architecture for the system, as described in \cref{sec:architecture}, requires the hardware to be fast enough to be able to read all sensors, encode a package, send the package to the learning subsystem, and check whether it has received any actions from the learning subsystem. All of this has to happen within 100 ms, as described in \cref{sub:people}.
 
 \subsubsection{Scheduling Options}
 In \cref{sec:architecture}, the chosen architecture describes that the sensor and actuator controllers have two functions: Control its sensors and communicate sensor data to other devices. To precisely control when actions happen on the platform, it should be possible to manually schedule tasks to run.
@@ -45,14 +45,14 @@ The conclusion of the analysis, as described in \cref{sec:requirements}, lists p
 \subsubsection{Choice of Hardware Platform}
 Arduino Uno boards are chosen for controlling the sensors and actuators. The Arduino boards were already available, so no hardware was needed to be purchased. However, the Arduino Unos also fulfil all the above requirements for the hardware platform.
 
-\subsection{Artificial Intelligence Subsystem}
-The following section lists the hardware requirements for the AI subsystem.
+\subsection{Learning Subsystem}
+The following section lists the hardware requirements for the learning subsystem.
 
 \subsubsection{Computational Performance}
 The subsystem has to be powerful enough to be able to decide which actions to perform, if any, based on the sensor data received from the sensor/actuator subsystem. The deadline for this is described in \cref{sub:people}. The hardware platform used in the sensor/actuator subsystem is not powerful enough to perform these computations in reasonable time. Therefore more powerful hardware is needed.
 
 \subsubsection{Input/Output Pin Availability}
-The AI subsystem has to have accessible input and output pins in order to attach radio modules to the AI computational device.
+The learning subsystem has to have accessible input and output pins in order to attach radio modules to the learning computational device.
 
 \subsubsection{Choice of Hardware}
-A laptop consumer is chosen as the hardware of choice for the AI subsystem because it was already available. It is estimated to be powerful enough to compute the required computations in reasonable time.
+A laptop consumer is chosen as the hardware of choice for the learning subsystem because it was already available. It is estimated to be powerful enough to compute the required computations in reasonable time.

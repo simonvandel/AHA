@@ -5,8 +5,8 @@ Overall the system has to perform three tasks.
 
 \begin{itemize}
 \item Data collection of events in the problem domain
-\item Analysis of this data and inference of behavioural patterns
-\item Mimic the inferred behavioural patterns learned during the analysis
+\item Analysis of this data and inference of behavioural patterns. This is now referred to as the learning task
+\item Mimic the inferred behavioural patterns learned during the learning procedure
 \end{itemize}
 This section discusses different architectural designs for the system.
 
@@ -66,34 +66,34 @@ A second architecture tries to introduce modularity and ease of use, by distribu
     (controller2.south) edge (actuator2.north)
     (controller1) edge[out=east,in=west,triangle 90-triangle 90] node[anchor=south] {Knowledge} (controller2);
 \end{tikzpicture}
-\caption[Distributed system]{Illustration of a distributed system. In this example, two controllers monitor their respective sensors and analyse the monitored data. The knowledge from the analysis is shared among different controllers in the system.}\label{fig:distributed_system}
+\caption[Distributed system]{Illustration of a distributed system. In this example, two controllers monitor their respective sensors and analyse the monitored data. The knowledge from the learning is shared among different controllers in the system.}\label{fig:distributed_system}
 \end{figure}
 
 The user can choose exactly the number of sensor/actuator units needed for the home. If the units are connected wirelessly, there only needs to be wired power to the unit, thereby reducing the barrier to entry greatly.
 
-This solution requires complex communication protocols among each individual sensor/actuator unit, in order to reliably combine their knowledge. Furthermore, the analysis of sensor data is a complex task, see \cref{sec:functions}, that needs powerful hardware. This would mean that each unit would need to have powerful hardware, increasing power usage.
+This solution requires complex communication protocols among each individual sensor/actuator unit, in order to reliably combine their knowledge. Furthermore, the learning procedure is a complex task, see \cref{sec:functions}, that needs powerful hardware. This would mean that each unit would need to have powerful hardware, increasing power usage.
 
 \subsection{Separated Subsystems}
-A separation of data collection and actuation of tasks, and analysis of data, is needed. In this architecture, a distributed system of small low-power processing units collect the sensor data and complete the actuation of tasks while the analysis of the sensor data is performed on a more powerful computation device.
+A separation of data collection and actuation of tasks, and the learning procedure, is needed. In this architecture, a distributed system of small low-power processing units collect the sensor data and complete the actuation of tasks while the learning procedure is performed on a more powerful computation device.
 
-Under this separation the system consists of three subsystems; sensor, actuator and analysis. These subsystems might run on the same device. The general architecture can be seen in \cref{fig:separated_subsystems}.
+Under this separation the system consists of three subsystems; sensor, actuator and the learning procedure. These subsystems might run on the same device. The general architecture can be seen in \cref{fig:separated_subsystems}.
 
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
   %Nodes
   \node[squarednode] (sensorController) {Sensor controller};
-  \node[squarednode] (analysisController) [below right=of sensorController] {Analysis controller};
-  \node[squarednode] (actuatorController) [above right=of analysisController] {Actuator controller};
+  \node[squarednode] (learningController) [below right=of sensorController] {Learning controller};
+  \node[squarednode] (actuatorController) [above right=of learningController] {Actuator controller};
   \node[squarednode] (sensor1) [above=of sensorController] {Sensor 1};
   \node[squarednode] (actuator1) [above=of actuatorController] {Actuator 1};
 
   %Lines
   \path
     (sensorController.north) edge (sensor1.south)
-    (sensorController) edge[out=south,in=west] (analysisController)
+    (sensorController) edge[out=south,in=west] (learningController)
     (sensorController.east) edge (actuatorController.west)
-    (actuatorController) edge[out=south,in=east] (analysisController)
+    (actuatorController) edge[out=south,in=east] (learningController)
     (actuatorController.north) edge (actuator1.south);
 \end{tikzpicture}
 \caption[Separated system]{Illustration of a separated system. The sensor and actuator subsystem each consists of one controller, controlling one sensor and actuator respectively.}\label{fig:separated_subsystems}
@@ -105,41 +105,41 @@ To form the complete system, some communication must take place between the subs
 
 \subsubsection{Communication Scheme 1}
 
-In this scheme, the sensor subsystem sends its sensor data to the analysis subsystem to be analysed and to match for behavioural patterns. When sensor data matches a certain behavioural pattern, an action is sent to the actuator subsystem, to be immediately performed.  The scheme is illustrated in \cref{fig:separated_subsystems_scheme1}.
+In this scheme, the sensor subsystem sends its sensor data to the learning subsystem to be analysed and to match for behavioural patterns. When sensor data matches a certain behavioural pattern, an action is sent to the actuator subsystem, to be immediately performed.  The scheme is illustrated in \cref{fig:separated_subsystems_scheme1}.
 
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[->]
   %Nodes
   \node[squarednode] (sensorSubsystem) {Sensor subsystem};
-  \node[squarednode] (analysisSubsystem) [below right=of sensorSubsystem] {Analysis subsystem};
-  \node[squarednode] (actuatorSubsystem) [above right=of analysisSubsystem] {Actuator subsystem};
+  \node[squarednode] (learningSubsystem) [below right=of sensorSubsystem] {Learning subsystem};
+  \node[squarednode] (actuatorSubsystem) [above right=of learningSubsystem] {Actuator subsystem};
 
   %Lines
   \path[-triangle 90]
-    (sensorSubsystem) edge[out=south,in=west] node[anchor=east] {sensor data} (analysisSubsystem)
-    (analysisSubsystem) edge[out=east,in=south] node[anchor=west] {action} (actuatorSubsystem);
+    (sensorSubsystem) edge[out=south,in=west] node[anchor=east] {sensor data} (learningSubsystem)
+    (learningSubsystem) edge[out=east,in=south] node[anchor=west] {action} (actuatorSubsystem);
 \end{tikzpicture}
 \caption[Communication scheme 1]{Illustration of communication scheme 1 for a separated system.}\label{fig:separated_subsystems_scheme1}
 \end{figure}
 
 \subsubsection{Communication Scheme 2}
 
-This scheme is similar to scheme 1, but instead of the analysis subsystem sending actions to the actuator subsystem, rules are sent. A rule specifies when a actions should be specified. This rule can depend on multiple sensor values. In order for the actuator subsystem to use the rules, sensor data is needed. Therefore the sensor subsystem also sends its sensor data to the actuator subsystem. See \cref{fig:separated_subsystems_scheme2} for a visual representation.
+This scheme is similar to scheme 1, but instead of the learning subsystem sending actions to the actuator subsystem, rules are sent. A rule specifies when a actions should be specified. This rule can depend on multiple sensor values. In order for the actuator subsystem to use the rules, sensor data is needed. Therefore the sensor subsystem also sends its sensor data to the actuator subsystem. See \cref{fig:separated_subsystems_scheme2} for a visual representation.
 
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
   %Nodes
   \node[squarednode] (sensorSubsystem) {Sensor subsystem};
-  \node[squarednode] (analysisSubsystem) [below right=of sensorSubsystem] {Analysis subsystem};
-  \node[squarednode] (actuatorSubsystem) [above right=of analysisSubsystem] {Actuator subsystem};
+  \node[squarednode] (learningSubsystem) [below right=of sensorSubsystem] {Learning subsystem};
+  \node[squarednode] (actuatorSubsystem) [above right=of learningSubsystem] {Actuator subsystem};
 
   %Lines
   \path[-triangle 90]
-  (sensorSubsystem) edge[out=south,in=west] node[anchor=east] {sensor data} (analysisSubsystem)
+  (sensorSubsystem) edge[out=south,in=west] node[anchor=east] {sensor data} (learningSubsystem)
   (sensorSubsystem) edge[out=east,in=west] node[anchor=south] {sensor data} (actuatorSubsystem)
-  (analysisSubsystem) edge[out=east,in=south] node[anchor=west] {rules} (actuatorSubsystem);
+  (learningSubsystem) edge[out=east,in=south] node[anchor=west] {rules} (actuatorSubsystem);
 \end{tikzpicture}
 \caption[Communication scheme 2]{Illustration of communication scheme 2 for a separated system.}\label{fig:separated_subsystems_scheme2}
 \end{figure}
@@ -153,50 +153,50 @@ The difference between scheme 3 and 2 is that the sensor and actuator subsystems
 \begin{tikzpicture}
   %Nodes
   \node[squarednode] (sensorActuatorSubsystem) {Sensor/Actuator subsystem};
-  \node[squarednode] (analysisSubsystem) [right=of sensorActuatorSubsystem, xshift=5em] {Analysis subsystem};
+  \node[squarednode] (learningSubsystem) [right=of sensorActuatorSubsystem, xshift=5em] {Learning subsystem};
 
   %Lines
-  \draw[-triangle 90, transform canvas={yshift=2mm}] (sensorActuatorSubsystem.east) -- node[anchor=south] {sensor data} (analysisSubsystem.west);
+  \draw[-triangle 90, transform canvas={yshift=2mm}] (sensorActuatorSubsystem.east) -- node[anchor=south] {sensor data} (learningSubsystem.west);
   \draw[-triangle 90] (sensorActuatorSubsystem) to [out=255,in=295, looseness=8] node[anchor=north] {sensor data} (sensorActuatorSubsystem);
-  \draw[-triangle 90, transform canvas={yshift=-2mm}] (analysisSubsystem.west) -- node[anchor=north] {rules} (sensorActuatorSubsystem.east);
+  \draw[-triangle 90, transform canvas={yshift=-2mm}] (learningSubsystem.west) -- node[anchor=north] {rules} (sensorActuatorSubsystem.east);
 \end{tikzpicture}
 \caption[Communication scheme 3]{Illustration of communication scheme 3 for a separated system.}\label{fig:separated_subsystems_scheme3}
 \end{figure}
 
 \subsubsection{Communication Scheme 4}
 
-As in scheme 3, the sensor and actuator subsystems have been merged. The analysis subsystem receives sensor data from the sensor subsystem and generates actions based on behavioural patterns. Actions are sent back to be performed. See \cref{fig:separated_subsystems_scheme4}.
+As in scheme 3, the sensor and actuator subsystems have been merged. The learning subsystem receives sensor data from the sensor subsystem and generates actions based on behavioural patterns. Actions are sent back to be performed. See \cref{fig:separated_subsystems_scheme4}.
 
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
   %Nodes
   \node[squarednode] (sensorActuatorSubsystem) {Sensor/Actuator subsystem};
-  \node[squarednode] (analysisSubsystem) [right=of sensorActuatorSubsystem, xshift=5em] {Analysis subsystem};
+  \node[squarednode] (learningSubsystem) [right=of sensorActuatorSubsystem, xshift=5em] {Learning subsystem};
 
   %Lines
-  \draw[-triangle 90, transform canvas={yshift=2mm}] (sensorActuatorSubsystem.east) -- node[anchor=south] {sensor data} (analysisSubsystem.west);
-  \draw[-triangle 90, transform canvas={yshift=-2mm}] (analysisSubsystem.west) -- node[anchor=north] {action} (sensorActuatorSubsystem.east);
+  \draw[-triangle 90, transform canvas={yshift=2mm}] (sensorActuatorSubsystem.east) -- node[anchor=south] {sensor data} (learningSubsystem.west);
+  \draw[-triangle 90, transform canvas={yshift=-2mm}] (learningSubsystem.west) -- node[anchor=north] {action} (sensorActuatorSubsystem.east);
 \end{tikzpicture}
 \caption[Communication scheme 4]{Illustration of communication scheme 4 for a separated system.}\label{fig:separated_subsystems_scheme4}
 \end{figure}
 
 \subsubsection{Communication Scheme 5}
 
-Sensor data is sent to the analysis subsystem to be analysed for patterns. Behavioural rules are sent to the sensor subsystem. If a rules matches the current sensor data, an action is dispatched to the actuator subsystem to be immediately performed. See \cref{fig:separated_subsystems_scheme5}.
+Sensor data is sent to the learning subsystem to be analysed for patterns. Behavioural rules are sent to the sensor subsystem. If a rules matches the current sensor data, an action is dispatched to the actuator subsystem to be immediately performed. See \cref{fig:separated_subsystems_scheme5}.
 
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
   %Nodes
   \node[squarednode] (sensorSubsystem) {Sensor subsystem};
-  \node[squarednode] (analysisSubsystem) [below=of sensorSubsystem, yshift=-3em] {Analysis subsystem};
+  \node[squarednode] (learningSubsystem) [below=of sensorSubsystem, yshift=-3em] {Learning subsystem};
   \node[squarednode] (actuatorSubsystem) [right=of sensorSubsystem, xshift=5em] {Actuator subsystem};
 
   %Lines
-  \draw[-triangle 90, transform canvas={xshift=2mm}] (sensorSubsystem.south) -- node[anchor=west] {sensor data} (analysisSubsystem.north);
+  \draw[-triangle 90, transform canvas={xshift=2mm}] (sensorSubsystem.south) -- node[anchor=west] {sensor data} (learningSubsystem.north);
   \draw[-triangle 90] (sensorSubsystem) -- node[anchor=north] {action} (actuatorSubsystem);
-  \draw[-triangle 90, transform canvas={xshift=-2mm}] (analysisSubsystem.north) -- node[anchor=east] {rules} (sensorSubsystem.south);
+  \draw[-triangle 90, transform canvas={xshift=-2mm}] (learningSubsystem.north) -- node[anchor=east] {rules} (sensorSubsystem.south);
 \end{tikzpicture}
 \caption[Communication scheme 5]{Illustration of communication scheme 5 for a separated system.}\label{fig:separated_subsystems_scheme5}
 \end{figure}
@@ -211,23 +211,23 @@ Many communication schemes have been discussed. This section will evaluate the s
 \item \textbf{Number of critical communication paths.} A path is critical if the data communicated is important or has to satisfy strict real-time constraints. If a scheme has fewer critical communication paths, the system is less likely to fail, and the system will be more responsive
 \item \textbf{Memory consumption on actuator and sensor subsystems.} As the actuator and sensor subsystems should be based on an embedded to reduce the size and power usage, the available amount of memory is limited
 \item \textbf{Amount of communication.} The less time spent communicating, the more time can be spent on other activities, such as reading output of sensors. If too much time is spent on communication, it could mean that some deadlines are not met
-\item \textbf{Memory consumption on analysis subsystem.} In order for the analysis subsystem to be able to be able to reason about sensor data, the hardware can be more powerful, so it is not important to consider this property
+\item \textbf{Memory consumption on learning subsystem.} In order for the learning subsystem to be able to be able to reason about sensor data, the hardware can be more powerful, so it is not important to consider this property
 \end{enumerate}
 
 \subsubsection{Scheme 1 Evaluation}
 \begin{itemize}
-\item \textbf{Number of critical communication paths} This scheme has 1 critical communication path; from the analysis subsystem to the actuator subsystem. If this action package is lost or slow, the system will be perceived as unresponsive or unreliable
+\item \textbf{Number of critical communication paths} This scheme has 1 critical communication path; from the learning subsystem to the actuator subsystem. If this action package is lost or slow, the system will be perceived as unresponsive or unreliable
 \item \textbf{Memory consumption on actuator and sensor subsystems} Nothing needs to be stored on the actuator and sensor subsystems
-\item \textbf{Amount of communication} The sensor subsystem sends sensor data very often. The analysis subsystem sends actions when certain sensor value conditions are met
-\item \textbf{Memory consumption on analysis subsystem} The analysis subsystem has to store the history of all sensor data received
+\item \textbf{Amount of communication} The sensor subsystem sends sensor data very often. The learning subsystem sends actions when certain sensor value conditions are met
+\item \textbf{Memory consumption on learning subsystem} The learning subsystem has to store the history of all sensor data received
 \end{itemize}
 
 \subsubsection{Scheme 2 Evaluation}
 \begin{itemize}
-\item \textbf{Number of critical communication paths} The path from analysis to actuator path is critical in the sense that if the packet is lost, the actuator will not have received the rule, and can therefore not perform any actions. The path from sensor subsystem to actuator subsystem is already critical in the sense that the path must happen quickly in order for the system to be responsive. If the sensor data takes a long time to arrive to the actuator subsystem, the actuator will take a long time to perform an action
-\item \textbf{Memory consumption on actuator and sensor subsystems} The actuator subsystem has to store rules it receives from the analysis subsystem
-\item \textbf{Amount of communication} The sensor subsystem to analysis subsystem communication path happens often. The sensor subsystem to actuator subsystem also happens often. The analysis subsystem to actuator subsystem path is only used when a new rule is generated, which should not be often
-\item \textbf{Memory consumption on analysis subsystem} This is the same as in scheme 1
+\item \textbf{Number of critical communication paths} The path from learning to actuator path is critical in the sense that if the packet is lost, the actuator will not have received the rule, and can therefore not perform any actions. The path from sensor subsystem to actuator subsystem is already critical in the sense that the path must happen quickly in order for the system to be responsive. If the sensor data takes a long time to arrive to the actuator subsystem, the actuator will take a long time to perform an action
+\item \textbf{Memory consumption on actuator and sensor subsystems} The actuator subsystem has to store rules it receives from the learning subsystem
+\item \textbf{Amount of communication} The sensor subsystem to learning subsystem communication path happens often. The sensor subsystem to actuator subsystem also happens often. The learning subsystem to actuator subsystem path is only used when a new rule is generated, which should not be often
+\item \textbf{Memory consumption on learning subsystem} This is the same as in scheme 1
 \end{itemize}
 
 \subsubsection{Scheme 3 Evaluation}
@@ -238,10 +238,10 @@ This scheme has the same characteristics as scheme 1, but the sensor and actuato
 
 \subsubsection{Scheme 5 Evaluation}
 \begin{itemize}
-\item \textbf{Number of critical communication paths} The sensor subsystem to actuator subsystem communication path is critical, because if the packet is lost or slow, it will impact the responsiveness of the system. The analysis subsystem to sensor subsystem communication path is critical because if rules are lost, the system can be perceived to malfunction
+\item \textbf{Number of critical communication paths} The sensor subsystem to actuator subsystem communication path is critical, because if the packet is lost or slow, it will impact the responsiveness of the system. The learning subsystem to sensor subsystem communication path is critical because if rules are lost, the system can be perceived to malfunction
 \item \textbf{Memory consumption on actuator and sensor subsystems} The sensor subsystem has to store rules
-\item \textbf{Amount of communication} The sensor subsystem to analysis subsystem communication path occurs often. The analysis subsystem to sensor subsystem communication path is only used when new rules are generated. The sensor subsystem to actuator subsystem occurs every time an is to be performed, which could happen fairly often
-\item \textbf{Memory consumption on analysis subsystem} This is the same as in scheme 1
+\item \textbf{Amount of communication} The sensor subsystem to learning subsystem communication path occurs often. The learning subsystem to sensor subsystem communication path is only used when new rules are generated. The sensor subsystem to actuator subsystem occurs every time an is to be performed, which could happen fairly often
+\item \textbf{Memory consumption on learning subsystem} This is the same as in scheme 1
 \end{itemize}
 
 \subsubsection{Conclusion}
