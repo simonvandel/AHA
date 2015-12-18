@@ -27,7 +27,7 @@ public class Sampler {
   private static Logger sampleLogger;
   private static Logger reasonLogger;
   private static Sampler mSampler;
-  private final static int SCOPE_SIZE = 3;
+  private final static int SCOPE_SIZE = 10;
   private List<NormalizedSensorState> mHistory;
   private NormalizedSensorState mPrevious;
   private SampleList sampleList = SampleList.getInstance();
@@ -205,7 +205,10 @@ public class Sampler {
    * @param action the action from which the inverse is wanted
    * @return the inverse action to the one given as input
    */
-  private Action inverseAction(Action action) {
+  public static Action inverseAction(Action action) {
+    if(action.getVal1() == action.getVal2()){
+      
+    }
     return new Action(action.getVal2(), action.getVal1(), action.getDevice());
   }
 

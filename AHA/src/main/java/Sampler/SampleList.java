@@ -12,7 +12,7 @@ public class SampleList{
   private static SampleList sampleList = null;
   private ConcurrentHashMap<Long, Sample> list = new ConcurrentHashMap<>();
 
-  private Long sampleKey = new Long(0);
+  private Long sampleKey = 0L;
 
   private SampleList(){
   }

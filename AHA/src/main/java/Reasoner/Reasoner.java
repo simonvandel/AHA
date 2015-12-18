@@ -3,6 +3,8 @@ import Communication.Communicator;
 import Database.DB;
 import Sampler.Action;
 import Sampler.Sample;
+import Sampler.Sampler;
+import Sampler.SampleList;
 import com.digi.xbee.api.exceptions.XBeeException;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
@@ -12,6 +14,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  * created by kafuch
@@ -21,6 +24,7 @@ public class Reasoner {
   private static Logger logger;
   private IModel currentModel = null;
   private Communicator com = null;
+  private SampleList sampleList = SampleList.getInstance();
   //husk actions vi har sendt, indenfor 5 sekunder, så vi kan tjekke om de actions vi får er bruger eller system
   private Cache<Action, Reasoning> sentActions = CacheBuilder
           .newBuilder()
@@ -50,19 +54,34 @@ public class Reasoner {
      */
   public void reasonAndSend(Sample sample){
     List<Action> actions = reason(sample);
-    if(actions != null){
-      for (Action action :
-          actions)
-      {
-        try{
-          logger.log(Level.INFO, "Sending data: " + action.toString());
-          com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
-        } catch (XBeeException e){
-          //Would probably be a good idea to handle the exception instead of ignoring it...
+    if( actions == null ) { return; }
+    boolean skip = false;
+    for (Action action :
+        actions)
+    {
+      for(Sample sampleListSample: sampleList.getSamples()){
+        for (Action sampleAction: sampleListSample.getActions()){
+          if(action == Sampler.inverseAction(sampleAction)){
+            skip = true;
+            break;
+          }
+        }
+        if(skip){
+          break;
         }
       }
-
+      if(skip){
+        skip = false;
+        continue;
+      }
+      try{
+        logger.log(Level.INFO, "Sending data: " + action.toString());
+        com.SendData(action.getVal1().getDeviceAddress(), action.serialize());
+      } catch (XBeeException e){
+        //Would probably be a good idea to handle the exception instead of ignoring it...
+      }
     }
+
   }
 
   /**
@@ -81,12 +100,15 @@ public class Reasoner {
     if(reasoning.getActions().isEmpty()){
       return null;
     }
-    reasoning.getActions() //foreach action, store in cache
+    List<Action> actions = reasoning.getActions()
         .stream()
         .filter(action -> action != null)
-        .forEach(action -> sentActions.put(action, reasoning));
+        .filter(action -> !sentActions.asMap().keySet().contains(Sampler.inverseAction(action))).collect(Collectors.toList());
 
-    return reasoning.getActions();
+    actions
+        .forEach(action -> sentActions.put(action, reasoning));//foreach action, store in cache
+
+    return actions;
   }
 
   /**

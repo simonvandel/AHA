@@ -21,7 +21,8 @@ boolean startTimingSwitchVal = false;
 boolean messageReady = false;
 Serialization serialization;
 
-long unsigned startTime = 0;
+long unsigned startTimeTimer = 0;
+long unsigned startTimeLoop = 0;
 long unsigned packages = 0;
 
 //Ultrasonic ultrasonic(4,5);
@@ -63,7 +64,7 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
   }
   if(startTimingSwitchVal) {
     Serial.print("It took ");
-    Serial.print(millis() - startTime);
+    Serial.print(millis() - startTimeTimer);
     Serial.println("ms to receive an action");
   }
   messageReady = true;
@@ -80,7 +81,8 @@ void toggleLightSwitch1(){
   }
 }
 
-void toggleLightSwitch23(){  
+void toggleLightSwitch23(){
+  startTimeTimer = millis();
   if(!digitalRead(btn2)){
     if(lightSwitch2Val){
       digitalWrite(LightSwitch2, LOW);
@@ -155,7 +157,7 @@ void printbincharpad(char c)
 void loop()
 {
   if(!digitalRead(startTimingSwitch) && !startTimingSwitchVal) {
-    
+    startTimeTimer = millis();
     Serial.println("started timing");
     if(lightSwitch2Val == 0) {
        digitalWrite(LightSwitch2, HIGH); 
@@ -164,9 +166,7 @@ void loop()
     }
     lightSwitch2Val = !lightSwitch2Val;
     startTimingSwitchVal = true;
-    startTime = millis();
   }
-  
   sensorPacketBuilder.add(0, 3); // Number of analog sensors
   sensorPacketBuilder.add(0, 3); // Emulatable analog index. No emulatable analog sensors
 
@@ -178,13 +178,17 @@ void loop()
   sensorPacketBuilder.add(lightSwitch1Val, 1); // Digital sensor 1. Emulatable
 
   int packetSize = sensorPacketBuilder.build(buildArray);
-
+  
   sendData(buildArray, packetSize);
 
   // Continuously let xbee read packets and call callbacks.
-  startTime = millis();
-  while((millis() - startTime) < 100 && !messageReady){
+  startTimeLoop = millis();
+  while((millis() - startTimeLoop) < 100 && !messageReady){
     xbee.loop();
+  }
+  if(millis() - startTimeLoop < 100){
+    Serial.print("Loop Time: ");
+    Serial.println(millis() - startTimeLoop);
   }
   messageReady = false;
   //act on received data in the call back method zbReceive
