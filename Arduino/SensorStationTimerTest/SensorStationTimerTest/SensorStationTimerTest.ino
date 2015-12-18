@@ -66,6 +66,7 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
     Serial.print("It took ");
     Serial.print(millis() - startTimeTimer);
     Serial.println("ms to receive an action");
+    startTimingSwitchVal = false;
   }
   messageReady = true;
 }
@@ -81,8 +82,8 @@ void toggleLightSwitch1(){
   }
 }
 
-void toggleLightSwitch23(){
-  startTimeTimer = millis();
+void toggleLightSwitch23(){   
+  //startTimeTimer = millis();
   if(!digitalRead(btn2)){
     if(lightSwitch2Val){
       digitalWrite(LightSwitch2, LOW);
@@ -156,8 +157,11 @@ void printbincharpad(char c)
 
 void loop()
 {
+ // if(!digitalRead(startTimingSwitch) && !startTimingSwitchVal) {
+ //   Serial.println("started timing");
+ //   startTimingSwitchVal = true;
+  }
   if(!digitalRead(startTimingSwitch) && !startTimingSwitchVal) {
-    startTimeTimer = millis();
     Serial.println("started timing");
     if(lightSwitch2Val == 0) {
        digitalWrite(LightSwitch2, HIGH); 
@@ -165,8 +169,10 @@ void loop()
       digitalWrite(LightSwitch2, LOW); 
     }
     lightSwitch2Val = !lightSwitch2Val;
-    startTimingSwitchVal = true;
-  }
+    startTimingSwitchVal = true;    
+    startTimeTimer = millis();
+    toggleLightSwitch23();
+  } 
   sensorPacketBuilder.add(0, 3); // Number of analog sensors
   sensorPacketBuilder.add(0, 3); // Emulatable analog index. No emulatable analog sensors
 
@@ -178,11 +184,11 @@ void loop()
   sensorPacketBuilder.add(lightSwitch1Val, 1); // Digital sensor 1. Emulatable
 
   int packetSize = sensorPacketBuilder.build(buildArray);
-  
-  sendData(buildArray, packetSize);
 
-  // Continuously let xbee read packets and call callbacks.
+  sendData(buildArray, packetSize);
+  
   startTimeLoop = millis();
+  // Continuously let xbee read packets and call callbacks.
   while((millis() - startTimeLoop) < 100 && !messageReady){
     xbee.loop();
   }
