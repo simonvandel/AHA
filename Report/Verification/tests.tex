@@ -7,66 +7,68 @@ A snippet of the samples this test produced can be seen in \cref{Table:SampleSni
 
 \begin{table}[htbp]
   \centering
-  \begin{tabular}{c c c c c c}
+  \begin{tabular}{c c c c c c c c c c c}
     \toprule
-    Sample & & & & &  \\ \midrule
-    1 & 1 & 3 & 2 & 0 & 1 \\
-    2 & 3 & 2 & 0 & 1 & 3 \\
-    3 & 2 & 0 & 1 & 3 & 2 \\
-    4 & 0 & 1 & 3 & 2 & 0 \\
-    5 & 1 & 3 & 2 & 0 & 1 \\
-    6 & 3 & 2 & 0 & 1 & 3 \\
-    7 & 2 & 0 & 1 & 3 & 2 \\
-    8 & 0 & 1 & 3 & 2 & 0 \\
-    9 & 1 & 3 & 2 & 0 & 1 
+    Sample & & & & & & & & & &  \\ \midrule
+           1 & 7 & 11 & 10 & 6 & 8 & 12 & 13 & 9 & 7 & 11 \\
+           2 & 11 & 10 & 6 & 8 & 12 & 13 & 9 & 7 & 11 & 10 \\
+           3 & 10 & 6 & 8 & 12 & 13 & 9 & 7 & 11 & 10 & 6 \\
+           4 & 6  & 8 & 12 & 13 & 9 & 7 & 11 & 10 & 6 & 7 \\
+           5 & 8 & 12 & 13 & 9 & 7 & 11 & 10 & 6 & 7 & 11 \\
+           6 & 12 & 13 & 9 & 7 & 11 & 10 & 6 & 7 & 11 & 13 \\
+           7 & 13 & 9 & 7 & 11 & 10 & 6 & 7 & 11 & 13 & 9 \\
+           8 & 9 & 7 & 11 & 10 & 6 & 7 & 11 & 13 & 9 & 8 \\
+           9 & 7 & 11 & 10 & 6 & 7 & 11 & 13 & 9 & 8 & 6 \\
+           10& 11 & 10 & 6 & 7 & 11 & 13 & 9 & 8 & 6 & 10 \\
+           11 & 10 & 6 & 7 & 11 & 13 & 9 & 8 & 6 & 10 & 6
      \\ \bottomrule
   \end{tabular}
   \caption{Samples from test with simple pattern, as performed by the user}\label{Table:SampleSnippet}
 \end{table}
 \end{center}
-Once 34 samples had been received, as can be seen in a snippet from the learner log\cref{Listing:MarkovGenLog}, the learner was run and a model generated.
+Once 32 samples had been received, as can be seen in a snippet from the ai log \cref{Listing:MarkovGenLog}, the learner was run and a model generated.
 
 \lstset{language=xml}
 \begin{lstlisting}[label = Listing:MarkovGenLog, caption = Snippet of log from model generation]
-  <date>2015-12-17T09:03:32</date>
-  <logger>aiLogger</logger>
-  <message>Sample size for generating hidden Markov model: 34</message>
+  <date>2015-12-17T20:13:01</date>
+  <millis>1450379581194</millis>
+  <logger>aiLogger</logger>  
+  <message>Sample size for generating hidden markov model: 32</message>
 \end{lstlisting}
 
-With this model, the system started trying to predict actions. At this point, no user actions were being performed on sensor id 1. The confidence threshold for this test was 75\%. The log trace for the first action can be seen in \cref{Listing:CompletActionTrace}. As can be seen in the logs, the system predicted the state at 09:03:36, based on the state from 09:03:33. Looking at the logs before that, shows user actions; it can be seen that this pattern was repeated by the user.
+With this model, the system started trying to predict actions. At this point, no user actions were being performed on sensor id 1. The confidence threshold for this test was 60\%. The log trace for the first action can be seen in \cref{Listing:CompletActionTrace}. As can be seen in the logs, the system predicted the state at 20:13:07, based on the state from 20:13:04. Looking at the logs before that, shows user actions; it can be seen that this pattern was repeated by the user.
 
 \begin{lstlisting}[label = Listing:CompletActionTrace, caption = Snippets from different logs to show how the process of making an action]
-	<record>
-	  <date>2015-12-17T09:03:33</date>
-	  <millis>1450339413544</millis>
-	  <logger>sampleLogger</logger>
-	  <thread>1</thread>
-	  <message>Sample:  3 2 0 1 3</message>
-	</record>
+    <record>
+        <date>2015-12-17T20:13:04</date>
+        <millis>1450379584477</millis>
+        <logger>sampleLogger</logger>
+        <thread>1</thread>
+        <message>Sample: 9 8 6 10 6 7 9 7 11 13</message>
+    </record>
 
-	<record>
-	  <date>2015-12-17T09:03:33</date>
-	  <millis>1450339413553</millis>
-	  <logger>aiLogger</logger>
-	  <thread>1</thread>
-	  <message>Confidence: 0.8668783888317774. Actions:
-	Set sensor id 1 to value 0</message>
-	</record>
+    <record>
+        <date>2015-12-17T20:13:04</date>
+        <millis>1450379584601</millis>
+        <logger>aiLogger</logger>
+        <thread>1</thread>
+        <message>Confidence: 0.6542340925943608. Actions: 
+            Set sensor id 2 to value 1</message>
+    </record>
 
-	<record>
-	  <date>2015-12-17T09:03:33</date>
-	  <millis>1450339413555</millis>
-	  <logger>reasonLogger</logger>
-	  <thread>1</thread>
-	  <message>Sending data: Set sensor id 1 to value 0</message>
-	</record>
+    <record>
+        <date>2015-12-17T20:13:04</date>
+        <millis>1450379584601</millis>
+        <logger>reasonLogger</logger>
+        <message>Sending data: Set sensor id 2 to value 1</message>
+    </record>
 
-	<record>
-	  <date>2015-12-17T09:03:36</date>
-	  <millis>1450339416153</millis>
-	  <logger>sampleLogger</logger>
-	  <message>Sample:  2 0 1 3 2</message>
-	</record>
+    <record>
+        <date>2015-12-17T20:13:07</date>
+        <millis>1450379587647</millis>
+        <logger>sampleLogger</logger
+        <message>Sample: 8 6 10 6 7 9 7 11 13 9</message>
+    </record>
 \end{lstlisting}
 
 Based on this it can be concluded that the system successfully learned and imitated a pattern.
