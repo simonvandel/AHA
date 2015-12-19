@@ -10,7 +10,7 @@ public class Action {
   @DatabaseField(foreign = true, foreignAutoCreate=true)
   private Sample dbs;
   @DatabaseField(foreign = true)
-  private NormalizedValue mValPrevious;
+  private NormalizedValue mValFrom;
 
   @Override
   public boolean equals(Object o){
@@ -20,29 +20,28 @@ public class Action {
     Action action = (Action) o;
 
     if (mSensorId != action.mSensorId) return false;
-    if (dbs != null ? !dbs.equals(action.dbs) : action.dbs != null) return false;
-    if (mValPrevious != null ? !mValPrevious.equals(action.mValPrevious) : action.mValPrevious != null) return false;
-    return !(mValCurrent != null ? !mValCurrent.equals(action.mValCurrent) : action.mValCurrent != null);
+    if (mValFrom != null ? !mValFrom.equals(action.mValFrom) : action.mValFrom != null) return false;
+    return !(mValTo != null ? !mValTo.equals(action.mValTo) : action.mValTo != null);
 
   }
 
   @Override
   public int hashCode(){
     int result = dbs != null ? dbs.hashCode() : 0;
-    result = 31 * result + (mValPrevious != null ? mValPrevious.hashCode() : 0);
-    result = 31 * result + (mValCurrent != null ? mValCurrent.hashCode() : 0);
+    result = 31 * result + (mValFrom != null ? mValFrom.hashCode() : 0);
+    result = 31 * result + (mValTo != null ? mValTo.hashCode() : 0);
     result = 31 * result + mSensorId;
     return result;
   }
 
   @DatabaseField(foreign = true)
-  private NormalizedValue mValCurrent;
+  private NormalizedValue mValTo;
   @DatabaseField
   private int mSensorId;
 
-  public Action(NormalizedValue val1, NormalizedValue val2, int sensorId) {
-    this.mValPrevious = val1;
-    this.mValCurrent = val2;
+  public Action(NormalizedValue valFrom, NormalizedValue valTo, int sensorId) {
+    this.mValFrom = valFrom;
+    this.mValTo = valTo;
     this.mSensorId = sensorId;
   }
 
@@ -53,18 +52,20 @@ public class Action {
   }
 
   public int getDiff() {
-    return mValCurrent.getValue() - mValPrevious.getValue();
+    return mValTo.getValue() - mValFrom.getValue();
   }
 
   public int getChangeToValue() {
-    return mValCurrent.getValue();
+    return mValTo.getValue();
   }
 
-  public NormalizedValue getVal1(){ return mValPrevious; }
-  public void setVal1(NormalizedValue value){mValPrevious = value;}
+  public NormalizedValue getValFrom(){ return mValFrom; }
+  public void setValFrom(NormalizedValue value){
+    mValFrom = value;}
 
-  public NormalizedValue getVal2(){ return mValCurrent; }
-  public void setVal2(NormalizedValue value){mValCurrent = value;}
+  public NormalizedValue getValTo(){ return mValTo; }
+  public void setValTo(NormalizedValue value){
+    mValTo = value;}
 
   @Override
   public String toString() {
@@ -77,7 +78,7 @@ public class Action {
    */
   public byte[] serialize(){
     return ByteBuffer.allocate(4)
-            .putShort((short) mValCurrent.getSensorIndexOnDevice())
-            .putShort((short) mValCurrent.getValue()).array();
+            .putShort((short) mValTo.getSensorIndexOnDevice())
+            .putShort((short) mValTo.getValue()).array();
   }
 }

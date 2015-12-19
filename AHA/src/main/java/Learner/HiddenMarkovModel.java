@@ -100,7 +100,15 @@ public class HiddenMarkovModel implements IModel{
       List<EmissionState> emissionStatesGenerated = new ArrayList<>();
       emissionStatesGenerated.addAll(observationsFromSample.stream().map(o -> mapWarden.observationToEmission(o)).collect(Collectors.toList()));
       emissionStatesGenerated.add(emissionStatePredicted);
-      Reasoning reasoning = new Reasoning(emissionStatePredicted.getActions(), hiddenStatesPath, emissionStatesGenerated);
+      List<Action> actions = new ArrayList<>();
+      for(Action aPrev : s.getActions()) {
+        for(Action aNext: emissionStatePredicted.getActions()) {
+          if(aPrev.getDevice() == aNext.getDevice()) {
+            actions.add(new Action(aPrev.getValTo(), aNext.getValTo(), aNext.getDevice()));
+          }
+        }
+      }
+      Reasoning reasoning = new Reasoning(actions, hiddenStatesPath, emissionStatesGenerated);
       String log = "";
       log += "Confidence: " + confidence;
       if (reasoning.getActions().size() > 0){

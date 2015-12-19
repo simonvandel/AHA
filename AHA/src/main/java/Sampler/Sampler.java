@@ -1,6 +1,5 @@
 package Sampler;
 
-import Database.DB;
 import Normaliser.NormalizedSensorState;
 import Normaliser.NormalizedValue;
 import Reasoner.Reasoner;
@@ -9,16 +8,11 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.RemovalCause;
 import com.google.common.cache.RemovalListener;
-import com.j256.ormlite.logger.Log;
 import org.javatuples.Pair;
 
-import java.io.IOException;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.FileHandler;
-import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -59,7 +53,7 @@ public class Sampler {
                             .getValue0()
                         )
                 )
-            .setVal2
+            .setValTo
                 (sample
                     .getActions()
                     .get
@@ -70,7 +64,7 @@ public class Sampler {
                                     .getValue0()
                                 )
                         )
-                    .getVal1()
+                    .getValFrom()
                 );
       }
       if(sample.getActions().contains(actions.getValue1())){
@@ -84,7 +78,7 @@ public class Sampler {
                             .getValue1()
                         )
                 )
-            .setVal1
+            .setValFrom
                 (sample
                     .getActions()
                     .get
@@ -95,7 +89,7 @@ public class Sampler {
                                     .getValue1()
                                 )
                         )
-                    .getVal2()
+                    .getValTo()
                 );
       }
     }
@@ -206,11 +200,11 @@ public class Sampler {
    * @return the inverse action to the one given as input
    */
   public static Action inverseAction(Action action) {
-    if(action == null || action.getVal1() == null || action.getVal2() == null) {return null;}
-    if(action.getVal1().getValue() == action.getVal2().getValue()){
+    if(action == null || action.getValFrom() == null || action.getValTo() == null) {return null;}
+    if(action.getValFrom().getValue() == action.getValTo().getValue()){
       return null;
     }
-    return new Action(action.getVal2(), action.getVal1(), action.getDevice());
+    return new Action(action.getValTo(), action.getValFrom(), action.getDevice());
   }
 
   /**
@@ -228,7 +222,7 @@ public class Sampler {
     for (Sample s: uncleanSamples.asMap().values())
     {
       for (Action action: s.getActions()){
-        if(action != null && action.getVal1() != null && action.getVal2() != null){
+        if(action != null && action.getValFrom() != null && action.getValTo() != null){
           validActions.add(action);
         }
       }
@@ -237,12 +231,12 @@ public class Sampler {
 
     for (int i = 0; i < validActions.size() - 1; i++) {
       Action actionI = validActions.get(i);
-      if(actionI.getVal1() == null) {
+      if(actionI.getValFrom() == null) {
         continue;
       }
-      for (int j = i + 1; j < validActions.size() - 1; j++) { //Get all combinations of actions in sample
+      for (int j = i + 1; j < validActions.size(); j++) { //Get all combinations of actions in sample
         Action actionJ = validActions.get(j);
-        if(actionJ.getVal1() == null) {
+        if(actionJ.getValFrom() == null) {
           continue;
         }
         if (actionI.equals(inverseAction(actionJ))) { //If two actions are inverse to each other

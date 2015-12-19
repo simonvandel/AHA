@@ -107,7 +107,7 @@ public class Main
           sample = sampler.getSample(nState);
           if (sample != null){
             oReasoner.reasonAndSend(sample);
-            mainLogger.log(Level.INFO, "Loop time: " + (System.currentTimeMillis() - loopStart));
+            mainLogger.log(Level.INFO, "æ" + (System.currentTimeMillis() - loopStart));
           }
         }
       }

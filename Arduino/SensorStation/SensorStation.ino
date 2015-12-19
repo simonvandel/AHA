@@ -16,10 +16,13 @@
 boolean lightSwitch1Val = false;
 boolean lightSwitch2Val = false;
 boolean lightSwitch3Val = false;
-boolean messageReady = false;
 Serialization serialization;
 
-long unsigned startTime = 0;
+long unsigned startTimeTimer = 0;
+long unsigned startTimeLoop = 0;
+long unsigned packages = 0;
+
+int packetSize = 0;
 
 //Ultrasonic ultrasonic(4,5);
 //PIR pir(3);
@@ -43,6 +46,11 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
   }
   int mes[2];
   serialization.Deserialize(data, mes);
+  Serial.println();
+  Serial.print("Toggle sensor ");
+  Serial.print(mes[0]);
+  Serial.print(" to value ");
+  Serial.println(mes[1]);
   if(mes[0] == 2){
     if(mes[1]){
       digitalWrite(LightSwitch1, HIGH);
@@ -53,7 +61,6 @@ void zbReceive(ZBRxResponse& rx, uintptr_t) {
       lightSwitch1Val = false;
     }
   }
-  messageReady = true;
 }
 
 void toggleLightSwitch1(){
@@ -67,7 +74,8 @@ void toggleLightSwitch1(){
   }
 }
 
-void toggleLightSwitch23(){  
+void toggleLightSwitch23(){   
+  startTimeTimer = millis();
   if(!digitalRead(btn2)){
     if(lightSwitch2Val){
       digitalWrite(LightSwitch2, LOW);
@@ -90,7 +98,6 @@ void toggleLightSwitch23(){
   }
 }
 
-//
 void setup()
 {
   pinMode(LightSwitch1, OUTPUT);
@@ -134,48 +141,34 @@ void printbincharpad(char c)
   {
     Serial.write( (c & (1 << i)) ? '1' : '0' );
   }
-  //Serial.print('\n');
 }
 
 void loop()
 {
-  
-  sensorPacketBuilder.add(0, 3); // Number of analog sensors
-  sensorPacketBuilder.add(0, 3); // Emulatable analog index. No emulatable analog sensors
+  encode();
 
-  sensorPacketBuilder.add(3, 3); // Number of digital sensors
-  sensorPacketBuilder.add(3, 3); // Emulatable analog index
-
-  sensorPacketBuilder.add(lightSwitch3Val, 1); // Digital sensor 3
-  sensorPacketBuilder.add(lightSwitch2Val, 1); // Digital sensor 2
-  sensorPacketBuilder.add(lightSwitch1Val, 1); // Digital sensor 1. Emulatable
-
-  int packetSize = sensorPacketBuilder.build(buildArray);
+  packetSize = sensorPacketBuilder.build(buildArray);
 
   sendData(buildArray, packetSize);
+  //sendData((uint8_t *)"aaaaaaaa", 4);
 
+  packetSize = 0;
+  
+  startTimeLoop = millis();
   // Continuously let xbee read packets and call callbacks.
-  startTime = millis();
-  while((millis() - startTime) < 100 && !messageReady){
+  while((millis() - startTimeLoop) < 100){
     xbee.loop();
   }
-  messageReady = false;
+  if(millis() - startTimeLoop < 100){
+    Serial.print("Loop Time: ");
+    Serial.println(millis() - startTimeLoop);
+  }
   //act on received data in the call back method zbReceive
 
   memset(buildArray, 0, 64);
-
-  //Serial.println();
-  //Serial.print("----- Loop end (");
-  //Serial.print(millis() - startTime);
-  //Serial.print(")(");
-  //Serial.print(packages);
-  //Serial.println(") -----");
 }
 
 void sendData(uint8_t* toSend, int sendLen){
-  /*for(int i = 0; i < sendLen; i++) {
-    //printbincharpad(toSend[i]);
-  }*/
   ZBTxRequest zbTx = ZBTxRequest(addr64, toSend, sendLen);
   zbTx.setAddress16(0);
   xbee.send(zbTx);
@@ -190,3 +183,16 @@ void sendData(uint8_t* toSend, int sendLen){
     }
   }
 }
+
+void encode(){
+  sensorPacketBuilder.add(0, 3); // Number of analog sensors
+  sensorPacketBuilder.add(0, 3); // Emulatable analog index. No emulatable analog sensors
+
+  sensorPacketBuilder.add(3, 3); // Number of digital sensors
+  sensorPacketBuilder.add(3, 3); // Emulatable analog index
+
+  sensorPacketBuilder.add(lightSwitch3Val, 1); // Digital sensor 3
+  sensorPacketBuilder.add(lightSwitch2Val, 1); // Digital sensor 2
+  sensorPacketBuilder.add(lightSwitch1Val, 1); // Digital sensor 1. Emulatable
+}
+
