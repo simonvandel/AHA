@@ -68,9 +68,11 @@ With this model, the system started trying to predict actions. At this point, no
 Based on this it can be concluded that the system successfully learned and imitated a pattern.
 
 \subsubsection{Real Time Test}
-To perform this test the system were first taught a simple pattern as it were important, that a certain action on the Arduino forced a prediction of an action by the server model. A separate button were added that had no other function then to start the test (ie. it were not part of the pattern). This allowed the test code to artificially create an action on the other button and then immediately start a timer. The button were then disabled as to avoid restarting the timer. Then once the Arduino received the action the timer were stopped and the time for a full loop of the system were found. One thing to note, this time can vary depending on when in the Arduino loop the button were pressed. To document this two tests were performed one were the artificial button press happened at the theoretically best time and one at the theoretically worst time. The worst case happens when we perform the button press after we send a state to the server but before we start receiving data. This means we have to wait for the receiving delay, then send again, and then wait for the receive delay again. As can be seen below the system does not uphold the deadline. This could be attributed to the send and receive of the XBee modules which in practical testing showed a delay of up to 60ms for one send, however theoretically the worst case should be 50ms\cite{xbee_latency}. This variance could be due to a number of things, eg. cheap hardware or a non-optimal implementation. The average actionable (ie. the system predicted an action) reason loop for both the tests were 52.5ms.
+To perform this test, the system was first taught a simple pattern, as it was important that the system could predict an action during the test. A button was added, that had no other function than to start the test. This allowed the test code to artificially create an action on the button and then immediately start a timer. The button was then disabled, in order to avoid restarting the timer. Then, once the Arduino received the action, the timer was stopped, and the time for a full loop of the system was found. One thing to note is that this time can vary, depending on when in the Arduino's loop, the button was pressed.
 
-For the best case test, the lowest observed time were 122ms, which is 22ms above the deadline. For each separate module we have the approximate running time, and so an approximation of a worst case full loop of the system would be 186 as seen in \cref{Table:RunTimeAprox}.
+To document this, two tests were performed; one, were the artificial button press happened at the theoretically optimal time, and one at the theoretically worst time. The worst case happens when we perform the button press after we send a state to the server, but before we start receiving data. This means that we have to wait for the delay of receiving, then send again, and then wait for the delay of receiving again. As can be seen below, the system does not uphold the deadline. This could be attributed to the sending and receiving times of the XBee modules which, in practical testing, showed a delay of up to 60 ms for one send, however, theoretically, the worst case should be 50 ms\cite{xbee_latency}. This variance could be due to a number of things, for example cheap hardware or a non-optimal implementation. The average time of the loop for both tests was 52.5 ms.
+
+For the best case test, the lowest observed time was 122 ms, which is 22 ms above the deadline. For each separate module, we have the approximate running time, and so an approximation of a worst case full loop of the system would be 186 ms as seen in \cref{Table:RunTimeAprox}.
 \begin{center}
 	\begin{table}[htbp]
 	  \centering
@@ -78,18 +80,18 @@ For the best case test, the lowest observed time were 122ms, which is 22ms above
 		\toprule
 		Position in Loop		& Run Time  \\ \midrule
 		Test Start		        & 0         \\ \midrule
-		Encode 			        & <2ms  	\\ \midrule
-		Send   			        & <50ms     \\ \midrule
-		Reason loop 	        & <88ms     \\ \midrule
-		Receive 		        & <50ms     \\ \midrule \midrule
-		Total			        & 190ms	    \\
+		Encode 			        & <2 ms  	\\ \midrule
+		Send   			        & <50 ms     \\ \midrule
+		Reason loop 	        & <88 ms     \\ \midrule
+		Receive 		        & <50 ms     \\ \midrule \midrule
+		Total			        & <190 ms	    \\
                                             \bottomrule
 	  \end{tabular}
-	  \caption[An approximation of a worst case run time of each separate module]{When performing an action at the optimal time in the Arduino loop.}
+	  \caption{An approximation of a worst case run time of each separate module, when performing an action at the optimal time in the Arduino loop.}
 	\end{table}
  \label{Table:RunTimeAprox}
 \end{center}
-The best observed run time in the worst case test, were 268ms. The approximation of a worst case full loop of the system in this situation would be 370ms as seen in \cref{Table:WorstRunTimeAprox}
+The best observed run time, in the worst case test, was 268 ms. The approximation of a, worst case, full loop of the system, in this situation would be 370 ms as seen in \cref{Table:WorstRunTimeAprox}
 
 \begin{center}
 	\begin{table}[htbp]
@@ -99,20 +101,20 @@ The best observed run time in the worst case test, were 268ms. The approximation
 		Position in Loop		& Run Time  \\ \midrule
 		Encode 			        & 0  	  	\\ \midrule
 		Test Start		        & 0  		\\ \midrule
-		Send   			        & <50ms     \\ \midrule
-		Reason loop 	        & <88ms     \\ \midrule
-		Receive 		        & <50ms     \\ \midrule
-		encode 			        & <2ms      \\ \midrule
-		send   			        & <50ms     \\ \midrule
-		Reason loop 	        & <88ms	    \\ \midrule
-		Receive 		        & <50ms     \\ \midrule \midrule
-		Total			        & 378ms     \\
+		Send   			        & <50 ms     \\ \midrule
+		Reason loop 	        & <88 ms     \\ \midrule
+		Receive 		        & <50 ms     \\ \midrule
+		encode 			        & <2 ms      \\ \midrule
+		send   			        & <50 ms     \\ \midrule
+		Reason loop 	        & <88 ms	    \\ \midrule
+		Receive 		        & <50 ms     \\ \midrule \midrule
+		Total			        & <378 ms     \\
                                             \bottomrule
 	  \end{tabular}
-	  \caption[An approximation of a worst case run time of each separate module]{When performing an action at the worst time in the Arduino loop.}
+	  \caption{An approximation of a worst case run time of each separate module, when performing an action at the worst time in the Arduino loop.}
 	\end{table}
  \label{Table:WorstRunTimeAprox}
 \end{center}
-These tests shows that the system has a certain risk of exceeding the deadline by up to 278ms. So though the system can get close to the deadline, in a best case uphold it, it can not be guaranteed.
+These tests show that the system has a certain risk of exceeding the deadline, by up to 278 ms. So even though the system can get close to the deadline, in a best case, upholding it cannot be guaranteed.
 
-\subsubsection{Adaption Test} 
+\subsubsection{Adaption Test}
