@@ -1,0 +1,21 @@
+\section{PIR Motion Sensor}\label{sub:pir}
+
+This sensor is a passive infrared sensor (PIR) useful for detecting movement in an environment. This model is a \enquote{SEN32357P}\cite{datasheet_pir1} and is manufactured by SEEED Studio. The sensor circuit is build using the \enquote{BISS0001}\cite{datasheet_pir2} integrated circuit.
+
+According to the technical specifications, the sensor can measure movements from 0.1 m to 6 m away, this will be investigated later. The sensor has a detection angle of 120\degree. The sensor has two potentiometers, one for adjusting the distance a which the sensor can detect a movement and one for adjusting the holding time. The holding time is a property of the output signal of the circuit, after receiving a spurious stimuli pulling output high, the holding time is how long the circuit should keep the output high before pulling it low again, essentially to how long the sensor should report movement after it is detected. E.g. a sensor with the holding time set to 10 seconds will report that motion is detected for 10 seconds after the movement. The holding time on this specific sensor can be adjusted from 1 second to 25 seconds. A switch, on the sensor, controls whether the sensor is retriggerable or unretriggerable. In the retriggerable position, the holding time is extended every time movement is detected. In the unretriggerable mode, the holding time remaining is not reset when motion is detected.
+
+The sensor has four pins, GND, VCC, NC and SIG. The sensor signals motion detected on its SIG pin. LOW on this pin means no motion and HIGH means motion.
+
+An example of a setup can be seen in \cref{fig:arduino_pir_wiring}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{arduino-pir-wiring.png}
+  \caption[PIR sensor]{The figure depicts wiring for a PIR motion sensor. A LED is shown in
+    the figure, for a lack of a PIR component in the software generating the
+    wiring schematics.}
+  \label{fig:arduino_pir_wiring}
+\end{figure}
+
+\subsection{Sampling Input Data}
+To remove spurious noise from the sensor, the sensor is probed 10 times. The 10 probes are then averaged, if the average is above some threshold, e.g. average>0.5 the result is HIGH otherwise LOW.

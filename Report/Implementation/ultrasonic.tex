@@ -1,5 +1,5 @@
 %mainfile: ../../master.tex
-\subsection{Ultrasonic Sensor}\label{sub:ultrasonic}
+\section{Ultrasonic Sensor}\label{sub:ultrasonic}
 
 Ultrasonic sensors can be based on different physical principles. Different principles allow for measuring different properties. The following list specifies three physical principles and the properties they measure.
 
@@ -17,7 +17,7 @@ The sensor \enquote{HC-SR04} in consideration utilises the time of flight princi
   \caption[The setup of the ultrasonic sensor test bed]{The setup of the ultrasonic sensor test bed. The 2 speakers on the figure should symbolise an ultrasonic sensor.}\label{fig:ultrasonicwiring}
 \end{figure}
 
-\paragraph{Operation of the Sensor}
+\subsubsection{Operation of the Sensor}
 The sensor's operation is described here. This is also visually represented in \cref{fig:sensor-workings}. First the sensor's measuring mechanism is activated by setting the \enquote{TRIGGER} pin to HIGH for 10$\si{\micro\second}$. Then the sensor begins the measuring cycles consisting of 8 consecutive transmit-receive periods. At last the sensor outputs the time it took for an ultrasonic wave to be transmitted and received again. This can be measured through the \enquote{ECHO} pin. The \enquote{ECHO} pin is HIGH for some time, which can be converted into a distance by the formula $L = \frac{C \times T}{2}$, where $L$ is the distance, $C$ is the speed of sound, $T$ is the time it took for the wave to travel back and fourth, hence also why we divide by 2. The sensor will automatically reduce noise by doing 8 transmit-receive cycles.
 
 \begin{figure}[htbp]
@@ -27,7 +27,7 @@ The sensor's operation is described here. This is also visually represented in \
   \label{fig:sensor-workings}
 \end{figure}
 
-\paragraph{The Technology}
+\subsubsection{The Technology}
 Ultrasonic sound waves have a number of properties that make them suitable for measurements, that would not be possible with lower frequency waves. Additionally, the waves do not alter the environment it is measuring.
 
 \begin{itemize}
@@ -46,10 +46,10 @@ When using the technology, the following considerations should be taken into acc
   \item Some materials may be more absorbent than others, and will therefore reflect less ultrasonic waves
 \end{itemize}
 
-\paragraph{The Purpose}
+\subsubsection{The Purpose}
 The purpose of the ultrasonic sensor in this project is to figure out if a person is at a specific location in the problem domain e.g. sitting in the sofa. The PIR sensor described in \cref{sub:pir}, is only capable of sensing motion. The ultrasonic sensor, described in this section, is capable of measuring a distance to a specific object, e.g. a person. The distance is measured every second, so where the PIR sensor would not be capable of tracking a person if the person is not moving, the ultrasonic can detect a person by a change in the distance.
 
-\paragraph{The Tests} The tests of the sensors will include some aspects of the considerations mentioned above, as well as some tests on the values mentioned in the HC-SR04 data sheet\cite{hcsr04}. The tests will be performed on three identical HC-SR04 sensors. The pictures in \cref{fig:ultra} depict how the tests were carried out.
+\subsubsection{The Tests} The tests of the sensors will include some aspects of the considerations mentioned above, as well as some tests on the values mentioned in the HC-SR04 data sheet\cite{hcsr04}. The tests will be performed on three identical HC-SR04 sensors. The pictures in \cref{fig:ultra} depict how the tests were carried out.
 
 \begin{figure}[htbp]
   \centering
@@ -68,10 +68,10 @@ The purpose of the ultrasonic sensor in this project is to figure out if a perso
   \caption{Setup of the tests}\label{fig:ultra}
 \end{figure}
 
-\paragraph{Distance}
+\subsubsection{Distance}
 First the accuracy of the sensors over different distances were tested. Through this process, the minimum and maximum range of the sensors was discovered.
 
-\subparagraph{Test Observations}
+\paragraph{Test Observations}
 The results can be seen in \cref{tab:ult_distance}. All three sensors are very close in accuracy to the actual distance. In addition, they do not contradict each other. The minimum distance is 2 cm, and the maximum distance is 565-595 cm, depending on the sensor. A plot of the measurements can be seen in \cref{fig:ult_precision}.
 
   \begin{table}[htbp]
@@ -120,14 +120,14 @@ The results can be seen in \cref{tab:ult_distance}. All three sensors are very c
                     ymajorgrids=true,
                     grid style=dashed
                   ]
-        \input{Implementation/hardware/UltrasonicPlots/plot0angle}
+        \input{Implementation/UltrasonicPlots/plot0angle}
       \end{axis}
     \end{tikzpicture}
     \caption[Distance test results]{Distance test at 0 degrees angle, at 570 cm sensor 1 and 3 stopped supplying stable reliable answers.}
     \label{fig:ult_precision}
   \end{figure}
 
-\paragraph{Angle}
+\subsubsection{Angle}
 The angle of the field, which the sensor measures within, is tested, see \cref{tab:ult_angle}. This gives an idea of how directed the sensor is, and thereby at what span the sensor is able to detect an object.
 
   \begin{table}[htbp]
@@ -146,8 +146,8 @@ The angle of the field, which the sensor measures within, is tested, see \cref{t
     \label{tab:ult_angle}
   \end{table}
 
-\subparagraph{Test Observations}
+\paragraph{Test Observations}
 The results can be seen in \cref{tab:ult_angle}. The sensors can reliably sense objects within a angle of -20\degree/20\degree.
 
-\paragraph{Multiple Ultrasonic Sensors}
+\subsubsection{Multiple Ultrasonic Sensors}
 If multiple ultrasonic sensors are used in the problem domain at the same time, the sensors may interfere with each other. One sensor is capable of transmitting sound waves to another sensor, which would result in a collision. If this is to be solved, it is important that a collision is detectable or does simply not happen. Getting collision-free measurements requires some coordination between sensors, i.e. who will measure when. An example of a solution is that each sensor is given a time slot, in which a sensor is allowed to sense, it is important that there is slight delay between each time slot to ensure that the sound waves have attenuated.

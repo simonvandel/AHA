@@ -1,11 +1,8 @@
-\subsubsection{Experiments}
+\subsection{Experiments}
 \label{sub:Experiments}
-In order to determine the reliability of the hardware, several experiments were conducted with the PIR sensor.
-The tests were all based on data found in the data sheet for the hardware.
-The main purpose of the tests is to determine the correlation between real world performance and the hardware specifications
-found on the data sheet.
+In order to determine the reliability of the hardware, several experiments were conducted on the PIR sensor. The tests were all based on results found in the data sheet for the hardware. The main purpose of these tests is to determine the properties of the batch of sensor used in project compared to the properties given in the data sheets\cite{datasheet_pir1}\cite{datasheet_pir2}.
 \\\\
-Four tests are carried out with a common setup. The four tests are defined as follows:
+The four tests are defined as follows:
 
 \begin{enumerate}
   \item Sensitivity Test
@@ -14,7 +11,7 @@ Four tests are carried out with a common setup. The four tests are defined as fo
   \item Delay Time Test
 \end{enumerate}
 
-\subsubsection{The Setup}
+\subsection{The Setup}
 \label{subs:The Setup}
 As mentioned, the setup for all the experiments is the same, to ensure
 consistency of the results, by reducing variables that affect the results, as
@@ -24,15 +21,15 @@ as precise as possible, all four tests are carried out at the same exact place,
 but the methods of the individual tests differ. The PIR sensor is placed in a
 certain height and a fixed position during the tests.
 
-\paragraph{Sensitivity}
+\subsubsection{Sensitivity}
 \label{par:Sensitivity}
 
-\subparagraph{Hypothesis}
+\paragraph{Hypothesis}
 \label{subp:SenHypothesis}
 According to the data sheet the PIR sensor will be too sensitive if the distance potentiometer is rotated counter-clockwise.
 The sensor should get so sensitive that the PIR sensor would be triggered by the atmosphere even
 if no moving object is existing\cite{datasheet_pir1}.
-\subparagraph{Test Procedure}
+\paragraph{Test Procedure}
 \label{subp:SenTest Procedure}
 The PIR sensor is configured with the distance potentiometer rotated
 counter-clockwise, as far as possible.
@@ -40,29 +37,29 @@ After the sensor is configured every object that can affect the sensor is
 removed and the sensor is observed for 30 seconds.
 The observation is to determine whether the sensor will detect objects, that it is not
 supposed to detect, and how sensitive the sensor really is.
-\subparagraph{Results}
+\paragraph{Results}
 \label{subp:SenResults}
 
 At the most sensitive setting, nothing was triggered by atmospheric noise. Just
 to be sure, the sensor was tested at the least sensitive setting; nothing was
 detected, as expected.
 
-\subparagraph{Partial Conclusion}
+\paragraph{Partial Conclusion}
 \label{subp:SenPartial Conclusion}
 
 According to our tests, the atmospheric noise was not detectable at the highest
 sensitivity setting.
 
-\paragraph{Angle}
+\subsubsection{Angle}
 \label{par:Angle}
 
-\subparagraph{Hypothesis}
+\paragraph{Hypothesis}
 \label{subp:AngHypothesis}
 According to the data sheet of the PIR sensor,
 the sensor has a detecting angle of 120 degrees.
 The sensor should, according to the data sheet not detect any angle above 120 degrees.
 
-\subparagraph{Test Procedure}
+\paragraph{Test Procedure}
 \label{subp:AngTest Procedure}
 The sensor is placed in a certain position and detecting angle is measured equivalent to
 the specified angle found in the data sheet.
@@ -76,7 +73,7 @@ and thereby the actual detecting angle is determined.
 
 The test is performed three times on each side at the highest sensitivity of the sensor for consistency.
 
-\subparagraph{Results}
+\paragraph{Results}
 \label{subp:AngResults}
 
 The data results can be seen in \cref{tab:pir_angle}. A plot of this data can be
@@ -138,19 +135,19 @@ Run & x [cm] & y [cm] & angle [deg] \\ \midrule
 \label{tab:pir_angle}
 \end{table}
 
-\subparagraph{Partial Conclusion}
+\paragraph{Partial Conclusion}
 \label{subp:AngPartial_conclusion}
 
 According to the hypothesis, the sensor should detect motion in an angle of 120 degrees. Our results show that the left side of the sensor is quite correct, while the other side of the sensor is not very close to 60 $\si{\degree}$.
 
-\paragraph{Distance}
+\subsubsection{Distance}
 
-\subparagraph{Hypothesis}
+\paragraph{Hypothesis}
 
 According to the data sheet, the sensor can measure motion from 10 centimetres to
 6 meters.
 
-\subparagraph{Test procedure}
+\paragraph{Test procedure}
 
 The sensitivity setting of the sensor essentially controls the distance. First,
 the sensitivity is set to the lowest sensitivity. At that sensitivity, the
@@ -162,7 +159,7 @@ waving. Once the sensor detects the motion, the distance from the test conductor
 to the sensor is measured. This is done three times to check for consistency. The sensitivity is then upped one unit on the sensor,
 and the test conductor measures the distance for the new sensitivity.
 
-\subparagraph{Results}
+\paragraph{Results}
 
 A plot of the results can be seen in \cref{fig:pir_distance}.
 
@@ -196,7 +193,7 @@ A plot of the results can be seen in \cref{fig:pir_distance}.
 \caption[Distance experiment]{Plot of distance experiment}\label{fig:pir_distance}
 \end{figure}
 
-\subparagraph{Partial conclusion}
+\paragraph{Partial conclusion}
 The results indicate that there is a correlation between the sensitivity and the detecting distance.
 However the sensor behaved unpredictably at sensitivity levels 7 and 8.
 Furthermore the sensor acted strange at sensitivity levels 3, 4 and 5 by detecting something it was not supposed to detect.
@@ -204,16 +201,15 @@ The maximum range seems to be 6 meters as stated in the data sheet.
 Strangely enough the sensor only detected motion 5 meters away at the highest
 sensitivity level.
 
-\paragraph{Delay time}
+\subsubsection{Delay time}
 
-\subparagraph{Hypothesis}
+\paragraph{Hypothesis}
 
 According to the data sheet, the sensor has a delay time of 1 second to 25 seconds.
 
-\subparagraph{Test procedure}
+\paragraph{Test procedure}
 
-In this experiment, the sensor is set in the non-retriggerable setting (L
-position), so the delay time is not extended on additional motion.
+In this experiment, the sensor is set in the non-retriggerable setting, so the delay time is not extended on additional motion.
 
 First, the sensor is adjusted to have the maximum delay time of 25 seconds,
 according to the above hypothesis. This is then tested by triggering the sensor
@@ -224,7 +220,7 @@ for each setting of delay time to check for consistency.
 For the next iteration of the experiment, the delay time potentiometer on the sensor
 is rotated one unit, decreasing the delay.
 
-\subparagraph{Results}
+\paragraph{Results}
 
 A plot of the results can be seen in \cref{fig:pir_delay}.
 
@@ -263,7 +259,7 @@ A plot of the results can be seen in \cref{fig:pir_delay}.
 \caption[Delay experiment]{Plot of delay experiment. On the x axis number representation of potentiometer, ranging from 0 with highest delay to 9 with lowest. On the y axis the delay time in seconds are shown.}\label{fig:pir_delay}
 \end{figure}
 
-\subparagraph{Partial conclusion}
+\paragraph{Partial conclusion}
 
 The hypothesis is incorrect. The maximum delay time was recorded to be
 around 35 seconds that is a deviation by more than 30\%.
