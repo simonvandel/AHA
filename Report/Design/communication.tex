@@ -1,6 +1,6 @@
 \subsection{Communication Protocols}
 \label{sub:Communicationprotocols}
-As aforementioned the system consists of two separate subsystems interconnected. These connections must be established through a communication device also called protocols. The purpose of these protocols are to send and receive data. The choice of for the protocol is made based on following criteria.
+As discussed above the system consists of two separate subsystems interconnected. These connections must be established through a communication device, a communication device implements a protocol on some hardware. The purpose of these protocols are to send and receive data, along with various other features. The choice of the communication device is made based on following criteria.
 \begin{itemize}
   \item Wireless
   \item Range
@@ -13,19 +13,19 @@ As aforementioned the system consists of two separate subsystems interconnected.
 The communication has to work wirelessly since wiring the entire home is impractical, since it leaves no options for future improvements. Furthermore wiring the entire home can increase the cost of the system, since the installation process needs more labour.
 
 \subsubsection{Range}
-Additional to the wireless criteria, the communication has to have a reasonable range such that the connection can reach to the entire house. The system should thus not be limited to only small houses because of the limited range of the protocol.
+Additional to the wireless criteria, the communication has to have a reasonable range such that the connection can reach the entire house. The system should thus not be limited to only small houses because of the limited range of the communication device.
 
 \subsubsection{Flexibility}
-The communication must be maintained regardless of how many devices are interconnected. The network of devices should allow room for modifications within the network. It must allow devices to enter and leave the network without shutting down and restarting the entire network.
+The communication must be maintained regardless of how many devices are interconnected (one feature here is collision avoidance/detection). The network of devices should allow room for modifications within the network. It must allow devices to enter and leave the network without shutting down and restarting the entire network.
 
 \subsubsection{Cost}
-The price of the device has to be reasonable. Since the budget of the project is limited, the communicative devices cannot be too expansive.
+The price of the device has to be reasonable. Since the budget of the project is limited, the communication devices can not be too expensive.
 
 \subsubsection{Power Consumption}
 The communication devices has to be low in power consumption.
 
 \subsubsection{Different Protocols}
-With the different criteria in mind few protocols are chosen to be compared. These protocols are chosen because they are found to be frequently used in the area of home automation.
+With the different criteria in mind a few protocols are chosen to be compared. These protocols are chosen because they are found to be frequently used in the area of home automation.
 Following protocols will be compared in this section
 
 \begin{itemize}
@@ -47,15 +47,6 @@ Following protocols will be compared in this section
 \item Supports both power line and wireless installation
 \item Lacks encryption
 \item Limited reliability
-\end{itemize}
-
-
-\paragraph{Universal Powerline Bus} \cite{wiki_upb}
-
-\begin{itemize}
-\item Released in 1999
-\item Powerline based
-\item Limited bandwidth of 240 bits/s
 \end{itemize}
 
 
@@ -109,24 +100,15 @@ Following protocols will be compared in this section
 \item Ranges vary from 1 meter to 10 meters to 100 meters for industrial use
 \end{itemize}
 
-\paragraph{Ethernet} \cite{wiki_ethernet}
-
-\begin{itemize}
-\item Wired connection
-\item High bandwidth - 100 gigabit/s
-\item Low latency
-\end{itemize}
-
-As it can be seen many of the protocols cannot be used in this project since they violate the wireless criteria. If the protocols are sorted out, based on the wireless criteria, it will only leave the protocols that supports a wireless connection. 
 
 
-The X10 protocol supports wireless connection but however it lacks in reliability and encryption. Since the system mainly relays on communication, a lack in reliability would be a major drawback and thus sorted out of the list.
+The X10 protocol supports wireless connection but however it lacks in reliability and encryption. Since the system mainly relays on communication, a lack in reliability would be a drawback and thus is sorted out.
 
 
-Bluetooth seem to be a good choice, however since the range varies so does the price. A Bluetooth module at low cost  mean to violate the range criteria, since the range is poor. In the other hand buying a module with high range violates the cost efficiency criteria. Furthermore does Bluetooth not support mesh networks, that is a network topology in which each node relays the data from the network. This features enables the protocols to extend their range significantly. 
+Bluetooth seem to be a good choice, however as the range goes up so does the price. A Bluetooth module at low cost would violate the range criteria, since the range would be poor. On the other hand buying a module with high range violates the cost criteria. Furthermore Bluetooth does not support mesh networks, that is a network topology in which each node relays the data from the network. This features enables the protocols to extend their range significantly. 
 
 
-The WiFi protocols supports mesh networking and has a reasonable range. It is reliable and can transfer enormous amount of data. However this protocol is extremely power consuming and thereby is not well suited for the purpose of low power consumption. The WiFi protocol is design for high bandwidth rather than low power consumption and thereby is not considered since one of the criterion is power efficiency.  
+The WiFi protocols supports mesh networking and has a reasonable range. It is reliable and can transfer enormous amount of data. However this protocol is extremely power consuming and thereby is not well suited for the purpose of low power consumption. The WiFi protocol is design for high bandwidth rather than low power consumption and therefore is not considered since one of the criteria is power efficiency.  
 
 
-The Z-Wave and the ZigBee protocols seems to be the perfect candidates, the differences between these protocols are minor. However Zigbee is chosen over Z-Wave for this project for several reasons. Even though the protocols are similar, there are minor differences as well. The Z-Wave protocol has a lower transfer rate. The Z-Wave is proprietary where Zigbee is open source. Beside the differences the Zigbee protocol was more accessible. The choice was made based on accessibility and personal preference as well as the data transfer rate.
+The Z-Wave and the ZigBee protocols seems to be the candidates, the differences between these protocols are minor. However Zigbee is chosen over Z-Wave for this project for several reasons. The Z-Wave protocol has a lower transfer rate. The Z-Wave is proprietary where Zigbee is open source. Beside the differences the Zigbee protocol was more accessible. The choice was made based on accessibility and personal preference as well as the data transfer rate.
