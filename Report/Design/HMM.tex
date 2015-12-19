@@ -32,10 +32,10 @@ Even though these diagrams are good at illustrating the models and how they chan
 
 A specific user action cannot be justified only based on sensor data, e.g. the fact that the light should be switched on does not only depend on the fact that the user is present in the room, but also on the fact that the user is awake. In this example, the information whether the user is awake, is hidden. To represent this data, HMMs use the concept of hidden states. This data can not be observed, only assumed.
 
-Hidden states represent what the state of the world is in reality, and is therefore not observable. A hidden state can emit an observable state of the world. In this project, this means that the hidden states are the true states of the home; all information needed for the user to take a choice on what to do next. This unobservable world then emits values to the sensors, that we can observe, creating the observable states called emission states. These are all distinct and can be emitted multiple times in a sequence of observations. See \cref{fig:2ndMarkovModel} for an example of a simple HMM. Note that a trellis diagram represents a sequence of observed state over time, we therefore make a distinction between emission states and observed states. Emission states are all states that can be emitted, the states of the model, and observed states are all states that have been emitted and observed. The important difference is that emission states cannot be the same, they are always distinct. Observed states can be equivalent, they are simply observed at different time steps.
+The hidden states of our hidden markov model are all the possible samples we can construct from all the possible snapshots of size(history) 
+$D(hiddenStates) = (D(sensor_1)\times D(sensor_2)\times ... \times D(sensor_n))^size(history)$. \cref{fig:2ndMarkovModel} is an example of a simple HMM. Note that a trellis diagram represents a sequence of observed states over time.
 
-
-We denote by $E=\{e_1, \dots ,e_{M}\}$ the set of emission states and $\mathcal{O}=\{o_1, \dots , o_T\}$ the set of observed states, where $M$ and $T$ are resprectively the number of emission states and observations.
+We denote by $E=\{e_1, \dots ,e_{M}\}$ the set of emission states and $\mathcal{O}=\{o_1, \dots , o_T\}$ the set of observed states, where $M$ and $T$ are respectively the number of emission states and observations.
 
 \begin{figure}[htbp]
 \centering
