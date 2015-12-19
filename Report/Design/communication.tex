@@ -1,0 +1,114 @@
+\subsection{Communication Protocols}
+\label{sub:Communicationprotocols}
+As discussed above the system consists of two separate subsystems interconnected. These connections must be established through a communication device, a communication device implements a protocol on some hardware. The purpose of these protocols are to send and receive data, along with various other features. The choice of the communication device is made based on following criteria.
+\begin{itemize}
+  \item Wireless
+  \item Range
+  \item Flexibility
+  \item Cost
+  \item Power Consumption
+\end{itemize}
+
+\subsubsection{Wireless}
+The communication has to work wirelessly since wiring the entire home is impractical, since it leaves no options for future improvements. Furthermore wiring the entire home can increase the cost of the system, since the installation process needs more labour.
+
+\subsubsection{Range}
+Additional to the wireless criteria, the communication has to have a reasonable range such that the connection can reach the entire house. The system should thus not be limited to only small houses because of the limited range of the communication device.
+
+\subsubsection{Flexibility}
+The communication must be maintained regardless of how many devices are interconnected (one feature here is collision avoidance/detection). The network of devices should allow room for modifications within the network. It must allow devices to enter and leave the network without shutting down and restarting the entire network.
+
+\subsubsection{Cost}
+The price of the device has to be reasonable. Since the budget of the project is limited, the communication devices can not be too expensive.
+
+\subsubsection{Power Consumption}
+The communication devices has to be low in power consumption.
+
+\subsubsection{Different Protocols}
+With the different criteria in mind a few protocols are chosen to be compared. These protocols are chosen because they are found to be frequently used in the area of home automation.
+Following protocols will be compared in this section
+
+\begin{itemize}
+\item X10
+\item Universal Powerline Bus
+\item Insteon
+\item Z-wave
+\item ZigBee
+\item WiFi
+\item Bluetooth
+\item Ethernet
+\end{itemize}
+
+
+\paragraph{X10} \cite{wiki_x10}
+
+\begin{itemize}
+\item Designed in 1975
+\item Supports both power line and wireless installation
+\item Lacks encryption
+\item Limited reliability
+\end{itemize}
+
+
+\paragraph{Insteon} \cite{wiki_insteon}
+
+\begin{itemize}
+\item Supports both power line and wireless installation
+\item Proprietary
+\item Compatible with X10
+\item Uses power line as backup in case of wireless interference
+\item Theoretical bandwidth of 2880 bits/s
+\end{itemize}
+
+
+\paragraph{Z-wave} \cite{wiki_zwave}
+
+\begin{itemize}
+\item Wireless
+\item Proprietary
+\item Theoretical bandwidth of 100 kilo bits/s
+\item Line of sight range is approx. 100 meters
+\item Designed for low power consumption
+\end{itemize}
+
+
+\paragraph{ZigBee} \cite{wiki_zigbee}
+
+\begin{itemize}
+\item Originally designed in 1998, standardised in 2003 and revised in 2006
+\item Based on IEEE 802.15.4 open specification
+\item Wireless
+\item Line of sight range is 10-100 meters
+\item Theoretical bandwidth of 250 kilo bits/s
+\item Designed for low power consumption
+\end{itemize}
+
+\paragraph{WiFi} \cite{wiki_wifi}
+
+\begin{itemize}
+\item Wireless
+\item Designed for high-bandwidth rather than low-power consumption
+\item Open standard
+\end{itemize}
+
+
+\paragraph{Bluetooth} \cite{wiki_bluetooth}
+
+\begin{itemize}
+\item Wireless
+\item Designed for short-range, low-power consumption
+\item Ranges vary from 1 meter to 10 meters to 100 meters for industrial use
+\end{itemize}
+
+
+
+The X10 protocol supports wireless connection but however it lacks in reliability and encryption. Since the system mainly relays on communication, a lack in reliability would be a drawback and thus is sorted out.
+
+
+Bluetooth seem to be a good choice, however as the range goes up so does the price. A Bluetooth module at low cost would violate the range criteria, since the range would be poor. On the other hand buying a module with high range violates the cost criteria. Furthermore Bluetooth does not support mesh networks, that is a network topology in which each node relays the data from the network. This features enables the protocols to extend their range significantly. 
+
+
+The WiFi protocols supports mesh networking and has a reasonable range. It is reliable and can transfer enormous amount of data. However this protocol is extremely power consuming and thereby is not well suited for the purpose of low power consumption. The WiFi protocol is design for high bandwidth rather than low power consumption and therefore is not considered since one of the criteria is power efficiency.  
+
+
+The Z-Wave and the ZigBee protocols seems to be the candidates, the differences between these protocols are minor. However Zigbee is chosen over Z-Wave for this project for several reasons. The Z-Wave protocol has a lower transfer rate. The Z-Wave is proprietary where Zigbee is open source. Beside the differences the Zigbee protocol was more accessible. The choice was made based on accessibility and personal preference as well as the data transfer rate.
