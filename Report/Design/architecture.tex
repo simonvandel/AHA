@@ -69,7 +69,7 @@ A second architecture tries to introduce modularity and ease of use, by distribu
 \caption[Distributed system]{Illustration of a distributed system. In this example, two controllers monitor their respective sensors and analyse the monitored data. The knowledge from the learning is shared among different controllers in the system.}\label{fig:distributed_system}
 \end{figure}
 
-The user can choose exactly the number of sensor/actuator units needed for the home. If the units are connected wirelessly, there only needs to be wired power to the unit, thereby reducing the barrier to entry greatly.
+The user can choose exactly the number of sensor/actuator units needed for the home. If the units are connected wirelessly, there only needs to be wired power to the unit, thereby reducing the barrier to entry.
 
 This solution requires complex communication protocols among each individual sensor/actuator unit, in order to reliably combine their knowledge. Furthermore, the learning procedure is a complex task, see \cref{sec:functions}, that needs powerful hardware. This would mean that each unit would need to have powerful hardware, increasing power usage.
 
@@ -125,7 +125,7 @@ In this scheme, the sensor subsystem sends its sensor data to the learning subsy
 
 \subsubsection{Communication Scheme 2}
 
-This scheme is similar to scheme 1, but instead of the learning subsystem sending actions to the actuator subsystem, rules are sent. A rule specifies when a actions should be specified. This rule can depend on multiple sensor values. In order for the actuator subsystem to use the rules, sensor data is needed. Therefore the sensor subsystem also sends its sensor data to the actuator subsystem. See \cref{fig:separated_subsystems_scheme2} for a visual representation.
+This scheme is similar to scheme 1, but instead of the learning subsystem sending actions to the actuator subsystem, rules are sent. A rule specifies when an action should be performed. This rule can depend on multiple sensor values. In order for the actuator subsystem to use the rules, sensor data is needed. Therefore the sensor subsystem also sends its sensor data to the actuator subsystem. See \cref{fig:separated_subsystems_scheme2} for a visual representation.
 
 \begin{figure}[htbp]
 \centering
@@ -209,9 +209,9 @@ Many communication schemes have been discussed. This section will evaluate the s
 
 \begin{enumerate}
 \item \textbf{Number of critical communication paths.} A path is critical if the data communicated is important or has to satisfy strict real-time constraints. If a scheme has fewer critical communication paths, the system is less likely to fail, and the system will be more responsive
-\item \textbf{Memory consumption on actuator and sensor subsystems.} As the actuator and sensor subsystems should be based on an embedded to reduce the size and power usage, the available amount of memory is limited
+\item \textbf{Memory consumption on actuator and sensor subsystems.} As the actuator and sensor subsystems should be based on an embedded systems to reduce the size and power usage, the available amount of memory is limited
 \item \textbf{Amount of communication.} The less time spent communicating, the more time can be spent on other activities, such as reading output of sensors. If too much time is spent on communication, it could mean that some deadlines are not met
-\item \textbf{Memory consumption on learning subsystem.} In order for the learning subsystem to be able to be able to reason about sensor data, the hardware can be more powerful, so it is not important to consider this property
+\item \textbf{Memory consumption on learning subsystem.} In order for the learning subsystem to be able to reason about sensor data, the hardware can be more powerful, so it is not important to consider this property
 \end{enumerate}
 
 \subsubsection{Scheme 1 Evaluation}
@@ -240,7 +240,7 @@ This scheme has the same characteristics as scheme 1, but the sensor and actuato
 \begin{itemize}
 \item \textbf{Number of critical communication paths} The sensor subsystem to actuator subsystem communication path is critical, because if the packet is lost or slow, it will impact the responsiveness of the system. The learning subsystem to sensor subsystem communication path is critical because if rules are lost, the system can be perceived to malfunction
 \item \textbf{Memory consumption on actuator and sensor subsystems} The sensor subsystem has to store rules
-\item \textbf{Amount of communication} The sensor subsystem to learning subsystem communication path occurs often. The learning subsystem to sensor subsystem communication path is only used when new rules are generated. The sensor subsystem to actuator subsystem occurs every time an is to be performed, which could happen fairly often
+\item \textbf{Amount of communication} The sensor subsystem to learning subsystem communication path occurs often. The learning subsystem to sensor subsystem communication path is only used when new rules are generated. The sensor subsystem to actuator subsystem occurs every time an action is to be performed, which could happen fairly often
 \item \textbf{Memory consumption on learning subsystem} This is the same as in scheme 1
 \end{itemize}
 

@@ -19,7 +19,7 @@ Additional to the wireless criteria, the communication has to have a reasonable 
 The communication must be maintained regardless of how many devices are interconnected (one feature here is collision avoidance/detection). The network of devices should allow room for modifications within the network. It must allow devices to enter and leave the network without shutting down and restarting the entire network.
 
 \subsubsection{Cost}
-The price of the device has to be reasonable. Since the budget of the project is limited, the communication devices can not be too expensive.
+The price of the device has to be reasonable as to lower the cost of entry. And also the because the budget of the project is limited prototyping has to be low cost. This means that both in prototyping and in production the communication devices cannot be too expensive.
 
 \subsubsection{Power Consumption}
 The communication devices has to be low in power consumption.
@@ -30,17 +30,15 @@ Following protocols will be compared in this section
 
 \begin{itemize}
 \item X10
-\item Universal Powerline Bus
 \item Insteon
 \item Z-wave
 \item ZigBee
 \item WiFi
 \item Bluetooth
-\item Ethernet
 \end{itemize}
 
 
-\paragraph{X10} \cite{wiki_x10}
+\paragraph{X10}\footnote{Based on available information} \cite{wiki_x10}
 
 \begin{itemize}
 \item Designed in 1975
@@ -50,7 +48,7 @@ Following protocols will be compared in this section
 \end{itemize}
 
 
-\paragraph{Insteon} \cite{wiki_insteon}
+\paragraph{Insteon} \cite{insteon}
 
 \begin{itemize}
 \item Supports both power line and wireless installation
@@ -61,7 +59,7 @@ Following protocols will be compared in this section
 \end{itemize}
 
 
-\paragraph{Z-wave} \cite{wiki_zwave}
+\paragraph{Z-wave} \cite{zwave}
 
 \begin{itemize}
 \item Wireless
@@ -72,7 +70,7 @@ Following protocols will be compared in this section
 \end{itemize}
 
 
-\paragraph{ZigBee} \cite{wiki_zigbee}
+\paragraph{ZigBee} \cite{zigbee}
 
 \begin{itemize}
 \item Originally designed in 1998, standardised in 2003 and revised in 2006
@@ -83,7 +81,7 @@ Following protocols will be compared in this section
 \item Designed for low power consumption
 \end{itemize}
 
-\paragraph{WiFi} \cite{wiki_wifi}
+\paragraph{WiFi} \cite{wifi}
 
 \begin{itemize}
 \item Wireless
@@ -92,7 +90,7 @@ Following protocols will be compared in this section
 \end{itemize}
 
 
-\paragraph{Bluetooth} \cite{wiki_bluetooth}
+\paragraph{Bluetooth} \cite{bluetooth}
 
 \begin{itemize}
 \item Wireless
@@ -102,13 +100,13 @@ Following protocols will be compared in this section
 
 
 
-The X10 protocol supports wireless connection but however it lacks in reliability and encryption. Since the system mainly relays on communication, a lack in reliability would be a drawback and thus is sorted out.
+The X10 protocol supports wireless connection but however it lacks in reliability and encryption. Since the system mainly relays on communication, a lack in reliability would be a drawback and thus is sorted out. This is based on available information as no clear specification from a reliable source could be found, this is also a reason no to consider X10 any further.
 
 
 Bluetooth seem to be a good choice, however as the range goes up so does the price. A Bluetooth module at low cost would violate the range criteria, since the range would be poor. On the other hand buying a module with high range violates the cost criteria. Furthermore Bluetooth does not support mesh networks, that is a network topology in which each node relays the data from the network. This features enables the protocols to extend their range significantly. 
 
 
-The WiFi protocols supports mesh networking and has a reasonable range. It is reliable and can transfer enormous amount of data. However this protocol is extremely power consuming and thereby is not well suited for the purpose of low power consumption. The WiFi protocol is design for high bandwidth rather than low power consumption and therefore is not considered since one of the criteria is power efficiency.  
+The WiFi protocols supports mesh networking and has a reasonable range. It is reliable and can transfer large amounts of data. However this protocol is very power consuming and thereby is not suited for this project. The WiFi protocol is designed for high bandwidth rather than low power consumption and therefore is not considered since one of the criteria is power efficiency.  
 
 
 The Z-Wave and the ZigBee protocols seems to be the candidates, the differences between these protocols are minor. However Zigbee is chosen over Z-Wave for this project for several reasons. The Z-Wave protocol has a lower transfer rate. The Z-Wave is proprietary where Zigbee is open source. Beside the differences the Zigbee protocol was more accessible. The choice was made based on accessibility and personal preference as well as the data transfer rate.
