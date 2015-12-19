@@ -14,6 +14,7 @@ The system is designed to learn the use patterns of the user. However due to lac
 \section{Tracking Ability}
 The system could improve if it had the ability to track the user and take actions based on where the user is. The tracking could be through the user's smartphone or any other mobile device. The tracking ability would make the system able to take actions knowing that the user is nearby. Those actions could be trivial yet convenient, such as turning on the coffee machine 5 minutes before the user arrives, meaning the user does not have to wait.
 
-\section{Weighted history}
-To ensure that the system will be conservative, adapt to irregular changes imediately, some weighting of already known patterns should be done. This is to ensure that learned are not confused by temporary irregularities, e.g. if another user who has different usage pattern are temporarily present, the system should not adapt to this users patterns instead. 
-\sinote{write stuff about how we can change the conservativeness of the system (ie. by adding weight to newer data)}
+\section{Weighted History}
+To ensure that the system will be conservative, adapt to irregular changes immediately, some weighting of already known patterns should be done. This is to ensure that the learner is not confused by temporary irregularities, e.g. if a guest is present in the user's house, the usage pattern of the guest is not known to the system. As the guest is only temporarily present, the system should not adapt to this users patterns instead. 
+
+This conservativeness can be achieved by lowering the weight of newly learned usage patterns. In that way, temporary irregularities will not be suggested as actions immediately.
