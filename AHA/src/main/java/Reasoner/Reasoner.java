@@ -11,6 +11,7 @@ import com.google.common.cache.CacheBuilder;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,9 +27,9 @@ public class Reasoner{
   private Communicator com = null;
   private SampleList sampleList = SampleList.getInstance();
   //husk actions vi har sendt, indenfor 1 sekund, så vi kan tjekke om de actions vi får er bruger eller system
-  private Cache<Action, Reasoning> sentActions = CacheBuilder.newBuilder().concurrencyLevel(1).expireAfterWrite(1, TimeUnit.SECONDS).build();
+  private Cache<Action, Reasoning> sentActions = CacheBuilder.newBuilder().concurrencyLevel(1).expireAfterWrite(2, TimeUnit.SECONDS).build();
 
-  private Cache<Action, Integer> allActions = CacheBuilder.newBuilder().concurrencyLevel(1).expireAfterWrite(1, TimeUnit.SECONDS).build();
+  private Cache<Action, Integer> allActions = CacheBuilder.newBuilder().concurrencyLevel(1).expireAfterWrite(2, TimeUnit.SECONDS).build();
 
   private Reasoner(Logger reasonLogger){
     logger = reasonLogger;
@@ -52,20 +53,47 @@ public class Reasoner{
    * @param sample the sample to reason about
    */
   public void reasonAndSend(Sample sample){
-    List<Action> actions = reason(sample);
-    if (actions == null){
-      logger.log(Level.INFO, "Found no actions");
+    if (currentModel == null){
+      logger.log(Level.WARNING, "Model is not generated yet");
       return;
     }
+    Reasoning reasoning = currentModel.CalculateReasoning(sample);
+    if (reasoning == null){
+
+      return;
+    }
+    if (reasoning.getActions().isEmpty()){
+      logger.log(Level.INFO, "Reasoning succeeded but contained no actions");
+      return;
+    }
+    List<Action> actions = reasoning.getActions()
+        .stream()
+        .filter(action -> action != null)
+        .filter(action -> action.getValFrom().getValue() != action.getValTo().getValue())
+        .filter(action -> !sentActions.asMap().keySet().contains(Sampler.inverseAction(action)))
+        .collect(Collectors.toList());
+
+    if (actions == null){
+
+      return;
+    }
+    for (Action action : actions){
+      allActions.put(action, action.hashCode());
+    }
+
+
     for (Action sampleAction : sample.getActions()){
       allActions.put(sampleAction, sampleAction.hashCode());
     }
     boolean skip = false;
     for (Action action : actions){
       for (Action storedAction : allActions.asMap().keySet()){
+        sentActions.put(action, reasoning);
         Action inverseAction = Sampler.inverseAction(storedAction);
         if (action.equals(inverseAction)){
           logger.log(Level.INFO, "Found inverse action: " + action.toString());
+          wrongResonings.add(reasoning);
+          //currentModel.TakeFeedback(reasoning);
           skip = true;
           break;
         }
@@ -83,34 +111,6 @@ public class Reasoner{
     }
   }
 
-  /**
-   * Given a sample, calculate an action
-   *
-   * @param sample the sample to reason about
-   * @return an action which is probable according to the model
-   */
-  public List<Action> reason(Sample sample){
-    if (currentModel == null){
-      return null;
-    }
-    Reasoning reasoning = currentModel.CalculateReasoning(sample);
-    if (reasoning == null){
-      return null;
-    }
-    if (reasoning.getActions().isEmpty()){
-      return null;
-    }
-    List<Action> actions = reasoning.getActions()
-        .stream()
-        .filter(action -> action != null)
-        .filter(action -> action.getValFrom().getValue() != action.getValTo().getValue())
-        .filter(action -> !sentActions.asMap().keySet().contains(Sampler.inverseAction(action)))
-        .collect(Collectors.toList());
-
-    actions.forEach(action -> sentActions.put(action, reasoning));//foreach action, store in cache
-
-    return actions;
-  }
 
   /**
    * Gives the reasoning behind the given system action
@@ -123,6 +123,10 @@ public class Reasoner{
       return sentActions.asMap().get(action);
     }
     return null;
+  }
+
+  public ConcurrentMap<Action, Reasoning> getSentActions(){
+    return sentActions.asMap();
   }
 
   /**

@@ -104,7 +104,9 @@ public class HiddenMarkovModel implements IModel{
       for(Action aPrev : s.getActions()) {
         for(Action aNext: emissionStatePredicted.getActions()) {
           if(aPrev.getDevice() == aNext.getDevice()) {
-            actions.add(new Action(aPrev.getValTo(), aNext.getValTo(), aNext.getDevice()));
+            if(aPrev.getValTo() != aNext.getValTo()){
+              actions.add(new Action(aPrev.getValTo(), aNext.getValTo(), aNext.getDevice()));
+            }
           }
         }
       }
@@ -221,7 +223,18 @@ public class HiddenMarkovModel implements IModel{
   @Override
   public void TakeFeedback(Reasoning wrongReasoning){
     logger.log(Level.INFO, "TakeFeedback called with wrong actions: " + wrongReasoning.toString());
-    for (int i = 0; i < wrongReasoning.getHiddenStates().size(); i++){
+    if(wrongReasoning.getHiddenStates().size() == wrongReasoning.getEmissions().size()){
+      int lastIndex = wrongReasoning.getHiddenStates().size() - 1;
+      HiddenState wrongHiddenState = wrongReasoning.getHiddenStates().get(lastIndex);
+      EmissionState wrongEmissionState = wrongReasoning.getEmissions().get(lastIndex);
+      getEmissionMatrix().getEntry(wrongHiddenState, wrongEmissionState);
+
+      // set the probability that currentHiddenState emits currentEmissionState to half of the current probability, as it was the wrong thing to do
+      double newEmissionProbability = getEmissionMatrix().getEntry(wrongHiddenState, wrongEmissionState) * 0.5;
+      emissionMatrix.setProbabilityAndNormalise(newEmissionProbability, wrongHiddenState, wrongEmissionState);
+    } else
+      logger.log(Level.SEVERE, "Wrong number of emissions states and hidden states are not the same in reasoning");
+    /*for (int i = 0; i < wrongReasoning.getHiddenStates().size(); i++){
       HiddenState currentHiddenState = wrongReasoning.getHiddenStates().get(i);
       EmissionState currentEmission = wrongReasoning.getEmissions().get(i);
       HiddenState nextHiddenState;
@@ -240,6 +253,7 @@ public class HiddenMarkovModel implements IModel{
       double newTransitionProbability = getTransitionMatrix().getEntry(currentHiddenState, nextHiddenState) * 0.5;
       // set the probability that currenHiddenState transitions to nextHiddenState to half of the current probability
       transitionMatrix.setProbabilityAndNormalise(newTransitionProbability, currentHiddenState, nextHiddenState);
-    }
+    }*/
+
   }
 }

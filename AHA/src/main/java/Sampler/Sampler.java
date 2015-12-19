@@ -12,6 +12,7 @@ import org.javatuples.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,7 +22,7 @@ public class Sampler {
   private static Logger sampleLogger;
   private static Logger reasonLogger;
   private static Sampler mSampler;
-  private final static int SCOPE_SIZE = 10;
+  private final static int SCOPE_SIZE = 4;
   private List<NormalizedSensorState> mHistory;
   private NormalizedSensorState mPrevious;
   private SampleList sampleList = SampleList.getInstance();
@@ -40,7 +41,7 @@ public class Sampler {
       //value was garbage-collected before removalListener got to it. Yay dynamic garbage collection! just ignore? not much else to do..
       return;
     }
-    sampleLogger.log(Level.INFO, "Sample:" + sample.toString1());
+
     for (Pair<Action, Action> actions: actionsToBeSanitised){
       if(sample.getActions().contains(actions.getValue0())){
         sample
@@ -100,7 +101,7 @@ public class Sampler {
   private Cache<String, Sample> uncleanSamples = CacheBuilder
       .newBuilder()
       .concurrencyLevel(1)
-      .expireAfterWrite(1, TimeUnit.SECONDS)
+      .expireAfterWrite(2, TimeUnit.SECONDS)
       .removalListener(sanitizerListener)
       .build();
   private Reasoner reasoner;
@@ -153,6 +154,7 @@ public class Sampler {
       List<Action> acsCorrected = findActions(mPrevious, newState); //we find actions again, as newState is modified
       moveScope(newState);
       res = new Sample(mHistory, newState.getTime(), acsCorrected);
+      sampleLogger.log(Level.INFO, "Sample:" + res.toString1());
     }
     oldState = newState;
     return res;
@@ -228,7 +230,7 @@ public class Sampler {
       }
     }
 
-
+    ConcurrentMap<Action, Reasoning> sentActions = reasoner.getSentActions();
     for (int i = 0; i < validActions.size() - 1; i++) {
       Action actionI = validActions.get(i);
       if(actionI.getValFrom() == null) {
@@ -242,7 +244,7 @@ public class Sampler {
         if (actionI.equals(inverseAction(actionJ))) { //If two actions are inverse to each other
           actionsToBeSanitised.add(new Pair<>(actionI, actionJ));
 
-          Reasoning reasoning = reasoner.getReasoningBehindAction(validActions.get(i));
+          Reasoning reasoning = /*reasoner.*/getReasoningBehindAction(actionJ, sentActions);
           if(reasoning != null){
             reasoner.updateModel(reasoning);
           }
@@ -250,5 +252,12 @@ public class Sampler {
       }
     }
     //endregion
+  }
+
+  public Reasoning getReasoningBehindAction(Action action, ConcurrentMap<Action, Reasoning> sentActions){
+    if (sentActions.containsKey(action)){
+      return sentActions.get(action);
+    }
+    return null;
   }
 }

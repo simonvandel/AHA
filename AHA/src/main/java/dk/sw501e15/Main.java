@@ -65,7 +65,7 @@ public class Main
     NormalizedSensorState nState;
 
     Instant learnerRun = Instant.now();
-    long learnerRunInverval = 60; //in seconds
+    long learnerRunInverval = 120; //in seconds
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){
@@ -107,7 +107,7 @@ public class Main
           sample = sampler.getSample(nState);
           if (sample != null){
             oReasoner.reasonAndSend(sample);
-            mainLogger.log(Level.INFO, "æ" + (System.currentTimeMillis() - loopStart));
+            mainLogger.log(Level.INFO, "Loop time: " + (System.currentTimeMillis() - loopStart));
           }
         }
       }
