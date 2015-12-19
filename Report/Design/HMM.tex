@@ -1,10 +1,13 @@
 \section{Hidden Markov Model}
 \label{sec:hmm}
-A hidden Markov model (HMM) is used in this project as a mathematical model for the learning procedure. HMMs are typically used when reasoning over time, as they incorporate discrete time changes. A HMM, that approximates the real world, can be inferred, or \enquote{learned}. The components of such a HMM are described in detail below. In this project, HMMs are relevant for the problem of prediction. That is, given a sequence of observations up to time $t$ in the problem domain, what is the most likely observation in time $t+1$?
+In this project hidden Markov models (HMMs) are used to model a probability distribution over behavioural patterns, that will be used to predict user behaviours. HMMs are typically used when reasoning over time, as they incorporate discrete time changes. 
 
-Other mathematical models could also have been chosen. If the focus in this project was finding the best possible way to predict user actions in the fastest, most precise way, multiple models would have to be compared based on real observation data.
-The known, or observable, data in this project is what the sensors observe. 
-We will now introduce the diagrams visually, mainly to illustrate how the models change over time. These diagrams are called trellis diagrams. The simplest form of a Markov model can be seen in \cref{fig:1stMarkovModel}. Here we can see the property that at any state in time $s_t$ the next discrete time future $s_{t+1}$ is only dependent on the current state $s_t$, and not on previous states. This is called the \emph{Markov property}. But this Markov property is also means that if we want to predict the next state $t+1$, just based on sensor values in states $t$, we could only choose the state that is most occurring after the state at time $t$, this is not preferable in the context of this system, because some states might be equal in terms of sensor values but can lead to multiple different states depending on how we arrived at state at time $t$, therefore we want to find relations between states not between sensor values. This is also discussed in this paper\cite{Allahviranloo201316} by Mahdieh Allahviranloo and Will Recker, it mentions that state $t+1$ is potentially dependent on the whole history of states. This however is overcome by instead of the sensor values being the input features, a state and some of the states prior to that state, its history, is the input features. The effect of this is instead of reasoning between sensor values at in the state at time $t$, the learner can reason on how we arrived at the state at time $t$. Thereby encoding the some history $t-n$ of the state $t$ in state $t$ itself.
+The following section describes the components of a HMM, and how we solve the problem of predicting, that is, given a sequence of observations up to time $t$ in the problem domain, what is the most likely observation in time $t+1$?
+
+HMMs have been chosen among other mathematical structures used for prediction, because they have seen many applications in temporal pattern recognition. If the focus in this project was finding the best possible way to predict user actions in the fastest, most precise way, multiple mathematical structures would have to be compared based on real observation data.
+
+The known, or observable, data in this project are what the sensors observe. 
+An HMM can be graphically represented by means of a trellis diagram\cite{russell2010artificial}. The simplest form of a Markov model can be seen in \cref{fig:1stMarkovModel}. Here we can see the property that at any state in time $s_t$ the next discrete time future $s_{t+1}$ is only dependent on the current state $s_t$, and not on previous states. This is called the \emph{Markov property}. But this Markov property is also means that if we want to predict the next state $t+1$, just based on sensor values in states $t$, we could only choose the state that is most occurring after the state at time $t$, this is not preferable in the context of this system, because some states might be equal in terms of sensor values but can lead to multiple different states depending on how we arrived at state at time $t$, therefore we want to find relations between states not between sensor values. This is also discussed in this paper\cite{Allahviranloo201316} by Mahdieh Allahviranloo and Will Recker, it mentions that state $t+1$ is potentially dependent on the whole history of states. This however is overcome by instead of the sensor values being the input features, a state and some of the states prior to that state, its history, is the input features. The effect of this is instead of reasoning between sensor values at in the state at time $t$, the learner can reason on how we arrived at the state at time $t$. Thereby encoding the some history $t-n$ of the state $t$ in state $t$ itself.
 
 \begin{figure}[htbp]
 \centering
@@ -27,10 +30,12 @@ We will now introduce the diagrams visually, mainly to illustrate how the models
 
 Even though these diagrams are good at illustrating the models and how they change over time, it is important to remember that these are not illustrating the exact models themselves, only how they change over time for a specific sequence of observations. The actual model could be illustrated with causal networks, which will be used later.
 
-As it is not realistic to observe everything using sensors, HMMs have a concept of states that are hidden. These states represent what the state of the world is in reality, and is therefore not observable. A hidden state can emit an observable state of the world. In this project, this means that the hidden states are the true states of the home; all information needed for the user to take a choice on what to do next. This unobservable world then emits values to the sensors, that we can observe, creating the observable states called emission states. These are all distinct and can be emitted multiple times in a sequence of observations. See \cref{fig:2ndMarkovModel} for an example of a simple HMM. Note that a trellis diagram represents a sequence of observed state over time, we therefore make a distinction between emission states and observed states. Emission states are all states that can be emitted, the states of the model, and observed states are all states that have been emitted and observed. The important difference is that emission states cannot be the same, they are always distinct. Observed states can be equivalent, they are simply observed at different time steps.
+A specific user action cannot be justified only based on sensor data, e.g. the fact that the light should be switched on does not only depend on the fact that the user is present in the room, but also on the fact that the user is awake. In this example, the information whether the user is awake, is hidden. To represent this data, HMMs use the concept of hidden states. This data can not be observed, only assumed.
+
+Hidden states represent what the state of the world is in reality, and is therefore not observable. A hidden state can emit an observable state of the world. In this project, this means that the hidden states are the true states of the home; all information needed for the user to take a choice on what to do next. This unobservable world then emits values to the sensors, that we can observe, creating the observable states called emission states. These are all distinct and can be emitted multiple times in a sequence of observations. See \cref{fig:2ndMarkovModel} for an example of a simple HMM. Note that a trellis diagram represents a sequence of observed state over time, we therefore make a distinction between emission states and observed states. Emission states are all states that can be emitted, the states of the model, and observed states are all states that have been emitted and observed. The important difference is that emission states cannot be the same, they are always distinct. Observed states can be equivalent, they are simply observed at different time steps.
 
 
-We denote emission states as $E=\{e_1, \dots ,e_{M}\}|M = \text{number of emission states}$. Observed states as $\mathcal{O}=\{o_1, \dots , o_T\}|T = \text{number of observations}$.
+We denote by $E=\{e_1, \dots ,e_{M}\}$ the set of emission states and $\mathcal{O}=\{o_1, \dots , o_T\}$ the set of observed states, where $M$ and $T$ are resprectively the number of emission states and observations.
 
 \begin{figure}[htbp]
 \centering
@@ -44,7 +49,7 @@ We denote emission states as $E=\{e_1, \dots ,e_{M}\}|M = \text{number of emissi
 
   %Emission states
   \node[ellipse] (etp1) [draw=black, minimum width=1.25cm, minimum height=.75cm, below=of htp1] {$e_{t-1}$};
-  \node[ellipse] (etp2) [draw=black, minimum width=1.25cm, minimum height=.75cm, below=of htp2] {$e_{t-1}$};
+  \node[ellipse] (etp2) [draw=black, minimum width=1.25cm, minimum height=.75cm, below=of htp2] {$e_{t-2}$};
   \node[ellipse] (et)   [draw=black, minimum width=1.25cm, minimum height=.75cm, below=of ht] {$e_t$};
   \node[ellipse] (etf1) [draw=black, minimum width=1.25cm, minimum height=.75cm, below=of htf1] {$e_{t+1}$};
 
@@ -70,7 +75,7 @@ We denote emission states as $E=\{e_1, \dots ,e_{M}\}|M = \text{number of emissi
 \caption[Trellis diagram for a simple Hidden Markov Model]{The trellis diagram for a simple hidden Markov model that assumes the Markov property}\label{fig:2ndMarkovModel}
 \end{figure}
 
-As described in \cref{sec:sampler}, the Markov property might not model the reality accurately. One could increase the number of states a state is dependent on in the past. The order of a HMM directly corresponds to how many states any state $s_t$ is dependent on. This is better illustrated, see \cref{fig:3rdMarkovModel}.
+As described in \cref{sec:sampler}, the Markov property might not model the reality accurately. One could increase the number of states a state is dependent on in the past. The order of a HMM directly corresponds to how many states any state $s_t$ is dependent on. This is illustrated in \cref{fig:3rdMarkovModel} for an HMM of order 2.
 
 \begin{figure}[htbp]
 \centering
@@ -109,15 +114,15 @@ As described in \cref{sec:sampler}, the Markov property might not model the real
 \caption[Trellis diagram for a 2nd order HMM]{A trellis diagram for a 2nd order HMM.}\label{fig:3rdMarkovModel}
 \end{figure}
 
-\Cref{fig:3rdMarkovModel} shows the trellis diagram for a 2nd order Markov model. Here, we can see that every state $s_t$ is dependent on two states in the past, $s_{t-1}$ and $s_{t-2}$, meaning that every state is not only dependent on what happened the time step before, violating the \emph{Markov property}. This can trivially be expanded to any \emph{n}th order Markov model. Every model we have looked at so far has been a 1st order Markov model. Any \emph{n}th order Markov model, where $n>1$, violates the Markov property. Many algorithms within this field assumes the Markov property, including the ones later used in this project. Any \emph{n}th order Markov model can be converted to a 1st order Markov model, thereby keeping the Markov property. This is, in this project, done by encoding the past, in form of the prior hidden states, in the hidden state. The sampler as will be describe in later chapters is responsible for this.\cref{sec:sampler}
+Here, we can see that every state $s_t$ is dependent on two states in the past, $s_{t-1}$ and $s_{t-2}$, meaning that every state is not only dependent on what happened the time step before, violating the \emph{Markov property}. This can trivially be extended to a HMM of any order. Any $n^{th}$ order Markov model, where $n>1$, violates the Markov property. Many algorithms within this field assumes the Markov property, including the ones later used in this project. Any $n^{th}$ order Markov model can be converted to a 1st order Markov model, thereby keeping the Markov property. This is done in this project, by encoding the past, in form of the prior hidden states, in the hidden state. The sampler is described in \cref{sec:sampler}.
 
-On the basis of this, we can now find the specific hidden states. We introduce the term \emph{sample} that covers the current observable snapshot together with the history of snapshots $n$ steps back. The size of this $n$ will be discussed in \cref{sec:sampler}. This sample is used to find hidden states. A list of samples are created from an observation sequence of snapshots, further described in \cref{sec:sampler}. One could argue that this sample needs to be created from a history of hidden states, not snapshots, since it is these we depend on in the current state. A compromise was therefore made so that the samples, and thereby hidden states, are found from the observations and history of observations, on the reasoning that we cannot distinguish between two hidden states from anything else then the observations. A hidden state will therefore be created for every sample in the HMM to keep the model in 1st order and thereby keep the Markov property.
+On the basis of this, we can now find the specific hidden states. We introduce the term \emph{sample} that covers the current observable snapshot together with the history of snapshots $n$ steps back. The chosen value of $n$ will be discussed in \cref{sec:sampler}. This sample is used to find hidden states. A list of samples are created from an observation sequence of snapshots, further described in \cref{sec:sampler}. One could argue that this sample needs to be created from a history of hidden states, not snapshots, since it is these we depend on in the current state. A compromise was therefore made so that the samples, and thereby hidden states, are found from the observations and history of observations, on the reasoning that we cannot distinguish between two hidden states from anything else then the observations. A hidden state will therefore be created for every sample in the HMM to keep the model in 1st order and thereby keep the Markov property.
 
 In a visual representation of a HMM a state is connected with a direction to other states with a certain probability. This denotes the probability of transitioning from one state to another. There are two different forms of transitions in such a model.
 
-First, there is the hidden state transition from one state to another, here denoted as $a_{ij}$, meaning the transition from hidden state $x_i$ to hidden state $x_j$. It can also be described as the probability that if we know that the state is $x_i$ at time t, what is the probability that the next hidden state is $x_j$.
+First, there is the hidden state transition from one state to another, here denoted as $a_{ij}$, that represents the probability that at time $t$ the hidden state is $x_j$, given that at time $t-1$ the hidden state is $x_i$.
 
-Secondly, we have the transition from a hidden state to an emission state. This is called emitting an emission state. It is notated as $b_{ij}$, meaning emitting emission state $e_j$ in hidden state $x_i$. This is associated with a certain probability.
+Secondly, we have the transition from a hidden state to an emission state. This is called emitting an emission state. It is denoted by $b_{ij}$, meaning emitting emission state $e_j$ in hidden state $x_i$. This is associated with a certain probability.
 
 Furthermore, we have the initial distribution. This denotes the probability distribution of any hidden state without a prior hidden state; the initial probability for being in hidden state $x_i$. This can essentially be described as the probability of starting in that state.
 
@@ -130,7 +135,7 @@ B &= \text{emission matrix}\\
 \pi &= \text{initial distribution}
 \end{align*}
 
-Here we can see that we have a matrix for each form of probability. This means that each matrix contains probabilities. The transition matrix $A$ is the matrix denoting the hidden state transition probability $P(X_t=x_j|X_{t-1}=x_i)$. The emission matrix $B$ denotes the emission probability, $P(E_t=e_j|X_t=x_j)$. We can also visually represent a HMM in a causal network, as can be seen in \cref{fig:HMMCausalNet}.
+Here we can see that we have a matrix for each form of probability. This means that each matrix contains probabilities. The transition matrix $A$ is the matrix denoting the hidden state transition probability $P(X_t=x_j|X_{t-1}=x_i)$. The emission matrix $B$ denotes the emission probability, $P(E_t=e_j|X_t=x_i)$. We can also visually represent a HMM in a causal network, as can be seen in \cref{fig:HMMCausalNet}.
 
 \begin{figure}[htbp]
 \centering
@@ -185,9 +190,9 @@ Here we can see that we have a matrix for each form of probability. This means t
 \caption[A HMM represented as a causal network.]{A hidden Markov model, with four hidden states and two emission states, represented as a causal network.}\label{fig:HMMCausalNet}
 \end{figure}
 
-\Cref{fig:HMMCausalNet} represents a HMM with four hidden states and two emission states. The names on the arrows in the matrix (e.g. $a_{ij}$ and $b_{ij}$) represent entries in the two matrices, i.e. probabilities. We can see that every hidden state is connected to every hidden state (including itself) and that every hidden state can emit every emission state. This is not always the case in reality, since some hidden states could never directly reach other states and not every emission state could be emitted from every hidden state. This could be represented either as a sparse matrix or a matrix with some entries with the value 0. In essence, they are equivalent, since a connection that has a probability of 0 can never happen. This is just a case of how one represents \enquote{no connection}. Both of these representations pose a problem.
+\Cref{fig:HMMCausalNet} represents a HMM with four hidden states and two emission states. The names on the arrows in the matrix (e.g. $a_{ij}$ and $b_{ij}$) represent entries in the two matrices, i.e. probabilities. We can see that every hidden state is connected to every hidden state (including itself) and that every hidden state can emit every emission state. This is not always the case in reality, since some hidden states could never directly reach other states and not every emission state could be emitted from every hidden state. This is represented as a matrix with entries with the value 0. Arcs corresponding to transition probabilities with probability 0, are omitted in the graphical representation.
 
-The learning algorithms for HMMs cannot learn the connections between states, meaning that if there is no connection to begin with, there never will be one in the future. This is a dangerous assumption to make, since we rarely have a complete understanding of the problem domain (after all, it is why we are trying to learn the hidden states) nor have a complete understanding of what each state exactly represents. There are however some connections that cannot happen in the problem domain, so these connections would have a probability of $0$. However, there are no impossible connections in this project. Hidden states can emit every emission state, as unreliable sensors could represent an impossible emission state.\sinote{Jens, kig på det her, og skriv det om} Furthermore, addressing the transitions between hidden states, the hidden states are partly based on the user's memory and how the user thinks. This can change from one state to another at will, even if the transition is physically impossible\kanote{same with this point}. We assume that the user remembers the events in the past, as they happened, but since a user can forget, see reality differently or our sensors observe wrongly, we leave all connections in the model and thereby making it able to accommodate changes and unreliability.
+The learning algorithms for HMMs cannot learn the connections between states, meaning that if there is no connection to begin with, there never will be one in the future. This is a strong assumption to make, since we rarely have a complete understanding of the problem domain (after all, it is why we are trying to learn the hidden states) nor have a complete understanding of what each state exactly represents. There are however some connections that cannot happen in the problem domain, so these connections would have a probability of $0$. However, there are no impossible connections in this project. Hidden states can emit every emission state, as unreliable sensors could represent an impossible emission state.\sinote{Jens, kig på det her, og skriv det om} Furthermore, addressing the transitions between hidden states, the hidden states are partly based on the user's memory and how the user thinks. This can change from one state to another at will, even if the transition is physically impossible\kanote{same with this point}. We assume that the user remembers the events in the past, as they happened, but since a user can forget, see reality differently or our sensors observe wrongly, we leave all connections in the model and thereby making it able to accommodate changes and unreliability.
 
 In the formal definition of HMMs we also had $\pi$, a matrix denoting the initial hidden state probability distribution, $P(X_1=x_i)$. Until now we have only illustrated models with relative time, but the initial probabilities give us the notion that there is an absolute time, starting at time 1 with probabilities denoted in this table. This is needed, since any observation sequence must have a starting point, and is going to become very important later, when we will learn and reason about the model. We can now expand the trellis diagrams with the notion of a starting point as can be seen in \cref{fig:4thMarkovModel}.
 
@@ -233,7 +238,7 @@ Learning is the task of determining the parameters of a HMM. Remember that we ca
 
 For learning, this project uses the Baum-Welch algorithm\cite{hmmIntroduction}. This section will explain how the Baum-Welch algorithm is computed.
 
-Given the model $\theta = \{A, B, \pi\}$ and a sequence of observations $\mathcal{O}$, the algorithm tries to find the parameters $A$, $B$ and $\pi$ that maximises the probability of the observations given as input, that is $P(Y | \theta)$. It is important to note that the algorithm is only guaranteed to find a local minima to this maximisation of probabilities.
+Given the model $\theta = \{A, B, \pi\}$ and a sequence of observations $\mathcal{O}$, the algorithm tries to find the parameters $A$, $B$ and $\pi$ that maximises the probability of the observations given as input, that is $P(Y | \theta)$. It is important to note that the algorithm is only guaranteed to find a local maxima.
 
 The algorithm can be summarised in the following points\cite{hmmIntroduction}.
 
@@ -247,15 +252,15 @@ The algorithm can be summarised in the following points\cite{hmmIntroduction}.
 The new parameters can be calculated in the following way\cite{hmmIntroduction}.
 
 \begin{equation*}
-\pi_i = \sum\limits_{j=0}^{N-1} \gamma_0(j)
+\pi_i = \sum\limits_{j=1}^{N} \gamma_0(j)
 \end{equation*}
 
 \begin{equation*}
-a_{ij} = \frac{\sum\limits_{t=0}^{T-2} \gamma_t(i, j)}{ \sum\limits_{t=0}^{T-2} \gamma_t(i) }
+a_{ij} = \frac{\sum\limits_{t=1}^{T-1} \gamma_t(i, j)}{ \sum\limits_{t=1}^{T-2} \gamma_t(i) }
 \end{equation*}
 
 \begin{equation*}
-b_j(k) = \frac{ \sum\limits_{t \in \{0,\ldots, T-1\}, \mathcal{O}_t = k} \gamma_t(j) } { \sum\limits_{t=0}^{T-1} \gamma_t(j) }
+b_j(k) = \frac{ \sum\limits_{t \in \{1,\ldots, T\}, \mathcal{O}_t = k} \gamma_t(j) } { \sum\limits_{t=1}^{T} \gamma_t(j) }
 \end{equation*}
 
 In the above formula, $\gamma_t(i)$ and $\gamma_t(i, j)$ can be calculated in the following way.
@@ -263,26 +268,26 @@ In the above formula, $\gamma_t(i)$ and $\gamma_t(i, j)$ can be calculated in th
 $\gamma_t(i, j)$ is the probability of being in state $x_i$ at time $t$ and transitioning to state $x_j$ at time $t+1$.
 
 \begin{equation*}
-\gamma_t(i,j) = \frac { \alpha_t(i) a_{ij} b_j(\mathcal{O}_{t+1}) \beta_{t+1}(j) } { \sum\limits_{k=0}^{T-1} \alpha_{T-1}(k) }
+\gamma_t(i,j) = \frac { \alpha_t(i) a_{ij} b_j(\mathcal{O}_{t+1}) \beta_{t+1}(j) } { \sum\limits_{k=1}^{T} \alpha_{T}(k) }
 \end{equation*}
 
 $\gamma_t(i)$ is the probability of being in state $x_i$ at time $t$ given the observed sequence $\mathcal{O}$ and the parameters $\theta$.
 
 \begin{equation*}
-\gamma_t(i) = \sum\limits_{j=0}^{N-1} \gamma_t(i,j)
+\gamma_t(i) = \sum\limits_{j=1}^{N} \gamma_t(i,j)
 \end{equation*}
 
 $\alpha_t(i)$ is the probability of the partial observation sequence up to time $t$, where the hidden state is in $x_i$ at time $t$. $\alpha_t(i)$ can be computed using the following recursive formulae.
 
 \begin{align*}
-\alpha_0(i) &= \pi_i b_i(\mathcal{O}_0) \\
-\alpha_t(i) &= \Bigg( \sum\limits_{j=0}^{N-1} \alpha_{t-1}(j) a_{ji} \Bigg) b_i(\mathcal{O}_t)
+\alpha_0(i) &= \pi_i b_i(\mathcal{O}_1) \\
+\alpha_t(i) &= \Bigg( \sum\limits_{j=1}^{N-1} \alpha_{t-1}(j) a_{ji} \Bigg) b_i(\mathcal{O}_t)
 \end{align*}
 
-$\beta_t(i)$ is the probability of the ending observation sequence $o_t,\ldots,o_{T_1}$ given starting state $i$ at time $t$.
+$\beta_t(i)$ is the probability of the ending observation sequence $o_t,\ldots,o_{T}$ given starting state $i$ at time $t$.
 \begin{align*}
-\beta_{T-1}(i) &= 1 \\
-\beta_t(i) &= \sum\limits_{j=0}^{N-1} a_{ij} b_j(\mathcal{O}_{t+1}) \beta_{t+1}(j)
+\beta_{T}(i) &= 1 \\
+\beta_t(i) &= \sum\limits_{j=1}^{N} a_{ij} b_j(\mathcal{O}_{t+1}) \beta_{t+1}(j)
 \end{align*}
 
 \subsection{Time as a sensor}
