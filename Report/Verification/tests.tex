@@ -1,6 +1,6 @@
 All the logs can be found in \cref{app:cd}. \ranote{remember to put the logs on the CD}
-\subsubsection{Single pattern test}
-The setup consisted of a single sensor station with two switches. The switches were connected to  Light-Emitting Diodes (LED) such that each switch controlled one LED. The pattern being performed; when turning on one LED the other one is turned on as well. A snippet of the samples this produced can be seen in \cref{Table:SampleSnippet}, where time moves from right to left so the rightmost state is the newest.
+\subsubsection{Single Pattern Test}
+The setup consisted of a single sensor station with two switches. The switches were connected to light-emitting diodes (LEDs), such that each switch controlled one LED. The pattern being performed; when turning on one LED, the other one is turned on as well. A snippet of the samples this produced can be seen in \cref{Table:SampleSnippet}, where time moves from left to right so the rightmost state is the most recent.
 \begin{center}
 
 \begin{table}[htbp]
@@ -24,14 +24,14 @@ The setup consisted of a single sensor station with two switches. The switches w
 
 \label{Table:SampleSnippet}
 \end{center}
-Once 31 samples had been received, as can be seen in a snippet from the learner log\cref{Listing:MarkovGenLog}, the learner were run and a model generated.
+Once 31 samples had been received, as can be seen in a snippet from the learner log\cref{Listing:MarkovGenLog}, the learner was run and a model generated.
 \lstset{language=xml}
 \begin{lstlisting}[label = Listing:MarkovGenLog, caption = Snippet of log from model generation]
   <date>2015-12-17T09:03:32</date>
   <logger>aiLogger</logger>
-  <message>Sample size for generating hidden markov model: 34</message>
+  <message>Sample size for generating hidden Markov model: 34</message>
 \end{lstlisting}
-With this model the system started trying to predict actions. At this point no user actions were being performed on sensor id 1. The confidence threshold for this test were 75\%. The log trace for the first action can be seen in \cref{Listing:CompletActionTrace}. And as can be seen the in the logs the system predicted the state at 09:03:36 based on the state from 09:03:33. Looking at the logs beforehand that shows user actions, it can be seen that this pattern was repeated by the user.
+With this model, the system started trying to predict actions. At this point, no user actions were being performed on sensor id 1. The confidence threshold for this test was 75\%. The log trace for the first action can be seen in \cref{Listing:CompletActionTrace}. As can be seen in the logs, the system predicted the state at 09:03:36, based on the state from 09:03:33. Looking at the logs before that, shows user actions; it can be seen that this pattern was repeated by the user.
 \begin{lstlisting}[label = Listing:CompletActionTrace, caption = Snippets from different logs to show how the process of making an action]
 	<record>
 	  <date>2015-12-17T09:03:33</date>
@@ -40,16 +40,16 @@ With this model the system started trying to predict actions. At this point no u
 	  <thread>1</thread>
 	  <message>Sample:  3 2 0 1 3</message>
 	</record>
-	
+
 	<record>
 	  <date>2015-12-17T09:03:33</date>
 	  <millis>1450339413553</millis>
 	  <logger>aiLogger</logger>
 	  <thread>1</thread>
-	  <message>Confidence: 0.8668783888317774. Actions: 
+	  <message>Confidence: 0.8668783888317774. Actions:
 	Set sensor id 1 to value 0</message>
 	</record>
-	
+
 	<record>
 	  <date>2015-12-17T09:03:33</date>
 	  <millis>1450339413555</millis>
@@ -57,7 +57,7 @@ With this model the system started trying to predict actions. At this point no u
 	  <thread>1</thread>
 	  <message>Sending data: Set sensor id 1 to value 0</message>
 	</record>
-	
+
 	<record>
 	  <date>2015-12-17T09:03:36</date>
 	  <millis>1450339416153</millis>
@@ -68,55 +68,49 @@ With this model the system started trying to predict actions. At this point no u
 Based on this it can be concluded that the system successfully learned and imitated a pattern.
 
 \subsubsection{Real Time Test}
-To perform this test the system were first taught a simple pattern as it were important, that a certain action on the arduino forced a prediction of an action by the server model. A separate button were added that had no other function then to start the test (ie. it were not part of the pattern). This allowed the test code to artificially create an action on the other button and then immediately start a timer. The button were then disabled as to avoid restarting the timer. Then once the arduino received the action the timer were stopped and the time for a full loop of the system were found. One thing to note, this time can vary depending on when in the arduino loop the button were pressed. To document this two tests were performed one were the artificial button press happened at the theoretically best time and one at the theoretically worst time. The worst case happens when we perform the button press after we send a state to the server but before we start receiving data. This means we have to wait for the receiving delay, then send again, and then wait for the receive delay again. For the best case test, the lowest observed time were 140ms\ranote{insert actual test}, which is 40ms above the deadline. This could be attributed to the send and receive of the xbee modules which in practical testing showed a delay of up to 60ms for one send, however theoretically the worst case should be 50ms\cref{xbee_latency}. This variance could be due to a number of things, eg. cheap hardware or non-optimally implementation. For each other separate module we have the approximate time, and so an average case for a full loop of the system would be 155 as seen in \cref{Table:RunTimeAprox}.
+To perform this test the system were first taught a simple pattern as it were important, that a certain action on the Arduino forced a prediction of an action by the server model. A separate button were added that had no other function then to start the test (ie. it were not part of the pattern). This allowed the test code to artificially create an action on the other button and then immediately start a timer. The button were then disabled as to avoid restarting the timer. Then once the Arduino received the action the timer were stopped and the time for a full loop of the system were found. One thing to note, this time can vary depending on when in the Arduino loop the button were pressed. To document this two tests were performed one were the artificial button press happened at the theoretically best time and one at the theoretically worst time. The worst case happens when we perform the button press after we send a state to the server but before we start receiving data. This means we have to wait for the receiving delay, then send again, and then wait for the receive delay again. For the best case test, the lowest observed time were 122ms, which is 22ms above the deadline. This could be attributed to the send and receive of the XBee modules which in practical testing showed a delay of up to 60ms for one send, however theoretically the worst case should be 50ms\cite{xbee_latency}. This variance could be due to a number of things, eg. cheap hardware or a non-optimal implementation. 
+
+For each separate module we have the approximate running time, and so an approximation of a worst case full loop of the system would be 186 as seen in \cref{Table:RunTimeAprox}.
 \begin{center}
 	\begin{table}[htbp]
 	  \centering
-	  \begin{tabular}{c | c}
+	  \begin{tabular}{l | l}
 		\toprule
-		Sample  		& 			\\ \midrule
-		Test Start		&
-		encode 			& <2ms  	\\
-		send   			& <50  		\\
-		Reason loop 	& avg: 53 	\\
-		Receive 		& <50  		\\
-		Total			& 155		\\
-									\\ \bottomrule
+		Position in Loop		& Run Time  \\ \midrule
+		Test Start		        &           \\
+		encode 			        & <2ms  	\\
+		send   			        & <50ms     \\
+		Reason loop 	        & <84ms     \\
+		Receive 		        & <50ms     \\
+		Total			        & 186ms	    \\
+                                            \\ \bottomrule
 	  \end{tabular}
-	  \caption{An approximation of run time of each separate module, from single pattern test. When performing an action at the optimal time in the arduino loop}
+	  \caption[An approximation of a worst case run time of each separate module. When performing an action at the optimal time in the Arduino loop]
 	\end{table}
  \label{Table:RunTimeAprox}
 \end{center}
-The test for the worst case test, were .... best case and worst case.
-The average case for this test can be seen in \creft{Table:WorstRunTimeAprox}
+The best observed run time in the worst case test, were 268ms.
+The approximation of a worst case full loop of the system in this situation would be 370ms as seen in \cref{Table:WorstRunTimeAprox}
 
 \begin{center}
 	\begin{table}[htbp]
 	  \centering
-	  \begin{tabular}{c | c}
+	  \begin{tabular}{l | l}
 		\toprule
-		Sample  		& 			\\ \midrule
-		encode 			& 		  	\\
-		Test Start		&			\\
-		send   			& <50  		\\
-		Reason loop 	& avg: 53 	\\
-		Receive 		& <50  		\\
-		encode 			& <2ms  	\\
-		send   			& <50  		\\
-		Reason loop 	& avg: 53 	\\
-		Receive 		& <50  		\\
-		Total			& 308		\\
-									\\ \bottomrule
+		Position in Loop		& Run Time  \\ \midrule
+		encode 			        & 		  	\\
+		Test Start		        &			\\
+		send   			        & <50ms     \\
+		Reason loop 	        & <84ms     \\
+		Receive 		        & <50ms     \\
+		encode 			        & <2ms      \\
+		send   			        & <50ms     \\
+		Reason loop 	        & <84ms	    \\
+		Receive 		        & <50ms     \\
+		Total			        & 370ms     \\
+                                            \\ \bottomrule
 	  \end{tabular}
-	  \caption{An approximation of run time of each separate module, from single pattern test. When performing an action at the worst time in the arduino loop}
+	  \caption[Single pattern test, worst case]{An approximation of run time of each separate module, from single pattern test. When performing an action at the worst time in the Arduino loop}
 	\end{table}
  \label{Table:WorstRunTimeAprox}
 \end{center}
-
-
-
-
-
-
-
-

@@ -5,17 +5,17 @@ The purpose of the normaliser is to reduce the domain of sensor values, such tha
 
 \subsection{The Elbow Method}
 \label{sub:elbow_method}
-The elbow method uses the variance of each cluster\kanote{cluster of what?} to determine how many clusters are the optimal amount. The idea is simple and can be described as follows:
+The elbow method uses the variance of each cluster of sensor values to determine how many clusters are the optimal amount. The idea is simple and can be described as follows:
 \begin{enumerate}
 \item Start with $k$ number of clusters, where $k>0$
 \item Calculate the variance of the clusters
 \item Increase $k$ until the percentage difference in variance is below some given threshold.
 \end{enumerate}
 The variance of each cluster is calculated and compared across the clusters. The variance of a cluster is calculated as follows:
-$Let\ (x_1,x_2,x_3,...x_i) \ be \ a\ cluster $
+Let $(x_1,x_2,x_3,...x_i)$ be a cluster.
 \\\\Then the variance $\sigma$ is found as such
-$$\sigma^2 = \frac{\displaystyle\sum_{i = 1}^{n}(x_{i}-\overline{x})^2 }{n} \Biggr\rvert\ \overline{x}  =\frac{\displaystyle\sum_{i=1}^{n}x_{i}}{n},\ n =number\ of\ all\ elements\ in\ a\ cluster ,$$
-$$ x_{i} = i_{th}\ element $$
+$$\sigma^2 = \frac{\displaystyle\sum_{i = 1}^{n}(x_{i}-\overline{x})^2 }{n} \Biggr\rvert\ \overline{x}  =\frac{\displaystyle\sum_{i=1}^{n}x_{i}}{n},\ n =\text{number of all elements in a cluster} ,$$
+$$ x_{i} = i_{th} \text{ element} $$
 \\\\
 Once $\sigma^2$ is found for the existing clusters, the data is split up into $k+1$ new clusters and the variance for this set of clusters is calculated. If the calculated variance has a greater percent variance than some threshold, the process is repeated with the starting number of clusters being $k+1$. If the percent variance is lower than the threshold then it means that the right amount of clusters is reached.
 \subsection{Jenks' Natural Breaks Optimisation}
