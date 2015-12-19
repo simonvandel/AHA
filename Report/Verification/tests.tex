@@ -77,11 +77,11 @@ For the best case test, the lowest observed time were 122ms, which is 22ms above
 	  \begin{tabular}{l l}
 		\toprule
 		Position in Loop		& Run Time  \\ \midrule
-		Test Start		        &           \\ \midrule
+		Test Start		        & 0         \\ \midrule
 		Encode 			        & <2ms  	\\ \midrule
 		Send   			        & <50ms     \\ \midrule
 		Reason loop 	        & <88ms     \\ \midrule
-		Receive 		        & <50ms     \\ \midrule
+		Receive 		        & <50ms     \\ \midrule \midrule
 		Total			        & 190ms	    \\
                                             \bottomrule
 	  \end{tabular}
@@ -94,20 +94,20 @@ The best observed run time in the worst case test, were 268ms. The approximation
 \begin{center}
 	\begin{table}[htbp]
 	  \centering
-	  \begin{tabular}{|l | l|}
+	  \begin{tabular}{l l}
 		\toprule
 		Position in Loop		& Run Time  \\ \midrule
-		encode 			        & 		  	\\ \midrule
-		Test Start		        &			\\
-		send   			        & <50ms     \\
-		Reason loop 	        & <88ms     \\ 
-		Receive 		        & <50ms     \\
-		encode 			        & <2ms      \\
-		send   			        & <50ms     \\
-		Reason loop 	        & <88ms	    \\
-		Receive 		        & <50ms     \\
+		Encode 			        & 0  	  	\\ \midrule
+		Test Start		        & 0  		\\ \midrule
+		Send   			        & <50ms     \\ \midrule
+		Reason loop 	        & <88ms     \\ \midrule
+		Receive 		        & <50ms     \\ \midrule
+		encode 			        & <2ms      \\ \midrule
+		send   			        & <50ms     \\ \midrule
+		Reason loop 	        & <88ms	    \\ \midrule
+		Receive 		        & <50ms     \\ \midrule \midrule
 		Total			        & 378ms     \\
-                                            \\ \bottomrule
+                                            \bottomrule
 	  \end{tabular}
 	  \caption[An approximation of a worst case run time of each separate module]{When performing an action at the worst time in the Arduino loop.}
 	\end{table}
