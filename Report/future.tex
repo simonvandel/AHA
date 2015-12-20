@@ -9,9 +9,9 @@ The system is considered to be somewhat secure, since no information is transmit
 The system, as it is currently, only controls lights and appliances, due to a lack of time and resources. A huge improvement could be done in this area if the system would be able to control and monitor additional sensors and actuators, in order to affect the problem domain further.
 
 \section{Improved Encoding Scheme}
-Versions of protocol scheme\kanote{needs to be written}
+The encoding scheme described in \cref{sec:encoding}, has no system of versioning of encoding schemes. Let's say a change is made to the encoding scheme. Now, some devices in the system might use the new scheme while others are not yet updated, so they use the old scheme. If only 1 version of the scheme can be in use in the system at a time, the system would break if not all devices used the same version of the system.
 
-Checksum for invalidating packet
+To allow for multiple versions of the scheme to be in use simultaneously, versioning could be added to the encoding scheme. This could be done by adding a \enquote{magic number} in the header. For example, \enquote{0xFA00} would mean version 0 of the scheme, \enquote{0xFA01} would mean version 1 of the scheme. Another benefit of adding this magic number is that when decoding the encoded data, the data can be somewhat validated by checking whether the data contains the defined magic number.
 
 \section{Multiple Users}
 The system is designed to learn the use patterns of the user. However due to lack of proper sensors, able to identify a specific user, the system cannot differentiate between users and thus the system can only function properly with a single user, as two users with conflicting patterns would confuse the system. One of the major future improvements would therefore be to make the system applicable for multiple users. This can be achieved if the system learns to differentiate between users. This process would need additional sensors. The learning algorithm would use the sensors, which differentiate users, to learn patterns for specific users.
