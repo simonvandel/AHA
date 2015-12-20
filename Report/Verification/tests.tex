@@ -82,47 +82,43 @@ As can be seen below, the system does not uphold the deadline. This could be att
 
 For the optimal case test, the lowest observed time was 122 ms, which is 22 ms above the deadline. For each separate module, we have the approximate running time, and so an approximation of a worst case full loop of the system would be 190 ms as seen in \cref{Table:RunTimeAprox}.
 
-\begin{center}
-	\begin{table}[htbp]
-	  \centering
-	  \begin{tabular}{l l}
-		\toprule
-		Position in loop		& Run Time  \\ \midrule
-		Test Start		        & 0 ms         \\ \midrule
-		Encode 			        & <2 ms  	\\ \midrule
-		Send   			        & <50 ms     \\ \midrule
-		Learner loop 	        & <88 ms     \\ \midrule
-		Receive 		        & <50 ms     \\ \midrule \midrule
-		Total			        & <190 ms	    \\
-                                            \bottomrule
-	  \end{tabular}
-	  \caption{An approximation of a worst case run time of each separate module, when performing an action at the optimal time in the Arduino loop.}\label{Table:RunTimeAprox}
-	\end{table}
-\end{center}
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{l l}
+	\toprule
+	Position in loop		& Run Time  \\ \midrule
+	Test Start		        & 0 ms         \\ \midrule
+	Encode 			        & <2 ms  	\\ \midrule
+	Send   			        & <50 ms     \\ \midrule
+	Learner loop 	        & <88 ms     \\ \midrule
+	Receive 		        & <50 ms     \\ \midrule \midrule
+	Total			        & <190 ms	    \\
+                                          \bottomrule
+  \end{tabular}
+  \caption{An approximation of a worst case run time of each separate module, when performing an action at the optimal time in the Arduino loop.}\label{Table:RunTimeAprox}
+\end{table}
 
-The best observed run time, in the worst case test, was 268 ms. The approximation of a worst case, full loop of the system, in this situation would be 378 ms as seen in \cref{Table:WorstRunTimeAprox}
+The best observed run time, in the worst case test, was 268 ms. The approximation of a worst case, full loop of the system, in this situation would be 378 ms as seen in \cref{Table:WorstRunTimeAprox}.
 
-\begin{center}
-	\begin{table}[htbp]
-	  \centering
-	  \begin{tabular}{l l}
-		\toprule
-		Position in loop		& Run Time  \\ \midrule
-		Encode 			        & 0  	  	\\ \midrule
-		Test Start		        & 0  		\\ \midrule
-		Send   			        & <50 ms     \\ \midrule
-		Learner loop 	        & <88 ms     \\ \midrule
-		Receive 		        & <50 ms     \\ \midrule
-		encode 			        & <2 ms      \\ \midrule
-		send   			        & <50 ms     \\ \midrule
-		Learner loop 	        & <88 ms	    \\ \midrule
-		Receive 		        & <50 ms     \\ \midrule \midrule
-		Total			        & <378 ms     \\
-                                            \bottomrule
-	  \end{tabular}
-	  \caption{An approximation of a worst case run time of each separate module, when performing an action at the worst time in the Arduino loop.}\label{Table:WorstRunTimeAprox}
-	\end{table}
-\end{center}
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{l l}
+	\toprule
+	Position in loop		& Run Time  \\ \midrule
+	Encode 			        & 0  	  	\\ \midrule
+	Test Start		        & 0  		\\ \midrule
+	Send   			        & <50 ms     \\ \midrule
+	Learner loop 	        & <88 ms     \\ \midrule
+	Receive 		        & <50 ms     \\ \midrule
+	encode 			        & <2 ms      \\ \midrule
+	send   			        & <50 ms     \\ \midrule
+	Learner loop 	        & <88 ms	    \\ \midrule
+	Receive 		        & <50 ms     \\ \midrule \midrule
+	Total			        & <378 ms     \\
+                                          \bottomrule
+  \end{tabular}
+  \caption{An approximation of a worst case runtime of each separate module, when performing an action at the worst time in the Arduino loop.}\label{Table:WorstRunTimeAprox}
+\end{table}
 
 These tests show that the system has a certain risk of exceeding the deadline, by up to 278 ms. So even though the system can get close to the deadline, in a best case upholding it, it cannot be guaranteed. However according to \cite{jakobnielsen} exceeding the deadline by 278 ms would still not cause any annoyance to the user, since the this should not impact the users flow of thought, but it could cause confusion for the user about what interaction caused the response by the system, as discussed in \cref{sub:people}.
 
