@@ -12,28 +12,6 @@ Once verified that the system can learn a usage pattern, reason and subsequently
 \section{Results}
 \input{Verification/tests.tex}
 
-\section{Adaptation test}
-A second test were conducted. In this the adaptation of the system were tested. The system should be able to change patterns and take feedback from the user. First the XOR pattern as described in \cref{subsec:singlePatternTest} were learned. After this the user tried to override this with a AND pattern. This resulted in the user inverting the actions as can be seen in \cref{Table:userPatternChange}. This should be red as what the system is currently enforcing on the left side of the arrow (i.e what is true in XOR) and what the user then would enforce instead on the system on the right side of the arrow. This results in the user inverting the action of the system in three of the cases and only leaving one case (0,0) left as it is. 
-
-
-\begin{table}[htbp]
-\begin{center}
-  \begin{tabular}{| c | c | c |}
-    \hline
-        & 0                 & 1                 \\ \hline
-      0 & $0 \rightarrow 0$ & $1 \rightarrow 0$ \\ \hline
-      1 & $1 \rightarrow 0$ & $0 \rightarrow 1$ \\
-    \hline
-  \end{tabular}
-  \caption{Table illustrating change in the users pattern}\label{Table:userPatternChange}
-\end{center}
-\end{table}
-
-Some errors were found with the feedback method.
-The system did not remove the wrong action the first time they were registered as it should.
-The method did not always register feedback from the user due to errors in the timing in the AI subsystem.
-
-It was found that the system is better at finding emerging patterns than adapting to new patterns. This also makes sense when considering how the learning and reasoner has been implemented. The Baum Welch algorithm has been created to find emerging patterns in data. Normally the problem domain is not aware that it is being monitored and a change in pattern will only be show indirectly through a change in the patterns done by the problem and the systems preference would only change when the amount of proofs for the new patterns exceeded the old pattern.
 
 \section{Alternative tests}
 The first alternative which was considered is a real world use case. In this test a system would be setup in one or more users homes for a given set of time. Once the test had finished the log data from the system along with user testimony would determine the performance of the system. This test is time consuming, because the system would need to be live for an extended period of time to learn user patterns on a daily, weekly, or longer scale. The log data can also be difficult and time consuming to analyse because the large amount of data processed by the system and the difficulty to visually represent the machine learning model used.
