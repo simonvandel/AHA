@@ -73,7 +73,7 @@ With this model, the system started trying to predict actions. At this point, no
 
 Based on this it can be concluded that the system successfully learned and imitated a pattern.
 
-\subsubsection{Deadline Test}
+\subsubsection{Deadline Test}\label{subsub:deadline}
 To perform this test, the system was first taught the XOR pattern, as it was important that the system could predict an action during the test. A button was added, that had no other function than to start the test. This allowed the test code to artificially create an action on the button and then immediately start a timer. The button was then disabled, in order to avoid restarting the timer. Then, once the embedded subsystem received the action, the timer was stopped, and the time for a full loop of the system was found. One thing to note is that this time can vary, depending on when in the embedded subsystem's loop, the button was pressed.
 
 To document this, two tests were performed; one, where the artificial button press happened at the theoretically optimal order, and one at the theoretically worst order. The worst case happens when we perform the button press right about we have read the sensors. This means that we have to wait a full cycle of processing the old sensor values, before reading the new sensor sensor values and processing those.
@@ -124,7 +124,7 @@ The best observed run time, in the worst case test, was 268 ms. The approximatio
 	\end{table}
 \end{center}
 
-These tests show that the system has a certain risk of exceeding the deadline, by up to 278 ms. So even though the system can get close to the deadline, in a best case upholding it, it cannot be guaranteed. However according to \cite{jakobnielsen} exceeding the deadline by 278 ms would still not cause any annoyance to the user, since the time is unnoticeable.
+These tests show that the system has a certain risk of exceeding the deadline, by up to 278 ms. So even though the system can get close to the deadline, in a best case upholding it, it cannot be guaranteed. However according to \cite{jakobnielsen} exceeding the deadline by 278 ms would still not cause any annoyance to the user, since the this should not impact the users flow of thought, but it could cause confusion for user of what interaction cause the response by the system, as discussed in \cref{sub:people}.
 
 \subsubsection{Adaption Test}
 In this test, the adaptation of the system was tested. The system should be able to change patterns and take feedback from the user. First, the XOR pattern, as described in \cref{subsec:singlePatternTest}, was learned. After this, the test conductor tried to override this, with an AND pattern. This resulted in him inverting the actions, as can be seen in \cref{Table:userPatternChange}. This should be read as what the system is currently enforcing on the left side of the arrow, and what the test conductor would enforce on the system on the right side of the arrow. This results in the test conductor inverting the action of the system in three of the cases, and only leaving one case (0,0) left as it is.
