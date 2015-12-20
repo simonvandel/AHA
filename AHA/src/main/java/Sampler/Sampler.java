@@ -244,7 +244,7 @@ public class Sampler {
         if (actionI.equals(inverseAction(actionJ))) { //If two actions are inverse to each other
           actionsToBeSanitised.add(new Pair<>(actionI, actionJ));
 
-          Reasoning reasoning = /*reasoner.*/getReasoningBehindAction(actionJ, sentActions);
+          Reasoning reasoning = /*reasoner.*/getReasoningBehindAction(actionI, sentActions);
           if(reasoning != null){
             reasoner.updateModel(reasoning);
           }
