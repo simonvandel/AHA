@@ -1,10 +1,12 @@
 %mainfile: master.tex
 \chapter{Conclusion}
 
-This chapter of the report will conclude on the specification of the system, presented in \cref{part:specification}.
+This chapter of the report will conclude on the problem formulation and how well the system fulfills the criteria, presented in \cref{sec:requirements}.
 
-In making this system, the group gained some experience in the field of artificial intelligence and in making embedded systems.
+In making this system, the group gained some experience in the field of artificial intelligence and in making embedded systems. Problems regarding home automation were identified, and based on this, a system was designed. Multiple sensors are determined to be required for realising the system. 
 
-Did we make the deadline of 100 ms?
-Was our system adaptive to emerging patterns?
-General successfulness of project?
+Our tests show that, in the best case, the observed time of the system performing an action is 122 ms. This is above our deadline of 100 ms. In the worst case,  the lowest observed time was 268 ms. This missed the deadline by 168 ms. Although this strictly means that the requirement was not fulfilled and therefore is not ideal, considering human perception, the timing is acceptable, as the delay is negligible to a human.
+
+The tests, performed on the system, showed the system was successful in adapting to a new pattern. However, these tests were performed, using simple patterns, and were conducted in a controlled setting, with a small number of sensors. Based on the learner algorithm, adding more sensors would greatly increase the runtime of the learner. Therefore, it cannot, based on these tests, be shown that the system would successfully learn and adapt when set up in a real environment.
+
+The system is able to read sensors, attached to the embedded subsystem, encode the read values into a small packet, and send the packet wirelessly to the learning subsystem. The learning subsystem can then, based on the history of sensor values received previously, learn a HMM. The learning subsystem is then able to predict actions, which the embedded subsystem should perform. The embedded subsystem can receive packets containing these predicted actions, wirelessly, and perform these actions. Based on this, the deadline, and adaption tests, it can be concluded that this system successfully fulfilled the problem formulation stated in \cref{problemFormulation}.  
