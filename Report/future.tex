@@ -19,6 +19,9 @@ The system is designed to learn the use patterns of the user. However due to lac
 \section{Tracking Ability}
 The system could improve, if it had the ability to track the user and take actions, based on where the user is. The tracking could be through the user's smartphone or any other mobile device. The tracking ability would make the system able to take actions, knowing that the user is nearby. Those actions could be  convenient, such as turning on the coffee machine 5 minutes before the user arrives, meaning that the user does not have to wait for the coffee to brew.
 
+\section{Generalising}\label{sec:dis:generalise}
+The learner does not try to generalise over states in the history given, this means that the system must have observed a specific sequence of states, with a related action, before it can emulate it. This is not a good solution in a real environment, because the user can infer the basics of how the system reasons, after having observed the system emulating the user's action for some equivalent state histories. If just a small deviation, the user does not notice but system does, from this state history is made, the system will not act as the user expects.
+
 \section{Weighted History}
 To ensure that the system will be conservative, and not adapt to irregular changes immediately, some weighting of already known patterns should be done. This is to ensure that the learner is not confused by temporary irregularities, e.g. if a guest is present in the user's house, the usage pattern of the guest is not known to the system. As the guest is only temporarily present, the system should not adapt to this users patterns instead.
 

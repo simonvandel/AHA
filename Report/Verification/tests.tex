@@ -73,14 +73,15 @@ With this model, the system started trying to predict actions. At this point, no
 
 Based on this it can be concluded that the system successfully learned and imitated a pattern.
 
-\subsubsection{Deadline Test}
+\subsubsection{Deadline Test}\label{subsub:deadline}
 To perform this test, the system was first taught the XOR pattern, as it was important that the system could predict an action during the test. A button was added, that had no other function than to start the test. This allowed the test code to artificially create an action on the button and then immediately start a timer. The button was then disabled, in order to avoid restarting the timer. Then, once the embedded subsystem received the action, the timer was stopped, and the time for a full loop of the system was found. One thing to note is that this time can vary, depending on when in the embedded subsystem's loop, the button was pressed.
 
-To document this, two tests were performed; one, where the artificial button press happened at the theoretically optimal time, and one at the theoretically worst time. The worst case happens when we perform the button press after we send a snapshot to the learning subsystem, but before we start receiving data. This means that we have to wait for the delay of receiving, then sending again, and then wait for the delay of receiving again.
+To document this, two tests were performed; one, where the artificial button press happened at the theoretically optimal order, and one at the theoretically worst order. The worst case happens when we perform the button press right about we have read the sensors. This means that we have to wait a full cycle of processing the old sensor values, before reading the new sensor sensor values and processing those.
 
 As can be seen below, the system does not uphold the deadline. This could be attributed to the sending and receiving times of the XBee modules which, in practical testing, showed a delay of up to 60 ms for one send, however, theoretically, the worst case should be 50 ms\cite{xbee_latency}. This variance could be due to a number of things, for example cheap hardware or a non-optimal implementation. The average time spent in the learning subsystem for both the simple pattern test and the deadline test, was 52.5 ms. This was found by averaging over all runs described in the logs that can be found in \cref{app:cd}.
 
-For the best case test, the lowest observed time was 122 ms, which is 22 ms above the deadline. For each separate module, we have the approximate running time, and so an approximation of a worst case full loop of the system would be 190 ms as seen in \cref{Table:RunTimeAprox}.
+For the optimal case test, the lowest observed time was 122 ms, which is 22 ms above the deadline. For each separate module, we have the approximate running time, and so an approximation of a worst case full loop of the system would be 190 ms as seen in \cref{Table:RunTimeAprox}.
+
 \begin{center}
 	\begin{table}[htbp]
 	  \centering
@@ -123,7 +124,7 @@ The best observed run time, in the worst case test, was 268 ms. The approximatio
 	\end{table}
 \end{center}
 
-These tests show that the system has a certain risk of exceeding the deadline, by up to 278 ms. So even though the system can get close to the deadline, in a best case upholding it, it cannot be guaranteed. However according to \cite{jakobnielsen} exceeding the deadline by 278 ms would still not cause any annoyance to the user, since the time is unnoticeable.
+These tests show that the system has a certain risk of exceeding the deadline, by up to 278 ms. So even though the system can get close to the deadline, in a best case upholding it, it cannot be guaranteed. However according to \cite{jakobnielsen} exceeding the deadline by 278 ms would still not cause any annoyance to the user, since the this should not impact the users flow of thought, but it could cause confusion for the user about what interaction caused the response by the system, as discussed in \cref{sub:people}.
 
 \subsubsection{Adaption Test}
 In this test, the adaptation of the system was tested. The system should be able to change patterns and take feedback from the user. First, the XOR pattern, as described in \cref{subsec:singlePatternTest}, was learned. After this, the test conductor tried to override this, with an AND pattern. This resulted in him inverting the actions, as can be seen in \cref{Table:userPatternChange}. This should be read as what the system is currently enforcing on the left side of the arrow, and what the test conductor would enforce on the system on the right side of the arrow. This results in the test conductor inverting the action of the system in three of the cases, and only leaving one case (0,0) left as it is.
