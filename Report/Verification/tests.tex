@@ -80,7 +80,7 @@ To document this, two tests were performed; one, where the artificial button pre
 
 As can be seen below, the system does not uphold the deadline. This could be attributed to the sending and receiving times of the XBee modules which, in practical testing, showed a delay of up to 60 ms for one send, however, theoretically, the worst case should be 50 ms\cite{xbee_latency}. This variance could be due to a number of things, for example cheap hardware or a non-optimal implementation. The average time spent in the learning subsystem for both the simple pattern test and the deadline test, was 52.5 ms. This was found by averaging over all runs described in the logs that can be found in \cref{app:cd}.
 
-For the best case test, the lowest observed time was 122 ms, which is 22 ms above the deadline. For each separate module, we have the approximate running time, and so an approximation of a worst case full loop of the system would be 186 ms as seen in \cref{Table:RunTimeAprox}.
+For the best case test, the lowest observed time was 122 ms, which is 22 ms above the deadline. For each separate module, we have the approximate running time, and so an approximation of a worst case full loop of the system would be 190 ms as seen in \cref{Table:RunTimeAprox}.
 \begin{center}
 	\begin{table}[htbp]
 	  \centering
@@ -99,7 +99,7 @@ For the best case test, the lowest observed time was 122 ms, which is 22 ms abov
 	\end{table}
 \end{center}
 
-The best observed run time, in the worst case test, was 268 ms. The approximation of a, worst case, full loop of the system, in this situation would be 370 ms as seen in \cref{Table:WorstRunTimeAprox}
+The best observed run time, in the worst case test, was 268 ms. The approximation of a worst case, full loop of the system, in this situation would be 378 ms as seen in \cref{Table:WorstRunTimeAprox}
 
 \begin{center}
 	\begin{table}[htbp]
