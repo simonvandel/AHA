@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-20T13:57:57</date>
+  <millis>1450616277213</millis>
+  <sequence>4</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:00</date>
+  <millis>1450616280723</millis>
+  <sequence>27</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:03</date>
+  <millis>1450616283384</millis>
+  <sequence>48</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:06</date>
+  <millis>1450616286904</millis>
+  <sequence>75</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:10</date>
+  <millis>1450616290151</millis>
+  <sequence>100</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:14</date>
+  <millis>1450616294424</millis>
+  <sequence>132</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:17</date>
+  <millis>1450616297365</millis>
+  <sequence>155</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:17</date>
+  <millis>1450616297952</millis>
+  <sequence>162</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:18</date>
+  <millis>1450616298548</millis>
+  <sequence>169</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+</log>

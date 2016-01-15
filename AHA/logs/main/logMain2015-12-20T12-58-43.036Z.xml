@@ -1,0 +1,4734 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-20T13:58:43</date>
+  <millis>1450616323123</millis>
+  <sequence>0</sequence>
+  <logger>mainLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:49</date>
+  <millis>1450616329146</millis>
+  <sequence>45</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 5</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:52</date>
+  <millis>1450616332100</millis>
+  <sequence>68</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 8</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:55</date>
+  <millis>1450616335186</millis>
+  <sequence>92</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:59</date>
+  <millis>1450616339457</millis>
+  <sequence>124</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:04</date>
+  <millis>1450616344457</millis>
+  <sequence>161</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:10</date>
+  <millis>1450616350045</millis>
+  <sequence>202</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:15</date>
+  <millis>1450616355790</millis>
+  <sequence>244</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:21</date>
+  <millis>1450616361667</millis>
+  <sequence>287</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:26</date>
+  <millis>1450616366077</millis>
+  <sequence>320</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:30</date>
+  <millis>1450616370483</millis>
+  <sequence>353</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:35</date>
+  <millis>1450616375638</millis>
+  <sequence>391</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:40</date>
+  <millis>1450616380053</millis>
+  <sequence>424</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:45</date>
+  <millis>1450616385421</millis>
+  <sequence>466</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 75</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:45</date>
+  <millis>1450616385506</millis>
+  <sequence>470</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:49</date>
+  <millis>1450616389938</millis>
+  <sequence>503</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:54</date>
+  <millis>1450616394061</millis>
+  <sequence>535</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:58</date>
+  <millis>1450616398519</millis>
+  <sequence>570</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:58</date>
+  <millis>1450616398615</millis>
+  <sequence>574</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:03</date>
+  <millis>1450616403390</millis>
+  <sequence>611</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 55</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:03</date>
+  <millis>1450616403484</millis>
+  <sequence>615</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:08</date>
+  <millis>1450616408101</millis>
+  <sequence>651</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:08</date>
+  <millis>1450616408199</millis>
+  <sequence>655</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:13</date>
+  <millis>1450616413551</millis>
+  <sequence>696</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:13</date>
+  <millis>1450616413648</millis>
+  <sequence>700</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:18</date>
+  <millis>1450616418706</millis>
+  <sequence>739</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:18</date>
+  <millis>1450616418804</millis>
+  <sequence>743</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:23</date>
+  <millis>1450616423711</millis>
+  <sequence>781</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:23</date>
+  <millis>1450616423806</millis>
+  <sequence>785</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:31</date>
+  <millis>1450616431516</millis>
+  <sequence>842</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:31</date>
+  <millis>1450616431616</millis>
+  <sequence>846</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 6</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:38</date>
+  <millis>1450616438434</millis>
+  <sequence>897</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:38</date>
+  <millis>1450616438533</millis>
+  <sequence>901</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:45</date>
+  <millis>1450616445909</millis>
+  <sequence>956</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:55</date>
+  <millis>1450616455539</millis>
+  <sequence>1026</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:55</date>
+  <millis>1450616455638</millis>
+  <sequence>1030</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:57</date>
+  <millis>1450616457405</millis>
+  <sequence>1046</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:04</date>
+  <millis>1450616464527</millis>
+  <sequence>1099</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:04</date>
+  <millis>1450616464623</millis>
+  <sequence>1103</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:11</date>
+  <millis>1450616471155</millis>
+  <sequence>1152</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:11</date>
+  <millis>1450616471251</millis>
+  <sequence>1156</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:16</date>
+  <millis>1450616476901</millis>
+  <sequence>1199</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:16</date>
+  <millis>1450616476997</millis>
+  <sequence>1203</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:24</date>
+  <millis>1450616484960</millis>
+  <sequence>1260</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:27</date>
+  <millis>1450616487757</millis>
+  <sequence>1282</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:34</date>
+  <millis>1450616494387</millis>
+  <sequence>1330</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:38</date>
+  <millis>1450616498657</millis>
+  <sequence>1362</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:44</date>
+  <millis>1450616504153</millis>
+  <sequence>1407</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:44</date>
+  <millis>1450616504251</millis>
+  <sequence>1411</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:50</date>
+  <millis>1450616510641</millis>
+  <sequence>1459</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:50</date>
+  <millis>1450616510738</millis>
+  <sequence>1463</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 3</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:57</date>
+  <millis>1450616517405</millis>
+  <sequence>1513</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:57</date>
+  <millis>1450616517501</millis>
+  <sequence>1517</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:04</date>
+  <millis>1450616524471</millis>
+  <sequence>1569</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:04</date>
+  <millis>1450616524565</millis>
+  <sequence>1573</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:14</date>
+  <millis>1450616534334</millis>
+  <sequence>1644</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:14</date>
+  <millis>1450616534427</millis>
+  <sequence>1648</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:21</date>
+  <millis>1450616541400</millis>
+  <sequence>1700</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 57</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:21</date>
+  <millis>1450616541491</millis>
+  <sequence>1704</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:28</date>
+  <millis>1450616548620</millis>
+  <sequence>1757</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 55</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:28</date>
+  <millis>1450616548713</millis>
+  <sequence>1761</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:34</date>
+  <millis>1450616554051</millis>
+  <sequence>1802</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:34</date>
+  <millis>1450616554148</millis>
+  <sequence>1806</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:34</date>
+  <millis>1450616554738</millis>
+  <sequence>1814</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:39</date>
+  <millis>1450616559452</millis>
+  <sequence>1849</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:40</date>
+  <millis>1450616560042</millis>
+  <sequence>1857</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:44</date>
+  <millis>1450616564950</millis>
+  <sequence>1900</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:45</date>
+  <millis>1450616565048</millis>
+  <sequence>1904</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:50</date>
+  <millis>1450616570937</millis>
+  <sequence>1947</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:57</date>
+  <millis>1450616577477</millis>
+  <sequence>1996</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:57</date>
+  <millis>1450616577572</millis>
+  <sequence>2000</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:58</date>
+  <millis>1450616578014</millis>
+  <sequence>2007</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:05</date>
+  <millis>1450616585238</millis>
+  <sequence>2059</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:06</date>
+  <millis>1450616586272</millis>
+  <sequence>2069</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:13</date>
+  <millis>1450616593983</millis>
+  <sequence>2126</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:14</date>
+  <millis>1450616594079</millis>
+  <sequence>2130</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:19</date>
+  <millis>1450616599235</millis>
+  <sequence>2168</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:19</date>
+  <millis>1450616599977</millis>
+  <sequence>2176</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:27</date>
+  <millis>1450616607490</millis>
+  <sequence>2230</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:28</date>
+  <millis>1450616608383</millis>
+  <sequence>2240</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 6</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:35</date>
+  <millis>1450616615491</millis>
+  <sequence>2293</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:35</date>
+  <millis>1450616615584</millis>
+  <sequence>2297</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:36</date>
+  <millis>1450616616172</millis>
+  <sequence>2304</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:44</date>
+  <millis>1450616624909</millis>
+  <sequence>2375</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 50</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:45</date>
+  <millis>1450616625006</millis>
+  <sequence>2379</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:45</date>
+  <millis>1450616625447</millis>
+  <sequence>2386</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:52</date>
+  <millis>1450616632518</millis>
+  <sequence>2437</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:53</date>
+  <millis>1450616633542</millis>
+  <sequence>2447</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:00</date>
+  <millis>1450616640953</millis>
+  <sequence>2502</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:01</date>
+  <millis>1450616641049</millis>
+  <sequence>2506</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:08</date>
+  <millis>1450616648264</millis>
+  <sequence>2558</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:15</date>
+  <millis>1450616655528</millis>
+  <sequence>2612</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:15</date>
+  <millis>1450616655624</millis>
+  <sequence>2616</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:16</date>
+  <millis>1450616656213</millis>
+  <sequence>2623</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:22</date>
+  <millis>1450616662262</millis>
+  <sequence>2667</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:24</date>
+  <millis>1450616664181</millis>
+  <sequence>2684</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:31</date>
+  <millis>1450616671448</millis>
+  <sequence>2738</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 49</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:31</date>
+  <millis>1450616671549</millis>
+  <sequence>2742</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:38</date>
+  <millis>1450616678622</millis>
+  <sequence>2793</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:47</date>
+  <millis>1450616687316</millis>
+  <sequence>2864</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:54</date>
+  <millis>1450616694729</millis>
+  <sequence>2919</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:54</date>
+  <millis>1450616694825</millis>
+  <sequence>2923</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:01</date>
+  <millis>1450616701222</millis>
+  <sequence>2971</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:01</date>
+  <millis>1450616701318</millis>
+  <sequence>2975</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:08</date>
+  <millis>1450616708818</millis>
+  <sequence>3029</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:18</date>
+  <millis>1450616718823</millis>
+  <sequence>3100</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:24</date>
+  <millis>1450616724914</millis>
+  <sequence>3146</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:25</date>
+  <millis>1450616725010</millis>
+  <sequence>3150</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:30</date>
+  <millis>1450616730217</millis>
+  <sequence>3190</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:30</date>
+  <millis>1450616730312</millis>
+  <sequence>3194</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:38</date>
+  <millis>1450616738105</millis>
+  <sequence>3250</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:43</date>
+  <millis>1450616743466</millis>
+  <sequence>3291</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:43</date>
+  <millis>1450616743561</millis>
+  <sequence>3295</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:44</date>
+  <millis>1450616744000</millis>
+  <sequence>3303</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:49</date>
+  <millis>1450616749216</millis>
+  <sequence>3352</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:49</date>
+  <millis>1450616749313</millis>
+  <sequence>3356</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:54</date>
+  <millis>1450616754158</millis>
+  <sequence>3392</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:55</date>
+  <millis>1450616755044</millis>
+  <sequence>3402</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:01</date>
+  <millis>1450616761711</millis>
+  <sequence>3452</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:01</date>
+  <millis>1450616761808</millis>
+  <sequence>3456</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:07</date>
+  <millis>1450616767446</millis>
+  <sequence>3499</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:07</date>
+  <millis>1450616767541</millis>
+  <sequence>3503</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:12</date>
+  <millis>1450616772898</millis>
+  <sequence>3544</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:12</date>
+  <millis>1450616772993</millis>
+  <sequence>3548</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:13</date>
+  <millis>1450616773432</millis>
+  <sequence>3554</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:19</date>
+  <millis>1450616779681</millis>
+  <sequence>3601</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:19</date>
+  <millis>1450616779778</millis>
+  <sequence>3605</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:20</date>
+  <millis>1450616780363</millis>
+  <sequence>3613</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:26</date>
+  <millis>1450616786897</millis>
+  <sequence>3662</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:26</date>
+  <millis>1450616786992</millis>
+  <sequence>3666</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:31</date>
+  <millis>1450616791760</millis>
+  <sequence>3703</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:31</date>
+  <millis>1450616791860</millis>
+  <sequence>3707</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 6</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:38</date>
+  <millis>1450616798974</millis>
+  <sequence>3760</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:39</date>
+  <millis>1450616799069</millis>
+  <sequence>3764</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:45</date>
+  <millis>1450616805398</millis>
+  <sequence>3822</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:46</date>
+  <millis>1450616806278</millis>
+  <sequence>3831</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:53</date>
+  <millis>1450616813412</millis>
+  <sequence>3884</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:53</date>
+  <millis>1450616813506</millis>
+  <sequence>3888</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:54</date>
+  <millis>1450616814544</millis>
+  <sequence>3898</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:00</date>
+  <millis>1450616820923</millis>
+  <sequence>3946</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:01</date>
+  <millis>1450616821020</millis>
+  <sequence>3950</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 3</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:01</date>
+  <millis>1450616821905</millis>
+  <sequence>3961</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:08</date>
+  <millis>1450616828144</millis>
+  <sequence>4008</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:08</date>
+  <millis>1450616828241</millis>
+  <sequence>4012</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:13</date>
+  <millis>1450616833385</millis>
+  <sequence>4050</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:14</date>
+  <millis>1450616834270</millis>
+  <sequence>4059</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:20</date>
+  <millis>1450616840803</millis>
+  <sequence>4108</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:20</date>
+  <millis>1450616840900</millis>
+  <sequence>4112</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:21</date>
+  <millis>1450616841340</millis>
+  <sequence>4118</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:29</date>
+  <millis>1450616849207</millis>
+  <sequence>4176</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:29</date>
+  <millis>1450616849305</millis>
+  <sequence>4180</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:29</date>
+  <millis>1450616849746</millis>
+  <sequence>4188</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:37</date>
+  <millis>1450616857012</millis>
+  <sequence>4242</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:37</date>
+  <millis>1450616857108</millis>
+  <sequence>4246</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:45</date>
+  <millis>1450616865854</millis>
+  <sequence>4326</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:45</date>
+  <millis>1450616865951</millis>
+  <sequence>4330</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:51</date>
+  <millis>1450616871548</millis>
+  <sequence>4371</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:57</date>
+  <millis>1450616877782</millis>
+  <sequence>4418</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:57</date>
+  <millis>1450616877881</millis>
+  <sequence>4422</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:58</date>
+  <millis>1450616878321</millis>
+  <sequence>4430</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:05</date>
+  <millis>1450616885227</millis>
+  <sequence>4480</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:06</date>
+  <millis>1450616886255</millis>
+  <sequence>4490</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:12</date>
+  <millis>1450616892053</millis>
+  <sequence>4534</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:12</date>
+  <millis>1450616892150</millis>
+  <sequence>4538</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:17</date>
+  <millis>1450616897889</millis>
+  <sequence>4580</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:24</date>
+  <millis>1450616904560</millis>
+  <sequence>4630</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:24</date>
+  <millis>1450616904657</millis>
+  <sequence>4634</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:25</date>
+  <millis>1450616905981</millis>
+  <sequence>4647</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:33</date>
+  <millis>1450616913050</millis>
+  <sequence>4698</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:33</date>
+  <millis>1450616913931</millis>
+  <sequence>4708</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:40</date>
+  <millis>1450616920767</millis>
+  <sequence>4759</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:40</date>
+  <millis>1450616920864</millis>
+  <sequence>4763</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:46</date>
+  <millis>1450616926762</millis>
+  <sequence>4826</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:53</date>
+  <millis>1450616933086</millis>
+  <sequence>4872</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:59</date>
+  <millis>1450616939719</millis>
+  <sequence>4920</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:00</date>
+  <millis>1450616940605</millis>
+  <sequence>4929</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:08</date>
+  <millis>1450616948123</millis>
+  <sequence>4983</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:09</date>
+  <millis>1450616949152</millis>
+  <sequence>4994</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:20</date>
+  <millis>1450616960059</millis>
+  <sequence>5071</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:28</date>
+  <millis>1450616968307</millis>
+  <sequence>5130</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:34</date>
+  <millis>1450616974951</millis>
+  <sequence>5178</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:35</date>
+  <millis>1450616975839</millis>
+  <sequence>5187</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:42</date>
+  <millis>1450616982907</millis>
+  <sequence>5238</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:44</date>
+  <millis>1450616984083</millis>
+  <sequence>5251</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:51</date>
+  <millis>1450616991154</millis>
+  <sequence>5323</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:51</date>
+  <millis>1450616991893</millis>
+  <sequence>5331</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:57</date>
+  <millis>1450616997938</millis>
+  <sequence>5375</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:58</date>
+  <millis>1450616998819</millis>
+  <sequence>5384</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:04</date>
+  <millis>1450617004866</millis>
+  <sequence>5428</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:10</date>
+  <millis>1450617010809</millis>
+  <sequence>5473</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:10</date>
+  <millis>1450617010906</millis>
+  <sequence>5477</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:11</date>
+  <millis>1450617011642</millis>
+  <sequence>5486</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:18</date>
+  <millis>1450617018561</millis>
+  <sequence>5536</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:19</date>
+  <millis>1450617019451</millis>
+  <sequence>5545</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:25</date>
+  <millis>1450617025784</millis>
+  <sequence>5591</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:27</date>
+  <millis>1450617027399</millis>
+  <sequence>5605</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:34</date>
+  <millis>1450617034762</millis>
+  <sequence>5658</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:40</date>
+  <millis>1450617040412</millis>
+  <sequence>5701</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 50</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:40</date>
+  <millis>1450617040510</millis>
+  <sequence>5705</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:40</date>
+  <millis>1450617040951</millis>
+  <sequence>5712</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:47</date>
+  <millis>1450617047442</millis>
+  <sequence>5783</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:48</date>
+  <millis>1450617048617</millis>
+  <sequence>5795</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:55</date>
+  <millis>1450617055237</millis>
+  <sequence>5843</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:56</date>
+  <millis>1450617056124</millis>
+  <sequence>5853</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:02</date>
+  <millis>1450617062897</millis>
+  <sequence>5902</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:10</date>
+  <millis>1450617070155</millis>
+  <sequence>5956</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:10</date>
+  <millis>1450617070255</millis>
+  <sequence>5960</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 3</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:10</date>
+  <millis>1450617070696</millis>
+  <sequence>5968</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:17</date>
+  <millis>1450617077374</millis>
+  <sequence>6018</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:17</date>
+  <millis>1450617077469</millis>
+  <sequence>6022</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:24</date>
+  <millis>1450617084536</millis>
+  <sequence>6073</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:25</date>
+  <millis>1450617085277</millis>
+  <sequence>6082</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:30</date>
+  <millis>1450617090585</millis>
+  <sequence>6121</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:31</date>
+  <millis>1450617091466</millis>
+  <sequence>6131</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:37</date>
+  <millis>1450617097951</millis>
+  <sequence>6178</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:38</date>
+  <millis>1450617098839</millis>
+  <sequence>6188</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:47</date>
+  <millis>1450617107426</millis>
+  <sequence>6282</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:47</date>
+  <millis>1450617107523</millis>
+  <sequence>6286</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:48</date>
+  <millis>1450617108554</millis>
+  <sequence>6296</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:54</date>
+  <millis>1450617114647</millis>
+  <sequence>6342</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:54</date>
+  <millis>1450617114743</millis>
+  <sequence>6346</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:55</date>
+  <millis>1450617115184</millis>
+  <sequence>6352</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:02</date>
+  <millis>1450617122549</millis>
+  <sequence>6405</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:03</date>
+  <millis>1450617123733</millis>
+  <sequence>6417</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 7</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:11</date>
+  <millis>1450617131238</millis>
+  <sequence>6471</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:12</date>
+  <millis>1450617132268</millis>
+  <sequence>6481</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:18</date>
+  <millis>1450617138947</millis>
+  <sequence>6531</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 50</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:19</date>
+  <millis>1450617139047</millis>
+  <sequence>6535</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:19</date>
+  <millis>1450617139929</millis>
+  <sequence>6544</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:26</date>
+  <millis>1450617146601</millis>
+  <sequence>6594</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:26</date>
+  <millis>1450617146697</millis>
+  <sequence>6598</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:27</date>
+  <millis>1450617147874</millis>
+  <sequence>6609</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:34</date>
+  <millis>1450617154063</millis>
+  <sequence>6654</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:35</date>
+  <millis>1450617155391</millis>
+  <sequence>6667</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:41</date>
+  <millis>1450617161589</millis>
+  <sequence>6712</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:42</date>
+  <millis>1450617162327</millis>
+  <sequence>6720</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:49</date>
+  <millis>1450617169545</millis>
+  <sequence>6805</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:54</date>
+  <millis>1450617174696</millis>
+  <sequence>6843</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:00</date>
+  <millis>1450617180440</millis>
+  <sequence>6885</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:02</date>
+  <millis>1450617182510</millis>
+  <sequence>6903</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:09</date>
+  <millis>1450617189439</millis>
+  <sequence>6953</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:11</date>
+  <millis>1450617191212</millis>
+  <sequence>6969</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:16</date>
+  <millis>1450617196234</millis>
+  <sequence>7006</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:24</date>
+  <millis>1450617204348</millis>
+  <sequence>7064</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:30</date>
+  <millis>1450617210687</millis>
+  <sequence>7110</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:31</date>
+  <millis>1450617211863</millis>
+  <sequence>7122</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:39</date>
+  <millis>1450617219988</millis>
+  <sequence>7180</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:41</date>
+  <millis>1450617221018</millis>
+  <sequence>7191</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:47</date>
+  <millis>1450617227662</millis>
+  <sequence>7276</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:54</date>
+  <millis>1450617234046</millis>
+  <sequence>7324</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:54</date>
+  <millis>1450617234142</millis>
+  <sequence>7328</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:54</date>
+  <millis>1450617234731</millis>
+  <sequence>7336</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:00</date>
+  <millis>1450617240387</millis>
+  <sequence>7379</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:00</date>
+  <millis>1450617240483</millis>
+  <sequence>7383</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:07</date>
+  <millis>1450617247255</millis>
+  <sequence>7432</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:08</date>
+  <millis>1450617248875</millis>
+  <sequence>7447</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:14</date>
+  <millis>1450617254907</millis>
+  <sequence>7491</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:22</date>
+  <millis>1450617262028</millis>
+  <sequence>7544</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:22</date>
+  <millis>1450617262124</millis>
+  <sequence>7548</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:22</date>
+  <millis>1450617262716</millis>
+  <sequence>7555</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:28</date>
+  <millis>1450617268613</millis>
+  <sequence>7598</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:29</date>
+  <millis>1450617269501</millis>
+  <sequence>7608</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:35</date>
+  <millis>1450617275254</millis>
+  <sequence>7650</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:36</date>
+  <millis>1450617276438</millis>
+  <sequence>7662</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:44</date>
+  <millis>1450617284434</millis>
+  <sequence>7722</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:44</date>
+  <millis>1450617284530</millis>
+  <sequence>7726</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:45</date>
+  <millis>1450617285119</millis>
+  <sequence>7733</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:51</date>
+  <millis>1450617291941</millis>
+  <sequence>7824</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:52</date>
+  <millis>1450617292039</millis>
+  <sequence>7828</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 3</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:53</date>
+  <millis>1450617293212</millis>
+  <sequence>7840</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:58</date>
+  <millis>1450617298959</millis>
+  <sequence>7882</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:59</date>
+  <millis>1450617299841</millis>
+  <sequence>7891</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:07</date>
+  <millis>1450617307506</millis>
+  <sequence>7946</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 6</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:09</date>
+  <millis>1450617309133</millis>
+  <sequence>7961</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:16</date>
+  <millis>1450617316501</millis>
+  <sequence>8014</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:21</date>
+  <millis>1450617321657</millis>
+  <sequence>8052</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:29</date>
+  <millis>1450617329312</millis>
+  <sequence>8107</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:30</date>
+  <millis>1450617330344</millis>
+  <sequence>8118</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:38</date>
+  <millis>1450617338596</millis>
+  <sequence>8177</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:39</date>
+  <millis>1450617339921</millis>
+  <sequence>8190</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:45</date>
+  <millis>1450617345958</millis>
+  <sequence>8235</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:46</date>
+  <millis>1450617346986</millis>
+  <sequence>8245</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:52</date>
+  <millis>1450617352141</millis>
+  <sequence>8327</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:52</date>
+  <millis>1450617352730</millis>
+  <sequence>8335</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:00</date>
+  <millis>1450617360281</millis>
+  <sequence>8391</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:00</date>
+  <millis>1450617360376</millis>
+  <sequence>8395</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:07</date>
+  <millis>1450617367152</millis>
+  <sequence>8444</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:07</date>
+  <millis>1450617367886</millis>
+  <sequence>8453</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:13</date>
+  <millis>1450617373336</millis>
+  <sequence>8493</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:14</date>
+  <millis>1450617374219</millis>
+  <sequence>8502</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:20</date>
+  <millis>1450617380996</millis>
+  <sequence>8551</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:21</date>
+  <millis>1450617381881</millis>
+  <sequence>8561</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:30</date>
+  <millis>1450617390327</millis>
+  <sequence>8623</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:30</date>
+  <millis>1450617390424</millis>
+  <sequence>8627</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:31</date>
+  <millis>1450617391015</millis>
+  <sequence>8634</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:14</date>
+  <millis>1450617434498</millis>
+  <sequence>8980</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:18</date>
+  <millis>1450617438774</millis>
+  <sequence>9012</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:21</date>
+  <millis>1450617441569</millis>
+  <sequence>9034</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:27</date>
+  <millis>1450617447754</millis>
+  <sequence>9079</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:28</date>
+  <millis>1450617448353</millis>
+  <sequence>9087</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 6</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:37</date>
+  <millis>1450617457047</millis>
+  <sequence>9149</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:43</date>
+  <millis>1450617463534</millis>
+  <sequence>9196</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:49</date>
+  <millis>1450617469581</millis>
+  <sequence>9289</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:50</date>
+  <millis>1450617470467</millis>
+  <sequence>9299</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:59</date>
+  <millis>1450617479308</millis>
+  <sequence>9362</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:00</date>
+  <millis>1450617480927</millis>
+  <sequence>9376</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:11</date>
+  <millis>1450617491109</millis>
+  <sequence>9448</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:11</date>
+  <millis>1450617491844</millis>
+  <sequence>9457</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:21</date>
+  <millis>1450617501720</millis>
+  <sequence>9527</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:22</date>
+  <millis>1450617502905</millis>
+  <sequence>9539</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:32</date>
+  <millis>1450617512977</millis>
+  <sequence>9610</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:39</date>
+  <millis>1450617519605</millis>
+  <sequence>9658</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:48</date>
+  <millis>1450617528005</millis>
+  <sequence>9770</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:51</date>
+  <millis>1450617531542</millis>
+  <sequence>9797</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:01</date>
+  <millis>1450617541267</millis>
+  <sequence>9866</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:02</date>
+  <millis>1450617542446</millis>
+  <sequence>9877</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:17</date>
+  <millis>1450617557625</millis>
+  <sequence>9983</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:24</date>
+  <millis>1450617564837</millis>
+  <sequence>10035</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:25</date>
+  <millis>1450617565571</millis>
+  <sequence>10043</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:33</date>
+  <millis>1450617573972</millis>
+  <sequence>10103</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:39</date>
+  <millis>1450617579127</millis>
+  <sequence>10141</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:40</date>
+  <millis>1450617580012</millis>
+  <sequence>10151</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:45</date>
+  <millis>1450617585756</millis>
+  <sequence>10194</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:47</date>
+  <millis>1450617587372</millis>
+  <sequence>10261</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:53</date>
+  <millis>1450617593611</millis>
+  <sequence>10308</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:53</date>
+  <millis>1450617593709</millis>
+  <sequence>10312</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:58</date>
+  <millis>1450617598430</millis>
+  <sequence>10347</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:59</date>
+  <millis>1450617599322</millis>
+  <sequence>10357</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:07</date>
+  <millis>1450617607866</millis>
+  <sequence>10418</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:13</date>
+  <millis>1450617613750</millis>
+  <sequence>10461</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:14</date>
+  <millis>1450617614785</millis>
+  <sequence>10471</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:32</date>
+  <millis>1450617632309</millis>
+  <sequence>10593</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:33</date>
+  <millis>1450617633339</millis>
+  <sequence>10604</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:41</date>
+  <millis>1450617641591</millis>
+  <sequence>10663</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:48</date>
+  <millis>1450617648646</millis>
+  <sequence>10770</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:53</date>
+  <millis>1450617653862</millis>
+  <sequence>10810</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 51</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:53</date>
+  <millis>1450617653961</millis>
+  <sequence>10814</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:00</date>
+  <millis>1450617660436</millis>
+  <sequence>10861</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:01</date>
+  <millis>1450617661174</millis>
+  <sequence>10869</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:06</date>
+  <millis>1450617666920</millis>
+  <sequence>10911</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:08</date>
+  <millis>1450617668099</millis>
+  <sequence>10922</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:13</date>
+  <millis>1450617673538</millis>
+  <sequence>10962</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:15</date>
+  <millis>1450617675306</millis>
+  <sequence>10977</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:19</date>
+  <millis>1450617679726</millis>
+  <sequence>11010</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:20</date>
+  <millis>1450617680903</millis>
+  <sequence>11021</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:25</date>
+  <millis>1450617685913</millis>
+  <sequence>11058</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:26</date>
+  <millis>1450617686800</millis>
+  <sequence>11067</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:32</date>
+  <millis>1450617692744</millis>
+  <sequence>11112</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:32</date>
+  <millis>1450617692840</millis>
+  <sequence>11116</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:38</date>
+  <millis>1450617698731</millis>
+  <sequence>11159</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:39</date>
+  <millis>1450617699615</millis>
+  <sequence>11168</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:46</date>
+  <millis>1450617706236</millis>
+  <sequence>11217</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:47</date>
+  <millis>1450617707263</millis>
+  <sequence>11227</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 3</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:53</date>
+  <millis>1450617713312</millis>
+  <sequence>11326</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:54</date>
+  <millis>1450617714199</millis>
+  <sequence>11335</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:01</date>
+  <millis>1450617721715</millis>
+  <sequence>11389</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:02</date>
+  <millis>1450617722454</millis>
+  <sequence>11398</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:10</date>
+  <millis>1450617730696</millis>
+  <sequence>11457</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:13</date>
+  <millis>1450617733195</millis>
+  <sequence>11478</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:18</date>
+  <millis>1450617738492</millis>
+  <sequence>11517</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:19</date>
+  <millis>1450617739221</millis>
+  <sequence>11526</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:26</date>
+  <millis>1450617746731</millis>
+  <sequence>11580</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:27</date>
+  <millis>1450617747764</millis>
+  <sequence>11590</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:34</date>
+  <millis>1450617754526</millis>
+  <sequence>11639</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:39</date>
+  <millis>1450617759381</millis>
+  <sequence>11675</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:47</date>
+  <millis>1450617767524</millis>
+  <sequence>11794</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 50</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:47</date>
+  <millis>1450617767623</millis>
+  <sequence>11798</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:53</date>
+  <millis>1450617773662</millis>
+  <sequence>11842</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:54</date>
+  <millis>1450617774838</millis>
+  <sequence>11854</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:02</date>
+  <millis>1450617782201</millis>
+  <sequence>11907</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:03</date>
+  <millis>1450617783089</millis>
+  <sequence>11917</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:10</date>
+  <millis>1450617790905</millis>
+  <sequence>11973</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:12</date>
+  <millis>1450617792524</millis>
+  <sequence>11988</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:19</date>
+  <millis>1450617799813</millis>
+  <sequence>12042</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 52</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:19</date>
+  <millis>1450617799913</millis>
+  <sequence>12046</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:20</date>
+  <millis>1450617800942</millis>
+  <sequence>12056</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:25</date>
+  <millis>1450617805799</millis>
+  <sequence>12092</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:33</date>
+  <millis>1450617813308</millis>
+  <sequence>12146</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:34</date>
+  <millis>1450617814780</millis>
+  <sequence>12160</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:42</date>
+  <millis>1450617822728</millis>
+  <sequence>12217</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:44</date>
+  <millis>1450617824500</millis>
+  <sequence>12234</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:52</date>
+  <millis>1450617832311</millis>
+  <sequence>12353</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:54</date>
+  <millis>1450617834521</millis>
+  <sequence>12372</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:02</date>
+  <millis>1450617842025</millis>
+  <sequence>12426</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:03</date>
+  <millis>1450617843209</millis>
+  <sequence>12438</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:10</date>
+  <millis>1450617850719</millis>
+  <sequence>12492</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 3</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:12</date>
+  <millis>1450617852488</millis>
+  <sequence>12508</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:25</date>
+  <millis>1450617865007</millis>
+  <sequence>12596</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 3</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:25</date>
+  <millis>1450617865887</millis>
+  <sequence>12606</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:32</date>
+  <millis>1450617872802</millis>
+  <sequence>12656</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:33</date>
+  <millis>1450617873685</millis>
+  <sequence>12666</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:50</date>
+  <millis>1450617890035</millis>
+  <sequence>12849</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:51</date>
+  <millis>1450617891512</millis>
+  <sequence>12863</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:15</date>
+  <millis>1450617915672</millis>
+  <sequence>13030</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:16</date>
+  <millis>1450617916853</millis>
+  <sequence>13042</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:26</date>
+  <millis>1450617926132</millis>
+  <sequence>13108</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:27</date>
+  <millis>1450617927021</millis>
+  <sequence>13118</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:36</date>
+  <millis>1450617936585</millis>
+  <sequence>13186</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:37</date>
+  <millis>1450617937322</millis>
+  <sequence>13195</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:44</date>
+  <millis>1450617944540</millis>
+  <sequence>13248</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:45</date>
+  <millis>1450617945718</millis>
+  <sequence>13260</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:51</date>
+  <millis>1450617951222</millis>
+  <sequence>13375</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:51</date>
+  <millis>1450617951320</millis>
+  <sequence>13379</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:58</date>
+  <millis>1450617958092</millis>
+  <sequence>13428</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:58</date>
+  <millis>1450617958974</millis>
+  <sequence>13438</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:06</date>
+  <millis>1450617966801</millis>
+  <sequence>13494</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:08</date>
+  <millis>1450617968567</millis>
+  <sequence>13509</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:25</date>
+  <millis>1450617985661</millis>
+  <sequence>13628</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:26</date>
+  <millis>1450617986987</millis>
+  <sequence>13640</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:33</date>
+  <millis>1450617993080</millis>
+  <sequence>13685</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 53</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:33</date>
+  <millis>1450617993175</millis>
+  <sequence>13689</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:40</date>
+  <millis>1450618000253</millis>
+  <sequence>13740</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:43</date>
+  <millis>1450618003050</millis>
+  <sequence>13763</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:49</date>
+  <millis>1450618009386</millis>
+  <sequence>13885</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:51</date>
+  <millis>1450618011745</millis>
+  <sequence>13905</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:57</date>
+  <millis>1450618017638</millis>
+  <sequence>13948</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:58</date>
+  <millis>1450618018817</millis>
+  <sequence>13959</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:05</date>
+  <millis>1450618025745</millis>
+  <sequence>14009</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:09</date>
+  <millis>1450618029368</millis>
+  <sequence>14036</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:14</date>
+  <millis>1450618034233</millis>
+  <sequence>14072</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:15</date>
+  <millis>1450618035852</millis>
+  <sequence>14087</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:19</date>
+  <millis>1450618039975</millis>
+  <sequence>14118</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:23</date>
+  <millis>1450618043558</millis>
+  <sequence>14147</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 54</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:23</date>
+  <millis>1450618043653</millis>
+  <sequence>14151</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:24</date>
+  <millis>1450618044684</millis>
+  <sequence>14162</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:30</date>
+  <millis>1450618050456</millis>
+  <sequence>14201</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:31</date>
+  <millis>1450618051487</millis>
+  <sequence>14212</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:28:12</date>
+  <millis>1450618092138</millis>
+  <sequence>14569</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:28:13</date>
+  <millis>1450618093169</millis>
+  <sequence>14580</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T14:29:00</date>
+  <millis>1450618140740</millis>
+  <sequence>14988</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+</log>

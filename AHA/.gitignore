@@ -1,6 +1,6 @@
-out/
-target/
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/dictionaries/hutli.xml
-logs/*/*.xml
+sudo mount /dev/sda1 /mnt
+sudo mount -t vfat /dev/sda1 /mnt
+sudo mount -t ntfs /dev/sda1 /mnt
+sudo mount -t msdos /dev/sda1 /mnt
+
+echo 1 | sudo tee /sys/bus/pci/rescan

@@ -1,0 +1,1764 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-20T13:58:43</date>
+  <millis>1450616323150</millis>
+  <sequence>4</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:49</date>
+  <millis>1450616329146</millis>
+  <sequence>44</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:52</date>
+  <millis>1450616332099</millis>
+  <sequence>67</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:55</date>
+  <millis>1450616335186</millis>
+  <sequence>91</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:59</date>
+  <millis>1450616339456</millis>
+  <sequence>123</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:04</date>
+  <millis>1450616344457</millis>
+  <sequence>160</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:10</date>
+  <millis>1450616350044</millis>
+  <sequence>201</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:15</date>
+  <millis>1450616355790</millis>
+  <sequence>243</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:21</date>
+  <millis>1450616361667</millis>
+  <sequence>286</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:26</date>
+  <millis>1450616366077</millis>
+  <sequence>319</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:30</date>
+  <millis>1450616370483</millis>
+  <sequence>352</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:35</date>
+  <millis>1450616375637</millis>
+  <sequence>390</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:40</date>
+  <millis>1450616380053</millis>
+  <sequence>423</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:45</date>
+  <millis>1450616385366</millis>
+  <sequence>464</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:54</date>
+  <millis>1450616394061</millis>
+  <sequence>534</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:59:58</date>
+  <millis>1450616398469</millis>
+  <sequence>568</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:03</date>
+  <millis>1450616403337</millis>
+  <sequence>609</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:08</date>
+  <millis>1450616408051</millis>
+  <sequence>649</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:13</date>
+  <millis>1450616413500</millis>
+  <sequence>694</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:18</date>
+  <millis>1450616418656</millis>
+  <sequence>737</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:23</date>
+  <millis>1450616423660</millis>
+  <sequence>779</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:31</date>
+  <millis>1450616431465</millis>
+  <sequence>840</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:38</date>
+  <millis>1450616438384</millis>
+  <sequence>895</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:00:55</date>
+  <millis>1450616455489</millis>
+  <sequence>1024</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:04</date>
+  <millis>1450616464475</millis>
+  <sequence>1097</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:11</date>
+  <millis>1450616471103</millis>
+  <sequence>1150</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:16</date>
+  <millis>1450616476850</millis>
+  <sequence>1197</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:44</date>
+  <millis>1450616504101</millis>
+  <sequence>1405</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:50</date>
+  <millis>1450616510588</millis>
+  <sequence>1457</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:01:57</date>
+  <millis>1450616517354</millis>
+  <sequence>1511</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:04</date>
+  <millis>1450616524419</millis>
+  <sequence>1567</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:14</date>
+  <millis>1450616534282</millis>
+  <sequence>1642</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:21</date>
+  <millis>1450616541349</millis>
+  <sequence>1698</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:28</date>
+  <millis>1450616548566</millis>
+  <sequence>1755</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:34</date>
+  <millis>1450616554000</millis>
+  <sequence>1800</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:40</date>
+  <millis>1450616560042</millis>
+  <sequence>1856</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:44</date>
+  <millis>1450616564899</millis>
+  <sequence>1898</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:02:57</date>
+  <millis>1450616577426</millis>
+  <sequence>1994</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:13</date>
+  <millis>1450616593930</millis>
+  <sequence>2124</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:28</date>
+  <millis>1450616608383</millis>
+  <sequence>2239</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:35</date>
+  <millis>1450616615440</millis>
+  <sequence>2291</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:44</date>
+  <millis>1450616624860</millis>
+  <sequence>2373</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:03:45</date>
+  <millis>1450616625447</millis>
+  <sequence>2385</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:00</date>
+  <millis>1450616640902</millis>
+  <sequence>2500</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:15</date>
+  <millis>1450616655477</millis>
+  <sequence>2610</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:24</date>
+  <millis>1450616664181</millis>
+  <sequence>2683</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:31</date>
+  <millis>1450616671400</millis>
+  <sequence>2736</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:04:54</date>
+  <millis>1450616694679</millis>
+  <sequence>2917</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:01</date>
+  <millis>1450616701171</millis>
+  <sequence>2969</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:24</date>
+  <millis>1450616724861</millis>
+  <sequence>3144</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:30</date>
+  <millis>1450616730166</millis>
+  <sequence>3188</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:43</date>
+  <millis>1450616743414</millis>
+  <sequence>3289</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:49</date>
+  <millis>1450616749164</millis>
+  <sequence>3350</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:05:55</date>
+  <millis>1450616755044</millis>
+  <sequence>3401</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:01</date>
+  <millis>1450616761661</millis>
+  <sequence>3450</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:07</date>
+  <millis>1450616767395</millis>
+  <sequence>3497</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:12</date>
+  <millis>1450616772846</millis>
+  <sequence>3542</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:19</date>
+  <millis>1450616779630</millis>
+  <sequence>3599</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:20</date>
+  <millis>1450616780363</millis>
+  <sequence>3612</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:26</date>
+  <millis>1450616786847</millis>
+  <sequence>3660</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:31</date>
+  <millis>1450616791708</millis>
+  <sequence>3701</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:38</date>
+  <millis>1450616798922</millis>
+  <sequence>3758</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:06:53</date>
+  <millis>1450616813359</millis>
+  <sequence>3882</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:00</date>
+  <millis>1450616820872</millis>
+  <sequence>3944</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:01</date>
+  <millis>1450616821905</millis>
+  <sequence>3960</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:08</date>
+  <millis>1450616828093</millis>
+  <sequence>4006</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:20</date>
+  <millis>1450616840753</millis>
+  <sequence>4106</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:29</date>
+  <millis>1450616849157</millis>
+  <sequence>4174</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:29</date>
+  <millis>1450616849746</millis>
+  <sequence>4187</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:36</date>
+  <millis>1450616856961</millis>
+  <sequence>4240</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:45</date>
+  <millis>1450616865804</millis>
+  <sequence>4324</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:57</date>
+  <millis>1450616877731</millis>
+  <sequence>4416</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:07:58</date>
+  <millis>1450616878321</millis>
+  <sequence>4429</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:12</date>
+  <millis>1450616892003</millis>
+  <sequence>4532</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:24</date>
+  <millis>1450616904508</millis>
+  <sequence>4628</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:33</date>
+  <millis>1450616913931</millis>
+  <sequence>4707</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:08:40</date>
+  <millis>1450616920716</millis>
+  <sequence>4757</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:09</date>
+  <millis>1450616949152</millis>
+  <sequence>4993</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:09:44</date>
+  <millis>1450616984083</millis>
+  <sequence>5250</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:10</date>
+  <millis>1450617010758</millis>
+  <sequence>5471</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:11</date>
+  <millis>1450617011642</millis>
+  <sequence>5485</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:40</date>
+  <millis>1450617040363</millis>
+  <sequence>5699</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:40</date>
+  <millis>1450617040951</millis>
+  <sequence>5711</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:48</date>
+  <millis>1450617048617</millis>
+  <sequence>5794</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:10:56</date>
+  <millis>1450617056124</millis>
+  <sequence>5852</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:10</date>
+  <millis>1450617070105</millis>
+  <sequence>5954</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:10</date>
+  <millis>1450617070696</millis>
+  <sequence>5967</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:17</date>
+  <millis>1450617077323</millis>
+  <sequence>6016</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:25</date>
+  <millis>1450617085277</millis>
+  <sequence>6081</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:31</date>
+  <millis>1450617091466</millis>
+  <sequence>6130</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:38</date>
+  <millis>1450617098839</millis>
+  <sequence>6187</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:47</date>
+  <millis>1450617107376</millis>
+  <sequence>6280</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:11:54</date>
+  <millis>1450617114596</millis>
+  <sequence>6340</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:03</date>
+  <millis>1450617123733</millis>
+  <sequence>6416</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:18</date>
+  <millis>1450617138898</millis>
+  <sequence>6529</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:26</date>
+  <millis>1450617146551</millis>
+  <sequence>6592</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:12:35</date>
+  <millis>1450617155391</millis>
+  <sequence>6666</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:02</date>
+  <millis>1450617182510</millis>
+  <sequence>6902</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:11</date>
+  <millis>1450617191212</millis>
+  <sequence>6968</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:31</date>
+  <millis>1450617211863</millis>
+  <sequence>7121</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:41</date>
+  <millis>1450617221018</millis>
+  <sequence>7190</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:53</date>
+  <millis>1450617233996</millis>
+  <sequence>7322</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:13:54</date>
+  <millis>1450617234731</millis>
+  <sequence>7335</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:00</date>
+  <millis>1450617240336</millis>
+  <sequence>7377</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:08</date>
+  <millis>1450617248875</millis>
+  <sequence>7446</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:21</date>
+  <millis>1450617261977</millis>
+  <sequence>7542</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:29</date>
+  <millis>1450617269501</millis>
+  <sequence>7607</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:36</date>
+  <millis>1450617276438</millis>
+  <sequence>7661</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:44</date>
+  <millis>1450617284383</millis>
+  <sequence>7720</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:14:51</date>
+  <millis>1450617291890</millis>
+  <sequence>7822</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:09</date>
+  <millis>1450617309133</millis>
+  <sequence>7960</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:30</date>
+  <millis>1450617330344</millis>
+  <sequence>8117</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:39</date>
+  <millis>1450617339921</millis>
+  <sequence>8189</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:15:52</date>
+  <millis>1450617352730</millis>
+  <sequence>8334</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:00</date>
+  <millis>1450617360229</millis>
+  <sequence>8389</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:07</date>
+  <millis>1450617367886</millis>
+  <sequence>8452</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:21</date>
+  <millis>1450617381881</millis>
+  <sequence>8560</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:16:30</date>
+  <millis>1450617390275</millis>
+  <sequence>8621</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:28</date>
+  <millis>1450617448349</millis>
+  <sequence>9086</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:17:50</date>
+  <millis>1450617470467</millis>
+  <sequence>9298</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:11</date>
+  <millis>1450617491844</millis>
+  <sequence>9456</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:18:22</date>
+  <millis>1450617502905</millis>
+  <sequence>9538</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:40</date>
+  <millis>1450617580012</millis>
+  <sequence>10150</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:47</date>
+  <millis>1450617587372</millis>
+  <sequence>10260</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:53</date>
+  <millis>1450617593562</millis>
+  <sequence>10306</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:19:59</date>
+  <millis>1450617599322</millis>
+  <sequence>10356</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:33</date>
+  <millis>1450617633339</millis>
+  <sequence>10603</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:20:53</date>
+  <millis>1450617653812</millis>
+  <sequence>10808</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:21:32</date>
+  <millis>1450617692694</millis>
+  <sequence>11110</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:02</date>
+  <millis>1450617722454</millis>
+  <sequence>11397</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:13</date>
+  <millis>1450617733195</millis>
+  <sequence>11477</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:19</date>
+  <millis>1450617739221</millis>
+  <sequence>11525</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:47</date>
+  <millis>1450617767475</millis>
+  <sequence>11792</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:22:54</date>
+  <millis>1450617774838</millis>
+  <sequence>11853</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:03</date>
+  <millis>1450617783089</millis>
+  <sequence>11916</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:12</date>
+  <millis>1450617792524</millis>
+  <sequence>11987</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:19</date>
+  <millis>1450617799763</millis>
+  <sequence>12040</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:34</date>
+  <millis>1450617814780</millis>
+  <sequence>12159</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:44</date>
+  <millis>1450617824500</millis>
+  <sequence>12233</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:23:54</date>
+  <millis>1450617834521</millis>
+  <sequence>12371</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:03</date>
+  <millis>1450617843209</millis>
+  <sequence>12437</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:12</date>
+  <millis>1450617852488</millis>
+  <sequence>12507</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:25</date>
+  <millis>1450617865887</millis>
+  <sequence>12605</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:33</date>
+  <millis>1450617873685</millis>
+  <sequence>12665</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:24:51</date>
+  <millis>1450617891512</millis>
+  <sequence>12862</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:16</date>
+  <millis>1450617916853</millis>
+  <sequence>13041</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:27</date>
+  <millis>1450617927021</millis>
+  <sequence>13117</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:37</date>
+  <millis>1450617937322</millis>
+  <sequence>13194</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:45</date>
+  <millis>1450617945718</millis>
+  <sequence>13259</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:51</date>
+  <millis>1450617951170</millis>
+  <sequence>13373</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:25:58</date>
+  <millis>1450617958974</millis>
+  <sequence>13437</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:33</date>
+  <millis>1450617993028</millis>
+  <sequence>13683</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:43</date>
+  <millis>1450618003050</millis>
+  <sequence>13762</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:26:51</date>
+  <millis>1450618011745</millis>
+  <sequence>13904</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:09</date>
+  <millis>1450618029368</millis>
+  <sequence>14035</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:15</date>
+  <millis>1450618035852</millis>
+  <sequence>14086</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:23</date>
+  <millis>1450618043506</millis>
+  <sequence>14145</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Sending data: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:24</date>
+  <millis>1450618044684</millis>
+  <sequence>14161</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:27:31</date>
+  <millis>1450618051487</millis>
+  <sequence>14211</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:28:13</date>
+  <millis>1450618093169</millis>
+  <sequence>14579</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Found inverse action: Set sensor id 2 to value 1</message>
+</record>
+</log>

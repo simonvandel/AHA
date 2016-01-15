@@ -1,0 +1,195 @@
+%\documentclass[10pt, t, aspectratio=169]{beamer}
+\documentclass[10pt, t]{beamer}
+\usetheme[left,hideothersubsections]{AAUsidebar}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{epstopdf}
+\usepackage{multicol}
+\usepackage[inference]{semantic}
+\usepackage{amsmath}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage[nounderscore]{syntax}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.9,0,0}
+
+\setbeamertemplate{part page}
+{
+  \aauwavesbg
+	\finalpage{\insertpart\par}
+}
+
+\lstdefinelanguage{fsharp}%
+{morekeywords={let, new, match, with, rec, open, module, namespace, type, of, member, % 
+and, for, while, true, false, in, do, begin, end, fun, function, return, yield, try, %
+mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit, finally },
+  otherkeywords={ let!, return!, do!, yield!, use!, var, from, select, where, order, by },
+  keywordstyle=\color{bluekeywords},
+  sensitive=true,
+  basicstyle=\fontsize{7}{8}\selectfont\ttfamily,%\ttfamily,
+	breaklines=true,
+  xleftmargin=\parindent,
+  aboveskip=\bigskipamount,
+	tabsize=2,
+  morecomment=[l][\color{dkgreen}]{///},
+  morecomment=[l][\color{dkgreen}]{//},
+  morecomment=[s][\color{dkgreen}]{{(*}{*)}},
+  morestring=[b]",
+  showstringspaces=false,
+  literate={`}{\`}1,
+  stringstyle=\color{redstrings},
+}
+
+\lstdefinestyle{fsharp}{
+  language=fsharp,
+  aboveskip=1mm,
+  belowskip=1mm,
+	commentstyle=\color{comment},
+	stringstyle=\color{string},
+	keywordstyle=\color{instruction},
+	keywordstyle=[2]\color{directive},
+	keywordstyle=[3]\color{register},
+	basicstyle=\footnotesize\ttfamily,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	upquote=true,
+	tabsize=2,
+}
+	
+	\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  %breaklines=true,
+  frame=single,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  keywordstyle=\color{bluekeywords},
+	keywordstyle=[2]\color{cyan},
+	keywordstyle=[3]\color{cyan},
+  commentstyle=\itshape\color{dkgreen},
+  %identifierstyle=\color{dkgreen},
+	columns=flexible,
+  stringstyle=\color{redstrings},
+	morekeywords={foreach, bool, List, public, in, false, true},
+	morekeywords=[2]{TaskInstance, Task, Team},
+	keepspaces,
+	literate={=}{{{\color{magenta}=}}}1 {*}{{{\color{magenta}*}}}1 {+}{{{\color{magenta}+}}}1 {-}{{{\color{magenta}-}}}1 {!}{{{\color{magenta}!}}}1 {<}{{{\color{magenta}<}}}1 {>}{{{\color{magenta}>}}}1 {/}{{{\color{magenta}/}}}1 {\{}{{{\color{black}\{}}}1 {\}}{{{\color{black}\}}}}1 {(}{{{\color{black}(}}}1 {)}{{{\color{black})}}}1 {[}{{{\color{black}[}}}1 {]}{{{\color{black}]}}}1 {.}{{{\color{black}.}}}1 {,}{{{\color{black},}}}1 {;}{{{\color{black};}}}1
+}
+
+\lstdefinestyle{nonumbers}
+{
+    numbers=none,
+}
+
+\lstdefinestyle{small}
+{
+    numbers=none,
+    basicstyle={\fontsize{10pt}{10pt}\ttfamily}
+}
+
+\newcommand{\chref}[2]{
+    \href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}
+}
+\title[TLDR]{TLDR}
+\subtitle{The Language Described in this Report}
+\date{15/06 2015}
+\author[sw404f15] 
+{
+    Alexander Dalsgaard Krog
+    \href{mailto:akrog13@student.aau.dk}{\textit{<akrog13@student.aau.dk>}}\linebreak
+    Christian Heider Nielsen
+    \href{mailto:chrini13@student.aau.dk}{\textit{<chrini13@student.aau.dk>}}\linebreak
+    Jens Hegner Stærmose
+    \href{mailto:jstarm13@student.aau.dk}{\textit{<jstarm13@student.aau.dk>}}\linebreak
+    Kasper Fuglsang Christensen
+    \href{mailto:kfch13@student.aau.dk}{\textit{<kfch13@student.aau.dk>}}\linebreak
+    Kasper Kohsel Terndrup
+    \href{mailto:kternd13@student.aau.dk}{\textit{<kternd13@student.aau.dk>}}\linebreak
+    Simon Vandel Sillesen
+    \href{mailto:ssille13@student.aau.dk}{\textit{<ssille13@student.aau.dk>}}
+}
+
+\institute[
+    Department of Computer Science\linebreak
+    Selma Lagerlöfs Vej 300\linebreak
+    DK-9220 Aalborg Ø\linebreak
+    http://cs.aau.dk
+]
+{
+    Department of Computer Science\linebreak
+    Selma Lagerlöfs Vej 300\linebreak
+    DK-9220 Aalborg Ø\linebreak
+    http://cs.aau.dk/
+    
+}
+
+\pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/aau_logo_new}
+\titlegraphic{  
+    \pgfuseimage{titlepagelogo}
+}
+
+%semantik commands
+\newcommand{\Twedge}{\mathbin{^\wedge{}}}
+\newcommand{\Tfor}{\mathbin{\text{for}}}
+\newcommand{\Tin}{\mathbin{\text{in}}}
+\newcommand{\Twhile}{\mathbin{\text{while}}}
+\newcommand{\Tx}{\mathbin{\; \text{x} \;}}
+\newcommand{\Tlet}{\text{let}}
+\newcommand{\Tvar}{\text{var}}
+\newcommand{\Tspawn}{\mathbin{\text{spawn}}}
+\newcommand{\Tsend}{\mathbin{\text{send}}}
+\newcommand{\Tat}{\; \mathbin{\text{at}} \;}
+\newcommand{\Ta}{\; \mathbin{\text{a}} \;}
+\newcommand{\Taenv}{\; \mathbin{\text{aEnv}} \;}
+\newcommand{\Tm}{\; \mathbin{\text{m}} \;}
+\newcommand{\Twhere}{\mathbin{\text{where}}\;\;}
+\newcommand{\Ten}{\mathbin{\text{env}}}
+\newcommand{\Tactor}{\mathbin{\text{actor}} \;}
+\newcommand{\Tact}{\; \mathbin{\text{act}} \;}
+\newcommand{\Treceive}{\mathbin{\text{receive}} \;}
+\newcommand{\Tr}{\; \mathbin{\text{r}} \;}
+\newcommand{\Tstruct}{\mathbin{\text{struct}} \;}
+\newcommand{\Tand}{\text{\; AND \;}}
+\newcommand{\Tnot}{\text{NOT \;}}
+\newcommand{\Tnand}{\text{\; NAND \;}}
+\newcommand{\Tor}{\text{\; OR \;}} 
+\newcommand{\Tnor}{\text{\; NOR \;}}
+\newcommand{\Txor}{\text{\; XOR \;}}
+\newcommand{\Tif}{\text{if}}
+\newcommand{\Telse}{\text{else}}
+\newcommand{\Treturn}{\text{return}}
+\newcommand{\Te}{\text{\; e}}
+\newcommand{\Ttrue}{\text{true}}
+\newcommand{\Tfalse}{\text{false}}
+
+%typesystem commands
+\newcommand{\Tpot}{^\wedge{}}
+\newcommand{\Tint}{\text{int}}
+\newcommand{\Treal}{\text{real}}
+\newcommand{\Tbool}{\text{bool}}
+\newcommand{\Tchar}{\text{char}}
+\newcommand{\Taop}{\text{AOP}}
+\newcommand{\Tlop}{\text{LOP}}
+\newcommand{\Tbop}{\text{BOP}}
+\newcommand{\Tt}{\text{T}}
+\newcommand{\Tpt}{\text{PT}}
+\newcommand{\Tenv}{E \vdash}

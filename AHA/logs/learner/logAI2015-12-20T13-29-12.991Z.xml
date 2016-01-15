@@ -1,0 +1,5991 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-20T14:29:13</date>
+  <millis>1450618153120</millis>
+  <sequence>3</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:13</date>
+  <millis>1450618213680</millis>
+  <sequence>459</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 13</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:16</date>
+  <millis>1450618216151</millis>
+  <sequence>478</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8235982017777914. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:16</date>
+  <millis>1450618216296</millis>
+  <sequence>484</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8016964382215255. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:23</date>
+  <millis>1450618223059</millis>
+  <sequence>533</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8622781250180449. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:31</date>
+  <millis>1450618231598</millis>
+  <sequence>594</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9095200031133557. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:37</date>
+  <millis>1450618237044</millis>
+  <sequence>634</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9346617218961588. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:37</date>
+  <millis>1450618237194</millis>
+  <sequence>640</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9117991008888957. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:42</date>
+  <millis>1450618242353</millis>
+  <sequence>678</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8235982017777914. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:42</date>
+  <millis>1450618242501</millis>
+  <sequence>684</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8016964382215255. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:48</date>
+  <millis>1450618248388</millis>
+  <sequence>727</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8622781250180449. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:55</date>
+  <millis>1450618255305</millis>
+  <sequence>777</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9095200031133557. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:59</date>
+  <millis>1450618259574</millis>
+  <sequence>809</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9346617218961588. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:30:59</date>
+  <millis>1450618259719</millis>
+  <sequence>815</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9117991008888957. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:31:04</date>
+  <millis>1450618264727</millis>
+  <sequence>852</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8235982017777914. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:31:04</date>
+  <millis>1450618264876</millis>
+  <sequence>858</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8016964382215255. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:31:09</date>
+  <millis>1450618269876</millis>
+  <sequence>895</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8622781250180449. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:31:13</date>
+  <millis>1450618273681</millis>
+  <sequence>922</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 29</message>
+</record>
+<record>
+  <date>2015-12-20T14:31:15</date>
+  <millis>1450618275330</millis>
+  <sequence>936</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8075328090760976. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:31:30</date>
+  <millis>1450618290344</millis>
+  <sequence>1047</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2015-12-20T14:31:31</date>
+  <millis>1450618291374</millis>
+  <sequence>1057</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8042060417259211. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:31:49</date>
+  <millis>1450618309209</millis>
+  <sequence>1187</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:05</date>
+  <millis>1450618325423</millis>
+  <sequence>1304</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:06</date>
+  <millis>1450618326598</millis>
+  <sequence>1315</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8042060417259211. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:13</date>
+  <millis>1450618333682</millis>
+  <sequence>1367</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 44</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:14</date>
+  <millis>1450618334839</millis>
+  <sequence>1377</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6739267076849483. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:20</date>
+  <millis>1450618340720</millis>
+  <sequence>1420</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5975306431974182</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:21</date>
+  <millis>1450618341749</millis>
+  <sequence>1430</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6235985275894205. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:27</date>
+  <millis>1450618347352</millis>
+  <sequence>1471</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7427300772823571. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:28</date>
+  <millis>1450618348825</millis>
+  <sequence>1484</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7090785256136638. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:34</date>
+  <millis>1450618354718</millis>
+  <sequence>1527</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.482027112941398</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:35</date>
+  <millis>1450618355743</millis>
+  <sequence>1537</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6651952618641588. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:40</date>
+  <millis>1450618360901</millis>
+  <sequence>1576</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.51868109727944</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:42</date>
+  <millis>1450618362076</millis>
+  <sequence>1587</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6739267076849483. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:47</date>
+  <millis>1450618367377</millis>
+  <sequence>1626</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5975306431974182</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:49</date>
+  <millis>1450618369439</millis>
+  <sequence>1643</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6235985275894205. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:54</date>
+  <millis>1450618374146</millis>
+  <sequence>1678</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7427300772823571. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:32:55</date>
+  <millis>1450618375620</millis>
+  <sequence>1691</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7090785256136638. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:01</date>
+  <millis>1450618381366</millis>
+  <sequence>1733</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.482027112941398</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:02</date>
+  <millis>1450618382551</millis>
+  <sequence>1744</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6651952618641588. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:08</date>
+  <millis>1450618388890</millis>
+  <sequence>1791</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.51868109727944</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:11</date>
+  <millis>1450618391691</millis>
+  <sequence>1813</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6739267076849483. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:13</date>
+  <millis>1450618393683</millis>
+  <sequence>1828</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 61</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:13</date>
+  <millis>1450618393756</millis>
+  <sequence>1830</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:33:13</date>
+  <millis>1450618393756</millis>
+  <sequence>1831</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:33:17</date>
+  <millis>1450618397137</millis>
+  <sequence>1856</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8397053923666224. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:19</date>
+  <millis>1450618399934</millis>
+  <sequence>1878</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8522232920569326. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:26</date>
+  <millis>1450618406117</millis>
+  <sequence>1923</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7647333836491812. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:26</date>
+  <millis>1450618406263</millis>
+  <sequence>1929</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8326681228142142. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:35</date>
+  <millis>1450618415690</millis>
+  <sequence>1996</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8793598018262625. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:38</date>
+  <millis>1450618418334</millis>
+  <sequence>2017</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7995336138847653. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:44</date>
+  <millis>1450618424671</millis>
+  <sequence>2064</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.669096653440825. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:44</date>
+  <millis>1450618424818</millis>
+  <sequence>2070</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8184578364861761. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:51</date>
+  <millis>1450618431884</millis>
+  <sequence>2121</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8397053923666224. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:33:53</date>
+  <millis>1450618433502</millis>
+  <sequence>2135</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8522232920569326. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:00</date>
+  <millis>1450618440423</millis>
+  <sequence>2185</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7647333836491812. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:00</date>
+  <millis>1450618440571</millis>
+  <sequence>2191</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8326681228142142. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:07</date>
+  <millis>1450618447348</millis>
+  <sequence>2240</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8793598018262625. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:08</date>
+  <millis>1450618448668</millis>
+  <sequence>2252</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7995336138847653. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:13</date>
+  <millis>1450618453684</millis>
+  <sequence>2289</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 74</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:13</date>
+  <millis>1450618453773</millis>
+  <sequence>2290</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:34:13</date>
+  <millis>1450618453773</millis>
+  <sequence>2291</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:34:13</date>
+  <millis>1450618453773</millis>
+  <sequence>2292</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:34:13</date>
+  <millis>1450618453773</millis>
+  <sequence>2293</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:34:16</date>
+  <millis>1450618456010</millis>
+  <sequence>2311</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6508348930669026. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:16</date>
+  <millis>1450618456163</millis>
+  <sequence>2317</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.77758046660724. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:24</date>
+  <millis>1450618464410</millis>
+  <sequence>2376</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.736779386418285. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:24</date>
+  <millis>1450618464556</millis>
+  <sequence>2382</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.696833189595169. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:31</date>
+  <millis>1450618471772</millis>
+  <sequence>2434</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6508348930669026. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:31</date>
+  <millis>1450618471921</millis>
+  <sequence>2440</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.77758046660724. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:38</date>
+  <millis>1450618478556</millis>
+  <sequence>2488</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.736779386418285. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:38</date>
+  <millis>1450618478703</millis>
+  <sequence>2494</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6199670444494249. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:44</date>
+  <millis>1450618484893</millis>
+  <sequence>2539</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8006996766794956. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:45</date>
+  <millis>1450618485777</millis>
+  <sequence>2548</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.859894325956325. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:52</date>
+  <millis>1450618492252</millis>
+  <sequence>2596</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8843053159264113. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:53</date>
+  <millis>1450618493283</millis>
+  <sequence>2606</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7471597090981599. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:59</date>
+  <millis>1450618499307</millis>
+  <sequence>2651</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6508348930669026. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:34:59</date>
+  <millis>1450618499454</millis>
+  <sequence>2657</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.77758046660724. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:05</date>
+  <millis>1450618505337</millis>
+  <sequence>2700</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.736779386418285. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:05</date>
+  <millis>1450618505486</millis>
+  <sequence>2706</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6199670444494249. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:13</date>
+  <millis>1450618513438</millis>
+  <sequence>2763</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8006996766794956. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:13</date>
+  <millis>1450618513685</millis>
+  <sequence>2766</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 92</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:13</date>
+  <millis>1450618513803</millis>
+  <sequence>2768</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:35:13</date>
+  <millis>1450618513803</millis>
+  <sequence>2769</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:35:13</date>
+  <millis>1450618513803</millis>
+  <sequence>2770</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:35:13</date>
+  <millis>1450618513803</millis>
+  <sequence>2771</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:35:13</date>
+  <millis>1450618513803</millis>
+  <sequence>2772</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:35:13</date>
+  <millis>1450618513804</millis>
+  <sequence>2773</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:35:14</date>
+  <millis>1450618514766</millis>
+  <sequence>2782</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8191027091121658. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:20</date>
+  <millis>1450618520808</millis>
+  <sequence>2826</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7328587517113199. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:20</date>
+  <millis>1450618520955</millis>
+  <sequence>2832</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8727099271116548. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:28</date>
+  <millis>1450618528315</millis>
+  <sequence>2885</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.610021460969451. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:29</date>
+  <millis>1450618529205</millis>
+  <sequence>2894</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8191027091121658. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:39</date>
+  <millis>1450618539657</millis>
+  <sequence>2968</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5938297895999581</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:40</date>
+  <millis>1450618540985</millis>
+  <sequence>2980</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7433095032903038. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:47</date>
+  <millis>1450618547610</millis>
+  <sequence>3029</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6359066372030941. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:48</date>
+  <millis>1450618548785</millis>
+  <sequence>3040</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8300548195747229. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:55</date>
+  <millis>1450618555568</millis>
+  <sequence>3089</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7818574100528476. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:35:56</date>
+  <millis>1450618556893</millis>
+  <sequence>3101</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7732335376033503. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:06</date>
+  <millis>1450618566180</millis>
+  <sequence>3168</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8386372719741526. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:06</date>
+  <millis>1450618566328</millis>
+  <sequence>3174</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8191027091121658. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:13</date>
+  <millis>1450618573686</millis>
+  <sequence>3225</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 104</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:13</date>
+  <millis>1450618573837</millis>
+  <sequence>3227</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:36:13</date>
+  <millis>1450618573837</millis>
+  <sequence>3228</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:36:13</date>
+  <millis>1450618573837</millis>
+  <sequence>3229</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:36:13</date>
+  <millis>1450618573837</millis>
+  <sequence>3230</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:36:13</date>
+  <millis>1450618573837</millis>
+  <sequence>3231</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:36:13</date>
+  <millis>1450618573838</millis>
+  <sequence>3232</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:36:13</date>
+  <millis>1450618573838</millis>
+  <sequence>3233</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:36:13</date>
+  <millis>1450618573838</millis>
+  <sequence>3234</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:36:15</date>
+  <millis>1450618575609</millis>
+  <sequence>3249</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7368347627410747. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:16</date>
+  <millis>1450618576642</millis>
+  <sequence>3259</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7441226109457066. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:24</date>
+  <millis>1450618584591</millis>
+  <sequence>3316</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7007472780812565. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:25</date>
+  <millis>1450618585624</millis>
+  <sequence>3326</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8598486737687849. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:32</date>
+  <millis>1450618592551</millis>
+  <sequence>3377</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7840127113299332. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:33</date>
+  <millis>1450618593586</millis>
+  <sequence>3387</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7964801881259326. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:41</date>
+  <millis>1450618601686</millis>
+  <sequence>3446</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7471058630727961. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:41</date>
+  <millis>1450618601832</millis>
+  <sequence>3452</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7948666314889427. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:53</date>
+  <millis>1450618613769</millis>
+  <sequence>3536</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7368347627410747. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:36:54</date>
+  <millis>1450618614656</millis>
+  <sequence>3545</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7441226109457066. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:00</date>
+  <millis>1450618620991</millis>
+  <sequence>3591</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7007472780812565. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:02</date>
+  <millis>1450618622612</millis>
+  <sequence>3605</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8450989634882855. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:08</date>
+  <millis>1450618628064</millis>
+  <sequence>3645</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7781991350074684. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:09</date>
+  <millis>1450618629092</millis>
+  <sequence>3655</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5959649698905294</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633687</millis>
+  <sequence>3688</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 118</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633857</millis>
+  <sequence>3690</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633857</millis>
+  <sequence>3691</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633857</millis>
+  <sequence>3692</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633857</millis>
+  <sequence>3693</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633857</millis>
+  <sequence>3694</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633857</millis>
+  <sequence>3695</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633857</millis>
+  <sequence>3696</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633858</millis>
+  <sequence>3697</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633858</millis>
+  <sequence>3698</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:13</date>
+  <millis>1450618633858</millis>
+  <sequence>3699</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:37:16</date>
+  <millis>1450618636167</millis>
+  <sequence>3717</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6188694121280349. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:16</date>
+  <millis>1450618636313</millis>
+  <sequence>3723</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6324731803569076. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:21</date>
+  <millis>1450618641761</millis>
+  <sequence>3763</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5289961202160528</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:22</date>
+  <millis>1450618642644</millis>
+  <sequence>3772</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.9167930708645624. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:32</date>
+  <millis>1450618652823</millis>
+  <sequence>3844</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5712043123957334</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:34</date>
+  <millis>1450618654299</millis>
+  <sequence>3857</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6498876249939383. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:49</date>
+  <millis>1450618669773</millis>
+  <sequence>3965</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7018427916711838. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:37:52</date>
+  <millis>1450618672271</millis>
+  <sequence>3985</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.541254008130901</message>
+</record>
+<record>
+  <date>2015-12-20T14:38:01</date>
+  <millis>1450618681896</millis>
+  <sequence>4053</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6188694121280349. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:38:02</date>
+  <millis>1450618682042</millis>
+  <sequence>4059</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6324731803569076. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693688</millis>
+  <sequence>4139</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 128</message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693885</millis>
+  <sequence>4142</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693885</millis>
+  <sequence>4143</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693885</millis>
+  <sequence>4144</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693885</millis>
+  <sequence>4145</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693885</millis>
+  <sequence>4146</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693885</millis>
+  <sequence>4147</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693886</millis>
+  <sequence>4148</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693886</millis>
+  <sequence>4149</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693886</millis>
+  <sequence>4150</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:38:13</date>
+  <millis>1450618693886</millis>
+  <sequence>4151</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:07</date>
+  <millis>1450618747144</millis>
+  <sequence>4515</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6088694374292277. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:07</date>
+  <millis>1450618747294</millis>
+  <sequence>4521</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8162578351049596. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753494</millis>
+  <sequence>4566</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7461133023381267. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753689</millis>
+  <sequence>4569</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 132</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753920</millis>
+  <sequence>4571</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753920</millis>
+  <sequence>4572</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753920</millis>
+  <sequence>4573</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753920</millis>
+  <sequence>4574</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753920</millis>
+  <sequence>4575</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753920</millis>
+  <sequence>4576</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753921</millis>
+  <sequence>4577</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753921</millis>
+  <sequence>4578</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753921</millis>
+  <sequence>4579</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:13</date>
+  <millis>1450618753921</millis>
+  <sequence>4580</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:39:14</date>
+  <millis>1450618754674</millis>
+  <sequence>4588</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7295854986970163. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:21</date>
+  <millis>1450618761740</millis>
+  <sequence>4639</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7374671224884463. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:23</date>
+  <millis>1450618763367</millis>
+  <sequence>4653</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8647287488597355. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:30</date>
+  <millis>1450618770014</millis>
+  <sequence>4701</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7170932383224182. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:30</date>
+  <millis>1450618770898</millis>
+  <sequence>4710</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7686782515555663. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:37</date>
+  <millis>1450618777388</millis>
+  <sequence>4758</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8110434575673489. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:38</date>
+  <millis>1450618778564</millis>
+  <sequence>4769</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8559893169321114. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:46</date>
+  <millis>1450618786221</millis>
+  <sequence>4825</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8108543229297931. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:46</date>
+  <millis>1450618786370</millis>
+  <sequence>4831</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7295854986970163. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:52</date>
+  <millis>1450618792107</millis>
+  <sequence>4873</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7374671224884463. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:39:53</date>
+  <millis>1450618793868</millis>
+  <sequence>4888</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8647287488597355. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:01</date>
+  <millis>1450618801520</millis>
+  <sequence>4943</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7170932383224182. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:02</date>
+  <millis>1450618802554</millis>
+  <sequence>4953</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7686782515555663. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:08</date>
+  <millis>1450618808305</millis>
+  <sequence>4996</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8110434575673489. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:09</date>
+  <millis>1450618809332</millis>
+  <sequence>5006</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8559893169321114. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813690</millis>
+  <sequence>5038</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 146</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813921</millis>
+  <sequence>5041</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813921</millis>
+  <sequence>5042</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813921</millis>
+  <sequence>5043</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5044</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5045</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5046</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5047</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5048</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5049</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5050</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5051</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5052</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5053</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:13</date>
+  <millis>1450618813922</millis>
+  <sequence>5054</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:40:19</date>
+  <millis>1450618819484</millis>
+  <sequence>5094</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.782700745530031. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:19</date>
+  <millis>1450618819632</millis>
+  <sequence>5100</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8050516709165858. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:28</date>
+  <millis>1450618828319</millis>
+  <sequence>5162</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.747933291753714. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:29</date>
+  <millis>1450618829207</millis>
+  <sequence>5171</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8884470924194998. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:37</date>
+  <millis>1450618837448</millis>
+  <sequence>5230</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7452894045725456. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:38</date>
+  <millis>1450618838479</millis>
+  <sequence>5240</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7698256066726046. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:50</date>
+  <millis>1450618850869</millis>
+  <sequence>5327</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8216303954609556. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:40:51</date>
+  <millis>1450618851756</millis>
+  <sequence>5336</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5595927284578164</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:11</date>
+  <millis>1450618871642</millis>
+  <sequence>5474</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.782700745530031. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:11</date>
+  <millis>1450618871788</millis>
+  <sequence>5480</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8050516709165858. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873691</millis>
+  <sequence>5494</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 156</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5497</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5498</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5499</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5500</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5501</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5502</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5503</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5504</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5505</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5506</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5507</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5508</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5509</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:13</date>
+  <millis>1450618873959</millis>
+  <sequence>5510</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:41:17</date>
+  <millis>1450618877673</millis>
+  <sequence>5538</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7849772242007672. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:18</date>
+  <millis>1450618878706</millis>
+  <sequence>5548</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7698751297689982. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:23</date>
+  <millis>1450618883570</millis>
+  <sequence>5584</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.707015520688845. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:24</date>
+  <millis>1450618884451</millis>
+  <sequence>5593</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8539044050918052. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:30</date>
+  <millis>1450618890628</millis>
+  <sequence>5639</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5415656593609461</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:31</date>
+  <millis>1450618891365</millis>
+  <sequence>5647</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:38</date>
+  <millis>1450618898590</millis>
+  <sequence>5699</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6492895413027975. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:38</date>
+  <millis>1450618898736</millis>
+  <sequence>5705</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7531640795423684. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:44</date>
+  <millis>1450618904867</millis>
+  <sequence>5748</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7849772242007672. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:45</date>
+  <millis>1450618905750</millis>
+  <sequence>5757</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7698751297689982. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:52</date>
+  <millis>1450618912946</millis>
+  <sequence>5808</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.707015520688845. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:53</date>
+  <millis>1450618913832</millis>
+  <sequence>5817</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8539044050918052. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:41:59</date>
+  <millis>1450618919586</millis>
+  <sequence>5859</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5415656593609461</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:02</date>
+  <millis>1450618922681</millis>
+  <sequence>5883</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:09</date>
+  <millis>1450618929007</millis>
+  <sequence>5930</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6492895413027975. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:09</date>
+  <millis>1450618929152</millis>
+  <sequence>5936</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7531640795423684. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933692</millis>
+  <sequence>5968</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 172</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933969</millis>
+  <sequence>5971</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5972</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5973</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5974</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5975</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5976</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5977</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5978</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5979</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5980</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5981</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5982</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5983</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5984</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5985</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5986</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5987</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:13</date>
+  <millis>1450618933970</millis>
+  <sequence>5988</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:42:16</date>
+  <millis>1450618936678</millis>
+  <sequence>6009</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.797163783801566. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:17</date>
+  <millis>1450618937707</millis>
+  <sequence>6019</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8042859893382938. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:24</date>
+  <millis>1450618944482</millis>
+  <sequence>6068</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6626734859970409. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:24</date>
+  <millis>1450618944630</millis>
+  <sequence>6074</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7531702702239665. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:31</date>
+  <millis>1450618951517</millis>
+  <sequence>6122</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7669656017828249. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:32</date>
+  <millis>1450618952259</millis>
+  <sequence>6130</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6568113922159966. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:40</date>
+  <millis>1450618960327</millis>
+  <sequence>6186</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7583634354455582. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:40</date>
+  <millis>1450618960473</millis>
+  <sequence>6193</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8081147314697047. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:51</date>
+  <millis>1450618971735</millis>
+  <sequence>6271</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.797163783801566. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:52</date>
+  <millis>1450618972763</millis>
+  <sequence>6281</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8042859893382938. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:59</date>
+  <millis>1450618979107</millis>
+  <sequence>6327</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6626734859970409. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:42:59</date>
+  <millis>1450618979255</millis>
+  <sequence>6333</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7531702702239665. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:06</date>
+  <millis>1450618986178</millis>
+  <sequence>6383</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7669656017828249. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:07</date>
+  <millis>1450618987208</millis>
+  <sequence>6393</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6568113922159966. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993693</millis>
+  <sequence>6440</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 186</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6443</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6444</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6445</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6446</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6447</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6448</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6449</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6450</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6451</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6452</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6453</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6454</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6455</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6456</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6457</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6458</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993998</millis>
+  <sequence>6459</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993999</millis>
+  <sequence>6460</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993999</millis>
+  <sequence>6461</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:13</date>
+  <millis>1450618993999</millis>
+  <sequence>6462</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:43:20</date>
+  <millis>1450619000295</millis>
+  <sequence>6507</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8043582589851503. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:20</date>
+  <millis>1450619000444</millis>
+  <sequence>6513</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7566600581223023. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:27</date>
+  <millis>1450619007081</millis>
+  <sequence>6561</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8737988027527124. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:27</date>
+  <millis>1450619007973</millis>
+  <sequence>6570</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7438890536963007. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:35</date>
+  <millis>1450619015274</millis>
+  <sequence>6621</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6369222300713485. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:36</date>
+  <millis>1450619016006</millis>
+  <sequence>6629</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6775729164136909. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:41</date>
+  <millis>1450619021609</millis>
+  <sequence>6670</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6703111151256187. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:41</date>
+  <millis>1450619021757</millis>
+  <sequence>6674</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8389972692630987. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:42</date>
+  <millis>1450619022346</millis>
+  <sequence>6681</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.686725051146426. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:44</date>
+  <millis>1450619024707</millis>
+  <sequence>6700</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6434552283829458. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:51</date>
+  <millis>1450619031339</millis>
+  <sequence>6749</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7020270456757327. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:51</date>
+  <millis>1450619031487</millis>
+  <sequence>6755</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7566600581223023. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:58</date>
+  <millis>1450619038510</millis>
+  <sequence>6804</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8737988027527124. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:43:59</date>
+  <millis>1450619039391</millis>
+  <sequence>6813</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7438890536963007. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:04</date>
+  <millis>1450619044837</millis>
+  <sequence>6853</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6369222300713485. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:05</date>
+  <millis>1450619045571</millis>
+  <sequence>6861</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6775729164136909. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:11</date>
+  <millis>1450619051602</millis>
+  <sequence>6905</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6703111151256187. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:12</date>
+  <millis>1450619052784</millis>
+  <sequence>6916</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8508933012593687. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:13</date>
+  <millis>1450619053694</millis>
+  <sequence>6925</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 204</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6929</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6930</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6931</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6932</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6933</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6934</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6935</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6936</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6937</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6938</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6939</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6940</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6941</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6942</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6943</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6944</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6945</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6946</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6947</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6948</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6949</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:14</date>
+  <millis>1450619054110</millis>
+  <sequence>6950</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:44:21</date>
+  <millis>1450619061318</millis>
+  <sequence>7001</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6447639740944439. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:21</date>
+  <millis>1450619061470</millis>
+  <sequence>7007</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7595377284131974. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:30</date>
+  <millis>1450619070305</millis>
+  <sequence>7070</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8739263022184673. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:30</date>
+  <millis>1450619070451</millis>
+  <sequence>7076</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8276229612151991. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:40</date>
+  <millis>1450619080158</millis>
+  <sequence>7145</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6279746501478349. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:41</date>
+  <millis>1450619081341</millis>
+  <sequence>7156</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7825027027900081. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:47</date>
+  <millis>1450619087679</millis>
+  <sequence>7202</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7991974289256577. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:48</date>
+  <millis>1450619088709</millis>
+  <sequence>7212</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>No Confidence: 0.5643625645218409</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:58</date>
+  <millis>1450619098873</millis>
+  <sequence>7284</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6447639740944439. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:44:59</date>
+  <millis>1450619099027</millis>
+  <sequence>7290</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7595377284131974. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:06</date>
+  <millis>1450619106546</millis>
+  <sequence>7344</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8739263022184673. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:06</date>
+  <millis>1450619106693</millis>
+  <sequence>7350</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8276229612151991. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:13</date>
+  <millis>1450619113323</millis>
+  <sequence>7398</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6279746501478349. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:13</date>
+  <millis>1450619113695</millis>
+  <sequence>7402</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 218</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7406</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7407</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7408</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7409</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7410</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7411</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7412</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7413</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7414</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114132</millis>
+  <sequence>7415</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7416</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7417</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7418</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7419</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7420</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7421</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7422</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7423</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7424</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7425</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7426</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114133</millis>
+  <sequence>7427</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:45:14</date>
+  <millis>1450619114500</millis>
+  <sequence>7432</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7164336687031875. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:20</date>
+  <millis>1450619120100</millis>
+  <sequence>7473</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.71468125413782. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:21</date>
+  <millis>1450619121717</millis>
+  <sequence>7487</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6984856542789506. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:30</date>
+  <millis>1450619130411</millis>
+  <sequence>7550</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6915914739257116. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:30</date>
+  <millis>1450619130558</millis>
+  <sequence>7556</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7003894015041137. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:38</date>
+  <millis>1450619138066</millis>
+  <sequence>7610</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8455843327409174. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:38</date>
+  <millis>1450619138951</millis>
+  <sequence>7619</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8337063921003015. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:51</date>
+  <millis>1450619151179</millis>
+  <sequence>7705</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6787057258765785. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:45:52</date>
+  <millis>1450619152062</millis>
+  <sequence>7714</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6860284758723376. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:00</date>
+  <millis>1450619160031</millis>
+  <sequence>7772</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.830389135827826. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:01</date>
+  <millis>1450619161213</millis>
+  <sequence>7783</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8825682170171982. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:08</date>
+  <millis>1450619168449</millis>
+  <sequence>7836</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7465810633537369. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:08</date>
+  <millis>1450619168597</millis>
+  <sequence>7842</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7599429802875028. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:13</date>
+  <millis>1450619173696</millis>
+  <sequence>7878</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 230</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174169</millis>
+  <sequence>7882</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174169</millis>
+  <sequence>7883</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174169</millis>
+  <sequence>7884</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174169</millis>
+  <sequence>7885</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174169</millis>
+  <sequence>7886</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174169</millis>
+  <sequence>7887</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174169</millis>
+  <sequence>7888</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174169</millis>
+  <sequence>7889</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174169</millis>
+  <sequence>7890</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7891</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7892</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7893</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7894</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7895</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7896</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7897</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7898</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7899</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7900</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7901</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7902</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7903</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7904</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7905</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:14</date>
+  <millis>1450619174170</millis>
+  <sequence>7906</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:46:15</date>
+  <millis>1450619175527</millis>
+  <sequence>7918</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6518240788729777. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:18</date>
+  <millis>1450619178025</millis>
+  <sequence>7938</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7858109765866867. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:22</date>
+  <millis>1450619182153</millis>
+  <sequence>7970</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7784075706864693. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:25</date>
+  <millis>1450619185837</millis>
+  <sequence>7998</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8089860362498283. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:32</date>
+  <millis>1450619192188</millis>
+  <sequence>8045</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.77260972660962. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:33</date>
+  <millis>1450619193227</millis>
+  <sequence>8055</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6462603918017471. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:38</date>
+  <millis>1450619198675</millis>
+  <sequence>8096</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7771491637056284. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:38</date>
+  <millis>1450619198822</millis>
+  <sequence>8102</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6973826061368733. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:47</date>
+  <millis>1450619207359</millis>
+  <sequence>8163</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6518240788729777. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:48</date>
+  <millis>1450619208398</millis>
+  <sequence>8173</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7858109765866867. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:55</date>
+  <millis>1450619215173</millis>
+  <sequence>8223</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7784075706864693. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:46:55</date>
+  <millis>1450619215905</millis>
+  <sequence>8231</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8089860362498283. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:01</date>
+  <millis>1450619221942</millis>
+  <sequence>8276</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.77260972660962. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:02</date>
+  <millis>1450619222971</millis>
+  <sequence>8286</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6462603918017471. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:10</date>
+  <millis>1450619230047</millis>
+  <sequence>8338</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7771491637056284. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:10</date>
+  <millis>1450619230196</millis>
+  <sequence>8344</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6973826061368733. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:13</date>
+  <millis>1450619233697</millis>
+  <sequence>8369</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 246</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234205</millis>
+  <sequence>8374</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234205</millis>
+  <sequence>8375</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234205</millis>
+  <sequence>8376</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234205</millis>
+  <sequence>8377</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8378</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8379</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8380</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8381</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8382</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8383</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8384</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8385</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8386</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8387</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8388</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8389</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8390</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8391</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8392</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8393</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8394</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8395</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8396</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8397</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8398</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8399</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8400</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8401</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8402</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8403</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:14</date>
+  <millis>1450619234206</millis>
+  <sequence>8404</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:47:18</date>
+  <millis>1450619238605</millis>
+  <sequence>8436</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7328346961518055. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:19</date>
+  <millis>1450619239636</millis>
+  <sequence>8446</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6743088010758125. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:26</date>
+  <millis>1450619246702</millis>
+  <sequence>8497</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.796982804876227. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:27</date>
+  <millis>1450619247443</millis>
+  <sequence>8505</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6671721359636537. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:33</date>
+  <millis>1450619253331</millis>
+  <sequence>8549</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8077773098924361. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:34</date>
+  <millis>1450619254069</millis>
+  <sequence>8557</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.640963101907318. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:40</date>
+  <millis>1450619260706</millis>
+  <sequence>8606</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6896927516912423. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:40</date>
+  <millis>1450619260852</millis>
+  <sequence>8612</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6586634837400115. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:48</date>
+  <millis>1450619268806</millis>
+  <sequence>8669</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7328346961518055. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:49</date>
+  <millis>1450619269688</millis>
+  <sequence>8678</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6743088010758125. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:57</date>
+  <millis>1450619277047</millis>
+  <sequence>8731</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.796982804876227. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:47:57</date>
+  <millis>1450619277935</millis>
+  <sequence>8740</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6671721359636537. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:07</date>
+  <millis>1450619287520</millis>
+  <sequence>8809</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8077773098924361. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:09</date>
+  <millis>1450619289728</millis>
+  <sequence>8827</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.640963101907318. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:13</date>
+  <millis>1450619293698</millis>
+  <sequence>8856</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>22</thread>
+  <message>Sample size for generating hidden markov model: 261</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8861</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8862</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8863</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8864</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8865</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8866</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8867</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8868</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8869</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8870</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8871</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8872</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294216</millis>
+  <sequence>8873</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8874</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8875</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8876</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8877</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8878</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8879</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8880</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8881</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8882</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8883</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8884</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8885</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8886</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8887</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8888</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8889</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8890</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8891</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8892</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8893</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8894</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 1; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:14</date>
+  <millis>1450619294217</millis>
+  <sequence>8895</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>TakeFeedback</method>
+  <thread>22</thread>
+  <message>TakeFeedback called with wrong actions: Set sensor id 2 to value 0; </message>
+</record>
+<record>
+  <date>2015-12-20T14:48:16</date>
+  <millis>1450619296649</millis>
+  <sequence>8914</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7582166180081831. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:16</date>
+  <millis>1450619296798</millis>
+  <sequence>8920</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8151568037239827. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:24</date>
+  <millis>1450619304166</millis>
+  <sequence>8973</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6723400487216403. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:25</date>
+  <millis>1450619305933</millis>
+  <sequence>8988</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7161284836486621. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:35</date>
+  <millis>1450619315506</millis>
+  <sequence>9056</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7165401130792222. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:36</date>
+  <millis>1450619316387</millis>
+  <sequence>9065</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7297522697194818. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:42</date>
+  <millis>1450619322278</millis>
+  <sequence>9109</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8469416303625404. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:42</date>
+  <millis>1450619322868</millis>
+  <sequence>9116</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8087039524513848. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:50</date>
+  <millis>1450619330245</millis>
+  <sequence>9170</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7582166180081831. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:50</date>
+  <millis>1450619330393</millis>
+  <sequence>9176</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8151568037239827. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:57</date>
+  <millis>1450619337318</millis>
+  <sequence>9226</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.6723400487216403. Actions: 
+Set sensor id 2 to value 0</message>
+</record>
+<record>
+  <date>2015-12-20T14:48:59</date>
+  <millis>1450619339951</millis>
+  <sequence>9246</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7161284836486621. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:49:08</date>
+  <millis>1450619348146</millis>
+  <sequence>9304</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7165401130792222. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+<record>
+  <date>2015-12-20T14:49:09</date>
+  <millis>1450619349046</millis>
+  <sequence>9313</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.7297522697194818. Actions: 
+Set sensor id 2 to value 1</message>
+</record>
+</log>

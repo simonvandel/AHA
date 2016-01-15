@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2015-12-20T13:57:57</date>
+  <millis>1450616277187</millis>
+  <sequence>0</sequence>
+  <logger>mainLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:00</date>
+  <millis>1450616280723</millis>
+  <sequence>28</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 5</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:03</date>
+  <millis>1450616283384</millis>
+  <sequence>49</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 16</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:06</date>
+  <millis>1450616286905</millis>
+  <sequence>76</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:10</date>
+  <millis>1450616290151</millis>
+  <sequence>101</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:14</date>
+  <millis>1450616294425</millis>
+  <sequence>133</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:17</date>
+  <millis>1450616297365</millis>
+  <sequence>156</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:17</date>
+  <millis>1450616297953</millis>
+  <sequence>163</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2015-12-20T13:58:18</date>
+  <millis>1450616298548</millis>
+  <sequence>170</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 8</message>
+</record>
+</log>

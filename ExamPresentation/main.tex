@@ -1,0 +1,35 @@
+\input{setup/preamble}
+
+\setbeamertemplate{section page}
+{
+	\thispagestyle{empty}
+	\frame{
+  \aauwavesbg
+  \finalpage{\insertsection\par}
+	}
+}
+\AtBeginSection{\sectionpage}
+
+\begin{document}
+
+% Forside
+{\aauwavesbg
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}}
+
+% Table of contents
+%\setcounter{tocdepth}{1}
+\begin{frame}{Agenda}{}
+	{\scriptsize\tableofcontents}
+\end{frame}
+
+
+\input{slides/Fuglsang.tex}
+\input{slides/Heider.tex}
+\input{slides/Rasmus.tex}
+\input{slides/Jens.tex}
+\input{slides/Simon.tex}
+
+\end{document}
+
