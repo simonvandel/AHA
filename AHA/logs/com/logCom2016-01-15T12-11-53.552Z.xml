@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-01-15T13:11:53</date>
+  <millis>1452859913680</millis>
+  <sequence>1</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2016-01-15T13:13:00</date>
+  <millis>1452859980128</millis>
+  <sequence>6</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,1,1,1</message>
+</record>
+<record>
+  <date>2016-01-15T13:13:00</date>
+  <millis>1452859980142</millis>
+  <sequence>7</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,1,1,1</message>
+</record>
+</log>

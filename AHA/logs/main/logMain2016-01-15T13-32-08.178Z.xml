@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-01-15T14:32:08</date>
+  <millis>1452864728286</millis>
+  <sequence>0</sequence>
+  <logger>mainLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:00</date>
+  <millis>1452864780074</millis>
+  <sequence>309</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 5</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:06</date>
+  <millis>1452864786914</millis>
+  <sequence>352</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 8</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:09</date>
+  <millis>1452864789813</millis>
+  <sequence>372</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:12</date>
+  <millis>1452864792556</millis>
+  <sequence>391</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:15</date>
+  <millis>1452864795627</millis>
+  <sequence>412</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:19</date>
+  <millis>1452864799908</millis>
+  <sequence>440</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:23</date>
+  <millis>1452864803318</millis>
+  <sequence>463</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:27</date>
+  <millis>1452864807468</millis>
+  <sequence>488</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:31</date>
+  <millis>1452864811109</millis>
+  <sequence>510</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 5</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:31</date>
+  <millis>1452864811275</millis>
+  <sequence>514</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:31</date>
+  <millis>1452864811617</millis>
+  <sequence>519</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:36</date>
+  <millis>1452864816586</millis>
+  <sequence>551</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:46</date>
+  <millis>1452864826403</millis>
+  <sequence>611</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 16</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:50</date>
+  <millis>1452864830942</millis>
+  <sequence>659</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:54</date>
+  <millis>1452864834720</millis>
+  <sequence>707</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:59</date>
+  <millis>1452864839619</millis>
+  <sequence>759</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:34:03</date>
+  <millis>1452864843055</millis>
+  <sequence>803</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2016-01-15T14:34:08</date>
+  <millis>1452864848523</millis>
+  <sequence>871</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:34:11</date>
+  <millis>1452864851431</millis>
+  <sequence>909</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 2</message>
+</record>
+<record>
+  <date>2016-01-15T14:34:15</date>
+  <millis>1452864855885</millis>
+  <sequence>965</sequence>
+  <logger>mainLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Loop time: 1</message>
+</record>
+</log>

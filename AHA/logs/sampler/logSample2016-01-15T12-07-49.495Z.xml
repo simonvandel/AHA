@@ -1,0 +1,1984 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-01-15T13:07:49</date>
+  <millis>1452859669604</millis>
+  <sequence>5</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:18</date>
+  <millis>1452859818822</millis>
+  <sequence>8</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 7</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:18</date>
+  <millis>1452859818846</millis>
+  <sequence>13</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 7 7</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:18</date>
+  <millis>1452859818888</millis>
+  <sequence>18</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 7 7 7</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:25</date>
+  <millis>1452859825517</millis>
+  <sequence>25</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 7 7 7 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:25</date>
+  <millis>1452859825645</millis>
+  <sequence>29</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 7 7 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:25</date>
+  <millis>1452859825944</millis>
+  <sequence>34</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 7 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:27</date>
+  <millis>1452859827745</millis>
+  <sequence>49</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:27</date>
+  <millis>1452859827895</millis>
+  <sequence>53</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:28</date>
+  <millis>1452859828496</millis>
+  <sequence>60</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:28</date>
+  <millis>1452859828798</millis>
+  <sequence>65</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829099</millis>
+  <sequence>70</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829250</millis>
+  <sequence>74</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829701</millis>
+  <sequence>80</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829850</millis>
+  <sequence>85</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831052</millis>
+  <sequence>97</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831203</millis>
+  <sequence>102</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831655</millis>
+  <sequence>109</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831841</millis>
+  <sequence>114</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831992</millis>
+  <sequence>119</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832295</millis>
+  <sequence>125</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832597</millis>
+  <sequence>131</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832747</millis>
+  <sequence>136</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832898</millis>
+  <sequence>141</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:33</date>
+  <millis>1452859833047</millis>
+  <sequence>146</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:33</date>
+  <millis>1452859833198</millis>
+  <sequence>149</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 13 12</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:34</date>
+  <millis>1452859834552</millis>
+  <sequence>160</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 12 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:34</date>
+  <millis>1452859834703</millis>
+  <sequence>163</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 12 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:34</date>
+  <millis>1452859834852</millis>
+  <sequence>167</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 12 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835151</millis>
+  <sequence>172</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835452</millis>
+  <sequence>178</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835603</millis>
+  <sequence>183</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835903</millis>
+  <sequence>189</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836206</millis>
+  <sequence>195</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836357</millis>
+  <sequence>200</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836659</millis>
+  <sequence>206</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836809</millis>
+  <sequence>211</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837108</millis>
+  <sequence>217</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837410</millis>
+  <sequence>223</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837562</millis>
+  <sequence>228</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837711</millis>
+  <sequence>233</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 12</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837863</millis>
+  <sequence>236</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 12 12</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:38</date>
+  <millis>1452859838616</millis>
+  <sequence>243</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 12 12 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:38</date>
+  <millis>1452859838766</millis>
+  <sequence>246</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 12 12 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:39</date>
+  <millis>1452859839068</millis>
+  <sequence>251</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 12 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:39</date>
+  <millis>1452859839217</millis>
+  <sequence>255</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:40</date>
+  <millis>1452859840716</millis>
+  <sequence>269</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:40</date>
+  <millis>1452859840866</millis>
+  <sequence>274</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841472</millis>
+  <sequence>282</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841623</millis>
+  <sequence>287</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841774</millis>
+  <sequence>292</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841924</millis>
+  <sequence>297</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842530</millis>
+  <sequence>305</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842680</millis>
+  <sequence>310</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842830</millis>
+  <sequence>315</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842981</millis>
+  <sequence>320</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:43</date>
+  <millis>1452859843133</millis>
+  <sequence>325</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:43</date>
+  <millis>1452859843432</millis>
+  <sequence>331</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:44</date>
+  <millis>1452859844187</millis>
+  <sequence>340</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:44</date>
+  <millis>1452859844638</millis>
+  <sequence>347</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:45</date>
+  <millis>1452859845836</millis>
+  <sequence>359</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846136</millis>
+  <sequence>365</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846438</millis>
+  <sequence>371</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846589</millis>
+  <sequence>376</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846887</millis>
+  <sequence>382</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847189</millis>
+  <sequence>388</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847340</millis>
+  <sequence>393</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847642</millis>
+  <sequence>399</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847795</millis>
+  <sequence>404</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848094</millis>
+  <sequence>410</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848396</millis>
+  <sequence>416</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848547</millis>
+  <sequence>421</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848846</millis>
+  <sequence>427</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849146</millis>
+  <sequence>433</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849294</millis>
+  <sequence>438</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849594</millis>
+  <sequence>444</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849743</millis>
+  <sequence>449</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:50</date>
+  <millis>1452859850046</millis>
+  <sequence>455</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:50</date>
+  <millis>1452859850348</millis>
+  <sequence>461</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:50</date>
+  <millis>1452859850498</millis>
+  <sequence>464</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:50</date>
+  <millis>1452859850800</millis>
+  <sequence>468</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:51</date>
+  <millis>1452859851253</millis>
+  <sequence>473</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:51</date>
+  <millis>1452859851554</millis>
+  <sequence>478</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:51</date>
+  <millis>1452859851702</millis>
+  <sequence>483</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:51</date>
+  <millis>1452859851999</millis>
+  <sequence>489</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:52</date>
+  <millis>1452859852449</millis>
+  <sequence>496</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853356</millis>
+  <sequence>506</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853504</millis>
+  <sequence>511</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853805</millis>
+  <sequence>517</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853954</millis>
+  <sequence>522</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854404</millis>
+  <sequence>529</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854553</millis>
+  <sequence>534</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854703</millis>
+  <sequence>539</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854855</millis>
+  <sequence>544</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:55</date>
+  <millis>1452859855459</millis>
+  <sequence>552</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:55</date>
+  <millis>1452859855610</millis>
+  <sequence>557</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:55</date>
+  <millis>1452859855910</millis>
+  <sequence>563</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:56</date>
+  <millis>1452859856060</millis>
+  <sequence>568</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:56</date>
+  <millis>1452859856360</millis>
+  <sequence>574</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:56</date>
+  <millis>1452859856511</millis>
+  <sequence>579</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:57</date>
+  <millis>1452859857406</millis>
+  <sequence>589</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:57</date>
+  <millis>1452859857555</millis>
+  <sequence>594</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:58</date>
+  <millis>1452859858157</millis>
+  <sequence>602</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:58</date>
+  <millis>1452859858603</millis>
+  <sequence>609</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:59</date>
+  <millis>1452859859053</millis>
+  <sequence>616</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:59</date>
+  <millis>1452859859355</millis>
+  <sequence>622</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:00</date>
+  <millis>1452859860555</millis>
+  <sequence>634</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:00</date>
+  <millis>1452859860706</millis>
+  <sequence>639</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:01</date>
+  <millis>1452859861005</millis>
+  <sequence>645</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:01</date>
+  <millis>1452859861304</millis>
+  <sequence>651</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:02</date>
+  <millis>1452859862053</millis>
+  <sequence>660</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:02</date>
+  <millis>1452859862203</millis>
+  <sequence>665</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:02</date>
+  <millis>1452859862960</millis>
+  <sequence>674</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:03</date>
+  <millis>1452859863262</millis>
+  <sequence>680</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864013</millis>
+  <sequence>689</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864162</millis>
+  <sequence>694</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864462</millis>
+  <sequence>700</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864760</millis>
+  <sequence>706</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:05</date>
+  <millis>1452859865365</millis>
+  <sequence>714</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:05</date>
+  <millis>1452859865665</millis>
+  <sequence>720</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:05</date>
+  <millis>1452859865818</millis>
+  <sequence>725</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866118</millis>
+  <sequence>731</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866419</millis>
+  <sequence>737</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866570</millis>
+  <sequence>742</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866870</millis>
+  <sequence>748</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:07</date>
+  <millis>1452859867624</millis>
+  <sequence>757</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:07</date>
+  <millis>1452859867774</millis>
+  <sequence>762</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:08</date>
+  <millis>1452859868074</millis>
+  <sequence>768</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:08</date>
+  <millis>1452859868373</millis>
+  <sequence>774</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:09</date>
+  <millis>1452859869280</millis>
+  <sequence>784</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:09</date>
+  <millis>1452859869432</millis>
+  <sequence>787</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:09</date>
+  <millis>1452859869883</millis>
+  <sequence>792</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:10</date>
+  <millis>1452859870037</millis>
+  <sequence>795</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:10</date>
+  <millis>1452859870335</millis>
+  <sequence>800</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:10</date>
+  <millis>1452859870487</millis>
+  <sequence>803</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:10</date>
+  <millis>1452859870784</millis>
+  <sequence>808</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:11</date>
+  <millis>1452859871085</millis>
+  <sequence>812</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:11</date>
+  <millis>1452859871237</millis>
+  <sequence>816</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:11</date>
+  <millis>1452859871538</millis>
+  <sequence>820</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:11</date>
+  <millis>1452859871837</millis>
+  <sequence>825</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:11</date>
+  <millis>1452859871989</millis>
+  <sequence>828</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:12</date>
+  <millis>1452859872290</millis>
+  <sequence>833</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:12</date>
+  <millis>1452859872442</millis>
+  <sequence>836</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:12</date>
+  <millis>1452859872742</millis>
+  <sequence>841</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:13</date>
+  <millis>1452859873044</millis>
+  <sequence>845</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:13</date>
+  <millis>1452859873195</millis>
+  <sequence>849</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:13</date>
+  <millis>1452859873493</millis>
+  <sequence>853</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:13</date>
+  <millis>1452859873643</millis>
+  <sequence>857</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:13</date>
+  <millis>1452859873944</millis>
+  <sequence>861</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:14</date>
+  <millis>1452859874245</millis>
+  <sequence>866</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:14</date>
+  <millis>1452859874399</millis>
+  <sequence>869</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:14</date>
+  <millis>1452859874701</millis>
+  <sequence>874</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:15</date>
+  <millis>1452859875005</millis>
+  <sequence>878</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:15</date>
+  <millis>1452859875157</millis>
+  <sequence>882</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:15</date>
+  <millis>1452859875458</millis>
+  <sequence>886</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:15</date>
+  <millis>1452859875610</millis>
+  <sequence>890</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:15</date>
+  <millis>1452859875909</millis>
+  <sequence>894</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:16</date>
+  <millis>1452859876211</millis>
+  <sequence>899</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:17</date>
+  <millis>1452859877425</millis>
+  <sequence>909</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:17</date>
+  <millis>1452859877568</millis>
+  <sequence>913</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:17</date>
+  <millis>1452859877871</millis>
+  <sequence>917</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:18</date>
+  <millis>1452859878023</millis>
+  <sequence>921</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:18</date>
+  <millis>1452859878324</millis>
+  <sequence>925</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:18</date>
+  <millis>1452859878475</millis>
+  <sequence>929</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:18</date>
+  <millis>1452859878928</millis>
+  <sequence>934</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:19</date>
+  <millis>1452859879077</millis>
+  <sequence>938</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:19</date>
+  <millis>1452859879986</millis>
+  <sequence>946</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:20</date>
+  <millis>1452859880135</millis>
+  <sequence>950</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:20</date>
+  <millis>1452859880737</millis>
+  <sequence>956</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:20</date>
+  <millis>1452859880889</millis>
+  <sequence>960</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:21</date>
+  <millis>1452859881337</millis>
+  <sequence>965</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:21</date>
+  <millis>1452859881488</millis>
+  <sequence>969</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:21</date>
+  <millis>1452859881792</millis>
+  <sequence>973</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:21</date>
+  <millis>1452859881943</millis>
+  <sequence>977</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:22</date>
+  <millis>1452859882394</millis>
+  <sequence>982</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:22</date>
+  <millis>1452859882544</millis>
+  <sequence>986</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:24</date>
+  <millis>1452859884201</millis>
+  <sequence>999</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:24</date>
+  <millis>1452859884351</millis>
+  <sequence>1003</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:24</date>
+  <millis>1452859884802</millis>
+  <sequence>1008</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 13 6 13 6</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:24</date>
+  <millis>1452859884951</millis>
+  <sequence>1012</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 6 13 6 13</message>
+</record>
+</log>

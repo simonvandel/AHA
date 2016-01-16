@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-01-15T14:27:19</date>
+  <millis>1452864439626</millis>
+  <sequence>2</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2016-01-15T14:29:00</date>
+  <millis>1452864540594</millis>
+  <sequence>207</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>createModelThread</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF7156BAModel:
+</message>
+</record>
+</log>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-01-15T13:00:04</date>
+  <millis>1452859204588</millis>
+  <sequence>1</sequence>
+  <logger>comLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:12</date>
+  <millis>1452859212489</millis>
+  <sequence>6</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:12</date>
+  <millis>1452859212492</millis>
+  <sequence>7</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:12</date>
+  <millis>1452859212506</millis>
+  <sequence>8</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:12</date>
+  <millis>1452859212525</millis>
+  <sequence>9</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:12</date>
+  <millis>1452859212544</millis>
+  <sequence>10</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:12</date>
+  <millis>1452859212618</millis>
+  <sequence>11</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:12</date>
+  <millis>1452859212765</millis>
+  <sequence>12</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:12</date>
+  <millis>1452859212913</millis>
+  <sequence>13</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:13</date>
+  <millis>1452859213058</millis>
+  <sequence>14</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:13</date>
+  <millis>1452859213206</millis>
+  <sequence>15</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:13</date>
+  <millis>1452859213353</millis>
+  <sequence>16</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:13</date>
+  <millis>1452859213499</millis>
+  <sequence>17</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:13</date>
+  <millis>1452859213647</millis>
+  <sequence>18</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:13</date>
+  <millis>1452859213793</millis>
+  <sequence>19</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:13</date>
+  <millis>1452859213941</millis>
+  <sequence>20</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:14</date>
+  <millis>1452859214088</millis>
+  <sequence>21</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:14</date>
+  <millis>1452859214236</millis>
+  <sequence>22</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:14</date>
+  <millis>1452859214380</millis>
+  <sequence>23</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:14</date>
+  <millis>1452859214530</millis>
+  <sequence>24</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:14</date>
+  <millis>1452859214677</millis>
+  <sequence>25</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:14</date>
+  <millis>1452859214825</millis>
+  <sequence>26</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:14</date>
+  <millis>1452859214971</millis>
+  <sequence>27</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:15</date>
+  <millis>1452859215117</millis>
+  <sequence>28</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:15</date>
+  <millis>1452859215264</millis>
+  <sequence>29</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:15</date>
+  <millis>1452859215412</millis>
+  <sequence>30</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:15</date>
+  <millis>1452859215560</millis>
+  <sequence>31</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:15</date>
+  <millis>1452859215705</millis>
+  <sequence>32</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:15</date>
+  <millis>1452859215853</millis>
+  <sequence>33</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+<record>
+  <date>2016-01-15T13:00:16</date>
+  <millis>1452859216001</millis>
+  <sequence>34</sequence>
+  <logger>comLogger</logger>
+  <level>INFO</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Sensor State Received: ,0,0,0</message>
+</record>
+</log>
