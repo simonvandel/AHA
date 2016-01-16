@@ -5,6 +5,7 @@
 	\begin{itemize}
 		\item N = number of hidden states in the model
 		\item M = number of emission states in the model
+		\item T = length of the observation sequence
 		\item Problem: Given a sequence of observations $\mathcal{O}$ and the dimensions M and N, find the model $\theta = \{A, B, \pi\}$ that maximises the probability for $\mathcal{O}$. That is, the model that is most likely to have emitted the observations
 		\item This can be solved via the Baum-Welch algorithm
 	\end{itemize}
@@ -15,12 +16,17 @@
 	\begin{itemize}
 		\item Calculate $\alpha$/forwards and $\beta$/backwards
 		\begin{itemize}
-			\item $\alpha$ is the probability that the hidden state is q at time t given a partial observation sequence
-			\item $\beta$ is the same as $\alpha$ but it starts at the end and works itself backwards
+			\item $\alpha$ is the probability that the hidden state is $q$ at time $t$ given a partial observation sequence $\mathcal{O}$ from the start
+			\item $\beta$ is the same as $\alpha$ but the observation sequence starts at the end to time $t$
 		\end{itemize}
 		\item Calculate di-gammas and gamma
 		\begin{itemize}
-			\item $\gamma(i,j)$ is the probability of being 
+			\item $\gamma_t(i,j)$ is the probability of being in hidden state $q_i$ at time $t$ and then transitioning to hidden state $q_j$ at time $t+1$
+			\item $\gamma_t(i)$ is the probability of being in hidden state $q_i$ at time $t$
+		\end{itemize}
+		\item Recalculate $\theta = {A,B,\pi}$ from gamma and di-gamma
+		\begin{itemize}
+			\item $\pi = $
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -28,10 +34,11 @@
 \begin{frame}
 	\frametitle{Baum Welch - }
 	\begin{itemize}
-		\item Calculate di-gammas and gamma
+		\item Calculation of di-gammas and gamma
 		\begin{itemize}
 			\item $y_t(i,j) = P(x_t = q_i, x_{t+1} = q_j | \mathcal{O},\theta)$
 			\item $y_t(i,j) = \frac{\alpha_t(i) a_{ij} b_j (\mathcal{O}_{t+1})\beta_{t+1}(j)}{P(\mathcal{O} | \theta)}$
+			\item $y_t(i,j) = \frac{\alpha_t(i) a_{ij} b_j (\mathcal{O}_{t+1})\beta_{t+1}(j)}{}$
 		\end{itemize}
 		\item Calculate $\alpha$ and $\beta$
 		\begin{itemize}
