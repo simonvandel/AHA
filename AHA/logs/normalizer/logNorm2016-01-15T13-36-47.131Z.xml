@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-01-15T14:36:47</date>
+  <millis>1452865007244</millis>
+  <sequence>2</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2016-01-15T14:37:47</date>
+  <millis>1452865067390</millis>
+  <sequence>338</sequence>
+  <logger>normLogger</logger>
+  <level>SEVERE</level>
+  <class>Normaliser.Sensor</class>
+  <method>createModelThread</method>
+  <thread>1</thread>
+  <message>Model for sensor: 0, on device: 00000000-00000000-A20040FF-FF7156BAModel:
+</message>
+</record>
+<record>
+  <date>2016-01-15T14:38:44</date>
+  <millis>1452865124306</millis>
+  <sequence>675</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:44</date>
+  <millis>1452865124476</millis>
+  <sequence>677</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:44</date>
+  <millis>1452865124650</millis>
+  <sequence>679</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:44</date>
+  <millis>1452865124817</millis>
+  <sequence>681</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:44</date>
+  <millis>1452865124986</millis>
+  <sequence>683</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:45</date>
+  <millis>1452865125158</millis>
+  <sequence>685</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:45</date>
+  <millis>1452865125329</millis>
+  <sequence>687</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:45</date>
+  <millis>1452865125503</millis>
+  <sequence>689</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:45</date>
+  <millis>1452865125673</millis>
+  <sequence>691</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:45</date>
+  <millis>1452865125842</millis>
+  <sequence>693</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:46</date>
+  <millis>1452865126012</millis>
+  <sequence>695</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:46</date>
+  <millis>1452865126184</millis>
+  <sequence>697</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:46</date>
+  <millis>1452865126355</millis>
+  <sequence>699</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+<record>
+  <date>2016-01-15T14:38:46</date>
+  <millis>1452865126526</millis>
+  <sequence>701</sequence>
+  <logger>normLogger</logger>
+  <level>INFO</level>
+  <class>Normaliser.Sensor</class>
+  <method>normalize</method>
+  <thread>1</thread>
+  <message>Normalised model for sensor 0 on device 00000000-00000000-A20040FF-FF7156BA: </message>
+</record>
+</log>

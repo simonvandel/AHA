@@ -1,0 +1,1467 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-01-15T13:07:49</date>
+  <millis>1452859669597</millis>
+  <sequence>3</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829703</millis>
+  <sequence>83</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>21</thread>
+  <message>Sample size for generating hidden markov model: 11</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829868</millis>
+  <sequence>86</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831052</millis>
+  <sequence>98</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831204</millis>
+  <sequence>103</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831656</millis>
+  <sequence>110</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831842</millis>
+  <sequence>115</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831993</millis>
+  <sequence>120</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832296</millis>
+  <sequence>126</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832598</millis>
+  <sequence>132</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832748</millis>
+  <sequence>137</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832899</millis>
+  <sequence>142</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:34</date>
+  <millis>1452859834703</millis>
+  <sequence>164</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:34</date>
+  <millis>1452859834852</millis>
+  <sequence>168</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835152</millis>
+  <sequence>173</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835453</millis>
+  <sequence>179</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835603</millis>
+  <sequence>184</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835903</millis>
+  <sequence>190</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836206</millis>
+  <sequence>196</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836358</millis>
+  <sequence>201</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836659</millis>
+  <sequence>207</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836810</millis>
+  <sequence>212</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837109</millis>
+  <sequence>218</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837411</millis>
+  <sequence>224</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837563</millis>
+  <sequence>229</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:38</date>
+  <millis>1452859838766</millis>
+  <sequence>247</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:39</date>
+  <millis>1452859839068</millis>
+  <sequence>252</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:39</date>
+  <millis>1452859839218</millis>
+  <sequence>256</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:40</date>
+  <millis>1452859840716</millis>
+  <sequence>270</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:40</date>
+  <millis>1452859840866</millis>
+  <sequence>275</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841473</millis>
+  <sequence>283</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841624</millis>
+  <sequence>288</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841775</millis>
+  <sequence>293</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841925</millis>
+  <sequence>298</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842530</millis>
+  <sequence>306</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842680</millis>
+  <sequence>311</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842830</millis>
+  <sequence>316</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842981</millis>
+  <sequence>321</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:43</date>
+  <millis>1452859843133</millis>
+  <sequence>326</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:43</date>
+  <millis>1452859843432</millis>
+  <sequence>332</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:44</date>
+  <millis>1452859844188</millis>
+  <sequence>341</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:44</date>
+  <millis>1452859844638</millis>
+  <sequence>348</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:45</date>
+  <millis>1452859845837</millis>
+  <sequence>360</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846137</millis>
+  <sequence>366</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846439</millis>
+  <sequence>372</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846589</millis>
+  <sequence>377</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846887</millis>
+  <sequence>383</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847189</millis>
+  <sequence>389</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847340</millis>
+  <sequence>394</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847642</millis>
+  <sequence>400</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847795</millis>
+  <sequence>405</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848095</millis>
+  <sequence>411</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848397</millis>
+  <sequence>417</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848548</millis>
+  <sequence>422</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848846</millis>
+  <sequence>428</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849146</millis>
+  <sequence>434</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849295</millis>
+  <sequence>439</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849595</millis>
+  <sequence>445</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849743</millis>
+  <sequence>450</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:50</date>
+  <millis>1452859850047</millis>
+  <sequence>456</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:51</date>
+  <millis>1452859851253</millis>
+  <sequence>474</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:51</date>
+  <millis>1452859851558</millis>
+  <sequence>479</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:51</date>
+  <millis>1452859851702</millis>
+  <sequence>484</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:52</date>
+  <millis>1452859852000</millis>
+  <sequence>490</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:52</date>
+  <millis>1452859852450</millis>
+  <sequence>497</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853356</millis>
+  <sequence>507</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853504</millis>
+  <sequence>512</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853805</millis>
+  <sequence>518</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853955</millis>
+  <sequence>523</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854405</millis>
+  <sequence>530</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854554</millis>
+  <sequence>535</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854704</millis>
+  <sequence>540</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854855</millis>
+  <sequence>545</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:55</date>
+  <millis>1452859855459</millis>
+  <sequence>553</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:55</date>
+  <millis>1452859855610</millis>
+  <sequence>558</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:55</date>
+  <millis>1452859855910</millis>
+  <sequence>564</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:56</date>
+  <millis>1452859856061</millis>
+  <sequence>569</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:56</date>
+  <millis>1452859856361</millis>
+  <sequence>575</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:56</date>
+  <millis>1452859856512</millis>
+  <sequence>580</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:57</date>
+  <millis>1452859857406</millis>
+  <sequence>590</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:57</date>
+  <millis>1452859857555</millis>
+  <sequence>595</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:58</date>
+  <millis>1452859858157</millis>
+  <sequence>603</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:58</date>
+  <millis>1452859858603</millis>
+  <sequence>610</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:59</date>
+  <millis>1452859859053</millis>
+  <sequence>617</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:59</date>
+  <millis>1452859859355</millis>
+  <sequence>623</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:00</date>
+  <millis>1452859860556</millis>
+  <sequence>635</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:00</date>
+  <millis>1452859860707</millis>
+  <sequence>640</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:01</date>
+  <millis>1452859861006</millis>
+  <sequence>646</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:01</date>
+  <millis>1452859861304</millis>
+  <sequence>652</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:02</date>
+  <millis>1452859862053</millis>
+  <sequence>661</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:02</date>
+  <millis>1452859862203</millis>
+  <sequence>666</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:02</date>
+  <millis>1452859862960</millis>
+  <sequence>675</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:03</date>
+  <millis>1452859863262</millis>
+  <sequence>681</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864013</millis>
+  <sequence>690</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864162</millis>
+  <sequence>695</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864462</millis>
+  <sequence>701</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864760</millis>
+  <sequence>707</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:05</date>
+  <millis>1452859865366</millis>
+  <sequence>715</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:05</date>
+  <millis>1452859865665</millis>
+  <sequence>721</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:05</date>
+  <millis>1452859865818</millis>
+  <sequence>726</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866118</millis>
+  <sequence>732</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866419</millis>
+  <sequence>738</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866570</millis>
+  <sequence>743</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866870</millis>
+  <sequence>749</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:07</date>
+  <millis>1452859867624</millis>
+  <sequence>758</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:07</date>
+  <millis>1452859867774</millis>
+  <sequence>763</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:08</date>
+  <millis>1452859868074</millis>
+  <sequence>769</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:08</date>
+  <millis>1452859868373</millis>
+  <sequence>775</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>CalculateReasoning</method>
+  <thread>1</thread>
+  <message>Confidence: 0.8296736852015936</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:10</date>
+  <millis>1452859870037</millis>
+  <sequence>796</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:10</date>
+  <millis>1452859870487</millis>
+  <sequence>804</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:11</date>
+  <millis>1452859871085</millis>
+  <sequence>813</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:11</date>
+  <millis>1452859871538</millis>
+  <sequence>821</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:11</date>
+  <millis>1452859871989</millis>
+  <sequence>829</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:12</date>
+  <millis>1452859872442</millis>
+  <sequence>837</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:13</date>
+  <millis>1452859873044</millis>
+  <sequence>846</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:13</date>
+  <millis>1452859873493</millis>
+  <sequence>854</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:13</date>
+  <millis>1452859873944</millis>
+  <sequence>862</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:14</date>
+  <millis>1452859874399</millis>
+  <sequence>870</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:15</date>
+  <millis>1452859875005</millis>
+  <sequence>879</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:15</date>
+  <millis>1452859875458</millis>
+  <sequence>887</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:15</date>
+  <millis>1452859875909</millis>
+  <sequence>895</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:17</date>
+  <millis>1452859877425</millis>
+  <sequence>910</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:17</date>
+  <millis>1452859877871</millis>
+  <sequence>918</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:18</date>
+  <millis>1452859878324</millis>
+  <sequence>926</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:18</date>
+  <millis>1452859878928</millis>
+  <sequence>935</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:19</date>
+  <millis>1452859879986</millis>
+  <sequence>947</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:20</date>
+  <millis>1452859880737</millis>
+  <sequence>957</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:21</date>
+  <millis>1452859881337</millis>
+  <sequence>966</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:21</date>
+  <millis>1452859881792</millis>
+  <sequence>974</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:22</date>
+  <millis>1452859882395</millis>
+  <sequence>983</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:24</date>
+  <millis>1452859884201</millis>
+  <sequence>1000</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:24</date>
+  <millis>1452859884803</millis>
+  <sequence>1009</sequence>
+  <logger>aiLogger</logger>
+  <level>SEVERE</level>
+  <class>Learner.HiddenMarkovModel</class>
+  <method>viterbi</method>
+  <thread>1</thread>
+  <message>Observed something new, in viterbi method got null. Which infers either an error or a new observation</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:29</date>
+  <millis>1452859889704</millis>
+  <sequence>1045</sequence>
+  <logger>aiLogger</logger>
+  <level>INFO</level>
+  <class>Learner.Learner</class>
+  <method>learn</method>
+  <thread>21</thread>
+  <message>Sample size for generating hidden markov model: 177</message>
+</record>
+</log>

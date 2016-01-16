@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-01-15T14:32:08</date>
+  <millis>1452864728315</millis>
+  <sequence>5</sequence>
+  <logger>sampleLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:00</date>
+  <millis>1452864780073</millis>
+  <sequence>307</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:06</date>
+  <millis>1452864786913</millis>
+  <sequence>350</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:09</date>
+  <millis>1452864789812</millis>
+  <sequence>370</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:12</date>
+  <millis>1452864792556</millis>
+  <sequence>389</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1 -1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:15</date>
+  <millis>1452864795626</millis>
+  <sequence>410</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: -1 1 -1 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:19</date>
+  <millis>1452864799908</millis>
+  <sequence>438</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1 -1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:23</date>
+  <millis>1452864803317</millis>
+  <sequence>461</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: -1 1 -1 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:27</date>
+  <millis>1452864807467</millis>
+  <sequence>486</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1 -1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:31</date>
+  <millis>1452864811104</millis>
+  <sequence>508</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: -1 1 -1 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:31</date>
+  <millis>1452864811275</millis>
+  <sequence>512</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1 -1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:31</date>
+  <millis>1452864811617</millis>
+  <sequence>517</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: -1 1 -1 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:36</date>
+  <millis>1452864816585</millis>
+  <sequence>549</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1 -1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:46</date>
+  <millis>1452864826388</millis>
+  <sequence>608</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: -1 1 -1 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:50</date>
+  <millis>1452864830940</millis>
+  <sequence>656</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1 -1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:54</date>
+  <millis>1452864834719</millis>
+  <sequence>704</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: -1 1 -1 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:33:59</date>
+  <millis>1452864839618</millis>
+  <sequence>756</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1 -1</message>
+</record>
+<record>
+  <date>2016-01-15T14:34:03</date>
+  <millis>1452864843054</millis>
+  <sequence>800</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: -1 1 -1 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:34:08</date>
+  <millis>1452864848522</millis>
+  <sequence>868</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1 -1</message>
+</record>
+<record>
+  <date>2016-01-15T14:34:11</date>
+  <millis>1452864851430</millis>
+  <sequence>906</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: -1 1 -1 1</message>
+</record>
+<record>
+  <date>2016-01-15T14:34:15</date>
+  <millis>1452864855884</millis>
+  <sequence>962</sequence>
+  <logger>sampleLogger</logger>
+  <level>INFO</level>
+  <class>Sampler.Sampler</class>
+  <method>getSample</method>
+  <thread>1</thread>
+  <message>Sample: 1 -1 1 -1</message>
+</record>
+</log>

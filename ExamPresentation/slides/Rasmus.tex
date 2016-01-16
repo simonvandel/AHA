@@ -2,17 +2,24 @@
 \begin{frame}
 	\frametitle{Forklar alle faser i embedded subsystemet}
 	\begin{itemize}
-		\item 
+		\item Poll Sensors
+		\item Encode
+		\item Send
+		\item Wait for Action
+		{\setlength\itemindent{20pt} \item Performing The Action}
 	\end{itemize}
 \end{frame}
 
-\subsection{Communicators}
+\subsection{Communication}
 \begin{frame}
-	\frametitle{Communicators}
+	\frametitle{ZigBee}
 	\begin{itemize}
-		\item Vi brugte zigbee, reflekter over det
-		\item Hvordan bruger vi zigbee
-		\item Hvordan fungerer zigbee
+		\item ZigBee is low power, low latency, and cheap
+		\item ZigBee AT vs ZigBee API
+		{\setlength\itemindent{20pt} \item using ZigBee API}
+		\item Difficulty making it work
+		{\setlength\itemindent{25pt} \item poor understanding, scarce in-depth documentation}
+		{\setlength\itemindent{25pt} \item cheap hardware - low end module}
 	\end{itemize}
 \end{frame}
 
@@ -20,7 +27,12 @@
 \begin{frame}
 	\frametitle{Encoding}
 	\begin{itemize}
-		\item Hurtig forklaring
-		\item Begrundelser og overvejelser
+		\item How it works
+		{\setlength\itemindent{25pt} \item Headers define the body}
+		{\setlength\itemindent{25pt} \item Package the values into the body bit by bit}
+		{\setlength\itemindent{25pt} \item Overhead is a maximum of 7bits}
+		\item Why did we make our own encoding?
+		{\setlength\itemindent{25pt} \item ZigBee interaction we can't explain}
+		{\setlength\itemindent{25pt} \item Need to keep it very small.....}
 	\end{itemize}
 \end{frame}

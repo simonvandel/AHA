@@ -65,7 +65,7 @@ public class Main
     NormalizedSensorState nState;
 
     Instant learnerRun = Instant.now();
-    long learnerRunInverval = 60; //in seconds
+    long learnerRunInverval = 20; //in seconds
 
     Thread learnerThread = new Thread(){
       public synchronized void run(){
