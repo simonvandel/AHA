@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-01-15T13:07:49</date>
+  <millis>1452859669604</millis>
+  <sequence>4</sequence>
+  <logger>reasonLogger</logger>
+  <level>SEVERE</level>
+  <class>dk.sw501e15.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>TEST</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:18</date>
+  <millis>1452859818822</millis>
+  <sequence>9</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:18</date>
+  <millis>1452859818847</millis>
+  <sequence>14</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:18</date>
+  <millis>1452859818889</millis>
+  <sequence>19</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:25</date>
+  <millis>1452859825518</millis>
+  <sequence>26</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:25</date>
+  <millis>1452859825645</millis>
+  <sequence>30</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:25</date>
+  <millis>1452859825949</millis>
+  <sequence>35</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:27</date>
+  <millis>1452859827746</millis>
+  <sequence>50</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:27</date>
+  <millis>1452859827896</millis>
+  <sequence>54</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:28</date>
+  <millis>1452859828497</millis>
+  <sequence>61</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:28</date>
+  <millis>1452859828799</millis>
+  <sequence>66</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829099</millis>
+  <sequence>71</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829251</millis>
+  <sequence>75</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829702</millis>
+  <sequence>81</sequence>
+  <logger>reasonLogger</logger>
+  <level>WARNING</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Model is not generated yet</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:29</date>
+  <millis>1452859829868</millis>
+  <sequence>87</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831053</millis>
+  <sequence>99</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831206</millis>
+  <sequence>104</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831657</millis>
+  <sequence>111</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831843</millis>
+  <sequence>116</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:31</date>
+  <millis>1452859831993</millis>
+  <sequence>121</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832296</millis>
+  <sequence>127</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832599</millis>
+  <sequence>133</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832748</millis>
+  <sequence>138</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:32</date>
+  <millis>1452859832899</millis>
+  <sequence>143</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835152</millis>
+  <sequence>174</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835453</millis>
+  <sequence>180</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835603</millis>
+  <sequence>185</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:35</date>
+  <millis>1452859835903</millis>
+  <sequence>191</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836206</millis>
+  <sequence>197</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836358</millis>
+  <sequence>202</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836660</millis>
+  <sequence>208</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:36</date>
+  <millis>1452859836810</millis>
+  <sequence>213</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837109</millis>
+  <sequence>219</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837411</millis>
+  <sequence>225</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:37</date>
+  <millis>1452859837563</millis>
+  <sequence>230</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:39</date>
+  <millis>1452859839218</millis>
+  <sequence>257</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:40</date>
+  <millis>1452859840716</millis>
+  <sequence>271</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:40</date>
+  <millis>1452859840866</millis>
+  <sequence>276</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841473</millis>
+  <sequence>284</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841624</millis>
+  <sequence>289</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841775</millis>
+  <sequence>294</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:41</date>
+  <millis>1452859841925</millis>
+  <sequence>299</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842530</millis>
+  <sequence>307</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842680</millis>
+  <sequence>312</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842830</millis>
+  <sequence>317</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:42</date>
+  <millis>1452859842982</millis>
+  <sequence>322</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:43</date>
+  <millis>1452859843134</millis>
+  <sequence>327</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:43</date>
+  <millis>1452859843433</millis>
+  <sequence>333</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:44</date>
+  <millis>1452859844188</millis>
+  <sequence>342</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:44</date>
+  <millis>1452859844638</millis>
+  <sequence>349</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:45</date>
+  <millis>1452859845837</millis>
+  <sequence>361</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846137</millis>
+  <sequence>367</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846439</millis>
+  <sequence>373</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846589</millis>
+  <sequence>378</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:46</date>
+  <millis>1452859846887</millis>
+  <sequence>384</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847189</millis>
+  <sequence>390</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847340</millis>
+  <sequence>395</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847642</millis>
+  <sequence>401</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:47</date>
+  <millis>1452859847795</millis>
+  <sequence>406</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848095</millis>
+  <sequence>412</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848397</millis>
+  <sequence>418</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848548</millis>
+  <sequence>423</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:48</date>
+  <millis>1452859848846</millis>
+  <sequence>429</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849146</millis>
+  <sequence>435</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849295</millis>
+  <sequence>440</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849595</millis>
+  <sequence>446</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:49</date>
+  <millis>1452859849744</millis>
+  <sequence>451</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:50</date>
+  <millis>1452859850047</millis>
+  <sequence>457</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:51</date>
+  <millis>1452859851559</millis>
+  <sequence>480</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:51</date>
+  <millis>1452859851702</millis>
+  <sequence>485</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:52</date>
+  <millis>1452859852000</millis>
+  <sequence>491</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:52</date>
+  <millis>1452859852450</millis>
+  <sequence>498</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853356</millis>
+  <sequence>508</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853505</millis>
+  <sequence>513</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853805</millis>
+  <sequence>519</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:53</date>
+  <millis>1452859853955</millis>
+  <sequence>524</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854405</millis>
+  <sequence>531</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854554</millis>
+  <sequence>536</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854704</millis>
+  <sequence>541</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:54</date>
+  <millis>1452859854855</millis>
+  <sequence>546</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:55</date>
+  <millis>1452859855459</millis>
+  <sequence>554</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:55</date>
+  <millis>1452859855610</millis>
+  <sequence>559</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:55</date>
+  <millis>1452859855910</millis>
+  <sequence>565</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:56</date>
+  <millis>1452859856061</millis>
+  <sequence>570</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:56</date>
+  <millis>1452859856361</millis>
+  <sequence>576</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:56</date>
+  <millis>1452859856512</millis>
+  <sequence>581</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:57</date>
+  <millis>1452859857406</millis>
+  <sequence>591</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:57</date>
+  <millis>1452859857555</millis>
+  <sequence>596</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:58</date>
+  <millis>1452859858158</millis>
+  <sequence>604</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:58</date>
+  <millis>1452859858604</millis>
+  <sequence>611</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:59</date>
+  <millis>1452859859053</millis>
+  <sequence>618</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:10:59</date>
+  <millis>1452859859355</millis>
+  <sequence>624</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:00</date>
+  <millis>1452859860556</millis>
+  <sequence>636</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:00</date>
+  <millis>1452859860707</millis>
+  <sequence>641</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:01</date>
+  <millis>1452859861006</millis>
+  <sequence>647</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:01</date>
+  <millis>1452859861304</millis>
+  <sequence>653</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:02</date>
+  <millis>1452859862053</millis>
+  <sequence>662</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:02</date>
+  <millis>1452859862203</millis>
+  <sequence>667</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:02</date>
+  <millis>1452859862961</millis>
+  <sequence>676</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:03</date>
+  <millis>1452859863262</millis>
+  <sequence>682</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864013</millis>
+  <sequence>691</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864162</millis>
+  <sequence>696</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864462</millis>
+  <sequence>702</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:04</date>
+  <millis>1452859864761</millis>
+  <sequence>708</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:05</date>
+  <millis>1452859865366</millis>
+  <sequence>716</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:05</date>
+  <millis>1452859865665</millis>
+  <sequence>722</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:05</date>
+  <millis>1452859865818</millis>
+  <sequence>727</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866118</millis>
+  <sequence>733</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866419</millis>
+  <sequence>739</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866570</millis>
+  <sequence>744</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:06</date>
+  <millis>1452859866871</millis>
+  <sequence>750</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:07</date>
+  <millis>1452859867624</millis>
+  <sequence>759</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:07</date>
+  <millis>1452859867774</millis>
+  <sequence>764</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:08</date>
+  <millis>1452859868074</millis>
+  <sequence>770</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+<record>
+  <date>2016-01-15T13:11:08</date>
+  <millis>1452859868373</millis>
+  <sequence>776</sequence>
+  <logger>reasonLogger</logger>
+  <level>INFO</level>
+  <class>Reasoner.Reasoner</class>
+  <method>reasonAndSend</method>
+  <thread>1</thread>
+  <message>Reasoning succeeded but contained no actions</message>
+</record>
+</log>

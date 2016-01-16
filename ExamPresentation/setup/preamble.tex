@@ -8,7 +8,8 @@
 \usepackage{helvet}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric, arrows, positioning}
+\usepackage[simplified]{pgf-umlcd}
+\usetikzlibrary{calc,arrows,positioning,shapes,snakes}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{epstopdf}
@@ -21,6 +22,46 @@
 \usepackage{amssymb}
 \usepackage{braket}
 \usepackage[nounderscore]{syntax}
+
+\tikzset{
+squarednode/.style={
+  rectangle,
+  draw=black,
+  text width=8em,
+  minimum height=3em,
+  align=center,
+  }
+}
+\renewcommand{\association}[6]{
+\draw [umlcd style] (#1) -- (#4)
+node[very near start, above]{#2}
+node[very near start, above right]{#3}
+node[very near end, above right]{#5}
+node[very near end, below]{#6};
+}
+
+\renewcommand{\aggregation}[4]
+{
+\draw[umlcd style, open diamond-] (#1) -- (#4)
+node[very near end, above]{#2}
+node[very near end, below]{#3};
+}
+\renewcommand{\composition}[4]
+{
+\draw[umlcd style, fill=\umldrawcolor, diamond-] (#1) -- (#4)
+node[very near end, above]{#2}
+node[very near end, below]{#3};
+}
+
+\renewcommand{\unidirectionalAssociation}[4]{
+\draw [umlcd style, -] (#1) -- (#4)
+node[very near end, above]{#2}
+node[very near end, below]{#3};
+}
+
+\usepackage{pgfplots}
+
+
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -36,7 +77,7 @@
 }
 
 \lstdefinelanguage{fsharp}%
-{morekeywords={let, new, match, with, rec, open, module, namespace, type, of, member, % 
+{morekeywords={let, new, match, with, rec, open, module, namespace, type, of, member, %
 and, for, while, true, false, in, do, begin, end, fun, function, return, yield, try, %
 mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit, finally },
   otherkeywords={ let!, return!, do!, yield!, use!, var, from, select, where, order, by },
@@ -74,7 +115,7 @@ mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit
 	upquote=true,
 	tabsize=2,
 }
-	
+
 	\lstdefinestyle{customc}{
   belowcaptionskip=1\baselineskip,
   %breaklines=true,
@@ -109,23 +150,23 @@ mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit
 \newcommand{\chref}[2]{
     \href{#1}{{\usebeamercolor[bg]{AAUsidebar}#2}}
 }
-\title[TLDR]{TLDR}
-\subtitle{The Language Described in this Report}
-\date{15/06 2015}
-\author[sw404f15] 
+\title[AHA]{AHA}
+\subtitle{Automated Home Automation}
+\date{2016-01-18}
+\author[sw501e15]
 {
-    Alexander Dalsgaard Krog
-    \href{mailto:akrog13@student.aau.dk}{\textit{<akrog13@student.aau.dk>}}\linebreak
     Christian Heider Nielsen
     \href{mailto:chrini13@student.aau.dk}{\textit{<chrini13@student.aau.dk>}}\linebreak
     Jens Hegner Stærmose
     \href{mailto:jstarm13@student.aau.dk}{\textit{<jstarm13@student.aau.dk>}}\linebreak
     Kasper Fuglsang Christensen
     \href{mailto:kfch13@student.aau.dk}{\textit{<kfch13@student.aau.dk>}}\linebreak
-    Kasper Kohsel Terndrup
-    \href{mailto:kternd13@student.aau.dk}{\textit{<kternd13@student.aau.dk>}}\linebreak
+    Rasmus Bak Christiansen
+    \href{mailto:rchris12@student.aau.dk}{\textit{<rchris12@student.aau.dk>}}\linebreak
     Simon Vandel Sillesen
-    \href{mailto:ssille13@student.aau.dk}{\textit{<ssille13@student.aau.dk>}}
+    \href{mailto:ssille13@student.aau.dk}{\textit{<ssille13@student.aau.dk>}}\linebreak
+    Zobair Qauomi
+    \href{mailto:zqauom12@student.aau.dk}{\textit{<zqauom12@student.aau.dk>}}
 }
 
 \institute[
@@ -139,11 +180,11 @@ mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit
     Selma Lagerlöfs Vej 300\linebreak
     DK-9220 Aalborg Ø\linebreak
     http://cs.aau.dk/
-    
+
 }
 
 \pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/aau_logo_new}
-\titlegraphic{  
+\titlegraphic{
     \pgfuseimage{titlepagelogo}
 }
 
@@ -171,7 +212,7 @@ mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit
 \newcommand{\Tand}{\text{\; AND \;}}
 \newcommand{\Tnot}{\text{NOT \;}}
 \newcommand{\Tnand}{\text{\; NAND \;}}
-\newcommand{\Tor}{\text{\; OR \;}} 
+\newcommand{\Tor}{\text{\; OR \;}}
 \newcommand{\Tnor}{\text{\; NOR \;}}
 \newcommand{\Txor}{\text{\; XOR \;}}
 \newcommand{\Tif}{\text{if}}
