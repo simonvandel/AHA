@@ -20,11 +20,11 @@
   \node[ellipse] (htf1) [draw=black, minimum width=1cm, minimum height=.75cm, right=of ht] {$x_{t+1}$};
 
   %Emission states
-  \node[ellipse] (e1)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of h1] {$e_1$};
-  \node[ellipse] (e2)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of h2] {$e_2$};
-  \node[ellipse] (etp1) [draw=black, minimum width=1cm, minimum height=.75cm, below=of htp1] {$e_{t-1}$};
-  \node[ellipse] (et)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of ht] {$e_t$};
-  \node[ellipse] (etf1) [draw=black, minimum width=1cm, minimum height=.75cm, below=of htf1] {$e_{t+1}$};
+  \node[ellipse] (e1)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of h1] {$o_1$};
+  \node[ellipse] (e2)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of h2] {$o_2$};
+  \node[ellipse] (etp1) [draw=black, minimum width=1cm, minimum height=.75cm, below=of htp1] {$o_{t-1}$};
+  \node[ellipse] (et)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of ht] {$o_t$};
+  \node[ellipse] (etf1) [draw=black, minimum width=1cm, minimum height=.75cm, below=of htf1] {$o_{t+1}$};
 
   %Emission lines
   \draw [->, to path={-| (\tikztotarget)}] (h1) edge[out=-90,in=90] (e1);
