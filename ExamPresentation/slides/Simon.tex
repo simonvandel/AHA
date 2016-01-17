@@ -6,8 +6,8 @@
 		\item Deadline test
       \begin{itemize}
         \item Learn system XOR
-        \item Use timer button that activates a timer and performs an action
-        \item Observe timer results in optimal and worst cases
+        \item Activate timer button
+        \item Observe timer results
       \end{itemize}
     \item Adaption test
       \begin{itemize}
@@ -22,41 +22,71 @@
 	\begin{itemize}
 		\item Deadline test
       \begin{itemize}
-        \item Deadline was 100 ms from change in state to the system performing an action
-        \item The best observed time in the worst case test was 268 ms
-        \item The best observed time in the optimal case test was 122 ms
-        \item The deadline is therefore not met
+        \item Deadline: 100 ms
+        \item Lowest time, worst case test: 268 ms
+        \item Lowest time, optimal case test: 122 ms
       \end{itemize}
     \item Adaption test
       \begin{itemize}
-        \item The system was able to learn the XOR pattern
-        \item After around 2 minutes of trying to adapt to AND pattern, most of the XOR pattern is unlearned
-        \item However, the system was not able to consistenly perform the newly learned AND pattern
-        \item The test was partly successful, as the system was able to adapt to a new pattern, but the new pattern was not performed consistenly thereafter
+        \item Learned the XOR pattern
+        \item AND pattern is partly adapted to
+        \item AND pattern not consistently performed
+        \item Partly successful test
       \end{itemize}
 	\end{itemize}
+  
+
+  \begin{columns}
+      \begin{column}{0.48\textwidth}
+Worst case:
+\begin{enumerate}
+\setlength\itemsep{0.1em}
+\item Read sensors
+\item {\color{blue}{Timer button pressed}}
+\item Encode
+\item Send
+\item Receive
+\item Perform actions
+\end{enumerate}
+      \end{column}
+      \begin{column}{0.48\textwidth}
+Optimal case:
+\begin{enumerate}
+\setlength\itemsep{0.1em}
+\item {\color{blue}{Timer button pressed}}
+\item Read sensors
+\item Encode
+\item Send
+\item Receive
+\item Perform actions
+\end{enumerate}
+      \end{column}
+  \end{columns}
 \end{frame}
 
 \section{Demo}
 \begin{frame}{Demo}
 	\begin{itemize}
+    \item Explain setup
 		\item Starts with learning XOR
-		\item At around 3:43 switches to adapt to AND
-		\item At around 5:40 it has learned some of AND
+		\item 1:08 some of XOR is learned
+		\item 3:43 switches to adapt to AND
+		\item 5:40 it has learned some of AND
 	\end{itemize}
 \end{frame}
 
 \section{Conclusion \& Reflection}
 \begin{frame}{Conclusion \& Reflection 1/2}
 	\begin{itemize}
-    \item Different sensors have been examined, and their characteristics understood
-    \item The sensors can be read on the Arduino board, and can be sent wirelessly to a central server
+    \item Sensors chosen based on problem domain
+    \item Sensor characteristics understood by tests
       \begin{itemize}
-        \item While the wireless communication added more complexity to the system and therefore increased the development time, it made the system more portable
+        \item Confirmed: cheap hardware is often bad hardware
       \end{itemize}
-    \item A binary encoding scheme was designed
+    \item Sensors can be read on Arduino board, and transmitted wirelessly
       \begin{itemize}
-        \item Enabled small data packets, which reduced communication time
+        \item Wireless communication: more complexity -> increased development time
+        \item Wired communication also possible, but less interesting
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -65,14 +95,14 @@
 	\begin{itemize}
     \item System is able to learn a pattern, but not much can be said about its performance
       \begin{itemize}
-        \item The system remains to be tested in a non-trivial setting, where additional (noisy) sensors and more complex patterns exist
-        \item No tests have been running for more than 20 minutes at a time. In a real world environment, the system would collect much more data over a large amount of time
-        \item Hard to debug the machine intelligence algorithms, as it is hard to reason about the correctness of the output 
+        \item Only tested in trivial setting
+        \item Max test time: 20 minutes -> small state space
+        \item Hard to debug machine intelligence algorithms
       \end{itemize}
 		\item Deadline for system is not met
       \begin{itemize}
       \item It is not critical, as it is a soft deadline. It can however be annoying for users
-      \item The deadline might be too strict. Maybe it is fine to loosen the deadline in a real environment. This would have to be tested in a usability lab
+      \item Deadline maybe too strict, would have to be tested
       \end{itemize}
 	\end{itemize}
 \end{frame}

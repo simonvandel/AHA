@@ -1,14 +1,13 @@
 \subsection{Embedded Subsystem}
   \begin{frame}
-
 	\frametitle{Phases in the Embedded Subsystem}
   	\begin{itemize}
-  		\item Poll Sensors
-  		\item Encode
-  		\item Send
-  		\item Wait for Action
+  		\item poll sensors
+  		\item encode
+  		\item send
+  		\item wait for action
         \begin{itemize}
-            \item Performing The Action
+            \item performing the action
         \end{itemize}
   	\end{itemize}
   \end{frame}
@@ -20,15 +19,13 @@
   	\begin{itemize}
   		\item ZigBee is low power, low latency, and cheap
   		\item ZigBee AT vs ZigBee API
-
         \begin{itemize}
-            \item Using ZigBee API
+            \item using ZigBee API
         \end{itemize}
-  		\item Difficulty making it work
+  		\item difficulty making it work
         \begin{itemize}
-            \item Poor understanding, scarce in-depth documentation
-            \item Cheap hardware - low end module
-            \item Wrong approach?
+            \item poor understanding, scarce in-depth documentation
+            \item cheap hardware - low end module
             %Did we jump head first? should we jump head first in, or do more research first?
         \end{itemize}
   	\end{itemize}
@@ -41,13 +38,13 @@
   	\begin{itemize}
         \item Implementation 
     	\begin{itemize}
-            \item Buffer of 64 bytes
-            \item Keeps track of which byte, and which bit within that byte
-            \item A call to the add function with parameters (4, 6):
+            \item buffer of 64 bytes
+            \item keeps track of which byte, and which bit within that byte
+            \item a call to the add function with parameters (4, 6):
             \begin{itemize}
-                \item If enough bits are left in current byte "001000" are shifted onto the byte
-                \item If not enough bits are left, available are filled and add function called recursively
-                \item Assume 3 bits are available in current byte shift "001" and call add on (0, 3)
+                \item if enough bits are left in current byte "001000" are shifted onto the byte
+                \item if not enough bits are left, available are filled and add function called recursively
+                \item assume 3 bits are available in current byte shift "001" and call add on (0, 3)
             \end{itemize}            
         \end{itemize}
     \end{itemize}          	
@@ -56,11 +53,11 @@
 \begin{frame}
 	\frametitle{Encoding}
     \begin{itemize}
-        \item Implementation
-		\item Why did we make our own encoding?
+        \item implementation
+		\item why did we make our own encoding?
         \begin{itemize}
             \item ZigBee interaction we can't explain
-            \item Flexibility, size
+            \item flexibility, size
         \end{itemize}
     \end{itemize}
 \end{frame}
