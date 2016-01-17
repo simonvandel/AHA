@@ -20,7 +20,7 @@
     \centering
     \begin{tikzpicture}
         %Nodes
-        \node[squarednode] (sensorActuatorSubsystem) {Sensor/Actuator subsystem};
+        \node[squarednode] (sensorActuatorSubsystem) {Embedded subsystem};
         \node[squarednode] (learningSubsystem) [right=of sensorActuatorSubsystem, xshift=5em] {Learning subsystem};
 
         %Lines
@@ -35,31 +35,27 @@
 	\frametitle{Architecture}
   \begin{figure}[htbp]
   \centering
-  \begin{tikzpicture}[thick,scale=0.6, every node/.style={transform shape}]
+  \begin{tikzpicture}[scale=0.6, every node/.style={transform shape}]
     %Nodes
     \node[squarednode] (embeddedSubsystem) {Embedded subsystem};
     \node[squarednode] (communication) [right=of embeddedSubsystem, xshift=5em] {Communication};
     \node[squarednode] (normaliser) [right=of communication, xshift=5em] {Normaliser};
     \node[squarednode] (reasoner) [below=of embeddedSubsystem, yshift=-3em] {Reasoner};
-    \node[squarednode] (modelDatabase) [below=of reasoner, yshift=-3em] {Model Database};
     \node[squarednode] (sampler) [below=of normaliser, yshift=-3em] {Sampler};
-    \node[squarednode] (historyDatabase) [below=of sampler, yshift=-3em] {History Database};
-    \node[squarednode] (learner) [right=of modelDatabase, xshift=5em] {Learner};
+    \node[squarednode] (learner) [below=of reasoner, yshift=-2em] {Learner};
 
     %Lines
     \path[-triangle 90]
-    (embeddedSubsystem.east) edge[transform canvas={yshift=-1em}] node[anchor=north] {sensor data} (communication.west)
-    (communication.west) edge[transform canvas={yshift=1em}] node[anchor=south] {actions} (embeddedSubsystem.east)
+    (embeddedSubsystem.east) edge[transform canvas={yshift=-0.5em}] node[anchor=north] {sensor data} (communication.west)
+    (communication.west) edge[transform canvas={yshift=0.5em}] node[anchor=south] {actions} (embeddedSubsystem.east)
     (communication.east) edge node[anchor=south] {snapshot, time} (normaliser)
     (normaliser.south) edge node[anchor=east,text width=6em] {normalised snapshot, time} (sampler.north)
-    (sampler.south) edge node[anchor=east,text width=6em] {scope, time, actions} (historyDatabase.north)
-    (historyDatabase.west) edge node[anchor=south, text width=6em] {scope, time, actions} (learner.east)
-    (learner.west) edge node[anchor=south] {model} (modelDatabase.east)
+    (sampler) edge[out=south, in=east] node[anchor=north,text width=6em] {scope, time, actions}  (learner)
+    (learner) edge[out=north, in=south, transform canvas={xshift=-1em}] node[anchor=east] {model} (reasoner)
     (sampler.west) edge node[anchor=south, text width=6em] {scope, time, actions} (reasoner.east)
-    (modelDatabase.north) edge[transform canvas={xshift=-1em}] node[anchor=east] {model} (reasoner.south)
     (reasoner) edge[out=north,in=south] node[anchor=north] {actions} (communication)
-    (reasoner.south) edge[transform canvas={xshift=1em}] node[anchor=west] {feedback} (modelDatabase.north);
+    (reasoner) edge[out=south,in=north, transform canvas={xshift=1em}] node[anchor=west] {feedback} (learner);
   \end{tikzpicture}
-  \caption{Architecture of the modules in the learning subsystem}
+  \caption{Detailed overview of the system}
   \end{figure}
 \end{frame}
