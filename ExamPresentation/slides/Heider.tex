@@ -10,8 +10,8 @@
 		  \item Ultrasonic - distance a person or object, presence of a particular spot
 		  \item Photoresistor - Light intensity of a room
 		\end{itemize}
-		\item Also these sensors are cheap and accesible.
-		\item In order to gain knowledge on how to use each sensor and their limitations, we conclude somes tests
+		\item Also these sensors are cheap and accessible.
+		\item In order to gain knowledge on how to use each sensor and their limitations, we conclude some tests
 		\begin{itemize}
 		  \item Precision
 		  \item Distance
@@ -62,4 +62,18 @@
     return measureTiming()/58;    // 58 approximates (speedOfSound*measureTiming())/2
   }
 	\end{lstlisting}
+\end{frame}
+\subsection{Actuators}
+\begin{frame}
+	\frametitle{Actuators}
+	%in the report we have not really touched on any implementation of actuator.
+	An actuator in our system could be:
+	\begin{itemize}
+		\item A SPDT relay - but this would require some rewiring and a SPDT switch too, which is not preferred
+		\item The embedded subsystem system being an intermediate switch in the wall plug
+		\begin{figure}[htbp]
+		    \centering
+        \includegraphics[width=\textwidth]{wemo.jpeg}
+		\end{figure}
+	\end{itemize}
 \end{frame}
