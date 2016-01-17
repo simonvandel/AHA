@@ -7,6 +7,42 @@
 		\item Eksempel
 		\item Vis måske noget kode
 	\end{itemize}
+	
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.8, every node/.style={transform shape}]
+  %Hidden Nodes
+  \node[ellipse] (h1)   [draw=black, minimum width=1cm, minimum height=.75cm] {$x_1$};
+  \node[ellipse] (h2)   [draw=black, minimum width=1cm, minimum height=.75cm, right=of h1] {$x_2$};
+  \node          (dots) [draw=none,  minimum width=1cm, minimum height=.75cm, right=of h2] {\LARGE \dots};
+  \node[ellipse] (htp1) [draw=black, minimum width=1cm, minimum height=.75cm, right=of dots] {$x_{t-1}$};
+  \node[ellipse] (ht)   [draw=black, minimum width=1cm, minimum height=.75cm, right=of htp1] {$x_t$};
+  \node[ellipse] (htf1) [draw=black, minimum width=1cm, minimum height=.75cm, right=of ht] {$x_{t+1}$};
+
+  %Emission states
+  \node[ellipse] (e1)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of h1] {$e_1$};
+  \node[ellipse] (e2)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of h2] {$e_2$};
+  \node[ellipse] (etp1) [draw=black, minimum width=1cm, minimum height=.75cm, below=of htp1] {$e_{t-1}$};
+  \node[ellipse] (et)   [draw=black, minimum width=1cm, minimum height=.75cm, below=of ht] {$e_t$};
+  \node[ellipse] (etf1) [draw=black, minimum width=1cm, minimum height=.75cm, below=of htf1] {$e_{t+1}$};
+
+  %Emission lines
+  \draw [->, to path={-| (\tikztotarget)}] (h1) edge[out=-90,in=90] (e1);
+  \draw [->, to path={-| (\tikztotarget)}] (h2) edge[out=-90,in=90] (e2);
+  \draw [->, to path={-| (\tikztotarget)}] (htp1) edge[out=-90,in=90] (etp1);
+  \draw [->, to path={-| (\tikztotarget)}] (ht) edge[out=-90,in=90] (et);
+  \draw [->, to path={-| (\tikztotarget)}] (htf1) edge[out=-90,in=90] (etf1);
+
+  %1. order lines
+  \draw [->, to path={-| (\tikztotarget)}] (h1) edge[out=0,in=180] (h2);
+  \draw [->, to path={-| (\tikztotarget)}] (h2) edge[out=0,in=180] (dots);
+  \draw [->, to path={-| (\tikztotarget)}] (dots) edge[out=0,in=180] (htp1);
+  \draw [->, to path={-| (\tikztotarget)}] (htp1) edge[out=0,in=180] (ht);
+  \draw [->, to path={-| (\tikztotarget)}] (ht) edge[out=0,in=180] (htf1);
+\end{tikzpicture}
+\caption[Absolute and relative time trellis diagram for an HMM]{An absolute and relative time trellis diagram for a 1st order HMM. The $x_{1}$, $x_{2}$ are absolute times where $x_{t-1}$, $x_{t}$ are relative, since the time depend on t}
+\end{figure}\label{fig:4thMarkovModel}
+
 \end{frame}
 \section{Server implementation - Normaliser, sampler, java com}
 \subsection{Normaliser, sampler, java com}
@@ -14,13 +50,46 @@
 	\frametitle{Communication, Normaliser and Sampler}
 	\begin{itemize}
 		\item The Model of the System
-                    Please put the figure 5.9 here from page 37 
-                    
+	\begin{figure}[htbp]
+  	\centering
+  	\begin{tikzpicture}[thick,scale=0.6, every node/.style={transform shape}]
+    %Nodes
+    \node[squarednode] (embeddedSubsystem) {Embedded subsystem};
+    \node[squarednode] (communication) [right=of embeddedSubsystem, xshift=5em] {Communication};
+    \node[squarednode] (normaliser) [right=of communication, xshift=5em] {Normaliser};
+    \node[squarednode] (reasoner) [below=of embeddedSubsystem, yshift=-3em] {Reasoner};
+    \node[squarednode] (modelDatabase) [below=of reasoner, yshift=-3em] {Model Database};
+    \node[squarednode] (sampler) [below=of normaliser, yshift=-3em] {Sampler};
+    \node[squarednode] (historyDatabase) [below=of sampler, yshift=-3em] {History Database};
+    \node[squarednode] (learner) [right=of modelDatabase, xshift=5em] {Learner};
+
+    %Lines
+    \path[-triangle 90]
+    (embeddedSubsystem.east) edge[transform canvas={yshift=-1em}] node[anchor=north] {sensor data} (communication.west)
+    (communication.west) edge[transform canvas={yshift=1em}] node[anchor=south] {actions} (embeddedSubsystem.east)
+    (communication.east) edge node[anchor=south] {snapshot, time} (normaliser)
+    (normaliser.south) edge node[anchor=east,text width=6em] {normalised snapshot, time} (sampler.north)
+    (sampler.south) edge node[anchor=east,text width=6em] {scope, time, actions} (historyDatabase.north)
+    (historyDatabase.west) edge node[anchor=south, text width=6em] {scope, time, actions} (learner.east)
+    (learner.west) edge node[anchor=south] {model} (modelDatabase.east)
+    (sampler.west) edge node[anchor=south, text width=6em] {scope, time, actions} (reasoner.east)
+    (modelDatabase.north) edge[transform canvas={xshift=-1em}] node[anchor=east] {model} (reasoner.south)
+    (reasoner) edge[out=north,in=south] node[anchor=north] {actions} (communication)
+    (reasoner.south) edge[transform canvas={xshift=1em}] node[anchor=west] {feedback} (modelDatabase.north);
+  \end{tikzpicture}
+  \caption{Architecture of the modules in the learning subsystem}
+  \end{figure}
+    
 	         \begin{enumerate}
                          \item Communication
                          \item Normaliser
                          \item Sampler
                  \end{enumerate}
+                 \end{itemize}
+                 \end{frame}
+\begin{frame}
+	\frametitle{Communication, Normaliser and Sampler}
+	\begin{itemize}
 		\item Communication
 \begin{itemize}
 \item Receives data from embedded subsystem in binary from
