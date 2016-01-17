@@ -10,11 +10,11 @@
 		  \item Ultrasonic - distance a person or object, presence of a particular spot
 		  \item Photoresistor - Light intensity of a room
 		\end{itemize}
-		\item Also these sensors are cheap and accessible.
+		\item These sensors are cheap and accessible
 		\item In order to gain knowledge on how to use each sensor and their limitations, we conclude some tests
 		\begin{itemize}
 		  \item Precision
-		  \item Distance
+		  \item Effective distance
 		  \item Latency
 		\end{itemize}
 	\end{itemize}
@@ -26,10 +26,10 @@
 	\begin{itemize}
 	  \item Probe the sensor a couple of times
 	  \item Average over the probes
-	  \item If average is above some threshold
-	Increase the time it takes to get a result from the sensor, but this amount neglible in the context of the whole system.
-    %We probed the output a couple of times and averaging over them to remove noise, this on the otherhand worsened of response time of our system but in the system of a whole this difference is neglible.
+	  \item If average is above some threshold then report presence of a moving person
 	\end{itemize}
+Effect: Increases the time it takes to get a result from the sensor, but the amount of time negligible in the context of the whole systems running time
+    %We probed the output a couple of times and averaging over them to remove noise, this on the otherhand worsened of response time of our system but in the system of a whole this difference is neglible.
 \end{frame}
 \subsubsection{Ultrasonic}
 \begin{frame}
@@ -73,7 +73,7 @@
 		\item The embedded subsystem system being an intermediate switch in the wall plug
 		\begin{figure}[htbp]
 		    \centering
-        \includegraphics[width=\textwidth]{wemo.jpeg}
+        \includegraphics[width=\textwidth/2]{Images/wemo.jpeg}
 		\end{figure}
 	\end{itemize}
 \end{frame}
