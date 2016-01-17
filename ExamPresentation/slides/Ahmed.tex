@@ -58,31 +58,27 @@
     \end{itemize}
 	\begin{figure}[htbp]
   	\centering
-  	\begin{tikzpicture}[thick,scale=0.6, every node/.style={transform shape}]
-    %Nodes
-    \node[squarednode] (embeddedSubsystem) {Embedded subsystem};
-    \node[squarednode] (communication) [right=of embeddedSubsystem, xshift=5em] {Communication};
-    \node[squarednode] (normaliser) [right=of communication, xshift=5em] {Normaliser};
-    \node[squarednode] (reasoner) [below=of embeddedSubsystem, yshift=-3em] {Reasoner};
-    \node[squarednode] (modelDatabase) [below=of reasoner, yshift=-3em] {Model Database};
-    \node[squarednode] (sampler) [below=of normaliser, yshift=-3em] {Sampler};
-    \node[squarednode] (historyDatabase) [below=of sampler, yshift=-3em] {History Database};
-    \node[squarednode] (learner) [right=of modelDatabase, xshift=5em] {Learner};
+		\begin{tikzpicture}[scale=0.6, every node/.style={transform shape}]
+			%Nodes
+			\node[squarednode] (embeddedSubsystem) {Embedded subsystem};
+			\node[squarednode] (communication) [right=of embeddedSubsystem, xshift=5em] {Communication};
+			\node[squarednode] (normaliser) [right=of communication, xshift=5em] {Normaliser};
+			\node[squarednode] (reasoner) [below=of embeddedSubsystem, yshift=-3em] {Reasoner};
+			\node[squarednode] (sampler) [below=of normaliser, yshift=-3em] {Sampler};
+			\node[squarednode] (learner) [below=of reasoner, yshift=-2em] {Learner};
 
-    %Lines
-    \path[-triangle 90]
-    (embeddedSubsystem.east) edge[transform canvas={yshift=-1em}] node[anchor=north] {sensor data} (communication.west)
-    (communication.west) edge[transform canvas={yshift=1em}] node[anchor=south] {actions} (embeddedSubsystem.east)
-    (communication.east) edge node[anchor=south] {snapshot, time} (normaliser)
-    (normaliser.south) edge node[anchor=east,text width=6em] {normalised snapshot, time} (sampler.north)
-    (sampler.south) edge node[anchor=east,text width=6em] {scope, time, actions} (historyDatabase.north)
-    (historyDatabase.west) edge node[anchor=south, text width=6em] {scope, time, actions} (learner.east)
-    (learner.west) edge node[anchor=south] {model} (modelDatabase.east)
-    (sampler.west) edge node[anchor=south, text width=6em] {scope, time, actions} (reasoner.east)
-    (modelDatabase.north) edge[transform canvas={xshift=-1em}] node[anchor=east] {model} (reasoner.south)
-    (reasoner) edge[out=north,in=south] node[anchor=north] {actions} (communication)
-    (reasoner.south) edge[transform canvas={xshift=1em}] node[anchor=west] {feedback} (modelDatabase.north);
-  \end{tikzpicture}
+			%Lines
+			\path[-triangle 90]
+			(embeddedSubsystem.east) edge[transform canvas={yshift=-0.5em}] node[anchor=north] {sensor data} (communication.west)
+			(communication.west) edge[transform canvas={yshift=0.5em}] node[anchor=south] {actions} (embeddedSubsystem.east)
+			(communication.east) edge node[anchor=south] {snapshot, time} (normaliser)
+			(normaliser.south) edge node[anchor=east,text width=6em] {normalised snapshot, time} (sampler.north)
+			(sampler) edge[out=south, in=east] node[anchor=north,text width=6em] {scope, time, actions}  (learner)
+			(learner) edge[out=north, in=south, transform canvas={xshift=-1em}] node[anchor=east] {model} (reasoner)
+			(sampler.west) edge node[anchor=south, text width=6em] {scope, time, actions} (reasoner.east)
+			(reasoner) edge[out=north,in=south] node[anchor=north] {actions} (communication)
+			(reasoner) edge[out=south,in=north, transform canvas={xshift=1em}] node[anchor=west] {feedback} (learner);
+		\end{tikzpicture}
   \caption{Architecture of the modules in the learning subsystem}
   \end{figure}
   \end{frame}
@@ -210,7 +206,7 @@
 \end{itemize}
 
 	\end{itemize}
- 
+
 \end{frame}
 \begin{frame}
 \frametitle{Normaliser}
@@ -220,7 +216,7 @@
     \item Calculate Variance for each clusters
     \item Add new cluster
     \item calculate the variance difference
-    \item While Variance difference is below threshold repeat step 3 
+    \item While Variance difference is below threshold repeat step 3
 \end{enumerate}
 \item Jenks Natural break optimization
 \begin{enumerate}
