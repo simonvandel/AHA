@@ -2,6 +2,8 @@
 \documentclass[10pt, t]{beamer}
 \usetheme[left,hideothersubsections]{AAUsidebar}
 
+\usepackage{subcaption}
+\usepackage{framed}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
@@ -79,7 +81,7 @@ node[very near end, below]{#3};
 \lstdefinelanguage{HMMLanguage}
 {morekeywords={let, new, match, with, rec, open, module, namespace, type, of, member, %
 and, for, while, true, false, in, do, begin, end, fun, function, return, yield, try, %
-mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit, finally, double },
+mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit, finally, double, long, unsigned, LOW, HIGH },
   morekeywords=[2]{ ForwardsMatrix, BackwardsMatrix, GammaMatrix, InitialProbability, TransitionMatrix, EmissionMatrix, HiddenMarkovModel, HiddenState, Observation },
   keywordstyle=\color{bluekeywords}\bfseries,
   keywordstyle=[2]\color{redstrings}\bfseries,
