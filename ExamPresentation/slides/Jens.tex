@@ -1,4 +1,5 @@
 \section{Server implementation - Learner}
+\lstset{language=HMMLanguage,numbers=left,breaklines=true,numbersep=0pt}
 \subsection{Baum Welch}
 \begin{frame}
 	\frametitle{Baum Welch - Principle}
@@ -25,9 +26,6 @@
 			\item $\gamma_t(i)$ is the probability of being in hidden state $q_i$ at time $t$
 		\end{itemize}
 		\item Recalculate $\theta = {A,B,\pi}$ from gamma and di-gamma
-		\begin{itemize}
-			\item $\pi = $
-		\end{itemize}
 	\end{itemize}
 \end{frame}
 
@@ -56,6 +54,42 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+	\frametitle{Baum Welch - Calculate $\alpha$ and $\beta$}
+	\begin{lstlisting}    
+ // beta T-1 (i) = 1, scaled by c T-1
+ for (HiddenState i : mapWarden.iterateHiddenStates()){
+   Observation lastObservation = mapWarden.lastObservation();
+   double value = mapWarden.getScalingFactor(mapWarden.getNumObservations() - 1); // T - 1
+   setEntry(lastObservation, i, value);
+ }
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Baum Welch - Calculate $\alpha$ and $\beta$}
+	\begin{lstlisting}   
+
+ //beta pass
+ for (int t = mapWarden.getNumObservations()-2; t >= 0; t--){
+   Observation tObservation = mapWarden.observationIndexToObservation(t);
+   for (HiddenState i : mapWarden.iterateHiddenStates()){
+     setEntry(tObservation, i, 0);
+     for (HiddenState j : mapWarden.iterateHiddenStates()){
+       Observation nextObservation = mapWarden.observationIndexToObservation(t + 1);
+       EmissionState nextEmission = mapWarden.observationToEmission(nextObservation);
+       double value = getEntry(tObservation, i) + oldModel.getTransitionMatrix().getEntry(i, j) * oldModel.getEmissionMatrix().getEntry(j, nextEmission) * getEntry(nextObservation, j);
+       setEntry(tObservation, i, value);
+     }
+     //scale beta t (i) with the same scale factor as alpha t (i)
+     double value = mapWarden.getScalingFactor(t) * getEntry(tObservation, i);
+     setEntry(tObservation, i, value);
+   }
+   int i = 0;
+ }
+	\end{lstlisting}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Baum Welch - Calculate di-$\gamma$ and $\gamma$}
 	\begin{itemize}
@@ -76,6 +110,24 @@
 			\item $\gamma_t(i) = \frac{\alpha_t(i)\beta_t(i)}{P(\mathcal{O}|\theta)} = \frac{\alpha_t(i)\beta_t(i)}{\sum\limits_{i=0}^{N-1} \alpha_{T-1}(i)}$
 			\item or
 			\item $ \sum\limits_{j=0}^{N-1} \gamma_t(i,j)$
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Baum Welch - Recalculate $\theta$}
+	\begin{itemize}
+		\item Recalculate initial probabilities
+		\begin{itemize}
+			\item $\pi_i = \gamma_0(i)$
+		\end{itemize}
+		\item Recalculate transition matrix
+		\begin{itemize}
+			\item $a_{ij} = \frac{\sum\limits_{i=0}^{N-2} \gamma_t (j)}{\sum\limits_{i=0}^{N-2} \gamma_t(i)}$
+		\end{itemize}
+		\item Recalculate emission matrix
+		\begin{itemize}
+			\item $b_j(k) = \frac{\sum\limits_{t \in \{0,1,\dots,T-1\} and \mathcal{O}_t=k} \gamma_t (j)}{\sum\limits_{i=0}^{N-1} \gamma_t(i)}$
 		\end{itemize}
 	\end{itemize}
 \end{frame}
