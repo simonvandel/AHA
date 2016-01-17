@@ -1,4 +1,5 @@
 \section{Embedded system implementation}
+\lstset{language=HMMLanguage,numbers=left,breaklines=true,numbersep=0pt}
 \subsection{Sensors}
 \begin{frame}
 	\frametitle{Sensors}
@@ -33,11 +34,32 @@
 \subsubsection{Ultrasonic}
 \begin{frame}
 	\frametitle{Ultrasonic}
+	No improvements were needed for this sensor, but if more precise result were required by the use case.
+	The implementation should also account for:
 	\begin{itemize}
-    \item s
+    \item Temperature of the room - a sensor for measuring temperature, would be required
+    \item Dobbler effect for moving target - requires knowledge about velocity and direction
 	\end{itemize}
 \end{frame}
-\begin{frame}
+\begin{frame}[fragile]
 	\frametitle{Ultrasonic code example}
-	
+	\begin{lstlisting}   
+  unsigned long Ultrasonic::measureTiming(){
+    digitalWrite(trigPin, LOW);   // Ensure low
+    delayMicroseconds(2);         // Wait for stable low
+    digitalWrite(trigPin, HIGH);  // Set trigger pin to high for 10 microseconds
+    delayMicroseconds(10);        // to initiate sensor cycle
+
+    digitalWrite(trigPin, LOW);   // Then set low again, the sensor will now emit and receive
+                                  // 8 cycles of ultrasonic sound waves at 40 khz
+
+    return pulseIn(echoPin,HIGH); // Now wait for the sensor to output a pulse,
+                                  // the pulse width corresponds to a distance,
+                                  // given delta t from send to recieved.
+  }
+  
+  unsigned long Ultrasonic::getDistance(){
+    return measureTiming()/58;    // 58 approximates (speedOfSound*measureTiming())/2
+  }
+	\end{lstlisting}
 \end{frame}
