@@ -1,4 +1,4 @@
-\section{Server implementation - Learner}
+\section{Server design and implementation}
 \lstset{language=HMMLanguage,numbers=left,breaklines=true,numbersep=0pt}
 \subsection{Baum Welch}
 \begin{frame}
@@ -28,6 +28,146 @@
 		\item Recalculate $\theta = {A,B,\pi}$ from gamma and di-gamma
 	\end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Baum Welch - Example}
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[->]
+  %Hidden Nodes
+  \node[circle, draw=black, minimum size=1cm] (x1) {$x_0$};
+  \node[circle, draw=black, minimum size=1cm, node distance=3cm, right=of x1] (x2) {$x_1$};
+
+  %Emission states
+  \node[circle] (e11) [draw=black, minimum size=1cm, node distance=1.5cm, above=of x1] {$e_0$};
+  \node[circle] (e12) [draw=black, minimum size=1cm, node distance=1.5cm, left=of x1] {$e_1$};
+  \node[circle] (e21) [draw=black, minimum size=1cm, node distance=1.5cm, above=of x2] {$e_0$};
+  \node[circle] (e22) [draw=black, minimum size=1cm, node distance=1.5cm, right=of x2] {$e_1$};
+
+  \path
+  %Emission lines
+    (x1) edge[out=90,in=-90] node[rectangle,fill=white] {$b_{00}$} (e11)
+    (x1) edge[out=180,in=0] node[rectangle,fill=white] {$b_{01}$} (e12)
+    (x2) edge[out=90,in=-90] node[rectangle,fill=white] {$b_{10}$} (e21)
+    (x2) edge[out=0,in=180] node[rectangle,fill=white] {$b_{11}$} (e22)
+
+  %Transition lines
+    (x1) edge[out=15,in=165] node[rectangle,fill=white] {$a_{01}$} (x2)
+    (x2) edge[out=-165,in=-15] node[rectangle,fill=white] {$a_{10}$} (x1)
+
+    (x1) edge [out=150,in=120,loop,looseness=15] node[rectangle,fill=white] {$a_{00}$} (x1)
+    (x2) edge [out=60,in=30,loop,looseness=15] node[rectangle,fill=white] {$a_{11}$} (x2);
+\end{tikzpicture}
+\end{figure}
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{| c | c | c |}
+  	\hline
+    $b_{ik} = P(e_k|x_i)$ & $x_0$ & $x_1$ \\ \hline
+    $e_0$                 & 0.9   & 0.2   \\ \hline
+    $e_1$                 & 0.1   & 0.8   \\ \hline
+  \end{tabular}
+  \begin{tabular}{| c | c | c |}
+  	\hline
+    $a_{ij} = P(x_j|x_i)$ & $x_0$ & $x_1$ \\ \hline
+    $x_0$                 & 0.6   & 0.9   \\ \hline
+    $x_1$                 & 0.4   & 0.1   \\ \hline
+  \end{tabular}
+  \\$\pi = P(x_i|t=0)$ =
+  \begin{tabular}{| c | c |}
+  	\hline
+    $x_0$ & $x_1$ \\ \hline
+    0.3   & 0.7   \\ \hline
+  \end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Baum Welch - Example}
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[->]
+  %Hidden Nodes
+  \node[circle, draw=black, minimum size=1cm] (x1) {$x_0$};
+  \node[circle, draw=black, minimum size=1cm, node distance=3cm, right=of x1] (x2) {$x_1$};
+
+  %Emission states
+  \node[circle] (e11) [draw=black, minimum size=1cm, node distance=1.5cm, above=of x1] {$e_0$};
+  \node[circle] (e12) [draw=black, minimum size=1cm, node distance=1.5cm, left=of x1] {$e_1$};
+  \node[circle] (e21) [draw=black, minimum size=1cm, node distance=1.5cm, above=of x2] {$e_0$};
+  \node[circle] (e22) [draw=black, minimum size=1cm, node distance=1.5cm, right=of x2] {$e_1$};
+
+  \path
+  %Emission lines
+    (x1) edge[out=90,in=-90] node[rectangle,fill=white] {$0.9$} (e11)
+    (x1) edge[out=180,in=0] node[rectangle,fill=white] {$0.1$} (e12)
+    (x2) edge[out=90,in=-90] node[rectangle,fill=white] {$0.2$} (e21)
+    (x2) edge[out=0,in=180] node[rectangle,fill=white] {$0.8$} (e22)
+
+  %Transition lines
+    (x1) edge[out=15,in=165] node[rectangle,fill=white] {$0.4$} (x2)
+    (x2) edge[out=-165,in=-15] node[rectangle,fill=white] {$0.9$} (x1)
+
+    (x1) edge [out=150,in=120,loop,looseness=15] node[rectangle,fill=white] {$0.6$} (x1)
+    (x2) edge [out=60,in=30,loop,looseness=15] node[rectangle,fill=white] {$0.1$} (x2);
+\end{tikzpicture}
+\end{figure}
+  \begin{table}
+  $\pi = P(x_i|t=0)$ =
+  \begin{tabular}{| c | c |}
+  	\hline
+    $x_0$ & $x_1$ \\ \hline
+    0.3   & 0.7   \\ \hline
+  \end{tabular}
+\end{table}
+\end{frame}
+
+
+\begin{frame}[fragile]
+	\frametitle{Baum Welch - Example}
+  \begin{table}
+  \centering
+  \begin{tabular}{| c | c | c |}
+  	\hline
+    $b_{ik} = P(e_k|x_i)$ & $x_0$ & $x_1$ \\ \hline
+    $e_0$                 & 0.9   & 0.2   \\ \hline
+    $e_1$                 & 0.1   & 0.8   \\ \hline
+  \end{tabular}
+  \begin{tabular}{| c | c | c |}
+  	\hline
+    $a_{ij} = P(x_j|x_i)$ & $x_0$ & $x_1$ \\ \hline
+    $x_0$                 & 0.6   & 0.9   \\ \hline
+    $x_1$                 & 0.4   & 0.1   \\ \hline
+  \end{tabular}
+  $\pi = P(x_i|t=0)$ =
+  \begin{tabular}{| c | c |}
+  	\hline
+    $x_0$ & $x_1$ \\ \hline
+    0.3   & 0.7   \\ \hline
+  \end{tabular}\\
+  $\mathcal{O} = \{\mathcal{O}_0 = e_0, \mathcal{O}_1 = e_1, \mathcal{O}_2 = e_0\}$\\
+  $\alpha_0(i) = \pi_i b_i(\mathcal{O}_0)$\\
+  $\alpha_0(0) = \pi_0 b_0(\mathcal{O}_0)$\\
+  $\alpha_0(0) = 0.3 * 0.9 = 0.27$\\
+  $\alpha_0(1) = 0.7 * 0.9 = 0.63$\\
+  $\alpha_t(i) = \left(\sum\limits_{j=0}^{N-1} \alpha_{t-1}(j)a_{ji}\right)b_i(\mathcal{O}_t)$\\
+  $\alpha_1(0) = (0.27 * 0.6 + 0.63 * 0.4) * 0.9 = 0.3726$\\
+  $\alpha_t(i) = P(\mathcal{O}_0, \mathcal{O}_1, \dots ,\mathcal{O}_t , x_t = q_i | \theta)$ =
+  \begin{tabular}{| c | c | c | c |}
+  	\hline
+          & $t=e_0$ & $t=e_1$ & $t=e_0$ \\ \hline
+    $x_0$ & 0.27    & 0.3726  &  \\ \hline
+    $x_1$ & 0.63    & 0.0612  &  \\ \hline
+  \end{tabular}
+\end{table}
+\end{frame}
+
+
+
+
+
+
+%----------------------------------------------------------
 
 \begin{frame}
 	\frametitle{Baum Welch - Calculate $\alpha$ and $\beta$}
