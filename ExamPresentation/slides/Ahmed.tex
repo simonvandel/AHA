@@ -49,8 +49,8 @@
 \end{figure}\label{fig:4thMarkovModel}
 
 \end{frame}
-\section{Server implementation - Normaliser, sampler, java com}
-\subsection{Normaliser, sampler, java com}
+\section{Server implementation - Normaliser, sampler, communication}
+\subsection{Normaliser, sampler, communication}
 \begin{frame}
 	\frametitle{Communication, Normaliser and Sampler}
 	\begin{itemize}
@@ -115,7 +115,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Vertebi Example}
+\frametitle{Veterbi Example}
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[scale=0.8, every node/.style={transform shape}]
@@ -148,7 +148,7 @@
 
 
 \begin{frame}
-\frametitle{Vertebi Example}
+\frametitle{Veterbi Example}
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[scale=0.8, every node/.style={transform shape}]
@@ -204,6 +204,14 @@
 \item Normalises the data
 \item Sends to Sampler
 \end{itemize}
+
+\item Sampler
+  \begin{itemize}
+   \item Creates samples
+   \item Encoding History
+   \item Find actions
+
+   \end{itemize}
 
 	\end{itemize}
 
