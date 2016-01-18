@@ -12,8 +12,6 @@ void SensorPacketBuilder::add(unsigned long value, unsigned int bitsToSet){
   if(bitsToSet <= remainingBitsInByte) { //value fits into current byte, so it can just be set
     setBitsInByte(valueByte, bitsToSetByte);
   } else {
-
-
     // the following two calculations MUST happen before setBitsInByte call, as setBitsInByte can mutate remainingBitsInByte
     /////// ************************************************************* ///////
     byte bitsToSetRecursively = bitsToSet - remainingBitsInByte;
